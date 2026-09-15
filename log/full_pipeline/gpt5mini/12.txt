@@ -1,0 +1,282 @@
+Session started: 2026-07-27 21:20:31
+Model: openai/gpt-5-mini | temperature=0
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[21:20:44]
+
+── QUESTION ──────────────────────────────────────────────
+Does EVL support dependencies between constraints (e.g. having one constraint run before another)? How?
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - Does EVL support dependencies between constraints (e.g. having one constraint run before another)? How?
+  - EVL constraint execution order documentation examples
+  - EVL constraint guard syntax examples
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'Does EVL support dependencies between constraints (e.g. having one constraint run before another)? How?'
+    1. sim=0.7184  epsilon_docs/articles_epsilon-and-sirius_index.md | heading='Epsilon and Sirius'
+    2. sim=0.7123  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Implementing Constraints with EVL'
+    3. sim=0.6850  epsilon_docs/articles_parallel-execution_index.md | heading='From Ant tasks'
+    4. sim=0.6592  epsilon_docs/articles_parallel-execution_index.md | heading='From Java programs'
+    5. sim=0.6464  epsilon_docs/articles_evl-gmf-integration_index.md | heading='Step 3: Write the constraints'
+    6. sim=0.6187  epsilon_docs/evl.md | heading='Abstract Syntax'
+    7. sim=0.5872  epsilon_docs/articles_epsilon-emf_index.md | heading='What is the difference between containment and non-containment references in EMF?'
+    8. sim=0.5642  epsilon_docs/articles_running-from-source_index.md | heading='Running the Epsilon tests'
+    9. sim=0.5595  epsilon_docs/index.md | heading='Workflow'
+    10. sim=0.5320  epsilon_docs/articles_playground_graphical-syntax-annotations.md | heading='@text'
+    11. sim=0.5195  epsilon_docs/articles_playground_index.md | heading='Model Graphical Syntax Annotations'
+
+  Query: 'EVL constraint execution order documentation examples'
+    1. sim=0.8056  epsilon_docs/articles_epsilon-and-sirius_index.md | heading='Epsilon and Sirius'
+    2. sim=0.7335  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Implementing Constraints with EVL'
+    3. sim=0.6842  epsilon_docs/articles_epsilon-emf_index.md | heading='What is the difference between containment and non-containment references in EMF?'
+    4. sim=0.6731  epsilon_docs/articles_evl-gmf-integration_index.md | heading='Step 3: Write the constraints'
+    5. sim=0.6715  epsilon_docs/articles_parallel-execution_index.md | heading='From Ant tasks'
+    6. sim=0.6253  epsilon_docs/evl.md | heading='Abstract Syntax'
+    7. sim=0.5798  epsilon_docs/articles_parallel-execution_index.md | heading='From Java programs'
+    8. sim=0.5626  epsilon_docs/articles_running-from-source_index.md | heading='Running the Epsilon tests'
+    9. sim=0.5439  epsilon_docs/articles_playground_graphical-syntax-annotations.md | heading='@text'
+    10. sim=0.5196  epsilon_docs/index.md | heading='Workflow'
+    11. sim=0.5001  epsilon_docs/articles_playground_index.md | heading='Model Graphical Syntax Annotations'
+
+  Query: 'EVL constraint guard syntax examples'
+    1. sim=0.7900  epsilon_docs/articles_epsilon-and-sirius_index.md | heading='Epsilon and Sirius'
+    2. sim=0.6958  epsilon_docs/articles_evl-gmf-integration_index.md | heading='Step 3: Write the constraints'
+    3. sim=0.6803  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Implementing Constraints with EVL'
+    4. sim=0.6716  epsilon_docs/articles_epsilon-emf_index.md | heading='What is the difference between containment and non-containment references in EMF?'
+    5. sim=0.6495  epsilon_docs/articles_parallel-execution_index.md | heading='From Ant tasks'
+    6. sim=0.5865  epsilon_docs/evl.md | heading='Abstract Syntax'
+    7. sim=0.5572  epsilon_docs/index.md | heading='Workflow'
+    8. sim=0.5476  epsilon_docs/articles_parallel-execution_index.md | heading='From Java programs'
+    9. sim=0.5182  epsilon_docs/articles_running-from-source_index.md | heading='Running the Epsilon tests'
+    10. sim=0.5078  epsilon_docs/articles_playground_graphical-syntax-annotations.md | heading='@text'
+    11. sim=0.5076  epsilon_docs/articles_playground_index.md | heading='Model Graphical Syntax Annotations'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (4):
+  1. [0.942] epsilon_docs/articles_parallel-execution_index.md (heading='From Ant tasks', parent_heading='Annotation-based parallelism')
+     ## From Ant tasks
+Example: define a pre-block and constraint in EVL to enforce parallel execution based on children count threshold.
+
+```evl
+pre {
+  var parallelThreshold = 9001;
+}
+context ModelElemen
+  2. [0.863] epsilon_docs/evl.md (heading='Abstract Syntax', parent_heading='The Epsilon Validation Language (EVL)')
+     ## Abstract Syntax
+Example: explain the four-phase execution semantics of an EVL module including pre blocks, context guards, and constraints.
+
+```
+
+## Execution Semantics
+
+Having discussed the abstra
+  3. [0.179] epsilon_docs/articles_epsilon-in-ecore_index.md (heading='Implementing Constraints with EVL', parent_heading='EVL Validation Delegation')
+     ## Implementing Constraints with EVL
+Example: define a constraint in EVL by assigning an EOL expression to a constraint name key.
+
+```
+source = "http://eclipse.dev/epsilon/ecore/EVL"
+key = "constraint
+  4. [0.137] epsilon_docs/articles_evl-gmf-integration_index.md (heading='Step 3: Write the constraints', parent_heading='Live validation and quick-fixes in GMF-based editors with EVL')
+     ## Step 3: Write the constraints
+Example: define constraints and critiques with checks, messages, guards, and automatic fixes in Epsilon Validation Language (EVL).
+Keywords: .name
+
+```evl
+context File
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon. Use only the documentation below — do not use outside knowledge, and say so if it doesn't cover something.
+
+Documentation:
+--- DOCUMENTATION ---
+[Source: epsilon_docs/articles_parallel-execution_index.md]
+## From Ant tasks
+Example: define a pre-block and constraint in EVL to enforce parallel execution based on children count threshold.
+
+```evl
+pre {
+  var parallelThreshold = 9001;
+}
+context ModelElementType {
+  $parallel self.children.size() > parallelThreshold;
+  constraint Invariant {
+    check {
+      // ...
+    }
+  }
+```
+
+[Source: epsilon_docs/evl.md]
+## Abstract Syntax
+Example: explain the four-phase execution semantics of an EVL module including pre blocks, context guards, and constraints.
+
+```
+
+## Execution Semantics
+
+Having discussed the abstract and concrete syntaxes of EVL, this section provides an informal discussion of the execution semantics of the language. The execution of an EVL module is separated into four phases:
+
+### Phase 1
+
+Before any constraint is evaluated, the *pre* blocks of the module are executed in the order in which they have been specified.
+
+### Phase 2
+
+For each non-lazy *context* with at least one non-lazy constraint, the instances of the meta-class it defines are collected. For each instance, the *guard* of the *context* is evaluated. If the *guard* is satisfied, then for each non-lazy constraint contained in the context the constraint's *guard* is also evaluated. If the *guard* of the constraint is satisfied, the body (*check*) of the constraint is evaluated. In case the *check* evaluates to *false*, the *message* part of the rule is evaluated and the produced message is added (along with the instance, the constraint, and the available *fixes*) to the *ValidationTrace*.
+
+Any variables declared inside the *check* are also accessible from the *message* part of the rule, as well as the *guard*s of the *fixes*. Variables declared inside the *guard*s are discarded after evaluation, and are not accessible from anywhere else.
+
+The execution order of an EVL module follows a top-down depth-first scheme that respects the order in which the *contexts* and *constraints* appear in the module. However, the execution order can change in case one of the *satisfies*, *satisfiesOne*, *satisfiesAll* built-in operations, discussed in detail in the sequel, are called.
+
+### Phase 3
+
+In this phase, the validation trace is examined for unsatisfied constraints and the user is presented with the message each one has produced. The user can then select one or more of the available *fixes* to be executed. Execution of *fixes* is performed in a transactional manner using the respective facilities provided by the model connectivity framework. This is to prevent runtime errors raised during the execution of a *fix* from compromising the validated model by leaving it in an inconsistent state.
+
+### Phase 4
+
+When the user has performed all the necessary *fixes* or chooses to end Phase 3 explicitly, the *post* section of the module is executed. There, the user can perform tasks such as serializing the validation trace or producing a summary of the validation process results.
+
+## Capturing Dependencies between Constraints
+
+It is often the case that constraints conceptually depend on each other. To allow users capture such dependencies, EVL provides the *satisfies(constraint : String) : Boolean*, *satisfiesAll(constraints : Sequence(String)) : Boolean* and *satisfiesOne(constraints : Sequence(String)) : Boolean* built-in operations. Using these operations, an constraint can specify in its *guard* other constraints which need to be satisfied for it to be meaningful to evaluate.
+
+When one of these operations is invoked, if the required *constraints* (either lazy or non-lazy) have been evaluated for the instances on which the operation is invoked, the engine will return their cached results; otherwise it will evaluate them and return their results.
+
+## Example
+
+The following is an EVL program demonstrating some of the language features, which validates models confirming to the Movies metamodel shown below. Execution begins from the *pre* block, which simply computes the average number of actors per Movie and stores it into a global variable, which can be accessed at any point. The *ValidActors* constraint checks that for every instance of *Movie* which has more than the average number of actors, all of the actors have valid names. This is achieved through a dependency on the *HashValidName* invariant declared in the context of *Person* type. This constraint is marked as lazy, which means it is only executed when invoked by *satisfies*, so avoiding unnecessary or duplicate invocations. The *HasValidName* constraint makes use of a helper operation (*isPlain()*) on Strings. Once all Movie instances have been checked, the execution engine then proceeds to validate all *Person* instances, which consists of only one non-lazy constraint *ValidMovieYears*. This checks that all of the movies the actor has played in were released at least 3 years after the actor was born. Finally, the *post* block is executed, which in this case simply prints some basic information about the model.
+
+```
+
+[Source: epsilon_docs/articles_epsilon-in-ecore_index.md]
+## Implementing Constraints with EVL
+Example: define a constraint in EVL by assigning an EOL expression to a constraint name key.
+
+```
+source = "http://eclipse.dev/epsilon/ecore/EVL"
+key = "constraintName_1"
+value = EOL expression
+```
+
+[Source: epsilon_docs/articles_evl-gmf-integration_index.md]
+## Step 3: Write the constraints
+Example: define constraints and critiques with checks, messages, guards, and automatic fixes in Epsilon Validation Language (EVL).
+Keywords: .name
+
+```evl
+context File {
+
+	constraint HasName {
+
+		check : self.name.isDefined()
+
+		message : 'Unnamed ' + self.eClass().name + ' not allowed'
+
+	}
+
+}
+
+context Folder {
+
+	critique NameStartsWithCapital {
+
+		guard : self.satisfies('HasName')
+
+		check : self.name.firstToUpperCase() = self.name
+
+		message : 'Folder ' + self.name +
+			' should start with an upper-case letter'
+
+		fix {
+
+			title : 'Rename to ' + self.name.firstToUpperCase()
+
+			do {
+				self.name := self.name.firstToUpperCase();
+			}
+		}
+
+	}
+
+}
+
+context Sync {
+
+	constraint MustLinkSame {
+
+		check : self.source.eClass() = self.target.eClass()
+
+		message : 'Cannot synchronize a ' + self.source.eClass().name
+			+ ' with a ' + self.target.eClass().name
+
+		fix {
+
+			title : 'Synchronize with another ' +
+				self.source.eClass().name
+
+			do {
+
+				var target := UserInput.choose('Select target',
+					_Model.getAllOfType(self.source.eClass().name));
+
+				if (target.isDefined()) self.target := target;
+
+			}
+
+		}
+
+	}
+
+}
+```
+
+--- USER MESSAGE ---
+Does EVL support dependencies between constraints (e.g. having one constraint run before another)? How?
+
+Before writing your answer, silently check each part of the question against the documentation — including whether any combination of separately-documented pieces is actually shown together, not just individually present somewhere. Don't show this checking process or split your answer into labeled parts.
+
+Write a smooth, natural answer. Place any honest note about something not being directly confirmed right next to the part it concerns, not bundled at the end — and let your opening reflect the same level of confidence, rather than stating something flatly and qualifying it afterward.
+
+Be concise, and let the length of your answer reflect how much the documentation actually supports — don't stretch a thin piece of evidence into a long, confident-sounding answer.
+
+Question:
+Does EVL support dependencies between constraints (e.g. having one constraint run before another)? How?
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+Yes. EVL provides built‑in operations you can use to capture dependencies between constraints: satisfies(constraint : String) : Boolean, satisfiesAll(constraints : Sequence(String)) : Boolean and satisfiesOne(constraints : Sequence(String)) : Boolean. You call these from a constraint’s (or critique’s) guard to require that other constraint(s) be satisfied before evaluating the current one.
+
+What the docs say about behavior:
+- Put the call in the guard (e.g. guard : self.satisfies('HasName') — shown in the docs).  
+- If the referenced constraints have already been evaluated for the same instances, their cached results are used; otherwise the engine will evaluate them and return the results.  
+- This can change the default top‑down, depth‑first evaluation order, and lets you depend on lazy constraints (which are only executed when invoked via satisfies) or non‑lazy ones.
+
+All of the above is described in the EVL documentation; I’m not invoking any sources beyond the provided docs.
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             2
+  Prompt tokens:     1,880
+  Completion tokens: 1,794
+  Total tokens:      3,674
+  Estimated cost:    $0.00406
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         2
+  Total prompt tokens:     1,880
+  Total completion tokens: 1,794
+  Total tokens:            3,674
+  Total estimated cost:    $0.00406
+============================================================

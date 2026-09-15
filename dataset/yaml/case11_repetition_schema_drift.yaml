@@ -1,0 +1,42 @@
+- student:
+    name: Oliver Bennett
+    class: 5B
+    subjects:
+      - subject: English
+        score: 88
+        grade: A
+      - subject: Mathematics
+        score: 74
+        grade: B
+    extracurricular:
+      - Chess Club
+      - School Orchestra
+
+- student:
+    name: Amelia Carter
+    class: 5B
+    subjects:
+      - subject: English
+        score: 81
+        grade: A-
+      - subject: Mathematics
+        score: 86
+        grade: A
+      - subject: Science
+        score: 78
+        grade: B+
+    extracurricular: []
+
+- student:
+    name: Noah Reyes
+    class: 5B
+    subjects:
+      - subject: English
+        score: null
+        grade: null
+        note: Absent for assessment
+      - subject: Mathematics
+        score: 92
+        grade: A+
+    extracurricular:
+      - Reading Buddy

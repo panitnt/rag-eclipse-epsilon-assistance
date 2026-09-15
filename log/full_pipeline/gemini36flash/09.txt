@@ -1,0 +1,308 @@
+Session started: 2026-07-28 00:26:54
+Model: openrouter/google/gemini-3.6-flash | temperature=0
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[00:27:02]
+
+── QUESTION ──────────────────────────────────────────────
+Can you show an example of an EGX rule that generates output files to different paths depending on the element's type?
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - Can you show an example of an EGX rule that generates output files to different paths depending on the element's type?
+  - EGX rule target block dynamic output path syntax
+  - EGX target path conditional logic output file path
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: "Can you show an example of an EGX rule that generates output files to different paths depending on the element's type?"
+    1. sim=0.6959  epsilon_docs/egx.md | heading='Additional Resources'
+    2. sim=0.6826  epsilon_docs/articles_code-generation-tutorial-egl_index.md | heading='Code Generation Tutorial with EGL'
+    3. sim=0.6453  epsilon_docs/articles_egx-parameters_index.md | heading='Co-ordinating EGL template execution with EGX'
+    4. sim=0.6369  epsilon_docs/articles_up-imports.md | heading='Running example'
+    5. sim=0.6367  epsilon_docs/articles_eugenia-patching_index.md | heading='Generating patches with Eugenia'
+    6. sim=0.6167  epsilon_docs/egl.md | heading='The Template type'
+    7. sim=0.6063  epsilon_docs/articles_jdt_index.md | heading='Applications'
+    8. sim=0.6059  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    9. sim=0.6005  epsilon_docs/index.md | heading='Workflow'
+    10. sim=0.5889  epsilon_docs/articles_picto-sequence-diagrams_index.md | heading='Visualisation Transformation'
+    11. sim=0.5840  epsilon_docs/egl.md | heading='Concrete Syntax'
+    12. sim=0.5837  epsilon_docs/egx.md | heading='Epsilon Generation Language'
+    13. sim=0.5724  epsilon_docs/eunit.md | heading='Test Suites'
+    14. sim=0.5518  epsilon_docs/pinset_index.md | heading='Model example'
+    15. sim=0.5507  epsilon_docs/eml.md | heading='Abstract Syntax'
+    16. sim=0.5342  epsilon_docs/etl.md | heading='Concrete Syntax'
+    17. sim=0.5235  epsilon_docs/articles_picto-tables_index.md | heading='Generating table views with a Pinset transformation'
+
+  Query: 'EGX rule target block dynamic output path syntax'
+    1. sim=0.6320  epsilon_docs/articles_egx-parameters_index.md | heading='Co-ordinating EGL template execution with EGX'
+    2. sim=0.6189  epsilon_docs/articles_jdt_index.md | heading='Applications'
+    3. sim=0.6023  epsilon_docs/egl.md | heading='Concrete Syntax'
+    4. sim=0.5884  epsilon_docs/egx.md | heading='Additional Resources'
+    5. sim=0.5760  epsilon_docs/articles_eugenia-patching_index.md | heading='Generating patches with Eugenia'
+    6. sim=0.5753  epsilon_docs/articles_up-imports.md | heading='Running example'
+    7. sim=0.5713  epsilon_docs/articles_picto-sequence-diagrams_index.md | heading='Visualisation Transformation'
+    8. sim=0.5672  epsilon_docs/egl.md | heading='The Template type'
+    9. sim=0.5577  epsilon_docs/articles_code-generation-tutorial-egl_index.md | heading='Code Generation Tutorial with EGL'
+    10. sim=0.5553  epsilon_docs/index.md | heading='Workflow'
+    11. sim=0.5513  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    12. sim=0.5486  epsilon_docs/etl.md | heading='Concrete Syntax'
+    13. sim=0.5354  epsilon_docs/eml.md | heading='Abstract Syntax'
+    14. sim=0.5120  epsilon_docs/eunit.md | heading='Test Suites'
+    15. sim=0.4872  epsilon_docs/egx.md | heading='Epsilon Generation Language'
+    16. sim=0.4681  epsilon_docs/pinset_index.md | heading='Model example'
+    17. sim=0.4436  epsilon_docs/articles_picto-tables_index.md | heading='Generating table views with a Pinset transformation'
+
+  Query: 'EGX target path conditional logic output file path'
+    1. sim=0.6840  epsilon_docs/articles_jdt_index.md | heading='Applications'
+    2. sim=0.6560  epsilon_docs/articles_up-imports.md | heading='Running example'
+    3. sim=0.6536  epsilon_docs/articles_egx-parameters_index.md | heading='Co-ordinating EGL template execution with EGX'
+    4. sim=0.6437  epsilon_docs/egx.md | heading='Additional Resources'
+    5. sim=0.6335  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    6. sim=0.5922  epsilon_docs/articles_eugenia-patching_index.md | heading='Generating patches with Eugenia'
+    7. sim=0.5850  epsilon_docs/articles_code-generation-tutorial-egl_index.md | heading='Code Generation Tutorial with EGL'
+    8. sim=0.5834  epsilon_docs/eunit.md | heading='Test Suites'
+    9. sim=0.5553  epsilon_docs/egl.md | heading='Concrete Syntax'
+    10. sim=0.5497  epsilon_docs/egl.md | heading='The Template type'
+    11. sim=0.5459  epsilon_docs/index.md | heading='Workflow'
+    12. sim=0.5423  epsilon_docs/articles_picto-sequence-diagrams_index.md | heading='Visualisation Transformation'
+    13. sim=0.5306  epsilon_docs/eml.md | heading='Abstract Syntax'
+    14. sim=0.5009  epsilon_docs/egx.md | heading='Epsilon Generation Language'
+    15. sim=0.4924  epsilon_docs/etl.md | heading='Concrete Syntax'
+    16. sim=0.4455  epsilon_docs/pinset_index.md | heading='Model example'
+    17. sim=0.4221  epsilon_docs/articles_picto-tables_index.md | heading='Generating table views with a Pinset transformation'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (8):
+  1. [0.289] epsilon_docs/egx.md (heading='Additional Resources', parent_heading='The EGL Co-Ordination Language (EGX)')
+     egx
+pre {
+  var files = Sequence{"file1", "file2", "file3"};
+  var data = Map {
+  	"file1" = "Content of the first file",
+  	"file2" = "Content of the second file",
+  	"file3" = "Content of the third 
+  2. [0.262] epsilon_docs/articles_code-generation-tutorial-egl_index.md (heading='Code Generation Tutorial with EGL', parent_heading='')
+     The template above can generate one HTML file from one `<book>` element. To run this template against '''all''' `<book>` elements anywhere in the XML document, and generate appropriately-named HTML fi
+  3. [0.206] epsilon_docs/articles_eugenia-patching_index.md (heading='Generating patches with Eugenia', parent_heading='Running example')
+     ## Generating patches with Eugenia
+Example: generate patch files for EClasses with external label placement using Eugenia transformations and EGL templates.
+Keywords: .name
+
+```egx
+// Imports the ECla
+  4. [0.197] epsilon_docs/index.md (heading='Workflow', parent_heading='Tools')
+     -   [Epsilon Generation Language (EGL)](egl.md): A template-based model-to-text language for generating code, documentation and other textual artefacts from models. EGL supports content-destination de
+  5. [0.196] epsilon_docs/articles_egx-parameters_index.md (heading='Co-ordinating EGL template execution with EGX', parent_heading='')
+     ## Co-ordinating EGL template execution with EGX
+Example: demonstrate coordinating EGL template execution with EGX by passing parameters and generating XML files for libraries.
+Keywords: .name
+
+```egx
+  6. [0.164] epsilon_docs/articles_picto-sequence-diagrams_index.md (heading='Visualisation Transformation', parent_heading='Drill-Down Sequence Diagrams with Picto')
+     ## Visualisation Transformation
+Example: define transformation rules to convert Scenario, Block, and Alt models into PlantUML visualizations using templates and parameters.
+
+```egx
+	rule Scenario2Plan
+  7. [0.083] epsilon_docs/articles_jdt_index.md (heading='Applications', parent_heading='Treating Java code as a model in Epsilon')
+     === "jcd.egx"
+  8. [0.035] epsilon_docs/egx.md (heading='Epsilon Generation Language', parent_heading='The EGL Co-Ordination Language (EGX)')
+     # The EGL Co-Ordination Language (EGX)
+
+EGX is a rule-based co-ordination language designed for automating the parametrised execution of model-to-text template transformations. Although built on top o
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon. Use only the documentation below — do not use outside knowledge, and say so if it doesn't cover something.
+
+Documentation:
+--- DOCUMENTATION ---
+[Source: epsilon_docs/egx.md]
+egx
+pre {
+  var files = Sequence{"file1", "file2", "file3"};
+  var data = Map {
+  	"file1" = "Content of the first file",
+  	"file2" = "Content of the second file",
+  	"file3" = "Content of the third file"
+  };
+}
+
+rule ItemToFile transform file: String in: files {
+	parameters : Map {"content" = data.get(file)}
+	target : file + ".txt"
+	template: "file.egl"
+}
+```
+
+## Additional Resources
+
+Additional resources about EGL/EGX are available [here](../articles/#epsilon-generation-language).
+
+[Source: epsilon_docs/articles_code-generation-tutorial-egl_index.md]
+The template above can generate one HTML file from one `<book>` element. To run this template against '''all''' `<book>` elements anywhere in the XML document, and generate appropriately-named HTML files, we need to use an EGX co-ordination program such as the one illustrated below (`main.egx`). The `Book2Page` rule of the EGX program will `transform` every `<book>` element (`t_book`) that satisfies the declared `guard` (has a `public` attribute set to `true`), into a `target` file, using the specified `template` (`book2page.egl`). In addition, the EGX program specifies a `Library2Page` rule, that generates an HTML (index) file for each `<library>` element in the document.
+
+[Source: epsilon_docs/articles_eugenia-patching_index.md]
+## Generating patches with Eugenia
+Example: generate patch files for EClasses with external label placement using Eugenia transformations and EGL templates.
+Keywords: .name
+
+```egx
+// Imports the EClass#getLabelPlacement() operation from Eugenia
+import "platform:/plugin/org.eclipse.epsilon.eugenia/transformations/ECoreUtil.eol";
+
+rule FixExternalLabelMargins
+  // apply this rule to all EClasses where...
+  transform c : ECore!EClass
+{
+
+  // ... the EClass is annotated with @gmf.node(label.placement="external")
+  guard: c.getLabelPlacement() == "external"
+
+  // invoke the following EGL template on the EClass
+  template : "FixExternalLabelMargin.egl"
+
+  // make the source directory and name of the node available to the template
+  parameters : Map{ "srcDir" = getSourceDirectory(), "node" = c.name }
+
+  // and save the generated text to the following .patch file
+  target : "FixExternalLabelMarginsFor" + c.name + ".patch"
+}
+
+// Determine source directory from GMF Gen model
+@cache
+operation getSourceDirectory() {
+  var genEditor = GmfGen!GenEditorGenerator.all.first;
+  return genEditor.pluginDirectory.substring(1) + "/" +
+         genEditor.packageNamePrefix.replace("\\.", "/");
+}
+```
+
+[Source: epsilon_docs/index.md]
+-   [Epsilon Generation Language (EGL)](egl.md): A template-based model-to-text language for generating code, documentation and other textual artefacts from models. EGL supports content-destination decoupling, protected regions for mixing generated with hand-written code. EGL also provides a rule-based coordination language ([EGX](egx)), that allows specific EGL templates to be executed for a specific model element type, with the ability to guard rule execution and specify generation target location by type/element.
+-   [Epsilon Transformation Language (ETL)](etl.md): A rule-based model-to-model transformation language that supports transforming many input to many output models, rule inheritance, lazy and greedy rules, and the ability to query and modify both input and output models.
+-   [Epsilon Validation Language (EVL)](evl.md): A model validation language that supports both intra and inter-model consistency checking, constraint dependency management and specifying fixes that users can invoke to repair identified inconsistencies. EVL is integrated with EMF/GMF and as such, EVL constraints can be evaluated from within EMF/GMF editors and generate error markers for failed constraints.
+-   [Epsilon Wizard Language (EWL)](ewl.md): A language tailored to interactive in-place model transformations on model elements selected by the user. EWL is integrated with EMF/GMF and as such, wizards can be executed from within EMF and GMF editors.
+
+[Source: epsilon_docs/articles_egx-parameters_index.md]
+## Co-ordinating EGL template execution with EGX
+Example: demonstrate coordinating EGL template execution with EGX by passing parameters and generating XML files for libraries.
+Keywords: .name
+
+```egx
+pre {
+	var outDirLib : String = "../libraries/";
+	var extension : String = ".xml";
+	var specialBook : String = "Art of War";
+	var bigLibThreshold : Integer = 9000;
+}
+
+rule Libraries transform lib : Library {
+	parameters : Map {
+		"library" = lib,
+		"name" = lib.name,
+		"books" = lib.books,
+		"hasSpecialBook" = lib.books.exists(book | book.title == specialBook),
+		"isBigLibrary" = lib.books.size() > bigLibThreshold
+	}
+	template: "/path/to/Lib2XML.egl"
+	target: outDirLib+lib.name+extension
+}
+```
+
+[Source: epsilon_docs/articles_picto-sequence-diagrams_index.md]
+## Visualisation Transformation
+Example: define transformation rules to convert Scenario, Block, and Alt models into PlantUML visualizations using templates and parameters.
+
+```egx
+	rule Scenario2PlantUml 
+		transform s : Scenario {
+
+		template : "minisd2plantuml.egl"
+
+		parameters : Map {
+			"mainBlock" = null,
+			"format" = "plantuml",
+			"path" = List{s.title},
+			"icon" = "sequence"
+		}
+
+	}
+
+	rule Block2PlantUml 
+		transform b : Block {
+
+		guard : b.eContainer.isTypeOf(Alt)
+
+		template : "minisd2plantuml.egl"
+
+		parameters : Map {
+			"mainBlock" = b,
+			"format" = "plantuml",
+			"path" = b.closure(p|p.eContainer).invert().including(b).title,
+			"icon" = "block"
+		}
+
+	}
+
+	rule Alt2PlantUml 
+		transform a : Alt {
+
+		parameters : Map {
+			"format" = "text",
+			"path" =  a.closure(p|p.eContainer).invert().including(a).title,
+			"icon" = "alt"
+		}
+
+	}
+	```
+
+[Source: epsilon_docs/articles_jdt_index.md]
+=== "jcd.egx"
+
+[Source: epsilon_docs/egx.md]
+# The EGL Co-Ordination Language (EGX)
+
+EGX is a rule-based co-ordination language designed for automating the parametrised execution of model-to-text template transformations. Although built on top of the Epsilon Generation Language (EGL), EGX can in principle work with any template-based model-to-text transformation language. The rationale for this co-ordination language comes from the need to invoke text generation templates multiple times with various parameters, usually derived from input models. To better understand EGX, it is helpful to be familiar with template-based text generation. 
+
+
+## Epsilon Generation Language
+
+--- USER MESSAGE ---
+Can you show an example of an EGX rule that generates output files to different paths depending on the element's type?
+
+Before writing your answer, silently check each part of the question against the documentation — including whether any combination of separately-documented pieces is actually shown together, not just individually present somewhere. Don't show this checking process or split your answer into labeled parts. Write a smooth, natural answer, and weave in a brief, honest note wherever something isn't directly confirmed, rather than presenting it as verified.
+
+Be concise, and let the length of your answer reflect how much the documentation actually supports — don't stretch a thin piece of evidence into a long, confident-sounding answer.
+
+Question:
+Can you show an example of an EGX rule that generates output files to different paths depending on the element's type?
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+The provided documentation does not contain an example of an EGX rule that generates output files to different target paths based on an element's type. 
+
+While the documentation shows rules defining target paths using string concatenation, model element names (e.g., `target : outDirLib + lib.name + extension`), or parameters, it does not demonstrate branching target paths according to the element's type.
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             2
+  Prompt tokens:     2,174
+  Completion tokens: 1,830
+  Total tokens:      4,004
+  Estimated cost:    $0.01699
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openrouter/google/gemini-3.6-flash
+  Total LLM calls:         2
+  Total prompt tokens:     2,174
+  Total completion tokens: 1,830
+  Total tokens:            4,004
+  Total estimated cost:    $0.01699
+============================================================

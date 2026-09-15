@@ -1,0 +1,5 @@
+employees:
+  - name: Alice
+    role: Designer
+  - name: Bob
+    role: Prepress Operator

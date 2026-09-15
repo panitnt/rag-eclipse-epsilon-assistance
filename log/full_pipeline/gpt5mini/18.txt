@@ -1,0 +1,735 @@
+Session started: 2026-07-26 22:21:41
+Model: openai/gpt-5-mini | temperature=0
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[22:21:57]
+
+── QUESTION ──────────────────────────────────────────────
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+fleetSummary:
+  totalVehicles: 4
+  activeVehicles: 3
+  totalMileageKm: 184320
+  avgFuelEfficiencyKmpl: 12.4
+  maintenanceDueCount: 1
+
+vehicles:
+  - vehicleId: VH-001
+    make: Ford
+    model: Transit Custom
+    registration: "LN19 XKP"
+    location: {lat: 53.4808, lon: -2.2426}
+    engine:
+      type: diesel
+      diagnostics:
+        lastCheckedAt: "2024-06-01T08:00:00Z"
+        sensorReadings:
+          oilPressureBar: 3.2
+          coolantTempC: 89
+          batteryVoltage: 12.6
+    maintenanceHistory:
+      - date: "2024-01-15"
+        type: oil_change
+        mileageKm: 42100
+      - date: "2024-04-20"
+        type: brake_inspection
+        mileageKm: 47850
+    status: active
+
+  - vehicleId: VH-002
+    make: Ford
+    model: Transit Custom
+    registration: "LN19 XKR"
+    location: {lat: 53.4700, lon: -2.2300}
+    engine:
+      type: diesel
+      diagnostics:
+        lastCheckedAt: "2024-05-28T08:00:00Z"
+        sensorReadings:
+          oilPressureBar: 2.1
+          coolantTempC: 97
+          batteryVoltage: 11.9
+    maintenanceHistory: []
+    status: maintenance_due
+
+  - vehicleId: VH-003
+    make: Mercedes-Benz
+    model: Sprinter
+    registration: "MX20 BFG"
+    location: {lat: 53.4950, lon: -2.2100}
+    engine:
+      type: diesel
+      diagnostics:
+        lastCheckedAt: "2024-06-10T08:00:00Z"
+        sensorReadings:
+          oilPressureBar: 3.5
+          coolantTempC: 85
+          batteryVoltage: 12.8
+    maintenanceHistory:
+      - date: "2024-03-02"
+        type: tyre_replacement
+        mileageKm: 61200
+    status: active
+
+  - vehicleId: VH-004
+    make: Mercedes-Benz
+    model: Sprinter
+    registration: "MX21 CDH"
+    location: null
+    engine:
+      type: electric
+      diagnostics:
+        lastCheckedAt: "2024-06-05T08:00:00Z"
+        sensorReadings:
+          batteryStateOfHealthPct: 94
+          batteryVoltage: 398.2
+    maintenanceHistory: []
+    status: out_of_service
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+  - Eclipse Epsilon EMC YAML Driver create YAML document programmatically root mapping node vs sequence node example
+  - Epsilon EOL create new model element set attribute add to container example for writing models to a driver
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.'
+    1. sim=0.8581  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    2. sim=0.7882  epsilon_docs/articles_yaml-emc_index.md | heading='How do I set the root node of a YAML document?'
+    3. sim=0.7384  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    4. sim=0.7121  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    5. sim=0.6973  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    6. sim=0.6900  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    7. sim=0.6594  epsilon_docs/articles_index.md | heading='Recipes'
+    8. sim=0.6322  epsilon_docs/articles_xsd-xml_index.md | heading='How do I create an element and add it to an existing element?'
+    9. sim=0.6244  epsilon_docs/articles_profiled-uml-models_index.md | heading='Creating a Profiled UML Model'
+    10. sim=0.6230  epsilon_docs/articles_jdt_index.md | heading='How is it used?'
+    11. sim=0.6136  epsilon_docs/articles_plain-xml_index.md | heading='Using XML attributes as references'
+    12. sim=0.6123  epsilon_docs/articles_json-emc_index.md | heading='Querying a JSON document'
+    13. sim=0.6073  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    14. sim=0.5979  epsilon_docs/emc.md | heading='Other Drivers'
+    15. sim=0.5921  epsilon_docs/eol.md | heading='Creating and Deleting Model Elements'
+    16. sim=0.5904  epsilon_docs/index.md | heading='Languages'
+    17. sim=0.5834  epsilon_docs/workflow.md | heading='Structure'
+    18. sim=0.5819  epsilon_docs/articles_excel_index.md | heading='Creating Rows'
+    19. sim=0.5798  epsilon_docs/articles_egl-server-side_index.md | heading='Sharing models between templates'
+    20. sim=0.5592  epsilon_docs/articles_rdf-emc.md | heading='EMF-RDF mapping'
+    21. sim=0.5494  epsilon_docs/flock.md | heading='Epsilon Flock for Model Migration'
+    22. sim=0.5115  epsilon_docs/articles_epsilon-emf_index.md | heading='What is the difference between containment and non-containment references in EMF?'
+    23. sim=0.4893  epsilon_docs/eunit.md | heading='Test Suites'
+    24. sim=0.4682  epsilon_docs/articles_rdf-emc.md | heading='Multi-valued features'
+
+  Query: 'Eclipse Epsilon EMC YAML Driver create YAML document programmatically root mapping node vs sequence node example'
+    1. sim=0.7816  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    2. sim=0.7408  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    3. sim=0.7142  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    4. sim=0.7135  epsilon_docs/index.md | heading='Languages'
+    5. sim=0.7068  epsilon_docs/emc.md | heading='Other Drivers'
+    6. sim=0.7038  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    7. sim=0.6847  epsilon_docs/articles_index.md | heading='Recipes'
+    8. sim=0.6604  epsilon_docs/articles_jdt_index.md | heading='How is it used?'
+    9. sim=0.6545  epsilon_docs/articles_plain-xml_index.md | heading='Using XML attributes as references'
+    10. sim=0.6473  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    11. sim=0.6441  epsilon_docs/articles_rdf-emc.md | heading='EMF-RDF mapping'
+    12. sim=0.6393  epsilon_docs/articles_yaml-emc_index.md | heading='How do I set the root node of a YAML document?'
+    13. sim=0.6387  epsilon_docs/workflow.md | heading='Structure'
+    14. sim=0.6381  epsilon_docs/articles_json-emc_index.md | heading='Querying a JSON document'
+    15. sim=0.6337  epsilon_docs/articles_egl-server-side_index.md | heading='Sharing models between templates'
+    16. sim=0.6329  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    17. sim=0.6325  epsilon_docs/flock.md | heading='Epsilon Flock for Model Migration'
+    18. sim=0.6270  epsilon_docs/articles_excel_index.md | heading='Creating Rows'
+    19. sim=0.6243  epsilon_docs/articles_xsd-xml_index.md | heading='How do I create an element and add it to an existing element?'
+    20. sim=0.6243  epsilon_docs/eol.md | heading='Creating and Deleting Model Elements'
+    21. sim=0.5867  epsilon_docs/articles_profiled-uml-models_index.md | heading='Creating a Profiled UML Model'
+    22. sim=0.5634  epsilon_docs/articles_epsilon-emf_index.md | heading='What is the difference between containment and non-containment references in EMF?'
+    23. sim=0.5584  epsilon_docs/eunit.md | heading='Test Suites'
+    24. sim=0.5259  epsilon_docs/articles_rdf-emc.md | heading='Multi-valued features'
+
+  Query: 'Epsilon EOL create new model element set attribute add to container example for writing models to a driver'
+    1. sim=0.7742  epsilon_docs/articles_excel_index.md | heading='Creating Rows'
+    2. sim=0.7651  epsilon_docs/articles_egl-server-side_index.md | heading='Sharing models between templates'
+    3. sim=0.7605  epsilon_docs/eol.md | heading='Creating and Deleting Model Elements'
+    4. sim=0.7591  epsilon_docs/articles_plain-xml_index.md | heading='Using XML attributes as references'
+    5. sim=0.7495  epsilon_docs/workflow.md | heading='Structure'
+    6. sim=0.7492  epsilon_docs/articles_xsd-xml_index.md | heading='How do I create an element and add it to an existing element?'
+    7. sim=0.7088  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    8. sim=0.6901  epsilon_docs/index.md | heading='Languages'
+    9. sim=0.6825  epsilon_docs/articles_profiled-uml-models_index.md | heading='Creating a Profiled UML Model'
+    10. sim=0.6740  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    11. sim=0.6676  epsilon_docs/flock.md | heading='Epsilon Flock for Model Migration'
+    12. sim=0.6479  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    13. sim=0.6478  epsilon_docs/articles_rdf-emc.md | heading='EMF-RDF mapping'
+    14. sim=0.6448  epsilon_docs/eunit.md | heading='Test Suites'
+    15. sim=0.6391  epsilon_docs/articles_json-emc_index.md | heading='Querying a JSON document'
+    16. sim=0.6368  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    17. sim=0.6349  epsilon_docs/articles_index.md | heading='Recipes'
+    18. sim=0.6349  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    19. sim=0.6216  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    20. sim=0.6214  epsilon_docs/emc.md | heading='Other Drivers'
+    21. sim=0.6006  epsilon_docs/articles_epsilon-emf_index.md | heading='What is the difference between containment and non-containment references in EMF?'
+    22. sim=0.5559  epsilon_docs/articles_jdt_index.md | heading='How is it used?'
+    23. sim=0.5297  epsilon_docs/articles_rdf-emc.md | heading='Multi-valued features'
+    24. sim=0.4930  epsilon_docs/articles_yaml-emc_index.md | heading='How do I set the root node of a YAML document?'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (8):
+  1. [0.989] epsilon_docs/articles_yaml-emc_index.md (heading='How can I create a YAML document from scratch?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## How can I create a YAML document from scratch?
+Example: create a YAML document from scratch by building and appending MappingNode, ScalarNode, and ListNode elements.
+Keywords: setRootAsList, getRoo
+  2. [0.946] epsilon_docs/articles_yaml-emc_index.md (heading='How do I set the root node of a YAML document?', parent_heading='Querying/modifying YAML documents in EOL')
+     ### How do I set the root node of a YAML document?
+
+The `root` property can be used for setting the root node of a YAML document. The root node of a YAML document can either be a mapping node or a lis
+  3. [0.740] epsilon_docs/eol.md (heading='Creating and Deleting Model Elements', parent_heading='Types')
+     ## Creating and Deleting Model Elements
+Example: create new model elements and delete an existing element using Epsilon Object Language (EOL).
+Keywords: new Tree, new instance, new Source, new Person
+
+  4. [0.690] epsilon_docs/articles_excel_index.md (heading='Creating Rows', parent_heading='Querying and Modifying Spreadsheets')
+     ## Creating Rows
+Example: create a new instance of the Student model element using the Epsilon Object Language (EOL).
+Keywords: new Student
+
+```eol
+var student : new Student;
+```
+  5. [0.643] epsilon_docs/articles_yaml-emc_index.md (heading='Querying a YAML document', parent_heading='Scripting YAML documents using Epsilon')
+     # Scripting YAML documents using Epsilon
+ 
+In this article we demonstrate how you can create, query and modify YAML documents in Epsilon programs using the YAML driver. All the examples in this articl
+  6. [0.425] epsilon_docs/articles_xsd-xml_index.md (heading='How do I create an element and add it to an existing element?', parent_heading='Querying XML documents in EOL')
+     ## How do I create an element and add it to an existing element?
+Example: create a new element and add it to an existing element in an XML model using Epsilon Object Language.
+
+```eol
+{{{ example("org
+  7. [0.417] epsilon_docs/articles_plain-xml_index.md (heading='Using XML attributes as references', parent_heading='Loading an XML document through Java code')
+     ## Using XML attributes as references
+Example: load an XML model with attributes and use them as references within an Epsilon EOL module.
+Keywords: new EolModule, new File, new PlainXmlModel
+
+```java
+
+  8. [0.275] epsilon_docs/articles_developing-a-new-emc-driver_index.md (heading='Filesystem Driver', parent_heading='Developing a new EMC Driver')
+     # Developing a new EMC Driver
+
+This article demonstrates the implementation of "drivers" for Epsilon's [Model Connectivity layer](../../emc).
+
+## YAML Driver
+
+The following training session recording 
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon.
+
+Use the provided context as the PRIMARY and AUTHORITATIVE source of truth.
+Only use syntax, class names, methods, and patterns that appear explicitly in the context.
+You may adapt documented patterns to the user's structure, provided that no new APIs or unsupported methods are invented.
+If the user's message contains sample data, treat it only as the desired target structure — not as evidence for API syntax.
+If the context provides partial evidence only, generate code for the parts that are supported and explicitly flag any parts that are uncertain or unsupported.
+
+When a code example is appropriate, provide a complete and runnable example that covers the full structure given by the user.
+When generating code, follow only the patterns shown in the context exactly — do not skip initialisation steps, introduce intermediate objects, or shortcut method chains that are not explicitly demonstrated.
+
+--- DOCUMENTATION ---
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## How can I create a YAML document from scratch?
+Example: create a YAML document from scratch by building and appending MappingNode, ScalarNode, and ListNode elements.
+Keywords: setRootAsList, getRoot, .value, addRows, new MappingNode, new ScalarNode, residentNode, postcodeNode, appendNode, industryNode, new ListNode, projectsNode, skillsNode
+
+```eol
+YAMLDoc.setRootAsList();
+var root = YAMLDoc.getRoot();
+root.value.addRows(2);
+var rootFirstRow = root.value.at(0);
+var rootSecondRow = root.value.at(1);
+
+var addressNode1 = new MappingNode("address");
+var countryNode1 = new ScalarNode("country", "England");
+var residentNode = new ScalarNode("resident", true);
+var postcodeNode = new ScalarNode("postcode", "M1 1AG");
+addressNode1.value.appendNode(countryNode1);
+addressNode1.value.appendNode(residentNode);
+addressNode1.value.appendNode(postcodeNode);
+
+var employeeIdNode1 = new ScalarNode("employeeId", "14623");
+var fullnameNode1 = new ScalarNode("fullname", "Michael Davidson");
+var roleNode1 = new ScalarNode("role", "Consultant");
+
+var industryNode = new ListNode("industry", 3);
+industryNode.value =  Sequence{"IoT", "smart factories", "signal analytics"};
+
+var projectsNode = new ListNode("projects", 2);
+var nameNode1 = new ScalarNode("name", "SmartAutomation");
+var nameNode2 = new ScalarNode("name", "FactoryAnalytics");
+var budgetNode1 = new ScalarNode("budget", 25000);
+var budgetNode2 = new ScalarNode("budget", 20000);
+projectsNode.value.at(0).appendNode(nameNode1);
+projectsNode.value.at(0).appendNode(budgetNode1);
+projectsNode.value.at(1).appendNode(nameNode2);
+projectsNode.value.at(1).appendNode(budgetNode2);
+
+var addressNode2 = new MappingNode("address");
+var countryNode2 = new ScalarNode("country", "Germany");
+addressNode2.value.appendNode(countryNode2);
+
+var employeeIdNode2 = new ScalarNode("employeeId", "16431");
+var fullnameNode2 = new ScalarNode("fullname", "Arnold Wagner");
+var roleNode2 = new ScalarNode("role", "HR");
+
+var skillsNode = new ListNode("skills", 2);
+skillsNode.value =  Sequence{"communication", "coaching"};
+
+rootFirstRow.appendNode(employeeIdNode1);
+rootFirstRow.appendNode(addressNode1);
+rootFirstRow.appendNode(fullnameNode1);
+rootFirstRow.appendNode(roleNode1);
+rootFirstRow.appendNode(industryNode);
+rootFirstRow.appendNode(projectsNode);
+
+rootSecondRow.appendNode(employeeIdNode2);
+rootSecondRow.appendNode(addressNode2);
+rootSecondRow.appendNode(fullnameNode2);
+rootSecondRow.appendNode(roleNode2);
+rootSecondRow.appendNode(skillsNode);
+```
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+### How do I set the root node of a YAML document?
+
+The `root` property can be used for setting the root node of a YAML document. The root node of a YAML document can either be a mapping node or a list node. The `setRootAsMap()` function can be used for setting the root node into a mapping node. The `setRootAsList()` function can be used for setting the root node into a list node.
+
+[Source: epsilon_docs/eol.md]
+## Creating and Deleting Model Elements
+Example: create new model elements and delete an existing element using Epsilon Object Language (EOL).
+Keywords: new Tree, new instance, new Source, new Person
+
+```eol
+var t : new Tree; // Creates a new instance of type Tree
+var p : new Source!Person; // Creates a new Person in model Source
+delete t; // Deletes the element created in line 1
+```
+
+[Source: epsilon_docs/articles_excel_index.md]
+## Creating Rows
+Example: create a new instance of the Student model element using the Epsilon Object Language (EOL).
+Keywords: new Student
+
+```eol
+var student : new Student;
+```
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+# Scripting YAML documents using Epsilon
+ 
+In this article we demonstrate how you can create, query and modify YAML documents in Epsilon programs using the YAML driver. All the examples in this article demonstrate using EOL to script YAML documents. However, it's worth stressing that YAML documents are supported throughout Epsilon. Therefore, you can use Epsilon to (cross-)validate, transform (to other models – XML, CSV or EMF-based, or to text), compare and merge your YAML documents.
+
+<iframe width="90%" height="494" src="https://www.youtube.com/embed/TF0fgghP938" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Querying a YAML document
+ 
+We use the following `employees.yaml` as a base for demonstrating the EOL syntax for querying YAML documents.
+
+[Source: epsilon_docs/articles_xsd-xml_index.md]
+## How do I create an element and add it to an existing element?
+Example: create a new element and add it to an existing element in an XML model using Epsilon Object Language.
+
+```eol
+{{{ example("org.eclipse.epsilon.examples.xsdxml/library/create-element.eol") }}}
+```
+
+[Source: epsilon_docs/articles_plain-xml_index.md]
+## Using XML attributes as references
+Example: load an XML model with attributes and use them as references within an Epsilon EOL module.
+Keywords: new EolModule, new File, new PlainXmlModel
+
+```java
+EolModule module = new EolModule();
+module.parse(new File("..."));
+
+PlainXmlModel model = new PlainXmlModel();
+model.setName("M");
+model.setFile(new File("..."));
+model.load();
+
+module.getContext().getModelRepository().addModel(model);
+module.getContext().setModule(module);
+module.execute();
+```
+
+[Source: epsilon_docs/articles_developing-a-new-emc-driver_index.md]
+# Developing a new EMC Driver
+
+This article demonstrates the implementation of "drivers" for Epsilon's [Model Connectivity layer](../../emc).
+
+## YAML Driver
+
+The following training session recording and deck of slides demonstrate the implementation of [Epsilon's YAML driver](../yaml-emc). The complete source-code is located in [Epsilon's Git repository](https://github.com/eclipse-epsilon/epsilon/tree/main/plugins/org.eclipse.epsilon.emc.yaml).
+
+<iframe src="https://www.youtube.com/embed/M0nvnhSF6Y0" width="100%" height="485" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen></iframe> <div style="margin-bottom:15px"></div>
+
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/yc9uUXElc1Zbac" width="100%" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:15px"></div>
+
+## CSV Pro Driver
+
+The slides below demonstrate the implementation of an alternative driver for CSV files, located under the [`examples` folder of Epsilon's repository](https://github.com/eclipse-epsilon/epsilon/tree/main/examples/org.eclipse.epsilon.emc.csvpro).
+
+--- USER MESSAGE ---
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+fleetSummary:
+  totalVehicles: 4
+  activeVehicles: 3
+  totalMileageKm: 184320
+  avgFuelEfficiencyKmpl: 12.4
+  maintenanceDueCount: 1
+
+vehicles:
+  - vehicleId: VH-001
+    make: Ford
+    model: Transit Custom
+    registration: "LN19 XKP"
+    location: {lat: 53.4808, lon: -2.2426}
+    engine:
+      type: diesel
+      diagnostics:
+        lastCheckedAt: "2024-06-01T08:00:00Z"
+        sensorReadings:
+          oilPressureBar: 3.2
+          coolantTempC: 89
+          batteryVoltage: 12.6
+    maintenanceHistory:
+      - date: "2024-01-15"
+        type: oil_change
+        mileageKm: 42100
+      - date: "2024-04-20"
+        type: brake_inspection
+        mileageKm: 47850
+    status: active
+
+  - vehicleId: VH-002
+    make: Ford
+    model: Transit Custom
+    registration: "LN19 XKR"
+    location: {lat: 53.4700, lon: -2.2300}
+    engine:
+      type: diesel
+      diagnostics:
+        lastCheckedAt: "2024-05-28T08:00:00Z"
+        sensorReadings:
+          oilPressureBar: 2.1
+          coolantTempC: 97
+          batteryVoltage: 11.9
+    maintenanceHistory: []
+    status: maintenance_due
+
+  - vehicleId: VH-003
+    make: Mercedes-Benz
+    model: Sprinter
+    registration: "MX20 BFG"
+    location: {lat: 53.4950, lon: -2.2100}
+    engine:
+      type: diesel
+      diagnostics:
+        lastCheckedAt: "2024-06-10T08:00:00Z"
+        sensorReadings:
+          oilPressureBar: 3.5
+          coolantTempC: 85
+          batteryVoltage: 12.8
+    maintenanceHistory:
+      - date: "2024-03-02"
+        type: tyre_replacement
+        mileageKm: 61200
+    status: active
+
+  - vehicleId: VH-004
+    make: Mercedes-Benz
+    model: Sprinter
+    registration: "MX21 CDH"
+    location: null
+    engine:
+      type: electric
+      diagnostics:
+        lastCheckedAt: "2024-06-05T08:00:00Z"
+        sensorReadings:
+          batteryStateOfHealthPct: 94
+          batteryVoltage: 398.2
+    maintenanceHistory: []
+    status: out_of_service
+
+Question:
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+fleetSummary:
+  totalVehicles: 4
+  activeVehicles: 3
+  totalMileageKm: 184320
+  avgFuelEfficiencyKmpl: 12.4
+  maintenanceDueCount: 1
+
+vehicles:
+  - vehicleId: VH-001
+    make: Ford
+    model: Transit Custom
+    registration: "LN19 XKP"
+    location: {lat: 53.4808, lon: -2.2426}
+    engine:
+      type: diesel
+      diagnostics:
+        lastCheckedAt: "2024-06-01T08:00:00Z"
+        sensorReadings:
+          oilPressureBar: 3.2
+          coolantTempC: 89
+          batteryVoltage: 12.6
+    maintenanceHistory:
+      - date: "2024-01-15"
+        type: oil_change
+        mileageKm: 42100
+      - date: "2024-04-20"
+        type: brake_inspection
+        mileageKm: 47850
+    status: active
+
+  - vehicleId: VH-002
+    make: Ford
+    model: Transit Custom
+    registration: "LN19 XKR"
+    location: {lat: 53.4700, lon: -2.2300}
+    engine:
+      type: diesel
+      diagnostics:
+        lastCheckedAt: "2024-05-28T08:00:00Z"
+        sensorReadings:
+          oilPressureBar: 2.1
+          coolantTempC: 97
+          batteryVoltage: 11.9
+    maintenanceHistory: []
+    status: maintenance_due
+
+  - vehicleId: VH-003
+    make: Mercedes-Benz
+    model: Sprinter
+    registration: "MX20 BFG"
+    location: {lat: 53.4950, lon: -2.2100}
+    engine:
+      type: diesel
+      diagnostics:
+        lastCheckedAt: "2024-06-10T08:00:00Z"
+        sensorReadings:
+          oilPressureBar: 3.5
+          coolantTempC: 85
+          batteryVoltage: 12.8
+    maintenanceHistory:
+      - date: "2024-03-02"
+        type: tyre_replacement
+        mileageKm: 61200
+    status: active
+
+  - vehicleId: VH-004
+    make: Mercedes-Benz
+    model: Sprinter
+    registration: "MX21 CDH"
+    location: null
+    engine:
+      type: electric
+      diagnostics:
+        lastCheckedAt: "2024-06-05T08:00:00Z"
+        sensorReadings:
+          batteryStateOfHealthPct: 94
+          batteryVoltage: 398.2
+    maintenanceHistory: []
+    status: out_of_service
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+The top-level of your YAML document is a mapping (it has keys fleetSummary and vehicles), so you must call setRootAsMap() and build MappingNode and ListNode children accordingly.
+
+Below is a complete EOL example (using only the APIs and patterns shown in the documentation) that builds your YAML document in-memory from scratch. It follows the same patterns as the examples in the YAML EMC article (new MappingNode, new ScalarNode, new ListNode, appendNode, ListNode.value.at(...), etc.).
+
+Notes:
+- I represent inline mappings such as location: {lat: ..., lon: ...} as MappingNode("location") with two ScalarNodes lat and lon.
+- For empty lists (maintenanceHistory: []), I create a ListNode with 0 rows.
+- Representing an explicit YAML null (location: null for VH-004) as new ScalarNode("location", null) is plausible but not explicitly shown in the docs; I flag this as potentially dependent on the driver implementation (it may require a specific null constructor or different API). If null is not supported this way by the driver, create an empty MappingNode or omit the location node instead.
+
+EOL code:
+
+```eol
+// Set root as a mapping
+YAMLDoc.setRootAsMap();
+var root = YAMLDoc.getRoot();
+
+// --- fleetSummary mapping ---
+var fleetSummary = new MappingNode("fleetSummary");
+fleetSummary.value.appendNode(new ScalarNode("totalVehicles", 4));
+fleetSummary.value.appendNode(new ScalarNode("activeVehicles", 3));
+fleetSummary.value.appendNode(new ScalarNode("totalMileageKm", 184320));
+fleetSummary.value.appendNode(new ScalarNode("avgFuelEfficiencyKmpl", 12.4));
+fleetSummary.value.appendNode(new ScalarNode("maintenanceDueCount", 1));
+
+// Append fleetSummary to root
+root.appendNode(fleetSummary);
+
+// --- vehicles list (4 entries) ---
+var vehicles = new ListNode("vehicles", 4);
+
+// Vehicle 1 (VH-001)
+var v0 = vehicles.value.at(0);
+v0.appendNode(new ScalarNode("vehicleId", "VH-001"));
+v0.appendNode(new ScalarNode("make", "Ford"));
+v0.appendNode(new ScalarNode("model", "Transit Custom"));
+v0.appendNode(new ScalarNode("registration", "LN19 XKP"));
+
+// location mapping {lat, lon}
+var loc0 = new MappingNode("location");
+loc0.value.appendNode(new ScalarNode("lat", 53.4808));
+loc0.value.appendNode(new ScalarNode("lon", -2.2426));
+v0.appendNode(loc0);
+
+// engine -> diagnostics -> sensorReadings
+var engine0 = new MappingNode("engine");
+engine0.value.appendNode(new ScalarNode("type", "diesel"));
+var diag0 = new MappingNode("diagnostics");
+diag0.value.appendNode(new ScalarNode("lastCheckedAt", "2024-06-01T08:00:00Z"));
+var sensors0 = new MappingNode("sensorReadings");
+sensors0.value.appendNode(new ScalarNode("oilPressureBar", 3.2));
+sensors0.value.appendNode(new ScalarNode("coolantTempC", 89));
+sensors0.value.appendNode(new ScalarNode("batteryVoltage", 12.6));
+diag0.value.appendNode(sensors0);
+engine0.value.appendNode(diag0);
+v0.appendNode(engine0);
+
+// maintenanceHistory (2 entries)
+var mh0 = new ListNode("maintenanceHistory", 2);
+mh0.value.at(0).appendNode(new ScalarNode("date", "2024-01-15"));
+mh0.value.at(0).appendNode(new ScalarNode("type", "oil_change"));
+mh0.value.at(0).appendNode(new ScalarNode("mileageKm", 42100));
+mh0.value.at(1).appendNode(new ScalarNode("date", "2024-04-20"));
+mh0.value.at(1).appendNode(new ScalarNode("type", "brake_inspection"));
+mh0.value.at(1).appendNode(new ScalarNode("mileageKm", 47850));
+v0.appendNode(mh0);
+
+v0.appendNode(new ScalarNode("status", "active"));
+
+// Vehicle 2 (VH-002)
+var v1 = vehicles.value.at(1);
+v1.appendNode(new ScalarNode("vehicleId", "VH-002"));
+v1.appendNode(new ScalarNode("make", "Ford"));
+v1.appendNode(new ScalarNode("model", "Transit Custom"));
+v1.appendNode(new ScalarNode("registration", "LN19 XKR"));
+
+var loc1 = new MappingNode("location");
+loc1.value.appendNode(new ScalarNode("lat", 53.4700));
+loc1.value.appendNode(new ScalarNode("lon", -2.2300));
+v1.appendNode(loc1);
+
+var engine1 = new MappingNode("engine");
+engine1.value.appendNode(new ScalarNode("type", "diesel"));
+var diag1 = new MappingNode("diagnostics");
+diag1.value.appendNode(new ScalarNode("lastCheckedAt", "2024-05-28T08:00:00Z"));
+var sensors1 = new MappingNode("sensorReadings");
+sensors1.value.appendNode(new ScalarNode("oilPressureBar", 2.1));
+sensors1.value.appendNode(new ScalarNode("coolantTempC", 97));
+sensors1.value.appendNode(new ScalarNode("batteryVoltage", 11.9));
+diag1.value.appendNode(sensors1);
+engine1.value.appendNode(diag1);
+v1.appendNode(engine1);
+
+// empty maintenanceHistory
+var mh1 = new ListNode("maintenanceHistory", 0);
+v1.appendNode(mh1);
+
+v1.appendNode(new ScalarNode("status", "maintenance_due"));
+
+// Vehicle 3 (VH-003)
+var v2 = vehicles.value.at(2);
+v2.appendNode(new ScalarNode("vehicleId", "VH-003"));
+v2.appendNode(new ScalarNode("make", "Mercedes-Benz"));
+v2.appendNode(new ScalarNode("model", "Sprinter"));
+v2.appendNode(new ScalarNode("registration", "MX20 BFG"));
+
+var loc2 = new MappingNode("location");
+loc2.value.appendNode(new ScalarNode("lat", 53.4950));
+loc2.value.appendNode(new ScalarNode("lon", -2.2100));
+v2.appendNode(loc2);
+
+var engine2 = new MappingNode("engine");
+engine2.value.appendNode(new ScalarNode("type", "diesel"));
+var diag2 = new MappingNode("diagnostics");
+diag2.value.appendNode(new ScalarNode("lastCheckedAt", "2024-06-10T08:00:00Z"));
+var sensors2 = new MappingNode("sensorReadings");
+sensors2.value.appendNode(new ScalarNode("oilPressureBar", 3.5));
+sensors2.value.appendNode(new ScalarNode("coolantTempC", 85));
+sensors2.value.appendNode(new ScalarNode("batteryVoltage", 12.8));
+diag2.value.appendNode(sensors2);
+engine2.value.appendNode(diag2);
+v2.appendNode(engine2);
+
+// maintenanceHistory (1 entry)
+var mh2 = new ListNode("maintenanceHistory", 1);
+mh2.value.at(0).appendNode(new ScalarNode("date", "2024-03-02"));
+mh2.value.at(0).appendNode(new ScalarNode("type", "tyre_replacement"));
+mh2.value.at(0).appendNode(new ScalarNode("mileageKm", 61200));
+v2.appendNode(mh2);
+
+v2.appendNode(new ScalarNode("status", "active"));
+
+// Vehicle 4 (VH-004)
+var v3 = vehicles.value.at(3);
+v3.appendNode(new ScalarNode("vehicleId", "VH-004"));
+v3.appendNode(new ScalarNode("make", "Mercedes-Benz"));
+v3.appendNode(new ScalarNode("model", "Sprinter"));
+v3.appendNode(new ScalarNode("registration", "MX21 CDH"));
+
+// location: null  <-- uncertain: driver may require a specific null representation
+v3.appendNode(new ScalarNode("location", null)); // may produce YAML 'location: null' if driver supports null
+
+var engine3 = new MappingNode("engine");
+engine3.value.appendNode(new ScalarNode("type", "electric"));
+var diag3 = new MappingNode("diagnostics");
+diag3.value.appendNode(new ScalarNode("lastCheckedAt", "2024-06-05T08:00:00Z"));
+var sensors3 = new MappingNode("sensorReadings");
+sensors3.value.appendNode(new ScalarNode("batteryStateOfHealthPct", 94));
+sensors3.value.appendNode(new ScalarNode("batteryVoltage", 398.2));
+diag3.value.appendNode(sensors3);
+engine3.value.appendNode(diag3);
+v3.appendNode(engine3);
+
+// empty maintenanceHistory
+var mh3 = new ListNode("maintenanceHistory", 0);
+v3.appendNode(mh3);
+
+v3.appendNode(new ScalarNode("status", "out_of_service"));
+
+// Append vehicles list to root
+root.appendNode(vehicles);
+
+// At this point YAMLDoc represents the full structure in-memory.
+// Persisting/saving the YAMLDoc to a file is performed via the YAML EMC driver API (not shown in the examples above).
+```
+
+If you want, I can:
+- Adjust the code to treat the null location differently (e.g. omit the node or create an explicit MappingNode with a special marker) depending on how your YAML driver expects nulls.
+- Show a minimal example that writes the YAMLDoc to a file if you can tell me which API/method your environment provides for saving the YAMLDoc (the docs excerpt did not include save/serialize calls).
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             2
+  Prompt tokens:     3,958
+  Completion tokens: 5,460
+  Total tokens:      9,418
+  Estimated cost:    $0.01191
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         2
+  Total prompt tokens:     3,958
+  Total completion tokens: 5,460
+  Total tokens:            9,418
+  Total estimated cost:    $0.01191
+============================================================

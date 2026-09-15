@@ -1,0 +1,719 @@
+Session started: 2026-07-30 12:56:24
+Model: openai/gpt-5-mini | temperature=0
+RETRIEVAL_MODE=sparse (BM25 Qdrant/bm25, no dense)
+SIBLING_EXPANSION=off
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[12:56:24]
+
+── QUESTION ──────────────────────────────────────────────
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+fleetSummary:
+  totalVehicles: 4
+  activeVehicles: 3
+  totalMileageKm: 184320
+  avgFuelEfficiencyKmpl: 12.4
+  maintenanceDueCount: 1
+
+vehicles:
+  - vehicleId: VH-001
+    make: Ford
+    model: Transit Custom
+    registration: "LN19 XKP"
+    location: {lat: 53.4808, lon: -2.2426}
+    engine:
+      type: diesel
+      diagnostics:
+        lastCheckedAt: "2024-06-01T08:00:00Z"
+        sensorReadings:
+          oilPressureBar: 3.2
+          coolantTempC: 89
+          batteryVoltage: 12.6
+    maintenanceHistory:
+      - date: "2024-01-15"
+        type: oil_change
+        mileageKm: 42100
+      - date: "2024-04-20"
+        type: brake_inspection
+        mileageKm: 47850
+    status: active
+
+  - vehicleId: VH-002
+    make: Ford
+    model: Transit Custom
+    registration: "LN19 XKR"
+    location: {lat: 53.4700, lon: -2.2300}
+    engine:
+      type: diesel
+      diagnostics:
+        lastCheckedAt: "2024-05-28T08:00:00Z"
+        sensorReadings:
+          oilPressureBar: 2.1
+          coolantTempC: 97
+          batteryVoltage: 11.9
+    maintenanceHistory: []
+    status: maintenance_due
+
+  - vehicleId: VH-003
+    make: Mercedes-Benz
+    model: Sprinter
+    registration: "MX20 BFG"
+    location: {lat: 53.4950, lon: -2.2100}
+    engine:
+      type: diesel
+      diagnostics:
+        lastCheckedAt: "2024-06-10T08:00:00Z"
+        sensorReadings:
+          oilPressureBar: 3.5
+          coolantTempC: 85
+          batteryVoltage: 12.8
+    maintenanceHistory:
+      - date: "2024-03-02"
+        type: tyre_replacement
+        mileageKm: 61200
+    status: active
+
+  - vehicleId: VH-004
+    make: Mercedes-Benz
+    model: Sprinter
+    registration: "MX21 CDH"
+    location: null
+    engine:
+      type: electric
+      diagnostics:
+        lastCheckedAt: "2024-06-05T08:00:00Z"
+        sensorReadings:
+          batteryStateOfHealthPct: 94
+          batteryVoltage: 398.2
+    maintenanceHistory: []
+    status: out_of_service
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+fleetSummary:
+  totalVehicles: 4
+  activeVehicles: 3
+  totalMileageKm: 184320
+  avgFuelEfficiencyKmpl: 12.4
+  maintenanceDueCount: 1
+
+vehicles:
+  - vehicleId: VH-001
+    make: Ford
+    model: Transit Custom
+    registration: "LN19 XKP"
+    location: {lat: 53.4808, lon: -2.2426}
+    engine:
+      type: diesel
+      diagnostics:
+        lastCheckedAt: "2024-06-01T08:00:00Z"
+        sensorReadings:
+          oilPressureBar: 3.2
+          coolantTempC: 89
+          batteryVoltage: 12.6
+    maintenanceHistory:
+      - date: "2024-01-15"
+        type: oil_change
+        mileageKm: 42100
+      - date: "2024-04-20"
+        type: brake_inspection
+        mileageKm: 47850
+    status: active
+
+  - vehicleId: VH-002
+    make: Ford
+    model: Transit Custom
+    registration: "LN19 XKR"
+    location: {lat: 53.4700, lon: -2.2300}
+    engine:
+      type: diesel
+      diagnostics:
+        lastCheckedAt: "2024-05-28T08:00:00Z"
+        sensorReadings:
+          oilPressureBar: 2.1
+          coolantTempC: 97
+          batteryVoltage: 11.9
+    maintenanceHistory: []
+    status: maintenance_due
+
+  - vehicleId: VH-003
+    make: Mercedes-Benz
+    model: Sprinter
+    registration: "MX20 BFG"
+    location: {lat: 53.4950, lon: -2.2100}
+    engine:
+      type: diesel
+      diagnostics:
+        lastCheckedAt: "2024-06-10T08:00:00Z"
+        sensorReadings:
+          oilPressureBar: 3.5
+          coolantTempC: 85
+          batteryVoltage: 12.8
+    maintenanceHistory:
+      - date: "2024-03-02"
+        type: tyre_replacement
+        mileageKm: 61200
+    status: active
+
+  - vehicleId: VH-004
+    make: Mercedes-Benz
+    model: Sprinter
+    registration: "MX21 CDH"
+    location: null
+    engine:
+      type: electric
+      diagnostics:
+        lastCheckedAt: "2024-06-05T08:00:00Z"
+        sensorReadings:
+          batteryStateOfHealthPct: 94
+          batteryVoltage: 398.2
+    maintenanceHistory: []
+    status: out_of_service
+
+── SPARSE POOL (before rerank, before sibling expansion) ──
+  1. [22.231] epsilon_docs/pinset_index.md (heading='Model example', parent_heading='Dataset Extraction (Pinset)')
+  2. [22.205] epsilon_docs/eol.md (heading='Variable Declaration Statement', parent_heading='Expressions')
+  3. [21.648] epsilon_docs/flock.md (heading='Epsilon Flock for Model Migration', parent_heading='')
+  4. [21.417] epsilon_docs/egl.md (heading='An Example of Co-ordination with EGL', parent_heading='Co-ordination')
+  5. [18.237] epsilon_docs/eol.md (heading='Assignment Statement', parent_heading='Expressions')
+  6. [18.038] epsilon_docs/articles_minimal-examples_index.md (heading='Exporting an Eclipse project from your workspace', parent_heading='Constructing a Helpful Minimal Example')
+  7. [17.887] epsilon_docs/etl.md (heading='Source Elements Resolution', parent_heading='Concrete Syntax')
+  8. [17.767] epsilon_docs/articles_eol-syntax-updates_index.md (heading='0.8.8', parent_heading='EOL Syntax Updates')
+  9. [17.447] epsilon_docs/eol.md (heading='Tuples', parent_heading='Types')
+  10. [17.253] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.\nfleetSummary:\n  totalVehicles: 4\n  activeVehicles: 3\n  totalMileageKm: 184320\n  avgFuelEfficiencyKmpl: 12.4\n  maintenanceDueCount: 1\n\nvehicles:\n  - vehicleId: VH-001\n    make: Ford\n    model: Transit Custom\n    registration: "LN19 XKP"\n    location: {lat: 53.4808, lon: -2.2426}\n    engine:\n      type: diesel\n      diagnostics:\n        lastCheckedAt: "2024-06-01T08:00:00Z"\n        sensorReadings:\n          oilPressureBar: 3.2\n          coolantTempC: 89\n          batteryVoltage: 12.6\n    maintenanceHistory:\n      - date: "2024-01-15"\n        type: oil_change\n        mileageKm: 42100\n      - date: "2024-04-20"\n        type: brake_inspection\n        mileageKm: 47850\n    status: active\n\n  - vehicleId: VH-002\n    make: Ford\n    model: Transit Custom\n    registration: "LN19 XKR"\n    location: {lat: 53.4700, lon: -2.2300}\n    engine:\n      type: diesel\n      diagnostics:\n        lastCheckedAt: "2024-05-28T08:00:00Z"\n        sensorReadings:\n          oilPressureBar: 2.1\n          coolantTempC: 97\n          batteryVoltage: 11.9\n    maintenanceHistory: []\n    status: maintenance_due\n\n  - vehicleId: VH-003\n    make: Mercedes-Benz\n    model: Sprinter\n    registration: "MX20 BFG"\n    location: {lat: 53.4950, lon: -2.2100}\n    engine:\n      type: diesel\n      diagnostics:\n        lastCheckedAt: "2024-06-10T08:00:00Z"\n        sensorReadings:\n          oilPressureBar: 3.5\n          coolantTempC: 85\n          batteryVoltage: 12.8\n    maintenanceHistory:\n      - date: "2024-03-02"\n        type: tyre_replacement\n        mileageKm: 61200\n    status: active\n\n  - vehicleId: VH-004\n    make: Mercedes-Benz\n    model: Sprinter\n    registration: "MX21 CDH"\n    location: null\n    engine:\n      type: electric\n      diagnostics:\n        lastCheckedAt: "2024-06-05T08:00:00Z"\n        sensorReadings:\n          batteryStateOfHealthPct: 94\n          batteryVoltage: 398.2\n    maintenanceHistory: []\n    status: out_of_service'
+    1. sim=0.7008  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    2. sim=0.5835  epsilon_docs/flock.md | heading='Epsilon Flock for Model Migration'
+    3. sim=0.5822  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    4. sim=0.5290  epsilon_docs/etl.md | heading='Source Elements Resolution'
+    5. sim=0.5239  epsilon_docs/eol.md | heading='Assignment Statement'
+    6. sim=0.5155  epsilon_docs/articles_minimal-examples_index.md | heading='Exporting an Eclipse project from your workspace'
+    7. sim=0.5072  epsilon_docs/eol.md | heading='Variable Declaration Statement'
+    8. sim=0.5054  epsilon_docs/pinset_index.md | heading='Model example'
+    9. sim=0.4912  epsilon_docs/articles_eol-syntax-updates_index.md | heading='0.8.8'
+    10. sim=0.3971  epsilon_docs/eol.md | heading='Tuples'
+
+── RETRIEVED (after dedup + rerank pass 1 only — sibling expansion OFF) ──
+
+Docs (5):
+  1. [0.747] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YA
+  2. [0.010] epsilon_docs/articles_eol-syntax-updates_index.md (heading='0.8.8', parent_heading='EOL Syntax Updates')
+     -   `!=` can be used as an alias for `<>` (i.e. "not equals").
+
+### 2.0
+
+-   Ternary expressions, which can be used almost anywhere, not just in
+    assignments or returns. Syntax and semantics are id
+  3. [0.007] epsilon_docs/eol.md (heading='Variable Declaration Statement', parent_heading='Expressions')
+     The listing below provides an example of declaring and using variables.
+
+- Line 1 defines a variable named `i` of type `Integer` and assigns it an initial value of `5`.
+- Line 2 defines a variable nam
+  4. [0.006] epsilon_docs/flock.md (heading='Epsilon Flock for Model Migration', parent_heading='')
+     ## Epsilon Flock for Model Migration
+Example: demonstrate the six-phase execution semantics of an Epsilon Flock module for model migration.
+Keywords: new instance
+
+```
+
+## Execution Semantics
+
+The exe
+  5. [0.004] epsilon_docs/eol.md (heading='Tuples', parent_heading='Types')
+     The Integer type represents natural numbers and negatives and extends the Real primitive type. It also defines the following operations:
+
+ Signature |Description
+----------|-----------  
+iota(end : In
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon.
+
+Use the provided context as the PRIMARY and AUTHORITATIVE source of truth.
+Only use syntax, class names, methods, and patterns that appear explicitly in the context.
+You may adapt documented patterns to the user's structure, provided that no new APIs or unsupported methods are invented.
+If the user's message contains sample data, treat it only as the desired target structure — not as evidence for API syntax.
+If the context provides partial evidence only, generate code for the parts that are supported and explicitly flag any parts that are uncertain or unsupported.
+
+When a code example is appropriate, provide a complete and runnable example that covers the full structure given by the user.
+When generating code, follow only the patterns shown in the context exactly — do not skip initialisation steps, introduce intermediate objects, or shortcut method chains that are not explicitly demonstrated.
+
+--- DOCUMENTATION ---
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YAML node must be specified when accessing YAML nodes via the YAML driver. There are 3 types of nodes in YAML:
+
+- `Scalar Node`. Scalar nodes are used to represent a single scalar value (e.g., string, boolean, integer). In the YAML driver, a scalar node consists of a key-value pair, in which the key represents the name of the scalar node, and the value represents the scalar value.
+- `Mapping Node`. Mapping nodes are used to represent unordered collections of key-value pairs. In the YAML driver, a mapping node consists of a key-value pair, in which the key represents the name of the mapping node, and the value holds an unordered collection of key-value pairs, which in turn represent other nodes.
+- `List (Sequence) Node`. List nodes are used to represent an ordered list of nodes or scalar values. In the YAML driver, a list node consists of a key-value pair, in which the key represents the name of the list node, and the value represents a list of nodes or scalar values.
+
+This section outlines the supported conventions in the form of questions and answers followed by relevant examples.
+
+[Source: epsilon_docs/articles_eol-syntax-updates_index.md]
+-   `!=` can be used as an alias for `<>` (i.e. "not equals").
+
+### 2.0
+
+-   Ternary expressions, which can be used almost anywhere, not just in
+    assignments or returns. Syntax and semantics are identical to Java,
+    but you can also use the `else` keyword in place of the `:` if you
+    prefer.
+-   Native lambda expressions. You can use first-order operation syntax
+    or JavaScript-style `=>` for [invoking functional
+    interfaces.](http://eclipse.org/epsilon/doc/articles/eol-syntax-updates/../lambda-expressions)
+-   Removed old-style OCL comments (`-*` and `--`).
+-   `--` can be used to decrement integers.
+-   Thread-safe collection types: `ConcurrentBag`, `ConcurrentMap` and
+    `ConcurrentSet`.
+
+### 1.4
+
+-   Added support for postfix increment operator (i.e. `i++`) and for
+    composite assignment statements (i.e.
+    `a +=1; a -= 2; a *= 3; a /= 4;`)
+
+### 0.9.1
+
+-   Added support for externally defined variables.
+-   Support for Map literal expressions (e.g.
+    `Map {key1 = value1, k2 = v2}`)
+
+### 0.8.8
+
+In 0.8.8 we extended the syntax of EOL so that it looks and feels a bit
+more like Java. As the majority of Eclipse/EMF audience are Java
+programmers, this will hopefully make their (and our) lives a bit
+easier. Of course, all these changes also affect all languages built on
+top of EOL.
+
+More specifically, we have introduced:
+
+[Source: epsilon_docs/eol.md]
+The listing below provides an example of declaring and using variables.
+
+- Line 1 defines a variable named `i` of type `Integer` and assigns it an initial value of `5`.
+- Line 2 defines a variable named `c` of type `Class` (from model Uml) and creates a new instance of the type in the model (by using the `new` keyword).
+- The commented out assignment statement of line 3 would raise a runtime error since it would attempt to assign a `String` value to an `Integer` variable.
+- The condition of line 4 returns true since the `c` variable has been initialized before.
+- Line 5 defines a new variable also named `i` that is of type `String` and which overrides the `Integer` variable declared in line 1.
+- Therefore the assignment statement of line 6 is legitimate as it assigns a string value to a variable of type String.
+- As the program has exited the scope of the `if` statement, the assignment statement of line 7 is also legitimate as it refers to the `i` variable defined in line 1.
+- In line 8, we declare `s1` as a `Sequence` of any type of value.
+- Line 9 declares `s2` as a `Sequence` containing values of type `Integer`. Note that type parameters can be written as `CollectionType<ValueType>` or as `CollectionType(ValueType)`.
+- Line 10 declares `m1` as a `Map` where the keys and values can be of any type.
+- Line 11 declares `m2` as a `Map` where the keys are `String`s, and the values are `Integer`s.
+
+[Source: epsilon_docs/flock.md]
+## Epsilon Flock for Model Migration
+Example: demonstrate the six-phase execution semantics of an Epsilon Flock module for model migration.
+Keywords: new instance
+
+```
+
+## Execution Semantics
+
+The execution semantics of a Flock module are now described. Note that the Epsilon Model Connectivity (EMC) layer, which Flock uses to access and manipulate models supports a range of modelling technologies, and identifies types by name. Consequently, the term *type* is used to mean "the name of an element of a metamodel" in the following discussion. For example, `Component`, `Connector` and `InputPort` are three of the types defined in the evolved metamodel.
+
+Execution of a Flock module occurs in six phases:
+
+1.  Any pre blocks are executed.
+
+2.  Type mapping constructs (retypings and deletions) are processed to identify the way in which original and evolved metamodel types are to be related.
+
+3.  Migrate rules are inspected to build sets of ignored properties.
+
+4.  The information determined in steps 2 and 3 is used as input a copying algorithm, which creates an (equivalent) element in the migrated model for each element of the original model, and copies values from original to equivalent model elements.
+
+5.  Migrate rules are executed on each pair of original and (equivalent) migrated model elements.
+
+6.  Any post blocks are executed.
+
+In phases 2-5, language constructs are executed only when they are *applicable*. The *applicability* of the Flock language constructs (retyping, deletion or migrate rule) is determined from their type and guard. For a language construct `c` to be applicable to an original model element `o`, `o` must instantiate either the original type of `c` or one of the subtypes of the original type of `c`; and `o` must satisfy the guard of `c`. For language constructs that have been annotated as strict, type-checking is more restrictive: `o` must instantiate the original type of `c` (and not one its subtypes). In other words, the applicability of strict constructs is determined with EOL's `isTypeOf` operation and the applicability of non-strict constructs is determined with EOL's `isKindOf` operation. For language constructs that have been annotated with cascade, type-checking is less restrictive: `o` must be contained in another model element (either directly or indirectly) to which the construct is applicable. Similarly, for language constructs that operate on packages (i.e. package retyping and package deletions), type-checking is less restrictive: `o` must be contained in a package with the same name as the original package of `c`.
+
+
+Phases 2-4 of execution implement a copying algorithm which has been termed conservative copy and is discussed thoroughly [elsewhere](https://link.springer.com/chapter/10.1007/978-3-642-16145-2_5). Essentially, conservative copy will do the following for each element of the original model, `o`:
+
+1.  **Do nothing** when `o` instantiates a type that cannot be instantiated in the evolved metamodel (e.g., because the type of `o` is now abstract or no longer exists). Example: instances of `Port` in the original metamodel are not copied because `Port` has become abstract.
+
+2.  **Fully copy** `o` to produce `m` in the migrated model when `o` instantiate a type that has not been at all affected by metamodel evolution. Example: instances of `Component` in the original metamodel are fully copied because neither `Component` nor any of its features have been changed.
+
+3.  **Partially copy** `o` to produce `m` in the migrated model when `o` instantiates a type with one or more features that have been affected by metamodel evolution. Example: instances of `Connector` in the original metamodel are partially copied because the `from` and `to` features have been renamed. Note that in a partial copy only the features that have not been affected by metamodel evolution are copied (e.g., the `name`s of `Connector`s).
+
+In phase 5, migrate rules are applied. These rules specify the problem-specific migration logic and might, for example, create migrated model elements for original model elements that were skipped or partially copied by the copying algorithm described above. The Flock engine makes available two variables (`original` and `migrated`) for use in the body of any migration rule. These variables are used to refer to the particular elements of the original and migrated models to which the rule is currently being applied. In addition, Flock defines an `equivalent()` operation that can be called on any original model element and returns the equivalent migrated model element (or `null`). The `equivalent()` operation is used to access elements of the migrated model that cannot be accessed via the `migrated` variable due to metamodel evolution. Flock rules often contain statements of the form: `original.x.equivalent()` where `x` is a feature that has been removed from the evolved metamodel.
+
+Finally, we should consider the order in which Flock schedules language constructs: a construct that appears earlier (higher) in the source file has priority. This is important because only one type mapping (retypings and deletions) is applied per original model element, and because this implies that migrate rules are applied from top-to-bottom. This ordering is consistent with the other languages of the Epsilon platform.
+
+Example
+-------
+
+Flock is now demonstrated using the example of model migration
+introduced above. Recall that the metamodel evolution
+ involves splitting the `Port` type to form the
+`InputPort` and `OutputPort` types.
+Below is a high-level design for
+migrating models from the original to the evolved metamodel.
+
+-   For every instance, p, of `Port` in the original model: 
+    - If there exists in the original model a `Connector`, c, that specifies p as
+    the value for its `from` feature:
+        - Create a new instance, `i`, of `InputPort` in the migrated model. 
+        - Set c as the `connector` of `i`. 
+        - Add c to the `ports` reference of the `Component` that contains c.
+
+    - If there exists in the original model a `Connector`, c, that specifies p as the value for its `to` feature: 
+        - Create a new instance of `OutputPort` in the migrated model. 
+        - Set c as the `connector` of i. 
+        - Add c to the `ports` reference of the `Component` that contains c.
+
+-   And nothing else changes.
+
+The Flock migration strategy that implements this design is shown below. Three type mappings constructs (on lines 1-4) are used to control the way in which instances of `Port` are migrated. For example, line 3 specifies that instances of `Port` that are referenced via the `from` feature of a `Connector` are retyped, becoming `InputPort`s. Instances of `Connector` are migrated using the rule on lines 6-9, which specifies the way in which the `from` and `to` features have evolved to form the `in` and `out` features.
+
+```
+
+[Source: epsilon_docs/eol.md]
+The Integer type represents natural numbers and negatives and extends the Real primitive type. It also defines the following operations:
+
+ Signature |Description
+----------|-----------  
+iota(end : Integer, step : Integer) : Sequence(Integer)   |Returns a sequence of integers up to `end` using the specified step (e.g. 1.iota(10,2) returns Sequence{1,3,5,7,9})
+mod(divisor : Integer) : Integer                          |Returns the remainder of dividing the integer by the divisor
+to(other : Integer) : Sequence(Integer)                   |Returns a sequence of integers (e.g. 1.to(5) returns Sequence{1,2,3,4,5})
+toBinary() : String                                       |Returns the binary representation of the integer (e.g. 6.toBinary() returns "110")
+toHex() : String                                          |Returns the hexadecimal representation of the integer (e.g. 42.toBinary() returns "2a")
+
+Finally, the Boolean type represents true/false states and provides no additional operations to those provided by the base Any type.
+
+### Collections and Maps
+
+EOL provides several types of collections and a Map type:
+
+--- USER MESSAGE ---
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+fleetSummary:
+  totalVehicles: 4
+  activeVehicles: 3
+  totalMileageKm: 184320
+  avgFuelEfficiencyKmpl: 12.4
+  maintenanceDueCount: 1
+
+vehicles:
+  - vehicleId: VH-001
+    make: Ford
+    model: Transit Custom
+    registration: "LN19 XKP"
+    location: {lat: 53.4808, lon: -2.2426}
+    engine:
+      type: diesel
+      diagnostics:
+        lastCheckedAt: "2024-06-01T08:00:00Z"
+        sensorReadings:
+          oilPressureBar: 3.2
+          coolantTempC: 89
+          batteryVoltage: 12.6
+    maintenanceHistory:
+      - date: "2024-01-15"
+        type: oil_change
+        mileageKm: 42100
+      - date: "2024-04-20"
+        type: brake_inspection
+        mileageKm: 47850
+    status: active
+
+  - vehicleId: VH-002
+    make: Ford
+    model: Transit Custom
+    registration: "LN19 XKR"
+    location: {lat: 53.4700, lon: -2.2300}
+    engine:
+      type: diesel
+      diagnostics:
+        lastCheckedAt: "2024-05-28T08:00:00Z"
+        sensorReadings:
+          oilPressureBar: 2.1
+          coolantTempC: 97
+          batteryVoltage: 11.9
+    maintenanceHistory: []
+    status: maintenance_due
+
+  - vehicleId: VH-003
+    make: Mercedes-Benz
+    model: Sprinter
+    registration: "MX20 BFG"
+    location: {lat: 53.4950, lon: -2.2100}
+    engine:
+      type: diesel
+      diagnostics:
+        lastCheckedAt: "2024-06-10T08:00:00Z"
+        sensorReadings:
+          oilPressureBar: 3.5
+          coolantTempC: 85
+          batteryVoltage: 12.8
+    maintenanceHistory:
+      - date: "2024-03-02"
+        type: tyre_replacement
+        mileageKm: 61200
+    status: active
+
+  - vehicleId: VH-004
+    make: Mercedes-Benz
+    model: Sprinter
+    registration: "MX21 CDH"
+    location: null
+    engine:
+      type: electric
+      diagnostics:
+        lastCheckedAt: "2024-06-05T08:00:00Z"
+        sensorReadings:
+          batteryStateOfHealthPct: 94
+          batteryVoltage: 398.2
+    maintenanceHistory: []
+    status: out_of_service
+
+Question:
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+fleetSummary:
+  totalVehicles: 4
+  activeVehicles: 3
+  totalMileageKm: 184320
+  avgFuelEfficiencyKmpl: 12.4
+  maintenanceDueCount: 1
+
+vehicles:
+  - vehicleId: VH-001
+    make: Ford
+    model: Transit Custom
+    registration: "LN19 XKP"
+    location: {lat: 53.4808, lon: -2.2426}
+    engine:
+      type: diesel
+      diagnostics:
+        lastCheckedAt: "2024-06-01T08:00:00Z"
+        sensorReadings:
+          oilPressureBar: 3.2
+          coolantTempC: 89
+          batteryVoltage: 12.6
+    maintenanceHistory:
+      - date: "2024-01-15"
+        type: oil_change
+        mileageKm: 42100
+      - date: "2024-04-20"
+        type: brake_inspection
+        mileageKm: 47850
+    status: active
+
+  - vehicleId: VH-002
+    make: Ford
+    model: Transit Custom
+    registration: "LN19 XKR"
+    location: {lat: 53.4700, lon: -2.2300}
+    engine:
+      type: diesel
+      diagnostics:
+        lastCheckedAt: "2024-05-28T08:00:00Z"
+        sensorReadings:
+          oilPressureBar: 2.1
+          coolantTempC: 97
+          batteryVoltage: 11.9
+    maintenanceHistory: []
+    status: maintenance_due
+
+  - vehicleId: VH-003
+    make: Mercedes-Benz
+    model: Sprinter
+    registration: "MX20 BFG"
+    location: {lat: 53.4950, lon: -2.2100}
+    engine:
+      type: diesel
+      diagnostics:
+        lastCheckedAt: "2024-06-10T08:00:00Z"
+        sensorReadings:
+          oilPressureBar: 3.5
+          coolantTempC: 85
+          batteryVoltage: 12.8
+    maintenanceHistory:
+      - date: "2024-03-02"
+        type: tyre_replacement
+        mileageKm: 61200
+    status: active
+
+  - vehicleId: VH-004
+    make: Mercedes-Benz
+    model: Sprinter
+    registration: "MX21 CDH"
+    location: null
+    engine:
+      type: electric
+      diagnostics:
+        lastCheckedAt: "2024-06-05T08:00:00Z"
+        sensorReadings:
+          batteryStateOfHealthPct: 94
+          batteryVoltage: 398.2
+    maintenanceHistory: []
+    status: out_of_service
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+Short answer: the root of your YAML document is a mapping node (top-level mapping with keys fleetSummary and vehicles). You can construct the same document in EOL using Map and Sequence literals (Mapping Node -> Map {...}, List/Sequence Node -> Sequence{...}, Scalar Node -> key = value). Below I give a complete EOL script that builds the whole structure from scratch. Persisting this structure to a YAML file via the EMC YAML driver requires driver-specific calls which are not specified in the provided documentation — I include a clearly marked placeholder showing how you would typically hand the built Map/Sequence to a YAML driver (you will need to adapt those calls to the actual EMC YAML driver API available in your environment).
+
+EOL script (builds the document in-memory)
+
+- Root node: mapping (Map)
+- Use Map { ... } and Sequence{ ... } literals
+
+Complete EOL code:
+
+root = Map {
+  fleetSummary = Map {
+    totalVehicles = 4,
+    activeVehicles = 3,
+    totalMileageKm = 184320,
+    avgFuelEfficiencyKmpl = 12.4,
+    maintenanceDueCount = 1
+  },
+
+  vehicles = Sequence{
+    Map {
+      vehicleId = "VH-001",
+      make = "Ford",
+      model = "Transit Custom",
+      registration = "LN19 XKP",
+      location = Map { lat = 53.4808, lon = -2.2426 },
+      engine = Map {
+        type = "diesel",
+        diagnostics = Map {
+          lastCheckedAt = "2024-06-01T08:00:00Z",
+          sensorReadings = Map {
+            oilPressureBar = 3.2,
+            coolantTempC = 89,
+            batteryVoltage = 12.6
+          }
+        }
+      },
+      maintenanceHistory = Sequence{
+        Map { date = "2024-01-15", type = "oil_change", mileageKm = 42100 },
+        Map { date = "2024-04-20", type = "brake_inspection", mileageKm = 47850 }
+      },
+      status = "active"
+    },
+
+    Map {
+      vehicleId = "VH-002",
+      make = "Ford",
+      model = "Transit Custom",
+      registration = "LN19 XKR",
+      location = Map { lat = 53.4700, lon = -2.2300 },
+      engine = Map {
+        type = "diesel",
+        diagnostics = Map {
+          lastCheckedAt = "2024-05-28T08:00:00Z",
+          sensorReadings = Map {
+            oilPressureBar = 2.1,
+            coolantTempC = 97,
+            batteryVoltage = 11.9
+          }
+        }
+      },
+      maintenanceHistory = Sequence{},  // empty list
+      status = "maintenance_due"
+    },
+
+    Map {
+      vehicleId = "VH-003",
+      make = "Mercedes-Benz",
+      model = "Sprinter",
+      registration = "MX20 BFG",
+      location = Map { lat = 53.4950, lon = -2.2100 },
+      engine = Map {
+        type = "diesel",
+        diagnostics = Map {
+          lastCheckedAt = "2024-06-10T08:00:00Z",
+          sensorReadings = Map {
+            oilPressureBar = 3.5,
+            coolantTempC = 85,
+            batteryVoltage = 12.8
+          }
+        }
+      },
+      maintenanceHistory = Sequence{
+        Map { date = "2024-03-02", type = "tyre_replacement", mileageKm = 61200 }
+      },
+      status = "active"
+    },
+
+    Map {
+      vehicleId = "VH-004",
+      make = "Mercedes-Benz",
+      model = "Sprinter",
+      registration = "MX21 CDH",
+      location = null, // explicit null
+      engine = Map {
+        type = "electric",
+        diagnostics = Map {
+          lastCheckedAt = "2024-06-05T08:00:00Z",
+          sensorReadings = Map {
+            batteryStateOfHealthPct = 94,
+            batteryVoltage = 398.2
+          }
+        }
+      },
+      maintenanceHistory = Sequence{},
+      status = "out_of_service"
+    }
+  }
+}
+
+// return or print the root mapping so you can inspect it in the EOL REPL
+root
+
+Notes about persisting with the EMC YAML driver (UNSUPPORTED / placeholder section)
+- The EOL code above constructs the YAML document structure (mapping root) using EOL Map and Sequence literals, which correspond to YAML mapping and sequence nodes respectively.
+- The provided documentation fragment explains the YAML driver expects you to specify the node type (scalar/mapping/list) when accessing nodes, but it does not provide the exact EMC API or class/method names to register the created structure as the driver's root or to save it to a file.
+- Typical next steps (pseudocode — adapt to the actual EMC YAML driver API you have available):
+
+  // PSEUDOCODE — these calls are placeholders and must be replaced
+  // with the actual EMC YAML driver API from your environment.
+  yamlModel = <create instance of YAML EMC model/driver>;
+  // tell the YAML driver that the document root is a mapping and give it `root`
+  yamlModel.setRootMapping(root);      // <-- placeholder method name
+  yamlModel.save("fleet.yaml");        // <-- placeholder method name
+
+- Please consult your EMC YAML driver Javadoc / examples for the exact API calls to:
+  1) create/configure the YAML model/driver instance,
+  2) set the root node (mapping vs list) from an in-memory value (the Map/Sequence built above),
+  3) save the model to a file or stream.
+
+Summary
+- Root node: mapping.
+- Build the document entirely in EOL using Map and Sequence literals (example above).
+- Persisting via the EMC YAML Driver requires driver-specific calls (placeholders provided). Check the driver's API docs / examples to adapt the last step.
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             1
+  Prompt tokens:     4,306
+  Completion tokens: 3,134
+  Total tokens:      7,440
+  Estimated cost:    $0.00734
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         1
+  Total prompt tokens:     4,306
+  Total completion tokens: 3,134
+  Total tokens:            7,440
+  Total estimated cost:    $0.00734
+============================================================

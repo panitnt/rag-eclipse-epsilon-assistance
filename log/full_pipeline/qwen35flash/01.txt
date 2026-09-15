@@ -1,0 +1,269 @@
+Session started: 2026-07-28 00:05:08
+Model: openrouter/qwen/qwen3.5-flash-02-23 | temperature=0
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[00:05:22]
+
+── QUESTION ──────────────────────────────────────────────
+What is EOL, and why is it described as the "core expression language" that all other Epsilon languages are built on?
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - What is EOL, and why is it described as the "core expression language" that all other Epsilon languages are built on?
+  - EOL Epsilon Object Language core expression language
+  - EOL expression language syntax
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'What is EOL, and why is it described as the "core expression language" that all other Epsilon languages are built on?'
+    1. sim=0.7713  epsilon_docs/eol.md | heading='Syntax'
+    2. sim=0.7123  epsilon_docs/index.md | heading='Languages'
+    3. sim=0.7041  epsilon_docs/epl.md | heading='Syntax'
+    4. sim=0.6875  epsilon_docs/index.md | heading='Workflow'
+    5. sim=0.6550  epsilon_docs/egl.md | heading='Abstract Syntax'
+    6. sim=0.6466  epsilon_docs/articles_epsilon-pojos.md | heading='Running Epsilon Programs on POJOs'
+    7. sim=0.6452  epsilon_docs/articles_type-relationships-in-epsilon.md | heading='Type-Related Operations'
+    8. sim=0.6435  epsilon_docs/evl.md | heading='Abstract Syntax'
+    9. sim=0.6392  epsilon_docs/articles_profiled-uml-models_index.md | heading='Querying a Profiled UML Model'
+    10. sim=0.6128  epsilon_docs/eol.md | heading='Annotations'
+    11. sim=0.6071  epsilon_docs/articles_index.md | heading='Recipes'
+    12. sim=0.6042  epsilon_docs/articles_simulink_index.md | heading='Using the Simulink Driver from Java'
+    13. sim=0.5840  epsilon_docs/articles_xsd-xml_index.md | heading='How can I query by element type?'
+    14. sim=0.5707  epsilon_docs/articles_running-epsilon-ant-tasks-from-command-line_index.md | heading='Flexmi and Emfatic'
+    15. sim=0.5552  epsilon_docs/articles_json-emc_index.md | heading='Author JSON document with detailed accounts'
+    16. sim=0.5301  epsilon_docs/articles_run-epsilon-from-java.md | heading='Dependencies'
+    17. sim=0.5009  epsilon_docs/articles_json-emc_index.md | heading='Reuse of objects in JSON documents'
+    18. sim=0.4809  epsilon_docs/articles_eol-syntax-updates_index.md | heading='0.8.8'
+
+  Query: 'EOL Epsilon Object Language core expression language'
+    1. sim=0.7868  epsilon_docs/eol.md | heading='Syntax'
+    2. sim=0.7563  epsilon_docs/articles_profiled-uml-models_index.md | heading='Querying a Profiled UML Model'
+    3. sim=0.7558  epsilon_docs/articles_simulink_index.md | heading='Using the Simulink Driver from Java'
+    4. sim=0.7537  epsilon_docs/index.md | heading='Workflow'
+    5. sim=0.7497  epsilon_docs/eol.md | heading='Annotations'
+    6. sim=0.7471  epsilon_docs/articles_epsilon-pojos.md | heading='Running Epsilon Programs on POJOs'
+    7. sim=0.7371  epsilon_docs/articles_xsd-xml_index.md | heading='How can I query by element type?'
+    8. sim=0.7369  epsilon_docs/articles_json-emc_index.md | heading='Author JSON document with detailed accounts'
+    9. sim=0.7307  epsilon_docs/articles_running-epsilon-ant-tasks-from-command-line_index.md | heading='Flexmi and Emfatic'
+    10. sim=0.7292  epsilon_docs/index.md | heading='Languages'
+    11. sim=0.7278  epsilon_docs/articles_type-relationships-in-epsilon.md | heading='Type-Related Operations'
+    12. sim=0.7129  epsilon_docs/epl.md | heading='Syntax'
+    13. sim=0.7081  epsilon_docs/articles_json-emc_index.md | heading='Reuse of objects in JSON documents'
+    14. sim=0.6927  epsilon_docs/evl.md | heading='Abstract Syntax'
+    15. sim=0.6840  epsilon_docs/articles_index.md | heading='Recipes'
+    16. sim=0.6518  epsilon_docs/egl.md | heading='Abstract Syntax'
+    17. sim=0.5364  epsilon_docs/articles_eol-syntax-updates_index.md | heading='0.8.8'
+    18. sim=0.5323  epsilon_docs/articles_run-epsilon-from-java.md | heading='Dependencies'
+
+  Query: 'EOL expression language syntax'
+    1. sim=0.8150  epsilon_docs/articles_simulink_index.md | heading='Using the Simulink Driver from Java'
+    2. sim=0.8139  epsilon_docs/articles_running-epsilon-ant-tasks-from-command-line_index.md | heading='Flexmi and Emfatic'
+    3. sim=0.7780  epsilon_docs/articles_json-emc_index.md | heading='Author JSON document with detailed accounts'
+    4. sim=0.7663  epsilon_docs/articles_type-relationships-in-epsilon.md | heading='Type-Related Operations'
+    5. sim=0.7630  epsilon_docs/articles_json-emc_index.md | heading='Reuse of objects in JSON documents'
+    6. sim=0.7558  epsilon_docs/eol.md | heading='Annotations'
+    7. sim=0.7103  epsilon_docs/articles_profiled-uml-models_index.md | heading='Querying a Profiled UML Model'
+    8. sim=0.7079  epsilon_docs/epl.md | heading='Syntax'
+    9. sim=0.6946  epsilon_docs/articles_index.md | heading='Recipes'
+    10. sim=0.6908  epsilon_docs/articles_xsd-xml_index.md | heading='How can I query by element type?'
+    11. sim=0.6734  epsilon_docs/eol.md | heading='Syntax'
+    12. sim=0.6714  epsilon_docs/articles_epsilon-pojos.md | heading='Running Epsilon Programs on POJOs'
+    13. sim=0.6622  epsilon_docs/evl.md | heading='Abstract Syntax'
+    14. sim=0.6572  epsilon_docs/index.md | heading='Workflow'
+    15. sim=0.6266  epsilon_docs/index.md | heading='Languages'
+    16. sim=0.5821  epsilon_docs/egl.md | heading='Abstract Syntax'
+    17. sim=0.5786  epsilon_docs/articles_eol-syntax-updates_index.md | heading='0.8.8'
+    18. sim=0.4361  epsilon_docs/articles_run-epsilon-from-java.md | heading='Dependencies'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (6):
+  1. [0.985] epsilon_docs/eol.md (heading='Annotations', parent_heading='User-Defined Operations')
+     ## Annotations
+Example: demonstrate simple and executable annotation syntax in Epsilon Object Language (EOL).
+
+```eol
+// Simple annotation
+@name value(,value)
+
+// Executable annotation
+$name expressio
+  2. [0.983] epsilon_docs/eol.md (heading='Syntax', parent_heading='The Epsilon Object Language (EOL)')
+     ## Syntax
+Example: illustrate the class structure and relationships within the Epsilon Object Language (EOL) syntax.
+
+```mermaid
+classDiagram
+class EolModule {
+  +main:StatementBlock
+}
+class ImportSta
+  3. [0.896] epsilon_docs/index.md (heading='Languages', parent_heading='Documentation')
+     # Documentation
+
+Epsilon is a family of languages and tools implemented in Java, for automating common model-based software engineering tasks.
+
+## Languages
+
+At the core of Epsilon is the [Epsilon Obj
+  4. [0.895] epsilon_docs/epl.md (heading='Syntax', parent_heading='The Epsilon Pattern Language (EPL)')
+     ## Syntax
+
+The syntax of EPL is an extension of the syntax of the [EOL language](../eol), which is the core language of Epsilon. As such, any references to *expression* and *statement block* in this c
+  5. [0.859] epsilon_docs/index.md (heading='Workflow', parent_heading='Tools')
+     ### Task-Specific Languages
+
+Epsilon provides the following task-specific languages, which use EOL as their core expression language. Each task-specific language provides constructs and syntax that ar
+  6. [0.630] epsilon_docs/evl.md (heading='Abstract Syntax', parent_heading='The Epsilon Validation Language (EVL)')
+     !!! info
+    As with most languages in Epsilon, EVL uses [EOL](../eol) as its expression language. This page only documents the additional syntax and semantics that EVL provides on top of EOL.
+
+```mer
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon. Use only the documentation below — do not use outside knowledge, and say so if it doesn't cover something.
+
+Documentation:
+--- DOCUMENTATION ---
+[Source: epsilon_docs/eol.md]
+## Annotations
+Example: demonstrate simple and executable annotation syntax in Epsilon Object Language (EOL).
+
+```eol
+// Simple annotation
+@name value(,value)
+
+// Executable annotation
+$name expression
+```
+
+[Source: epsilon_docs/eol.md]
+## Syntax
+Example: illustrate the class structure and relationships within the Epsilon Object Language (EOL) syntax.
+
+```mermaid
+classDiagram
+class EolModule {
+  +main:StatementBlock
+}
+class ImportStatement {
+  +imported:EolModule
+}
+class Operation {
+  +name: String
+  +context: EolType
+  +parameters: Parameter[*]
+  +returnType: EolType
+}
+class ExecutableAnnotation {
+	+expression: Expression
+}
+class SimpleAnnotation {
+	+values: String[*]
+}
+EolModule -- ImportStatement: importStatements *
+EolModule -- Operation: operations *
+Operation -- Annotation: annotations *
+Operation -- StatementBlock: body
+EolModule -- StatementBlock: main
+StatementBlock -- Statement: statements *
+Annotation <|-- ExecutableAnnotation
+Annotation <|-- SimpleAnnotation
+```
+
+[Source: epsilon_docs/index.md]
+# Documentation
+
+Epsilon is a family of languages and tools implemented in Java, for automating common model-based software engineering tasks.
+
+## Languages
+
+At the core of Epsilon is the [Epsilon Object Language (EOL)](eol.md), a scripting language that combines the imperative style of languages like Java/JavaScript with the powerful functional model querying capabilities of [OCL](). On top of EOL, Epsilon provides a number of interoperable task-specific languages for tasks such as code generation, model-to-model transformation and model validation.
+
+Epsilon languages are underpinned by a [model connectivity layer](emc.md) that shields them from the specifics of individual modelling technologies and allows them to query and modify models that conform to different technologies in a uniform way (e.g. transform an EMF model into Simulink, cross-validate an XML document and a UML model).
+
+[Source: epsilon_docs/epl.md]
+## Syntax
+
+The syntax of EPL is an extension of the syntax of the [EOL language](../eol), which is the core language of Epsilon. As such, any references to *expression* and *statement block* in this chapter, refer to EOL expressions and blocks of EOL statements respectively. It is also worth noting that EOL expressions and statements can produce side-effects on models, and therefore, it is the responsibility of the developer to decide which expressions used in the context of EPL patterns should be side-effect free and which not.
+
+As illustrated in the figure below, EPL patterns are organised in *modules*. Each module contains a number of named *patterns* and optionally, *pre* and *post* statement blocks that are executed before and after the pattern matching process, and helper EOL operations. EPL modules can import other EPL and EOL modules to facilitate reuse and modularity.
+
+[Source: epsilon_docs/index.md]
+### Task-Specific Languages
+
+Epsilon provides the following task-specific languages, which use EOL as their core expression language. Each task-specific language provides constructs and syntax that are tailored to the specific task it targets:
+
+[Source: epsilon_docs/evl.md]
+!!! info
+    As with most languages in Epsilon, EVL uses [EOL](../eol) as its expression language. This page only documents the additional syntax and semantics that EVL provides on top of EOL.
+
+```mermaid-80
+classDiagram
+class Constraint {
+    -name: String
+    -guard: ExecutableBlock<Boolean>
+    -check: ExecutableBlock<Boolean>
+    -message: ExecutableBlock<String>
+    -isCritique: boolean
+}
+class ConstraintContext {
+    -type: EolModelElementType
+    -guard: ExecutableBlock<Boolean>
+}
+class NamedStatementBlockRule {
+    -name: String
+    -body: StatementBlock
+}
+class Fix {
+    -guard: ExecutableBlock<Boolean>
+    -title: ExecutableBlock<String>
+    -body: ExecutableBlock<Void>
+}
+EolModule <|-- ErlModule
+EvlModule --|> ErlModule
+Pre --|> NamedStatementBlockRule
+Post --|> NamedStatementBlockRule
+ErlModule -- Pre: pre *
+ErlModule -- Post: post *
+EvlModule -- ConstraintContext: contexts *
+ConstraintContext -- Constraint: constraints *
+Constraint -- Fix: fixes *
+
+--- USER MESSAGE ---
+What is EOL, and why is it described as the "core expression language" that all other Epsilon languages are built on?
+
+Before writing your answer, silently check each part of the question against the documentation — including whether any combination of separately-documented pieces is actually shown together, not just individually present somewhere. Don't show this checking process or split your answer into labeled parts. Write a smooth, natural answer, and weave in a brief, honest note wherever something isn't directly confirmed, rather than presenting it as verified.
+
+Be concise, and let the length of your answer reflect how much the documentation actually supports — don't stretch a thin piece of evidence into a long, confident-sounding answer.
+
+Question:
+What is EOL, and why is it described as the "core expression language" that all other Epsilon languages are built on?
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+Epsilon Object Language (EOL) is a scripting language that combines the imperative style of languages like Java or JavaScript with the powerful functional model querying capabilities of OCL. It is described as the core language of Epsilon because the framework provides a number of interoperable task-specific languages that operate on top of it.
+
+The documentation confirms this foundational role by explaining that EPL syntax is an extension of EOL, where references to expressions and statement blocks refer to EOL equivalents. Similarly, EVL uses EOL as its expression language, documenting only the additional syntax and semantics it provides on top of EOL. However, while the index states that task-specific languages use EOL as their core expression language, the EVL section qualifies this by stating "As with most languages in Epsilon," rather than explicitly confirming that *all* languages without exception rely on it.
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             2
+  Prompt tokens:     1,440
+  Completion tokens: 6,772
+  Total tokens:      8,212
+  Estimated cost:    $0.00185
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openrouter/qwen/qwen3.5-flash-02-23
+  Total LLM calls:         2
+  Total prompt tokens:     1,440
+  Total completion tokens: 6,772
+  Total tokens:            8,212
+  Total estimated cost:    $0.00185
+============================================================

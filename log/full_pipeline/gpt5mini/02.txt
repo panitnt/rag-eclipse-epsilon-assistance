@@ -1,0 +1,197 @@
+Session started: 2026-07-27 21:09:49
+Model: openai/gpt-5-mini | temperature=0
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[21:09:59]
+
+── QUESTION ──────────────────────────────────────────────
+What's the difference between the Elvis operator (?:) and the null-safe navigation operator (?.) in EOL? Give an example of each.
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - What's the difference between the Elvis operator (?:) and the null-safe navigation operator (?.) in EOL? Give an example of each.
+  - EOL Elvis operator ?: example
+  - EOL null-safe navigation operator ?. example and difference from Elvis operator
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: "What's the difference between the Elvis operator (?:) and the null-safe navigation operator (?.) in EOL? Give an example of each."
+    1. sim=0.8807  epsilon_docs/eol.md | heading='Safe Navigation and Elvis Operator'
+    2. sim=0.6527  epsilon_docs/articles_epsilon-emf_index.md | heading='What is the difference between containment and non-containment references in EMF?'
+    3. sim=0.6470  epsilon_docs/articles_eol-syntax-updates_index.md | heading='0.8.8'
+    4. sim=0.5998  epsilon_docs/eol.md | heading='User-Defined Operations'
+    5. sim=0.5953  epsilon_docs/eol.md | heading='Escaping Reserved Keywords'
+    6. sim=0.5829  epsilon_docs/eol.md | heading='Tuples'
+    7. sim=0.5824  epsilon_docs/articles_running-epsilon-ant-tasks-from-command-line_index.md | heading='UML'
+    8. sim=0.5798  epsilon_docs/eol.md | heading='Feature Navigation'
+    9. sim=0.5119  epsilon_docs/pinset_index.md | heading='Model example'
+
+  Query: 'EOL Elvis operator ?: example'
+    1. sim=0.7731  epsilon_docs/eol.md | heading='Safe Navigation and Elvis Operator'
+    2. sim=0.6820  epsilon_docs/articles_running-epsilon-ant-tasks-from-command-line_index.md | heading='UML'
+    3. sim=0.6681  epsilon_docs/eol.md | heading='Tuples'
+    4. sim=0.6673  epsilon_docs/eol.md | heading='User-Defined Operations'
+    5. sim=0.6135  epsilon_docs/eol.md | heading='Feature Navigation'
+    6. sim=0.6130  epsilon_docs/articles_eol-syntax-updates_index.md | heading='0.8.8'
+    7. sim=0.6058  epsilon_docs/articles_epsilon-emf_index.md | heading='What is the difference between containment and non-containment references in EMF?'
+    8. sim=0.5585  epsilon_docs/eol.md | heading='Escaping Reserved Keywords'
+    9. sim=0.4960  epsilon_docs/pinset_index.md | heading='Model example'
+
+  Query: 'EOL null-safe navigation operator ?. example and difference from Elvis operator'
+    1. sim=0.8839  epsilon_docs/eol.md | heading='Safe Navigation and Elvis Operator'
+    2. sim=0.6146  epsilon_docs/articles_eol-syntax-updates_index.md | heading='0.8.8'
+    3. sim=0.6065  epsilon_docs/articles_epsilon-emf_index.md | heading='What is the difference between containment and non-containment references in EMF?'
+    4. sim=0.5900  epsilon_docs/eol.md | heading='User-Defined Operations'
+    5. sim=0.5891  epsilon_docs/eol.md | heading='Escaping Reserved Keywords'
+    6. sim=0.5876  epsilon_docs/articles_running-epsilon-ant-tasks-from-command-line_index.md | heading='UML'
+    7. sim=0.5704  epsilon_docs/eol.md | heading='Tuples'
+    8. sim=0.5520  epsilon_docs/eol.md | heading='Feature Navigation'
+    9. sim=0.4847  epsilon_docs/pinset_index.md | heading='Model example'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (5):
+  1. [0.975] epsilon_docs/eol.md (heading='Safe Navigation and Elvis Operator', parent_heading='Expressions')
+     ### Safe Navigation and Elvis Operator
+
+As of version 2.1, EOL supports [safe null navigation](https://en.wikipedia.org/wiki/Safe_navigation_operator) `?.`, which makes it more concise to chain featur
+  2. [0.055] epsilon_docs/eol.md (heading='Variable Declaration Statement', parent_heading='Expressions')
+     ## Variable Declaration Statement
+Example: declare variables with explicit types, initialize them, and demonstrate variable scoping within conditional blocks.
+Keywords: new Uml
+
+```eol
+var i : Integer
+  3. [0.005] epsilon_docs/eol.md (heading='Ternary Operator', parent_heading='Expressions')
+     ### Logical Operators
+
+EOL provides common operators for performing logical computations illustrated in the table below. Logical operations apply only to instances of the Boolean primitive type.
+
+!!! 
+  4. [0.003] epsilon_docs/eol.md (heading='Switch Statement', parent_heading='Expressions')
+     ### Switch Statement
+
+A switch statement consists of an expression and a set of cases, and can be used to implement multi-branching. Unlike Java/C, switch in EOL doesn't by default fall through to the
+  5. [0.001] epsilon_docs/eol.md (heading='Extended Properties', parent_heading='Expressions')
+     ## Extended Properties
+Example: demonstrate using extended properties prefixed with `~` to simplify object property management in EOL.
+
+```
+
+To simplify the code required in such cases, EOL provides t
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon. Use only the documentation below — do not use outside knowledge, and say so if it doesn't cover something.
+
+Documentation:
+--- DOCUMENTATION ---
+[Source: epsilon_docs/eol.md]
+### Safe Navigation and Elvis Operator
+
+As of version 2.1, EOL supports [safe null navigation](https://en.wikipedia.org/wiki/Safe_navigation_operator) `?.`, which makes it more concise to chain feature call expressions without resorting to defensive `null` / `isDefined()` checks. In the following example, the variable `result` will be `null`, and the program won't crash since the safe navigation operator is used.
+
+[Source: epsilon_docs/eol.md]
+## Variable Declaration Statement
+Example: declare variables with explicit types, initialize them, and demonstrate variable scoping within conditional blocks.
+Keywords: new Uml
+
+```eol
+var i : Integer = 5;
+var c : new Uml!Class;
+//i = "somevalue";
+if (c.isDefined()) {
+  var i : String;
+  i = "somevalue";
+}
+i = 3;
+var s1 : Sequence;
+var s2 : Sequence<Integer>;
+var m1 : Map;
+var m2 : Map(String, Integer);
+```
+
+[Source: epsilon_docs/eol.md]
+### Logical Operators
+
+EOL provides common operators for performing logical computations illustrated in the table below. Logical operations apply only to instances of the Boolean primitive type.
+
+!!! warning "Operator Precedence"
+    All logical operators in EOL have the same priority. This is in contrast to other languages like Java where e.g. `and` has a higher priority than `or`. As a result, while `true || true && false` returns `true` in Java, the equivalent `true or true and false` expression in EOL returns `false`. Default priorities can be overridden using brackets (`true or (true and false)` in this case.)
+
+Operator | Description
+---------|------------
+and            |Returns the logical conjunction of the two expressions
+or             |Returns the logical disjunction of the two expressions
+not            |Returns the logical negation of the expression
+implies        |Returns the logical implication of the two expressions (see below)
+xor            |Returns true if only one of the involved expressions evaluates to true and false otherwise
+
+The truth table for the `implies` logical operator is below.
+
+Left|Right|Result
+----|-----|------
+true|true|true
+true|false|false
+false|true|true
+false|false|true
+
+### Ternary Operator
+
+[Source: epsilon_docs/eol.md]
+### Switch Statement
+
+A switch statement consists of an expression and a set of cases, and can be used to implement multi-branching. Unlike Java/C, switch in EOL doesn't by default fall through to the next case after a successful one. Therefore, it is not necessary to add a `break` statement after each case. To enable falling through to all subsequent cases you can use the `continue` statement. Also, unlike Java/C, the switch expression can return anything (not only integers). As an example, when executed, the code in the listing below prints `2` while the code in the following listing prints `2,3,default`.
+
+[Source: epsilon_docs/eol.md]
+## Extended Properties
+Example: demonstrate using extended properties prefixed with `~` to simplify object property management in EOL.
+
+```
+
+To simplify the code required in such cases, EOL provides the concept of *extended properties*. In terms of concrete syntax, an extended property is a normal property, the name of which starts with the tilde character (`~`). With regards to its execution semantics, the first time the value of an extended property of an object is assigned, the property is created and associated with the object. Then, the property can be accessed as a normal property. If an extended property is accessed before it is assigned, it returns `null`. The listing below demonstrates using a `~depth` extended property to eliminate the need for using the `depths` map in the listing that follows it.
+
+```
+
+--- USER MESSAGE ---
+What's the difference between the Elvis operator (?:) and the null-safe navigation operator (?.) in EOL? Give an example of each.
+
+Before writing your answer, silently check each part of the question against the documentation — including whether any combination of separately-documented pieces is actually shown together, not just individually present somewhere. Don't show this checking process or split your answer into labeled parts.
+
+Write a smooth, natural answer. Place any honest note about something not being directly confirmed right next to the part it concerns, not bundled at the end — and let your opening reflect the same level of confidence, rather than stating something flatly and qualifying it afterward.
+
+Be concise, and let the length of your answer reflect how much the documentation actually supports — don't stretch a thin piece of evidence into a long, confident-sounding answer.
+
+Question:
+What's the difference between the Elvis operator (?:) and the null-safe navigation operator (?.) in EOL? Give an example of each.
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+From the supplied EOL documentation:
+
+- Null‑safe navigation (?.): The docs state that EOL supports the safe null navigation operator `?.`. It is used to chain feature calls without having to do defensive `null` / `isDefined()` checks; if a step in the chain is null, the overall expression yields null and the program does not crash (the docs say, “the variable result will be null, and the program won't crash since the safe navigation operator is used”).
+
+- Elvis operator (?:): Although the section heading mentions the Elvis operator `?:`, the provided documentation does not describe its semantics or show any examples. I cannot provide an authoritative EOL example or explanation of `?:` from the supplied docs because that information is not included here.
+
+If you want, I can (a) produce example snippets for both operators based on general knowledge, or (b) look up the missing EOL documentation for the Elvis operator — tell me which you prefer. (Note: I didn't invent any Elvis examples here because the supplied docs don't cover them.)
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             2
+  Prompt tokens:     1,260
+  Completion tokens: 2,073
+  Total tokens:      3,333
+  Estimated cost:    $0.00446
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         2
+  Total prompt tokens:     1,260
+  Total completion tokens: 2,073
+  Total tokens:            3,333
+  Total estimated cost:    $0.00446
+============================================================

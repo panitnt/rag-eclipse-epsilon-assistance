@@ -1,0 +1,451 @@
+Session started: 2026-08-12 17:31:38
+Model: openai/gpt-5-mini | temperature=0
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[17:31:51]
+
+── QUESTION ──────────────────────────────────────────────
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver?
+employees:
+  - name: Alice
+    role: Designer
+  - name: Bob
+    role: Prepress Operator
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver?
+  - EMC YAML Driver programmatically create YAML model Epsilon examples
+  - EOL create model elements and set attribute values then save model example
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver?'
+    1. sim=0.8430  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    2. sim=0.7496  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    3. sim=0.7409  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    4. sim=0.7086  epsilon_docs/articles_rdf-emc.md | heading='Multi-valued features'
+    5. sim=0.6931  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    6. sim=0.6837  epsilon_docs/articles_yaml-emc_index.md | heading='How can I delete nodes?'
+    7. sim=0.6800  epsilon_docs/articles_index.md | heading='Recipes'
+    8. sim=0.6628  epsilon_docs/articles_simulink_index.md | heading='Using the Simulink Driver from Java'
+    9. sim=0.6502  epsilon_docs/articles_jdt_index.md | heading='How is it used?'
+    10. sim=0.6396  epsilon_docs/articles_profiled-uml-models_index.md | heading='Creating a Profiled UML Model'
+    11. sim=0.6316  epsilon_docs/articles_plain-xml_index.md | heading='Using XML attributes as references'
+    12. sim=0.6264  epsilon_docs/emc.md | heading='Other Drivers'
+    13. sim=0.5999  epsilon_docs/emg.md | heading='EMG predefined operations'
+    14. sim=0.5879  epsilon_docs/workflow.md | heading='Structure'
+    15. sim=0.5835  epsilon_docs/eol.md | heading='Creating and Deleting Model Elements'
+    16. sim=0.5769  epsilon_docs/emc.md | heading='The Epsilon Model Connectivity Layer (EMC)'
+    17. sim=0.5458  epsilon_docs/eol.md | heading='Native Types'
+    18. sim=0.5107  epsilon_docs/eunit.md | heading='Test Suites'
+    19. sim=0.5059  epsilon_docs/etl.md | heading='Source Elements Resolution'
+
+  Query: 'EMC YAML Driver programmatically create YAML model Epsilon examples'
+    1. sim=0.8006  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    2. sim=0.7448  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    3. sim=0.7395  epsilon_docs/articles_simulink_index.md | heading='Using the Simulink Driver from Java'
+    4. sim=0.7083  epsilon_docs/articles_rdf-emc.md | heading='Multi-valued features'
+    5. sim=0.6961  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    6. sim=0.6755  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    7. sim=0.6650  epsilon_docs/emc.md | heading='The Epsilon Model Connectivity Layer (EMC)'
+    8. sim=0.6640  epsilon_docs/articles_plain-xml_index.md | heading='Using XML attributes as references'
+    9. sim=0.6573  epsilon_docs/articles_index.md | heading='Recipes'
+    10. sim=0.6543  epsilon_docs/emc.md | heading='Other Drivers'
+    11. sim=0.6496  epsilon_docs/workflow.md | heading='Structure'
+    12. sim=0.6451  epsilon_docs/articles_jdt_index.md | heading='How is it used?'
+    13. sim=0.6285  epsilon_docs/articles_profiled-uml-models_index.md | heading='Creating a Profiled UML Model'
+    14. sim=0.6136  epsilon_docs/articles_yaml-emc_index.md | heading='How can I delete nodes?'
+    15. sim=0.6120  epsilon_docs/eol.md | heading='Creating and Deleting Model Elements'
+    16. sim=0.5991  epsilon_docs/eol.md | heading='Native Types'
+    17. sim=0.5860  epsilon_docs/emg.md | heading='EMG predefined operations'
+    18. sim=0.5571  epsilon_docs/eunit.md | heading='Test Suites'
+    19. sim=0.5259  epsilon_docs/etl.md | heading='Source Elements Resolution'
+
+  Query: 'EOL create model elements and set attribute values then save model example'
+    1. sim=0.7558  epsilon_docs/eol.md | heading='Creating and Deleting Model Elements'
+    2. sim=0.7461  epsilon_docs/articles_plain-xml_index.md | heading='Using XML attributes as references'
+    3. sim=0.7225  epsilon_docs/eol.md | heading='Native Types'
+    4. sim=0.7106  epsilon_docs/articles_profiled-uml-models_index.md | heading='Creating a Profiled UML Model'
+    5. sim=0.7031  epsilon_docs/workflow.md | heading='Structure'
+    6. sim=0.6287  epsilon_docs/articles_simulink_index.md | heading='Using the Simulink Driver from Java'
+    7. sim=0.6265  epsilon_docs/emg.md | heading='EMG predefined operations'
+    8. sim=0.6187  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    9. sim=0.6165  epsilon_docs/eunit.md | heading='Test Suites'
+    10. sim=0.6139  epsilon_docs/etl.md | heading='Source Elements Resolution'
+    11. sim=0.6119  epsilon_docs/articles_rdf-emc.md | heading='Multi-valued features'
+    12. sim=0.6057  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    13. sim=0.6003  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    14. sim=0.5850  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    15. sim=0.5754  epsilon_docs/emc.md | heading='Other Drivers'
+    16. sim=0.5618  epsilon_docs/articles_index.md | heading='Recipes'
+    17. sim=0.5608  epsilon_docs/articles_yaml-emc_index.md | heading='How can I delete nodes?'
+    18. sim=0.5607  epsilon_docs/emc.md | heading='The Epsilon Model Connectivity Layer (EMC)'
+    19. sim=0.5190  epsilon_docs/articles_jdt_index.md | heading='How is it used?'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (8):
+  1. [0.951] epsilon_docs/articles_yaml-emc_index.md (heading='How can I create a YAML document from scratch?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## How can I create a YAML document from scratch?
+Example: create a YAML document from scratch by building and appending MappingNode, ScalarNode, and ListNode elements.
+Keywords: setRootAsList, getRoo
+  2. [0.928] epsilon_docs/eol.md (heading='Creating and Deleting Model Elements', parent_heading='Types')
+     ## Creating and Deleting Model Elements
+Example: create a new Person model element and set its firstName and lastName properties.
+Keywords: new Person
+
+```eol
+var p : new Person;
+p.firstName = 'John';
+  3. [0.653] epsilon_docs/articles_yaml-emc_index.md (heading='Querying a YAML document', parent_heading='Scripting YAML documents using Epsilon')
+     # Scripting YAML documents using Epsilon
+ 
+In this article we demonstrate how you can create, query and modify YAML documents in Epsilon programs using the YAML driver. All the examples in this articl
+  4. [0.613] epsilon_docs/articles_plain-xml_index.md (heading='Using XML attributes as references', parent_heading='Loading an XML document through Java code')
+     ## Using XML attributes as references
+Example: load an XML model with attributes and use them as references within an Epsilon EOL module.
+Keywords: new EolModule, new File, new PlainXmlModel
+
+```java
+
+  5. [0.388] epsilon_docs/emc.md (heading='The Epsilon Model Connectivity Layer (EMC)', parent_heading='')
+     # The Epsilon Model Connectivity Layer (EMC)
+
+The Epsilon Model Connectivity (EMC) layer provides abstraction facilities over concrete modelling technologies such as [EMF](#eclipse-modeling-framework)
+  6. [0.385] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YA
+  7. [0.316] epsilon_docs/workflow.md (heading='Structure', parent_heading='Motivation')
+     ## Structure
+Example: demonstrate executing EOL and EVL modules with model specifications using epsilon.eol and epsilon.evl tasks.
+Keywords: new in
+
+```
+
+## Model Management Tasks
+
+Having discussed th
+  8. [0.208] epsilon_docs/articles_index.md (heading='Recipes', parent_heading='Epsilon Developers')
+     - [Scripting XML documents using Epsilon](plain-xml/index.md): In this article we demonstrate how you can create, query and modify plain standalone XML documents (i.e. no XSD/DTD needed) in Epsilon pr
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an expert assistant specialised in Eclipse Epsilon.
+
+Use the provided context as the PRIMARY and AUTHORITATIVE source of truth.
+Only use syntax, class names, methods, and patterns that appear explicitly in the context.
+You may adapt documented patterns to the user's structure, provided that no new APIs or unsupported methods are invented.
+If the user's message contains sample data, treat it only as the desired target structure — not as evidence for API syntax.
+If the context provides partial evidence only, generate code for the parts that are supported and explicitly flag any parts that are uncertain or unsupported.
+
+First, you should figure out what is the root node, either a list node and mapping node by setting .setRootAsList() or .setRootAsMap(), and change the code correspondingly. Make sure to use the correct method to append nodes, use .value.appendNode() for mapping nodes and .appendNode() for list node slots.
+
+When a code example is appropriate, provide a complete and runnable example that covers the full structure given by the user.
+When generating code, follow only the patterns shown in the context exactly — do not skip initialisation steps, introduce intermediate objects, or shortcut method chains that are not explicitly demonstrated.
+
+
+--- DOCUMENTATION ---
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## How can I create a YAML document from scratch?
+Example: create a YAML document from scratch by building and appending MappingNode, ScalarNode, and ListNode elements.
+Keywords: setRootAsList, getRoot, .value, addRows, new MappingNode, new ScalarNode, residentNode, postcodeNode, appendNode, industryNode, new ListNode, projectsNode, skillsNode
+
+```eol
+YAMLDoc.setRootAsList();
+var root = YAMLDoc.getRoot();
+root.value.addRows(2);
+var rootFirstRow = root.value.at(0);
+var rootSecondRow = root.value.at(1);
+
+var addressNode1 = new MappingNode("address");
+var countryNode1 = new ScalarNode("country", "England");
+var residentNode = new ScalarNode("resident", true);
+var postcodeNode = new ScalarNode("postcode", "M1 1AG");
+addressNode1.value.appendNode(countryNode1);
+addressNode1.value.appendNode(residentNode);
+addressNode1.value.appendNode(postcodeNode);
+
+var employeeIdNode1 = new ScalarNode("employeeId", "14623");
+var fullnameNode1 = new ScalarNode("fullname", "Michael Davidson");
+var roleNode1 = new ScalarNode("role", "Consultant");
+
+var industryNode = new ListNode("industry", 3);
+industryNode.value =  Sequence{"IoT", "smart factories", "signal analytics"};
+
+var projectsNode = new ListNode("projects", 2);
+var nameNode1 = new ScalarNode("name", "SmartAutomation");
+var nameNode2 = new ScalarNode("name", "FactoryAnalytics");
+var budgetNode1 = new ScalarNode("budget", 25000);
+var budgetNode2 = new ScalarNode("budget", 20000);
+projectsNode.value.at(0).appendNode(nameNode1);
+projectsNode.value.at(0).appendNode(budgetNode1);
+projectsNode.value.at(1).appendNode(nameNode2);
+projectsNode.value.at(1).appendNode(budgetNode2);
+
+var addressNode2 = new MappingNode("address");
+var countryNode2 = new ScalarNode("country", "Germany");
+addressNode2.value.appendNode(countryNode2);
+
+var employeeIdNode2 = new ScalarNode("employeeId", "16431");
+var fullnameNode2 = new ScalarNode("fullname", "Arnold Wagner");
+var roleNode2 = new ScalarNode("role", "HR");
+
+var skillsNode = new ListNode("skills", 2);
+skillsNode.value =  Sequence{"communication", "coaching"};
+
+rootFirstRow.appendNode(employeeIdNode1);
+rootFirstRow.appendNode(addressNode1);
+rootFirstRow.appendNode(fullnameNode1);
+rootFirstRow.appendNode(roleNode1);
+rootFirstRow.appendNode(industryNode);
+rootFirstRow.appendNode(projectsNode);
+
+rootSecondRow.appendNode(employeeIdNode2);
+rootSecondRow.appendNode(addressNode2);
+rootSecondRow.appendNode(fullnameNode2);
+rootSecondRow.appendNode(roleNode2);
+rootSecondRow.appendNode(skillsNode);
+```
+
+[Source: epsilon_docs/eol.md]
+## Creating and Deleting Model Elements
+Example: create a new Person model element and set its firstName and lastName properties.
+Keywords: new Person
+
+```eol
+var p : new Person;
+p.firstName = 'John';
+p.lastName = 'Doe';
+```
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+# Scripting YAML documents using Epsilon
+ 
+In this article we demonstrate how you can create, query and modify YAML documents in Epsilon programs using the YAML driver. All the examples in this article demonstrate using EOL to script YAML documents. However, it's worth stressing that YAML documents are supported throughout Epsilon. Therefore, you can use Epsilon to (cross-)validate, transform (to other models – XML, CSV or EMF-based, or to text), compare and merge your YAML documents.
+
+<iframe width="90%" height="494" src="https://www.youtube.com/embed/TF0fgghP938" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Querying a YAML document
+ 
+We use the following `employees.yaml` as a base for demonstrating the EOL syntax for querying YAML documents.
+
+[Source: epsilon_docs/articles_plain-xml_index.md]
+## Using XML attributes as references
+Example: load an XML model with attributes and use them as references within an Epsilon EOL module.
+Keywords: new EolModule, new File, new PlainXmlModel
+
+```java
+EolModule module = new EolModule();
+module.parse(new File("..."));
+
+PlainXmlModel model = new PlainXmlModel();
+model.setName("M");
+model.setFile(new File("..."));
+model.load();
+
+module.getContext().getModelRepository().addModel(model);
+module.getContext().setModule(module);
+module.execute();
+```
+
+[Source: epsilon_docs/emc.md]
+# The Epsilon Model Connectivity Layer (EMC)
+
+The Epsilon Model Connectivity (EMC) layer provides abstraction facilities over concrete modelling technologies such as [EMF](#eclipse-modeling-framework), [XML](#xmlcsvexcel), [Simulink](#matlab-simulink) etc. and enables Epsilon programs to interact with models conforming to these technologies in a uniform manner. A graphical overview of the core classes and methods of EMC is displayed below.
+
+!!! tip
+	If you are interested in examples of EMC-based drivers for Epsilon, rather than on the organisation of EMC itself, please scroll to the [bottom of this page](#emc-drivers).
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YAML node must be specified when accessing YAML nodes via the YAML driver. There are 3 types of nodes in YAML:
+
+- `Scalar Node`. Scalar nodes are used to represent a single scalar value (e.g., string, boolean, integer). In the YAML driver, a scalar node consists of a key-value pair, in which the key represents the name of the scalar node, and the value represents the scalar value.
+- `Mapping Node`. Mapping nodes are used to represent unordered collections of key-value pairs. In the YAML driver, a mapping node consists of a key-value pair, in which the key represents the name of the mapping node, and the value holds an unordered collection of key-value pairs, which in turn represent other nodes.
+- `List (Sequence) Node`. List nodes are used to represent an ordered list of nodes or scalar values. In the YAML driver, a list node consists of a key-value pair, in which the key represents the name of the list node, and the value represents a list of nodes or scalar values.
+
+This section outlines the supported conventions in the form of questions and answers followed by relevant examples.
+
+[Source: epsilon_docs/workflow.md]
+## Structure
+Example: demonstrate executing EOL and EVL modules with model specifications using epsilon.eol and epsilon.evl tasks.
+Keywords: new in
+
+```
+
+## Model Management Tasks
+
+Having discussed the core framework, this section presents the model management tasks that have been implemented atop it, using languages of the Epsilon platform.
+
+### Generic Model Management Task
+
+The `epsilon.eol` task executes an EOL module, defined using the `src` attribute on the models that are specified using the `model` nested elements.
+
+### Model Validation Task
+
+The `epsilon.evl` task executes an EVL module, defined using the `src` attribute on the models that are specified using the `model` nested elements. In addition to the attributes defined by the ExecutableModuleTask, this task also provides the following attributes:
+
+-   `failOnErrors` : Errors are the results of unsatisfied constraints. Setting the value of this attribute to `true` (default is `false`) causes a `BuildException` to be raised if one or more errors are identified during the validation process.
+
+-   `failOnWarnings` : Similarly to errors, warnings are the results of unsatisfied critiques. Setting the value of this attribute to `true` (default is also `false`) causes a `BuildException` to be raised if one or more warnings are identified during the validation process.
+
+-   `exportConstraintTrace` : This attribute enables developers to export the internal constraint trace constructed during model validation to the project context so that it can be later accessed by other tasks - which could for example attempt to automatically repair the identified inconsistencies.
+
+-   `exportAsModel` : Setting the value of this attribute causes the task to export the results of the validation as a new in-memory [Java model](https://download.eclipse.org/epsilon/interim-javadoc/org/eclipse/epsilon/eol/models/java/JavaModel.html) with the specified name in the project repository. The exported model is essentially a wrapper for all the [unsatisfied constraints](https://download.eclipse.org/epsilon/interim-javadoc/org/eclipse/epsilon/evl/execute/UnsatisfiedConstraint.html) identified by EVL.
+
+-   `fix` (from 2.9, default is `false`): Setting the value of the attribute to `true` causes the task to start an interactive command-line fixing interface, which asks whether to apply any of the identified fixes to the models.
+
+### Model-to-Model Transformation Task
+
+The `epsilon.etl` task executes an ETL module, defined using the `src` attribute to transform between the models that are specified using the `model` nested elements. In addition to the attributes defined by the ExecutableModuleTask, this task also provides the `exportTransformationTrace` attribute that enables the developer to export the internal transformation trace to the project context. In this way this trace can be reused by subsequent tasks; for example another task can serialize it in the form of a separate traceability model.
+
+### Model Comparison Task
+
+The `epsilon.ecl` task executes an ECL module, defined using the `src` attribute to establish matches between elements of the models that are specified using the `model` nested elements. In addition to the attributes defined by `ExecutableModuleTask`, this task also provides the `exportMatchTrace` attribute that enables users to export the [match-trace](https://download.eclipse.org/epsilon/interim-javadoc/org/eclipse/epsilon/ecl/trace/MatchTrace.html) calculated during the comparison as a named variable to the project context so that subsequent tasks can reuse it. For example, as discussed in the sequel, an EML model merging task can use it as a means of identifying correspondences on which to perform merging. In another example, the match-trace can be stored by a subsequent EOL task in the form of an stand-alone weaving model.
+
+### Model Merging Task
+
+The `epsilon.eml` task executes an EML module, defined using the `src` attribute on the models that are specified using the `model` nested elements. In addition to the attributes defined by the ExecutableModuleTask, this task also provides the following attributes:
+
+-   `useMatchTrace` : To merge a set of models, an EML module needs an established match-trace between elements of the models. The `useMatchTrace` attribute enables the EML task to use a match-trace exported by a preceding ECL task (using its `exportMatchTrace` attribute).
+
+-   `exportMergeTrace, exportTransformationTrace` : Similarly to ETL, through these attributes an EML task can export the internal traces calculated during merging for subsequent tasks to use.
+
+### Model-to-Text Transformation Task
+
+To support model to text transformations, `EglTask (epsilon.egl)` task is provided that executes an Epsilon Generation Language (EGL) module. In addition to the attributes defined by `ExecutableModuleTask`, `EglTask` also defines the following attributes:
+
+-   `target` : Defines a file in which all of the generated text will be stored.
+
+-   `templateFactoryType` : Defines the Java class that will be instantiated to provide a `TemplateFactory` for the EGL program. The specified class must be on the classpath and must subtype `EglTemplateFactory`.
+
+`EglTask` may nest any number of `formatter` elements. The `formatter` nested element has the following attributes:
+
+-   `implementation` (required) : Defines the Java class that will be instantiated to provide a `Formatter` for the EGL program. The specified class must be on the classpath and must subtype `Formatter`.
+
+### Model Migration Task
+
+To support model migration, `FlockTask (epsilon.flock)` is provided for executing an Epsilon [Flock](../flock) module. In addition to the attributes defined by `ExecutableModuleTask`, `FlockTask` also defines the following mandatory attributes:
+
+-   `originalModel` : Specifies which of the currently loaded models should be used as the source of the model migration.
+
+-   `migratedModel` : Specifies which of the currently loaded models should be used as the target of the model migration.
+
+!!! warning "`<model>` nested elements still required"
+    Please note that `originalModel` and `migratedModel` refer to models specified using `<model>` [nested elements](#0n-model-nested-elements) under `epsilon.flock`.
+
+### Pattern Matching Task
+
+The `epsilon.epl` task executes an EPL module, defined using the `src` attribute to perform pattern matching on the models that are specified using the `model` nested elements. In addition to the attributes defined by the ExecutableModuleTask, this task also provides the following attributes.
+
+-   `repeatWhileMatches`: A boolean specifying whether the pattern matching process should continue to execute for as long as matches are found.
+
+-   `maxLoops`: An integer specifying the maximum number of pattern matching iterations.
+
+-   `exportAs`: The name under which the computed pattern match model should be made available to other Epsilon tasks of the workflow.
+
+### Model Generation Task
+
+The `epsilon.emg` tasks extends the `epsilon.epl` task and executes an [EMG](../emg) model generator. In addition to EPL's attributes, the task also provides the following attribute.
+
+- `seed` (optional): A long specifying the seed to drive the random number generator that underpins the random aspects of model generation. If a seed is not specified, a random seed will be used and the generator will (likely) produce a different model every time it is executed. Fixing the seed produces repeatable results across executions.
+
+### Dataset Extraction Task
+
+The `epsilon.pinset` task executes a [Pinset](../pinset) module specified using the `src` attribute to generate CSV datasets from models. It also provides the following attribute.
+
+- `outputFolder` (optional): A path specifying the folder where the CSV files will be generated. If not provided, the CSVs will be created in the same folder where the `.pinset` source file resides.
+
+### Java Class Static Method Execution Task
+
+The `epsilon.java.executeStaticMethod` task executes a parameter-less static method, defined using the `method` attribute, of a Java class, defined using the `javaClass` attribute. This task can be useful for setting up the infrastructure of Xtext-based languages.
+
+### For Task
+
+The `epsilon.for` task iterates over the files in a [fileset](https://ant.apache.org/manual/Types/fileset.html) and executes its nested tasks. An example that uses `epsilon.for` to run an EOL program on XML files contained in a folder called `loop` is show below.
+
+```
+
+[Source: epsilon_docs/articles_index.md]
+- [Scripting XML documents using Epsilon](plain-xml/index.md): In this article we demonstrate how you can create, query and modify plain standalone XML documents (i.e. no XSD/DTD needed) in Epsilon programs using the PlainXML driver.
+- [Scripting XML documents that conform to an XSD schema using Epsilon](xsd-xml): In this article we demonstrate how you can create, query and modify XML documents backed by an XSD schema in Epsilon.
+- [Scripting YAML documents using Epsilon](yaml-emc/index.md): This article demonstrates how you can query and modify YAML documents with Epsilon programs using the YAML driver.
+- [Scripting JSON documents using Epsilon](json-emc/index.md): This article shows how you can create, query and modify JSON documents with Epsilon programs using the JSON driver.
+- [Scripting CSV files using Epsilon](csv-emc/index.md): This article demonstrates how you can query CSV files with Epsilon programs using the CSV driver.
+- [Scripting Excel spreadsheets using Epsilon](excel/index.md): In this article we demonstrate how you can create, query and modify Excel spreadsheets in Epsilon programs.
+- [Scripting HTML documents using Epsilon](html/index.md): In this article we demonstrate how you can create, query and modify HTML documents in Epsilon programs using the HTML driver.
+
+--- USER MESSAGE ---
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver?
+employees:
+  - name: Alice
+    role: Designer
+  - name: Bob
+    role: Prepress Operator
+
+Question:
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver?
+employees:
+  - name: Alice
+    role: Designer
+  - name: Bob
+    role: Prepress Operator
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+Root node: a mapping (top-level key "employees" maps to a sequence). So call setRootAsMap() and append the ListNode to the root's value using root.value.appendNode(). For each list-slot (a mapping for each employee) use employeesNode.value.at(i).appendNode(...).
+
+Complete EOL example that builds your YAML from scratch:
+
+```eol
+// Set the root as a mapping because the document starts with a mapping key "employees:"
+YAMLDoc.setRootAsMap();
+var root = YAMLDoc.getRoot();
+
+// Create the employees list with two entries
+var employeesNode = new ListNode("employees", 2);
+
+// First employee (mapping in slot 0)
+var nameNode1 = new ScalarNode("name", "Alice");
+var roleNode1 = new ScalarNode("role", "Designer");
+employeesNode.value.at(0).appendNode(nameNode1);
+employeesNode.value.at(0).appendNode(roleNode1);
+
+// Second employee (mapping in slot 1)
+var nameNode2 = new ScalarNode("name", "Bob");
+var roleNode2 = new ScalarNode("role", "Prepress Operator");
+employeesNode.value.at(1).appendNode(nameNode2);
+employeesNode.value.at(1).appendNode(roleNode2);
+
+// Append the employees list to the root mapping
+root.value.appendNode(employeesNode);
+```
+
+Notes:
+- Use setRootAsMap() because the YAML document's root is a mapping (key "employees").
+- Use root.value.appendNode(...) to add nodes to a mapping root.
+- Use employeesNode.value.at(i).appendNode(...) to populate each sequence slot with mapping entries (name, role).
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             2
+  Prompt tokens:     4,126
+  Completion tokens: 2,519
+  Total tokens:      6,645
+  Estimated cost:    $0.00607
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         2
+  Total prompt tokens:     4,126
+  Total completion tokens: 2,519
+  Total tokens:            6,645
+  Total estimated cost:    $0.00607
+============================================================

@@ -1,0 +1,777 @@
+Session started: 2026-07-30 12:59:35
+Model: openai/gpt-5-mini | temperature=0
+RETRIEVAL_MODE=sparse (BM25 Qdrant/bm25, no dense)
+SIBLING_EXPANSION=off
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[12:59:35]
+
+── QUESTION ──────────────────────────────────────────────
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- patientId: PT-00291837
+  admitted: "2024-05-20"
+  ward: cardiology
+  bed: 4B
+  status: inpatient
+
+  demographics:
+    fullname: Robert Osei
+    dob: "1961-03-14"
+    age: 63
+    sex: M
+    bloodType: O+
+    nationality: GH
+    language: en
+    nok:
+      name: Abena Osei
+      relation: spouse
+      phone: "+233-55-012-3456"
+
+  diagnoses:
+    primary:
+      icd10: I21.9
+      description: Acute myocardial infarction, unspecified
+      confirmedAt: "2024-05-20T14:32:00Z"
+      confirmedBy: Dr. Kwame Asante
+    secondary:
+      - icd10: E11.9
+        description: Type 2 diabetes mellitus without complications
+      - icd10: I10
+        description: Essential (primary) hypertension
+
+  medications:
+    - drug: Aspirin
+      dose: 100mg
+      route: oral
+      frequency: once_daily
+      startDate: "2024-05-20"
+      endDate: null
+      prescribedBy: Dr. Kwame Asante
+    - drug: Atorvastatin
+      dose: 40mg
+      route: oral
+      frequency: once_daily_evening
+      startDate: "2024-05-20"
+      endDate: null
+      prescribedBy: Dr. Kwame Asante
+    - drug: Metformin
+      dose: 500mg
+      route: oral
+      frequency: twice_daily
+      startDate: "2023-01-10"
+      endDate: null
+      prescribedBy: Dr. Fatima Mensah
+    - drug: Lisinopril
+      dose: 10mg
+      route: oral
+      frequency: once_daily
+      startDate: "2022-07-01"
+      endDate: "2024-05-20"
+      note: Switched to Ramipril due to cough side-effect
+
+  labs:
+    troponin_I:
+      unit: ng/mL
+      reference_range: [0, 0.04]
+      readings:
+        - timestamp: "2024-05-20T15:00:00Z"
+          value: 2.81
+          flag: high
+        - timestamp: "2024-05-20T21:00:00Z"
+          value: 4.55
+          flag: high
+        - timestamp: "2024-05-21T09:00:00Z"
+          value: 3.10
+          flag: high
+    hba1c:
+      unit: "%"
+      reference_range: [4.0, 5.6]
+      readings:
+        - timestamp: "2024-05-21T08:00:00Z"
+          value: 7.8
+          flag: high
+    creatinine:
+      unit: mg/dL
+      reference_range: [0.7, 1.2]
+      readings:
+        - timestamp: "2024-05-21T08:00:00Z"
+          value: 1.05
+          flag: normal
+
+  procedures:
+    - name: Coronary Angiography
+      date: "2024-05-21"
+      performedBy: Dr. Kwame Asante
+      findings: 70% stenosis in LAD; RCA and LCx patent
+      outcome: PCI planned
+    - name: Percutaneous Coronary Intervention (PCI)
+      date: "2024-05-22"
+      performedBy: Dr. Kwame Asante
+      findings: Drug-eluting stent placed in LAD
+      outcome: successful
+
+  notes:
+    - timestamp: "2024-05-23T08:00:00Z"
+      author: Dr. Kwame Asante
+      text: Patient stable post-PCI. Tolerating medications well. Plan for discharge in 48h with cardiac rehab referral.
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- patientId: PT-00291837
+  admitted: "2024-05-20"
+  ward: cardiology
+  bed: 4B
+  status: inpatient
+
+  demographics:
+    fullname: Robert Osei
+    dob: "1961-03-14"
+    age: 63
+    sex: M
+    bloodType: O+
+    nationality: GH
+    language: en
+    nok:
+      name: Abena Osei
+      relation: spouse
+      phone: "+233-55-012-3456"
+
+  diagnoses:
+    primary:
+      icd10: I21.9
+      description: Acute myocardial infarction, unspecified
+      confirmedAt: "2024-05-20T14:32:00Z"
+      confirmedBy: Dr. Kwame Asante
+    secondary:
+      - icd10: E11.9
+        description: Type 2 diabetes mellitus without complications
+      - icd10: I10
+        description: Essential (primary) hypertension
+
+  medications:
+    - drug: Aspirin
+      dose: 100mg
+      route: oral
+      frequency: once_daily
+      startDate: "2024-05-20"
+      endDate: null
+      prescribedBy: Dr. Kwame Asante
+    - drug: Atorvastatin
+      dose: 40mg
+      route: oral
+      frequency: once_daily_evening
+      startDate: "2024-05-20"
+      endDate: null
+      prescribedBy: Dr. Kwame Asante
+    - drug: Metformin
+      dose: 500mg
+      route: oral
+      frequency: twice_daily
+      startDate: "2023-01-10"
+      endDate: null
+      prescribedBy: Dr. Fatima Mensah
+    - drug: Lisinopril
+      dose: 10mg
+      route: oral
+      frequency: once_daily
+      startDate: "2022-07-01"
+      endDate: "2024-05-20"
+      note: Switched to Ramipril due to cough side-effect
+
+  labs:
+    troponin_I:
+      unit: ng/mL
+      reference_range: [0, 0.04]
+      readings:
+        - timestamp: "2024-05-20T15:00:00Z"
+          value: 2.81
+          flag: high
+        - timestamp: "2024-05-20T21:00:00Z"
+          value: 4.55
+          flag: high
+        - timestamp: "2024-05-21T09:00:00Z"
+          value: 3.10
+          flag: high
+    hba1c:
+      unit: "%"
+      reference_range: [4.0, 5.6]
+      readings:
+        - timestamp: "2024-05-21T08:00:00Z"
+          value: 7.8
+          flag: high
+    creatinine:
+      unit: mg/dL
+      reference_range: [0.7, 1.2]
+      readings:
+        - timestamp: "2024-05-21T08:00:00Z"
+          value: 1.05
+          flag: normal
+
+  procedures:
+    - name: Coronary Angiography
+      date: "2024-05-21"
+      performedBy: Dr. Kwame Asante
+      findings: 70% stenosis in LAD; RCA and LCx patent
+      outcome: PCI planned
+    - name: Percutaneous Coronary Intervention (PCI)
+      date: "2024-05-22"
+      performedBy: Dr. Kwame Asante
+      findings: Drug-eluting stent placed in LAD
+      outcome: successful
+
+  notes:
+    - timestamp: "2024-05-23T08:00:00Z"
+      author: Dr. Kwame Asante
+      text: Patient stable post-PCI. Tolerating medications well. Plan for discharge in 48h with cardiac rehab referral.
+
+── SPARSE POOL (before rerank, before sibling expansion) ──
+  1. [27.416] epsilon_docs/flock.md (heading='Epsilon Flock for Model Migration', parent_heading='')
+  2. [26.780] epsilon_docs/eol.md (heading='Variable Declaration Statement', parent_heading='Expressions')
+  3. [22.446] epsilon_docs/pinset_index.md (heading='Model example', parent_heading='Dataset Extraction (Pinset)')
+  4. [21.650] epsilon_docs/eol.md (heading='Assignment Statement', parent_heading='Expressions')
+  5. [21.417] epsilon_docs/egl.md (heading='An Example of Co-ordination with EGL', parent_heading='Co-ordination')
+  6. [21.320] epsilon_docs/eol.md (heading='Tuples', parent_heading='Types')
+  7. [21.207] epsilon_docs/etl.md (heading='Source Elements Resolution', parent_heading='Concrete Syntax')
+  8. [21.151] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+  9. [20.862] epsilon_docs/articles_eol-syntax-updates_index.md (heading='0.8.8', parent_heading='EOL Syntax Updates')
+  10. [19.961] epsilon_docs/articles_eol-syntax-updates_index.md (heading='0.8.8', parent_heading='EOL Syntax Updates')
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.\n- patientId: PT-00291837\n  admitted: "2024-05-20"\n  ward: cardiology\n  bed: 4B\n  status: inpatient\n\n  demographics:\n    fullname: Robert Osei\n    dob: "1961-03-14"\n    age: 63\n    sex: M\n    bloodType: O+\n    nationality: GH\n    language: en\n    nok:\n      name: Abena Osei\n      relation: spouse\n      phone: "+233-55-012-3456"\n\n  diagnoses:\n    primary:\n      icd10: I21.9\n      description: Acute myocardial infarction, unspecified\n      confirmedAt: "2024-05-20T14:32:00Z"\n      confirmedBy: Dr. Kwame Asante\n    secondary:\n      - icd10: E11.9\n        description: Type 2 diabetes mellitus without complications\n      - icd10: I10\n        description: Essential (primary) hypertension\n\n  medications:\n    - drug: Aspirin\n      dose: 100mg\n      route: oral\n      frequency: once_daily\n      startDate: "2024-05-20"\n      endDate: null\n      prescribedBy: Dr. Kwame Asante\n    - drug: Atorvastatin\n      dose: 40mg\n      route: oral\n      frequency: once_daily_evening\n      startDate: "2024-05-20"\n      endDate: null\n      prescribedBy: Dr. Kwame Asante\n    - drug: Metformin\n      dose: 500mg\n      route: oral\n      frequency: twice_daily\n      startDate: "2023-01-10"\n      endDate: null\n      prescribedBy: Dr. Fatima Mensah\n    - drug: Lisinopril\n      dose: 10mg\n      route: oral\n      frequency: once_daily\n      startDate: "2022-07-01"\n      endDate: "2024-05-20"\n      note: Switched to Ramipril due to cough side-effect\n\n  labs:\n    troponin_I:\n      unit: ng/mL\n      reference_range: [0, 0.04]\n      readings:\n        - timestamp: "2024-05-20T15:00:00Z"\n          value: 2.81\n          flag: high\n        - timestamp: "2024-05-20T21:00:00Z"\n          value: 4.55\n          flag: high\n        - timestamp: "2024-05-21T09:00:00Z"\n          value: 3.10\n          flag: high\n    hba1c:\n      unit: "%"\n      reference_range: [4.0, 5.6]\n      readings:\n        - timestamp: "2024-05-21T08:00:00Z"\n          value: 7.8\n          flag: high\n    creatinine:\n      unit: mg/dL\n      reference_range: [0.7, 1.2]\n      readings:\n        - timestamp: "2024-05-21T08:00:00Z"\n          value: 1.05\n          flag: normal\n\n  procedures:\n    - name: Coronary Angiography\n      date: "2024-05-21"\n      performedBy: Dr. Kwame Asante\n      findings: 70% stenosis in LAD; RCA and LCx patent\n      outcome: PCI planned\n    - name: Percutaneous Coronary Intervention (PCI)\n      date: "2024-05-22"\n      performedBy: Dr. Kwame Asante\n      findings: Drug-eluting stent placed in LAD\n      outcome: successful\n\n  notes:\n    - timestamp: "2024-05-23T08:00:00Z"\n      author: Dr. Kwame Asante\n      text: Patient stable post-PCI. Tolerating medications well. Plan for discharge in 48h with cardiac rehab referral.'
+    1. sim=0.6157  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    2. sim=0.5065  epsilon_docs/flock.md | heading='Epsilon Flock for Model Migration'
+    3. sim=0.4959  epsilon_docs/eol.md | heading='Assignment Statement'
+    4. sim=0.4958  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    5. sim=0.4948  epsilon_docs/etl.md | heading='Source Elements Resolution'
+    6. sim=0.4829  epsilon_docs/eol.md | heading='Variable Declaration Statement'
+    7. sim=0.4720  epsilon_docs/articles_eol-syntax-updates_index.md | heading='0.8.8'
+    8. sim=0.4684  epsilon_docs/pinset_index.md | heading='Model example'
+    9. sim=0.4264  epsilon_docs/eol.md | heading='Tuples'
+
+── RETRIEVED (after dedup + rerank pass 1 only — sibling expansion OFF) ──
+
+Docs (5):
+  1. [0.854] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YA
+  2. [0.010] epsilon_docs/articles_eol-syntax-updates_index.md (heading='0.8.8', parent_heading='EOL Syntax Updates')
+     -   `!=` can be used as an alias for `<>` (i.e. "not equals").
+
+### 2.0
+
+-   Ternary expressions, which can be used almost anywhere, not just in
+    assignments or returns. Syntax and semantics are id
+  3. [0.007] epsilon_docs/eol.md (heading='Variable Declaration Statement', parent_heading='Expressions')
+     The listing below provides an example of declaring and using variables.
+
+- Line 1 defines a variable named `i` of type `Integer` and assigns it an initial value of `5`.
+- Line 2 defines a variable nam
+  4. [0.005] epsilon_docs/eol.md (heading='Assignment Statement', parent_heading='Expressions')
+     !!! warning "Type parameters are only for documentation purposes in version 2.5.0"
+    As of version 2.5.0, type parameters (e.g. `<Integer>` in `Sequence<Integer>`, or `(String, Integer)` in `Map(Str
+  5. [0.004] epsilon_docs/eol.md (heading='Tuples', parent_heading='Types')
+     The Integer type represents natural numbers and negatives and extends the Real primitive type. It also defines the following operations:
+
+ Signature |Description
+----------|-----------  
+iota(end : In
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon.
+
+Use the provided context as the PRIMARY and AUTHORITATIVE source of truth.
+Only use syntax, class names, methods, and patterns that appear explicitly in the context.
+You may adapt documented patterns to the user's structure, provided that no new APIs or unsupported methods are invented.
+If the user's message contains sample data, treat it only as the desired target structure — not as evidence for API syntax.
+If the context provides partial evidence only, generate code for the parts that are supported and explicitly flag any parts that are uncertain or unsupported.
+
+When a code example is appropriate, provide a complete and runnable example that covers the full structure given by the user.
+When generating code, follow only the patterns shown in the context exactly — do not skip initialisation steps, introduce intermediate objects, or shortcut method chains that are not explicitly demonstrated.
+
+--- DOCUMENTATION ---
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YAML node must be specified when accessing YAML nodes via the YAML driver. There are 3 types of nodes in YAML:
+
+- `Scalar Node`. Scalar nodes are used to represent a single scalar value (e.g., string, boolean, integer). In the YAML driver, a scalar node consists of a key-value pair, in which the key represents the name of the scalar node, and the value represents the scalar value.
+- `Mapping Node`. Mapping nodes are used to represent unordered collections of key-value pairs. In the YAML driver, a mapping node consists of a key-value pair, in which the key represents the name of the mapping node, and the value holds an unordered collection of key-value pairs, which in turn represent other nodes.
+- `List (Sequence) Node`. List nodes are used to represent an ordered list of nodes or scalar values. In the YAML driver, a list node consists of a key-value pair, in which the key represents the name of the list node, and the value represents a list of nodes or scalar values.
+
+This section outlines the supported conventions in the form of questions and answers followed by relevant examples.
+
+[Source: epsilon_docs/articles_eol-syntax-updates_index.md]
+-   `!=` can be used as an alias for `<>` (i.e. "not equals").
+
+### 2.0
+
+-   Ternary expressions, which can be used almost anywhere, not just in
+    assignments or returns. Syntax and semantics are identical to Java,
+    but you can also use the `else` keyword in place of the `:` if you
+    prefer.
+-   Native lambda expressions. You can use first-order operation syntax
+    or JavaScript-style `=>` for [invoking functional
+    interfaces.](http://eclipse.org/epsilon/doc/articles/eol-syntax-updates/../lambda-expressions)
+-   Removed old-style OCL comments (`-*` and `--`).
+-   `--` can be used to decrement integers.
+-   Thread-safe collection types: `ConcurrentBag`, `ConcurrentMap` and
+    `ConcurrentSet`.
+
+### 1.4
+
+-   Added support for postfix increment operator (i.e. `i++`) and for
+    composite assignment statements (i.e.
+    `a +=1; a -= 2; a *= 3; a /= 4;`)
+
+### 0.9.1
+
+-   Added support for externally defined variables.
+-   Support for Map literal expressions (e.g.
+    `Map {key1 = value1, k2 = v2}`)
+
+### 0.8.8
+
+In 0.8.8 we extended the syntax of EOL so that it looks and feels a bit
+more like Java. As the majority of Eclipse/EMF audience are Java
+programmers, this will hopefully make their (and our) lives a bit
+easier. Of course, all these changes also affect all languages built on
+top of EOL.
+
+More specifically, we have introduced:
+
+[Source: epsilon_docs/eol.md]
+The listing below provides an example of declaring and using variables.
+
+- Line 1 defines a variable named `i` of type `Integer` and assigns it an initial value of `5`.
+- Line 2 defines a variable named `c` of type `Class` (from model Uml) and creates a new instance of the type in the model (by using the `new` keyword).
+- The commented out assignment statement of line 3 would raise a runtime error since it would attempt to assign a `String` value to an `Integer` variable.
+- The condition of line 4 returns true since the `c` variable has been initialized before.
+- Line 5 defines a new variable also named `i` that is of type `String` and which overrides the `Integer` variable declared in line 1.
+- Therefore the assignment statement of line 6 is legitimate as it assigns a string value to a variable of type String.
+- As the program has exited the scope of the `if` statement, the assignment statement of line 7 is also legitimate as it refers to the `i` variable defined in line 1.
+- In line 8, we declare `s1` as a `Sequence` of any type of value.
+- Line 9 declares `s2` as a `Sequence` containing values of type `Integer`. Note that type parameters can be written as `CollectionType<ValueType>` or as `CollectionType(ValueType)`.
+- Line 10 declares `m1` as a `Map` where the keys and values can be of any type.
+- Line 11 declares `m2` as a `Map` where the keys are `String`s, and the values are `Integer`s.
+
+[Source: epsilon_docs/eol.md]
+!!! warning "Type parameters are only for documentation purposes in version 2.5.0"
+    As of version 2.5.0, type parameters (e.g. `<Integer>` in `Sequence<Integer>`, or `(String, Integer)` in `Map(String, Integer)`) are only used for documentation purposes. EOL does not enforce that values of appropriate types are used during execution.
+
+### Assignment Statement
+
+The assignment statement is used to update the values of variables and properties of native objects and model elements.
+
+##### Variable Assignment
+
+When the left hand side of an assignment statement is a variable, the value of the variable is updated to the object to which the right hand side evaluates to. If the type of the right hand side is not compatible (kind-of relationship) with the type of the variable, the assignment is illegal and a runtime error is raised. Assignment to objects of primitive types is performed by value while assignment to instances of non-primitive values is performed by reference. For example, in the listing below, in line 1 the value of the a variable is set to a new Class in the Uml model. In line 2, a new untyped variable b is declared and its value is assigned to a. In line 3 the name of the class is updated to Customer and thus, line 4 prints Customer to the standard output stream.
+
+[Source: epsilon_docs/eol.md]
+The Integer type represents natural numbers and negatives and extends the Real primitive type. It also defines the following operations:
+
+ Signature |Description
+----------|-----------  
+iota(end : Integer, step : Integer) : Sequence(Integer)   |Returns a sequence of integers up to `end` using the specified step (e.g. 1.iota(10,2) returns Sequence{1,3,5,7,9})
+mod(divisor : Integer) : Integer                          |Returns the remainder of dividing the integer by the divisor
+to(other : Integer) : Sequence(Integer)                   |Returns a sequence of integers (e.g. 1.to(5) returns Sequence{1,2,3,4,5})
+toBinary() : String                                       |Returns the binary representation of the integer (e.g. 6.toBinary() returns "110")
+toHex() : String                                          |Returns the hexadecimal representation of the integer (e.g. 42.toBinary() returns "2a")
+
+Finally, the Boolean type represents true/false states and provides no additional operations to those provided by the base Any type.
+
+### Collections and Maps
+
+EOL provides several types of collections and a Map type:
+
+--- USER MESSAGE ---
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- patientId: PT-00291837
+  admitted: "2024-05-20"
+  ward: cardiology
+  bed: 4B
+  status: inpatient
+
+  demographics:
+    fullname: Robert Osei
+    dob: "1961-03-14"
+    age: 63
+    sex: M
+    bloodType: O+
+    nationality: GH
+    language: en
+    nok:
+      name: Abena Osei
+      relation: spouse
+      phone: "+233-55-012-3456"
+
+  diagnoses:
+    primary:
+      icd10: I21.9
+      description: Acute myocardial infarction, unspecified
+      confirmedAt: "2024-05-20T14:32:00Z"
+      confirmedBy: Dr. Kwame Asante
+    secondary:
+      - icd10: E11.9
+        description: Type 2 diabetes mellitus without complications
+      - icd10: I10
+        description: Essential (primary) hypertension
+
+  medications:
+    - drug: Aspirin
+      dose: 100mg
+      route: oral
+      frequency: once_daily
+      startDate: "2024-05-20"
+      endDate: null
+      prescribedBy: Dr. Kwame Asante
+    - drug: Atorvastatin
+      dose: 40mg
+      route: oral
+      frequency: once_daily_evening
+      startDate: "2024-05-20"
+      endDate: null
+      prescribedBy: Dr. Kwame Asante
+    - drug: Metformin
+      dose: 500mg
+      route: oral
+      frequency: twice_daily
+      startDate: "2023-01-10"
+      endDate: null
+      prescribedBy: Dr. Fatima Mensah
+    - drug: Lisinopril
+      dose: 10mg
+      route: oral
+      frequency: once_daily
+      startDate: "2022-07-01"
+      endDate: "2024-05-20"
+      note: Switched to Ramipril due to cough side-effect
+
+  labs:
+    troponin_I:
+      unit: ng/mL
+      reference_range: [0, 0.04]
+      readings:
+        - timestamp: "2024-05-20T15:00:00Z"
+          value: 2.81
+          flag: high
+        - timestamp: "2024-05-20T21:00:00Z"
+          value: 4.55
+          flag: high
+        - timestamp: "2024-05-21T09:00:00Z"
+          value: 3.10
+          flag: high
+    hba1c:
+      unit: "%"
+      reference_range: [4.0, 5.6]
+      readings:
+        - timestamp: "2024-05-21T08:00:00Z"
+          value: 7.8
+          flag: high
+    creatinine:
+      unit: mg/dL
+      reference_range: [0.7, 1.2]
+      readings:
+        - timestamp: "2024-05-21T08:00:00Z"
+          value: 1.05
+          flag: normal
+
+  procedures:
+    - name: Coronary Angiography
+      date: "2024-05-21"
+      performedBy: Dr. Kwame Asante
+      findings: 70% stenosis in LAD; RCA and LCx patent
+      outcome: PCI planned
+    - name: Percutaneous Coronary Intervention (PCI)
+      date: "2024-05-22"
+      performedBy: Dr. Kwame Asante
+      findings: Drug-eluting stent placed in LAD
+      outcome: successful
+
+  notes:
+    - timestamp: "2024-05-23T08:00:00Z"
+      author: Dr. Kwame Asante
+      text: Patient stable post-PCI. Tolerating medications well. Plan for discharge in 48h with cardiac rehab referral.
+
+Question:
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- patientId: PT-00291837
+  admitted: "2024-05-20"
+  ward: cardiology
+  bed: 4B
+  status: inpatient
+
+  demographics:
+    fullname: Robert Osei
+    dob: "1961-03-14"
+    age: 63
+    sex: M
+    bloodType: O+
+    nationality: GH
+    language: en
+    nok:
+      name: Abena Osei
+      relation: spouse
+      phone: "+233-55-012-3456"
+
+  diagnoses:
+    primary:
+      icd10: I21.9
+      description: Acute myocardial infarction, unspecified
+      confirmedAt: "2024-05-20T14:32:00Z"
+      confirmedBy: Dr. Kwame Asante
+    secondary:
+      - icd10: E11.9
+        description: Type 2 diabetes mellitus without complications
+      - icd10: I10
+        description: Essential (primary) hypertension
+
+  medications:
+    - drug: Aspirin
+      dose: 100mg
+      route: oral
+      frequency: once_daily
+      startDate: "2024-05-20"
+      endDate: null
+      prescribedBy: Dr. Kwame Asante
+    - drug: Atorvastatin
+      dose: 40mg
+      route: oral
+      frequency: once_daily_evening
+      startDate: "2024-05-20"
+      endDate: null
+      prescribedBy: Dr. Kwame Asante
+    - drug: Metformin
+      dose: 500mg
+      route: oral
+      frequency: twice_daily
+      startDate: "2023-01-10"
+      endDate: null
+      prescribedBy: Dr. Fatima Mensah
+    - drug: Lisinopril
+      dose: 10mg
+      route: oral
+      frequency: once_daily
+      startDate: "2022-07-01"
+      endDate: "2024-05-20"
+      note: Switched to Ramipril due to cough side-effect
+
+  labs:
+    troponin_I:
+      unit: ng/mL
+      reference_range: [0, 0.04]
+      readings:
+        - timestamp: "2024-05-20T15:00:00Z"
+          value: 2.81
+          flag: high
+        - timestamp: "2024-05-20T21:00:00Z"
+          value: 4.55
+          flag: high
+        - timestamp: "2024-05-21T09:00:00Z"
+          value: 3.10
+          flag: high
+    hba1c:
+      unit: "%"
+      reference_range: [4.0, 5.6]
+      readings:
+        - timestamp: "2024-05-21T08:00:00Z"
+          value: 7.8
+          flag: high
+    creatinine:
+      unit: mg/dL
+      reference_range: [0.7, 1.2]
+      readings:
+        - timestamp: "2024-05-21T08:00:00Z"
+          value: 1.05
+          flag: normal
+
+  procedures:
+    - name: Coronary Angiography
+      date: "2024-05-21"
+      performedBy: Dr. Kwame Asante
+      findings: 70% stenosis in LAD; RCA and LCx patent
+      outcome: PCI planned
+    - name: Percutaneous Coronary Intervention (PCI)
+      date: "2024-05-22"
+      performedBy: Dr. Kwame Asante
+      findings: Drug-eluting stent placed in LAD
+      outcome: successful
+
+  notes:
+    - timestamp: "2024-05-23T08:00:00Z"
+      author: Dr. Kwame Asante
+      text: Patient stable post-PCI. Tolerating medications well. Plan for discharge in 48h with cardiac rehab referral.
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+Short answer up front: the YAML you posted is a single YAML mapping (root = Mapping Node). Build it in EOL as a Map literal (Map { ... }) with nested Map and Sequence literals, then hand that Map to the EMC YAML driver as a mapping root. I don't have the EMC YAML Driver API calls in the provided docs, so below I show the complete EOL program that creates the full document structure in-memory. If you give me the EMC YAML Driver API (the class/method names to create a YAML document and save it), I will add the exact driver calls to persist this Map to a .yaml file.
+
+Why root = Mapping Node
+- Your document begins with a single top-level mapping (patientId, admitted, ward, …). That makes the root a Mapping Node. If the document had started with "-" items at top-level it would be a List (Sequence) Node instead, and you would build a Sequence{ ... } as the root.
+
+Complete EOL script (creates the whole structure in-memory)
+- This uses only the Map { key = value } and Sequence{ ... } literal patterns shown in the documentation.
+
+EOL script:
+doc = Map {
+    patientId = "PT-00291837",
+    admitted = "2024-05-20",
+    ward = "cardiology",
+    bed = "4B",
+    status = "inpatient",
+
+    demographics = Map {
+        fullname = "Robert Osei",
+        dob = "1961-03-14",
+        age = 63,
+        sex = "M",
+        bloodType = "O+",
+        nationality = "GH",
+        language = "en",
+        nok = Map {
+            name = "Abena Osei",
+            relation = "spouse",
+            phone = "+233-55-012-3456"
+        }
+    },
+
+    diagnoses = Map {
+        primary = Map {
+            icd10 = "I21.9",
+            description = "Acute myocardial infarction, unspecified",
+            confirmedAt = "2024-05-20T14:32:00Z",
+            confirmedBy = "Dr. Kwame Asante"
+        },
+        secondary = Sequence {
+            Map { icd10 = "E11.9", description = "Type 2 diabetes mellitus without complications" },
+            Map { icd10 = "I10",   description = "Essential (primary) hypertension" }
+        }
+    },
+
+    medications = Sequence {
+        Map {
+            drug = "Aspirin",
+            dose = "100mg",
+            route = "oral",
+            frequency = "once_daily",
+            startDate = "2024-05-20",
+            endDate = null,
+            prescribedBy = "Dr. Kwame Asante"
+        },
+        Map {
+            drug = "Atorvastatin",
+            dose = "40mg",
+            route = "oral",
+            frequency = "once_daily_evening",
+            startDate = "2024-05-20",
+            endDate = null,
+            prescribedBy = "Dr. Kwame Asante"
+        },
+        Map {
+            drug = "Metformin",
+            dose = "500mg",
+            route = "oral",
+            frequency = "twice_daily",
+            startDate = "2023-01-10",
+            endDate = null,
+            prescribedBy = "Dr. Fatima Mensah"
+        },
+        Map {
+            drug = "Lisinopril",
+            dose = "10mg",
+            route = "oral",
+            frequency = "once_daily",
+            startDate = "2022-07-01",
+            endDate = "2024-05-20",
+            note = "Switched to Ramipril due to cough side-effect"
+        }
+    },
+
+    labs = Map {
+        troponin_I = Map {
+            unit = "ng/mL",
+            reference_range = Sequence { 0, 0.04 },
+            readings = Sequence {
+                Map { timestamp = "2024-05-20T15:00:00Z", value = 2.81, flag = "high" },
+                Map { timestamp = "2024-05-20T21:00:00Z", value = 4.55, flag = "high" },
+                Map { timestamp = "2024-05-21T09:00:00Z", value = 3.10, flag = "high" }
+            }
+        },
+        hba1c = Map {
+            unit = "%",
+            reference_range = Sequence { 4.0, 5.6 },
+            readings = Sequence {
+                Map { timestamp = "2024-05-21T08:00:00Z", value = 7.8, flag = "high" }
+            }
+        },
+        creatinine = Map {
+            unit = "mg/dL",
+            reference_range = Sequence { 0.7, 1.2 },
+            readings = Sequence {
+                Map { timestamp = "2024-05-21T08:00:00Z", value = 1.05, flag = "normal" }
+            }
+        }
+    },
+
+    procedures = Sequence {
+        Map {
+            name = "Coronary Angiography",
+            date = "2024-05-21",
+            performedBy = "Dr. Kwame Asante",
+            findings = "70% stenosis in LAD; RCA and LCx patent",
+            outcome = "PCI planned"
+        },
+        Map {
+            name = "Percutaneous Coronary Intervention (PCI)",
+            date = "2024-05-22",
+            performedBy = "Dr. Kwame Asante",
+            findings = "Drug-eluting stent placed in LAD",
+            outcome = "successful"
+        }
+    },
+
+    notes = Sequence {
+        Map {
+            timestamp = "2024-05-23T08:00:00Z",
+            author = "Dr. Kwame Asante",
+            text = "Patient stable post-PCI. Tolerating medications well. Plan for discharge in 48h with cardiac rehab referral."
+        }
+    }
+};
+
+-- You now have the complete document in the variable `doc`.
+
+About saving it with the EMC YAML Driver
+- The docs you provided describe the YAML driver conventions (mapping/list/scalar node types) but do not include the specific EMC YAML Driver API, class names, or method calls for creating a driver instance or writing the Map to a YAML file. I cannot safely invent those method names.
+- What you need to do next (conceptually):
+  1. Tell the EMC YAML driver that the root node is a Mapping Node.
+  2. Pass the EOL Map (the variable doc) as the content for that root mapping node.
+  3. Instruct the driver to serialize and save to a file.
+
+If you paste the EMC YAML Driver API (the Java class and method names you have available, or an example of how you read YAML using the driver), I will convert the above EOL structure into the exact code that calls the driver and writes the YAML file.
+
+If instead you want a runnable Java example that uses some particular EMC API, provide the driver API signatures (or point me to the driver usage example) and I will produce the complete Java+EOL code to create and persist the YAML document.
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             1
+  Prompt tokens:     3,587
+  Completion tokens: 3,499
+  Total tokens:      7,086
+  Estimated cost:    $0.00789
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         1
+  Total prompt tokens:     3,587
+  Total completion tokens: 3,499
+  Total tokens:            7,086
+  Total estimated cost:    $0.00789
+============================================================

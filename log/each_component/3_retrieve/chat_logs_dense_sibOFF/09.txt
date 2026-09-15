@@ -1,0 +1,523 @@
+Session started: 2026-07-30 12:38:46
+Model: openai/gpt-5-mini | temperature=0
+RETRIEVAL_MODE=dense (BAAI/bge-m3, no BM25)
+SIBLING_EXPANSION=off
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[12:38:47]
+
+── QUESTION ──────────────────────────────────────────────
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- tenantId: TEN-001
+  name: Brightline Logistics
+  plan: enterprise
+  seats: {purchased: 50, active: 47}
+
+- tenantId: TEN-002
+  name: Fernwood Studio
+  plan: pro
+  seats: {purchased: 12, active: 9}
+
+- tenantId: TEN-003
+  name: Oakridge Analytics
+  plan: pro
+  seats: {purchased: 20, active: 20}
+
+- tenantId: TEN-004
+  name: Silverline Health
+  plan: enterprise
+  seats: {purchased: 80, active: 61}
+
+- tenantId: TEN-005
+  name: Kestrel Robotics
+  plan: starter
+  seats: {purchased: 5, active: 5}
+
+- tenantId: TEN-006
+  name: Marlowe & Finch
+  plan: pro
+  seats: {purchased: 15, active: 11}
+
+- tenantId: TEN-007
+  name: Pinewood Retail
+  plan: starter
+  seats: {purchased: 3, active: 2}
+
+- tenantId: TEN-008
+  name: Cobalt Freight
+  plan: enterprise
+  seats: {purchased: 100, active: 88}
+
+- tenantId: TEN-009
+  name: Hollowfield Legal
+  plan: pro
+  seats: {purchased: 18, active: 18}
+
+- tenantId: TEN-010
+  name: Thistledown Media
+  plan: starter
+  seats: {purchased: 4, active: 1}
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- tenantId: TEN-001
+  name: Brightline Logistics
+  plan: enterprise
+  seats: {purchased: 50, active: 47}
+
+- tenantId: TEN-002
+  name: Fernwood Studio
+  plan: pro
+  seats: {purchased: 12, active: 9}
+
+- tenantId: TEN-003
+  name: Oakridge Analytics
+  plan: pro
+  seats: {purchased: 20, active: 20}
+
+- tenantId: TEN-004
+  name: Silverline Health
+  plan: enterprise
+  seats: {purchased: 80, active: 61}
+
+- tenantId: TEN-005
+  name: Kestrel Robotics
+  plan: starter
+  seats: {purchased: 5, active: 5}
+
+- tenantId: TEN-006
+  name: Marlowe & Finch
+  plan: pro
+  seats: {purchased: 15, active: 11}
+
+- tenantId: TEN-007
+  name: Pinewood Retail
+  plan: starter
+  seats: {purchased: 3, active: 2}
+
+- tenantId: TEN-008
+  name: Cobalt Freight
+  plan: enterprise
+  seats: {purchased: 100, active: 88}
+
+- tenantId: TEN-009
+  name: Hollowfield Legal
+  plan: pro
+  seats: {purchased: 18, active: 18}
+
+- tenantId: TEN-010
+  name: Thistledown Media
+  plan: starter
+  seats: {purchased: 4, active: 1}
+
+── DENSE POOL (before rerank, before sibling expansion) ──
+  1. [0.716] epsilon_docs/articles_yaml-emc_index.md (heading='How can I create a YAML document from scratch?', parent_heading='Querying/modifying YAML documents in EOL')
+  2. [0.627] epsilon_docs/articles_yaml-emc_index.md (heading='How do I set the root node of a YAML document?', parent_heading='Querying/modifying YAML documents in EOL')
+  3. [0.609] epsilon_docs/articles_yaml-emc_index.md (heading='How can I create a YAML document from scratch?', parent_heading='Querying/modifying YAML documents in EOL')
+  4. [0.602] epsilon_docs/articles_yaml-emc_index.md (heading='How do I set the root node of a YAML document?', parent_heading='Querying/modifying YAML documents in EOL')
+  5. [0.599] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+  6. [0.597] epsilon_docs/articles_yaml-emc_index.md (heading='Querying a YAML document', parent_heading='Scripting YAML documents using Epsilon')
+  7. [0.594] epsilon_docs/articles_excel_index.md (heading='Modifying Cell Values', parent_heading='Creating Spreadsheets')
+  8. [0.589] epsilon_docs/articles_simulink_index.md (heading='Quick start', parent_heading='Scripting Simulink models using Epsilon')
+  9. [0.589] epsilon_docs/articles_yaml-emc_index.md (heading='How can I delete nodes?', parent_heading='Loading a YAML document through Java code')
+  10. [0.579] epsilon_docs/emg.md (heading='EMG predefined operations', parent_heading='Creating Model Elements')
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.\n- tenantId: TEN-001\n  name: Brightline Logistics\n  plan: enterprise\n  seats: {purchased: 50, active: 47}\n\n- tenantId: TEN-002\n  name: Fernwood Studio\n  plan: pro\n  seats: {purchased: 12, active: 9}\n\n- tenantId: TEN-003\n  name: Oakridge Analytics\n  plan: pro\n  seats: {purchased: 20, active: 20}\n\n- tenantId: TEN-004\n  name: Silverline Health\n  plan: enterprise\n  seats: {purchased: 80, active: 61}\n\n- tenantId: TEN-005\n  name: Kestrel Robotics\n  plan: starter\n  seats: {purchased: 5, active: 5}\n\n- tenantId: TEN-006\n  name: Marlowe & Finch\n  plan: pro\n  seats: {purchased: 15, active: 11}\n\n- tenantId: TEN-007\n  name: Pinewood Retail\n  plan: starter\n  seats: {purchased: 3, active: 2}\n\n- tenantId: TEN-008\n  name: Cobalt Freight\n  plan: enterprise\n  seats: {purchased: 100, active: 88}\n\n- tenantId: TEN-009\n  name: Hollowfield Legal\n  plan: pro\n  seats: {purchased: 18, active: 18}\n\n- tenantId: TEN-010\n  name: Thistledown Media\n  plan: starter\n  seats: {purchased: 4, active: 1}'
+    1. sim=0.7614  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    2. sim=0.6917  epsilon_docs/articles_yaml-emc_index.md | heading='How do I set the root node of a YAML document?'
+    3. sim=0.6634  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    4. sim=0.6605  epsilon_docs/articles_yaml-emc_index.md | heading='How can I delete nodes?'
+    5. sim=0.6582  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    6. sim=0.6459  epsilon_docs/articles_simulink_index.md | heading='Quick start'
+    7. sim=0.6360  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    8. sim=0.6112  epsilon_docs/emg.md | heading='EMG predefined operations'
+
+── RETRIEVED (after dedup + rerank pass 1 only — sibling expansion OFF) ──
+
+Docs (3):
+  1. [0.988] epsilon_docs/articles_yaml-emc_index.md (heading='How can I create a YAML document from scratch?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## How can I create a YAML document from scratch?
+Example: create a YAML document from scratch by building and appending MappingNode, ScalarNode, and ListNode elements.
+Keywords: setRootAsList, getRoo
+  2. [0.725] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YA
+  3. [0.577] epsilon_docs/articles_yaml-emc_index.md (heading='How do I set the root node of a YAML document?', parent_heading='Querying/modifying YAML documents in EOL')
+     ### How do I set the root node of a YAML document?
+
+The `root` property can be used for setting the root node of a YAML document. The root node of a YAML document can either be a mapping node or a lis
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon.
+
+Use the provided context as the PRIMARY and AUTHORITATIVE source of truth.
+Only use syntax, class names, methods, and patterns that appear explicitly in the context.
+You may adapt documented patterns to the user's structure, provided that no new APIs or unsupported methods are invented.
+If the user's message contains sample data, treat it only as the desired target structure — not as evidence for API syntax.
+If the context provides partial evidence only, generate code for the parts that are supported and explicitly flag any parts that are uncertain or unsupported.
+
+When a code example is appropriate, provide a complete and runnable example that covers the full structure given by the user.
+When generating code, follow only the patterns shown in the context exactly — do not skip initialisation steps, introduce intermediate objects, or shortcut method chains that are not explicitly demonstrated.
+
+--- DOCUMENTATION ---
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## How can I create a YAML document from scratch?
+Example: create a YAML document from scratch by building and appending MappingNode, ScalarNode, and ListNode elements.
+Keywords: setRootAsList, getRoot, .value, addRows, new MappingNode, new ScalarNode, residentNode, postcodeNode, appendNode, industryNode, new ListNode, projectsNode, skillsNode
+
+```eol
+YAMLDoc.setRootAsList();
+var root = YAMLDoc.getRoot();
+root.value.addRows(2);
+var rootFirstRow = root.value.at(0);
+var rootSecondRow = root.value.at(1);
+
+var addressNode1 = new MappingNode("address");
+var countryNode1 = new ScalarNode("country", "England");
+var residentNode = new ScalarNode("resident", true);
+var postcodeNode = new ScalarNode("postcode", "M1 1AG");
+addressNode1.value.appendNode(countryNode1);
+addressNode1.value.appendNode(residentNode);
+addressNode1.value.appendNode(postcodeNode);
+
+var employeeIdNode1 = new ScalarNode("employeeId", "14623");
+var fullnameNode1 = new ScalarNode("fullname", "Michael Davidson");
+var roleNode1 = new ScalarNode("role", "Consultant");
+
+var industryNode = new ListNode("industry", 3);
+industryNode.value =  Sequence{"IoT", "smart factories", "signal analytics"};
+
+var projectsNode = new ListNode("projects", 2);
+var nameNode1 = new ScalarNode("name", "SmartAutomation");
+var nameNode2 = new ScalarNode("name", "FactoryAnalytics");
+var budgetNode1 = new ScalarNode("budget", 25000);
+var budgetNode2 = new ScalarNode("budget", 20000);
+projectsNode.value.at(0).appendNode(nameNode1);
+projectsNode.value.at(0).appendNode(budgetNode1);
+projectsNode.value.at(1).appendNode(nameNode2);
+projectsNode.value.at(1).appendNode(budgetNode2);
+
+var addressNode2 = new MappingNode("address");
+var countryNode2 = new ScalarNode("country", "Germany");
+addressNode2.value.appendNode(countryNode2);
+
+var employeeIdNode2 = new ScalarNode("employeeId", "16431");
+var fullnameNode2 = new ScalarNode("fullname", "Arnold Wagner");
+var roleNode2 = new ScalarNode("role", "HR");
+
+var skillsNode = new ListNode("skills", 2);
+skillsNode.value =  Sequence{"communication", "coaching"};
+
+rootFirstRow.appendNode(employeeIdNode1);
+rootFirstRow.appendNode(addressNode1);
+rootFirstRow.appendNode(fullnameNode1);
+rootFirstRow.appendNode(roleNode1);
+rootFirstRow.appendNode(industryNode);
+rootFirstRow.appendNode(projectsNode);
+
+rootSecondRow.appendNode(employeeIdNode2);
+rootSecondRow.appendNode(addressNode2);
+rootSecondRow.appendNode(fullnameNode2);
+rootSecondRow.appendNode(roleNode2);
+rootSecondRow.appendNode(skillsNode);
+```
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YAML node must be specified when accessing YAML nodes via the YAML driver. There are 3 types of nodes in YAML:
+
+- `Scalar Node`. Scalar nodes are used to represent a single scalar value (e.g., string, boolean, integer). In the YAML driver, a scalar node consists of a key-value pair, in which the key represents the name of the scalar node, and the value represents the scalar value.
+- `Mapping Node`. Mapping nodes are used to represent unordered collections of key-value pairs. In the YAML driver, a mapping node consists of a key-value pair, in which the key represents the name of the mapping node, and the value holds an unordered collection of key-value pairs, which in turn represent other nodes.
+- `List (Sequence) Node`. List nodes are used to represent an ordered list of nodes or scalar values. In the YAML driver, a list node consists of a key-value pair, in which the key represents the name of the list node, and the value represents a list of nodes or scalar values.
+
+This section outlines the supported conventions in the form of questions and answers followed by relevant examples.
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+### How do I set the root node of a YAML document?
+
+The `root` property can be used for setting the root node of a YAML document. The root node of a YAML document can either be a mapping node or a list node. The `setRootAsMap()` function can be used for setting the root node into a mapping node. The `setRootAsList()` function can be used for setting the root node into a list node.
+
+--- USER MESSAGE ---
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- tenantId: TEN-001
+  name: Brightline Logistics
+  plan: enterprise
+  seats: {purchased: 50, active: 47}
+
+- tenantId: TEN-002
+  name: Fernwood Studio
+  plan: pro
+  seats: {purchased: 12, active: 9}
+
+- tenantId: TEN-003
+  name: Oakridge Analytics
+  plan: pro
+  seats: {purchased: 20, active: 20}
+
+- tenantId: TEN-004
+  name: Silverline Health
+  plan: enterprise
+  seats: {purchased: 80, active: 61}
+
+- tenantId: TEN-005
+  name: Kestrel Robotics
+  plan: starter
+  seats: {purchased: 5, active: 5}
+
+- tenantId: TEN-006
+  name: Marlowe & Finch
+  plan: pro
+  seats: {purchased: 15, active: 11}
+
+- tenantId: TEN-007
+  name: Pinewood Retail
+  plan: starter
+  seats: {purchased: 3, active: 2}
+
+- tenantId: TEN-008
+  name: Cobalt Freight
+  plan: enterprise
+  seats: {purchased: 100, active: 88}
+
+- tenantId: TEN-009
+  name: Hollowfield Legal
+  plan: pro
+  seats: {purchased: 18, active: 18}
+
+- tenantId: TEN-010
+  name: Thistledown Media
+  plan: starter
+  seats: {purchased: 4, active: 1}
+
+Question:
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- tenantId: TEN-001
+  name: Brightline Logistics
+  plan: enterprise
+  seats: {purchased: 50, active: 47}
+
+- tenantId: TEN-002
+  name: Fernwood Studio
+  plan: pro
+  seats: {purchased: 12, active: 9}
+
+- tenantId: TEN-003
+  name: Oakridge Analytics
+  plan: pro
+  seats: {purchased: 20, active: 20}
+
+- tenantId: TEN-004
+  name: Silverline Health
+  plan: enterprise
+  seats: {purchased: 80, active: 61}
+
+- tenantId: TEN-005
+  name: Kestrel Robotics
+  plan: starter
+  seats: {purchased: 5, active: 5}
+
+- tenantId: TEN-006
+  name: Marlowe & Finch
+  plan: pro
+  seats: {purchased: 15, active: 11}
+
+- tenantId: TEN-007
+  name: Pinewood Retail
+  plan: starter
+  seats: {purchased: 3, active: 2}
+
+- tenantId: TEN-008
+  name: Cobalt Freight
+  plan: enterprise
+  seats: {purchased: 100, active: 88}
+
+- tenantId: TEN-009
+  name: Hollowfield Legal
+  plan: pro
+  seats: {purchased: 18, active: 18}
+
+- tenantId: TEN-010
+  name: Thistledown Media
+  plan: starter
+  seats: {purchased: 4, active: 1}
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+The YAML you provided is a top-level sequence (a list) of mappings (each item has tenantId, name, plan and a nested seats mapping). So the root should be a List node. Below is a complete EOL example, following the EMC YAML driver patterns from the documentation, that builds the document from scratch.
+
+```eol
+YAMLDoc.setRootAsList();
+var root = YAMLDoc.getRoot();
+root.value.addRows(10);
+
+var row0 = root.value.at(0);
+var tenantId0 = new ScalarNode("tenantId", "TEN-001");
+var name0 = new ScalarNode("name", "Brightline Logistics");
+var plan0 = new ScalarNode("plan", "enterprise");
+var seats0 = new MappingNode("seats");
+var seats0p = new ScalarNode("purchased", 50);
+var seats0a = new ScalarNode("active", 47);
+seats0.value.appendNode(seats0p);
+seats0.value.appendNode(seats0a);
+row0.appendNode(tenantId0);
+row0.appendNode(name0);
+row0.appendNode(plan0);
+row0.appendNode(seats0);
+
+var row1 = root.value.at(1);
+var tenantId1 = new ScalarNode("tenantId", "TEN-002");
+var name1 = new ScalarNode("name", "Fernwood Studio");
+var plan1 = new ScalarNode("plan", "pro");
+var seats1 = new MappingNode("seats");
+var seats1p = new ScalarNode("purchased", 12);
+var seats1a = new ScalarNode("active", 9);
+seats1.value.appendNode(seats1p);
+seats1.value.appendNode(seats1a);
+row1.appendNode(tenantId1);
+row1.appendNode(name1);
+row1.appendNode(plan1);
+row1.appendNode(seats1);
+
+var row2 = root.value.at(2);
+var tenantId2 = new ScalarNode("tenantId", "TEN-003");
+var name2 = new ScalarNode("name", "Oakridge Analytics");
+var plan2 = new ScalarNode("plan", "pro");
+var seats2 = new MappingNode("seats");
+var seats2p = new ScalarNode("purchased", 20);
+var seats2a = new ScalarNode("active", 20);
+seats2.value.appendNode(seats2p);
+seats2.value.appendNode(seats2a);
+row2.appendNode(tenantId2);
+row2.appendNode(name2);
+row2.appendNode(plan2);
+row2.appendNode(seats2);
+
+var row3 = root.value.at(3);
+var tenantId3 = new ScalarNode("tenantId", "TEN-004");
+var name3 = new ScalarNode("name", "Silverline Health");
+var plan3 = new ScalarNode("plan", "enterprise");
+var seats3 = new MappingNode("seats");
+var seats3p = new ScalarNode("purchased", 80);
+var seats3a = new ScalarNode("active", 61);
+seats3.value.appendNode(seats3p);
+seats3.value.appendNode(seats3a);
+row3.appendNode(tenantId3);
+row3.appendNode(name3);
+row3.appendNode(plan3);
+row3.appendNode(seats3);
+
+var row4 = root.value.at(4);
+var tenantId4 = new ScalarNode("tenantId", "TEN-005");
+var name4 = new ScalarNode("name", "Kestrel Robotics");
+var plan4 = new ScalarNode("plan", "starter");
+var seats4 = new MappingNode("seats");
+var seats4p = new ScalarNode("purchased", 5);
+var seats4a = new ScalarNode("active", 5);
+seats4.value.appendNode(seats4p);
+seats4.value.appendNode(seats4a);
+row4.appendNode(tenantId4);
+row4.appendNode(name4);
+row4.appendNode(plan4);
+row4.appendNode(seats4);
+
+var row5 = root.value.at(5);
+var tenantId5 = new ScalarNode("tenantId", "TEN-006");
+var name5 = new ScalarNode("name", "Marlowe & Finch");
+var plan5 = new ScalarNode("plan", "pro");
+var seats5 = new MappingNode("seats");
+var seats5p = new ScalarNode("purchased", 15);
+var seats5a = new ScalarNode("active", 11);
+seats5.value.appendNode(seats5p);
+seats5.value.appendNode(seats5a);
+row5.appendNode(tenantId5);
+row5.appendNode(name5);
+row5.appendNode(plan5);
+row5.appendNode(seats5);
+
+var row6 = root.value.at(6);
+var tenantId6 = new ScalarNode("tenantId", "TEN-007");
+var name6 = new ScalarNode("name", "Pinewood Retail");
+var plan6 = new ScalarNode("plan", "starter");
+var seats6 = new MappingNode("seats");
+var seats6p = new ScalarNode("purchased", 3);
+var seats6a = new ScalarNode("active", 2);
+seats6.value.appendNode(seats6p);
+seats6.value.appendNode(seats6a);
+row6.appendNode(tenantId6);
+row6.appendNode(name6);
+row6.appendNode(plan6);
+row6.appendNode(seats6);
+
+var row7 = root.value.at(7);
+var tenantId7 = new ScalarNode("tenantId", "TEN-008");
+var name7 = new ScalarNode("name", "Cobalt Freight");
+var plan7 = new ScalarNode("plan", "enterprise");
+var seats7 = new MappingNode("seats");
+var seats7p = new ScalarNode("purchased", 100);
+var seats7a = new ScalarNode("active", 88);
+seats7.value.appendNode(seats7p);
+seats7.value.appendNode(seats7a);
+row7.appendNode(tenantId7);
+row7.appendNode(name7);
+row7.appendNode(plan7);
+row7.appendNode(seats7);
+
+var row8 = root.value.at(8);
+var tenantId8 = new ScalarNode("tenantId", "TEN-009");
+var name8 = new ScalarNode("name", "Hollowfield Legal");
+var plan8 = new ScalarNode("plan", "pro");
+var seats8 = new MappingNode("seats");
+var seats8p = new ScalarNode("purchased", 18);
+var seats8a = new ScalarNode("active", 18);
+seats8.value.appendNode(seats8p);
+seats8.value.appendNode(seats8a);
+row8.appendNode(tenantId8);
+row8.appendNode(name8);
+row8.appendNode(plan8);
+row8.appendNode(seats8);
+
+var row9 = root.value.at(9);
+var tenantId9 = new ScalarNode("tenantId", "TEN-010");
+var name9 = new ScalarNode("name", "Thistledown Media");
+var plan9 = new ScalarNode("plan", "starter");
+var seats9 = new MappingNode("seats");
+var seats9p = new ScalarNode("purchased", 4);
+var seats9a = new ScalarNode("active", 1);
+seats9.value.appendNode(seats9p);
+seats9.value.appendNode(seats9a);
+row9.appendNode(tenantId9);
+row9.appendNode(name9);
+row9.appendNode(plan9);
+row9.appendNode(seats9);
+```
+
+Notes:
+- The root is a list node (so we call YAMLDoc.setRootAsList()).
+- Each list entry is a mapping (a row), to which we append scalar nodes and the nested seats mapping node, following the exact API and patterns shown in the documentation.
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             1
+  Prompt tokens:     2,024
+  Completion tokens: 2,542
+  Total tokens:      4,566
+  Estimated cost:    $0.00559
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         1
+  Total prompt tokens:     2,024
+  Total completion tokens: 2,542
+  Total tokens:            4,566
+  Total estimated cost:    $0.00559
+============================================================

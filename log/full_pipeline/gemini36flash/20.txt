@@ -1,0 +1,1282 @@
+Session started: 2026-07-28 00:09:34
+Model: openrouter/google/gemini-3.6-flash | temperature=0
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[00:09:40]
+
+── QUESTION ──────────────────────────────────────────────
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- restaurant:
+    id: REST-00221
+    name: Ember & Spice
+    cuisine: Modern Southeast Asian Fusion
+    priceRange: "££££"
+    currency: GBP
+    address: "12 Charlotte Street, London, W1T 2NE"
+    openingHours:
+      Mon: closed
+      Tue-Thu: "12:00-15:00, 18:00-22:30"
+      Fri-Sat: "12:00-15:30, 18:00-23:00"
+      Sun: "13:00-21:00"
+    serviceCharge: 0.125
+
+  allergens:
+    - gluten
+    - crustaceans
+    - eggs
+    - fish
+    - peanuts
+    - soya
+    - milk
+    - nuts
+    - celery
+    - mustard
+    - sesame
+    - sulphites
+    - lupin
+    - molluscs
+
+  dietaryIcons:
+    VG: Vegan
+    V: Vegetarian
+    GF: Gluten-Free
+    DF: Dairy-Free
+    H: Halal
+    N: Contains Nuts
+
+  menu:
+    sections:
+      - id: S01
+        name: Small Plates
+        nameLocal:
+          th: "อาหารจานเล็ก"
+          zh: "小食"
+        items:
+          - id: IT-101
+            name: Betel Leaf Bites
+            description: Wild betel leaf, tiger prawn, toasted coconut, lime, bird's eye chilli
+            price: 12.50
+            dietary:
+              - GF
+              - DF
+            allergens:
+              - crustaceans
+              - fish
+            popular: true
+            portionSize: 4 pieces
+
+          - id: IT-102
+            name: Smoked Duck Salad
+            description: Confit duck, green mango, shallot, mint, tamarind dressing, crushed peanuts
+            price: 14.00
+            dietary:
+              - GF
+              - DF
+            allergens:
+              - peanuts
+              - sesame
+              - fish
+            popular: false
+            portionSize: null
+
+          - id: IT-103
+            name: Crispy Tofu Skewers
+            description: Silken tofu, satay glaze, cucumber relish, sesame
+            price: 9.50
+            dietary:
+              - VG
+              - GF
+            allergens:
+              - soya
+              - peanuts
+              - sesame
+            popular: false
+
+      - id: S02
+        name: Mains
+        nameLocal:
+          th: "อาหารจานหลัก"
+          zh: "主菜"
+        items:
+          - id: IT-201
+            name: Massaman Lamb Shank
+            description: 12-hour braised lamb, massaman curry, roti, pickled shallots
+            price: 32.00
+            dietary:
+              - H
+            allergens:
+              - gluten
+              - peanuts
+              - milk
+            modifierGroups:
+              - name: Spice Level
+                required: true
+                options:
+                  - label: Mild
+                    priceDelta: 0
+                  - label: Medium
+                    priceDelta: 0
+                  - label: Hot
+                    priceDelta: 0
+                  - label: Extra Hot
+                    priceDelta: 0
+
+              - name: Side
+                required: false
+                options:
+                  - label: Steamed Jasmine Rice
+                    priceDelta: 0
+                  - label: Coconut Rice
+                    priceDelta: 1.50
+                  - label: Roti (2 pcs)
+                    priceDelta: 2.00
+
+          - id: IT-202
+            name: Sea Bass Laksa
+            description: Seabass fillet, laksa broth, rice vermicelli, prawns, egg, bean sprouts, chilli oil
+            price: 28.00
+            dietary:
+              - GF
+              - DF
+            allergens:
+              - fish
+              - crustaceans
+              - eggs
+              - sesame
+            modifierGroups:
+              - name: Protein
+                required: false
+                options:
+                  - label: As described (Sea Bass + Prawns)
+                    priceDelta: 0
+                  - label: Vegan (Tofu + King Oyster Mushroom)
+                    priceDelta: -2.00
+                    dietary:
+                      - VG
+
+          - id: IT-203
+            name: Wagyu Beef Rendang
+            description: Wagyu cheek, rendang paste, kaffir lime, coconut, crispy shallots, steamed rice
+            price: 38.00
+            dietary:
+              - GF
+              - DF
+              - H
+            allergens:
+              - peanuts
+              - fish
+              - sesame
+            popular: true
+
+      - id: S03
+        name: Desserts
+        nameLocal:
+          th: "ของหวาน"
+          zh: "甜品"
+        items:
+          - id: IT-301
+            name: Pandan Crème Brûlée
+            description: Silky pandan-infused custard, caramelised sugar, sesame tuile
+            price: 10.00
+            dietary:
+              - GF
+              - V
+            allergens:
+              - eggs
+              - milk
+              - sesame
+
+          - id: IT-302
+            name: Mango Sticky Rice
+            description: Glutinous rice, fresh Alphonso mango, coconut cream, crispy mung beans
+            price: 9.00
+            dietary:
+              - VG
+              - GF
+              - DF
+            allergens: []
+            popular: true
+
+  drinks:
+    nonAlcoholic:
+      - name: Thai Iced Tea
+        price: 5.50
+        dietary:
+          - V
+
+      - name: Pandan Lemonade
+        price: 5.00
+        dietary:
+          - VG
+          - GF
+
+    wine:
+      byGlass:
+        - name: "Picpoul de Pinet, Domaine de Thau 2022"
+          style: white_dry
+          region: Languedoc, France
+          glass: 9.50
+          bottle: 38.00
+
+      byBottle:
+        - name: "Cloudy Bay Sauvignon Blanc 2023"
+          style: white_dry
+          region: Marlborough, New Zealand
+          bottle: 62.00
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+  - Eclipse Epsilon EOL YAML driver create model elements syntax
+  - EMC YAML model driver create new root mapping list node
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.'
+    1. sim=0.8581  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    2. sim=0.7882  epsilon_docs/articles_yaml-emc_index.md | heading='How do I set the root node of a YAML document?'
+    3. sim=0.7384  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    4. sim=0.7121  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    5. sim=0.6973  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    6. sim=0.6900  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    7. sim=0.6594  epsilon_docs/articles_index.md | heading='Recipes'
+    8. sim=0.6482  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a node?'
+    9. sim=0.6322  epsilon_docs/articles_xsd-xml_index.md | heading='How do I create an element and add it to an existing element?'
+    10. sim=0.6317  epsilon_docs/articles_simulink_index.md | heading='Using the Simulink Driver from Java'
+    11. sim=0.6230  epsilon_docs/articles_jdt_index.md | heading='How is it used?'
+    12. sim=0.6164  epsilon_docs/articles_profiled-uml-models_index.md | heading='Creating a Profiled UML Model'
+    13. sim=0.6073  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    14. sim=0.6071  epsilon_docs/articles_html_index.md | heading='Querying a HTML document'
+    15. sim=0.5904  epsilon_docs/index.md | heading='Languages'
+    16. sim=0.5793  epsilon_docs/articles_run-epsilon-from-java.md | heading='Dependencies'
+    17. sim=0.5708  epsilon_docs/articles_xml-to-emf.md | heading='XML to EMF Transformation with ETL'
+    18. sim=0.5596  epsilon_docs/articles_json-emc_index.md | heading='Example EGL template'
+    19. sim=0.4803  epsilon_docs/articles_rdf-emc.md | heading='Multi-valued features'
+
+  Query: 'Eclipse Epsilon EOL YAML driver create model elements syntax'
+    1. sim=0.7943  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    2. sim=0.7391  epsilon_docs/index.md | heading='Languages'
+    3. sim=0.7343  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    4. sim=0.7330  epsilon_docs/articles_run-epsilon-from-java.md | heading='Dependencies'
+    5. sim=0.7234  epsilon_docs/articles_json-emc_index.md | heading='Example EGL template'
+    6. sim=0.7168  epsilon_docs/articles_profiled-uml-models_index.md | heading='Creating a Profiled UML Model'
+    7. sim=0.6872  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    8. sim=0.6832  epsilon_docs/articles_xsd-xml_index.md | heading='How do I create an element and add it to an existing element?'
+    9. sim=0.6707  epsilon_docs/articles_simulink_index.md | heading='Using the Simulink Driver from Java'
+    10. sim=0.6628  epsilon_docs/articles_index.md | heading='Recipes'
+    11. sim=0.6593  epsilon_docs/articles_html_index.md | heading='Querying a HTML document'
+    12. sim=0.6476  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    13. sim=0.6420  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    14. sim=0.6378  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    15. sim=0.6237  epsilon_docs/articles_jdt_index.md | heading='How is it used?'
+    16. sim=0.6042  epsilon_docs/articles_xml-to-emf.md | heading='XML to EMF Transformation with ETL'
+    17. sim=0.5312  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a node?'
+    18. sim=0.4914  epsilon_docs/articles_yaml-emc_index.md | heading='How do I set the root node of a YAML document?'
+    19. sim=0.4693  epsilon_docs/articles_rdf-emc.md | heading='Multi-valued features'
+
+  Query: 'EMC YAML model driver create new root mapping list node'
+    1. sim=0.7520  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    2. sim=0.7326  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    3. sim=0.6961  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    4. sim=0.6630  epsilon_docs/articles_yaml-emc_index.md | heading='How do I set the root node of a YAML document?'
+    5. sim=0.6413  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    6. sim=0.6410  epsilon_docs/index.md | heading='Languages'
+    7. sim=0.6158  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a node?'
+    8. sim=0.6131  epsilon_docs/articles_jdt_index.md | heading='How is it used?'
+    9. sim=0.6079  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    10. sim=0.6074  epsilon_docs/articles_xml-to-emf.md | heading='XML to EMF Transformation with ETL'
+    11. sim=0.6040  epsilon_docs/articles_profiled-uml-models_index.md | heading='Creating a Profiled UML Model'
+    12. sim=0.5996  epsilon_docs/articles_simulink_index.md | heading='Using the Simulink Driver from Java'
+    13. sim=0.5893  epsilon_docs/articles_run-epsilon-from-java.md | heading='Dependencies'
+    14. sim=0.5817  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    15. sim=0.5816  epsilon_docs/articles_index.md | heading='Recipes'
+    16. sim=0.5678  epsilon_docs/articles_xsd-xml_index.md | heading='How do I create an element and add it to an existing element?'
+    17. sim=0.5555  epsilon_docs/articles_json-emc_index.md | heading='Example EGL template'
+    18. sim=0.5250  epsilon_docs/articles_html_index.md | heading='Querying a HTML document'
+    19. sim=0.5138  epsilon_docs/articles_rdf-emc.md | heading='Multi-valued features'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (7):
+  1. [0.989] epsilon_docs/articles_yaml-emc_index.md (heading='How can I create a YAML document from scratch?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## How can I create a YAML document from scratch?
+Example: create a YAML document from scratch by building and appending MappingNode, ScalarNode, and ListNode elements.
+Keywords: setRootAsList, getRoo
+  2. [0.946] epsilon_docs/articles_yaml-emc_index.md (heading='How do I set the root node of a YAML document?', parent_heading='Querying/modifying YAML documents in EOL')
+     ### How do I set the root node of a YAML document?
+
+The `root` property can be used for setting the root node of a YAML document. The root node of a YAML document can either be a mapping node or a lis
+  3. [0.643] epsilon_docs/articles_yaml-emc_index.md (heading='Querying a YAML document', parent_heading='Scripting YAML documents using Epsilon')
+     # Scripting YAML documents using Epsilon
+ 
+In this article we demonstrate how you can create, query and modify YAML documents in Epsilon programs using the YAML driver. All the examples in this articl
+  4. [0.579] epsilon_docs/index.md (heading='Languages', parent_heading='Documentation')
+     ## Languages
+Example: visualize relationships and extensions among Eclipse Epsilon languages and their model connectivity components.
+
+```mermaid
+graph TD
+	ECL["Model<br/>comparison<br/>(ECL)"]
+	Flock
+  5. [0.330] epsilon_docs/articles_xsd-xml_index.md (heading='How do I create an element and add it to an existing element?', parent_heading='Querying XML documents in EOL')
+     ## How do I create an element and add it to an existing element?
+Example: create a new element and add it to an existing element in an XML model using Epsilon Object Language.
+
+```eol
+{{{ example("org
+  6. [0.275] epsilon_docs/articles_developing-a-new-emc-driver_index.md (heading='Filesystem Driver', parent_heading='Developing a new EMC Driver')
+     # Developing a new EMC Driver
+
+This article demonstrates the implementation of "drivers" for Epsilon's [Model Connectivity layer](../../emc).
+
+## YAML Driver
+
+The following training session recording 
+  7. [0.035] epsilon_docs/articles_yaml-emc_index.md (heading='How can I create a node?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## How can I create a node?
+Example: create scalar, mapping, and list nodes with initial values or empty placeholders for later assignment.
+Keywords: new ScalarNode, new s_city, new MappingNode, new m
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon.
+
+Use the provided context as the PRIMARY and AUTHORITATIVE source of truth.
+Only use syntax, class names, methods, and patterns that appear explicitly in the context.
+You may adapt documented patterns to the user's structure, provided that no new APIs or unsupported methods are invented.
+If the user's message contains sample data, treat it only as the desired target structure — not as evidence for API syntax.
+If the context provides partial evidence only, generate code for the parts that are supported and explicitly flag any parts that are uncertain or unsupported.
+
+When a code example is appropriate, provide a complete and runnable example that covers the full structure given by the user.
+When generating code, follow only the patterns shown in the context exactly — do not skip initialisation steps, introduce intermediate objects, or shortcut method chains that are not explicitly demonstrated.
+
+--- DOCUMENTATION ---
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## How can I create a YAML document from scratch?
+Example: create a YAML document from scratch by building and appending MappingNode, ScalarNode, and ListNode elements.
+Keywords: setRootAsList, getRoot, .value, addRows, new MappingNode, new ScalarNode, residentNode, postcodeNode, appendNode, industryNode, new ListNode, projectsNode, skillsNode
+
+```eol
+YAMLDoc.setRootAsList();
+var root = YAMLDoc.getRoot();
+root.value.addRows(2);
+var rootFirstRow = root.value.at(0);
+var rootSecondRow = root.value.at(1);
+
+var addressNode1 = new MappingNode("address");
+var countryNode1 = new ScalarNode("country", "England");
+var residentNode = new ScalarNode("resident", true);
+var postcodeNode = new ScalarNode("postcode", "M1 1AG");
+addressNode1.value.appendNode(countryNode1);
+addressNode1.value.appendNode(residentNode);
+addressNode1.value.appendNode(postcodeNode);
+
+var employeeIdNode1 = new ScalarNode("employeeId", "14623");
+var fullnameNode1 = new ScalarNode("fullname", "Michael Davidson");
+var roleNode1 = new ScalarNode("role", "Consultant");
+
+var industryNode = new ListNode("industry", 3);
+industryNode.value =  Sequence{"IoT", "smart factories", "signal analytics"};
+
+var projectsNode = new ListNode("projects", 2);
+var nameNode1 = new ScalarNode("name", "SmartAutomation");
+var nameNode2 = new ScalarNode("name", "FactoryAnalytics");
+var budgetNode1 = new ScalarNode("budget", 25000);
+var budgetNode2 = new ScalarNode("budget", 20000);
+projectsNode.value.at(0).appendNode(nameNode1);
+projectsNode.value.at(0).appendNode(budgetNode1);
+projectsNode.value.at(1).appendNode(nameNode2);
+projectsNode.value.at(1).appendNode(budgetNode2);
+
+var addressNode2 = new MappingNode("address");
+var countryNode2 = new ScalarNode("country", "Germany");
+addressNode2.value.appendNode(countryNode2);
+
+var employeeIdNode2 = new ScalarNode("employeeId", "16431");
+var fullnameNode2 = new ScalarNode("fullname", "Arnold Wagner");
+var roleNode2 = new ScalarNode("role", "HR");
+
+var skillsNode = new ListNode("skills", 2);
+skillsNode.value =  Sequence{"communication", "coaching"};
+
+rootFirstRow.appendNode(employeeIdNode1);
+rootFirstRow.appendNode(addressNode1);
+rootFirstRow.appendNode(fullnameNode1);
+rootFirstRow.appendNode(roleNode1);
+rootFirstRow.appendNode(industryNode);
+rootFirstRow.appendNode(projectsNode);
+
+rootSecondRow.appendNode(employeeIdNode2);
+rootSecondRow.appendNode(addressNode2);
+rootSecondRow.appendNode(fullnameNode2);
+rootSecondRow.appendNode(roleNode2);
+rootSecondRow.appendNode(skillsNode);
+```
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+### How do I set the root node of a YAML document?
+
+The `root` property can be used for setting the root node of a YAML document. The root node of a YAML document can either be a mapping node or a list node. The `setRootAsMap()` function can be used for setting the root node into a mapping node. The `setRootAsList()` function can be used for setting the root node into a list node.
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+# Scripting YAML documents using Epsilon
+ 
+In this article we demonstrate how you can create, query and modify YAML documents in Epsilon programs using the YAML driver. All the examples in this article demonstrate using EOL to script YAML documents. However, it's worth stressing that YAML documents are supported throughout Epsilon. Therefore, you can use Epsilon to (cross-)validate, transform (to other models – XML, CSV or EMF-based, or to text), compare and merge your YAML documents.
+
+<iframe width="90%" height="494" src="https://www.youtube.com/embed/TF0fgghP938" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Querying a YAML document
+ 
+We use the following `employees.yaml` as a base for demonstrating the EOL syntax for querying YAML documents.
+
+[Source: epsilon_docs/index.md]
+## Languages
+Example: visualize relationships and extensions among Eclipse Epsilon languages and their model connectivity components.
+
+```mermaid
+graph TD
+	ECL["Model<br/>comparison<br/>(ECL)"]
+	Flock["Model<br/>migration<br/>(Flock)"]
+	EGL["Code<br/>generation<br/>(EGL)"]
+	EVL["Model<br/>validation<br/>(EVL)"]
+	EPL["Pattern<br/>Matching<br/>(EPL)"]
+	EML["Model<br/>Merging<br/>(EML)"]
+	ETL["M2M<br/>Transformation<br/>(ETL)"]
+	EOL["Epsilon Object Language (EOL)"]
+	ETL --> |extends|EOL
+	EML --> |uses for matching|ECL
+	EML --> |extends|ETL
+	EPL --> |extends|EOL
+	ECL --> |extends|EOL
+	EGL --> |preprocessed into|EOL
+	EVL --> |extends|EOL
+	Flock --> |extends|EOL
+	Pinset --> |extends|EOL
+
+	EMC["Epsilon Model Connectivity (EMC)"]
+	EMF["Eclipse Modeling<br/> Framework (EMF)"]
+	Simulink["MATLAB<br/>Simulink"]
+	Excel["Excel<br/>Speadsheets"]
+	PTC["PTC Integrity<br/>Modeller"]
+	Dots["..."]
+
+	EOL -->|accesses models through| EMC
+	EMC --- EMF
+	EMC --- Simulink
+	EMC --- XML
+	EMC --- Excel
+	EMC --- PTC
+	EMC --- CSV
+	EMC --- Dots
+```
+
+[Source: epsilon_docs/articles_xsd-xml_index.md]
+## How do I create an element and add it to an existing element?
+Example: create a new element and add it to an existing element in an XML model using Epsilon Object Language.
+
+```eol
+{{{ example("org.eclipse.epsilon.examples.xsdxml/library/create-element.eol") }}}
+```
+
+[Source: epsilon_docs/articles_developing-a-new-emc-driver_index.md]
+# Developing a new EMC Driver
+
+This article demonstrates the implementation of "drivers" for Epsilon's [Model Connectivity layer](../../emc).
+
+## YAML Driver
+
+The following training session recording and deck of slides demonstrate the implementation of [Epsilon's YAML driver](../yaml-emc). The complete source-code is located in [Epsilon's Git repository](https://github.com/eclipse-epsilon/epsilon/tree/main/plugins/org.eclipse.epsilon.emc.yaml).
+
+<iframe src="https://www.youtube.com/embed/M0nvnhSF6Y0" width="100%" height="485" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen></iframe> <div style="margin-bottom:15px"></div>
+
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/yc9uUXElc1Zbac" width="100%" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:15px"></div>
+
+## CSV Pro Driver
+
+The slides below demonstrate the implementation of an alternative driver for CSV files, located under the [`examples` folder of Epsilon's repository](https://github.com/eclipse-epsilon/epsilon/tree/main/examples/org.eclipse.epsilon.emc.csvpro).
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## How can I create a node?
+Example: create scalar, mapping, and list nodes with initial values or empty placeholders for later assignment.
+Keywords: new ScalarNode, new s_city, new MappingNode, new m_address, new ListNode, new l_books
+
+```eol
+// scalar node named "city" with the value "Berlin"
+var cityNode1 = new ScalarNode("city", "Berlin"); // city=Berlin
+var cityNode2 = new s_city("Berlin"); // city=Berlin
+
+// empty mapping node named "address"; its value must be set later
+var addressNode1 = new MappingNode("address"); // address={}
+var addressNode2 = new m_address; // address={}
+
+// empty list node named "books" that contains 5 entries; its values must be set later
+var booksNode1 = new ListNode("books", 5); // books=[{}, {}, {}, {}, {}]
+var booksNode2 = new l_books(5); // books=[{}, {}, {}, {}, {}]
+```
+
+--- USER MESSAGE ---
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- restaurant:
+    id: REST-00221
+    name: Ember & Spice
+    cuisine: Modern Southeast Asian Fusion
+    priceRange: "££££"
+    currency: GBP
+    address: "12 Charlotte Street, London, W1T 2NE"
+    openingHours:
+      Mon: closed
+      Tue-Thu: "12:00-15:00, 18:00-22:30"
+      Fri-Sat: "12:00-15:30, 18:00-23:00"
+      Sun: "13:00-21:00"
+    serviceCharge: 0.125
+
+  allergens:
+    - gluten
+    - crustaceans
+    - eggs
+    - fish
+    - peanuts
+    - soya
+    - milk
+    - nuts
+    - celery
+    - mustard
+    - sesame
+    - sulphites
+    - lupin
+    - molluscs
+
+  dietaryIcons:
+    VG: Vegan
+    V: Vegetarian
+    GF: Gluten-Free
+    DF: Dairy-Free
+    H: Halal
+    N: Contains Nuts
+
+  menu:
+    sections:
+      - id: S01
+        name: Small Plates
+        nameLocal:
+          th: "อาหารจานเล็ก"
+          zh: "小食"
+        items:
+          - id: IT-101
+            name: Betel Leaf Bites
+            description: Wild betel leaf, tiger prawn, toasted coconut, lime, bird's eye chilli
+            price: 12.50
+            dietary:
+              - GF
+              - DF
+            allergens:
+              - crustaceans
+              - fish
+            popular: true
+            portionSize: 4 pieces
+
+          - id: IT-102
+            name: Smoked Duck Salad
+            description: Confit duck, green mango, shallot, mint, tamarind dressing, crushed peanuts
+            price: 14.00
+            dietary:
+              - GF
+              - DF
+            allergens:
+              - peanuts
+              - sesame
+              - fish
+            popular: false
+            portionSize: null
+
+          - id: IT-103
+            name: Crispy Tofu Skewers
+            description: Silken tofu, satay glaze, cucumber relish, sesame
+            price: 9.50
+            dietary:
+              - VG
+              - GF
+            allergens:
+              - soya
+              - peanuts
+              - sesame
+            popular: false
+
+      - id: S02
+        name: Mains
+        nameLocal:
+          th: "อาหารจานหลัก"
+          zh: "主菜"
+        items:
+          - id: IT-201
+            name: Massaman Lamb Shank
+            description: 12-hour braised lamb, massaman curry, roti, pickled shallots
+            price: 32.00
+            dietary:
+              - H
+            allergens:
+              - gluten
+              - peanuts
+              - milk
+            modifierGroups:
+              - name: Spice Level
+                required: true
+                options:
+                  - label: Mild
+                    priceDelta: 0
+                  - label: Medium
+                    priceDelta: 0
+                  - label: Hot
+                    priceDelta: 0
+                  - label: Extra Hot
+                    priceDelta: 0
+
+              - name: Side
+                required: false
+                options:
+                  - label: Steamed Jasmine Rice
+                    priceDelta: 0
+                  - label: Coconut Rice
+                    priceDelta: 1.50
+                  - label: Roti (2 pcs)
+                    priceDelta: 2.00
+
+          - id: IT-202
+            name: Sea Bass Laksa
+            description: Seabass fillet, laksa broth, rice vermicelli, prawns, egg, bean sprouts, chilli oil
+            price: 28.00
+            dietary:
+              - GF
+              - DF
+            allergens:
+              - fish
+              - crustaceans
+              - eggs
+              - sesame
+            modifierGroups:
+              - name: Protein
+                required: false
+                options:
+                  - label: As described (Sea Bass + Prawns)
+                    priceDelta: 0
+                  - label: Vegan (Tofu + King Oyster Mushroom)
+                    priceDelta: -2.00
+                    dietary:
+                      - VG
+
+          - id: IT-203
+            name: Wagyu Beef Rendang
+            description: Wagyu cheek, rendang paste, kaffir lime, coconut, crispy shallots, steamed rice
+            price: 38.00
+            dietary:
+              - GF
+              - DF
+              - H
+            allergens:
+              - peanuts
+              - fish
+              - sesame
+            popular: true
+
+      - id: S03
+        name: Desserts
+        nameLocal:
+          th: "ของหวาน"
+          zh: "甜品"
+        items:
+          - id: IT-301
+            name: Pandan Crème Brûlée
+            description: Silky pandan-infused custard, caramelised sugar, sesame tuile
+            price: 10.00
+            dietary:
+              - GF
+              - V
+            allergens:
+              - eggs
+              - milk
+              - sesame
+
+          - id: IT-302
+            name: Mango Sticky Rice
+            description: Glutinous rice, fresh Alphonso mango, coconut cream, crispy mung beans
+            price: 9.00
+            dietary:
+              - VG
+              - GF
+              - DF
+            allergens: []
+            popular: true
+
+  drinks:
+    nonAlcoholic:
+      - name: Thai Iced Tea
+        price: 5.50
+        dietary:
+          - V
+
+      - name: Pandan Lemonade
+        price: 5.00
+        dietary:
+          - VG
+          - GF
+
+    wine:
+      byGlass:
+        - name: "Picpoul de Pinet, Domaine de Thau 2022"
+          style: white_dry
+          region: Languedoc, France
+          glass: 9.50
+          bottle: 38.00
+
+      byBottle:
+        - name: "Cloudy Bay Sauvignon Blanc 2023"
+          style: white_dry
+          region: Marlborough, New Zealand
+          bottle: 62.00
+
+Question:
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- restaurant:
+    id: REST-00221
+    name: Ember & Spice
+    cuisine: Modern Southeast Asian Fusion
+    priceRange: "££££"
+    currency: GBP
+    address: "12 Charlotte Street, London, W1T 2NE"
+    openingHours:
+      Mon: closed
+      Tue-Thu: "12:00-15:00, 18:00-22:30"
+      Fri-Sat: "12:00-15:30, 18:00-23:00"
+      Sun: "13:00-21:00"
+    serviceCharge: 0.125
+
+  allergens:
+    - gluten
+    - crustaceans
+    - eggs
+    - fish
+    - peanuts
+    - soya
+    - milk
+    - nuts
+    - celery
+    - mustard
+    - sesame
+    - sulphites
+    - lupin
+    - molluscs
+
+  dietaryIcons:
+    VG: Vegan
+    V: Vegetarian
+    GF: Gluten-Free
+    DF: Dairy-Free
+    H: Halal
+    N: Contains Nuts
+
+  menu:
+    sections:
+      - id: S01
+        name: Small Plates
+        nameLocal:
+          th: "อาหารจานเล็ก"
+          zh: "小食"
+        items:
+          - id: IT-101
+            name: Betel Leaf Bites
+            description: Wild betel leaf, tiger prawn, toasted coconut, lime, bird's eye chilli
+            price: 12.50
+            dietary:
+              - GF
+              - DF
+            allergens:
+              - crustaceans
+              - fish
+            popular: true
+            portionSize: 4 pieces
+
+          - id: IT-102
+            name: Smoked Duck Salad
+            description: Confit duck, green mango, shallot, mint, tamarind dressing, crushed peanuts
+            price: 14.00
+            dietary:
+              - GF
+              - DF
+            allergens:
+              - peanuts
+              - sesame
+              - fish
+            popular: false
+            portionSize: null
+
+          - id: IT-103
+            name: Crispy Tofu Skewers
+            description: Silken tofu, satay glaze, cucumber relish, sesame
+            price: 9.50
+            dietary:
+              - VG
+              - GF
+            allergens:
+              - soya
+              - peanuts
+              - sesame
+            popular: false
+
+      - id: S02
+        name: Mains
+        nameLocal:
+          th: "อาหารจานหลัก"
+          zh: "主菜"
+        items:
+          - id: IT-201
+            name: Massaman Lamb Shank
+            description: 12-hour braised lamb, massaman curry, roti, pickled shallots
+            price: 32.00
+            dietary:
+              - H
+            allergens:
+              - gluten
+              - peanuts
+              - milk
+            modifierGroups:
+              - name: Spice Level
+                required: true
+                options:
+                  - label: Mild
+                    priceDelta: 0
+                  - label: Medium
+                    priceDelta: 0
+                  - label: Hot
+                    priceDelta: 0
+                  - label: Extra Hot
+                    priceDelta: 0
+
+              - name: Side
+                required: false
+                options:
+                  - label: Steamed Jasmine Rice
+                    priceDelta: 0
+                  - label: Coconut Rice
+                    priceDelta: 1.50
+                  - label: Roti (2 pcs)
+                    priceDelta: 2.00
+
+          - id: IT-202
+            name: Sea Bass Laksa
+            description: Seabass fillet, laksa broth, rice vermicelli, prawns, egg, bean sprouts, chilli oil
+            price: 28.00
+            dietary:
+              - GF
+              - DF
+            allergens:
+              - fish
+              - crustaceans
+              - eggs
+              - sesame
+            modifierGroups:
+              - name: Protein
+                required: false
+                options:
+                  - label: As described (Sea Bass + Prawns)
+                    priceDelta: 0
+                  - label: Vegan (Tofu + King Oyster Mushroom)
+                    priceDelta: -2.00
+                    dietary:
+                      - VG
+
+          - id: IT-203
+            name: Wagyu Beef Rendang
+            description: Wagyu cheek, rendang paste, kaffir lime, coconut, crispy shallots, steamed rice
+            price: 38.00
+            dietary:
+              - GF
+              - DF
+              - H
+            allergens:
+              - peanuts
+              - fish
+              - sesame
+            popular: true
+
+      - id: S03
+        name: Desserts
+        nameLocal:
+          th: "ของหวาน"
+          zh: "甜品"
+        items:
+          - id: IT-301
+            name: Pandan Crème Brûlée
+            description: Silky pandan-infused custard, caramelised sugar, sesame tuile
+            price: 10.00
+            dietary:
+              - GF
+              - V
+            allergens:
+              - eggs
+              - milk
+              - sesame
+
+          - id: IT-302
+            name: Mango Sticky Rice
+            description: Glutinous rice, fresh Alphonso mango, coconut cream, crispy mung beans
+            price: 9.00
+            dietary:
+              - VG
+              - GF
+              - DF
+            allergens: []
+            popular: true
+
+  drinks:
+    nonAlcoholic:
+      - name: Thai Iced Tea
+        price: 5.50
+        dietary:
+          - V
+
+      - name: Pandan Lemonade
+        price: 5.00
+        dietary:
+          - VG
+          - GF
+
+    wine:
+      byGlass:
+        - name: "Picpoul de Pinet, Domaine de Thau 2022"
+          style: white_dry
+          region: Languedoc, France
+          glass: 9.50
+          bottle: 38.00
+
+      byBottle:
+        - name: "Cloudy Bay Sauvignon Blanc 2023"
+          style: white_dry
+          region: Marlborough, New Zealand
+          bottle: 62.00
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+To create this YAML document programmatically from scratch using the EMC YAML Driver, we first analyze the root element of the document:
+
+- The top-level YAML structure begins with `- restaurant:`, which means the **root node is a List Node** (`ListNode`) containing one mapping entry.
+- Therefore, we set the root node using `YAMLDoc.setRootAsList()`, obtain the root node via `YAMLDoc.getRoot()`, and add 1 row using `root.value.addRows(1)` to hold the main document mapping.
+
+### Complete EOL Script
+
+```eol
+// Set root as a List Node
+YAMLDoc.setRootAsList();
+var root = YAMLDoc.getRoot();
+root.value.addRows(1);
+var rootRow = root.value.at(0);
+
+// --- 1. RESTAURANT ---
+var restaurantNode = new MappingNode("restaurant");
+restaurantNode.value.appendNode(new ScalarNode("id", "REST-00221"));
+restaurantNode.value.appendNode(new ScalarNode("name", "Ember & Spice"));
+restaurantNode.value.appendNode(new ScalarNode("cuisine", "Modern Southeast Asian Fusion"));
+restaurantNode.value.appendNode(new ScalarNode("priceRange", "££££"));
+restaurantNode.value.appendNode(new ScalarNode("currency", "GBP"));
+restaurantNode.value.appendNode(new ScalarNode("address", "12 Charlotte Street, London, W1T 2NE"));
+
+var openingHoursNode = new MappingNode("openingHours");
+openingHoursNode.value.appendNode(new ScalarNode("Mon", "closed"));
+openingHoursNode.value.appendNode(new ScalarNode("Tue-Thu", "12:00-15:00, 18:00-22:30"));
+openingHoursNode.value.appendNode(new ScalarNode("Fri-Sat", "12:00-15:30, 18:00-23:00"));
+openingHoursNode.value.appendNode(new ScalarNode("Sun", "13:00-21:00"));
+restaurantNode.value.appendNode(openingHoursNode);
+
+restaurantNode.value.appendNode(new ScalarNode("serviceCharge", 0.125));
+
+// --- 2. ALLERGENS ---
+var allergensNode = new ListNode("allergens", 14);
+allergensNode.value = Sequence{
+  "gluten", "crustaceans", "eggs", "fish", "peanuts", 
+  "soya", "milk", "nuts", "celery", "mustard", 
+  "sesame", "sulphites", "lupin", "molluscs"
+};
+
+// --- 3. DIETARY ICONS ---
+var dietaryIconsNode = new MappingNode("dietaryIcons");
+dietaryIconsNode.value.appendNode(new ScalarNode("VG", "Vegan"));
+dietaryIconsNode.value.appendNode(new ScalarNode("V", "Vegetarian"));
+dietaryIconsNode.value.appendNode(new ScalarNode("GF", "Gluten-Free"));
+dietaryIconsNode.value.appendNode(new ScalarNode("DF", "Dairy-Free"));
+dietaryIconsNode.value.appendNode(new ScalarNode("H", "Halal"));
+dietaryIconsNode.value.appendNode(new ScalarNode("N", "Contains Nuts"));
+
+// --- 4. MENU ---
+var menuNode = new MappingNode("menu");
+var sectionsNode = new ListNode("sections", 3);
+
+// Section 1: Small Plates
+var sec1 = sectionsNode.value.at(0);
+sec1.appendNode(new ScalarNode("id", "S01"));
+sec1.appendNode(new ScalarNode("name", "Small Plates"));
+
+var nameLocal1 = new MappingNode("nameLocal");
+nameLocal1.value.appendNode(new ScalarNode("th", "อาหารจานเล็ก"));
+nameLocal1.value.appendNode(new ScalarNode("zh", "小食"));
+sec1.appendNode(nameLocal1);
+
+var items1Node = new ListNode("items", 3);
+
+// Item IT-101
+var item101 = items1Node.value.at(0);
+item101.appendNode(new ScalarNode("id", "IT-101"));
+item101.appendNode(new ScalarNode("name", "Betel Leaf Bites"));
+item101.appendNode(new ScalarNode("description", "Wild betel leaf, tiger prawn, toasted coconut, lime, bird's eye chilli"));
+item101.appendNode(new ScalarNode("price", 12.50));
+var dietary101 = new ListNode("dietary", 2);
+dietary101.value = Sequence{"GF", "DF"};
+item101.appendNode(dietary101);
+var allergens101 = new ListNode("allergens", 2);
+allergens101.value = Sequence{"crustaceans", "fish"};
+item101.appendNode(allergens101);
+item101.appendNode(new ScalarNode("popular", true));
+item101.appendNode(new ScalarNode("portionSize", "4 pieces"));
+
+// Item IT-102
+var item102 = items1Node.value.at(1);
+item102.appendNode(new ScalarNode("id", "IT-102"));
+item102.appendNode(new ScalarNode("name", "Smoked Duck Salad"));
+item102.appendNode(new ScalarNode("description", "Confit duck, green mango, shallot, mint, tamarind dressing, crushed peanuts"));
+item102.appendNode(new ScalarNode("price", 14.00));
+var dietary102 = new ListNode("dietary", 2);
+dietary102.value = Sequence{"GF", "DF"};
+item102.appendNode(dietary102);
+var allergens102 = new ListNode("allergens", 3);
+allergens102.value = Sequence{"peanuts", "sesame", "fish"};
+item102.appendNode(allergens102);
+item102.appendNode(new ScalarNode("popular", false));
+item102.appendNode(new ScalarNode("portionSize", null));
+
+// Item IT-103
+var item103 = items1Node.value.at(2);
+item103.appendNode(new ScalarNode("id", "IT-103"));
+item103.appendNode(new ScalarNode("name", "Crispy Tofu Skewers"));
+item103.appendNode(new ScalarNode("description", "Silken tofu, satay glaze, cucumber relish, sesame"));
+item103.appendNode(new ScalarNode("price", 9.50));
+var dietary103 = new ListNode("dietary", 2);
+dietary103.value = Sequence{"VG", "GF"};
+item103.appendNode(dietary103);
+var allergens103 = new ListNode("allergens", 3);
+allergens103.value = Sequence{"soya", "peanuts", "sesame"};
+item103.appendNode(allergens103);
+item103.appendNode(new ScalarNode("popular", false));
+
+sec1.appendNode(items1Node);
+
+// Section 2: Mains
+var sec2 = sectionsNode.value.at(1);
+sec2.appendNode(new ScalarNode("id", "S02"));
+sec2.appendNode(new ScalarNode("name", "Mains"));
+
+var nameLocal2 = new MappingNode("nameLocal");
+nameLocal2.value.appendNode(new ScalarNode("th", "อาหารจานหลัก"));
+nameLocal2.value.appendNode(new ScalarNode("zh", "主菜"));
+sec2.appendNode(nameLocal2);
+
+var items2Node = new ListNode("items", 3);
+
+// Item IT-201
+var item201 = items2Node.value.at(0);
+item201.appendNode(new ScalarNode("id", "IT-201"));
+item201.appendNode(new ScalarNode("name", "Massaman Lamb Shank"));
+item201.appendNode(new ScalarNode("description", "12-hour braised lamb, massaman curry, roti, pickled shallots"));
+item201.appendNode(new ScalarNode("price", 32.00));
+var dietary201 = new ListNode("dietary", 1);
+dietary201.value = Sequence{"H"};
+item201.appendNode(dietary201);
+var allergens201 = new ListNode("allergens", 3);
+allergens201.value = Sequence{"gluten", "peanuts", "milk"};
+item201.appendNode(allergens201);
+
+var modGroups201 = new ListNode("modifierGroups", 2);
+
+var mg1 = modGroups201.value.at(0);
+mg1.appendNode(new ScalarNode("name", "Spice Level"));
+mg1.appendNode(new ScalarNode("required", true));
+var opts1 = new ListNode("options", 4);
+opts1.value.at(0).appendNode(new ScalarNode("label", "Mild"));
+opts1.value.at(0).appendNode(new ScalarNode("priceDelta", 0));
+opts1.value.at(1).appendNode(new ScalarNode("label", "Medium"));
+opts1.value.at(1).appendNode(new ScalarNode("priceDelta", 0));
+opts1.value.at(2).appendNode(new ScalarNode("label", "Hot"));
+opts1.value.at(2).appendNode(new ScalarNode("priceDelta", 0));
+opts1.value.at(3).appendNode(new ScalarNode("label", "Extra Hot"));
+opts1.value.at(3).appendNode(new ScalarNode("priceDelta", 0));
+mg1.appendNode(opts1);
+
+var mg2 = modGroups201.value.at(1);
+mg2.appendNode(new ScalarNode("name", "Side"));
+mg2.appendNode(new ScalarNode("required", false));
+var opts2 = new ListNode("options", 3);
+opts2.value.at(0).appendNode(new ScalarNode("label", "Steamed Jasmine Rice"));
+opts2.value.at(0).appendNode(new ScalarNode("priceDelta", 0));
+opts2.value.at(1).appendNode(new ScalarNode("label", "Coconut Rice"));
+opts2.value.at(1).appendNode(new ScalarNode("priceDelta", 1.50));
+opts2.value.at(2).appendNode(new ScalarNode("label", "Roti (2 pcs)"));
+opts2.value.at(2).appendNode(new ScalarNode("priceDelta", 2.00));
+mg2.appendNode(opts2);
+
+item201.appendNode(modGroups201);
+
+// Item IT-202
+var item202 = items2Node.value.at(1);
+item202.appendNode(new ScalarNode("id", "IT-202"));
+item202.appendNode(new ScalarNode("name", "Sea Bass Laksa"));
+item202.appendNode(new ScalarNode("description", "Seabass fillet, laksa broth, rice vermicelli, prawns, egg, bean sprouts, chilli oil"));
+item202.appendNode(new ScalarNode("price", 28.00));
+var dietary202 = new ListNode("dietary", 2);
+dietary202.value = Sequence{"GF", "DF"};
+item202.appendNode(dietary202);
+var allergens202 = new ListNode("allergens", 4);
+allergens202.value = Sequence{"fish", "crustaceans", "eggs", "sesame"};
+item202.appendNode(allergens202);
+
+var modGroups202 = new ListNode("modifierGroups", 1);
+var mg3 = modGroups202.value.at(0);
+mg3.appendNode(new ScalarNode("name", "Protein"));
+mg3.appendNode(new ScalarNode("required", false));
+var opts3 = new ListNode("options", 2);
+opts3.value.at(0).appendNode(new ScalarNode("label", "As described (Sea Bass + Prawns)"));
+opts3.value.at(0).appendNode(new ScalarNode("priceDelta", 0));
+opts3.value.at(1).appendNode(new ScalarNode("label", "Vegan (Tofu + King Oyster Mushroom)"));
+opts3.value.at(1).appendNode(new ScalarNode("priceDelta", -2.00));
+var optDietary = new ListNode("dietary", 1);
+optDietary.value = Sequence{"VG"};
+opts3.value.at(1).appendNode(optDietary);
+mg3.appendNode(opts3);
+
+item202.appendNode(modGroups202);
+
+// Item IT-203
+var item203 = items2Node.value.at(2);
+item203.appendNode(new ScalarNode("id", "IT-203"));
+item203.appendNode(new ScalarNode("name", "Wagyu Beef Rendang"));
+item203.appendNode(new ScalarNode("description", "Wagyu cheek, rendang paste, kaffir lime, coconut, crispy shallots, steamed rice"));
+item203.appendNode(new ScalarNode("price", 38.00));
+var dietary203 = new ListNode("dietary", 3);
+dietary203.value = Sequence{"GF", "DF", "H"};
+item203.appendNode(dietary203);
+var allergens203 = new ListNode("allergens", 3);
+allergens203.value = Sequence{"peanuts", "fish", "sesame"};
+item203.appendNode(allergens203);
+item203.appendNode(new ScalarNode("popular", true));
+
+sec2.appendNode(items2Node);
+
+// Section 3: Desserts
+var sec3 = sectionsNode.value.at(2);
+sec3.appendNode(new ScalarNode("id", "S03"));
+sec3.appendNode(new ScalarNode("name", "Desserts"));
+
+var nameLocal3 = new MappingNode("nameLocal");
+nameLocal3.value.appendNode(new ScalarNode("th", "ของหวาน"));
+nameLocal3.value.appendNode(new ScalarNode("zh", "甜品"));
+sec3.appendNode(nameLocal3);
+
+var items3Node = new ListNode("items", 2);
+
+// Item IT-301
+var item301 = items3Node.value.at(0);
+item301.appendNode(new ScalarNode("id", "IT-301"));
+item301.appendNode(new ScalarNode("name", "Pandan Crème Brûlée"));
+item301.appendNode(new ScalarNode("description", "Silky pandan-infused custard, caramelised sugar, sesame tuile"));
+item301.appendNode(new ScalarNode("price", 10.00));
+var dietary301 = new ListNode("dietary", 2);
+dietary301.value = Sequence{"GF", "V"};
+item301.appendNode(dietary301);
+var allergens301 = new ListNode("allergens", 3);
+allergens301.value = Sequence{"eggs", "milk", "sesame"};
+item301.appendNode(allergens301);
+
+// Item IT-302
+var item302 = items3Node.value.at(1);
+item302.appendNode(new ScalarNode("id", "IT-302"));
+item302.appendNode(new ScalarNode("name", "Mango Sticky Rice"));
+item302.appendNode(new ScalarNode("description", "Glutinous rice, fresh Alphonso mango, coconut cream, crispy mung beans"));
+item302.appendNode(new ScalarNode("price", 9.00));
+var dietary302 = new ListNode("dietary", 3);
+dietary302.value = Sequence{"VG", "GF", "DF"};
+item302.appendNode(dietary302);
+var allergens302 = new ListNode("allergens", 0);
+allergens302.value = Sequence{};
+item302.appendNode(allergens302);
+item302.appendNode(new ScalarNode("popular", true));
+
+sec3.appendNode(items3Node);
+
+menuNode.value.appendNode(sectionsNode);
+
+// --- 5. DRINKS ---
+var drinksNode = new MappingNode("drinks");
+
+var nonAlcoholicNode = new ListNode("nonAlcoholic", 2);
+
+var na1 = nonAlcoholicNode.value.at(0);
+na1.appendNode(new ScalarNode("name", "Thai Iced Tea"));
+na1.appendNode(new ScalarNode("price", 5.50));
+var na1Dietary = new ListNode("dietary", 1);
+na1Dietary.value = Sequence{"V"};
+na1.appendNode(na1Dietary);
+
+var na2 = nonAlcoholicNode.value.at(1);
+na2.appendNode(new ScalarNode("name", "Pandan Lemonade"));
+na2.appendNode(new ScalarNode("price", 5.00));
+var na2Dietary = new ListNode("dietary", 2);
+na2Dietary.value = Sequence{"VG", "GF"};
+na2.appendNode(na2Dietary);
+
+drinksNode.value.appendNode(nonAlcoholicNode);
+
+var wineNode = new MappingNode("wine");
+
+var byGlassNode = new ListNode("byGlass", 1);
+var bg1 = byGlassNode.value.at(0);
+bg1.appendNode(new ScalarNode("name", "Picpoul de Pinet, Domaine de Thau 2022"));
+bg1.appendNode(new ScalarNode("style", "white_dry"));
+bg1.appendNode(new ScalarNode("region", "Languedoc, France"));
+bg1.appendNode(new ScalarNode("glass", 9.50));
+bg1.appendNode(new ScalarNode("bottle", 38.00));
+wineNode.value.appendNode(byGlassNode);
+
+var byBottleNode = new ListNode("byBottle", 1);
+var bb1 = byBottleNode.value.at(0);
+bb1.appendNode(new ScalarNode("name", "Cloudy Bay Sauvignon Blanc 2023"));
+bb1.appendNode(new ScalarNode("style", "white_dry"));
+bb1.appendNode(new ScalarNode("region", "Marlborough, New Zealand"));
+bb1.appendNode(new ScalarNode("bottle", 62.00));
+wineNode.value.appendNode(byBottleNode);
+
+drinksNode.value.appendNode(wineNode);
+
+// --- APPEND ALL SECTIONS TO ROOT ROW ---
+rootRow.appendNode(restaurantNode);
+rootRow.appendNode(allergensNode);
+rootRow.appendNode(dietaryIconsNode);
+rootRow.appendNode(menuNode);
+rootRow.appendNode(drinksNode);
+```
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             2
+  Prompt tokens:     7,169
+  Completion tokens: 14,510
+  Total tokens:      21,679
+  Estimated cost:    $0.11958
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openrouter/google/gemini-3.6-flash
+  Total LLM calls:         2
+  Total prompt tokens:     7,169
+  Total completion tokens: 14,510
+  Total tokens:            21,679
+  Total estimated cost:    $0.11958
+============================================================

@@ -1,0 +1,106 @@
+- patientId: PT-00291837
+  admitted: "2024-05-20"
+  ward: cardiology
+  bed: 4B
+  status: inpatient
+
+  demographics:
+    fullname: Robert Osei
+    dob: "1961-03-14"
+    age: 63
+    sex: M
+    bloodType: O+
+    nationality: GH
+    language: en
+    nok:
+      name: Abena Osei
+      relation: spouse
+      phone: "+233-55-012-3456"
+
+  diagnoses:
+    primary:
+      icd10: I21.9
+      description: Acute myocardial infarction, unspecified
+      confirmedAt: "2024-05-20T14:32:00Z"
+      confirmedBy: Dr. Kwame Asante
+    secondary:
+      - icd10: E11.9
+        description: Type 2 diabetes mellitus without complications
+      - icd10: I10
+        description: Essential (primary) hypertension
+
+  medications:
+    - drug: Aspirin
+      dose: 100mg
+      route: oral
+      frequency: once_daily
+      startDate: "2024-05-20"
+      endDate: null
+      prescribedBy: Dr. Kwame Asante
+    - drug: Atorvastatin
+      dose: 40mg
+      route: oral
+      frequency: once_daily_evening
+      startDate: "2024-05-20"
+      endDate: null
+      prescribedBy: Dr. Kwame Asante
+    - drug: Metformin
+      dose: 500mg
+      route: oral
+      frequency: twice_daily
+      startDate: "2023-01-10"
+      endDate: null
+      prescribedBy: Dr. Fatima Mensah
+    - drug: Lisinopril
+      dose: 10mg
+      route: oral
+      frequency: once_daily
+      startDate: "2022-07-01"
+      endDate: "2024-05-20"
+      note: Switched to Ramipril due to cough side-effect
+
+  labs:
+    troponin_I:
+      unit: ng/mL
+      reference_range: [0, 0.04]
+      readings:
+        - timestamp: "2024-05-20T15:00:00Z"
+          value: 2.81
+          flag: high
+        - timestamp: "2024-05-20T21:00:00Z"
+          value: 4.55
+          flag: high
+        - timestamp: "2024-05-21T09:00:00Z"
+          value: 3.10
+          flag: high
+    hba1c:
+      unit: "%"
+      reference_range: [4.0, 5.6]
+      readings:
+        - timestamp: "2024-05-21T08:00:00Z"
+          value: 7.8
+          flag: high
+    creatinine:
+      unit: mg/dL
+      reference_range: [0.7, 1.2]
+      readings:
+        - timestamp: "2024-05-21T08:00:00Z"
+          value: 1.05
+          flag: normal
+
+  procedures:
+    - name: Coronary Angiography
+      date: "2024-05-21"
+      performedBy: Dr. Kwame Asante
+      findings: 70% stenosis in LAD; RCA and LCx patent
+      outcome: PCI planned
+    - name: Percutaneous Coronary Intervention (PCI)
+      date: "2024-05-22"
+      performedBy: Dr. Kwame Asante
+      findings: Drug-eluting stent placed in LAD
+      outcome: successful
+
+  notes:
+    - timestamp: "2024-05-23T08:00:00Z"
+      author: Dr. Kwame Asante
+      text: Patient stable post-PCI. Tolerating medications well. Plan for discharge in 48h with cardiac rehab referral.

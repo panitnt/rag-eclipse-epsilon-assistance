@@ -1,0 +1,807 @@
+Session started: 2026-07-30 12:26:58
+Model: openai/gpt-5-mini | temperature=0
+RETRIEVAL_MODE=sparse (BM25 Qdrant/bm25, no dense)
+SIBLING_EXPANSION=on
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[12:26:58]
+
+── QUESTION ──────────────────────────────────────────────
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- patientId: PT-00291837
+  admitted: "2024-05-20"
+  ward: cardiology
+  bed: 4B
+  status: inpatient
+
+  demographics:
+    fullname: Robert Osei
+    dob: "1961-03-14"
+    age: 63
+    sex: M
+    bloodType: O+
+    nationality: GH
+    language: en
+    nok:
+      name: Abena Osei
+      relation: spouse
+      phone: "+233-55-012-3456"
+
+  diagnoses:
+    primary:
+      icd10: I21.9
+      description: Acute myocardial infarction, unspecified
+      confirmedAt: "2024-05-20T14:32:00Z"
+      confirmedBy: Dr. Kwame Asante
+    secondary:
+      - icd10: E11.9
+        description: Type 2 diabetes mellitus without complications
+      - icd10: I10
+        description: Essential (primary) hypertension
+
+  medications:
+    - drug: Aspirin
+      dose: 100mg
+      route: oral
+      frequency: once_daily
+      startDate: "2024-05-20"
+      endDate: null
+      prescribedBy: Dr. Kwame Asante
+    - drug: Atorvastatin
+      dose: 40mg
+      route: oral
+      frequency: once_daily_evening
+      startDate: "2024-05-20"
+      endDate: null
+      prescribedBy: Dr. Kwame Asante
+    - drug: Metformin
+      dose: 500mg
+      route: oral
+      frequency: twice_daily
+      startDate: "2023-01-10"
+      endDate: null
+      prescribedBy: Dr. Fatima Mensah
+    - drug: Lisinopril
+      dose: 10mg
+      route: oral
+      frequency: once_daily
+      startDate: "2022-07-01"
+      endDate: "2024-05-20"
+      note: Switched to Ramipril due to cough side-effect
+
+  labs:
+    troponin_I:
+      unit: ng/mL
+      reference_range: [0, 0.04]
+      readings:
+        - timestamp: "2024-05-20T15:00:00Z"
+          value: 2.81
+          flag: high
+        - timestamp: "2024-05-20T21:00:00Z"
+          value: 4.55
+          flag: high
+        - timestamp: "2024-05-21T09:00:00Z"
+          value: 3.10
+          flag: high
+    hba1c:
+      unit: "%"
+      reference_range: [4.0, 5.6]
+      readings:
+        - timestamp: "2024-05-21T08:00:00Z"
+          value: 7.8
+          flag: high
+    creatinine:
+      unit: mg/dL
+      reference_range: [0.7, 1.2]
+      readings:
+        - timestamp: "2024-05-21T08:00:00Z"
+          value: 1.05
+          flag: normal
+
+  procedures:
+    - name: Coronary Angiography
+      date: "2024-05-21"
+      performedBy: Dr. Kwame Asante
+      findings: 70% stenosis in LAD; RCA and LCx patent
+      outcome: PCI planned
+    - name: Percutaneous Coronary Intervention (PCI)
+      date: "2024-05-22"
+      performedBy: Dr. Kwame Asante
+      findings: Drug-eluting stent placed in LAD
+      outcome: successful
+
+  notes:
+    - timestamp: "2024-05-23T08:00:00Z"
+      author: Dr. Kwame Asante
+      text: Patient stable post-PCI. Tolerating medications well. Plan for discharge in 48h with cardiac rehab referral.
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- patientId: PT-00291837
+  admitted: "2024-05-20"
+  ward: cardiology
+  bed: 4B
+  status: inpatient
+
+  demographics:
+    fullname: Robert Osei
+    dob: "1961-03-14"
+    age: 63
+    sex: M
+    bloodType: O+
+    nationality: GH
+    language: en
+    nok:
+      name: Abena Osei
+      relation: spouse
+      phone: "+233-55-012-3456"
+
+  diagnoses:
+    primary:
+      icd10: I21.9
+      description: Acute myocardial infarction, unspecified
+      confirmedAt: "2024-05-20T14:32:00Z"
+      confirmedBy: Dr. Kwame Asante
+    secondary:
+      - icd10: E11.9
+        description: Type 2 diabetes mellitus without complications
+      - icd10: I10
+        description: Essential (primary) hypertension
+
+  medications:
+    - drug: Aspirin
+      dose: 100mg
+      route: oral
+      frequency: once_daily
+      startDate: "2024-05-20"
+      endDate: null
+      prescribedBy: Dr. Kwame Asante
+    - drug: Atorvastatin
+      dose: 40mg
+      route: oral
+      frequency: once_daily_evening
+      startDate: "2024-05-20"
+      endDate: null
+      prescribedBy: Dr. Kwame Asante
+    - drug: Metformin
+      dose: 500mg
+      route: oral
+      frequency: twice_daily
+      startDate: "2023-01-10"
+      endDate: null
+      prescribedBy: Dr. Fatima Mensah
+    - drug: Lisinopril
+      dose: 10mg
+      route: oral
+      frequency: once_daily
+      startDate: "2022-07-01"
+      endDate: "2024-05-20"
+      note: Switched to Ramipril due to cough side-effect
+
+  labs:
+    troponin_I:
+      unit: ng/mL
+      reference_range: [0, 0.04]
+      readings:
+        - timestamp: "2024-05-20T15:00:00Z"
+          value: 2.81
+          flag: high
+        - timestamp: "2024-05-20T21:00:00Z"
+          value: 4.55
+          flag: high
+        - timestamp: "2024-05-21T09:00:00Z"
+          value: 3.10
+          flag: high
+    hba1c:
+      unit: "%"
+      reference_range: [4.0, 5.6]
+      readings:
+        - timestamp: "2024-05-21T08:00:00Z"
+          value: 7.8
+          flag: high
+    creatinine:
+      unit: mg/dL
+      reference_range: [0.7, 1.2]
+      readings:
+        - timestamp: "2024-05-21T08:00:00Z"
+          value: 1.05
+          flag: normal
+
+  procedures:
+    - name: Coronary Angiography
+      date: "2024-05-21"
+      performedBy: Dr. Kwame Asante
+      findings: 70% stenosis in LAD; RCA and LCx patent
+      outcome: PCI planned
+    - name: Percutaneous Coronary Intervention (PCI)
+      date: "2024-05-22"
+      performedBy: Dr. Kwame Asante
+      findings: Drug-eluting stent placed in LAD
+      outcome: successful
+
+  notes:
+    - timestamp: "2024-05-23T08:00:00Z"
+      author: Dr. Kwame Asante
+      text: Patient stable post-PCI. Tolerating medications well. Plan for discharge in 48h with cardiac rehab referral.
+
+── SPARSE POOL (before rerank, before sibling expansion) ──
+  1. [27.416] epsilon_docs/flock.md (heading='Epsilon Flock for Model Migration', parent_heading='')
+  2. [26.780] epsilon_docs/eol.md (heading='Variable Declaration Statement', parent_heading='Expressions')
+  3. [22.446] epsilon_docs/pinset_index.md (heading='Model example', parent_heading='Dataset Extraction (Pinset)')
+  4. [21.650] epsilon_docs/eol.md (heading='Assignment Statement', parent_heading='Expressions')
+  5. [21.417] epsilon_docs/egl.md (heading='An Example of Co-ordination with EGL', parent_heading='Co-ordination')
+  6. [21.320] epsilon_docs/eol.md (heading='Tuples', parent_heading='Types')
+  7. [21.207] epsilon_docs/etl.md (heading='Source Elements Resolution', parent_heading='Concrete Syntax')
+  8. [21.151] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+  9. [20.862] epsilon_docs/articles_eol-syntax-updates_index.md (heading='0.8.8', parent_heading='EOL Syntax Updates')
+  10. [19.961] epsilon_docs/articles_eol-syntax-updates_index.md (heading='0.8.8', parent_heading='EOL Syntax Updates')
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.\n- patientId: PT-00291837\n  admitted: "2024-05-20"\n  ward: cardiology\n  bed: 4B\n  status: inpatient\n\n  demographics:\n    fullname: Robert Osei\n    dob: "1961-03-14"\n    age: 63\n    sex: M\n    bloodType: O+\n    nationality: GH\n    language: en\n    nok:\n      name: Abena Osei\n      relation: spouse\n      phone: "+233-55-012-3456"\n\n  diagnoses:\n    primary:\n      icd10: I21.9\n      description: Acute myocardial infarction, unspecified\n      confirmedAt: "2024-05-20T14:32:00Z"\n      confirmedBy: Dr. Kwame Asante\n    secondary:\n      - icd10: E11.9\n        description: Type 2 diabetes mellitus without complications\n      - icd10: I10\n        description: Essential (primary) hypertension\n\n  medications:\n    - drug: Aspirin\n      dose: 100mg\n      route: oral\n      frequency: once_daily\n      startDate: "2024-05-20"\n      endDate: null\n      prescribedBy: Dr. Kwame Asante\n    - drug: Atorvastatin\n      dose: 40mg\n      route: oral\n      frequency: once_daily_evening\n      startDate: "2024-05-20"\n      endDate: null\n      prescribedBy: Dr. Kwame Asante\n    - drug: Metformin\n      dose: 500mg\n      route: oral\n      frequency: twice_daily\n      startDate: "2023-01-10"\n      endDate: null\n      prescribedBy: Dr. Fatima Mensah\n    - drug: Lisinopril\n      dose: 10mg\n      route: oral\n      frequency: once_daily\n      startDate: "2022-07-01"\n      endDate: "2024-05-20"\n      note: Switched to Ramipril due to cough side-effect\n\n  labs:\n    troponin_I:\n      unit: ng/mL\n      reference_range: [0, 0.04]\n      readings:\n        - timestamp: "2024-05-20T15:00:00Z"\n          value: 2.81\n          flag: high\n        - timestamp: "2024-05-20T21:00:00Z"\n          value: 4.55\n          flag: high\n        - timestamp: "2024-05-21T09:00:00Z"\n          value: 3.10\n          flag: high\n    hba1c:\n      unit: "%"\n      reference_range: [4.0, 5.6]\n      readings:\n        - timestamp: "2024-05-21T08:00:00Z"\n          value: 7.8\n          flag: high\n    creatinine:\n      unit: mg/dL\n      reference_range: [0.7, 1.2]\n      readings:\n        - timestamp: "2024-05-21T08:00:00Z"\n          value: 1.05\n          flag: normal\n\n  procedures:\n    - name: Coronary Angiography\n      date: "2024-05-21"\n      performedBy: Dr. Kwame Asante\n      findings: 70% stenosis in LAD; RCA and LCx patent\n      outcome: PCI planned\n    - name: Percutaneous Coronary Intervention (PCI)\n      date: "2024-05-22"\n      performedBy: Dr. Kwame Asante\n      findings: Drug-eluting stent placed in LAD\n      outcome: successful\n\n  notes:\n    - timestamp: "2024-05-23T08:00:00Z"\n      author: Dr. Kwame Asante\n      text: Patient stable post-PCI. Tolerating medications well. Plan for discharge in 48h with cardiac rehab referral.'
+    1. sim=0.6157  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    2. sim=0.5065  epsilon_docs/flock.md | heading='Epsilon Flock for Model Migration'
+    3. sim=0.4959  epsilon_docs/eol.md | heading='Assignment Statement'
+    4. sim=0.4958  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    5. sim=0.4948  epsilon_docs/etl.md | heading='Source Elements Resolution'
+    6. sim=0.4829  epsilon_docs/eol.md | heading='Variable Declaration Statement'
+    7. sim=0.4720  epsilon_docs/articles_eol-syntax-updates_index.md | heading='0.8.8'
+    8. sim=0.4684  epsilon_docs/pinset_index.md | heading='Model example'
+    9. sim=0.4264  epsilon_docs/eol.md | heading='Tuples'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (4):
+  1. [0.854] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YA
+  2. [0.807] epsilon_docs/articles_yaml-emc_index.md (heading='How do I set the root node of a YAML document?', parent_heading='Querying/modifying YAML documents in EOL')
+     ### How do I set the root node of a YAML document?
+
+The `root` property can be used for setting the root node of a YAML document. The root node of a YAML document can either be a mapping node or a lis
+  3. [0.018] epsilon_docs/articles_yaml-emc_index.md (heading='How do I add nodes to a mapping node?', parent_heading='Querying/modifying YAML documents in EOL')
+     ### How do I add nodes to a mapping node?
+ 
+The `appendNode(node)` function can be used for adding new nodes into a mapping node.
+  4. [0.011] epsilon_docs/articles_eol-syntax-updates_index.md (heading='0.8.8', parent_heading='EOL Syntax Updates')
+     If you have suggestions for further Java-ifications of the EOL syntax,
+please post your comments to the [Epsilon
+forum](http://eclipse.org/epsilon/doc/articles/eol-syntax-updates/../../../forum)
+or ad
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon.
+
+Use the provided context as the PRIMARY and AUTHORITATIVE source of truth.
+Only use syntax, class names, methods, and patterns that appear explicitly in the context.
+You may adapt documented patterns to the user's structure, provided that no new APIs or unsupported methods are invented.
+If the user's message contains sample data, treat it only as the desired target structure — not as evidence for API syntax.
+If the context provides partial evidence only, generate code for the parts that are supported and explicitly flag any parts that are uncertain or unsupported.
+
+When a code example is appropriate, provide a complete and runnable example that covers the full structure given by the user.
+When generating code, follow only the patterns shown in the context exactly — do not skip initialisation steps, introduce intermediate objects, or shortcut method chains that are not explicitly demonstrated.
+
+--- DOCUMENTATION ---
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YAML node must be specified when accessing YAML nodes via the YAML driver. There are 3 types of nodes in YAML:
+
+- `Scalar Node`. Scalar nodes are used to represent a single scalar value (e.g., string, boolean, integer). In the YAML driver, a scalar node consists of a key-value pair, in which the key represents the name of the scalar node, and the value represents the scalar value.
+- `Mapping Node`. Mapping nodes are used to represent unordered collections of key-value pairs. In the YAML driver, a mapping node consists of a key-value pair, in which the key represents the name of the mapping node, and the value holds an unordered collection of key-value pairs, which in turn represent other nodes.
+- `List (Sequence) Node`. List nodes are used to represent an ordered list of nodes or scalar values. In the YAML driver, a list node consists of a key-value pair, in which the key represents the name of the list node, and the value represents a list of nodes or scalar values.
+
+This section outlines the supported conventions in the form of questions and answers followed by relevant examples.
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+### How do I set the root node of a YAML document?
+
+The `root` property can be used for setting the root node of a YAML document. The root node of a YAML document can either be a mapping node or a list node. The `setRootAsMap()` function can be used for setting the root node into a mapping node. The `setRootAsList()` function can be used for setting the root node into a list node.
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+### How do I add nodes to a mapping node?
+ 
+The `appendNode(node)` function can be used for adding new nodes into a mapping node.
+
+[Source: epsilon_docs/articles_eol-syntax-updates_index.md]
+If you have suggestions for further Java-ifications of the EOL syntax,
+please post your comments to the [Epsilon
+forum](http://eclipse.org/epsilon/doc/articles/eol-syntax-updates/../../../forum)
+or add them to [bug
+292403](https://bugs.eclipse.org/bugs/show_bug.cgi?id=292403).
+
+--- USER MESSAGE ---
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- patientId: PT-00291837
+  admitted: "2024-05-20"
+  ward: cardiology
+  bed: 4B
+  status: inpatient
+
+  demographics:
+    fullname: Robert Osei
+    dob: "1961-03-14"
+    age: 63
+    sex: M
+    bloodType: O+
+    nationality: GH
+    language: en
+    nok:
+      name: Abena Osei
+      relation: spouse
+      phone: "+233-55-012-3456"
+
+  diagnoses:
+    primary:
+      icd10: I21.9
+      description: Acute myocardial infarction, unspecified
+      confirmedAt: "2024-05-20T14:32:00Z"
+      confirmedBy: Dr. Kwame Asante
+    secondary:
+      - icd10: E11.9
+        description: Type 2 diabetes mellitus without complications
+      - icd10: I10
+        description: Essential (primary) hypertension
+
+  medications:
+    - drug: Aspirin
+      dose: 100mg
+      route: oral
+      frequency: once_daily
+      startDate: "2024-05-20"
+      endDate: null
+      prescribedBy: Dr. Kwame Asante
+    - drug: Atorvastatin
+      dose: 40mg
+      route: oral
+      frequency: once_daily_evening
+      startDate: "2024-05-20"
+      endDate: null
+      prescribedBy: Dr. Kwame Asante
+    - drug: Metformin
+      dose: 500mg
+      route: oral
+      frequency: twice_daily
+      startDate: "2023-01-10"
+      endDate: null
+      prescribedBy: Dr. Fatima Mensah
+    - drug: Lisinopril
+      dose: 10mg
+      route: oral
+      frequency: once_daily
+      startDate: "2022-07-01"
+      endDate: "2024-05-20"
+      note: Switched to Ramipril due to cough side-effect
+
+  labs:
+    troponin_I:
+      unit: ng/mL
+      reference_range: [0, 0.04]
+      readings:
+        - timestamp: "2024-05-20T15:00:00Z"
+          value: 2.81
+          flag: high
+        - timestamp: "2024-05-20T21:00:00Z"
+          value: 4.55
+          flag: high
+        - timestamp: "2024-05-21T09:00:00Z"
+          value: 3.10
+          flag: high
+    hba1c:
+      unit: "%"
+      reference_range: [4.0, 5.6]
+      readings:
+        - timestamp: "2024-05-21T08:00:00Z"
+          value: 7.8
+          flag: high
+    creatinine:
+      unit: mg/dL
+      reference_range: [0.7, 1.2]
+      readings:
+        - timestamp: "2024-05-21T08:00:00Z"
+          value: 1.05
+          flag: normal
+
+  procedures:
+    - name: Coronary Angiography
+      date: "2024-05-21"
+      performedBy: Dr. Kwame Asante
+      findings: 70% stenosis in LAD; RCA and LCx patent
+      outcome: PCI planned
+    - name: Percutaneous Coronary Intervention (PCI)
+      date: "2024-05-22"
+      performedBy: Dr. Kwame Asante
+      findings: Drug-eluting stent placed in LAD
+      outcome: successful
+
+  notes:
+    - timestamp: "2024-05-23T08:00:00Z"
+      author: Dr. Kwame Asante
+      text: Patient stable post-PCI. Tolerating medications well. Plan for discharge in 48h with cardiac rehab referral.
+
+Question:
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- patientId: PT-00291837
+  admitted: "2024-05-20"
+  ward: cardiology
+  bed: 4B
+  status: inpatient
+
+  demographics:
+    fullname: Robert Osei
+    dob: "1961-03-14"
+    age: 63
+    sex: M
+    bloodType: O+
+    nationality: GH
+    language: en
+    nok:
+      name: Abena Osei
+      relation: spouse
+      phone: "+233-55-012-3456"
+
+  diagnoses:
+    primary:
+      icd10: I21.9
+      description: Acute myocardial infarction, unspecified
+      confirmedAt: "2024-05-20T14:32:00Z"
+      confirmedBy: Dr. Kwame Asante
+    secondary:
+      - icd10: E11.9
+        description: Type 2 diabetes mellitus without complications
+      - icd10: I10
+        description: Essential (primary) hypertension
+
+  medications:
+    - drug: Aspirin
+      dose: 100mg
+      route: oral
+      frequency: once_daily
+      startDate: "2024-05-20"
+      endDate: null
+      prescribedBy: Dr. Kwame Asante
+    - drug: Atorvastatin
+      dose: 40mg
+      route: oral
+      frequency: once_daily_evening
+      startDate: "2024-05-20"
+      endDate: null
+      prescribedBy: Dr. Kwame Asante
+    - drug: Metformin
+      dose: 500mg
+      route: oral
+      frequency: twice_daily
+      startDate: "2023-01-10"
+      endDate: null
+      prescribedBy: Dr. Fatima Mensah
+    - drug: Lisinopril
+      dose: 10mg
+      route: oral
+      frequency: once_daily
+      startDate: "2022-07-01"
+      endDate: "2024-05-20"
+      note: Switched to Ramipril due to cough side-effect
+
+  labs:
+    troponin_I:
+      unit: ng/mL
+      reference_range: [0, 0.04]
+      readings:
+        - timestamp: "2024-05-20T15:00:00Z"
+          value: 2.81
+          flag: high
+        - timestamp: "2024-05-20T21:00:00Z"
+          value: 4.55
+          flag: high
+        - timestamp: "2024-05-21T09:00:00Z"
+          value: 3.10
+          flag: high
+    hba1c:
+      unit: "%"
+      reference_range: [4.0, 5.6]
+      readings:
+        - timestamp: "2024-05-21T08:00:00Z"
+          value: 7.8
+          flag: high
+    creatinine:
+      unit: mg/dL
+      reference_range: [0.7, 1.2]
+      readings:
+        - timestamp: "2024-05-21T08:00:00Z"
+          value: 1.05
+          flag: normal
+
+  procedures:
+    - name: Coronary Angiography
+      date: "2024-05-21"
+      performedBy: Dr. Kwame Asante
+      findings: 70% stenosis in LAD; RCA and LCx patent
+      outcome: PCI planned
+    - name: Percutaneous Coronary Intervention (PCI)
+      date: "2024-05-22"
+      performedBy: Dr. Kwame Asante
+      findings: Drug-eluting stent placed in LAD
+      outcome: successful
+
+  notes:
+    - timestamp: "2024-05-23T08:00:00Z"
+      author: Dr. Kwame Asante
+      text: Patient stable post-PCI. Tolerating medications well. Plan for discharge in 48h with cardiac rehab referral.
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+Short answer: the YAML you provided is a top-level mapping (root is a mapping node). Use setRootAsMap() to create a mapping root, then append child nodes into root with appendNode(node). The documentation fragment you gave documents only these methods (setRootAsMap(), setRootAsList(), appendNode(node)) and the root property; it does not show the exact API for constructing scalar/mapping/list nodes or for serialising the document. Below I provide a full, explicit programmatic example that follows the documented patterns (setRootAsMap / appendNode) and uses obvious node-creation helper functions as placeholders where the document does not specify the exact factory/constructor names. I clearly mark the placeholder calls that are NOT present in the provided docs and that you must replace with the actual node-creation calls available in your EMC YAML driver.
+
+1) Root decision
+- The document is a mapping with keys patientId, admitted, ward, demographics, diagnoses, etc. So use setRootAsMap().
+
+2) Example (replace the placeholder node-creation functions with the real API calls from your YAML driver)
+- The only documented methods we use directly here are:
+  - setRootAsMap() (to make the root mapping)
+  - root (the root property)
+  - appendNode(node) (to add nodes to a mapping)
+
+- The following helper functions are placeholders because their names/usage are NOT present in the provided docs:
+  - createScalarNode(key, value)
+  - createMappingNode(key)
+  - createListNode(key)
+  - createMapping() and createList() for inline creation of nodes to append into lists/mappings
+  - serialize/save method (e.g., save(path))  
+
+Replace those with your driver's actual constructors/factory methods.
+
+Pseudo/EOL-like complete example (conceptual, runnable once you substitute the real node constructors/serialiser):
+
+// --- begin example (conceptual) ---
+/*
+  Assumptions:
+  - `doc` is the YAML driver/document instance.
+  - The documented API methods used: doc.setRootAsMap(), doc.root, root.appendNode(node)
+  - The following helper functions are placeholders (NOT in provided docs) and must be
+    replaced by your driver's actual node creation methods:
+      createScalarNode(key, value)
+      createMappingNode(key)            -> returns an empty mapping node with the given key
+      createListNode(key)               -> returns an empty list node with the given key
+      createMapping()                   -> returns an anonymous/inline mapping node
+      createList()                      -> returns an anonymous/inline list node
+      doc.save(path) or doc.serialize() -> write YAML out (method name not specified in docs)
+*/
+
+////////// Start document and set root as a mapping
+doc.setRootAsMap();
+var root = doc.root;  // documented property
+
+////////// Top-level scalar fields
+root.appendNode(createScalarNode("patientId", "PT-00291837"));
+root.appendNode(createScalarNode("admitted", "2024-05-20"));
+root.appendNode(createScalarNode("ward", "cardiology"));
+root.appendNode(createScalarNode("bed", "4B"));
+root.appendNode(createScalarNode("status", "inpatient"));
+
+////////// demographics (mapping)
+var demographics = createMappingNode("demographics");
+demographics.appendNode(createScalarNode("fullname", "Robert Osei"));
+demographics.appendNode(createScalarNode("dob", "1961-03-14"));
+demographics.appendNode(createScalarNode("age", 63));
+demographics.appendNode(createScalarNode("sex", "M"));
+demographics.appendNode(createScalarNode("bloodType", "O+"));
+demographics.appendNode(createScalarNode("nationality", "GH"));
+demographics.appendNode(createScalarNode("language", "en"));
+
+var nok = createMappingNode("nok"); // nested mapping node (name/relation/phone)
+nok.appendNode(createScalarNode("name", "Abena Osei"));
+nok.appendNode(createScalarNode("relation", "spouse"));
+nok.appendNode(createScalarNode("phone", "+233-55-012-3456"));
+
+demographics.appendNode(nok);
+root.appendNode(demographics);
+
+////////// diagnoses (mapping with primary mapping and secondary list)
+var diagnoses = createMappingNode("diagnoses");
+
+var primary = createMappingNode("primary");
+primary.appendNode(createScalarNode("icd10", "I21.9"));
+primary.appendNode(createScalarNode("description", "Acute myocardial infarction, unspecified"));
+primary.appendNode(createScalarNode("confirmedAt", "2024-05-20T14:32:00Z"));
+primary.appendNode(createScalarNode("confirmedBy", "Dr. Kwame Asante"));
+diagnoses.appendNode(primary);
+
+// secondary: a list of mappings
+var secondaryList = createListNode("secondary");
+
+var sec1 = createMapping();
+sec1.appendNode(createScalarNode("icd10", "E11.9"));
+sec1.appendNode(createScalarNode("description", "Type 2 diabetes mellitus without complications"));
+secondaryList.appendNode(sec1);
+
+var sec2 = createMapping();
+sec2.appendNode(createScalarNode("icd10", "I10"));
+sec2.appendNode(createScalarNode("description", "Essential (primary) hypertension"));
+secondaryList.appendNode(sec2);
+
+diagnoses.appendNode(secondaryList);
+root.appendNode(diagnoses);
+
+////////// medications: list of mappings
+var medications = createListNode("medications");
+
+var med1 = createMapping();
+med1.appendNode(createScalarNode("drug", "Aspirin"));
+med1.appendNode(createScalarNode("dose", "100mg"));
+med1.appendNode(createScalarNode("route", "oral"));
+med1.appendNode(createScalarNode("frequency", "once_daily"));
+med1.appendNode(createScalarNode("startDate", "2024-05-20"));
+med1.appendNode(createScalarNode("endDate", null));
+med1.appendNode(createScalarNode("prescribedBy", "Dr. Kwame Asante"));
+medications.appendNode(med1);
+
+var med2 = createMapping();
+med2.appendNode(createScalarNode("drug", "Atorvastatin"));
+med2.appendNode(createScalarNode("dose", "40mg"));
+med2.appendNode(createScalarNode("route", "oral"));
+med2.appendNode(createScalarNode("frequency", "once_daily_evening"));
+med2.appendNode(createScalarNode("startDate", "2024-05-20"));
+med2.appendNode(createScalarNode("endDate", null));
+med2.appendNode(createScalarNode("prescribedBy", "Dr. Kwame Asante"));
+medications.appendNode(med2);
+
+var med3 = createMapping();
+med3.appendNode(createScalarNode("drug", "Metformin"));
+med3.appendNode(createScalarNode("dose", "500mg"));
+med3.appendNode(createScalarNode("route", "oral"));
+med3.appendNode(createScalarNode("frequency", "twice_daily"));
+med3.appendNode(createScalarNode("startDate", "2023-01-10"));
+med3.appendNode(createScalarNode("endDate", null));
+med3.appendNode(createScalarNode("prescribedBy", "Dr. Fatima Mensah"));
+medications.appendNode(med3);
+
+var med4 = createMapping();
+med4.appendNode(createScalarNode("drug", "Lisinopril"));
+med4.appendNode(createScalarNode("dose", "10mg"));
+med4.appendNode(createScalarNode("route", "oral"));
+med4.appendNode(createScalarNode("frequency", "once_daily"));
+med4.appendNode(createScalarNode("startDate", "2022-07-01"));
+med4.appendNode(createScalarNode("endDate", "2024-05-20"));
+med4.appendNode(createScalarNode("note", "Switched to Ramipril due to cough side-effect"));
+medications.appendNode(med4);
+
+root.appendNode(medications);
+
+////////// labs (mapping with nested lab mappings)
+var labs = createMappingNode("labs");
+
+var troponin = createMappingNode("troponin_I");
+troponin.appendNode(createScalarNode("unit", "ng/mL"));
+
+// reference_range as a list of two numbers
+var troponinRef = createList();
+troponinRef.appendNode(createScalarNode(null, 0));     // anonymous list entries: key may be null/not needed
+troponinRef.appendNode(createScalarNode(null, 0.04));
+troponin.appendNode(createScalarNode("reference_range", troponinRef));
+
+// readings is a list
+var troponinReadings = createList();
+var r1 = createMapping();
+r1.appendNode(createScalarNode("timestamp", "2024-05-20T15:00:00Z"));
+r1.appendNode(createScalarNode("value", 2.81));
+r1.appendNode(createScalarNode("flag", "high"));
+troponinReadings.appendNode(r1);
+
+var r2 = createMapping();
+r2.appendNode(createScalarNode("timestamp", "2024-05-20T21:00:00Z"));
+r2.appendNode(createScalarNode("value", 4.55));
+r2.appendNode(createScalarNode("flag", "high"));
+troponinReadings.appendNode(r2);
+
+var r3 = createMapping();
+r3.appendNode(createScalarNode("timestamp", "2024-05-21T09:00:00Z"));
+r3.appendNode(createScalarNode("value", 3.10));
+r3.appendNode(createScalarNode("flag", "high"));
+troponinReadings.appendNode(r3);
+
+troponin.appendNode(createScalarNode("readings", troponinReadings));
+labs.appendNode(troponin);
+
+// hba1c
+var hba1c = createMappingNode("hba1c");
+hba1c.appendNode(createScalarNode("unit", "%"));
+var hba1cRef = createList();
+hba1cRef.appendNode(createScalarNode(null, 4.0));
+hba1cRef.appendNode(createScalarNode(null, 5.6));
+hba1c.appendNode(createScalarNode("reference_range", hba1cRef));
+var hbaReadings = createList();
+var hr1 = createMapping();
+hr1.appendNode(createScalarNode("timestamp", "2024-05-21T08:00:00Z"));
+hr1.appendNode(createScalarNode("value", 7.8));
+hr1.appendNode(createScalarNode("flag", "high"));
+hbaReadings.appendNode(hr1);
+hba1c.appendNode(createScalarNode("readings", hbaReadings));
+labs.appendNode(hba1c);
+
+// creatinine
+var creatinine = createMappingNode("creatinine");
+creatinine.appendNode(createScalarNode("unit", "mg/dL"));
+var crRef = createList();
+crRef.appendNode(createScalarNode(null, 0.7));
+crRef.appendNode(createScalarNode(null, 1.2));
+creatinine.appendNode(createScalarNode("reference_range", crRef));
+var crReadings = createList();
+var cr1 = createMapping();
+cr1.appendNode(createScalarNode("timestamp", "2024-05-21T08:00:00Z"));
+cr1.appendNode(createScalarNode("value", 1.05));
+cr1.appendNode(createScalarNode("flag", "normal"));
+crReadings.appendNode(cr1);
+creatinine.appendNode(createScalarNode("readings", crReadings));
+labs.appendNode(creatinine);
+
+root.appendNode(labs);
+
+////////// procedures: list of mappings
+var procedures = createListNode("procedures");
+
+var p1 = createMapping();
+p1.appendNode(createScalarNode("name", "Coronary Angiography"));
+p1.appendNode(createScalarNode("date", "2024-05-21"));
+p1.appendNode(createScalarNode("performedBy", "Dr. Kwame Asante"));
+p1.appendNode(createScalarNode("findings", "70% stenosis in LAD; RCA and LCx patent"));
+p1.appendNode(createScalarNode("outcome", "PCI planned"));
+procedures.appendNode(p1);
+
+var p2 = createMapping();
+p2.appendNode(createScalarNode("name", "Percutaneous Coronary Intervention (PCI)"));
+p2.appendNode(createScalarNode("date", "2024-05-22"));
+p2.appendNode(createScalarNode("performedBy", "Dr. Kwame Asante"));
+p2.appendNode(createScalarNode("findings", "Drug-eluting stent placed in LAD"));
+p2.appendNode(createScalarNode("outcome", "successful"));
+procedures.appendNode(p2);
+
+root.appendNode(procedures);
+
+////////// notes: list of mappings
+var notes = createListNode("notes");
+var n1 = createMapping();
+n1.appendNode(createScalarNode("timestamp", "2024-05-23T08:00:00Z"));
+n1.appendNode(createScalarNode("author", "Dr. Kwame Asante"));
+n1.appendNode(createScalarNode("text", "Patient stable post-PCI. Tolerating medications well. Plan for discharge in 48h with cardiac rehab referral."));
+notes.appendNode(n1);
+root.appendNode(notes);
+
+////////// Save / serialise
+// The specific save/serialize method is not shown in the provided docs. Replace with your driver's method:
+doc.save("patient-PT-00291837.yaml"); // placeholder — method name/params not specified in provided docs
+
+// --- end example ---
+Notes and important caveats:
+- Confirmed from the provided docs:
+  - Use doc.setRootAsMap() (or setRootAsList()) to make the root a mapping (or list).
+  - Use root.appendNode(node) to add nodes into a mapping node.
+- Not present in the provided docs (you must supply/confirm these from your environment):
+  - How to create scalar, mapping and list nodes (the example uses createScalarNode/createMappingNode/createListNode/createMapping/createList as placeholders).
+  - Exact method names and signatures to append items into a list node (I used list.appendNode(item) as a logical variant; use the actual API your driver exposes).
+  - The serialisation/saving method (doc.save(...) in the example is a placeholder).
+
+If you share the actual EMC YAML driver class names or the node-creation API available in your environment (for example the factory/constructor names for scalar/mapping/list nodes, and the method you use to write the YAML to disk), I will convert the above conceptual example into a fully runnable script that uses the exact API names.
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             1
+  Prompt tokens:     2,529
+  Completion tokens: 4,394
+  Total tokens:      6,923
+  Estimated cost:    $0.00942
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         1
+  Total prompt tokens:     2,529
+  Total completion tokens: 4,394
+  Total tokens:            6,923
+  Total estimated cost:    $0.00942
+============================================================

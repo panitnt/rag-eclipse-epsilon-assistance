@@ -1,0 +1,477 @@
+Session started: 2026-07-30 12:52:15
+Model: openai/gpt-5-mini | temperature=0
+RETRIEVAL_MODE=sparse (BM25 Qdrant/bm25, no dense)
+SIBLING_EXPANSION=off
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[12:52:15]
+
+── QUESTION ──────────────────────────────────────────────
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- tenantId: TEN-001
+  name: Brightline Logistics
+  plan: enterprise
+  seats: {purchased: 50, active: 47}
+
+- tenantId: TEN-002
+  name: Fernwood Studio
+  plan: pro
+  seats: {purchased: 12, active: 9}
+
+- tenantId: TEN-003
+  name: Oakridge Analytics
+  plan: pro
+  seats: {purchased: 20, active: 20}
+
+- tenantId: TEN-004
+  name: Silverline Health
+  plan: enterprise
+  seats: {purchased: 80, active: 61}
+
+- tenantId: TEN-005
+  name: Kestrel Robotics
+  plan: starter
+  seats: {purchased: 5, active: 5}
+
+- tenantId: TEN-006
+  name: Marlowe & Finch
+  plan: pro
+  seats: {purchased: 15, active: 11}
+
+- tenantId: TEN-007
+  name: Pinewood Retail
+  plan: starter
+  seats: {purchased: 3, active: 2}
+
+- tenantId: TEN-008
+  name: Cobalt Freight
+  plan: enterprise
+  seats: {purchased: 100, active: 88}
+
+- tenantId: TEN-009
+  name: Hollowfield Legal
+  plan: pro
+  seats: {purchased: 18, active: 18}
+
+- tenantId: TEN-010
+  name: Thistledown Media
+  plan: starter
+  seats: {purchased: 4, active: 1}
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- tenantId: TEN-001
+  name: Brightline Logistics
+  plan: enterprise
+  seats: {purchased: 50, active: 47}
+
+- tenantId: TEN-002
+  name: Fernwood Studio
+  plan: pro
+  seats: {purchased: 12, active: 9}
+
+- tenantId: TEN-003
+  name: Oakridge Analytics
+  plan: pro
+  seats: {purchased: 20, active: 20}
+
+- tenantId: TEN-004
+  name: Silverline Health
+  plan: enterprise
+  seats: {purchased: 80, active: 61}
+
+- tenantId: TEN-005
+  name: Kestrel Robotics
+  plan: starter
+  seats: {purchased: 5, active: 5}
+
+- tenantId: TEN-006
+  name: Marlowe & Finch
+  plan: pro
+  seats: {purchased: 15, active: 11}
+
+- tenantId: TEN-007
+  name: Pinewood Retail
+  plan: starter
+  seats: {purchased: 3, active: 2}
+
+- tenantId: TEN-008
+  name: Cobalt Freight
+  plan: enterprise
+  seats: {purchased: 100, active: 88}
+
+- tenantId: TEN-009
+  name: Hollowfield Legal
+  plan: pro
+  seats: {purchased: 18, active: 18}
+
+- tenantId: TEN-010
+  name: Thistledown Media
+  plan: starter
+  seats: {purchased: 4, active: 1}
+
+── SPARSE POOL (before rerank, before sibling expansion) ──
+  1. [20.013] epsilon_docs/egl.md (heading='An Example of Co-ordination with EGL', parent_heading='Co-ordination')
+  2. [17.916] epsilon_docs/eol.md (heading='Variable Declaration Statement', parent_heading='Expressions')
+  3. [17.514] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+  4. [17.422] epsilon_docs/pinset_index.md (heading='Model example', parent_heading='Dataset Extraction (Pinset)')
+  5. [16.131] epsilon_docs/flock.md (heading='Epsilon Flock for Model Migration', parent_heading='')
+  6. [15.607] epsilon_docs/articles_minimal-examples_index.md (heading='Exporting an Eclipse project from your workspace', parent_heading='Constructing a Helpful Minimal Example')
+  7. [15.561] epsilon_docs/articles_development-principles_index.md (heading='Technical Support', parent_heading='Epsilon Development Principles')
+  8. [15.079] epsilon_docs/articles_excel_index.md (heading='References and Column Types', parent_heading='Scripting Excel Spreadsheets using Epsilon')
+  9. [15.068] epsilon_docs/articles_yaml-emc_index.md (heading='How do I set the root node of a YAML document?', parent_heading='Querying/modifying YAML documents in EOL')
+  10. [14.825] epsilon_docs/eunit.md (heading='Test Suites', parent_heading='Test Organization')
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.\n- tenantId: TEN-001\n  name: Brightline Logistics\n  plan: enterprise\n  seats: {purchased: 50, active: 47}\n\n- tenantId: TEN-002\n  name: Fernwood Studio\n  plan: pro\n  seats: {purchased: 12, active: 9}\n\n- tenantId: TEN-003\n  name: Oakridge Analytics\n  plan: pro\n  seats: {purchased: 20, active: 20}\n\n- tenantId: TEN-004\n  name: Silverline Health\n  plan: enterprise\n  seats: {purchased: 80, active: 61}\n\n- tenantId: TEN-005\n  name: Kestrel Robotics\n  plan: starter\n  seats: {purchased: 5, active: 5}\n\n- tenantId: TEN-006\n  name: Marlowe & Finch\n  plan: pro\n  seats: {purchased: 15, active: 11}\n\n- tenantId: TEN-007\n  name: Pinewood Retail\n  plan: starter\n  seats: {purchased: 3, active: 2}\n\n- tenantId: TEN-008\n  name: Cobalt Freight\n  plan: enterprise\n  seats: {purchased: 100, active: 88}\n\n- tenantId: TEN-009\n  name: Hollowfield Legal\n  plan: pro\n  seats: {purchased: 18, active: 18}\n\n- tenantId: TEN-010\n  name: Thistledown Media\n  plan: starter\n  seats: {purchased: 4, active: 1}'
+    1. sim=0.6634  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    2. sim=0.6631  epsilon_docs/articles_yaml-emc_index.md | heading='How do I set the root node of a YAML document?'
+    3. sim=0.5914  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    4. sim=0.5671  epsilon_docs/flock.md | heading='Epsilon Flock for Model Migration'
+    5. sim=0.5628  epsilon_docs/articles_excel_index.md | heading='References and Column Types'
+    6. sim=0.5290  epsilon_docs/eunit.md | heading='Test Suites'
+    7. sim=0.5263  epsilon_docs/pinset_index.md | heading='Model example'
+    8. sim=0.5065  epsilon_docs/articles_minimal-examples_index.md | heading='Exporting an Eclipse project from your workspace'
+    9. sim=0.5062  epsilon_docs/eol.md | heading='Variable Declaration Statement'
+    10. sim=0.4892  epsilon_docs/articles_development-principles_index.md | heading='Technical Support'
+
+── RETRIEVED (after dedup + rerank pass 1 only — sibling expansion OFF) ──
+
+Docs (5):
+  1. [0.725] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YA
+  2. [0.577] epsilon_docs/articles_yaml-emc_index.md (heading='How do I set the root node of a YAML document?', parent_heading='Querying/modifying YAML documents in EOL')
+     ### How do I set the root node of a YAML document?
+
+The `root` property can be used for setting the root node of a YAML document. The root node of a YAML document can either be a mapping node or a lis
+  3. [0.005] epsilon_docs/articles_excel_index.md (heading='References and Column Types', parent_heading='Scripting Excel Spreadsheets using Epsilon')
+     # Scripting Excel Spreadsheets using Epsilon
+
+Spreadsheets are commonly used in software and systems engineering processes to capture and analyse structured data, and can be sources of valuable inform
+  4. [0.001] epsilon_docs/pinset_index.md (heading='Model example', parent_heading='Dataset Extraction (Pinset)')
+     ## Model example
+Example: demonstrate nested column generators using intermediate values for multiple related column calculations in a table.
+
+```
+
+number|squared|times_2|times_3|times_4|times_5
+--|--
+  5. [0.001] epsilon_docs/flock.md (heading='Epsilon Flock for Model Migration', parent_heading='')
+     ## Epsilon Flock for Model Migration
+Example: demonstrate the six-phase execution semantics of an Epsilon Flock module for model migration.
+Keywords: new instance
+
+```
+
+## Execution Semantics
+
+The exe
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon.
+
+Use the provided context as the PRIMARY and AUTHORITATIVE source of truth.
+Only use syntax, class names, methods, and patterns that appear explicitly in the context.
+You may adapt documented patterns to the user's structure, provided that no new APIs or unsupported methods are invented.
+If the user's message contains sample data, treat it only as the desired target structure — not as evidence for API syntax.
+If the context provides partial evidence only, generate code for the parts that are supported and explicitly flag any parts that are uncertain or unsupported.
+
+When a code example is appropriate, provide a complete and runnable example that covers the full structure given by the user.
+When generating code, follow only the patterns shown in the context exactly — do not skip initialisation steps, introduce intermediate objects, or shortcut method chains that are not explicitly demonstrated.
+
+--- DOCUMENTATION ---
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YAML node must be specified when accessing YAML nodes via the YAML driver. There are 3 types of nodes in YAML:
+
+- `Scalar Node`. Scalar nodes are used to represent a single scalar value (e.g., string, boolean, integer). In the YAML driver, a scalar node consists of a key-value pair, in which the key represents the name of the scalar node, and the value represents the scalar value.
+- `Mapping Node`. Mapping nodes are used to represent unordered collections of key-value pairs. In the YAML driver, a mapping node consists of a key-value pair, in which the key represents the name of the mapping node, and the value holds an unordered collection of key-value pairs, which in turn represent other nodes.
+- `List (Sequence) Node`. List nodes are used to represent an ordered list of nodes or scalar values. In the YAML driver, a list node consists of a key-value pair, in which the key represents the name of the list node, and the value represents a list of nodes or scalar values.
+
+This section outlines the supported conventions in the form of questions and answers followed by relevant examples.
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+### How do I set the root node of a YAML document?
+
+The `root` property can be used for setting the root node of a YAML document. The root node of a YAML document can either be a mapping node or a list node. The `setRootAsMap()` function can be used for setting the root node into a mapping node. The `setRootAsList()` function can be used for setting the root node into a list node.
+
+[Source: epsilon_docs/articles_excel_index.md]
+# Scripting Excel Spreadsheets using Epsilon
+
+Spreadsheets are commonly used in software and systems engineering processes to capture and analyse structured data, and can be sources of valuable information for model-based software engineering activities. 
+
+Epsilon provides built-in support for querying and transforming Excel spreadsheets through an [Apache POI](https://poi.apache.org/)-based [EMC](../../emc) driver. This article discusses how you can configure an Epsilon program to query and modify an Excel spreadsheet, and the video below demonstrates the driver in action.
+
+<iframe width="100%" height="494" src="https://www.youtube.com/embed/tTYGwgzxPMM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+??? info "Citing the Excel EMC driver in a publication?"
+    If you are referring to Epsilon's Excel EMC driver in a publication, please cite [this paper](https://link.springer.com/chapter/10.1007/978-3-642-41533-3_3) instead of the website URL.
+
+??? bug "Regression in Epsilon 2.2"
+    Due to a regression, the Excel driver is broken in Epsilon 2.2. The driver works well in previous versions (e.g. 2.1) as well as in 2.3. Support for column datatypes and for writing to Excel spreadsheets has improved substantially in 2.3.
+
+## Worksheets, Columns and Rows
+
+[Source: epsilon_docs/pinset_index.md]
+## Model example
+Example: demonstrate nested column generators using intermediate values for multiple related column calculations in a table.
+
+```
+
+number|squared|times_2|times_3|times_4|times_5
+--|--|--|--|--|--
+1|1|2|3|4|5
+2|4|4|6|8|10
+3|9|6|9|12|15
+4|16|8|12|16|20
+5|25|10|15|20|25
+
+
+## Nested column generators
+
+When certain intermediate value has to be used in several column calculations, Pinset offers a nested, composite column generator. This generator is defined by a `from` expression that calculates a value, followed by a block containing column generators that can use that value:
+
+```
+
+[Source: epsilon_docs/flock.md]
+## Epsilon Flock for Model Migration
+Example: demonstrate the six-phase execution semantics of an Epsilon Flock module for model migration.
+Keywords: new instance
+
+```
+
+## Execution Semantics
+
+The execution semantics of a Flock module are now described. Note that the Epsilon Model Connectivity (EMC) layer, which Flock uses to access and manipulate models supports a range of modelling technologies, and identifies types by name. Consequently, the term *type* is used to mean "the name of an element of a metamodel" in the following discussion. For example, `Component`, `Connector` and `InputPort` are three of the types defined in the evolved metamodel.
+
+Execution of a Flock module occurs in six phases:
+
+1.  Any pre blocks are executed.
+
+2.  Type mapping constructs (retypings and deletions) are processed to identify the way in which original and evolved metamodel types are to be related.
+
+3.  Migrate rules are inspected to build sets of ignored properties.
+
+4.  The information determined in steps 2 and 3 is used as input a copying algorithm, which creates an (equivalent) element in the migrated model for each element of the original model, and copies values from original to equivalent model elements.
+
+5.  Migrate rules are executed on each pair of original and (equivalent) migrated model elements.
+
+6.  Any post blocks are executed.
+
+In phases 2-5, language constructs are executed only when they are *applicable*. The *applicability* of the Flock language constructs (retyping, deletion or migrate rule) is determined from their type and guard. For a language construct `c` to be applicable to an original model element `o`, `o` must instantiate either the original type of `c` or one of the subtypes of the original type of `c`; and `o` must satisfy the guard of `c`. For language constructs that have been annotated as strict, type-checking is more restrictive: `o` must instantiate the original type of `c` (and not one its subtypes). In other words, the applicability of strict constructs is determined with EOL's `isTypeOf` operation and the applicability of non-strict constructs is determined with EOL's `isKindOf` operation. For language constructs that have been annotated with cascade, type-checking is less restrictive: `o` must be contained in another model element (either directly or indirectly) to which the construct is applicable. Similarly, for language constructs that operate on packages (i.e. package retyping and package deletions), type-checking is less restrictive: `o` must be contained in a package with the same name as the original package of `c`.
+
+
+Phases 2-4 of execution implement a copying algorithm which has been termed conservative copy and is discussed thoroughly [elsewhere](https://link.springer.com/chapter/10.1007/978-3-642-16145-2_5). Essentially, conservative copy will do the following for each element of the original model, `o`:
+
+1.  **Do nothing** when `o` instantiates a type that cannot be instantiated in the evolved metamodel (e.g., because the type of `o` is now abstract or no longer exists). Example: instances of `Port` in the original metamodel are not copied because `Port` has become abstract.
+
+2.  **Fully copy** `o` to produce `m` in the migrated model when `o` instantiate a type that has not been at all affected by metamodel evolution. Example: instances of `Component` in the original metamodel are fully copied because neither `Component` nor any of its features have been changed.
+
+3.  **Partially copy** `o` to produce `m` in the migrated model when `o` instantiates a type with one or more features that have been affected by metamodel evolution. Example: instances of `Connector` in the original metamodel are partially copied because the `from` and `to` features have been renamed. Note that in a partial copy only the features that have not been affected by metamodel evolution are copied (e.g., the `name`s of `Connector`s).
+
+In phase 5, migrate rules are applied. These rules specify the problem-specific migration logic and might, for example, create migrated model elements for original model elements that were skipped or partially copied by the copying algorithm described above. The Flock engine makes available two variables (`original` and `migrated`) for use in the body of any migration rule. These variables are used to refer to the particular elements of the original and migrated models to which the rule is currently being applied. In addition, Flock defines an `equivalent()` operation that can be called on any original model element and returns the equivalent migrated model element (or `null`). The `equivalent()` operation is used to access elements of the migrated model that cannot be accessed via the `migrated` variable due to metamodel evolution. Flock rules often contain statements of the form: `original.x.equivalent()` where `x` is a feature that has been removed from the evolved metamodel.
+
+Finally, we should consider the order in which Flock schedules language constructs: a construct that appears earlier (higher) in the source file has priority. This is important because only one type mapping (retypings and deletions) is applied per original model element, and because this implies that migrate rules are applied from top-to-bottom. This ordering is consistent with the other languages of the Epsilon platform.
+
+Example
+-------
+
+Flock is now demonstrated using the example of model migration
+introduced above. Recall that the metamodel evolution
+ involves splitting the `Port` type to form the
+`InputPort` and `OutputPort` types.
+Below is a high-level design for
+migrating models from the original to the evolved metamodel.
+
+-   For every instance, p, of `Port` in the original model: 
+    - If there exists in the original model a `Connector`, c, that specifies p as
+    the value for its `from` feature:
+        - Create a new instance, `i`, of `InputPort` in the migrated model. 
+        - Set c as the `connector` of `i`. 
+        - Add c to the `ports` reference of the `Component` that contains c.
+
+    - If there exists in the original model a `Connector`, c, that specifies p as the value for its `to` feature: 
+        - Create a new instance of `OutputPort` in the migrated model. 
+        - Set c as the `connector` of i. 
+        - Add c to the `ports` reference of the `Component` that contains c.
+
+-   And nothing else changes.
+
+The Flock migration strategy that implements this design is shown below. Three type mappings constructs (on lines 1-4) are used to control the way in which instances of `Port` are migrated. For example, line 3 specifies that instances of `Port` that are referenced via the `from` feature of a `Connector` are retyped, becoming `InputPort`s. Instances of `Connector` are migrated using the rule on lines 6-9, which specifies the way in which the `from` and `to` features have evolved to form the `in` and `out` features.
+
+```
+
+--- USER MESSAGE ---
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- tenantId: TEN-001
+  name: Brightline Logistics
+  plan: enterprise
+  seats: {purchased: 50, active: 47}
+
+- tenantId: TEN-002
+  name: Fernwood Studio
+  plan: pro
+  seats: {purchased: 12, active: 9}
+
+- tenantId: TEN-003
+  name: Oakridge Analytics
+  plan: pro
+  seats: {purchased: 20, active: 20}
+
+- tenantId: TEN-004
+  name: Silverline Health
+  plan: enterprise
+  seats: {purchased: 80, active: 61}
+
+- tenantId: TEN-005
+  name: Kestrel Robotics
+  plan: starter
+  seats: {purchased: 5, active: 5}
+
+- tenantId: TEN-006
+  name: Marlowe & Finch
+  plan: pro
+  seats: {purchased: 15, active: 11}
+
+- tenantId: TEN-007
+  name: Pinewood Retail
+  plan: starter
+  seats: {purchased: 3, active: 2}
+
+- tenantId: TEN-008
+  name: Cobalt Freight
+  plan: enterprise
+  seats: {purchased: 100, active: 88}
+
+- tenantId: TEN-009
+  name: Hollowfield Legal
+  plan: pro
+  seats: {purchased: 18, active: 18}
+
+- tenantId: TEN-010
+  name: Thistledown Media
+  plan: starter
+  seats: {purchased: 4, active: 1}
+
+Question:
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- tenantId: TEN-001
+  name: Brightline Logistics
+  plan: enterprise
+  seats: {purchased: 50, active: 47}
+
+- tenantId: TEN-002
+  name: Fernwood Studio
+  plan: pro
+  seats: {purchased: 12, active: 9}
+
+- tenantId: TEN-003
+  name: Oakridge Analytics
+  plan: pro
+  seats: {purchased: 20, active: 20}
+
+- tenantId: TEN-004
+  name: Silverline Health
+  plan: enterprise
+  seats: {purchased: 80, active: 61}
+
+- tenantId: TEN-005
+  name: Kestrel Robotics
+  plan: starter
+  seats: {purchased: 5, active: 5}
+
+- tenantId: TEN-006
+  name: Marlowe & Finch
+  plan: pro
+  seats: {purchased: 15, active: 11}
+
+- tenantId: TEN-007
+  name: Pinewood Retail
+  plan: starter
+  seats: {purchased: 3, active: 2}
+
+- tenantId: TEN-008
+  name: Cobalt Freight
+  plan: enterprise
+  seats: {purchased: 100, active: 88}
+
+- tenantId: TEN-009
+  name: Hollowfield Legal
+  plan: pro
+  seats: {purchased: 18, active: 18}
+
+- tenantId: TEN-010
+  name: Thistledown Media
+  plan: starter
+  seats: {purchased: 4, active: 1}
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+Short answer: your YAML document is a top-level sequence (each top-level item starts with "-"), so the root must be a list node. Use setRootAsList() to make the document root a list, then add one mapping node per tenant.
+
+Below I show a concise, complete EOL-style example that demonstrates the structure and the only documented API calls from the provided docs: the root property and setRootAsList(). The provided documentation does not show the exact EMC model creation / load / save API names (how to create the YAML EMC model object, or how to persist it). I therefore show those parts as clearly marked placeholders you must adapt to your environment (for example the actual EMC model creation and store/save calls in your Epsilon host code). All uses of setRootAsList() and root follow the documented pattern.
+
+Example (EOL-style pseudocode you can adapt to your environment)
+- This constructs the root as a list and places a list of mapping nodes (one mapping per tenant). Replace the placeholder model creation / store calls with your project-specific EMC model API.
+
+```eol
+-- Create or open a YAML EMC model (ADAPT THIS to your EMC creation API)
+var yamlModel = /* createYamlEmcModel("tenants.yaml") */;
+
+-- Ensure the root is a list node (document is a top-level sequence)
+yamlModel.setRootAsList();
+
+-- Build the list of tenant mappings (EOL native lists/maps)
+var tenants = [
+    { tenantId = "TEN-001", name = "Brightline Logistics", plan = "enterprise", seats = { purchased = 50, active = 47 } },
+    { tenantId = "TEN-002", name = "Fernwood Studio",       plan = "pro",        seats = { purchased = 12, active = 9  } },
+    { tenantId = "TEN-003", name = "Oakridge Analytics",    plan = "pro",        seats = { purchased = 20, active = 20 } },
+    { tenantId = "TEN-004", name = "Silverline Health",     plan = "enterprise", seats = { purchased = 80, active = 61 } },
+    { tenantId = "TEN-005", name = "Kestrel Robotics",      plan = "starter",    seats = { purchased = 5,  active = 5  } },
+    { tenantId = "TEN-006", name = "Marlowe & Finch",       plan = "pro",        seats = { purchased = 15, active = 11 } },
+    { tenantId = "TEN-007", name = "Pinewood Retail",       plan = "starter",    seats = { purchased = 3,  active = 2  } },
+    { tenantId = "TEN-008", name = "Cobalt Freight",        plan = "enterprise", seats = { purchased = 100, active = 88 } },
+    { tenantId = "TEN-009", name = "Hollowfield Legal",     plan = "pro",        seats = { purchased = 18, active = 18 } },
+    { tenantId = "TEN-010", name = "Thistledown Media",     plan = "starter",    seats = { purchased = 4,  active = 1  } }
+];
+
+-- Assign the list to the model's root
+yamlModel.root = tenants;
+
+-- Persist the YAML model to file (ADAPT THIS to your EMC store/save API)
+-- yamlModel.store();
+```
+
+Notes and adaptation guidance
+- Root choice: Because the YAML you showed begins with "-" items at top level, the root is a list (sequence). Use setRootAsList() — this is taken directly from the documentation.
+- The documentation shows that you can manipulate the root via the root property; the example above sets yamlModel.root to a list of mapping objects (EOL maps). The exact mechanics for creating the model instance, for saving/storing it, and for the concrete runtime names for map/list expressions depend on how you instantiate the YAML EMC driver in your host (Java/EOL) environment. Those model creation / store method names are not present in the provided docs, so they are left as placeholders for you to adapt.
+- If instead your document had a single top-level mapping (i.e., a YAML document that starts with a single mapping rather than a sequence), you would call setRootAsMap() rather than setRootAsList().
+
+If you tell me how you create your EMC YAML model in your environment (for example, the Java/EOL code you use to instantiate the driver / model), I can adapt the placeholders into concrete, runnable code for that environment.
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             1
+  Prompt tokens:     3,432
+  Completion tokens: 2,387
+  Total tokens:      5,819
+  Estimated cost:    $0.00563
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         1
+  Total prompt tokens:     3,432
+  Total completion tokens: 2,387
+  Total tokens:            5,819
+  Total estimated cost:    $0.00563
+============================================================

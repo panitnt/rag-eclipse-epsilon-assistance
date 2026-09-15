@@ -1,0 +1,13 @@
+students:
+  - id: S001
+    name: Grace Adeyemi
+    grade: A
+  - id: S002
+    name: Tom Fielding
+    grade: B
+  - id: S003
+    name: Priya Nair
+    grade: A-
+  - id: S004
+    name: Ollie Bennett
+    grade: C+

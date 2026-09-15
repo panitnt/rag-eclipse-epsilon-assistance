@@ -1,0 +1,296 @@
+Session started: 2026-07-27 21:19:32
+Model: openai/gpt-5-mini | temperature=0
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[21:19:41]
+
+── QUESTION ──────────────────────────────────────────────
+What's the structure of a constraint in EVL (guard, check, message)?
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - What's the structure of a constraint in EVL (guard, check, message)?
+  - EVL constraint structure guard check message syntax Epsilon Validation Language
+  - EVL constraint example guard check message fix Epsilon documentation
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: "What's the structure of a constraint in EVL (guard, check, message)?"
+    1. sim=0.7317  epsilon_docs/articles_evl-gmf-integration_index.md | heading='Step 3: Write the constraints'
+    2. sim=0.6751  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Implementing Constraints with EVL'
+    3. sim=0.6508  epsilon_docs/articles_epsilon-and-sirius_index.md | heading='Epsilon and Sirius'
+    4. sim=0.6051  epsilon_docs/evl.md | heading='Abstract Syntax'
+    5. sim=0.6042  epsilon_docs/articles_index.md | heading='Recipes'
+    6. sim=0.5951  epsilon_docs/articles_evl-emf-integration.md | heading='Via the Extension Point'
+    7. sim=0.5851  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Validation Delegate'
+    8. sim=0.5546  epsilon_docs/epl.md | heading='Role Cardinality'
+    9. sim=0.5346  epsilon_docs/index.md | heading='Workflow'
+    10. sim=0.5158  epsilon_docs/egl.md | heading='Implementing a Custom Formatter'
+
+  Query: 'EVL constraint structure guard check message syntax Epsilon Validation Language'
+    1. sim=0.7698  epsilon_docs/articles_index.md | heading='Recipes'
+    2. sim=0.7574  epsilon_docs/egl.md | heading='Implementing a Custom Formatter'
+    3. sim=0.7566  epsilon_docs/articles_evl-gmf-integration_index.md | heading='Step 3: Write the constraints'
+    4. sim=0.7445  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Implementing Constraints with EVL'
+    5. sim=0.7412  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Validation Delegate'
+    6. sim=0.7186  epsilon_docs/articles_evl-emf-integration.md | heading='Via the Extension Point'
+    7. sim=0.6935  epsilon_docs/articles_epsilon-and-sirius_index.md | heading='Epsilon and Sirius'
+    8. sim=0.6476  epsilon_docs/index.md | heading='Workflow'
+    9. sim=0.6293  epsilon_docs/epl.md | heading='Role Cardinality'
+    10. sim=0.6013  epsilon_docs/evl.md | heading='Abstract Syntax'
+
+  Query: 'EVL constraint example guard check message fix Epsilon documentation'
+    1. sim=0.7718  epsilon_docs/articles_evl-gmf-integration_index.md | heading='Step 3: Write the constraints'
+    2. sim=0.7620  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Implementing Constraints with EVL'
+    3. sim=0.7492  epsilon_docs/articles_evl-emf-integration.md | heading='Via the Extension Point'
+    4. sim=0.7342  epsilon_docs/articles_index.md | heading='Recipes'
+    5. sim=0.7273  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Validation Delegate'
+    6. sim=0.7145  epsilon_docs/egl.md | heading='Implementing a Custom Formatter'
+    7. sim=0.7079  epsilon_docs/articles_epsilon-and-sirius_index.md | heading='Epsilon and Sirius'
+    8. sim=0.6127  epsilon_docs/epl.md | heading='Role Cardinality'
+    9. sim=0.6058  epsilon_docs/index.md | heading='Workflow'
+    10. sim=0.5606  epsilon_docs/evl.md | heading='Abstract Syntax'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (5):
+  1. [0.888] epsilon_docs/articles_evl-gmf-integration_index.md (heading='Step 3: Write the constraints', parent_heading='Live validation and quick-fixes in GMF-based editors with EVL')
+     ## Step 3: Write the constraints
+Example: define constraints and critiques with checks, messages, guards, and automatic fixes in Epsilon Validation Language (EVL).
+Keywords: .name
+
+```evl
+context File
+  2. [0.823] epsilon_docs/articles_epsilon-in-ecore_index.md (heading='Implementing Constraints with EVL', parent_heading='EVL Validation Delegation')
+     ## Implementing Constraints with EVL
+Example: define a constraint in EVL by assigning an EOL expression to a constraint name key.
+
+```
+source = "http://eclipse.dev/epsilon/ecore/EVL"
+key = "constraint
+  3. [0.780] epsilon_docs/evl.md (heading='Abstract Syntax', parent_heading='The Epsilon Validation Language (EVL)')
+     # The Epsilon Validation Language (EVL)
+
+EVL contributes model validation capabilities to Epsilon. More specifically, EVL can be used to specify and evaluate constraints and critiques on models of arb
+  4. [0.673] epsilon_docs/articles_epsilon-and-sirius_index.md (heading='Epsilon and Sirius', parent_heading='')
+     ## Epsilon and Sirius
+Example: define EVL constraints to validate model elements like Decision and Model for specific structural rules.
+
+```evl
+    context Decision {
+
+        constraint AtLeastTwoOut
+  5. [0.589] epsilon_docs/epl.md (heading='Role Cardinality', parent_heading='Syntax')
+     evl
+context Patterns!PublicField {
+    guard: self.field.type.isDefined()
+    constraint GetterAndFieldSameType { 
+        check : self.getter.returnType.type = self.field.type.type
+        message : 
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon. Use only the documentation below — do not use outside knowledge, and say so if it doesn't cover something.
+
+Documentation:
+--- DOCUMENTATION ---
+[Source: epsilon_docs/articles_evl-gmf-integration_index.md]
+## Step 3: Write the constraints
+Example: define constraints and critiques with checks, messages, guards, and automatic fixes in Epsilon Validation Language (EVL).
+Keywords: .name
+
+```evl
+context File {
+
+	constraint HasName {
+
+		check : self.name.isDefined()
+
+		message : 'Unnamed ' + self.eClass().name + ' not allowed'
+
+	}
+
+}
+
+context Folder {
+
+	critique NameStartsWithCapital {
+
+		guard : self.satisfies('HasName')
+
+		check : self.name.firstToUpperCase() = self.name
+
+		message : 'Folder ' + self.name +
+			' should start with an upper-case letter'
+
+		fix {
+
+			title : 'Rename to ' + self.name.firstToUpperCase()
+
+			do {
+				self.name := self.name.firstToUpperCase();
+			}
+		}
+
+	}
+
+}
+
+context Sync {
+
+	constraint MustLinkSame {
+
+		check : self.source.eClass() = self.target.eClass()
+
+		message : 'Cannot synchronize a ' + self.source.eClass().name
+			+ ' with a ' + self.target.eClass().name
+
+		fix {
+
+			title : 'Synchronize with another ' +
+				self.source.eClass().name
+
+			do {
+
+				var target := UserInput.choose('Select target',
+					_Model.getAllOfType(self.source.eClass().name));
+
+				if (target.isDefined()) self.target := target;
+
+			}
+
+		}
+
+	}
+
+}
+```
+
+[Source: epsilon_docs/articles_epsilon-in-ecore_index.md]
+## Implementing Constraints with EVL
+Example: define a constraint in EVL by assigning an EOL expression to a constraint name key.
+
+```
+source = "http://eclipse.dev/epsilon/ecore/EVL"
+key = "constraintName_1"
+value = EOL expression
+```
+
+[Source: epsilon_docs/evl.md]
+# The Epsilon Validation Language (EVL)
+
+EVL contributes model validation capabilities to Epsilon. More specifically, EVL can be used to specify and evaluate constraints and critiques on models of arbitrary metamodels and modelling technologies, and to produce human-readable error messages and executable quick fixes.
+
+!!! tip "Try EVL online"
+    You can run and fiddle with EVL constraints that validate a project scheduling model in the [online Epsilon Playground](../../playground/?evl).
+
+## Abstract Syntax
+
+In EVL, validation specifications are organized in modules (*EvlModule*). As illustrated in the figure below, *EvlModule* (indirectly) extends *EolModule* which means that it can contain user-defined operations and import other EOL library modules and EVL modules. Apart from operations, an EVL module also contains a set of constraints grouped by the context they apply to, and, by extending *ErlModule*, a number of *pre* and *post* blocks.
+
+!!! info
+    As with most languages in Epsilon, EVL uses [EOL](../eol) as its expression language. This page only documents the additional syntax and semantics that EVL provides on top of EOL.
+
+[Source: epsilon_docs/articles_epsilon-and-sirius_index.md]
+## Epsilon and Sirius
+Example: define EVL constraints to validate model elements like Decision and Model for specific structural rules.
+
+```evl
+    context Decision {
+
+        constraint AtLeastTwoOutgoing {
+
+            check: self.outgoing.size() >= 2
+
+            message: "Decision " + self.text + 
+                " must have at least 2 outgoing" +
+                " transitions"
+        }
+        
+    }
+
+    context Model {
+        
+        constraint OneEntryPoint {
+        
+            check : self.steps.select(s|s.incoming.isEmpty()).size() = 1
+            
+            message : "The model has mutliple entry points: " +
+                self.steps.select(s|s.incoming.isEmpty()).text.concat(", ")
+            
+        }
+    }
+    ```
+
+[Source: epsilon_docs/epl.md]
+evl
+context Patterns!PublicField {
+    guard: self.field.type.isDefined()
+    constraint GetterAndFieldSameType { 
+        check : self.getter.returnType.type = self.field.type.type
+        message : "The getter of " + self.class.name + "."
+            + self.field.fragments.at(0).name +
+            " does not have the same type as the field itself"
+    }
+}
+
+--- USER MESSAGE ---
+What's the structure of a constraint in EVL (guard, check, message)?
+
+Before writing your answer, silently check each part of the question against the documentation — including whether any combination of separately-documented pieces is actually shown together, not just individually present somewhere. Don't show this checking process or split your answer into labeled parts.
+
+Write a smooth, natural answer. Place any honest note about something not being directly confirmed right next to the part it concerns, not bundled at the end — and let your opening reflect the same level of confidence, rather than stating something flatly and qualifying it afterward.
+
+Be concise, and let the length of your answer reflect how much the documentation actually supports — don't stretch a thin piece of evidence into a long, confident-sounding answer.
+
+Question:
+What's the structure of a constraint in EVL (guard, check, message)?
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+A constraint is declared inside a context and is given a name. Its key parts (shown in the docs) are:
+
+- check: an EOL boolean expression that must hold for the element (the constraint’s main test). If the check evaluates to false the constraint is reported.
+- message: an EOL string expression shown when the check fails.
+- guard: an (optional) EOL boolean expression used to restrict when the constraint is applied (examples show constraints both with and without a guard). The docs demonstrate guards being used as a precondition, though they don’t explicitly state the formal evaluation order.
+
+You can also (optionally) provide a fix block with title and do to implement a quick-fix.
+
+Typical form (from the examples):
+
+context MyType {
+  constraint MyConstraint {
+    guard   : <boolean-expr>      // optional (examples only)
+    check   : <boolean-expr>      // the required test
+    message : <string-expr>
+    fix {
+      title : <string-expr>
+      do {
+        ...                     // EOL to modify the model
+      }
+    }
+  }
+}
+
+All expressions use EOL (EVL builds on EOL in the documentation examples).
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             2
+  Prompt tokens:     1,331
+  Completion tokens: 1,650
+  Total tokens:      2,981
+  Estimated cost:    $0.00363
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         2
+  Total prompt tokens:     1,331
+  Total completion tokens: 1,650
+  Total tokens:            2,981
+  Total estimated cost:    $0.00363
+============================================================

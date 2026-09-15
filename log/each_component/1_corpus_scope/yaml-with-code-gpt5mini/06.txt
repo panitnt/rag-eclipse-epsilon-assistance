@@ -1,0 +1,755 @@
+Session started: 2026-07-26 21:18:07
+Model: openai/gpt-5-mini
+============================================================
+
+============================================================
+[21:18:23]
+
+── QUESTION ──────────────────────────────────────────────
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+students:
+  - id: S001
+    name: Grace Adeyemi
+    grade: A
+  - id: S002
+    name: Tom Fielding
+    grade: B
+  - id: S003
+    name: Priya Nair
+    grade: A-
+  - id: S004
+    name: Ollie Bennett
+    grade: C+
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+  - EMC YAML Driver programmatically create YAML document root mapping sequence
+  - EOL creating model elements and adding them to an external model using an EMC driver
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.'
+    1. sim=0.8581  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    2. sim=0.7882  epsilon_docs/articles_yaml-emc_index.md | heading='How do I set the root node of a YAML document?'
+    3. sim=0.7384  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    4. sim=0.7121  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    5. sim=0.6973  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    6. sim=0.6900  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    7. sim=0.6594  epsilon_docs/articles_index.md | heading='Recipes'
+    8. sim=0.6322  epsilon_docs/articles_xsd-xml_index.md | heading='How do I create an element and add it to an existing element?'
+    9. sim=0.6265  epsilon_docs/articles_run-epsilon-from-java.md | heading='Loading Models'
+    10. sim=0.6235  epsilon_docs/articles_running-epsilon-ant-tasks-from-command-line_index.md | heading='Excel'
+    11. sim=0.6230  epsilon_docs/articles_jdt_index.md | heading='How is it used?'
+    12. sim=0.6094  epsilon_docs/articles_plain-xml_index.md | heading='Querying an XML document'
+    13. sim=0.6073  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    14. sim=0.5994  epsilon_docs/etl.md | heading='Source Elements Resolution'
+    15. sim=0.5921  epsilon_docs/eol.md | heading='Creating and Deleting Model Elements'
+    16. sim=0.5904  epsilon_docs/index.md | heading='Languages'
+    17. sim=0.5834  epsilon_docs/articles_egl-server-side_index.md | heading='Sharing models between templates'
+    18. sim=0.5638  epsilon_docs/eol.md | heading='Escaping Reserved Keywords'
+    19. sim=0.5569  epsilon_docs/articles_json-emc_index.md | heading='Initial example: author JSON document'
+    20. sim=0.5504  epsilon_docs/articles_eol-interpreter-view_index.md | heading='Importing External Operations'
+
+  Query: 'EMC YAML Driver programmatically create YAML document root mapping sequence'
+    1. sim=0.7374  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    2. sim=0.7283  epsilon_docs/articles_running-epsilon-ant-tasks-from-command-line_index.md | heading='Excel'
+    3. sim=0.7066  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    4. sim=0.6990  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    5. sim=0.6848  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    6. sim=0.6612  epsilon_docs/articles_jdt_index.md | heading='How is it used?'
+    7. sim=0.6408  epsilon_docs/articles_yaml-emc_index.md | heading='How do I set the root node of a YAML document?'
+    8. sim=0.6317  epsilon_docs/articles_index.md | heading='Recipes'
+    9. sim=0.6231  epsilon_docs/index.md | heading='Languages'
+    10. sim=0.6209  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    11. sim=0.6124  epsilon_docs/articles_run-epsilon-from-java.md | heading='Loading Models'
+    12. sim=0.6010  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    13. sim=0.5855  epsilon_docs/articles_egl-server-side_index.md | heading='Sharing models between templates'
+    14. sim=0.5770  epsilon_docs/articles_plain-xml_index.md | heading='Querying an XML document'
+    15. sim=0.5608  epsilon_docs/articles_eol-interpreter-view_index.md | heading='Importing External Operations'
+    16. sim=0.5551  epsilon_docs/eol.md | heading='Creating and Deleting Model Elements'
+    17. sim=0.5396  epsilon_docs/articles_xsd-xml_index.md | heading='How do I create an element and add it to an existing element?'
+    18. sim=0.5260  epsilon_docs/eol.md | heading='Escaping Reserved Keywords'
+    19. sim=0.5104  epsilon_docs/etl.md | heading='Source Elements Resolution'
+    20. sim=0.5090  epsilon_docs/articles_json-emc_index.md | heading='Initial example: author JSON document'
+
+  Query: 'EOL creating model elements and adding them to an external model using an EMC driver'
+    1. sim=0.7195  epsilon_docs/articles_egl-server-side_index.md | heading='Sharing models between templates'
+    2. sim=0.7184  epsilon_docs/articles_run-epsilon-from-java.md | heading='Loading Models'
+    3. sim=0.7180  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    4. sim=0.7048  epsilon_docs/index.md | heading='Languages'
+    5. sim=0.7002  epsilon_docs/eol.md | heading='Creating and Deleting Model Elements'
+    6. sim=0.6835  epsilon_docs/articles_xsd-xml_index.md | heading='How do I create an element and add it to an existing element?'
+    7. sim=0.6831  epsilon_docs/eol.md | heading='Escaping Reserved Keywords'
+    8. sim=0.6705  epsilon_docs/articles_eol-interpreter-view_index.md | heading='Importing External Operations'
+    9. sim=0.6516  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    10. sim=0.6445  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    11. sim=0.6341  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    12. sim=0.6188  epsilon_docs/articles_jdt_index.md | heading='How is it used?'
+    13. sim=0.6086  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    14. sim=0.6046  epsilon_docs/articles_plain-xml_index.md | heading='Querying an XML document'
+    15. sim=0.5986  epsilon_docs/articles_running-epsilon-ant-tasks-from-command-line_index.md | heading='Excel'
+    16. sim=0.5871  epsilon_docs/articles_index.md | heading='Recipes'
+    17. sim=0.5758  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    18. sim=0.5679  epsilon_docs/etl.md | heading='Source Elements Resolution'
+    19. sim=0.4628  epsilon_docs/articles_json-emc_index.md | heading='Initial example: author JSON document'
+    20. sim=0.4298  epsilon_docs/articles_yaml-emc_index.md | heading='How do I set the root node of a YAML document?'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (8):
+  1. [0.989] epsilon_docs/articles_yaml-emc_index.md (heading='How can I create a YAML document from scratch?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## How can I create a YAML document from scratch?
+Example: create a YAML document from scratch by building and appending MappingNode, ScalarNode, and ListNode elements.
+Keywords: setRootAsList, getRoo
+  2. [0.946] epsilon_docs/articles_yaml-emc_index.md (heading='How do I set the root node of a YAML document?', parent_heading='Querying/modifying YAML documents in EOL')
+     ### How do I set the root node of a YAML document?
+
+The `root` property can be used for setting the root node of a YAML document. The root node of a YAML document can either be a mapping node or a lis
+  3. [0.643] epsilon_docs/articles_yaml-emc_index.md (heading='Querying a YAML document', parent_heading='Scripting YAML documents using Epsilon')
+     # Scripting YAML documents using Epsilon
+ 
+In this article we demonstrate how you can create, query and modify YAML documents in Epsilon programs using the YAML driver. All the examples in this articl
+  4. [0.560] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YA
+  5. [0.210] epsilon_docs/eol.md (heading='Creating and Deleting Model Elements', parent_heading='Types')
+     ## Creating and Deleting Model Elements
+Example: create new model elements and delete an existing element using Epsilon Object Language (EOL).
+Keywords: new Tree, new instance, new Source, new Person
+
+  6. [0.134] epsilon_docs/articles_developing-a-new-emc-driver_index.md (heading='Filesystem Driver', parent_heading='Developing a new EMC Driver')
+     # Developing a new EMC Driver
+
+This article demonstrates the implementation of "drivers" for Epsilon's [Model Connectivity layer](../../emc).
+
+## YAML Driver
+
+The following training session recording 
+  7. [0.058] epsilon_docs/eol.md (heading='Escaping Reserved Keywords', parent_heading='Expressions')
+     !!! info "Navigating to the parent/children of model elements"
+    EOL does not provide a technology-independent way of navigating to the parent/children of a model element. If you need to do this, yo
+  8. [0.048] epsilon_docs/index.md (heading='Languages', parent_heading='Documentation')
+     ## Languages
+Example: visualize relationships and extensions among Eclipse Epsilon languages and their model connectivity components.
+
+```mermaid
+graph TD
+	ECL["Model<br/>comparison<br/>(ECL)"]
+	Flock
+
+Code (9):
+  1. [parent] [parent] YamlNodeUtility  [YamlNodeUtility.java]
+     /*******************************************************************************
+ * Copyright (c) 2022 The University of York.
+ * This program and the accompanying materials
+ * are made available unde
+  2. [parent] [parent] YamlModel  [YamlModel.java]
+     /*******************************************************************************
+ * Copyright (c) 2022 The University of York.
+ * This program and the accompanying materials
+ * are made available unde
+  3. [0.390] YamlNodeUtility.getRootNode (method)  [YamlNodeUtility.java]
+     /**
+	 * Creates a root YAML node entry wrapping the given YAML content.
+	 * 
+	 * @param yamlContent the YAML content to wrap
+	 * @return the root YAML node entry
+	 */
+	public static Entry getRootNode(
+  4. [0.268] YamlNodeUtility.getMappingNode (method)  [YamlNodeUtility.java]
+     /**
+	 * Creates a mapping YAML node entry.
+	 * 
+	 * @param yamlProperty the property describing the node
+	 * @param parameters the parameters used to create the node
+	 * @return the created mapping YA
+  5. [0.206] YamlNodeUtility.getNode (method)  [YamlNodeUtility.java]
+     /**
+	 * Creates a YAML node entry from a string type, separator index, and parameters.
+	 * 
+	 * @param type the string representation of the node type
+	 * @param indexOfSeparator the index of the sepa
+  6. [0.097] YamlNodeUtility.getListNode (method)  [YamlNodeUtility.java]
+     /**
+	 * Creates a list YAML node entry.
+	 * 
+	 * @param yamlProperty the property describing the node
+	 * @param parameters the parameters used to create the node
+	 * @return the created list YAML nod
+  7. [0.039] YamlModel.createInstance (method)  [YamlModel.java]
+     /**
+	 * Creates a new instance of the specified type with the given parameters.
+	 * 
+	 * @param type the type of the instance to create
+	 * @param parameters the parameters for the instance creation
+	
+  8. [0.003] [parent] YamlProperty  [YamlProperty.java]
+     /*******************************************************************************
+ * Copyright (c) 2022 The University of York.
+ * This program and the accompanying materials
+ * are made available unde
+  9. [0.003] [parent] YamlNodeType  [YamlNodeType.java]
+     /*******************************************************************************
+ * Copyright (c) 2022 The University of York.
+ * This program and the accompanying materials
+ * are made available unde
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon.
+
+Use the provided context as the PRIMARY and AUTHORITATIVE source of truth.
+Only use syntax, class names, methods, and patterns that appear explicitly in the context.
+You may adapt documented patterns to the user's structure, provided that no new APIs or unsupported methods are invented.
+If the user's message contains sample data, treat it only as the desired target structure — not as evidence for API syntax.
+If the context provides partial evidence only, generate code for the parts that are supported and explicitly flag any parts that are uncertain or unsupported.
+
+When a code example is appropriate, provide a complete and runnable example that covers the full structure given by the user.
+When generating code, follow only the patterns shown in the context exactly — do not skip initialisation steps, introduce intermediate objects, or shortcut method chains that are not explicitly demonstrated.
+
+--- DOCUMENTATION ---
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## How can I create a YAML document from scratch?
+Example: create a YAML document from scratch by building and appending MappingNode, ScalarNode, and ListNode elements.
+Keywords: setRootAsList, getRoot, .value, addRows, new MappingNode, new ScalarNode, residentNode, postcodeNode, appendNode, industryNode, new ListNode, projectsNode, skillsNode
+
+```eol
+YAMLDoc.setRootAsList();
+var root = YAMLDoc.getRoot();
+root.value.addRows(2);
+var rootFirstRow = root.value.at(0);
+var rootSecondRow = root.value.at(1);
+
+var addressNode1 = new MappingNode("address");
+var countryNode1 = new ScalarNode("country", "England");
+var residentNode = new ScalarNode("resident", true);
+var postcodeNode = new ScalarNode("postcode", "M1 1AG");
+addressNode1.value.appendNode(countryNode1);
+addressNode1.value.appendNode(residentNode);
+addressNode1.value.appendNode(postcodeNode);
+
+var employeeIdNode1 = new ScalarNode("employeeId", "14623");
+var fullnameNode1 = new ScalarNode("fullname", "Michael Davidson");
+var roleNode1 = new ScalarNode("role", "Consultant");
+
+var industryNode = new ListNode("industry", 3);
+industryNode.value =  Sequence{"IoT", "smart factories", "signal analytics"};
+
+var projectsNode = new ListNode("projects", 2);
+var nameNode1 = new ScalarNode("name", "SmartAutomation");
+var nameNode2 = new ScalarNode("name", "FactoryAnalytics");
+var budgetNode1 = new ScalarNode("budget", 25000);
+var budgetNode2 = new ScalarNode("budget", 20000);
+projectsNode.value.at(0).appendNode(nameNode1);
+projectsNode.value.at(0).appendNode(budgetNode1);
+projectsNode.value.at(1).appendNode(nameNode2);
+projectsNode.value.at(1).appendNode(budgetNode2);
+
+var addressNode2 = new MappingNode("address");
+var countryNode2 = new ScalarNode("country", "Germany");
+addressNode2.value.appendNode(countryNode2);
+
+var employeeIdNode2 = new ScalarNode("employeeId", "16431");
+var fullnameNode2 = new ScalarNode("fullname", "Arnold Wagner");
+var roleNode2 = new ScalarNode("role", "HR");
+
+var skillsNode = new ListNode("skills", 2);
+skillsNode.value =  Sequence{"communication", "coaching"};
+
+rootFirstRow.appendNode(employeeIdNode1);
+rootFirstRow.appendNode(addressNode1);
+rootFirstRow.appendNode(fullnameNode1);
+rootFirstRow.appendNode(roleNode1);
+rootFirstRow.appendNode(industryNode);
+rootFirstRow.appendNode(projectsNode);
+
+rootSecondRow.appendNode(employeeIdNode2);
+rootSecondRow.appendNode(addressNode2);
+rootSecondRow.appendNode(fullnameNode2);
+rootSecondRow.appendNode(roleNode2);
+rootSecondRow.appendNode(skillsNode);
+```
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+### How do I set the root node of a YAML document?
+
+The `root` property can be used for setting the root node of a YAML document. The root node of a YAML document can either be a mapping node or a list node. The `setRootAsMap()` function can be used for setting the root node into a mapping node. The `setRootAsList()` function can be used for setting the root node into a list node.
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+# Scripting YAML documents using Epsilon
+ 
+In this article we demonstrate how you can create, query and modify YAML documents in Epsilon programs using the YAML driver. All the examples in this article demonstrate using EOL to script YAML documents. However, it's worth stressing that YAML documents are supported throughout Epsilon. Therefore, you can use Epsilon to (cross-)validate, transform (to other models – XML, CSV or EMF-based, or to text), compare and merge your YAML documents.
+
+<iframe width="90%" height="494" src="https://www.youtube.com/embed/TF0fgghP938" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Querying a YAML document
+ 
+We use the following `employees.yaml` as a base for demonstrating the EOL syntax for querying YAML documents.
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YAML node must be specified when accessing YAML nodes via the YAML driver. There are 3 types of nodes in YAML:
+
+- `Scalar Node`. Scalar nodes are used to represent a single scalar value (e.g., string, boolean, integer). In the YAML driver, a scalar node consists of a key-value pair, in which the key represents the name of the scalar node, and the value represents the scalar value.
+- `Mapping Node`. Mapping nodes are used to represent unordered collections of key-value pairs. In the YAML driver, a mapping node consists of a key-value pair, in which the key represents the name of the mapping node, and the value holds an unordered collection of key-value pairs, which in turn represent other nodes.
+- `List (Sequence) Node`. List nodes are used to represent an ordered list of nodes or scalar values. In the YAML driver, a list node consists of a key-value pair, in which the key represents the name of the list node, and the value represents a list of nodes or scalar values.
+
+This section outlines the supported conventions in the form of questions and answers followed by relevant examples.
+
+[Source: epsilon_docs/eol.md]
+## Creating and Deleting Model Elements
+Example: create new model elements and delete an existing element using Epsilon Object Language (EOL).
+Keywords: new Tree, new instance, new Source, new Person
+
+```eol
+var t : new Tree; // Creates a new instance of type Tree
+var p : new Source!Person; // Creates a new Person in model Source
+delete t; // Deletes the element created in line 1
+```
+
+[Source: epsilon_docs/articles_developing-a-new-emc-driver_index.md]
+# Developing a new EMC Driver
+
+This article demonstrates the implementation of "drivers" for Epsilon's [Model Connectivity layer](../../emc).
+
+## YAML Driver
+
+The following training session recording and deck of slides demonstrate the implementation of [Epsilon's YAML driver](../yaml-emc). The complete source-code is located in [Epsilon's Git repository](https://github.com/eclipse-epsilon/epsilon/tree/main/plugins/org.eclipse.epsilon.emc.yaml).
+
+<iframe src="https://www.youtube.com/embed/M0nvnhSF6Y0" width="100%" height="485" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen></iframe> <div style="margin-bottom:15px"></div>
+
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/yc9uUXElc1Zbac" width="100%" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:15px"></div>
+
+## CSV Pro Driver
+
+The slides below demonstrate the implementation of an alternative driver for CSV files, located under the [`examples` folder of Epsilon's repository](https://github.com/eclipse-epsilon/epsilon/tree/main/examples/org.eclipse.epsilon.emc.csvpro).
+
+[Source: epsilon_docs/eol.md]
+!!! info "Navigating to the parent/children of model elements"
+    EOL does not provide a technology-independent way of navigating to the parent/children of a model element. If you need to do this, you should use any methods provided by the underlying modelling platform. For example, as all elements of EMF models are instances of the [EObject](https://download.eclipse.org/modeling/emf/emf/javadoc/2.5.0/org/eclipse/emf/ecore/EObject.html) Java class, the `me.eContainer()` and `me.eContents()` method calls in EMF return the parent and children of element `me` respectively.
+
+### Escaping Reserved Keywords
+
+Due to the variable nature of (meta-)models and the various domain-specific languages of Epsilon (including EOL itself), feature navigation calls may clash with reserved keywords, leading to a parsing error. Back-ticks can be used to escape such keywords. For example, if a model element contains a feature called `operation`, then this can be navigated as shown in the listing below.
+
+[Source: epsilon_docs/index.md]
+## Languages
+Example: visualize relationships and extensions among Eclipse Epsilon languages and their model connectivity components.
+
+```mermaid
+graph TD
+	ECL["Model<br/>comparison<br/>(ECL)"]
+	Flock["Model<br/>migration<br/>(Flock)"]
+	EGL["Code<br/>generation<br/>(EGL)"]
+	EVL["Model<br/>validation<br/>(EVL)"]
+	EPL["Pattern<br/>Matching<br/>(EPL)"]
+	EML["Model<br/>Merging<br/>(EML)"]
+	ETL["M2M<br/>Transformation<br/>(ETL)"]
+	EOL["Epsilon Object Language (EOL)"]
+	ETL --> |extends|EOL
+	EML --> |uses for matching|ECL
+	EML --> |extends|ETL
+	EPL --> |extends|EOL
+	ECL --> |extends|EOL
+	EGL --> |preprocessed into|EOL
+	EVL --> |extends|EOL
+	Flock --> |extends|EOL
+	Pinset --> |extends|EOL
+
+	EMC["Epsilon Model Connectivity (EMC)"]
+	EMF["Eclipse Modeling<br/> Framework (EMF)"]
+	Simulink["MATLAB<br/>Simulink"]
+	Excel["Excel<br/>Speadsheets"]
+	PTC["PTC Integrity<br/>Modeller"]
+	Dots["..."]
+
+	EOL -->|accesses models through| EMC
+	EMC --- EMF
+	EMC --- Simulink
+	EMC --- XML
+	EMC --- Excel
+	EMC --- PTC
+	EMC --- CSV
+	EMC --- Dots
+```
+
+--- SOURCE CODE ---
+[Source: YamlNodeUtility.java | YamlNodeUtility.]
+/*******************************************************************************
+ * Copyright (c) 2022 The University of York.
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which is available at https://www.eclipse.org/legal/epl-2.0/
+ * 
+ * Contributors:
+ *     Ionut Predoaia - initial API and implementation
+ ******************************************************************************/
+package org.eclipse.epsilon.emc.yaml;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.List;
+import org.yaml.snakeyaml.DumperOptions;
+import org.yaml.snakeyaml.Yaml;
+
+/**
+ * Utility class for working with YAML nodes, providing methods to query, create, delete,
+ * and manipulate YAML nodes represented as Java objects.
+ */
+public class YamlNodeUtility {
+	
+	/**
+	 * Retrieves a collection of YAML nodes matching the specified property and criteria.
+	 * 
+	 * @param yamlContent the root YAML content object
+	 * @param yamlProperty the property describing the node type and name
+	 * @param areAllNodes whether to retrieve all matching nodes recursively
+	 * @return a collection of matching YAML node entries
+	 */
+
+[Source: YamlModel.java | YamlModel.]
+/*******************************************************************************
+ * Copyright (c) 2022 The University of York.
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which is available at https://www.eclipse.org/legal/epl-2.0/
+ * 
+ * Contributors:
+ *     Ionut Predoaia - initial API and implementation
+ ******************************************************************************/
+package org.eclipse.epsilon.emc.yaml;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map.Entry;
+import org.eclipse.epsilon.common.util.StringProperties;
+import org.eclipse.epsilon.common.util.StringUtil;
+import org.eclipse.epsilon.eol.exceptions.EolRuntimeException;
+import org.eclipse.epsilon.eol.exceptions.models.EolEnumerationValueNotFoundException;
+import org.eclipse.epsilon.eol.exceptions.models.EolModelElementTypeNotFoundException;
+import org.eclipse.epsilon.eol.exceptions.models.EolModelLoadingException;
+import org.eclipse.epsilon.eol.execute.operations.contributors.IOperationContributorProvider;
+import org.eclipse.epsilon.eol.execute.operations.contributors.OperationContributor;
+import org.eclipse.epsilon.eol.models.CachedModel;
+import org.eclipse.epsilon.eol.models.IRelativePathResolver;
+
+/**
+ * A model implementation for YAML content that supports loading, storing, and manipulating YAML nodes.
+ * This model uses a cached approach and provides operation contributors for EOL operations.
+ */
+public class YamlModel extends CachedModel<Entry> implements IOperationContributorProvider {
+
+	/** The file associated with this YAML model. */
+	protected File file;
+	
+	/** The root content of the YAML model. */
+	protected Object yamlContent;
+	
+	/** The operation contributor for this YAML model. */
+	protected YamlModelOperationContributor yamlModelOperationContributor;
+	
+	/** The list of nodes created during the model's lifecycle. */
+	protected List<Entry> createdNodes = new ArrayList<>();
+	
+	/**
+	 * Constructs a new YamlModel and initializes property getter and setter.
+	 */
+
+[Source: YamlNodeUtility.java | YamlNodeUtility.getRootNode]
+/**
+	 * Creates a root YAML node entry wrapping the given YAML content.
+	 * 
+	 * @param yamlContent the YAML content to wrap
+	 * @return the root YAML node entry
+	 */
+	public static Entry getRootNode(Object yamlContent) {
+		Map<String, Object> map = new LinkedHashMap<String, Object>();
+		map.put(YamlProperty.PROPERTY_ROOT, yamlContent);
+		return map.entrySet().iterator().next();	
+	}
+
+[Source: YamlNodeUtility.java | YamlNodeUtility.getMappingNode]
+/**
+	 * Creates a mapping YAML node entry.
+	 * 
+	 * @param yamlProperty the property describing the node
+	 * @param parameters the parameters used to create the node
+	 * @return the created mapping YAML node entry
+	 */
+	private static Entry getMappingNode(YamlProperty yamlProperty, List parameters) {
+		Map<String, Object> map = new LinkedHashMap<String, Object>();
+		String nodeName = getNameParameter(yamlProperty, parameters, YamlNodeType.MappingNode);
+		map.put(nodeName, new LinkedHashMap<String, Object>());
+		return map.entrySet().iterator().next();
+	}
+
+[Source: YamlNodeUtility.java | YamlNodeUtility.getNode]
+/**
+	 * Creates a YAML node entry from a string type, separator index, and parameters.
+	 * 
+	 * @param type the string representation of the node type
+	 * @param indexOfSeparator the index of the separator character in the type string
+	 * @param parameters the parameters used to create the node
+	 * @return the created YAML node entry
+	 */
+	public static Entry getNode(String type, int indexOfSeparator, Collection<Object> parameters) {
+		YamlProperty yamlProperty = YamlProperty.parse(type, indexOfSeparator);
+		return YamlNodeUtility.getNode(yamlProperty, parameters);		
+	}
+
+[Source: YamlNodeUtility.java | YamlNodeUtility.getListNode]
+/**
+	 * Creates a list YAML node entry.
+	 * 
+	 * @param yamlProperty the property describing the node
+	 * @param parameters the parameters used to create the node
+	 * @return the created list YAML node entry
+	 */
+	private static Entry getListNode(YamlProperty yamlProperty, List parameters) {
+		Map<String, Object> map = new LinkedHashMap<String, Object>();
+		String nodeName = getNameParameter(yamlProperty, parameters, YamlNodeType.ListNode);
+		Object valueParameter = getValueParameter(yamlProperty, parameters);
+		int listSize = (int) YamlTypeConverter.cast(valueParameter.toString(), YamlDataType.INTEGER);
+		List list = new ArrayList<>();
+		for(int i=0; i < listSize; i++) {
+			list.add(new LinkedHashMap());
+		}	
+		map.put(nodeName, list);
+		return map.entrySet().iterator().next();
+	}
+
+[Source: YamlModel.java | YamlModel.createInstance]
+/**
+	 * Creates a new instance of the specified type with the given parameters.
+	 * 
+	 * @param type the type of the instance to create
+	 * @param parameters the parameters for the instance creation
+	 * @return the newly created instance
+	 * @throws EolModelElementTypeNotFoundException if the type is not found
+	 */
+	public synchronized Entry createInstance(String type, Collection<Object> parameters) throws EolModelElementTypeNotFoundException {
+		Entry newNode = YamlNodeUtility.getNode(type, 1, parameters);
+		createdNodes.add(newNode);
+		return newNode;		
+	}
+
+[Source: YamlProperty.java | YamlProperty.]
+/*******************************************************************************
+ * Copyright (c) 2022 The University of York.
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which is available at https://www.eclipse.org/legal/epl-2.0/
+ * 
+ * Contributors:
+ *     Ionut Predoaia - initial API and implementation
+ ******************************************************************************/
+package org.eclipse.epsilon.emc.yaml;
+
+/**
+ * Represents a property in a YAML node, including its name, type, and characteristics.
+ */
+public class YamlProperty {
+
+	/** The name of the property. */
+	protected String property;
+	
+	/** The type of the YAML node. */
+	protected YamlNodeType type;
+	
+	/** Indicates if the property represents multiple values. */
+	protected boolean many;
+	
+	/** Indicates if the node is a scalar node. */
+	protected boolean isScalarNode;
+	
+	/** Indicates if the node is a mapping node. */
+	protected boolean isMappingNode;
+	
+	/** Indicates if the node is a list node. */
+	protected boolean isListNode;
+	
+	/** Constant representing a mapping property prefix. */
+	public static final char PROPERTY_MAPPING = 'm';
+	
+	/** Constant representing a list property prefix. */
+	public static final char PROPERTY_LIST = 'l';
+	
+	/** Constant representing a scalar property prefix. */
+	public static final char PROPERTY_SCALAR = 's';
+	
+	/** Constant representing a collection property prefix. */
+	public static final char PROPERTY_COLLECTION = 'c';
+	
+	/** Constant representing a single element property prefix. */
+	public static final char PROPERTY_ONE_ELEMENT = 'e';
+	
+	/** Constant representing the property separator character. */
+	public static final char PROPERTY_SEPARATOR = '_';
+	
+	/** Constant representing the root property name. */
+	public static final String PROPERTY_ROOT = "YamlRoot";
+	
+	/** Constant representing the file property name. */
+	public static final String PROPERTY_FILE = "file";
+	
+	/**
+	 * Parses a property string and returns a corresponding YamlProperty object.
+	 * 
+	 * @param property the property string to parse
+	 * @param indexOfSeparator the index of the separator character in the property string
+	 * @return a YamlProperty object representing the parsed property, or null if parsing fails
+	 */
+
+[Source: YamlNodeType.java | YamlNodeType.]
+/*******************************************************************************
+ * Copyright (c) 2022 The University of York.
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which is available at https://www.eclipse.org/legal/epl-2.0/
+ * 
+ * Contributors:
+ *     Ionut Predoaia - initial API and implementation
+ ******************************************************************************/
+package org.eclipse.epsilon.emc.yaml;
+
+/**
+ * Enumeration representing the different types of YAML nodes.
+ */
+public enum YamlNodeType {
+	
+	/** Represents a generic YAML node. */
+	Node,
+	
+	/** Represents a YAML mapping node (key-value pairs). */
+	MappingNode,
+	
+	/** Represents a YAML list node (sequence of nodes). */
+	ListNode,
+	
+	/** Represents a YAML scalar node (single value). */
+	ScalarNode
+	
+}
+
+--- USER MESSAGE ---
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+students:
+  - id: S001
+    name: Grace Adeyemi
+    grade: A
+  - id: S002
+    name: Tom Fielding
+    grade: B
+  - id: S003
+    name: Priya Nair
+    grade: A-
+  - id: S004
+    name: Ollie Bennett
+    grade: C+
+
+Question:
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+students:
+  - id: S001
+    name: Grace Adeyemi
+    grade: A
+  - id: S002
+    name: Tom Fielding
+    grade: B
+  - id: S003
+    name: Priya Nair
+    grade: A-
+  - id: S004
+    name: Ollie Bennett
+    grade: C+
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+The top-level of your YAML is a mapping (it has a single key "students" whose value is a sequence). So you should set the document root as a mapping node (setRootAsMap()). Below is a complete EOL example (following the exact patterns and APIs shown in the documentation) that creates the requested YAML structure from scratch.
+
+EOL script:
+
+```eol
+// Root must be a mapping (top-level "students" key)
+YAMLDoc.setRootAsMap();
+var root = YAMLDoc.getRoot();
+
+// Create a list node "students" with 4 list entries
+var studentsNode = new ListNode("students", 4);
+
+// Student 1
+var id1 = new ScalarNode("id", "S001");
+var name1 = new ScalarNode("name", "Grace Adeyemi");
+var grade1 = new ScalarNode("grade", "A");
+studentsNode.value.at(0).appendNode(id1);
+studentsNode.value.at(0).appendNode(name1);
+studentsNode.value.at(0).appendNode(grade1);
+
+// Student 2
+var id2 = new ScalarNode("id", "S002");
+var name2 = new ScalarNode("name", "Tom Fielding");
+var grade2 = new ScalarNode("grade", "B");
+studentsNode.value.at(1).appendNode(id2);
+studentsNode.value.at(1).appendNode(name2);
+studentsNode.value.at(1).appendNode(grade2);
+
+// Student 3
+var id3 = new ScalarNode("id", "S003");
+var name3 = new ScalarNode("name", "Priya Nair");
+var grade3 = new ScalarNode("grade", "A-");
+studentsNode.value.at(2).appendNode(id3);
+studentsNode.value.at(2).appendNode(name3);
+studentsNode.value.at(2).appendNode(grade3);
+
+// Student 4
+var id4 = new ScalarNode("id", "S004");
+var name4 = new ScalarNode("name", "Ollie Bennett");
+var grade4 = new ScalarNode("grade", "C+");
+studentsNode.value.at(3).appendNode(id4);
+studentsNode.value.at(3).appendNode(name4);
+studentsNode.value.at(3).appendNode(grade4);
+
+// Attach the students list to the root mapping
+root.appendNode(studentsNode);
+```
+
+Notes:
+- The choice of setRootAsMap() is important because the YAML document's root is a mapping with the single key "students".
+- This code follows the documented usage patterns: new ListNode(name, size), new ScalarNode(name, value), accessing list elements with .value.at(i), and appending child nodes with .appendNode(...).
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             2
+  Prompt tokens:     5,202
+  Completion tokens: 3,344
+  Total tokens:      8,546
+  Estimated cost:    $0.00799
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         2
+  Total prompt tokens:     5,202
+  Total completion tokens: 3,344
+  Total tokens:            8,546
+  Total estimated cost:    $0.00799
+============================================================

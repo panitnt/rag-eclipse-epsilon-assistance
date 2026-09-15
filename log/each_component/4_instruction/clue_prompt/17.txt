@@ -1,0 +1,355 @@
+Session started: 2026-08-12 17:29:35
+Model: openai/gpt-5-mini | temperature=0
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[17:29:48]
+
+── QUESTION ──────────────────────────────────────────────
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver?
+employee:
+  skills:
+    - Illustrator
+    - Photoshop
+    - ArtiosCAD
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver?
+  - EOL create new model elements and set properties using EMC YAML Driver
+  - EMC YAML Driver write/save model to YAML examples and usage in Epsilon
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver?'
+    1. sim=0.8430  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    2. sim=0.7496  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    3. sim=0.7409  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    4. sim=0.7086  epsilon_docs/articles_rdf-emc.md | heading='Multi-valued features'
+    5. sim=0.6931  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    6. sim=0.6837  epsilon_docs/articles_yaml-emc_index.md | heading='How can I delete nodes?'
+    7. sim=0.6800  epsilon_docs/articles_index.md | heading='Recipes'
+    8. sim=0.6785  epsilon_docs/articles_running-epsilon-ant-tasks-from-command-line_index.md | heading='UML'
+    9. sim=0.6628  epsilon_docs/articles_simulink_index.md | heading='Using the Simulink Driver from Java'
+    10. sim=0.6502  epsilon_docs/articles_jdt_index.md | heading='How is it used?'
+    11. sim=0.6396  epsilon_docs/articles_profiled-uml-models_index.md | heading='Creating a Profiled UML Model'
+    12. sim=0.6327  epsilon_docs/articles_run-epsilon-from-java.md | heading='Loading Models'
+    13. sim=0.6309  epsilon_docs/articles_profiled-uml-models_index.md | heading='Querying a Profiled UML Model'
+    14. sim=0.6264  epsilon_docs/emc.md | heading='Other Drivers'
+    15. sim=0.5898  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    16. sim=0.5835  epsilon_docs/eol.md | heading='Creating and Deleting Model Elements'
+    17. sim=0.5769  epsilon_docs/emc.md | heading='The Epsilon Model Connectivity Layer (EMC)'
+    18. sim=0.5544  epsilon_docs/flock.md | heading='Epsilon Flock for Model Migration'
+    19. sim=0.5107  epsilon_docs/eunit.md | heading='Test Suites'
+    20. sim=0.5059  epsilon_docs/etl.md | heading='Source Elements Resolution'
+
+  Query: 'EOL create new model elements and set properties using EMC YAML Driver'
+    1. sim=0.7572  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    2. sim=0.7321  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    3. sim=0.7304  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    4. sim=0.7271  epsilon_docs/eol.md | heading='Creating and Deleting Model Elements'
+    5. sim=0.7248  epsilon_docs/articles_run-epsilon-from-java.md | heading='Loading Models'
+    6. sim=0.7213  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    7. sim=0.7195  epsilon_docs/articles_profiled-uml-models_index.md | heading='Querying a Profiled UML Model'
+    8. sim=0.7021  epsilon_docs/articles_profiled-uml-models_index.md | heading='Creating a Profiled UML Model'
+    9. sim=0.6841  epsilon_docs/articles_simulink_index.md | heading='Using the Simulink Driver from Java'
+    10. sim=0.6839  epsilon_docs/articles_running-epsilon-ant-tasks-from-command-line_index.md | heading='UML'
+    11. sim=0.6836  epsilon_docs/articles_rdf-emc.md | heading='Multi-valued features'
+    12. sim=0.6705  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    13. sim=0.6491  epsilon_docs/articles_yaml-emc_index.md | heading='How can I delete nodes?'
+    14. sim=0.6415  epsilon_docs/flock.md | heading='Epsilon Flock for Model Migration'
+    15. sim=0.6403  epsilon_docs/emc.md | heading='The Epsilon Model Connectivity Layer (EMC)'
+    16. sim=0.6300  epsilon_docs/articles_index.md | heading='Recipes'
+    17. sim=0.6215  epsilon_docs/emc.md | heading='Other Drivers'
+    18. sim=0.5957  epsilon_docs/articles_jdt_index.md | heading='How is it used?'
+    19. sim=0.5902  epsilon_docs/eunit.md | heading='Test Suites'
+    20. sim=0.5618  epsilon_docs/etl.md | heading='Source Elements Resolution'
+
+  Query: 'EMC YAML Driver write/save model to YAML examples and usage in Epsilon'
+    1. sim=0.8175  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    2. sim=0.7971  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    3. sim=0.7790  epsilon_docs/articles_running-epsilon-ant-tasks-from-command-line_index.md | heading='UML'
+    4. sim=0.7573  epsilon_docs/articles_simulink_index.md | heading='Using the Simulink Driver from Java'
+    5. sim=0.7033  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    6. sim=0.7011  epsilon_docs/articles_rdf-emc.md | heading='Multi-valued features'
+    7. sim=0.6969  epsilon_docs/articles_index.md | heading='Recipes'
+    8. sim=0.6907  epsilon_docs/emc.md | heading='Other Drivers'
+    9. sim=0.6888  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    10. sim=0.6876  epsilon_docs/articles_profiled-uml-models_index.md | heading='Querying a Profiled UML Model'
+    11. sim=0.6817  epsilon_docs/articles_run-epsilon-from-java.md | heading='Loading Models'
+    12. sim=0.6656  epsilon_docs/articles_yaml-emc_index.md | heading='How can I delete nodes?'
+    13. sim=0.6604  epsilon_docs/emc.md | heading='The Epsilon Model Connectivity Layer (EMC)'
+    14. sim=0.6456  epsilon_docs/articles_profiled-uml-models_index.md | heading='Creating a Profiled UML Model'
+    15. sim=0.6420  epsilon_docs/eol.md | heading='Creating and Deleting Model Elements'
+    16. sim=0.6415  epsilon_docs/flock.md | heading='Epsilon Flock for Model Migration'
+    17. sim=0.6385  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    18. sim=0.6101  epsilon_docs/articles_jdt_index.md | heading='How is it used?'
+    19. sim=0.5656  epsilon_docs/eunit.md | heading='Test Suites'
+    20. sim=0.5600  epsilon_docs/etl.md | heading='Source Elements Resolution'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (7):
+  1. [0.951] epsilon_docs/articles_yaml-emc_index.md (heading='How can I create a YAML document from scratch?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## How can I create a YAML document from scratch?
+Example: create a YAML document from scratch by building and appending MappingNode, ScalarNode, and ListNode elements.
+Keywords: setRootAsList, getRoo
+  2. [0.799] epsilon_docs/eol.md (heading='Creating and Deleting Model Elements', parent_heading='Types')
+     ## Creating and Deleting Model Elements
+Example: create a new Person model element and set its firstName and lastName properties.
+Keywords: new Person
+
+```eol
+var p : new Person;
+p.firstName = 'John';
+  3. [0.653] epsilon_docs/articles_yaml-emc_index.md (heading='Querying a YAML document', parent_heading='Scripting YAML documents using Epsilon')
+     # Scripting YAML documents using Epsilon
+ 
+In this article we demonstrate how you can create, query and modify YAML documents in Epsilon programs using the YAML driver. All the examples in this articl
+  4. [0.610] epsilon_docs/articles_yaml-emc_index.md (heading='How can I delete nodes?', parent_heading='Loading a YAML document through Java code')
+     ## How can I delete nodes?
+Example: load and execute an Epsilon module that manipulates a YAML model, enabling node deletion.
+Keywords: new EolModule, new File, new YamlModel
+
+```java
+EolModule module
+  5. [0.446] epsilon_docs/articles_developing-a-new-emc-driver_index.md (heading='Filesystem Driver', parent_heading='Developing a new EMC Driver')
+     # Developing a new EMC Driver
+
+This article demonstrates the implementation of "drivers" for Epsilon's [Model Connectivity layer](../../emc).
+
+## YAML Driver
+
+The following training session recording 
+  6. [0.385] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YA
+  7. [0.208] epsilon_docs/articles_index.md (heading='Recipes', parent_heading='Epsilon Developers')
+     - [Scripting XML documents using Epsilon](plain-xml/index.md): In this article we demonstrate how you can create, query and modify plain standalone XML documents (i.e. no XSD/DTD needed) in Epsilon pr
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an expert assistant specialised in Eclipse Epsilon.
+
+Use the provided context as the PRIMARY and AUTHORITATIVE source of truth.
+Only use syntax, class names, methods, and patterns that appear explicitly in the context.
+You may adapt documented patterns to the user's structure, provided that no new APIs or unsupported methods are invented.
+If the user's message contains sample data, treat it only as the desired target structure — not as evidence for API syntax.
+If the context provides partial evidence only, generate code for the parts that are supported and explicitly flag any parts that are uncertain or unsupported.
+
+First, you should figure out what is the root node, either a list node and mapping node by setting .setRootAsList() or .setRootAsMap(), and change the code correspondingly. Make sure to use the correct method to append nodes, use .value.appendNode() for mapping nodes and .appendNode() for list node slots.
+
+When a code example is appropriate, provide a complete and runnable example that covers the full structure given by the user.
+When generating code, follow only the patterns shown in the context exactly — do not skip initialisation steps, introduce intermediate objects, or shortcut method chains that are not explicitly demonstrated.
+
+
+--- DOCUMENTATION ---
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## How can I create a YAML document from scratch?
+Example: create a YAML document from scratch by building and appending MappingNode, ScalarNode, and ListNode elements.
+Keywords: setRootAsList, getRoot, .value, addRows, new MappingNode, new ScalarNode, residentNode, postcodeNode, appendNode, industryNode, new ListNode, projectsNode, skillsNode
+
+```eol
+YAMLDoc.setRootAsList();
+var root = YAMLDoc.getRoot();
+root.value.addRows(2);
+var rootFirstRow = root.value.at(0);
+var rootSecondRow = root.value.at(1);
+
+var addressNode1 = new MappingNode("address");
+var countryNode1 = new ScalarNode("country", "England");
+var residentNode = new ScalarNode("resident", true);
+var postcodeNode = new ScalarNode("postcode", "M1 1AG");
+addressNode1.value.appendNode(countryNode1);
+addressNode1.value.appendNode(residentNode);
+addressNode1.value.appendNode(postcodeNode);
+
+var employeeIdNode1 = new ScalarNode("employeeId", "14623");
+var fullnameNode1 = new ScalarNode("fullname", "Michael Davidson");
+var roleNode1 = new ScalarNode("role", "Consultant");
+
+var industryNode = new ListNode("industry", 3);
+industryNode.value =  Sequence{"IoT", "smart factories", "signal analytics"};
+
+var projectsNode = new ListNode("projects", 2);
+var nameNode1 = new ScalarNode("name", "SmartAutomation");
+var nameNode2 = new ScalarNode("name", "FactoryAnalytics");
+var budgetNode1 = new ScalarNode("budget", 25000);
+var budgetNode2 = new ScalarNode("budget", 20000);
+projectsNode.value.at(0).appendNode(nameNode1);
+projectsNode.value.at(0).appendNode(budgetNode1);
+projectsNode.value.at(1).appendNode(nameNode2);
+projectsNode.value.at(1).appendNode(budgetNode2);
+
+var addressNode2 = new MappingNode("address");
+var countryNode2 = new ScalarNode("country", "Germany");
+addressNode2.value.appendNode(countryNode2);
+
+var employeeIdNode2 = new ScalarNode("employeeId", "16431");
+var fullnameNode2 = new ScalarNode("fullname", "Arnold Wagner");
+var roleNode2 = new ScalarNode("role", "HR");
+
+var skillsNode = new ListNode("skills", 2);
+skillsNode.value =  Sequence{"communication", "coaching"};
+
+rootFirstRow.appendNode(employeeIdNode1);
+rootFirstRow.appendNode(addressNode1);
+rootFirstRow.appendNode(fullnameNode1);
+rootFirstRow.appendNode(roleNode1);
+rootFirstRow.appendNode(industryNode);
+rootFirstRow.appendNode(projectsNode);
+
+rootSecondRow.appendNode(employeeIdNode2);
+rootSecondRow.appendNode(addressNode2);
+rootSecondRow.appendNode(fullnameNode2);
+rootSecondRow.appendNode(roleNode2);
+rootSecondRow.appendNode(skillsNode);
+```
+
+[Source: epsilon_docs/eol.md]
+## Creating and Deleting Model Elements
+Example: create a new Person model element and set its firstName and lastName properties.
+Keywords: new Person
+
+```eol
+var p : new Person;
+p.firstName = 'John';
+p.lastName = 'Doe';
+```
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+# Scripting YAML documents using Epsilon
+ 
+In this article we demonstrate how you can create, query and modify YAML documents in Epsilon programs using the YAML driver. All the examples in this article demonstrate using EOL to script YAML documents. However, it's worth stressing that YAML documents are supported throughout Epsilon. Therefore, you can use Epsilon to (cross-)validate, transform (to other models – XML, CSV or EMF-based, or to text), compare and merge your YAML documents.
+
+<iframe width="90%" height="494" src="https://www.youtube.com/embed/TF0fgghP938" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Querying a YAML document
+ 
+We use the following `employees.yaml` as a base for demonstrating the EOL syntax for querying YAML documents.
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## How can I delete nodes?
+Example: load and execute an Epsilon module that manipulates a YAML model, enabling node deletion.
+Keywords: new EolModule, new File, new YamlModel
+
+```java
+EolModule module = new EolModule();
+module.parse(new File("..."));
+
+YamlModel model = new YamlModel();
+model.setName("YAMLDoc");
+model.setFile(new File("..."));
+model.load();
+
+module.getContext().getModelRepository().addModel(model);
+module.getContext().setModule(module);
+module.execute();
+```
+
+[Source: epsilon_docs/articles_developing-a-new-emc-driver_index.md]
+# Developing a new EMC Driver
+
+This article demonstrates the implementation of "drivers" for Epsilon's [Model Connectivity layer](../../emc).
+
+## YAML Driver
+
+The following training session recording and deck of slides demonstrate the implementation of [Epsilon's YAML driver](../yaml-emc). The complete source-code is located in [Epsilon's Git repository](https://github.com/eclipse-epsilon/epsilon/tree/main/plugins/org.eclipse.epsilon.emc.yaml).
+
+<iframe src="https://www.youtube.com/embed/M0nvnhSF6Y0" width="100%" height="485" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen></iframe> <div style="margin-bottom:15px"></div>
+
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/yc9uUXElc1Zbac" width="100%" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:15px"></div>
+
+## CSV Pro Driver
+
+The slides below demonstrate the implementation of an alternative driver for CSV files, located under the [`examples` folder of Epsilon's repository](https://github.com/eclipse-epsilon/epsilon/tree/main/examples/org.eclipse.epsilon.emc.csvpro).
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YAML node must be specified when accessing YAML nodes via the YAML driver. There are 3 types of nodes in YAML:
+
+- `Scalar Node`. Scalar nodes are used to represent a single scalar value (e.g., string, boolean, integer). In the YAML driver, a scalar node consists of a key-value pair, in which the key represents the name of the scalar node, and the value represents the scalar value.
+- `Mapping Node`. Mapping nodes are used to represent unordered collections of key-value pairs. In the YAML driver, a mapping node consists of a key-value pair, in which the key represents the name of the mapping node, and the value holds an unordered collection of key-value pairs, which in turn represent other nodes.
+- `List (Sequence) Node`. List nodes are used to represent an ordered list of nodes or scalar values. In the YAML driver, a list node consists of a key-value pair, in which the key represents the name of the list node, and the value represents a list of nodes or scalar values.
+
+This section outlines the supported conventions in the form of questions and answers followed by relevant examples.
+
+[Source: epsilon_docs/articles_index.md]
+- [Scripting XML documents using Epsilon](plain-xml/index.md): In this article we demonstrate how you can create, query and modify plain standalone XML documents (i.e. no XSD/DTD needed) in Epsilon programs using the PlainXML driver.
+- [Scripting XML documents that conform to an XSD schema using Epsilon](xsd-xml): In this article we demonstrate how you can create, query and modify XML documents backed by an XSD schema in Epsilon.
+- [Scripting YAML documents using Epsilon](yaml-emc/index.md): This article demonstrates how you can query and modify YAML documents with Epsilon programs using the YAML driver.
+- [Scripting JSON documents using Epsilon](json-emc/index.md): This article shows how you can create, query and modify JSON documents with Epsilon programs using the JSON driver.
+- [Scripting CSV files using Epsilon](csv-emc/index.md): This article demonstrates how you can query CSV files with Epsilon programs using the CSV driver.
+- [Scripting Excel spreadsheets using Epsilon](excel/index.md): In this article we demonstrate how you can create, query and modify Excel spreadsheets in Epsilon programs.
+- [Scripting HTML documents using Epsilon](html/index.md): In this article we demonstrate how you can create, query and modify HTML documents in Epsilon programs using the HTML driver.
+
+--- USER MESSAGE ---
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver?
+employee:
+  skills:
+    - Illustrator
+    - Photoshop
+    - ArtiosCAD
+
+Question:
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver?
+employee:
+  skills:
+    - Illustrator
+    - Photoshop
+    - ArtiosCAD
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+Root node: mapping (use setRootAsMap)
+
+Use the same API patterns shown in the docs. The YAML you want:
+
+employee:
+  skills:
+    - Illustrator
+    - Photoshop
+    - ArtiosCAD
+
+can be created in EOL like this:
+
+```eol
+YAMLDoc.setRootAsMap();
+var root = YAMLDoc.getRoot();
+
+var employeeNode = new MappingNode("employee");
+
+var skillsNode = new ListNode("skills", 3);
+skillsNode.value = Sequence{"Illustrator", "Photoshop", "ArtiosCAD"};
+
+employeeNode.value.appendNode(skillsNode);
+
+root.value.appendNode(employeeNode);
+```
+
+Notes:
+- I used setRootAsMap() because the top-level document is a mapping (the "employee" key).
+- For mapping nodes use .value.appendNode(...) as shown above.
+- The example assumes a Yaml model named YAMLDoc is available in the execution context (the same pattern used in the documentation examples). If your model has a different name, replace YAMLDoc with that model name.
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             2
+  Prompt tokens:     2,516
+  Completion tokens: 3,036
+  Total tokens:      5,552
+  Estimated cost:    $0.00670
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         2
+  Total prompt tokens:     2,516
+  Total completion tokens: 3,036
+  Total tokens:            5,552
+  Total estimated cost:    $0.00670
+============================================================

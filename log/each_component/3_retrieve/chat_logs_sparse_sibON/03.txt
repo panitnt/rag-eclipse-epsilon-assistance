@@ -1,0 +1,251 @@
+Session started: 2026-07-30 12:11:30
+Model: openai/gpt-5-mini | temperature=0
+RETRIEVAL_MODE=sparse (BM25 Qdrant/bm25, no dense)
+SIBLING_EXPANSION=on
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[12:11:30]
+
+── QUESTION ──────────────────────────────────────────────
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+device:
+  id: DEV-2210
+  type: thermostat
+  brand: Nest
+  model: Learning Thermostat v3
+  mac: "AA:BB:CC:11:22:33"
+  online: true
+  firmwareVersion: "6.4.2"
+  installedAt: "2023-11-02"
+  room: Living Room
+  warrantyExpiry: "2025-11-02"
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+device:
+  id: DEV-2210
+  type: thermostat
+  brand: Nest
+  model: Learning Thermostat v3
+  mac: "AA:BB:CC:11:22:33"
+  online: true
+  firmwareVersion: "6.4.2"
+  installedAt: "2023-11-02"
+  room: Living Room
+  warrantyExpiry: "2025-11-02"
+
+── SPARSE POOL (before rerank, before sibling expansion) ──
+  1. [16.467] epsilon_docs/eol.md (heading='Variable Declaration Statement', parent_heading='Expressions')
+  2. [16.028] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+  3. [15.491] epsilon_docs/egl.md (heading='An Example of Co-ordination with EGL', parent_heading='Co-ordination')
+  4. [15.206] epsilon_docs/flock.md (heading='Epsilon Flock for Model Migration', parent_heading='')
+  5. [15.068] epsilon_docs/articles_yaml-emc_index.md (heading='How do I set the root node of a YAML document?', parent_heading='Querying/modifying YAML documents in EOL')
+  6. [14.924] epsilon_docs/articles_minimal-examples_index.md (heading='Exporting an Eclipse project from your workspace', parent_heading='Constructing a Helpful Minimal Example')
+  7. [13.855] epsilon_docs/articles_jdt_index.md (heading='How is it used?', parent_heading='Treating Java code as a model in Epsilon')
+  8. [13.821] epsilon_docs/articles_csv-emc_index.md (heading='Header-less CSV Model', parent_heading='Querying a CSV document')
+  9. [13.773] epsilon_docs/eunit.md (heading='Test Suites', parent_heading='Test Organization')
+  10. [13.659] epsilon_docs/eol.md (heading='Model Element Types', parent_heading='Types')
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.\ndevice:\n  id: DEV-2210\n  type: thermostat\n  brand: Nest\n  model: Learning Thermostat v3\n  mac: "AA:BB:CC:11:22:33"\n  online: true\n  firmwareVersion: "6.4.2"\n  installedAt: "2023-11-02"\n  room: Living Room\n  warrantyExpiry: "2025-11-02"'
+    1. sim=0.7274  epsilon_docs/articles_yaml-emc_index.md | heading='How do I set the root node of a YAML document?'
+    2. sim=0.6934  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    3. sim=0.5910  epsilon_docs/articles_jdt_index.md | heading='How is it used?'
+    4. sim=0.5841  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    5. sim=0.5592  epsilon_docs/articles_csv-emc_index.md | heading='Header-less CSV Model'
+    6. sim=0.5457  epsilon_docs/flock.md | heading='Epsilon Flock for Model Migration'
+    7. sim=0.5409  epsilon_docs/articles_minimal-examples_index.md | heading='Exporting an Eclipse project from your workspace'
+    8. sim=0.5390  epsilon_docs/eol.md | heading='Model Element Types'
+    9. sim=0.5169  epsilon_docs/eunit.md | heading='Test Suites'
+    10. sim=0.5158  epsilon_docs/eol.md | heading='Variable Declaration Statement'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (4):
+  1. [0.700] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YA
+  2. [0.690] epsilon_docs/articles_yaml-emc_index.md (heading='How do I set the root node of a YAML document?', parent_heading='Querying/modifying YAML documents in EOL')
+     ### How do I set the root node of a YAML document?
+
+The `root` property can be used for setting the root node of a YAML document. The root node of a YAML document can either be a mapping node or a lis
+  3. [0.030] epsilon_docs/eunit.md (heading='Test Suites', parent_heading='Test Organization')
+     xml
+<project>
+  <!-- ... omitted ... -->
+  <target name="atl">
+    <!-- Create temporary files for input and output models -->
+    <tempfile property="atl.temp.srcfile" />
+    <tempfile property="atl.
+  4. [0.011] epsilon_docs/articles_jdt_index.md (heading='How is it used?', parent_heading='Treating Java code as a model in Epsilon')
+     Our EMC JDT driver is exactly that – we don’t do any big extraction work in advance, so the query starts  running almost immediately. The driver exposes the indices maintained by the Eclipse Java Deve
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon.
+
+Use the provided context as the PRIMARY and AUTHORITATIVE source of truth.
+Only use syntax, class names, methods, and patterns that appear explicitly in the context.
+You may adapt documented patterns to the user's structure, provided that no new APIs or unsupported methods are invented.
+If the user's message contains sample data, treat it only as the desired target structure — not as evidence for API syntax.
+If the context provides partial evidence only, generate code for the parts that are supported and explicitly flag any parts that are uncertain or unsupported.
+
+When a code example is appropriate, provide a complete and runnable example that covers the full structure given by the user.
+When generating code, follow only the patterns shown in the context exactly — do not skip initialisation steps, introduce intermediate objects, or shortcut method chains that are not explicitly demonstrated.
+
+--- DOCUMENTATION ---
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YAML node must be specified when accessing YAML nodes via the YAML driver. There are 3 types of nodes in YAML:
+
+- `Scalar Node`. Scalar nodes are used to represent a single scalar value (e.g., string, boolean, integer). In the YAML driver, a scalar node consists of a key-value pair, in which the key represents the name of the scalar node, and the value represents the scalar value.
+- `Mapping Node`. Mapping nodes are used to represent unordered collections of key-value pairs. In the YAML driver, a mapping node consists of a key-value pair, in which the key represents the name of the mapping node, and the value holds an unordered collection of key-value pairs, which in turn represent other nodes.
+- `List (Sequence) Node`. List nodes are used to represent an ordered list of nodes or scalar values. In the YAML driver, a list node consists of a key-value pair, in which the key represents the name of the list node, and the value represents a list of nodes or scalar values.
+
+This section outlines the supported conventions in the form of questions and answers followed by relevant examples.
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+### How do I set the root node of a YAML document?
+
+The `root` property can be used for setting the root node of a YAML document. The root node of a YAML document can either be a mapping node or a list node. The `setRootAsMap()` function can be used for setting the root node into a mapping node. The `setRootAsList()` function can be used for setting the root node into a list node.
+
+[Source: epsilon_docs/eunit.md]
+xml
+<project>
+  <!-- ... omitted ... -->
+  <target name="atl">
+    <!-- Create temporary files for input and output models -->
+    <tempfile property="atl.temp.srcfile" />
+    <tempfile property="atl.temp.dstfile" />
+
+    <!-- Save input model to a file -->
+    <epsilon.storeModel model="Tree"
+      target="${atl.temp.srcfile}" />
+
+    <!-- Load the metamodels and the source model -->
+    <atl.loadModel name="TreeMM" metamodel="MOF"
+      path="metamodels/tree.ecore" />
+    <atl.loadModel name="GraphMM" metamodel="MOF"
+      path="metamodels/graph.ecore" />
+    <atl.loadModel name="Tree" metamodel="TreeMM"
+      path="${atl.temp.srcfile}" />
+
+    <!-- Run ATL and save the model -->
+    <atl.launch path="transformation/tree2graph.atl">
+      <inmodel name="IN"   model="Tree" />
+      <outmodel name="OUT" model="Graph" metamodel="GraphMM" />
+    </atl.launch>
+    <atl.saveModel model="Graph" path="${atl.temp.dstfile}" />
+
+    <!-- Load it back into the EUnit suite -->
+    <epsilon.emf.loadModel name="Graph"
+      modelfile="${atl.temp.dstfile}"
+      metamodeluri="Graph"
+      read="true" store="false" />
+
+    <!-- Delete temporary files -->
+    <delete file="${atl.temp.srcfile}" />
+    <delete file="${atl.temp.dstfile}" />
+  </target>
+</project>
+
+[Source: epsilon_docs/articles_jdt_index.md]
+Our EMC JDT driver is exactly that – we don’t do any big extraction work in advance, so the query starts  running almost immediately. The driver exposes the indices maintained by the Eclipse Java Development Tools, so you can quickly find a class and go through its methods, for instance. If at some point you need more  information than the indices provide, we’ll transparently use the JDT  parser (based on the Java compiler) to fetch things for you. This is  represented as the top path in the above figure, starting at “Java code” and going through the orange nodes.
+
+## How is it used?
+
+With Epsilon and the EMC JDT driver  installed, we create a new “query.eol” file with our query. For  instance, this one-liner prints how many types we have in our program:
+
+`
+
+--- USER MESSAGE ---
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+device:
+  id: DEV-2210
+  type: thermostat
+  brand: Nest
+  model: Learning Thermostat v3
+  mac: "AA:BB:CC:11:22:33"
+  online: true
+  firmwareVersion: "6.4.2"
+  installedAt: "2023-11-02"
+  room: Living Room
+  warrantyExpiry: "2025-11-02"
+
+Question:
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+device:
+  id: DEV-2210
+  type: thermostat
+  brand: Nest
+  model: Learning Thermostat v3
+  mac: "AA:BB:CC:11:22:33"
+  online: true
+  firmwareVersion: "6.4.2"
+  installedAt: "2023-11-02"
+  room: Living Room
+  warrantyExpiry: "2025-11-02"
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+Root node
+- Your YAML document has a single top-level key "device", so the YAML document root is a mapping node (not a list/sequence). Use setRootAsMap().
+
+Example EOL (Epsilon Object Language) script
+- The example below shows the minimal steps you need to perform in EOL using the EMC YAML driver: set the root as a mapping node, create the "device" mapping and populate its scalar properties. The exact way you obtain the YAML driver/model reference and persist the document depends on how you load the model in your environment (see notes after the script).
+
+// EOL script (example)
+var yaml;            // <-- substitute with your loaded YAML driver/model reference
+
+// Make the document root a mapping node
+yaml.setRootAsMap();
+
+// Create the top-level "device" mapping and populate scalar values
+// (this uses straightforward property assignment on the driver 'root')
+yaml.root.device = {};                 // create an empty mapping node for "device"
+yaml.root.device.id = "DEV-2210";
+yaml.root.device.type = "thermostat";
+yaml.root.device.brand = "Nest";
+yaml.root.device.model = "Learning Thermostat v3";
+yaml.root.device.mac = "AA:BB:CC:11:22:33";
+yaml.root.device.online = true;
+yaml.root.device.firmwareVersion = "6.4.2";
+yaml.root.device.installedAt = "2023-11-02";
+yaml.root.device.room = "Living Room";
+yaml.root.device.warrantyExpiry = "2025-11-02";
+
+// Persist the YAML document
+// Use your environment's standard persistence mechanism (see notes).
+
+Notes and caveats
+- The docs explicitly show: the root property is used to access the root node and there are helper functions setRootAsMap() and setRootAsList() to set the root node type. The code above uses setRootAsMap() because the top-level node is a mapping.
+- The documentation excerpt does not show the exact API call you use to obtain the driver/model reference in an EOL script, nor the exact API call to write/save the YAML to disk. Typical options:
+  - If you run Epsilon from Ant/EUnit/launcher, you can save the model using the epsilon.storeModel task (example appears in the provided docs).
+  - If you have programmatic access to the model object in EOL/Java, use that model's standard save/store mechanism exposed by your host environment. Adjust the final persistence step accordingly.
+- If your document were a sequence (top-level list), call yaml.setRootAsList() instead and then append elements to yaml.root (the exact append API depends on the driver binding in your environment).
+- If any of the assignment or empty-mapping syntax above does not match the exact driver binding you obtained in your runtime, adapt the node-creation and property-setting operations to the API your environment exposes — the only driver-specific guarantees in the docs are the existence of the root property and the setRootAsMap()/setRootAsList() helpers.
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             1
+  Prompt tokens:     1,374
+  Completion tokens: 2,104
+  Total tokens:      3,478
+  Estimated cost:    $0.00455
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         1
+  Total prompt tokens:     1,374
+  Total completion tokens: 2,104
+  Total tokens:            3,478
+  Total estimated cost:    $0.00455
+============================================================

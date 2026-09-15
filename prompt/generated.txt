@@ -1,0 +1,37 @@
+INTENT_PROMPT = ChatPromptTemplate.from_template(
+    """Extract the core Eclipse Epsilon technical question from the user's message.
+Ignore any sample data, YAML content, metamodel definitions, or code snippets the user pasted.
+Focus only on what they want to know or achieve in Eclipse Epsilon terms.
+
+Return the user's question verbatim as the first line, with only sample data and code snippets removed.
+Then generate up to 2 additional search queries to retrieve relevant documentation and code examples.
+At least one of the additional queries should focus on the Epsilon language syntax needed to accomplish the task.
+Each additional query must relate directly to the same task described in the first line — do not introduce unrelated Epsilon languages or tools.
+Each query must use only terms that would naturally appear in Eclipse Epsilon documentation — do not invent API names or class names.
+Return one query per line, nothing else.
+
+Message:
+{message}
+
+Queries:"""
+)
+
+ANSWER_PROMPT = ChatPromptTemplate.from_template(
+    """You are an assistant answering questions about Eclipse Epsilon.
+
+Use the provided context as the PRIMARY and AUTHORITATIVE source of truth.
+Only use syntax, class names, methods, and patterns that appear explicitly in the context.
+You may adapt documented patterns to the user's structure, provided that no new APIs or unsupported methods are invented.
+If the user's message contains sample data, treat it only as the desired target structure — not as evidence for API syntax.
+If the context provides partial evidence only, generate code for the parts that are supported and explicitly flag any parts that are uncertain or unsupported.
+
+When a code example is appropriate, provide a complete and runnable example that covers the full structure given by the user.
+When generating code, follow only the patterns shown in the context exactly — do not skip initialisation steps, introduce intermediate objects, or shortcut method chains that are not explicitly demonstrated.
+
+{context_block}
+
+Question:
+{question}
+
+Answer:"""
+)

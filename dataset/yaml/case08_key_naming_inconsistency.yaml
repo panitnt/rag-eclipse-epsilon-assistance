@@ -1,0 +1,9 @@
+flightLeg:
+  departureAirport: BKK
+  arrival_airport: LHR
+  departureTime: "2024-07-10T23:45:00+07:00"
+  arrival_time: "2024-07-11T06:15:00+01:00"
+  mealService: true
+  extra_legroom: false
+  seat_number: 32A
+  aircraftType: Boeing 777-300ER

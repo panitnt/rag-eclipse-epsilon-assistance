@@ -1,0 +1,276 @@
+Session started: 2026-07-28 00:33:26
+Model: openrouter/qwen/qwen3.5-flash-02-23 | temperature=0
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[00:33:45]
+
+── QUESTION ──────────────────────────────────────────────
+How can I create a YAML document with a mapping as the root node using the YAML EMC in EOL, and then append values to that mapping?
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - How can I create a YAML document with a mapping as the root node using the YAML EMC in EOL, and then append values to that mapping?
+  - EOL create YAML model mapping root node
+  - Epsilon YAML EMC add values to mapping
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'How can I create a YAML document with a mapping as the root node using the YAML EMC in EOL, and then append values to that mapping?'
+    1. sim=0.8177  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    2. sim=0.8159  epsilon_docs/articles_yaml-emc_index.md | heading='How do I set the root node of a YAML document?'
+    3. sim=0.7415  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    4. sim=0.7411  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    5. sim=0.7102  epsilon_docs/articles_yaml-emc_index.md | heading='How can I delete nodes?'
+    6. sim=0.6902  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    7. sim=0.6802  epsilon_docs/index.md | heading='Languages'
+    8. sim=0.6715  epsilon_docs/articles_profiled-uml-models_index.md | heading='Querying a Profiled UML Model'
+    9. sim=0.6678  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    10. sim=0.6594  epsilon_docs/articles_yaml-emc_index.md | heading='How do I add nodes to a mapping node?'
+    11. sim=0.6535  epsilon_docs/articles_json-emc_index.md | heading='Author JSON document with detailed accounts'
+    12. sim=0.6510  epsilon_docs/articles_index.md | heading='Recipes'
+    13. sim=0.6170  epsilon_docs/articles_run-epsilon-from-java.md | heading='Adding Variables'
+    14. sim=0.5817  epsilon_docs/articles_json-emc_index.md | heading='Initial example: author JSON document'
+    15. sim=0.5814  epsilon_docs/articles_eugenia-polishing_index.md | heading='Getting assistance in writing these transformations'
+    16. sim=0.5450  epsilon_docs/articles_rdf-emc.md | heading='EMF-RDF resource file (`.rdfres`)'
+    17. sim=0.5418  epsilon_docs/articles_json-emc_index.md | heading='Example EGL template'
+    18. sim=0.5001  epsilon_docs/picto_index.md | heading='Model-to-Text Transformation'
+
+  Query: 'EOL create YAML model mapping root node'
+    1. sim=0.7459  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    2. sim=0.7231  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    3. sim=0.7225  epsilon_docs/articles_yaml-emc_index.md | heading='How do I set the root node of a YAML document?'
+    4. sim=0.7108  epsilon_docs/articles_profiled-uml-models_index.md | heading='Querying a Profiled UML Model'
+    5. sim=0.7052  epsilon_docs/articles_json-emc_index.md | heading='Author JSON document with detailed accounts'
+    6. sim=0.6901  epsilon_docs/index.md | heading='Languages'
+    7. sim=0.6849  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    8. sim=0.6775  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    9. sim=0.6251  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    10. sim=0.6216  epsilon_docs/articles_yaml-emc_index.md | heading='How can I delete nodes?'
+    11. sim=0.6142  epsilon_docs/articles_eugenia-polishing_index.md | heading='Getting assistance in writing these transformations'
+    12. sim=0.5829  epsilon_docs/articles_yaml-emc_index.md | heading='How do I add nodes to a mapping node?'
+    13. sim=0.5792  epsilon_docs/articles_index.md | heading='Recipes'
+    14. sim=0.5646  epsilon_docs/articles_run-epsilon-from-java.md | heading='Adding Variables'
+    15. sim=0.5518  epsilon_docs/articles_json-emc_index.md | heading='Example EGL template'
+    16. sim=0.5319  epsilon_docs/articles_json-emc_index.md | heading='Initial example: author JSON document'
+    17. sim=0.5031  epsilon_docs/articles_rdf-emc.md | heading='EMF-RDF resource file (`.rdfres`)'
+    18. sim=0.4508  epsilon_docs/picto_index.md | heading='Model-to-Text Transformation'
+
+  Query: 'Epsilon YAML EMC add values to mapping'
+    1. sim=0.7534  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    2. sim=0.7487  epsilon_docs/articles_run-epsilon-from-java.md | heading='Adding Variables'
+    3. sim=0.7434  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    4. sim=0.7235  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    5. sim=0.7088  epsilon_docs/index.md | heading='Languages'
+    6. sim=0.6651  epsilon_docs/articles_json-emc_index.md | heading='Author JSON document with detailed accounts'
+    7. sim=0.6583  epsilon_docs/articles_profiled-uml-models_index.md | heading='Querying a Profiled UML Model'
+    8. sim=0.6544  epsilon_docs/articles_index.md | heading='Recipes'
+    9. sim=0.6523  epsilon_docs/articles_yaml-emc_index.md | heading='How can I delete nodes?'
+    10. sim=0.6417  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    11. sim=0.6306  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    12. sim=0.5993  epsilon_docs/articles_yaml-emc_index.md | heading='How do I add nodes to a mapping node?'
+    13. sim=0.5966  epsilon_docs/articles_yaml-emc_index.md | heading='How do I set the root node of a YAML document?'
+    14. sim=0.5420  epsilon_docs/articles_eugenia-polishing_index.md | heading='Getting assistance in writing these transformations'
+    15. sim=0.5206  epsilon_docs/articles_rdf-emc.md | heading='EMF-RDF resource file (`.rdfres`)'
+    16. sim=0.5071  epsilon_docs/articles_json-emc_index.md | heading='Initial example: author JSON document'
+    17. sim=0.4861  epsilon_docs/picto_index.md | heading='Model-to-Text Transformation'
+    18. sim=0.4857  epsilon_docs/articles_json-emc_index.md | heading='Example EGL template'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (6):
+  1. [0.992] epsilon_docs/articles_yaml-emc_index.md (heading='How can I create a YAML document from scratch?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## How can I create a YAML document from scratch?
+Example: create a YAML document from scratch by building and appending MappingNode, ScalarNode, and ListNode elements.
+Keywords: setRootAsList, getRoo
+  2. [0.965] epsilon_docs/articles_yaml-emc_index.md (heading='How do I set the root node of a YAML document?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## How do I set the root node of a YAML document?
+Example: set the root node of a YAML document as either a mapping node or a list node with specified entries.
+Keywords: setRootAsMap, setRootAsList, .
+  3. [0.363] epsilon_docs/articles_yaml-emc_index.md (heading='Querying a YAML document', parent_heading='Scripting YAML documents using Epsilon')
+     # Scripting YAML documents using Epsilon
+ 
+In this article we demonstrate how you can create, query and modify YAML documents in Epsilon programs using the YAML driver. All the examples in this articl
+  4. [0.305] epsilon_docs/articles_excel_index.md (heading='Modifying Cell Values', parent_heading='Creating Spreadsheets')
+     ## Modifying Cell Values
+Example: modify specific cell values in an Excel file using Epsilon's mapping configuration.
+
+```xml
+    {{{ example("org.eclipse.epsilon.examples.excel/mapping.xml", true) }}
+  5. [0.146] epsilon_docs/articles_run-epsilon-from-java.md (heading='Adding Variables', parent_heading='Running Epsilon from Java')
+     ## Adding Variables
+
+You can add variables to your Epsilon program and provide their values from Java as shown below.
+  6. [0.137] epsilon_docs/articles_yaml-emc_index.md (heading='How can I delete nodes?', parent_heading='Loading a YAML document through Java code')
+     ## How can I delete nodes?
+Example: load and execute an Epsilon module that manipulates a YAML model, enabling node deletion.
+Keywords: new EolModule, new File, new YamlModel
+
+```java
+EolModule module
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon. Use only the documentation below — do not use outside knowledge, and say so if it doesn't cover something.
+
+Documentation:
+--- DOCUMENTATION ---
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## How can I create a YAML document from scratch?
+Example: create a YAML document from scratch by building and appending MappingNode, ScalarNode, and ListNode elements.
+Keywords: setRootAsList, getRoot, .value, addRows, new MappingNode, new ScalarNode, residentNode, postcodeNode, appendNode, industryNode, new ListNode, projectsNode, skillsNode
+
+```eol
+YAMLDoc.setRootAsList();
+var root = YAMLDoc.getRoot();
+root.value.addRows(2);
+var rootFirstRow = root.value.at(0);
+var rootSecondRow = root.value.at(1);
+
+var addressNode1 = new MappingNode("address");
+var countryNode1 = new ScalarNode("country", "England");
+var residentNode = new ScalarNode("resident", true);
+var postcodeNode = new ScalarNode("postcode", "M1 1AG");
+addressNode1.value.appendNode(countryNode1);
+addressNode1.value.appendNode(residentNode);
+addressNode1.value.appendNode(postcodeNode);
+
+var employeeIdNode1 = new ScalarNode("employeeId", "14623");
+var fullnameNode1 = new ScalarNode("fullname", "Michael Davidson");
+var roleNode1 = new ScalarNode("role", "Consultant");
+
+var industryNode = new ListNode("industry", 3);
+industryNode.value =  Sequence{"IoT", "smart factories", "signal analytics"};
+
+var projectsNode = new ListNode("projects", 2);
+var nameNode1 = new ScalarNode("name", "SmartAutomation");
+var nameNode2 = new ScalarNode("name", "FactoryAnalytics");
+var budgetNode1 = new ScalarNode("budget", 25000);
+var budgetNode2 = new ScalarNode("budget", 20000);
+projectsNode.value.at(0).appendNode(nameNode1);
+projectsNode.value.at(0).appendNode(budgetNode1);
+projectsNode.value.at(1).appendNode(nameNode2);
+projectsNode.value.at(1).appendNode(budgetNode2);
+
+var addressNode2 = new MappingNode("address");
+var countryNode2 = new ScalarNode("country", "Germany");
+addressNode2.value.appendNode(countryNode2);
+
+var employeeIdNode2 = new ScalarNode("employeeId", "16431");
+var fullnameNode2 = new ScalarNode("fullname", "Arnold Wagner");
+var roleNode2 = new ScalarNode("role", "HR");
+
+var skillsNode = new ListNode("skills", 2);
+skillsNode.value =  Sequence{"communication", "coaching"};
+
+rootFirstRow.appendNode(employeeIdNode1);
+rootFirstRow.appendNode(addressNode1);
+rootFirstRow.appendNode(fullnameNode1);
+rootFirstRow.appendNode(roleNode1);
+rootFirstRow.appendNode(industryNode);
+rootFirstRow.appendNode(projectsNode);
+
+rootSecondRow.appendNode(employeeIdNode2);
+rootSecondRow.appendNode(addressNode2);
+rootSecondRow.appendNode(fullnameNode2);
+rootSecondRow.appendNode(roleNode2);
+rootSecondRow.appendNode(skillsNode);
+```
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## How do I set the root node of a YAML document?
+Example: set the root node of a YAML document as either a mapping node or a list node with specified entries.
+Keywords: setRootAsMap, setRootAsList, .value, new MappingNode, new ListNode
+
+```eol
+// Set the root node into a mapping node
+YAMLDoc.setRootAsMap();
+
+// Set the root node into a list node
+YAMLDoc.setRootAsList();
+
+// Set the root node into a mapping node
+YAMLDoc.root.value = new MappingNode();
+
+// Set the root node into a list node with 3 empty entries
+YAMLDoc.root.value = new ListNode("", 3);
+```
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+# Scripting YAML documents using Epsilon
+ 
+In this article we demonstrate how you can create, query and modify YAML documents in Epsilon programs using the YAML driver. All the examples in this article demonstrate using EOL to script YAML documents. However, it's worth stressing that YAML documents are supported throughout Epsilon. Therefore, you can use Epsilon to (cross-)validate, transform (to other models – XML, CSV or EMF-based, or to text), compare and merge your YAML documents.
+
+<iframe width="90%" height="494" src="https://www.youtube.com/embed/TF0fgghP938" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Querying a YAML document
+ 
+We use the following `employees.yaml` as a base for demonstrating the EOL syntax for querying YAML documents.
+
+[Source: epsilon_docs/articles_excel_index.md]
+## Modifying Cell Values
+Example: modify specific cell values in an Excel file using Epsilon's mapping configuration.
+
+```xml
+    {{{ example("org.eclipse.epsilon.examples.excel/mapping.xml", true) }}}
+    ```
+
+[Source: epsilon_docs/articles_run-epsilon-from-java.md]
+## Adding Variables
+
+You can add variables to your Epsilon program and provide their values from Java as shown below.
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## How can I delete nodes?
+Example: load and execute an Epsilon module that manipulates a YAML model, enabling node deletion.
+Keywords: new EolModule, new File, new YamlModel
+
+```java
+EolModule module = new EolModule();
+module.parse(new File("..."));
+
+YamlModel model = new YamlModel();
+model.setName("YAMLDoc");
+model.setFile(new File("..."));
+model.load();
+
+module.getContext().getModelRepository().addModel(model);
+module.getContext().setModule(module);
+module.execute();
+```
+
+--- USER MESSAGE ---
+How can I create a YAML document with a mapping as the root node using the YAML EMC in EOL, and then append values to that mapping?
+
+Before writing your answer, silently check each part of the question against the documentation — including whether any combination of separately-documented pieces is actually shown together, not just individually present somewhere. Don't show this checking process or split your answer into labeled parts. Write a smooth, natural answer, and weave in a brief, honest note wherever something isn't directly confirmed, rather than presenting it as verified.
+
+Be concise, and let the length of your answer reflect how much the documentation actually supports — don't stretch a thin piece of evidence into a long, confident-sounding answer.
+
+Question:
+How can I create a YAML document with a mapping as the root node using the YAML EMC in EOL, and then append values to that mapping?
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+You can set the root node of a YAML document as a mapping using `YAMLDoc.setRootAsMap()` or by assigning a new mapping node directly to the root value, such as `YAMLDoc.root.value = new MappingNode()`. To append values, the documentation indicates that mapping nodes support an `appendNode` method on their value property, demonstrated in examples like `addressNode1.value.appendNode(countryNode1)`.
+
+However, the provided documentation does not explicitly show a combined example of setting the root as a mapping and then appending values to that specific root node. While it confirms the methods for setting the root type and the existence of `appendNode` on mapping nodes, it does not verify the exact usage for the root mapping itself.
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             2
+  Prompt tokens:     1,765
+  Completion tokens: 7,295
+  Total tokens:      9,060
+  Estimated cost:    $0.00201
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openrouter/qwen/qwen3.5-flash-02-23
+  Total LLM calls:         2
+  Total prompt tokens:     1,765
+  Total completion tokens: 7,295
+  Total tokens:            9,060
+  Total estimated cost:    $0.00201
+============================================================

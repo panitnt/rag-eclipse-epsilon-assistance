@@ -1,0 +1,280 @@
+Session started: 2026-07-28 00:21:20
+Model: openrouter/qwen/qwen3.5-flash-02-23 | temperature=0
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[00:21:45]
+
+── QUESTION ──────────────────────────────────────────────
+How does EGX differ from EGL, and why is EGX needed as a separate language?
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - How does EGX differ from EGL, and why is EGX needed as a separate language?
+  - EGX versus EGL language comparison Eclipse Epsilon
+  - EGX language syntax Eclipse Epsilon
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'How does EGX differ from EGL, and why is EGX needed as a separate language?'
+    1. sim=0.7121  epsilon_docs/egx.md | heading='Epsilon Generation Language'
+    2. sim=0.6768  epsilon_docs/egl.md | heading='Implementing a Custom Formatter'
+    3. sim=0.6572  epsilon_docs/articles_egx-parameters_index.md | heading='Co-ordinating EGL template execution with EGX'
+    4. sim=0.6471  epsilon_docs/index.md | heading='Workflow'
+    5. sim=0.6392  epsilon_docs/egl.md | heading='The Template type'
+    6. sim=0.6293  epsilon_docs/egl.md | heading='Abstract Syntax'
+    7. sim=0.6232  epsilon_docs/articles_epsilon-pojos.md | heading='Running an EGL Template against the POJO'
+    8. sim=0.6162  epsilon_docs/index.md | heading='Languages'
+    9. sim=0.6072  epsilon_docs/articles_egl-server-side_index.md | heading='Setup'
+    10. sim=0.5996  epsilon_docs/articles_jdt_index.md | heading='Applications'
+    11. sim=0.5828  epsilon_docs/articles_index.md | heading='Recipes'
+    12. sim=0.5757  epsilon_docs/articles_json-emc_index.md | heading='Example EGL template'
+    13. sim=0.5573  epsilon_docs/articles_code-generation-tutorial-egl_index.md | heading='Running the Code Generator from Java'
+    14. sim=0.5526  epsilon_docs/articles_egl-server-side_index.md | heading='Loading EMF models in EGL pages'
+    15. sim=0.5523  epsilon_docs/epl.md | heading='The Epsilon Pattern Language (EPL)'
+    16. sim=0.5339  epsilon_docs/flexmi_index.md | heading='Fuzzy Parsing'
+    17. sim=0.5169  epsilon_docs/eol.md | heading='Context-Independent User Input'
+    18. sim=0.4237  epsilon_docs/articles_vscode_index.md | heading='Give it a spin!'
+
+  Query: 'EGX versus EGL language comparison Eclipse Epsilon'
+    1. sim=0.7810  epsilon_docs/egl.md | heading='Implementing a Custom Formatter'
+    2. sim=0.7480  epsilon_docs/articles_jdt_index.md | heading='Applications'
+    3. sim=0.7476  epsilon_docs/index.md | heading='Languages'
+    4. sim=0.7426  epsilon_docs/articles_epsilon-pojos.md | heading='Running an EGL Template against the POJO'
+    5. sim=0.7371  epsilon_docs/articles_json-emc_index.md | heading='Example EGL template'
+    6. sim=0.7018  epsilon_docs/epl.md | heading='The Epsilon Pattern Language (EPL)'
+    7. sim=0.6941  epsilon_docs/articles_egx-parameters_index.md | heading='Co-ordinating EGL template execution with EGX'
+    8. sim=0.6885  epsilon_docs/flexmi_index.md | heading='Fuzzy Parsing'
+    9. sim=0.6777  epsilon_docs/egx.md | heading='Epsilon Generation Language'
+    10. sim=0.6711  epsilon_docs/articles_index.md | heading='Recipes'
+    11. sim=0.6666  epsilon_docs/egl.md | heading='Abstract Syntax'
+    12. sim=0.6652  epsilon_docs/index.md | heading='Workflow'
+    13. sim=0.6314  epsilon_docs/eol.md | heading='Context-Independent User Input'
+    14. sim=0.6110  epsilon_docs/articles_code-generation-tutorial-egl_index.md | heading='Running the Code Generator from Java'
+    15. sim=0.5843  epsilon_docs/egl.md | heading='The Template type'
+    16. sim=0.5760  epsilon_docs/articles_egl-server-side_index.md | heading='Setup'
+    17. sim=0.5384  epsilon_docs/articles_vscode_index.md | heading='Give it a spin!'
+    18. sim=0.5383  epsilon_docs/articles_egl-server-side_index.md | heading='Loading EMF models in EGL pages'
+
+  Query: 'EGX language syntax Eclipse Epsilon'
+    1. sim=0.8051  epsilon_docs/egl.md | heading='Implementing a Custom Formatter'
+    2. sim=0.7818  epsilon_docs/articles_jdt_index.md | heading='Applications'
+    3. sim=0.7467  epsilon_docs/articles_json-emc_index.md | heading='Example EGL template'
+    4. sim=0.7326  epsilon_docs/index.md | heading='Languages'
+    5. sim=0.7313  epsilon_docs/articles_epsilon-pojos.md | heading='Running an EGL Template against the POJO'
+    6. sim=0.7165  epsilon_docs/flexmi_index.md | heading='Fuzzy Parsing'
+    7. sim=0.7132  epsilon_docs/epl.md | heading='The Epsilon Pattern Language (EPL)'
+    8. sim=0.6950  epsilon_docs/articles_egx-parameters_index.md | heading='Co-ordinating EGL template execution with EGX'
+    9. sim=0.6683  epsilon_docs/egx.md | heading='Epsilon Generation Language'
+    10. sim=0.6657  epsilon_docs/articles_index.md | heading='Recipes'
+    11. sim=0.6576  epsilon_docs/eol.md | heading='Context-Independent User Input'
+    12. sim=0.6422  epsilon_docs/index.md | heading='Workflow'
+    13. sim=0.6316  epsilon_docs/egl.md | heading='Abstract Syntax'
+    14. sim=0.6124  epsilon_docs/articles_code-generation-tutorial-egl_index.md | heading='Running the Code Generator from Java'
+    15. sim=0.5918  epsilon_docs/egl.md | heading='The Template type'
+    16. sim=0.5834  epsilon_docs/articles_vscode_index.md | heading='Give it a spin!'
+    17. sim=0.5632  epsilon_docs/articles_egl-server-side_index.md | heading='Setup'
+    18. sim=0.5327  epsilon_docs/articles_egl-server-side_index.md | heading='Loading EMF models in EGL pages'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (7):
+  1. [0.963] epsilon_docs/index.md (heading='Workflow', parent_heading='Tools')
+     -   [Epsilon Generation Language (EGL)](egl.md): A template-based model-to-text language for generating code, documentation and other textual artefacts from models. EGL supports content-destination de
+  2. [0.908] epsilon_docs/egx.md (heading='Epsilon Generation Language', parent_heading='The EGL Co-Ordination Language (EGX)')
+     # The EGL Co-Ordination Language (EGX)
+
+EGX is a rule-based co-ordination language designed for automating the parametrised execution of model-to-text template transformations. Although built on top o
+  3. [0.841] epsilon_docs/articles_json-emc_index.md (heading='Example EGL template', parent_heading='Querying a JSON document')
+     ## Example EGL template
+Example: generate a formatted GitHub repository summary using Eclipse Epsilon Generation Language (EGL) template syntax.
+Keywords: .name
+
+```egl
+# Eclipse Epsilon
+
+([%=M.root.s
+  4. [0.833] epsilon_docs/articles_jdt_index.md (heading='Applications', parent_heading='Treating Java code as a model in Epsilon')
+     ## Applications
+Example: generate code from a Java model using EGX in an Eclipse Epsilon application.
+
+```egx
+    {{{ example("org.eclipse.epsilon.examples.jdt.picto/jcd.egx", true) }}}
+    ```
+  5. [0.804] epsilon_docs/egl.md (heading='Abstract Syntax', parent_heading='The Epsilon Generation Language (EGL)')
+     ## Abstract Syntax
+Example: illustrate the class hierarchy and methods of EglSection and its subclasses in Eclipse Epsilon.
+
+```mermaid
+classDiagram
+class EglSection {
+	+getChildren(): List
+	+getText(
+  6. [0.638] epsilon_docs/index.md (heading='Languages', parent_heading='Documentation')
+     ## Languages
+Example: visualize relationships and extensions among Eclipse Epsilon languages and their model connectivity components.
+
+```mermaid
+graph TD
+	ECL["Model<br/>comparison<br/>(ECL)"]
+	Flock
+  7. [0.427] epsilon_docs/articles_egx-parameters_index.md (heading='Co-ordinating EGL template execution with EGX', parent_heading='')
+     # Co-ordinating EGL template execution with EGX
+Suppose you're using Epsilon to make a compiler for a domain-specific language (DSL). Specifically, for every Library in the DSL, you want to generate a
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon. Use only the documentation below — do not use outside knowledge, and say so if it doesn't cover something.
+
+Documentation:
+--- DOCUMENTATION ---
+[Source: epsilon_docs/index.md]
+-   [Epsilon Generation Language (EGL)](egl.md): A template-based model-to-text language for generating code, documentation and other textual artefacts from models. EGL supports content-destination decoupling, protected regions for mixing generated with hand-written code. EGL also provides a rule-based coordination language ([EGX](egx)), that allows specific EGL templates to be executed for a specific model element type, with the ability to guard rule execution and specify generation target location by type/element.
+-   [Epsilon Transformation Language (ETL)](etl.md): A rule-based model-to-model transformation language that supports transforming many input to many output models, rule inheritance, lazy and greedy rules, and the ability to query and modify both input and output models.
+-   [Epsilon Validation Language (EVL)](evl.md): A model validation language that supports both intra and inter-model consistency checking, constraint dependency management and specifying fixes that users can invoke to repair identified inconsistencies. EVL is integrated with EMF/GMF and as such, EVL constraints can be evaluated from within EMF/GMF editors and generate error markers for failed constraints.
+-   [Epsilon Wizard Language (EWL)](ewl.md): A language tailored to interactive in-place model transformations on model elements selected by the user. EWL is integrated with EMF/GMF and as such, wizards can be executed from within EMF and GMF editors.
+
+[Source: epsilon_docs/egx.md]
+# The EGL Co-Ordination Language (EGX)
+
+EGX is a rule-based co-ordination language designed for automating the parametrised execution of model-to-text template transformations. Although built on top of the Epsilon Generation Language (EGL), EGX can in principle work with any template-based model-to-text transformation language. The rationale for this co-ordination language comes from the need to invoke text generation templates multiple times with various parameters, usually derived from input models. To better understand EGX, it is helpful to be familiar with template-based text generation. 
+
+
+## Epsilon Generation Language
+
+[Source: epsilon_docs/articles_json-emc_index.md]
+## Example EGL template
+Example: generate a formatted GitHub repository summary using Eclipse Epsilon Generation Language (EGL) template syntax.
+Keywords: .name
+
+```egl
+# Eclipse Epsilon
+
+([%=M.root.stargazers_count%] stars, [%=M.root.watchers_count%] watchers, [%=M.root.forks_count%] forks)
+
+[%=M.root.description%]
+
+* Clone via HTTPS: [%=M.root.clone_url%]
+* Clone via SSH: [%=M.root.ssh_url%]
+
+## License
+
+Epsilon is licensed under the [[%=M.root.license.name%]]([%=M.root.license.url%]).
+
+## Topics
+
+[% for (topic in M.root.topics) {%]
+* [%=topic.ftuc()%]
+[% } %]
+```
+
+[Source: epsilon_docs/articles_jdt_index.md]
+## Applications
+Example: generate code from a Java model using EGX in an Eclipse Epsilon application.
+
+```egx
+    {{{ example("org.eclipse.epsilon.examples.jdt.picto/jcd.egx", true) }}}
+    ```
+
+[Source: epsilon_docs/egl.md]
+## Abstract Syntax
+Example: illustrate the class hierarchy and methods of EglSection and its subclasses in Eclipse Epsilon.
+
+```mermaid
+classDiagram
+class EglSection {
+	+getChildren(): List
+	+getText(): String
+}
+class EglDynamicSection {
+	+getText(): String
+}
+class EglStaticSection {
+	+getText(): String
+}
+class EglShortcutSection {
+	+getText(): String
+}
+EglSection <|-- EglDynamicSection
+EglSection <|-- EglStaticSection
+EglSection <|-- EglShortcutSection
+```
+
+[Source: epsilon_docs/index.md]
+## Languages
+Example: visualize relationships and extensions among Eclipse Epsilon languages and their model connectivity components.
+
+```mermaid
+graph TD
+	ECL["Model<br/>comparison<br/>(ECL)"]
+	Flock["Model<br/>migration<br/>(Flock)"]
+	EGL["Code<br/>generation<br/>(EGL)"]
+	EVL["Model<br/>validation<br/>(EVL)"]
+	EPL["Pattern<br/>Matching<br/>(EPL)"]
+	EML["Model<br/>Merging<br/>(EML)"]
+	ETL["M2M<br/>Transformation<br/>(ETL)"]
+	EOL["Epsilon Object Language (EOL)"]
+	ETL --> |extends|EOL
+	EML --> |uses for matching|ECL
+	EML --> |extends|ETL
+	EPL --> |extends|EOL
+	ECL --> |extends|EOL
+	EGL --> |preprocessed into|EOL
+	EVL --> |extends|EOL
+	Flock --> |extends|EOL
+	Pinset --> |extends|EOL
+
+	EMC["Epsilon Model Connectivity (EMC)"]
+	EMF["Eclipse Modeling<br/> Framework (EMF)"]
+	Simulink["MATLAB<br/>Simulink"]
+	Excel["Excel<br/>Speadsheets"]
+	PTC["PTC Integrity<br/>Modeller"]
+	Dots["..."]
+
+	EOL -->|accesses models through| EMC
+	EMC --- EMF
+	EMC --- Simulink
+	EMC --- XML
+	EMC --- Excel
+	EMC --- PTC
+	EMC --- CSV
+	EMC --- Dots
+```
+
+[Source: epsilon_docs/articles_egx-parameters_index.md]
+# Co-ordinating EGL template execution with EGX
+Suppose you're using Epsilon to make a compiler for a domain-specific language (DSL). Specifically, for every Library in the DSL, you want to generate a separate XML file with all of the properties of the Library and its Books. With EGX, you can parameterize your EGL templates to achieve this, like so:
+
+--- USER MESSAGE ---
+How does EGX differ from EGL, and why is EGX needed as a separate language?
+
+Before writing your answer, silently check each part of the question against the documentation — including whether any combination of separately-documented pieces is actually shown together, not just individually present somewhere. Don't show this checking process or split your answer into labeled parts. Write a smooth, natural answer, and weave in a brief, honest note wherever something isn't directly confirmed, rather than presenting it as verified.
+
+Be concise, and let the length of your answer reflect how much the documentation actually supports — don't stretch a thin piece of evidence into a long, confident-sounding answer.
+
+Question:
+How does EGX differ from EGL, and why is EGX needed as a separate language?
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+According to the documentation, EGL is a template-based model-to-text language used for generating code and other artefacts from models, while EGX is defined as a rule-based coordination language built on top of EGL. Although the index states that EGL provides EGX, the EGX documentation treats it as a distinct language for automating the parametrised execution of template transformations. The rationale for EGX is the need to invoke text generation templates multiple times with various parameters derived from input models. It allows specific EGL templates to be executed for specific model element types, with the ability to guard rule execution and specify generation target locations by type or element. However, the documentation does not explicitly explain why EGX is maintained as a separate language rather than a feature of EGL, other than describing the functional necessity of this coordination logic.
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             2
+  Prompt tokens:     1,732
+  Completion tokens: 8,187
+  Total tokens:      9,919
+  Estimated cost:    $0.00224
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openrouter/qwen/qwen3.5-flash-02-23
+  Total LLM calls:         2
+  Total prompt tokens:     1,732
+  Total completion tokens: 8,187
+  Total tokens:            9,919
+  Total estimated cost:    $0.00224
+============================================================

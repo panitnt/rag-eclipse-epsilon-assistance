@@ -1,0 +1,49 @@
+- tenantId: TEN-001
+  name: Brightline Logistics
+  plan: enterprise
+  seats: {purchased: 50, active: 47}
+
+- tenantId: TEN-002
+  name: Fernwood Studio
+  plan: pro
+  seats: {purchased: 12, active: 9}
+
+- tenantId: TEN-003
+  name: Oakridge Analytics
+  plan: pro
+  seats: {purchased: 20, active: 20}
+
+- tenantId: TEN-004
+  name: Silverline Health
+  plan: enterprise
+  seats: {purchased: 80, active: 61}
+
+- tenantId: TEN-005
+  name: Kestrel Robotics
+  plan: starter
+  seats: {purchased: 5, active: 5}
+
+- tenantId: TEN-006
+  name: Marlowe & Finch
+  plan: pro
+  seats: {purchased: 15, active: 11}
+
+- tenantId: TEN-007
+  name: Pinewood Retail
+  plan: starter
+  seats: {purchased: 3, active: 2}
+
+- tenantId: TEN-008
+  name: Cobalt Freight
+  plan: enterprise
+  seats: {purchased: 100, active: 88}
+
+- tenantId: TEN-009
+  name: Hollowfield Legal
+  plan: pro
+  seats: {purchased: 18, active: 18}
+
+- tenantId: TEN-010
+  name: Thistledown Media
+  plan: starter
+  seats: {purchased: 4, active: 1}

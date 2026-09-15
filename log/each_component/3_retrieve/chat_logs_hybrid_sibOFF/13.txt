@@ -1,0 +1,1149 @@
+Session started: 2026-07-30 12:45:35
+Model: openai/gpt-5-mini | temperature=0
+RETRIEVAL_MODE=hybrid (BAAI/bge-m3 dense + BM25 sparse, Qdrant fusion), no query expansion
+SIBLING_EXPANSION=off
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[12:45:39]
+
+── QUESTION ──────────────────────────────────────────────
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- orderId: ORD-20240613-88421
+  placedAt: "2024-06-13T09:15:00Z"
+  status: partially_shipped
+
+  customer:
+    id: CUST-4421
+    name: Sophie Marchand
+    email: sophie.marchand@email.com
+    tier: gold
+    loyaltyPoints:
+      balance: 3420
+      earned_this_order: 85
+
+  shipping:
+    address:
+      line1: 14 Rue de Rivoli
+      line2: Apt 3B
+      city: Paris
+      postcode: "75001"
+      country: FR
+    method: express_48h
+    estimatedDelivery: "2024-06-15"
+    tracking:
+      - parcelId: PKG-001
+        carrier: DHL
+        status: in_transit
+        items:
+          - SKU-992
+          - SKU-993
+      - parcelId: PKG-002
+        carrier: Colissimo
+        status: preparing
+        items:
+          - SKU-1041
+
+  billing:
+    sameAsShipping: false
+    address:
+      line1: 7 Boulevard Haussmann
+      city: Paris
+      postcode: "75009"
+      country: FR
+
+  items:
+    - sku: SKU-992
+      name: Wireless Noise-Cancelling Headphones
+      qty: 1
+      unitPrice: 189.99
+      discount:
+        type: percentage
+        value: 10
+      finalPrice: 170.99
+    - sku: SKU-993
+      name: USB-C Charging Cable (2m)
+      qty: 3
+      unitPrice: 12.50
+      discount: null
+      finalPrice: 37.50
+    - sku: SKU-1041
+      name: Laptop Stand (Aluminium)
+      qty: 1
+      unitPrice: 54.00
+      discount:
+        type: fixed
+        value: 5.00
+      finalPrice: 49.00
+
+  payment:
+    method: card
+    card:
+      last4: "7823"
+      brand: Visa
+      expiresAt: "2026-09"
+    breakdown:
+      subtotal: 257.49
+      shipping: 4.99
+      tax: 25.75
+      loyaltyDiscount: -17.10
+      total: 271.13
+    status: captured
+
+- orderId: ORD-20250722-55381
+  placedAt: "2025-07-22T14:45:00Z"
+  status: delivered
+
+  customer:
+    id: CUST-9875
+    name: Michael Turner
+    email: michael.turner@example.com
+    tier: platinum
+    loyaltyPoints:
+      balance: 7850
+      earned_this_order: 220
+
+  shipping:
+    address:
+      line1: 88 King Street
+      line2: Suite 12
+      city: Manchester
+      postcode: "M2 4WQ"
+      country: UK
+    method: next_day_delivery
+    estimatedDelivery: "2025-07-23"
+    tracking:
+      - parcelId: PAR-78101
+        carrier: DPD
+        status: delivered
+        items:
+          - SKU-BALL-001
+          - SKU-GLOVE-002
+
+      - parcelId: PAR-78102
+        carrier: Royal Mail
+        status: delivered
+        items:
+          - SKU-BAG-005
+
+  billing:
+    sameAsShipping: true
+    address:
+      line1: 88 King Street
+      city: Manchester
+      postcode: "M2 4WQ"
+      country: UK
+
+  items:
+    - sku: SKU-BALL-001
+      name: Professional Football
+      qty: 2
+      unitPrice: 34.99
+      discount:
+        type: percentage
+        value: 15
+      finalPrice: 59.48
+
+    - sku: SKU-GLOVE-002
+      name: Goalkeeper Gloves Pro
+      qty: 1
+      unitPrice: 49.99
+      discount:
+        type: fixed
+        value: 5.00
+      finalPrice: 44.99
+
+    - sku: SKU-BAG-005
+      name: Sports Equipment Bag
+      qty: 1
+      unitPrice: 39.99
+      discount: null
+      finalPrice: 39.99
+
+  payment:
+    method: paypal
+
+    card:
+      last4: "0000"
+      brand: PayPal
+      expiresAt: null
+
+    breakdown:
+      subtotal: 144.96
+      shipping: 6.99
+      tax: 30.39
+      loyaltyDiscount: -20.00
+      total: 162.34
+
+    status: completed
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- orderId: ORD-20240613-88421
+  placedAt: "2024-06-13T09:15:00Z"
+  status: partially_shipped
+
+  customer:
+    id: CUST-4421
+    name: Sophie Marchand
+    email: sophie.marchand@email.com
+    tier: gold
+    loyaltyPoints:
+      balance: 3420
+      earned_this_order: 85
+
+  shipping:
+    address:
+      line1: 14 Rue de Rivoli
+      line2: Apt 3B
+      city: Paris
+      postcode: "75001"
+      country: FR
+    method: express_48h
+    estimatedDelivery: "2024-06-15"
+    tracking:
+      - parcelId: PKG-001
+        carrier: DHL
+        status: in_transit
+        items:
+          - SKU-992
+          - SKU-993
+      - parcelId: PKG-002
+        carrier: Colissimo
+        status: preparing
+        items:
+          - SKU-1041
+
+  billing:
+    sameAsShipping: false
+    address:
+      line1: 7 Boulevard Haussmann
+      city: Paris
+      postcode: "75009"
+      country: FR
+
+  items:
+    - sku: SKU-992
+      name: Wireless Noise-Cancelling Headphones
+      qty: 1
+      unitPrice: 189.99
+      discount:
+        type: percentage
+        value: 10
+      finalPrice: 170.99
+    - sku: SKU-993
+      name: USB-C Charging Cable (2m)
+      qty: 3
+      unitPrice: 12.50
+      discount: null
+      finalPrice: 37.50
+    - sku: SKU-1041
+      name: Laptop Stand (Aluminium)
+      qty: 1
+      unitPrice: 54.00
+      discount:
+        type: fixed
+        value: 5.00
+      finalPrice: 49.00
+
+  payment:
+    method: card
+    card:
+      last4: "7823"
+      brand: Visa
+      expiresAt: "2026-09"
+    breakdown:
+      subtotal: 257.49
+      shipping: 4.99
+      tax: 25.75
+      loyaltyDiscount: -17.10
+      total: 271.13
+    status: captured
+
+- orderId: ORD-20250722-55381
+  placedAt: "2025-07-22T14:45:00Z"
+  status: delivered
+
+  customer:
+    id: CUST-9875
+    name: Michael Turner
+    email: michael.turner@example.com
+    tier: platinum
+    loyaltyPoints:
+      balance: 7850
+      earned_this_order: 220
+
+  shipping:
+    address:
+      line1: 88 King Street
+      line2: Suite 12
+      city: Manchester
+      postcode: "M2 4WQ"
+      country: UK
+    method: next_day_delivery
+    estimatedDelivery: "2025-07-23"
+    tracking:
+      - parcelId: PAR-78101
+        carrier: DPD
+        status: delivered
+        items:
+          - SKU-BALL-001
+          - SKU-GLOVE-002
+
+      - parcelId: PAR-78102
+        carrier: Royal Mail
+        status: delivered
+        items:
+          - SKU-BAG-005
+
+  billing:
+    sameAsShipping: true
+    address:
+      line1: 88 King Street
+      city: Manchester
+      postcode: "M2 4WQ"
+      country: UK
+
+  items:
+    - sku: SKU-BALL-001
+      name: Professional Football
+      qty: 2
+      unitPrice: 34.99
+      discount:
+        type: percentage
+        value: 15
+      finalPrice: 59.48
+
+    - sku: SKU-GLOVE-002
+      name: Goalkeeper Gloves Pro
+      qty: 1
+      unitPrice: 49.99
+      discount:
+        type: fixed
+        value: 5.00
+      finalPrice: 44.99
+
+    - sku: SKU-BAG-005
+      name: Sports Equipment Bag
+      qty: 1
+      unitPrice: 39.99
+      discount: null
+      finalPrice: 39.99
+
+  payment:
+    method: paypal
+
+    card:
+      last4: "0000"
+      brand: PayPal
+      expiresAt: null
+
+    breakdown:
+      subtotal: 144.96
+      shipping: 6.99
+      tax: 30.39
+      loyaltyDiscount: -20.00
+      total: 162.34
+
+    status: completed
+
+── HYBRID POOL (before rerank, before sibling expansion) ──
+  1. [0.611] epsilon_docs/articles_yaml-emc_index.md (heading='How can I create a YAML document from scratch?', parent_heading='Querying/modifying YAML documents in EOL')
+  2. [0.500] epsilon_docs/eol.md (heading='Variable Declaration Statement', parent_heading='Expressions')
+  3. [0.333] epsilon_docs/articles_yaml-emc_index.md (heading='Querying a YAML document', parent_heading='Scripting YAML documents using Epsilon')
+  4. [0.333] epsilon_docs/flock.md (heading='Epsilon Flock for Model Migration', parent_heading='')
+  5. [0.268] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+  6. [0.250] epsilon_docs/articles_yaml-emc_index.md (heading='How can I create a YAML document from scratch?', parent_heading='Querying/modifying YAML documents in EOL')
+  7. [0.250] epsilon_docs/egl.md (heading='An Example of Co-ordination with EGL', parent_heading='Co-ordination')
+  8. [0.200] epsilon_docs/articles_yaml-emc_index.md (heading='Querying a YAML document', parent_heading='Scripting YAML documents using Epsilon')
+  9. [0.200] epsilon_docs/pinset_index.md (heading='Model example', parent_heading='Dataset Extraction (Pinset)')
+  10. [0.167] epsilon_docs/articles_developing-a-new-emc-driver_index.md (heading='Filesystem Driver', parent_heading='Developing a new EMC Driver')
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.\n- orderId: ORD-20240613-88421\n  placedAt: "2024-06-13T09:15:00Z"\n  status: partially_shipped\n\n  customer:\n    id: CUST-4421\n    name: Sophie Marchand\n    email: sophie.marchand@email.com\n    tier: gold\n    loyaltyPoints:\n      balance: 3420\n      earned_this_order: 85\n\n  shipping:\n    address:\n      line1: 14 Rue de Rivoli\n      line2: Apt 3B\n      city: Paris\n      postcode: "75001"\n      country: FR\n    method: express_48h\n    estimatedDelivery: "2024-06-15"\n    tracking:\n      - parcelId: PKG-001\n        carrier: DHL\n        status: in_transit\n        items:\n          - SKU-992\n          - SKU-993\n      - parcelId: PKG-002\n        carrier: Colissimo\n        status: preparing\n        items:\n          - SKU-1041\n\n  billing:\n    sameAsShipping: false\n    address:\n      line1: 7 Boulevard Haussmann\n      city: Paris\n      postcode: "75009"\n      country: FR\n\n  items:\n    - sku: SKU-992\n      name: Wireless Noise-Cancelling Headphones\n      qty: 1\n      unitPrice: 189.99\n      discount:\n        type: percentage\n        value: 10\n      finalPrice: 170.99\n    - sku: SKU-993\n      name: USB-C Charging Cable (2m)\n      qty: 3\n      unitPrice: 12.50\n      discount: null\n      finalPrice: 37.50\n    - sku: SKU-1041\n      name: Laptop Stand (Aluminium)\n      qty: 1\n      unitPrice: 54.00\n      discount:\n        type: fixed\n        value: 5.00\n      finalPrice: 49.00\n\n  payment:\n    method: card\n    card:\n      last4: "7823"\n      brand: Visa\n      expiresAt: "2026-09"\n    breakdown:\n      subtotal: 257.49\n      shipping: 4.99\n      tax: 25.75\n      loyaltyDiscount: -17.10\n      total: 271.13\n    status: captured\n\n- orderId: ORD-20250722-55381\n  placedAt: "2025-07-22T14:45:00Z"\n  status: delivered\n\n  customer:\n    id: CUST-9875\n    name: Michael Turner\n    email: michael.turner@example.com\n    tier: platinum\n    loyaltyPoints:\n      balance: 7850\n      earned_this_order: 220\n\n  shipping:\n    address:\n      line1: 88 King Street\n      line2: Suite 12\n      city: Manchester\n      postcode: "M2 4WQ"\n      country: UK\n    method: next_day_delivery\n    estimatedDelivery: "2025-07-23"\n    tracking:\n      - parcelId: PAR-78101\n        carrier: DPD\n        status: delivered\n        items:\n          - SKU-BALL-001\n          - SKU-GLOVE-002\n\n      - parcelId: PAR-78102\n        carrier: Royal Mail\n        status: delivered\n        items:\n          - SKU-BAG-005\n\n  billing:\n    sameAsShipping: true\n    address:\n      line1: 88 King Street\n      city: Manchester\n      postcode: "M2 4WQ"\n      country: UK\n\n  items:\n    - sku: SKU-BALL-001\n      name: Professional Football\n      qty: 2\n      unitPrice: 34.99\n      discount:\n        type: percentage\n        value: 15\n      finalPrice: 59.48\n\n    - sku: SKU-GLOVE-002\n      name: Goalkeeper Gloves Pro\n      qty: 1\n      unitPrice: 49.99\n      discount:\n        type: fixed\n        value: 5.00\n      finalPrice: 44.99\n\n    - sku: SKU-BAG-005\n      name: Sports Equipment Bag\n      qty: 1\n      unitPrice: 39.99\n      discount: null\n      finalPrice: 39.99\n\n  payment:\n    method: paypal\n\n    card:\n      last4: "0000"\n      brand: PayPal\n      expiresAt: null\n\n    breakdown:\n      subtotal: 144.96\n      shipping: 6.99\n      tax: 30.39\n      loyaltyDiscount: -20.00\n      total: 162.34\n\n    status: completed'
+    1. sim=0.7596  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    2. sim=0.7087  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    3. sim=0.6899  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    4. sim=0.6758  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    5. sim=0.5814  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    6. sim=0.5664  epsilon_docs/flock.md | heading='Epsilon Flock for Model Migration'
+    7. sim=0.5307  epsilon_docs/pinset_index.md | heading='Model example'
+    8. sim=0.5199  epsilon_docs/eol.md | heading='Variable Declaration Statement'
+
+── RETRIEVED (after dedup + rerank pass 1 only — sibling expansion OFF) ──
+
+Docs (4):
+  1. [0.974] epsilon_docs/articles_yaml-emc_index.md (heading='How can I create a YAML document from scratch?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## How can I create a YAML document from scratch?
+Example: create a YAML document from scratch by building and appending MappingNode, ScalarNode, and ListNode elements.
+Keywords: setRootAsList, getRoo
+  2. [0.659] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YA
+  3. [0.590] epsilon_docs/articles_yaml-emc_index.md (heading='Querying a YAML document', parent_heading='Scripting YAML documents using Epsilon')
+     # Scripting YAML documents using Epsilon
+ 
+In this article we demonstrate how you can create, query and modify YAML documents in Epsilon programs using the YAML driver. All the examples in this articl
+  4. [0.536] epsilon_docs/articles_developing-a-new-emc-driver_index.md (heading='Filesystem Driver', parent_heading='Developing a new EMC Driver')
+     # Developing a new EMC Driver
+
+This article demonstrates the implementation of "drivers" for Epsilon's [Model Connectivity layer](../../emc).
+
+## YAML Driver
+
+The following training session recording 
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon.
+
+Use the provided context as the PRIMARY and AUTHORITATIVE source of truth.
+Only use syntax, class names, methods, and patterns that appear explicitly in the context.
+You may adapt documented patterns to the user's structure, provided that no new APIs or unsupported methods are invented.
+If the user's message contains sample data, treat it only as the desired target structure — not as evidence for API syntax.
+If the context provides partial evidence only, generate code for the parts that are supported and explicitly flag any parts that are uncertain or unsupported.
+
+When a code example is appropriate, provide a complete and runnable example that covers the full structure given by the user.
+When generating code, follow only the patterns shown in the context exactly — do not skip initialisation steps, introduce intermediate objects, or shortcut method chains that are not explicitly demonstrated.
+
+--- DOCUMENTATION ---
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## How can I create a YAML document from scratch?
+Example: create a YAML document from scratch by building and appending MappingNode, ScalarNode, and ListNode elements.
+Keywords: setRootAsList, getRoot, .value, addRows, new MappingNode, new ScalarNode, residentNode, postcodeNode, appendNode, industryNode, new ListNode, projectsNode, skillsNode
+
+```eol
+YAMLDoc.setRootAsList();
+var root = YAMLDoc.getRoot();
+root.value.addRows(2);
+var rootFirstRow = root.value.at(0);
+var rootSecondRow = root.value.at(1);
+
+var addressNode1 = new MappingNode("address");
+var countryNode1 = new ScalarNode("country", "England");
+var residentNode = new ScalarNode("resident", true);
+var postcodeNode = new ScalarNode("postcode", "M1 1AG");
+addressNode1.value.appendNode(countryNode1);
+addressNode1.value.appendNode(residentNode);
+addressNode1.value.appendNode(postcodeNode);
+
+var employeeIdNode1 = new ScalarNode("employeeId", "14623");
+var fullnameNode1 = new ScalarNode("fullname", "Michael Davidson");
+var roleNode1 = new ScalarNode("role", "Consultant");
+
+var industryNode = new ListNode("industry", 3);
+industryNode.value =  Sequence{"IoT", "smart factories", "signal analytics"};
+
+var projectsNode = new ListNode("projects", 2);
+var nameNode1 = new ScalarNode("name", "SmartAutomation");
+var nameNode2 = new ScalarNode("name", "FactoryAnalytics");
+var budgetNode1 = new ScalarNode("budget", 25000);
+var budgetNode2 = new ScalarNode("budget", 20000);
+projectsNode.value.at(0).appendNode(nameNode1);
+projectsNode.value.at(0).appendNode(budgetNode1);
+projectsNode.value.at(1).appendNode(nameNode2);
+projectsNode.value.at(1).appendNode(budgetNode2);
+
+var addressNode2 = new MappingNode("address");
+var countryNode2 = new ScalarNode("country", "Germany");
+addressNode2.value.appendNode(countryNode2);
+
+var employeeIdNode2 = new ScalarNode("employeeId", "16431");
+var fullnameNode2 = new ScalarNode("fullname", "Arnold Wagner");
+var roleNode2 = new ScalarNode("role", "HR");
+
+var skillsNode = new ListNode("skills", 2);
+skillsNode.value =  Sequence{"communication", "coaching"};
+
+rootFirstRow.appendNode(employeeIdNode1);
+rootFirstRow.appendNode(addressNode1);
+rootFirstRow.appendNode(fullnameNode1);
+rootFirstRow.appendNode(roleNode1);
+rootFirstRow.appendNode(industryNode);
+rootFirstRow.appendNode(projectsNode);
+
+rootSecondRow.appendNode(employeeIdNode2);
+rootSecondRow.appendNode(addressNode2);
+rootSecondRow.appendNode(fullnameNode2);
+rootSecondRow.appendNode(roleNode2);
+rootSecondRow.appendNode(skillsNode);
+```
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YAML node must be specified when accessing YAML nodes via the YAML driver. There are 3 types of nodes in YAML:
+
+- `Scalar Node`. Scalar nodes are used to represent a single scalar value (e.g., string, boolean, integer). In the YAML driver, a scalar node consists of a key-value pair, in which the key represents the name of the scalar node, and the value represents the scalar value.
+- `Mapping Node`. Mapping nodes are used to represent unordered collections of key-value pairs. In the YAML driver, a mapping node consists of a key-value pair, in which the key represents the name of the mapping node, and the value holds an unordered collection of key-value pairs, which in turn represent other nodes.
+- `List (Sequence) Node`. List nodes are used to represent an ordered list of nodes or scalar values. In the YAML driver, a list node consists of a key-value pair, in which the key represents the name of the list node, and the value represents a list of nodes or scalar values.
+
+This section outlines the supported conventions in the form of questions and answers followed by relevant examples.
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+# Scripting YAML documents using Epsilon
+ 
+In this article we demonstrate how you can create, query and modify YAML documents in Epsilon programs using the YAML driver. All the examples in this article demonstrate using EOL to script YAML documents. However, it's worth stressing that YAML documents are supported throughout Epsilon. Therefore, you can use Epsilon to (cross-)validate, transform (to other models – XML, CSV or EMF-based, or to text), compare and merge your YAML documents.
+
+<iframe width="90%" height="494" src="https://www.youtube.com/embed/TF0fgghP938" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Querying a YAML document
+ 
+We use the following `employees.yaml` as a base for demonstrating the EOL syntax for querying YAML documents.
+
+[Source: epsilon_docs/articles_developing-a-new-emc-driver_index.md]
+# Developing a new EMC Driver
+
+This article demonstrates the implementation of "drivers" for Epsilon's [Model Connectivity layer](../../emc).
+
+## YAML Driver
+
+The following training session recording and deck of slides demonstrate the implementation of [Epsilon's YAML driver](../yaml-emc). The complete source-code is located in [Epsilon's Git repository](https://github.com/eclipse-epsilon/epsilon/tree/main/plugins/org.eclipse.epsilon.emc.yaml).
+
+<iframe src="https://www.youtube.com/embed/M0nvnhSF6Y0" width="100%" height="485" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen></iframe> <div style="margin-bottom:15px"></div>
+
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/yc9uUXElc1Zbac" width="100%" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:15px"></div>
+
+## CSV Pro Driver
+
+The slides below demonstrate the implementation of an alternative driver for CSV files, located under the [`examples` folder of Epsilon's repository](https://github.com/eclipse-epsilon/epsilon/tree/main/examples/org.eclipse.epsilon.emc.csvpro).
+
+--- USER MESSAGE ---
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- orderId: ORD-20240613-88421
+  placedAt: "2024-06-13T09:15:00Z"
+  status: partially_shipped
+
+  customer:
+    id: CUST-4421
+    name: Sophie Marchand
+    email: sophie.marchand@email.com
+    tier: gold
+    loyaltyPoints:
+      balance: 3420
+      earned_this_order: 85
+
+  shipping:
+    address:
+      line1: 14 Rue de Rivoli
+      line2: Apt 3B
+      city: Paris
+      postcode: "75001"
+      country: FR
+    method: express_48h
+    estimatedDelivery: "2024-06-15"
+    tracking:
+      - parcelId: PKG-001
+        carrier: DHL
+        status: in_transit
+        items:
+          - SKU-992
+          - SKU-993
+      - parcelId: PKG-002
+        carrier: Colissimo
+        status: preparing
+        items:
+          - SKU-1041
+
+  billing:
+    sameAsShipping: false
+    address:
+      line1: 7 Boulevard Haussmann
+      city: Paris
+      postcode: "75009"
+      country: FR
+
+  items:
+    - sku: SKU-992
+      name: Wireless Noise-Cancelling Headphones
+      qty: 1
+      unitPrice: 189.99
+      discount:
+        type: percentage
+        value: 10
+      finalPrice: 170.99
+    - sku: SKU-993
+      name: USB-C Charging Cable (2m)
+      qty: 3
+      unitPrice: 12.50
+      discount: null
+      finalPrice: 37.50
+    - sku: SKU-1041
+      name: Laptop Stand (Aluminium)
+      qty: 1
+      unitPrice: 54.00
+      discount:
+        type: fixed
+        value: 5.00
+      finalPrice: 49.00
+
+  payment:
+    method: card
+    card:
+      last4: "7823"
+      brand: Visa
+      expiresAt: "2026-09"
+    breakdown:
+      subtotal: 257.49
+      shipping: 4.99
+      tax: 25.75
+      loyaltyDiscount: -17.10
+      total: 271.13
+    status: captured
+
+- orderId: ORD-20250722-55381
+  placedAt: "2025-07-22T14:45:00Z"
+  status: delivered
+
+  customer:
+    id: CUST-9875
+    name: Michael Turner
+    email: michael.turner@example.com
+    tier: platinum
+    loyaltyPoints:
+      balance: 7850
+      earned_this_order: 220
+
+  shipping:
+    address:
+      line1: 88 King Street
+      line2: Suite 12
+      city: Manchester
+      postcode: "M2 4WQ"
+      country: UK
+    method: next_day_delivery
+    estimatedDelivery: "2025-07-23"
+    tracking:
+      - parcelId: PAR-78101
+        carrier: DPD
+        status: delivered
+        items:
+          - SKU-BALL-001
+          - SKU-GLOVE-002
+
+      - parcelId: PAR-78102
+        carrier: Royal Mail
+        status: delivered
+        items:
+          - SKU-BAG-005
+
+  billing:
+    sameAsShipping: true
+    address:
+      line1: 88 King Street
+      city: Manchester
+      postcode: "M2 4WQ"
+      country: UK
+
+  items:
+    - sku: SKU-BALL-001
+      name: Professional Football
+      qty: 2
+      unitPrice: 34.99
+      discount:
+        type: percentage
+        value: 15
+      finalPrice: 59.48
+
+    - sku: SKU-GLOVE-002
+      name: Goalkeeper Gloves Pro
+      qty: 1
+      unitPrice: 49.99
+      discount:
+        type: fixed
+        value: 5.00
+      finalPrice: 44.99
+
+    - sku: SKU-BAG-005
+      name: Sports Equipment Bag
+      qty: 1
+      unitPrice: 39.99
+      discount: null
+      finalPrice: 39.99
+
+  payment:
+    method: paypal
+
+    card:
+      last4: "0000"
+      brand: PayPal
+      expiresAt: null
+
+    breakdown:
+      subtotal: 144.96
+      shipping: 6.99
+      tax: 30.39
+      loyaltyDiscount: -20.00
+      total: 162.34
+
+    status: completed
+
+Question:
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- orderId: ORD-20240613-88421
+  placedAt: "2024-06-13T09:15:00Z"
+  status: partially_shipped
+
+  customer:
+    id: CUST-4421
+    name: Sophie Marchand
+    email: sophie.marchand@email.com
+    tier: gold
+    loyaltyPoints:
+      balance: 3420
+      earned_this_order: 85
+
+  shipping:
+    address:
+      line1: 14 Rue de Rivoli
+      line2: Apt 3B
+      city: Paris
+      postcode: "75001"
+      country: FR
+    method: express_48h
+    estimatedDelivery: "2024-06-15"
+    tracking:
+      - parcelId: PKG-001
+        carrier: DHL
+        status: in_transit
+        items:
+          - SKU-992
+          - SKU-993
+      - parcelId: PKG-002
+        carrier: Colissimo
+        status: preparing
+        items:
+          - SKU-1041
+
+  billing:
+    sameAsShipping: false
+    address:
+      line1: 7 Boulevard Haussmann
+      city: Paris
+      postcode: "75009"
+      country: FR
+
+  items:
+    - sku: SKU-992
+      name: Wireless Noise-Cancelling Headphones
+      qty: 1
+      unitPrice: 189.99
+      discount:
+        type: percentage
+        value: 10
+      finalPrice: 170.99
+    - sku: SKU-993
+      name: USB-C Charging Cable (2m)
+      qty: 3
+      unitPrice: 12.50
+      discount: null
+      finalPrice: 37.50
+    - sku: SKU-1041
+      name: Laptop Stand (Aluminium)
+      qty: 1
+      unitPrice: 54.00
+      discount:
+        type: fixed
+        value: 5.00
+      finalPrice: 49.00
+
+  payment:
+    method: card
+    card:
+      last4: "7823"
+      brand: Visa
+      expiresAt: "2026-09"
+    breakdown:
+      subtotal: 257.49
+      shipping: 4.99
+      tax: 25.75
+      loyaltyDiscount: -17.10
+      total: 271.13
+    status: captured
+
+- orderId: ORD-20250722-55381
+  placedAt: "2025-07-22T14:45:00Z"
+  status: delivered
+
+  customer:
+    id: CUST-9875
+    name: Michael Turner
+    email: michael.turner@example.com
+    tier: platinum
+    loyaltyPoints:
+      balance: 7850
+      earned_this_order: 220
+
+  shipping:
+    address:
+      line1: 88 King Street
+      line2: Suite 12
+      city: Manchester
+      postcode: "M2 4WQ"
+      country: UK
+    method: next_day_delivery
+    estimatedDelivery: "2025-07-23"
+    tracking:
+      - parcelId: PAR-78101
+        carrier: DPD
+        status: delivered
+        items:
+          - SKU-BALL-001
+          - SKU-GLOVE-002
+
+      - parcelId: PAR-78102
+        carrier: Royal Mail
+        status: delivered
+        items:
+          - SKU-BAG-005
+
+  billing:
+    sameAsShipping: true
+    address:
+      line1: 88 King Street
+      city: Manchester
+      postcode: "M2 4WQ"
+      country: UK
+
+  items:
+    - sku: SKU-BALL-001
+      name: Professional Football
+      qty: 2
+      unitPrice: 34.99
+      discount:
+        type: percentage
+        value: 15
+      finalPrice: 59.48
+
+    - sku: SKU-GLOVE-002
+      name: Goalkeeper Gloves Pro
+      qty: 1
+      unitPrice: 49.99
+      discount:
+        type: fixed
+        value: 5.00
+      finalPrice: 44.99
+
+    - sku: SKU-BAG-005
+      name: Sports Equipment Bag
+      qty: 1
+      unitPrice: 39.99
+      discount: null
+      finalPrice: 39.99
+
+  payment:
+    method: paypal
+
+    card:
+      last4: "0000"
+      brand: PayPal
+      expiresAt: null
+
+    breakdown:
+      subtotal: 144.96
+      shipping: 6.99
+      tax: 30.39
+      loyaltyDiscount: -20.00
+      total: 162.34
+
+    status: completed
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+The YAML you provided is a top-level sequence (each top-level entry begins with "-"), so the document root must be a List (Sequence) node. Below is a complete EOL example, following exactly the patterns shown in the EMC YAML Driver docs, that builds your YAML from scratch.
+
+Notes / caveats:
+- The example uses ScalarNode, MappingNode and ListNode exactly as in the documentation.
+- The YAML driver example doc does not show an explicit pattern for representing explicit YAML null values. In the code below I use new ScalarNode("discount", null) and new ScalarNode("expiresAt", null) to represent nulls — this follows the same constructor pattern used for other scalar values, but I flag that representing nulls this way may depend on the driver accepting null as a scalar value. If the driver does not support null via the ScalarNode constructor, you may need to omit the node or use a driver-specific API to mark it as null.
+
+EOL (runnable) code:
+
+```eol
+// Root is a list (sequence)
+YAMLDoc.setRootAsList();
+var root = YAMLDoc.getRoot();
+root.value.addRows(2);
+
+// First order (row 0)
+var firstOrder = root.value.at(0);
+
+// Top-level scalars
+var orderId1 = new ScalarNode("orderId", "ORD-20240613-88421");
+var placedAt1 = new ScalarNode("placedAt", "2024-06-13T09:15:00Z");
+var status1 = new ScalarNode("status", "partially_shipped");
+
+// Customer mapping
+var customer1 = new MappingNode("customer");
+customer1.value.appendNode(new ScalarNode("id", "CUST-4421"));
+customer1.value.appendNode(new ScalarNode("name", "Sophie Marchand"));
+customer1.value.appendNode(new ScalarNode("email", "sophie.marchand@email.com"));
+customer1.value.appendNode(new ScalarNode("tier", "gold"));
+
+var loyalty1 = new MappingNode("loyaltyPoints");
+loyalty1.value.appendNode(new ScalarNode("balance", 3420));
+loyalty1.value.appendNode(new ScalarNode("earned_this_order", 85));
+customer1.value.appendNode(loyalty1);
+
+// Shipping mapping
+var shipping1 = new MappingNode("shipping");
+var address1 = new MappingNode("address");
+address1.value.appendNode(new ScalarNode("line1", "14 Rue de Rivoli"));
+address1.value.appendNode(new ScalarNode("line2", "Apt 3B"));
+address1.value.appendNode(new ScalarNode("city", "Paris"));
+address1.value.appendNode(new ScalarNode("postcode", "75001"));
+address1.value.appendNode(new ScalarNode("country", "FR"));
+shipping1.value.appendNode(address1);
+shipping1.value.appendNode(new ScalarNode("method", "express_48h"));
+shipping1.value.appendNode(new ScalarNode("estimatedDelivery", "2024-06-15"));
+
+// tracking is a list of 2 mapping entries
+var tracking1 = new ListNode("tracking", 2);
+
+// tracking[0]
+tracking1.value.at(0).appendNode(new ScalarNode("parcelId", "PKG-001"));
+tracking1.value.at(0).appendNode(new ScalarNode("carrier", "DHL"));
+tracking1.value.at(0).appendNode(new ScalarNode("status", "in_transit"));
+var trackingItems10 = new ListNode("items", 2);
+trackingItems10.value = Sequence{"SKU-992", "SKU-993"};
+tracking1.value.at(0).appendNode(trackingItems10);
+
+// tracking[1]
+tracking1.value.at(1).appendNode(new ScalarNode("parcelId", "PKG-002"));
+tracking1.value.at(1).appendNode(new ScalarNode("carrier", "Colissimo"));
+tracking1.value.at(1).appendNode(new ScalarNode("status", "preparing"));
+var trackingItems11 = new ListNode("items", 1);
+trackingItems11.value = Sequence{"SKU-1041"};
+tracking1.value.at(1).appendNode(trackingItems11);
+
+shipping1.value.appendNode(tracking1);
+
+// Billing mapping
+var billing1 = new MappingNode("billing");
+billing1.value.appendNode(new ScalarNode("sameAsShipping", false));
+var billingAddress1 = new MappingNode("address");
+billingAddress1.value.appendNode(new ScalarNode("line1", "7 Boulevard Haussmann"));
+billingAddress1.value.appendNode(new ScalarNode("city", "Paris"));
+billingAddress1.value.appendNode(new ScalarNode("postcode", "75009"));
+billingAddress1.value.appendNode(new ScalarNode("country", "FR"));
+billing1.value.appendNode(billingAddress1);
+
+// Items is a list of 3 mapping elements
+var items1 = new ListNode("items", 3);
+
+// item 0
+items1.value.at(0).appendNode(new ScalarNode("sku", "SKU-992"));
+items1.value.at(0).appendNode(new ScalarNode("name", "Wireless Noise-Cancelling Headphones"));
+items1.value.at(0).appendNode(new ScalarNode("qty", 1));
+items1.value.at(0).appendNode(new ScalarNode("unitPrice", 189.99));
+var discount10 = new MappingNode("discount");
+discount10.value.appendNode(new ScalarNode("type", "percentage"));
+discount10.value.appendNode(new ScalarNode("value", 10));
+items1.value.at(0).appendNode(discount10);
+items1.value.at(0).appendNode(new ScalarNode("finalPrice", 170.99));
+
+// item 1
+items1.value.at(1).appendNode(new ScalarNode("sku", "SKU-993"));
+items1.value.at(1).appendNode(new ScalarNode("name", "USB-C Charging Cable (2m)"));
+items1.value.at(1).appendNode(new ScalarNode("qty", 3));
+items1.value.at(1).appendNode(new ScalarNode("unitPrice", 12.50));
+// Representing a null discount; driver support for ScalarNode(..., null) is uncertain.
+items1.value.at(1).appendNode(new ScalarNode("discount", null));
+items1.value.at(1).appendNode(new ScalarNode("finalPrice", 37.50));
+
+// item 2
+items1.value.at(2).appendNode(new ScalarNode("sku", "SKU-1041"));
+items1.value.at(2).appendNode(new ScalarNode("name", "Laptop Stand (Aluminium)"));
+items1.value.at(2).appendNode(new ScalarNode("qty", 1));
+items1.value.at(2).appendNode(new ScalarNode("unitPrice", 54.00));
+var discount12 = new MappingNode("discount");
+discount12.value.appendNode(new ScalarNode("type", "fixed"));
+discount12.value.appendNode(new ScalarNode("value", 5.00));
+items1.value.at(2).appendNode(discount12);
+items1.value.at(2).appendNode(new ScalarNode("finalPrice", 49.00));
+
+// Payment mapping
+var payment1 = new MappingNode("payment");
+payment1.value.appendNode(new ScalarNode("method", "card"));
+
+var card1 = new MappingNode("card");
+card1.value.appendNode(new ScalarNode("last4", "7823"));
+card1.value.appendNode(new ScalarNode("brand", "Visa"));
+card1.value.appendNode(new ScalarNode("expiresAt", "2026-09"));
+payment1.value.appendNode(card1);
+
+var breakdown1 = new MappingNode("breakdown");
+breakdown1.value.appendNode(new ScalarNode("subtotal", 257.49));
+breakdown1.value.appendNode(new ScalarNode("shipping", 4.99));
+breakdown1.value.appendNode(new ScalarNode("tax", 25.75));
+breakdown1.value.appendNode(new ScalarNode("loyaltyDiscount", -17.10));
+breakdown1.value.appendNode(new ScalarNode("total", 271.13));
+payment1.value.appendNode(breakdown1);
+
+payment1.value.appendNode(new ScalarNode("status", "captured"));
+
+// Append everything to firstOrder
+firstOrder.appendNode(orderId1);
+firstOrder.appendNode(placedAt1);
+firstOrder.appendNode(status1);
+firstOrder.appendNode(customer1);
+firstOrder.appendNode(shipping1);
+firstOrder.appendNode(billing1);
+firstOrder.appendNode(items1);
+firstOrder.appendNode(payment1);
+
+
+// Second order (row 1)
+var secondOrder = root.value.at(1);
+
+// Top-level scalars
+var orderId2 = new ScalarNode("orderId", "ORD-20250722-55381");
+var placedAt2 = new ScalarNode("placedAt", "2025-07-22T14:45:00Z");
+var status2 = new ScalarNode("status", "delivered");
+
+// Customer mapping
+var customer2 = new MappingNode("customer");
+customer2.value.appendNode(new ScalarNode("id", "CUST-9875"));
+customer2.value.appendNode(new ScalarNode("name", "Michael Turner"));
+customer2.value.appendNode(new ScalarNode("email", "michael.turner@example.com"));
+customer2.value.appendNode(new ScalarNode("tier", "platinum"));
+
+var loyalty2 = new MappingNode("loyaltyPoints");
+loyalty2.value.appendNode(new ScalarNode("balance", 7850));
+loyalty2.value.appendNode(new ScalarNode("earned_this_order", 220));
+customer2.value.appendNode(loyalty2);
+
+// Shipping mapping
+var shipping2 = new MappingNode("shipping");
+var address2 = new MappingNode("address");
+address2.value.appendNode(new ScalarNode("line1", "88 King Street"));
+address2.value.appendNode(new ScalarNode("line2", "Suite 12"));
+address2.value.appendNode(new ScalarNode("city", "Manchester"));
+address2.value.appendNode(new ScalarNode("postcode", "M2 4WQ"));
+address2.value.appendNode(new ScalarNode("country", "UK"));
+shipping2.value.appendNode(address2);
+shipping2.value.appendNode(new ScalarNode("method", "next_day_delivery"));
+shipping2.value.appendNode(new ScalarNode("estimatedDelivery", "2025-07-23"));
+
+// tracking is a list of 2 mapping entries
+var tracking2 = new ListNode("tracking", 2);
+
+// tracking[0]
+tracking2.value.at(0).appendNode(new ScalarNode("parcelId", "PAR-78101"));
+tracking2.value.at(0).appendNode(new ScalarNode("carrier", "DPD"));
+tracking2.value.at(0).appendNode(new ScalarNode("status", "delivered"));
+var trackingItems20 = new ListNode("items", 2);
+trackingItems20.value = Sequence{"SKU-BALL-001", "SKU-GLOVE-002"};
+tracking2.value.at(0).appendNode(trackingItems20);
+
+// tracking[1]
+tracking2.value.at(1).appendNode(new ScalarNode("parcelId", "PAR-78102"));
+tracking2.value.at(1).appendNode(new ScalarNode("carrier", "Royal Mail"));
+tracking2.value.at(1).appendNode(new ScalarNode("status", "delivered"));
+var trackingItems21 = new ListNode("items", 1);
+trackingItems21.value = Sequence{"SKU-BAG-005"};
+tracking2.value.at(1).appendNode(trackingItems21);
+
+shipping2.value.appendNode(tracking2);
+
+// Billing mapping
+var billing2 = new MappingNode("billing");
+billing2.value.appendNode(new ScalarNode("sameAsShipping", true));
+var billingAddress2 = new MappingNode("address");
+billingAddress2.value.appendNode(new ScalarNode("line1", "88 King Street"));
+billingAddress2.value.appendNode(new ScalarNode("city", "Manchester"));
+billingAddress2.value.appendNode(new ScalarNode("postcode", "M2 4WQ"));
+billingAddress2.value.appendNode(new ScalarNode("country", "UK"));
+billing2.value.appendNode(billingAddress2);
+
+// Items is a list of 3 mapping elements
+var items2 = new ListNode("items", 3);
+
+// item 0
+items2.value.at(0).appendNode(new ScalarNode("sku", "SKU-BALL-001"));
+items2.value.at(0).appendNode(new ScalarNode("name", "Professional Football"));
+items2.value.at(0).appendNode(new ScalarNode("qty", 2));
+items2.value.at(0).appendNode(new ScalarNode("unitPrice", 34.99));
+var discount20 = new MappingNode("discount");
+discount20.value.appendNode(new ScalarNode("type", "percentage"));
+discount20.value.appendNode(new ScalarNode("value", 15));
+items2.value.at(0).appendNode(discount20);
+items2.value.at(0).appendNode(new ScalarNode("finalPrice", 59.48));
+
+// item 1
+items2.value.at(1).appendNode(new ScalarNode("sku", "SKU-GLOVE-002"));
+items2.value.at(1).appendNode(new ScalarNode("name", "Goalkeeper Gloves Pro"));
+items2.value.at(1).appendNode(new ScalarNode("qty", 1));
+items2.value.at(1).appendNode(new ScalarNode("unitPrice", 49.99));
+var discount21 = new MappingNode("discount");
+discount21.value.appendNode(new ScalarNode("type", "fixed"));
+discount21.value.appendNode(new ScalarNode("value", 5.00));
+items2.value.at(1).appendNode(discount21);
+items2.value.at(1).appendNode(new ScalarNode("finalPrice", 44.99));
+
+// item 2
+items2.value.at(2).appendNode(new ScalarNode("sku", "SKU-BAG-005"));
+items2.value.at(2).appendNode(new ScalarNode("name", "Sports Equipment Bag"));
+items2.value.at(2).appendNode(new ScalarNode("qty", 1));
+items2.value.at(2).appendNode(new ScalarNode("unitPrice", 39.99));
+// Representing a null discount; driver support for ScalarNode(..., null) is uncertain.
+items2.value.at(2).appendNode(new ScalarNode("discount", null));
+items2.value.at(2).appendNode(new ScalarNode("finalPrice", 39.99));
+
+// Payment mapping
+var payment2 = new MappingNode("payment");
+payment2.value.appendNode(new ScalarNode("method", "paypal"));
+
+var card2 = new MappingNode("card");
+card2.value.appendNode(new ScalarNode("last4", "0000"));
+card2.value.appendNode(new ScalarNode("brand", "PayPal"));
+// expiresAt is null in the YAML; representing with null scalar (driver support uncertain)
+card2.value.appendNode(new ScalarNode("expiresAt", null));
+payment2.value.appendNode(card2);
+
+var breakdown2 = new MappingNode("breakdown");
+breakdown2.value.appendNode(new ScalarNode("subtotal", 144.96));
+breakdown2.value.appendNode(new ScalarNode("shipping", 6.99));
+breakdown2.value.appendNode(new ScalarNode("tax", 30.39));
+breakdown2.value.appendNode(new ScalarNode("loyaltyDiscount", -20.00));
+breakdown2.value.appendNode(new ScalarNode("total", 162.34));
+payment2.value.appendNode(breakdown2);
+
+payment2.value.appendNode(new ScalarNode("status", "completed"));
+
+// Append everything to secondOrder
+secondOrder.appendNode(orderId2);
+secondOrder.appendNode(placedAt2);
+secondOrder.appendNode(status2);
+secondOrder.appendNode(customer2);
+secondOrder.appendNode(shipping2);
+secondOrder.appendNode(billing2);
+secondOrder.appendNode(items2);
+secondOrder.appendNode(payment2);
+```
+
+If you want, I can:
+- show how to serialize YAMLDoc to a file with the YAML driver (if you tell me which API/method you use to save),
+- or adjust the null handling strategy if your runtime rejects ScalarNode(..., null).
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             1
+  Prompt tokens:     3,815
+  Completion tokens: 4,605
+  Total tokens:      8,420
+  Estimated cost:    $0.01016
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         1
+  Total prompt tokens:     3,815
+  Total completion tokens: 4,605
+  Total tokens:            8,420
+  Total estimated cost:    $0.01016
+============================================================

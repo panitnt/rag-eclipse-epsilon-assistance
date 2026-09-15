@@ -1,0 +1,1172 @@
+Session started: 2026-08-12 17:17:01
+Model: openai/gpt-5-mini | temperature=0
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[17:17:15]
+
+── QUESTION ──────────────────────────────────────────────
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver?
+warehouse:
+  id: WH-UK-004
+  name: Midlands Distribution Centre
+  location:
+    address: "Unit 7, Logistics Park, Birmingham, B26 3QT"
+    coordinates: {lat: 52.4539, lon: -1.7480}
+  operatingHours:
+    Mon-Fri: "06:00-22:00"
+    Sat: "08:00-16:00"
+    Sun: closed
+  manager:
+    name: Priya Chandrasekaran
+    employeeId: EMP-0092
+    shift: day
+
+  zones:
+    - zoneId: Z-A
+      name: Fast-Moving Goods
+      temperatureControlled: false
+      racks:
+        - rackId: A-01
+          aisle: 1
+          bins:
+            - binId: A-01-01
+              sku: SKU-3301
+              description: Cardboard Boxes (Small)
+              qty: 4200
+              reorderPoint: 1000
+              lastRestocked: "2024-06-01"
+            - binId: A-01-02
+              sku: SKU-3302
+              description: Bubble Wrap Rolls
+              qty: 850
+              reorderPoint: 500
+              lastRestocked: "2024-05-28"
+        - rackId: A-02
+          aisle: 1
+          bins:
+            - binId: A-02-01
+              sku: SKU-3310
+              description: Packing Tape (Clear)
+              qty: 1200
+              reorderPoint: 400
+              lastRestocked: "2024-06-05"
+
+    - zoneId: Z-B
+      name: Cold Storage
+      temperatureControlled: true
+      targetTempCelsius: 4
+      racks:
+        - rackId: B-01
+          aisle: 3
+          bins:
+            - binId: B-01-01
+              sku: SKU-8801
+              description: Chilled Ready Meals (Case of 12)
+              qty: 340
+              reorderPoint: 150
+              lastRestocked: "2024-06-12"
+              expiryTracking:
+                - batch: BATCH-2201
+                  expiryDate: "2024-06-20"
+                  qty: 120
+                - batch: BATCH-2202
+                  expiryDate: "2024-06-25"
+                  qty: 220
+
+    - zoneId: Z-C
+      name: Bulk Pallet Storage
+      temperatureControlled: false
+      racks:
+        - rackId: C-01
+          aisle: 6
+          bins:
+            - binId: C-01-01
+              sku: SKU-9901
+              description: Bottled Water (Pallet, 72 cases)
+              qty: 18
+              reorderPoint: 5
+              lastRestocked: "2024-05-20"
+
+  staff:
+    - employeeId: EMP-0110
+      name: Josh Reiner
+      role: forklift_operator
+      shift: day
+      certifications: [forklift_class2, manual_handling]
+    - employeeId: EMP-0122
+      name: Mei Lin Tan
+      role: picker
+      shift: night
+      certifications: [manual_handling]
+    - employeeId: EMP-0134
+      name: Sam Patterson
+      role: warehouse_supervisor
+      shift: day
+      certifications: [forklift_class2, forklift_class3, first_aid, manual_handling]
+
+  equipment:
+    - equipmentId: FL-01
+      type: forklift
+      model: Toyota 8FBE20
+      status: operational
+      lastServiced: "2024-05-01"
+      nextServiceDue: "2024-08-01"
+      assignedTo: EMP-0110
+    - equipmentId: FL-02
+      type: forklift
+      model: Toyota 8FBE20
+      status: under_maintenance
+      lastServiced: "2024-06-10"
+      nextServiceDue: "2024-09-10"
+      assignedTo: null
+      maintenanceLog:
+        - date: "2024-06-10"
+          issue: Hydraulic fluid leak
+          technician: External - ForkFix Ltd
+          resolved: false
+
+  inboundShipments:
+    - shipmentId: IN-5501
+      supplier: PackCo Supplies Ltd
+      expectedArrival: "2024-06-18"
+      status: in_transit
+      items:
+        - sku: SKU-3301
+          qtyExpected: 5000
+        - sku: SKU-3302
+          qtyExpected: 1000
+    - shipmentId: IN-5502
+      supplier: ColdChain Foods Ltd
+      expectedArrival: "2024-06-15"
+      status: delivered
+      items:
+        - sku: SKU-8801
+          qtyExpected: 400
+          qtyReceived: 396
+          discrepancyReason: 4 units damaged in transit
+
+  outboundOrders:
+    - orderId: OUT-7701
+      destination: Retail Store 22 Leeds
+      status: picking
+      priority: high
+      items:
+        - sku: SKU-3301
+          qty: 200
+        - sku: SKU-3310
+          qty: 150
+    - orderId: OUT-7702
+      destination: Retail Store 08 Bristol
+      status: dispatched
+      priority: standard
+      items:
+        - sku: SKU-9901
+          qty: 2
+      dispatch:
+        carrier: DX Freight
+        dispatchedAt: "2024-06-13T14:20:00Z"
+        estimatedDelivery: "2024-06-14"
+
+  safetyIncidents:
+    - incidentId: INC-014
+      date: "2024-04-22"
+      zone: Z-A
+      description: Minor slip near packing station, no injury reported.
+      severity: low
+      reportedBy: EMP-0134
+      correctiveAction: Wet floor signage added, spill cleaned immediately.
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver?
+  - EMC YAML Driver create and save a YAML model programmatically Epsilon
+  - EOL create model elements and save model using the EMC YAML Driver syntax examples
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver?'
+    1. sim=0.8430  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    2. sim=0.7496  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    3. sim=0.7409  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    4. sim=0.7086  epsilon_docs/articles_rdf-emc.md | heading='Multi-valued features'
+    5. sim=0.6931  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    6. sim=0.6837  epsilon_docs/articles_yaml-emc_index.md | heading='How can I delete nodes?'
+    7. sim=0.6800  epsilon_docs/articles_index.md | heading='Recipes'
+    8. sim=0.6680  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    9. sim=0.6386  epsilon_docs/articles_html_index.md | heading='Querying a HTML document'
+    10. sim=0.6327  epsilon_docs/articles_run-epsilon-from-java.md | heading='Loading Models'
+    11. sim=0.6300  epsilon_docs/articles_bibtex_index.md | heading='Querying a BibTeX file'
+    12. sim=0.6286  epsilon_docs/articles_rdf-emc.md | heading='EMF-RDF mapping'
+    13. sim=0.6272  epsilon_docs/articles_in-memory-emf-model_index.md | heading='Working with custom EMF resources'
+    14. sim=0.6264  epsilon_docs/emc.md | heading='Other Drivers'
+    15. sim=0.5906  epsilon_docs/articles_egl-server-side_index.md | heading='Sharing models between templates'
+    16. sim=0.5835  epsilon_docs/eol.md | heading='Creating and Deleting Model Elements'
+    17. sim=0.5520  epsilon_docs/eunit.md | heading='Test Suites'
+    18. sim=0.5489  epsilon_docs/eol.md | heading='Escaping Reserved Keywords'
+    19. sim=0.5059  epsilon_docs/etl.md | heading='Source Elements Resolution'
+
+  Query: 'EMC YAML Driver create and save a YAML model programmatically Epsilon'
+    1. sim=0.7869  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    2. sim=0.7640  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    3. sim=0.7237  epsilon_docs/articles_rdf-emc.md | heading='EMF-RDF mapping'
+    4. sim=0.7194  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    5. sim=0.7146  epsilon_docs/articles_rdf-emc.md | heading='Multi-valued features'
+    6. sim=0.6956  epsilon_docs/articles_bibtex_index.md | heading='Querying a BibTeX file'
+    7. sim=0.6855  epsilon_docs/articles_in-memory-emf-model_index.md | heading='Working with custom EMF resources'
+    8. sim=0.6715  epsilon_docs/articles_index.md | heading='Recipes'
+    9. sim=0.6682  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    10. sim=0.6671  epsilon_docs/articles_egl-server-side_index.md | heading='Sharing models between templates'
+    11. sim=0.6671  epsilon_docs/emc.md | heading='Other Drivers'
+    12. sim=0.6501  epsilon_docs/articles_run-epsilon-from-java.md | heading='Loading Models'
+    13. sim=0.6487  epsilon_docs/articles_html_index.md | heading='Querying a HTML document'
+    14. sim=0.6413  epsilon_docs/articles_yaml-emc_index.md | heading='How can I delete nodes?'
+    15. sim=0.6231  epsilon_docs/eol.md | heading='Creating and Deleting Model Elements'
+    16. sim=0.6186  epsilon_docs/eunit.md | heading='Test Suites'
+    17. sim=0.6018  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    18. sim=0.5666  epsilon_docs/eol.md | heading='Escaping Reserved Keywords'
+    19. sim=0.4998  epsilon_docs/etl.md | heading='Source Elements Resolution'
+
+  Query: 'EOL create model elements and save model using the EMC YAML Driver syntax examples'
+    1. sim=0.7471  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    2. sim=0.7239  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    3. sim=0.7202  epsilon_docs/articles_egl-server-side_index.md | heading='Sharing models between templates'
+    4. sim=0.7148  epsilon_docs/articles_run-epsilon-from-java.md | heading='Loading Models'
+    5. sim=0.6997  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    6. sim=0.6974  epsilon_docs/eol.md | heading='Creating and Deleting Model Elements'
+    7. sim=0.6875  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    8. sim=0.6779  epsilon_docs/articles_rdf-emc.md | heading='EMF-RDF mapping'
+    9. sim=0.6706  epsilon_docs/articles_rdf-emc.md | heading='Multi-valued features'
+    10. sim=0.6524  epsilon_docs/eol.md | heading='Escaping Reserved Keywords'
+    11. sim=0.6436  epsilon_docs/emc.md | heading='Other Drivers'
+    12. sim=0.6411  epsilon_docs/articles_html_index.md | heading='Querying a HTML document'
+    13. sim=0.6389  epsilon_docs/articles_bibtex_index.md | heading='Querying a BibTeX file'
+    14. sim=0.6319  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    15. sim=0.6288  epsilon_docs/articles_yaml-emc_index.md | heading='How can I delete nodes?'
+    16. sim=0.6267  epsilon_docs/articles_index.md | heading='Recipes'
+    17. sim=0.6061  epsilon_docs/eunit.md | heading='Test Suites'
+    18. sim=0.6005  epsilon_docs/articles_in-memory-emf-model_index.md | heading='Working with custom EMF resources'
+    19. sim=0.5659  epsilon_docs/etl.md | heading='Source Elements Resolution'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (8):
+  1. [0.951] epsilon_docs/articles_yaml-emc_index.md (heading='How can I create a YAML document from scratch?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## How can I create a YAML document from scratch?
+Example: create a YAML document from scratch by building and appending MappingNode, ScalarNode, and ListNode elements.
+Keywords: setRootAsList, getRoo
+  2. [0.901] epsilon_docs/eol.md (heading='Creating and Deleting Model Elements', parent_heading='Types')
+     ## Creating and Deleting Model Elements
+Example: create new model elements and delete an existing element using Epsilon Object Language (EOL).
+Keywords: new Tree, new instance, new Source, new Person
+
+  3. [0.793] epsilon_docs/articles_in-memory-emf-model_index.md (heading='Working with custom EMF resources', parent_heading='')
+     ## Working with custom EMF resources
+Example: create and execute an EOL module using a custom in-memory EMF model resource, then save the resource.
+Keywords: new InMemoryEmfModel, new EolModule
+
+```ja
+  4. [0.713] epsilon_docs/articles_developing-a-new-emc-driver_index.md (heading='Filesystem Driver', parent_heading='Developing a new EMC Driver')
+     # Developing a new EMC Driver
+
+This article demonstrates the implementation of "drivers" for Epsilon's [Model Connectivity layer](../../emc).
+
+## YAML Driver
+
+The following training session recording 
+  5. [0.653] epsilon_docs/articles_yaml-emc_index.md (heading='Querying a YAML document', parent_heading='Scripting YAML documents using Epsilon')
+     # Scripting YAML documents using Epsilon
+ 
+In this article we demonstrate how you can create, query and modify YAML documents in Epsilon programs using the YAML driver. All the examples in this articl
+  6. [0.386] epsilon_docs/articles_yaml-emc_index.md (heading='How can I delete nodes?', parent_heading='Loading a YAML document through Java code')
+     ## How can I delete nodes?
+Example: load and execute an Epsilon module that manipulates a YAML model, enabling node deletion.
+Keywords: new EolModule, new File, new YamlModel
+
+```java
+EolModule module
+  7. [0.385] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YA
+  8. [0.208] epsilon_docs/articles_index.md (heading='Recipes', parent_heading='Epsilon Developers')
+     - [Scripting XML documents using Epsilon](plain-xml/index.md): In this article we demonstrate how you can create, query and modify plain standalone XML documents (i.e. no XSD/DTD needed) in Epsilon pr
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon.
+
+Use the provided context as the PRIMARY and AUTHORITATIVE source of truth.
+Only use syntax, class names, methods, and patterns that appear explicitly in the context.
+You may adapt documented patterns to the user's structure, provided that no new APIs or unsupported methods are invented.
+If the user's message contains sample data, treat it only as the desired target structure — not as evidence for API syntax.
+If the context provides partial evidence only, generate code for the parts that are supported and explicitly flag any parts that are uncertain or unsupported.
+
+When a code example is appropriate, provide a complete and runnable example that covers the full structure given by the user.
+When generating code, follow only the patterns shown in the context exactly — do not skip initialisation steps, introduce intermediate objects, or shortcut method chains that are not explicitly demonstrated.
+
+--- DOCUMENTATION ---
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## How can I create a YAML document from scratch?
+Example: create a YAML document from scratch by building and appending MappingNode, ScalarNode, and ListNode elements.
+Keywords: setRootAsList, getRoot, .value, addRows, new MappingNode, new ScalarNode, residentNode, postcodeNode, appendNode, industryNode, new ListNode, projectsNode, skillsNode
+
+```eol
+YAMLDoc.setRootAsList();
+var root = YAMLDoc.getRoot();
+root.value.addRows(2);
+var rootFirstRow = root.value.at(0);
+var rootSecondRow = root.value.at(1);
+
+var addressNode1 = new MappingNode("address");
+var countryNode1 = new ScalarNode("country", "England");
+var residentNode = new ScalarNode("resident", true);
+var postcodeNode = new ScalarNode("postcode", "M1 1AG");
+addressNode1.value.appendNode(countryNode1);
+addressNode1.value.appendNode(residentNode);
+addressNode1.value.appendNode(postcodeNode);
+
+var employeeIdNode1 = new ScalarNode("employeeId", "14623");
+var fullnameNode1 = new ScalarNode("fullname", "Michael Davidson");
+var roleNode1 = new ScalarNode("role", "Consultant");
+
+var industryNode = new ListNode("industry", 3);
+industryNode.value =  Sequence{"IoT", "smart factories", "signal analytics"};
+
+var projectsNode = new ListNode("projects", 2);
+var nameNode1 = new ScalarNode("name", "SmartAutomation");
+var nameNode2 = new ScalarNode("name", "FactoryAnalytics");
+var budgetNode1 = new ScalarNode("budget", 25000);
+var budgetNode2 = new ScalarNode("budget", 20000);
+projectsNode.value.at(0).appendNode(nameNode1);
+projectsNode.value.at(0).appendNode(budgetNode1);
+projectsNode.value.at(1).appendNode(nameNode2);
+projectsNode.value.at(1).appendNode(budgetNode2);
+
+var addressNode2 = new MappingNode("address");
+var countryNode2 = new ScalarNode("country", "Germany");
+addressNode2.value.appendNode(countryNode2);
+
+var employeeIdNode2 = new ScalarNode("employeeId", "16431");
+var fullnameNode2 = new ScalarNode("fullname", "Arnold Wagner");
+var roleNode2 = new ScalarNode("role", "HR");
+
+var skillsNode = new ListNode("skills", 2);
+skillsNode.value =  Sequence{"communication", "coaching"};
+
+rootFirstRow.appendNode(employeeIdNode1);
+rootFirstRow.appendNode(addressNode1);
+rootFirstRow.appendNode(fullnameNode1);
+rootFirstRow.appendNode(roleNode1);
+rootFirstRow.appendNode(industryNode);
+rootFirstRow.appendNode(projectsNode);
+
+rootSecondRow.appendNode(employeeIdNode2);
+rootSecondRow.appendNode(addressNode2);
+rootSecondRow.appendNode(fullnameNode2);
+rootSecondRow.appendNode(roleNode2);
+rootSecondRow.appendNode(skillsNode);
+```
+
+[Source: epsilon_docs/eol.md]
+## Creating and Deleting Model Elements
+Example: create new model elements and delete an existing element using Epsilon Object Language (EOL).
+Keywords: new Tree, new instance, new Source, new Person
+
+```eol
+var t : new Tree; // Creates a new instance of type Tree
+var p : new Source!Person; // Creates a new Person in model Source
+delete t; // Deletes the element created in line 1
+```
+
+[Source: epsilon_docs/articles_in-memory-emf-model_index.md]
+## Working with custom EMF resources
+Example: create and execute an EOL module using a custom in-memory EMF model resource, then save the resource.
+Keywords: new InMemoryEmfModel, new EolModule
+
+```java
+Resource resource = ...;
+InMemoryEmfModel model = new InMemoryEmfModel(resource);
+model.setName("M");
+EolModule module = new EolModule();
+module.parse(...);
+module.getContext().getModelRepository().addModel(model);
+module.execute();
+resource.save(...);
+```
+
+[Source: epsilon_docs/articles_developing-a-new-emc-driver_index.md]
+# Developing a new EMC Driver
+
+This article demonstrates the implementation of "drivers" for Epsilon's [Model Connectivity layer](../../emc).
+
+## YAML Driver
+
+The following training session recording and deck of slides demonstrate the implementation of [Epsilon's YAML driver](../yaml-emc). The complete source-code is located in [Epsilon's Git repository](https://github.com/eclipse-epsilon/epsilon/tree/main/plugins/org.eclipse.epsilon.emc.yaml).
+
+<iframe src="https://www.youtube.com/embed/M0nvnhSF6Y0" width="100%" height="485" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen></iframe> <div style="margin-bottom:15px"></div>
+
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/yc9uUXElc1Zbac" width="100%" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:15px"></div>
+
+## CSV Pro Driver
+
+The slides below demonstrate the implementation of an alternative driver for CSV files, located under the [`examples` folder of Epsilon's repository](https://github.com/eclipse-epsilon/epsilon/tree/main/examples/org.eclipse.epsilon.emc.csvpro).
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+# Scripting YAML documents using Epsilon
+ 
+In this article we demonstrate how you can create, query and modify YAML documents in Epsilon programs using the YAML driver. All the examples in this article demonstrate using EOL to script YAML documents. However, it's worth stressing that YAML documents are supported throughout Epsilon. Therefore, you can use Epsilon to (cross-)validate, transform (to other models – XML, CSV or EMF-based, or to text), compare and merge your YAML documents.
+
+<iframe width="90%" height="494" src="https://www.youtube.com/embed/TF0fgghP938" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Querying a YAML document
+ 
+We use the following `employees.yaml` as a base for demonstrating the EOL syntax for querying YAML documents.
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## How can I delete nodes?
+Example: load and execute an Epsilon module that manipulates a YAML model, enabling node deletion.
+Keywords: new EolModule, new File, new YamlModel
+
+```java
+EolModule module = new EolModule();
+module.parse(new File("..."));
+
+YamlModel model = new YamlModel();
+model.setName("YAMLDoc");
+model.setFile(new File("..."));
+model.load();
+
+module.getContext().getModelRepository().addModel(model);
+module.getContext().setModule(module);
+module.execute();
+```
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YAML node must be specified when accessing YAML nodes via the YAML driver. There are 3 types of nodes in YAML:
+
+- `Scalar Node`. Scalar nodes are used to represent a single scalar value (e.g., string, boolean, integer). In the YAML driver, a scalar node consists of a key-value pair, in which the key represents the name of the scalar node, and the value represents the scalar value.
+- `Mapping Node`. Mapping nodes are used to represent unordered collections of key-value pairs. In the YAML driver, a mapping node consists of a key-value pair, in which the key represents the name of the mapping node, and the value holds an unordered collection of key-value pairs, which in turn represent other nodes.
+- `List (Sequence) Node`. List nodes are used to represent an ordered list of nodes or scalar values. In the YAML driver, a list node consists of a key-value pair, in which the key represents the name of the list node, and the value represents a list of nodes or scalar values.
+
+This section outlines the supported conventions in the form of questions and answers followed by relevant examples.
+
+[Source: epsilon_docs/articles_index.md]
+- [Scripting XML documents using Epsilon](plain-xml/index.md): In this article we demonstrate how you can create, query and modify plain standalone XML documents (i.e. no XSD/DTD needed) in Epsilon programs using the PlainXML driver.
+- [Scripting XML documents that conform to an XSD schema using Epsilon](xsd-xml): In this article we demonstrate how you can create, query and modify XML documents backed by an XSD schema in Epsilon.
+- [Scripting YAML documents using Epsilon](yaml-emc/index.md): This article demonstrates how you can query and modify YAML documents with Epsilon programs using the YAML driver.
+- [Scripting JSON documents using Epsilon](json-emc/index.md): This article shows how you can create, query and modify JSON documents with Epsilon programs using the JSON driver.
+- [Scripting CSV files using Epsilon](csv-emc/index.md): This article demonstrates how you can query CSV files with Epsilon programs using the CSV driver.
+- [Scripting Excel spreadsheets using Epsilon](excel/index.md): In this article we demonstrate how you can create, query and modify Excel spreadsheets in Epsilon programs.
+- [Scripting HTML documents using Epsilon](html/index.md): In this article we demonstrate how you can create, query and modify HTML documents in Epsilon programs using the HTML driver.
+
+--- USER MESSAGE ---
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver?
+warehouse:
+  id: WH-UK-004
+  name: Midlands Distribution Centre
+  location:
+    address: "Unit 7, Logistics Park, Birmingham, B26 3QT"
+    coordinates: {lat: 52.4539, lon: -1.7480}
+  operatingHours:
+    Mon-Fri: "06:00-22:00"
+    Sat: "08:00-16:00"
+    Sun: closed
+  manager:
+    name: Priya Chandrasekaran
+    employeeId: EMP-0092
+    shift: day
+
+  zones:
+    - zoneId: Z-A
+      name: Fast-Moving Goods
+      temperatureControlled: false
+      racks:
+        - rackId: A-01
+          aisle: 1
+          bins:
+            - binId: A-01-01
+              sku: SKU-3301
+              description: Cardboard Boxes (Small)
+              qty: 4200
+              reorderPoint: 1000
+              lastRestocked: "2024-06-01"
+            - binId: A-01-02
+              sku: SKU-3302
+              description: Bubble Wrap Rolls
+              qty: 850
+              reorderPoint: 500
+              lastRestocked: "2024-05-28"
+        - rackId: A-02
+          aisle: 1
+          bins:
+            - binId: A-02-01
+              sku: SKU-3310
+              description: Packing Tape (Clear)
+              qty: 1200
+              reorderPoint: 400
+              lastRestocked: "2024-06-05"
+
+    - zoneId: Z-B
+      name: Cold Storage
+      temperatureControlled: true
+      targetTempCelsius: 4
+      racks:
+        - rackId: B-01
+          aisle: 3
+          bins:
+            - binId: B-01-01
+              sku: SKU-8801
+              description: Chilled Ready Meals (Case of 12)
+              qty: 340
+              reorderPoint: 150
+              lastRestocked: "2024-06-12"
+              expiryTracking:
+                - batch: BATCH-2201
+                  expiryDate: "2024-06-20"
+                  qty: 120
+                - batch: BATCH-2202
+                  expiryDate: "2024-06-25"
+                  qty: 220
+
+    - zoneId: Z-C
+      name: Bulk Pallet Storage
+      temperatureControlled: false
+      racks:
+        - rackId: C-01
+          aisle: 6
+          bins:
+            - binId: C-01-01
+              sku: SKU-9901
+              description: Bottled Water (Pallet, 72 cases)
+              qty: 18
+              reorderPoint: 5
+              lastRestocked: "2024-05-20"
+
+  staff:
+    - employeeId: EMP-0110
+      name: Josh Reiner
+      role: forklift_operator
+      shift: day
+      certifications: [forklift_class2, manual_handling]
+    - employeeId: EMP-0122
+      name: Mei Lin Tan
+      role: picker
+      shift: night
+      certifications: [manual_handling]
+    - employeeId: EMP-0134
+      name: Sam Patterson
+      role: warehouse_supervisor
+      shift: day
+      certifications: [forklift_class2, forklift_class3, first_aid, manual_handling]
+
+  equipment:
+    - equipmentId: FL-01
+      type: forklift
+      model: Toyota 8FBE20
+      status: operational
+      lastServiced: "2024-05-01"
+      nextServiceDue: "2024-08-01"
+      assignedTo: EMP-0110
+    - equipmentId: FL-02
+      type: forklift
+      model: Toyota 8FBE20
+      status: under_maintenance
+      lastServiced: "2024-06-10"
+      nextServiceDue: "2024-09-10"
+      assignedTo: null
+      maintenanceLog:
+        - date: "2024-06-10"
+          issue: Hydraulic fluid leak
+          technician: External - ForkFix Ltd
+          resolved: false
+
+  inboundShipments:
+    - shipmentId: IN-5501
+      supplier: PackCo Supplies Ltd
+      expectedArrival: "2024-06-18"
+      status: in_transit
+      items:
+        - sku: SKU-3301
+          qtyExpected: 5000
+        - sku: SKU-3302
+          qtyExpected: 1000
+    - shipmentId: IN-5502
+      supplier: ColdChain Foods Ltd
+      expectedArrival: "2024-06-15"
+      status: delivered
+      items:
+        - sku: SKU-8801
+          qtyExpected: 400
+          qtyReceived: 396
+          discrepancyReason: 4 units damaged in transit
+
+  outboundOrders:
+    - orderId: OUT-7701
+      destination: Retail Store 22 Leeds
+      status: picking
+      priority: high
+      items:
+        - sku: SKU-3301
+          qty: 200
+        - sku: SKU-3310
+          qty: 150
+    - orderId: OUT-7702
+      destination: Retail Store 08 Bristol
+      status: dispatched
+      priority: standard
+      items:
+        - sku: SKU-9901
+          qty: 2
+      dispatch:
+        carrier: DX Freight
+        dispatchedAt: "2024-06-13T14:20:00Z"
+        estimatedDelivery: "2024-06-14"
+
+  safetyIncidents:
+    - incidentId: INC-014
+      date: "2024-04-22"
+      zone: Z-A
+      description: Minor slip near packing station, no injury reported.
+      severity: low
+      reportedBy: EMP-0134
+      correctiveAction: Wet floor signage added, spill cleaned immediately.
+
+Question:
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver?
+warehouse:
+  id: WH-UK-004
+  name: Midlands Distribution Centre
+  location:
+    address: "Unit 7, Logistics Park, Birmingham, B26 3QT"
+    coordinates: {lat: 52.4539, lon: -1.7480}
+  operatingHours:
+    Mon-Fri: "06:00-22:00"
+    Sat: "08:00-16:00"
+    Sun: closed
+  manager:
+    name: Priya Chandrasekaran
+    employeeId: EMP-0092
+    shift: day
+
+  zones:
+    - zoneId: Z-A
+      name: Fast-Moving Goods
+      temperatureControlled: false
+      racks:
+        - rackId: A-01
+          aisle: 1
+          bins:
+            - binId: A-01-01
+              sku: SKU-3301
+              description: Cardboard Boxes (Small)
+              qty: 4200
+              reorderPoint: 1000
+              lastRestocked: "2024-06-01"
+            - binId: A-01-02
+              sku: SKU-3302
+              description: Bubble Wrap Rolls
+              qty: 850
+              reorderPoint: 500
+              lastRestocked: "2024-05-28"
+        - rackId: A-02
+          aisle: 1
+          bins:
+            - binId: A-02-01
+              sku: SKU-3310
+              description: Packing Tape (Clear)
+              qty: 1200
+              reorderPoint: 400
+              lastRestocked: "2024-06-05"
+
+    - zoneId: Z-B
+      name: Cold Storage
+      temperatureControlled: true
+      targetTempCelsius: 4
+      racks:
+        - rackId: B-01
+          aisle: 3
+          bins:
+            - binId: B-01-01
+              sku: SKU-8801
+              description: Chilled Ready Meals (Case of 12)
+              qty: 340
+              reorderPoint: 150
+              lastRestocked: "2024-06-12"
+              expiryTracking:
+                - batch: BATCH-2201
+                  expiryDate: "2024-06-20"
+                  qty: 120
+                - batch: BATCH-2202
+                  expiryDate: "2024-06-25"
+                  qty: 220
+
+    - zoneId: Z-C
+      name: Bulk Pallet Storage
+      temperatureControlled: false
+      racks:
+        - rackId: C-01
+          aisle: 6
+          bins:
+            - binId: C-01-01
+              sku: SKU-9901
+              description: Bottled Water (Pallet, 72 cases)
+              qty: 18
+              reorderPoint: 5
+              lastRestocked: "2024-05-20"
+
+  staff:
+    - employeeId: EMP-0110
+      name: Josh Reiner
+      role: forklift_operator
+      shift: day
+      certifications: [forklift_class2, manual_handling]
+    - employeeId: EMP-0122
+      name: Mei Lin Tan
+      role: picker
+      shift: night
+      certifications: [manual_handling]
+    - employeeId: EMP-0134
+      name: Sam Patterson
+      role: warehouse_supervisor
+      shift: day
+      certifications: [forklift_class2, forklift_class3, first_aid, manual_handling]
+
+  equipment:
+    - equipmentId: FL-01
+      type: forklift
+      model: Toyota 8FBE20
+      status: operational
+      lastServiced: "2024-05-01"
+      nextServiceDue: "2024-08-01"
+      assignedTo: EMP-0110
+    - equipmentId: FL-02
+      type: forklift
+      model: Toyota 8FBE20
+      status: under_maintenance
+      lastServiced: "2024-06-10"
+      nextServiceDue: "2024-09-10"
+      assignedTo: null
+      maintenanceLog:
+        - date: "2024-06-10"
+          issue: Hydraulic fluid leak
+          technician: External - ForkFix Ltd
+          resolved: false
+
+  inboundShipments:
+    - shipmentId: IN-5501
+      supplier: PackCo Supplies Ltd
+      expectedArrival: "2024-06-18"
+      status: in_transit
+      items:
+        - sku: SKU-3301
+          qtyExpected: 5000
+        - sku: SKU-3302
+          qtyExpected: 1000
+    - shipmentId: IN-5502
+      supplier: ColdChain Foods Ltd
+      expectedArrival: "2024-06-15"
+      status: delivered
+      items:
+        - sku: SKU-8801
+          qtyExpected: 400
+          qtyReceived: 396
+          discrepancyReason: 4 units damaged in transit
+
+  outboundOrders:
+    - orderId: OUT-7701
+      destination: Retail Store 22 Leeds
+      status: picking
+      priority: high
+      items:
+        - sku: SKU-3301
+          qty: 200
+        - sku: SKU-3310
+          qty: 150
+    - orderId: OUT-7702
+      destination: Retail Store 08 Bristol
+      status: dispatched
+      priority: standard
+      items:
+        - sku: SKU-9901
+          qty: 2
+      dispatch:
+        carrier: DX Freight
+        dispatchedAt: "2024-06-13T14:20:00Z"
+        estimatedDelivery: "2024-06-14"
+
+  safetyIncidents:
+    - incidentId: INC-014
+      date: "2024-04-22"
+      zone: Z-A
+      description: Minor slip near packing station, no injury reported.
+      severity: low
+      reportedBy: EMP-0134
+      correctiveAction: Wet floor signage added, spill cleaned immediately.
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+Below is an EOL script that follows the exact node-building patterns shown in the YAML-driver examples in the docs (new MappingNode, new ScalarNode, new ListNode, .value.appendNode, .value.at(...).appendNode, Sequence{...}, root.value.addRows(...), etc.). It builds the entire warehouse YAML structure you provided from scratch.
+
+Important note about the root:
+- The doc example in the docs shows YAMLDoc.setRootAsList(); and operations against root.value (a Sequence). The code below follows that pattern and creates a root list with a single element: a MappingNode named "warehouse". That will produce YAML where the top-level is a Sequence with a single mapping item (i.e. "- warehouse: ..."). If you need the top-level to be a Mapping (no leading dash) you would normally call a setRootAsMapping() or similar method — that method is not shown in the provided docs, so I have not used it and I cannot confirm its exact name or signature. If your environment supports setRootAsMapping() (or equivalent), you can replace the initial setRootAsList() and root-list handling with the mapping-root API.
+
+EOL script (complete):
+
+```eol
+// create root as a list with one row and put a single "warehouse" mapping node in that row
+YAMLDoc.setRootAsList();
+var root = YAMLDoc.getRoot();
+root.value.addRows(1);
+var rootFirstRow = root.value.at(0);
+
+// warehouse mapping
+var warehouseNode = new MappingNode("warehouse");
+
+warehouseNode.value.appendNode(new ScalarNode("id", "WH-UK-004"));
+warehouseNode.value.appendNode(new ScalarNode("name", "Midlands Distribution Centre"));
+
+// location
+var locationNode = new MappingNode("location");
+locationNode.value.appendNode(new ScalarNode("address", "Unit 7, Logistics Park, Birmingham, B26 3QT"));
+
+var coordinatesNode = new MappingNode("coordinates");
+coordinatesNode.value.appendNode(new ScalarNode("lat", 52.4539));
+coordinatesNode.value.appendNode(new ScalarNode("lon", -1.7480));
+locationNode.value.appendNode(coordinatesNode);
+
+warehouseNode.value.appendNode(locationNode);
+
+// operatingHours
+var operatingHoursNode = new MappingNode("operatingHours");
+operatingHoursNode.value.appendNode(new ScalarNode("Mon-Fri", "06:00-22:00"));
+operatingHoursNode.value.appendNode(new ScalarNode("Sat", "08:00-16:00"));
+operatingHoursNode.value.appendNode(new ScalarNode("Sun", "closed"));
+warehouseNode.value.appendNode(operatingHoursNode);
+
+// manager
+var managerNode = new MappingNode("manager");
+managerNode.value.appendNode(new ScalarNode("name", "Priya Chandrasekaran"));
+managerNode.value.appendNode(new ScalarNode("employeeId", "EMP-0092"));
+managerNode.value.appendNode(new ScalarNode("shift", "day"));
+warehouseNode.value.appendNode(managerNode);
+
+// zones (list of 3 zones)
+var zonesNode = new ListNode("zones", 3);
+
+// Zone Z-A (index 0)
+var zoneA = zonesNode.value.at(0);
+zoneA.appendNode(new ScalarNode("zoneId", "Z-A"));
+zoneA.appendNode(new ScalarNode("name", "Fast-Moving Goods"));
+zoneA.appendNode(new ScalarNode("temperatureControlled", false));
+
+// racks under Z-A (2 racks)
+var racksA = new ListNode("racks", 2);
+
+// Rack A-01
+var rackA01 = racksA.value.at(0);
+rackA01.appendNode(new ScalarNode("rackId", "A-01"));
+rackA01.appendNode(new ScalarNode("aisle", 1));
+
+// bins under A-01 (2 bins)
+var binsA0102 = new ListNode("bins", 2);
+
+// bin A-01-01
+var binA0101 = binsA0102.value.at(0);
+binA0101.appendNode(new ScalarNode("binId", "A-01-01"));
+binA0101.appendNode(new ScalarNode("sku", "SKU-3301"));
+binA0101.appendNode(new ScalarNode("description", "Cardboard Boxes (Small)"));
+binA0101.appendNode(new ScalarNode("qty", 4200));
+binA0101.appendNode(new ScalarNode("reorderPoint", 1000));
+binA0101.appendNode(new ScalarNode("lastRestocked", "2024-06-01"));
+
+// bin A-01-02
+var binA0102 = binsA0102.value.at(1);
+binA0102.appendNode(new ScalarNode("binId", "A-01-02"));
+binA0102.appendNode(new ScalarNode("sku", "SKU-3302"));
+binA0102.appendNode(new ScalarNode("description", "Bubble Wrap Rolls"));
+binA0102.appendNode(new ScalarNode("qty", 850));
+binA0102.appendNode(new ScalarNode("reorderPoint", 500));
+binA0102.appendNode(new ScalarNode("lastRestocked", "2024-05-28"));
+
+rackA01.appendNode(binsA0102);
+
+// Rack A-02
+var rackA02 = racksA.value.at(1);
+rackA02.appendNode(new ScalarNode("rackId", "A-02"));
+rackA02.appendNode(new ScalarNode("aisle", 1));
+
+// bins under A-02 (1 bin)
+var binsA02 = new ListNode("bins", 1);
+var binA0201 = binsA02.value.at(0);
+binA0201.appendNode(new ScalarNode("binId", "A-02-01"));
+binA0201.appendNode(new ScalarNode("sku", "SKU-3310"));
+binA0201.appendNode(new ScalarNode("description", "Packing Tape (Clear)"));
+binA0201.appendNode(new ScalarNode("qty", 1200));
+binA0201.appendNode(new ScalarNode("reorderPoint", 400));
+binA0201.appendNode(new ScalarNode("lastRestocked", "2024-06-05"));
+
+rackA02.appendNode(binsA02);
+
+zoneA.appendNode(racksA);
+
+// Zone Z-B (index 1)
+var zoneB = zonesNode.value.at(1);
+zoneB.appendNode(new ScalarNode("zoneId", "Z-B"));
+zoneB.appendNode(new ScalarNode("name", "Cold Storage"));
+zoneB.appendNode(new ScalarNode("temperatureControlled", true));
+zoneB.appendNode(new ScalarNode("targetTempCelsius", 4));
+
+// racks under Z-B (1 rack)
+var racksB = new ListNode("racks", 1);
+var rackB01 = racksB.value.at(0);
+rackB01.appendNode(new ScalarNode("rackId", "B-01"));
+rackB01.appendNode(new ScalarNode("aisle", 3));
+
+// bins under B-01 (1 bin with expiryTracking list)
+var binsB01 = new ListNode("bins", 1);
+var binB0101 = binsB01.value.at(0);
+binB0101.appendNode(new ScalarNode("binId", "B-01-01"));
+binB0101.appendNode(new ScalarNode("sku", "SKU-8801"));
+binB0101.appendNode(new ScalarNode("description", "Chilled Ready Meals (Case of 12)"));
+binB0101.appendNode(new ScalarNode("qty", 340));
+binB0101.appendNode(new ScalarNode("reorderPoint", 150));
+binB0101.appendNode(new ScalarNode("lastRestocked", "2024-06-12"));
+
+// expiryTracking list (2 entries)
+var expiryTracking = new ListNode("expiryTracking", 2);
+var expiry1 = expiryTracking.value.at(0);
+expiry1.appendNode(new ScalarNode("batch", "BATCH-2201"));
+expiry1.appendNode(new ScalarNode("expiryDate", "2024-06-20"));
+expiry1.appendNode(new ScalarNode("qty", 120));
+
+var expiry2 = expiryTracking.value.at(1);
+expiry2.appendNode(new ScalarNode("batch", "BATCH-2202"));
+expiry2.appendNode(new ScalarNode("expiryDate", "2024-06-25"));
+expiry2.appendNode(new ScalarNode("qty", 220));
+
+binB0101.appendNode(expiryTracking);
+rackB01.appendNode(binsB01);
+zoneB.appendNode(racksB);
+
+// Zone Z-C (index 2)
+var zoneC = zonesNode.value.at(2);
+zoneC.appendNode(new ScalarNode("zoneId", "Z-C"));
+zoneC.appendNode(new ScalarNode("name", "Bulk Pallet Storage"));
+zoneC.appendNode(new ScalarNode("temperatureControlled", false));
+
+// racks under Z-C (1 rack)
+var racksC = new ListNode("racks", 1);
+var rackC01 = racksC.value.at(0);
+rackC01.appendNode(new ScalarNode("rackId", "C-01"));
+rackC01.appendNode(new ScalarNode("aisle", 6));
+
+// bins under C-01 (1 bin)
+var binsC01 = new ListNode("bins", 1);
+var binC0101 = binsC01.value.at(0);
+binC0101.appendNode(new ScalarNode("binId", "C-01-01"));
+binC0101.appendNode(new ScalarNode("sku", "SKU-9901"));
+binC0101.appendNode(new ScalarNode("description", "Bottled Water (Pallet, 72 cases)"));
+binC0101.appendNode(new ScalarNode("qty", 18));
+binC0101.appendNode(new ScalarNode("reorderPoint", 5));
+binC0101.appendNode(new ScalarNode("lastRestocked", "2024-05-20"));
+
+rackC01.appendNode(binsC01);
+zoneC.appendNode(racksC);
+
+// append zones to warehouse
+warehouseNode.value.appendNode(zonesNode);
+
+// staff (list of 3)
+var staffNode = new ListNode("staff", 3);
+
+// staff 1
+var staff1 = staffNode.value.at(0);
+staff1.appendNode(new ScalarNode("employeeId", "EMP-0110"));
+staff1.appendNode(new ScalarNode("name", "Josh Reiner"));
+staff1.appendNode(new ScalarNode("role", "forklift_operator"));
+staff1.appendNode(new ScalarNode("shift", "day"));
+var certs1 = new ListNode("certifications", 2);
+certs1.value = Sequence{"forklift_class2", "manual_handling"};
+staff1.appendNode(certs1);
+
+// staff 2
+var staff2 = staffNode.value.at(1);
+staff2.appendNode(new ScalarNode("employeeId", "EMP-0122"));
+staff2.appendNode(new ScalarNode("name", "Mei Lin Tan"));
+staff2.appendNode(new ScalarNode("role", "picker"));
+staff2.appendNode(new ScalarNode("shift", "night"));
+var certs2 = new ListNode("certifications", 1);
+certs2.value = Sequence{"manual_handling"};
+staff2.appendNode(certs2);
+
+// staff 3
+var staff3 = staffNode.value.at(2);
+staff3.appendNode(new ScalarNode("employeeId", "EMP-0134"));
+staff3.appendNode(new ScalarNode("name", "Sam Patterson"));
+staff3.appendNode(new ScalarNode("role", "warehouse_supervisor"));
+staff3.appendNode(new ScalarNode("shift", "day"));
+var certs3 = new ListNode("certifications", 4);
+certs3.value = Sequence{"forklift_class2", "forklift_class3", "first_aid", "manual_handling"};
+staff3.appendNode(certs3);
+
+warehouseNode.value.appendNode(staffNode);
+
+// equipment (list of 2)
+var equipmentNode = new ListNode("equipment", 2);
+
+// equipment 1
+var eq1 = equipmentNode.value.at(0);
+eq1.appendNode(new ScalarNode("equipmentId", "FL-01"));
+eq1.appendNode(new ScalarNode("type", "forklift"));
+eq1.appendNode(new ScalarNode("model", "Toyota 8FBE20"));
+eq1.appendNode(new ScalarNode("status", "operational"));
+eq1.appendNode(new ScalarNode("lastServiced", "2024-05-01"));
+eq1.appendNode(new ScalarNode("nextServiceDue", "2024-08-01"));
+eq1.appendNode(new ScalarNode("assignedTo", "EMP-0110"));
+
+// equipment 2
+var eq2 = equipmentNode.value.at(1);
+eq2.appendNode(new ScalarNode("equipmentId", "FL-02"));
+eq2.appendNode(new ScalarNode("type", "forklift"));
+eq2.appendNode(new ScalarNode("model", "Toyota 8FBE20"));
+eq2.appendNode(new ScalarNode("status", "under_maintenance"));
+eq2.appendNode(new ScalarNode("lastServiced", "2024-06-10"));
+eq2.appendNode(new ScalarNode("nextServiceDue", "2024-09-10"));
+eq2.appendNode(new ScalarNode("assignedTo", null));
+
+// maintenanceLog (list of 1)
+var maintenanceLog = new ListNode("maintenanceLog", 1);
+var m1 = maintenanceLog.value.at(0);
+m1.appendNode(new ScalarNode("date", "2024-06-10"));
+m1.appendNode(new ScalarNode("issue", "Hydraulic fluid leak"));
+m1.appendNode(new ScalarNode("technician", "External - ForkFix Ltd"));
+m1.appendNode(new ScalarNode("resolved", false));
+eq2.appendNode(maintenanceLog);
+
+warehouseNode.value.appendNode(equipmentNode);
+
+// inboundShipments (list of 2)
+var inboundShipments = new ListNode("inboundShipments", 2);
+
+// IN-5501
+var in1 = inboundShipments.value.at(0);
+in1.appendNode(new ScalarNode("shipmentId", "IN-5501"));
+in1.appendNode(new ScalarNode("supplier", "PackCo Supplies Ltd"));
+in1.appendNode(new ScalarNode("expectedArrival", "2024-06-18"));
+in1.appendNode(new ScalarNode("status", "in_transit"));
+// items for IN-5501 (2 items)
+var in1items = new ListNode("items", 2);
+var in1item1 = in1items.value.at(0);
+in1item1.appendNode(new ScalarNode("sku", "SKU-3301"));
+in1item1.appendNode(new ScalarNode("qtyExpected", 5000));
+var in1item2 = in1items.value.at(1);
+in1item2.appendNode(new ScalarNode("sku", "SKU-3302"));
+in1item2.appendNode(new ScalarNode("qtyExpected", 1000));
+in1.appendNode(in1items);
+
+// IN-5502
+var in2 = inboundShipments.value.at(1);
+in2.appendNode(new ScalarNode("shipmentId", "IN-5502"));
+in2.appendNode(new ScalarNode("supplier", "ColdChain Foods Ltd"));
+in2.appendNode(new ScalarNode("expectedArrival", "2024-06-15"));
+in2.appendNode(new ScalarNode("status", "delivered"));
+// items for IN-5502 (1 item with extra fields)
+var in2items = new ListNode("items", 1);
+var in2item1 = in2items.value.at(0);
+in2item1.appendNode(new ScalarNode("sku", "SKU-8801"));
+in2item1.appendNode(new ScalarNode("qtyExpected", 400));
+in2item1.appendNode(new ScalarNode("qtyReceived", 396));
+in2item1.appendNode(new ScalarNode("discrepancyReason", "4 units damaged in transit"));
+in2.appendNode(in2items);
+
+warehouseNode.value.appendNode(inboundShipments);
+
+// outboundOrders (list of 2)
+var outboundOrders = new ListNode("outboundOrders", 2);
+
+// OUT-7701
+var out1 = outboundOrders.value.at(0);
+out1.appendNode(new ScalarNode("orderId", "OUT-7701"));
+out1.appendNode(new ScalarNode("destination", "Retail Store 22 Leeds"));
+out1.appendNode(new ScalarNode("status", "picking"));
+out1.appendNode(new ScalarNode("priority", "high"));
+// items
+var out1items = new ListNode("items", 2);
+var out1item1 = out1items.value.at(0);
+out1item1.appendNode(new ScalarNode("sku", "SKU-3301"));
+out1item1.appendNode(new ScalarNode("qty", 200));
+var out1item2 = out1items.value.at(1);
+out1item2.appendNode(new ScalarNode("sku", "SKU-3310"));
+out1item2.appendNode(new ScalarNode("qty", 150));
+out1.appendNode(out1items);
+
+// OUT-7702
+var out2 = outboundOrders.value.at(1);
+out2.appendNode(new ScalarNode("orderId", "OUT-7702"));
+out2.appendNode(new ScalarNode("destination", "Retail Store 08 Bristol"));
+out2.appendNode(new ScalarNode("status", "dispatched"));
+out2.appendNode(new ScalarNode("priority", "standard"));
+// items
+var out2items = new ListNode("items", 1);
+var out2item1 = out2items.value.at(0);
+out2item1.appendNode(new ScalarNode("sku", "SKU-9901"));
+out2item1.appendNode(new ScalarNode("qty", 2));
+out2.appendNode(out2items);
+
+// dispatch mapping under OUT-7702
+var dispatch = new MappingNode("dispatch");
+dispatch.value.appendNode(new ScalarNode("carrier", "DX Freight"));
+dispatch.value.appendNode(new ScalarNode("dispatchedAt", "2024-06-13T14:20:00Z"));
+dispatch.value.appendNode(new ScalarNode("estimatedDelivery", "2024-06-14"));
+out2.appendNode(dispatch);
+
+warehouseNode.value.appendNode(outboundOrders);
+
+// safetyIncidents (list of 1)
+var safetyIncidents = new ListNode("safetyIncidents", 1);
+var inc1 = safetyIncidents.value.at(0);
+inc1.appendNode(new ScalarNode("incidentId", "INC-014"));
+inc1.appendNode(new ScalarNode("date", "2024-04-22"));
+inc1.appendNode(new ScalarNode("zone", "Z-A"));
+inc1.appendNode(new ScalarNode("description", "Minor slip near packing station, no injury reported."));
+inc1.appendNode(new ScalarNode("severity", "low"));
+inc1.appendNode(new ScalarNode("reportedBy", "EMP-0134"));
+inc1.appendNode(new ScalarNode("correctiveAction", "Wet floor signage added, spill cleaned immediately."));
+
+warehouseNode.value.appendNode(safetyIncidents);
+
+// finally append warehouse to root row
+rootFirstRow.appendNode(warehouseNode);
+```
+
+How to persist/save the YAML document
+- The EOL script above builds the YAML document in the bound YAML model instance (YAMLDoc). How you persist it depends on how you set up and execute the module:
+  - If you are running this script inside an Epsilon run where YAMLDoc is a YamlModel instance backed by a file, the hosting Java code that created and loaded the YamlModel can save the underlying resource after module execution (see the docs' Java examples for adding a YamlModel to a module and saving a model/resource).
+  - The docs show how to create and add a YamlModel in Java and then execute an EolModule; after execution you can call resource.save(...) or the model's save method (depending on your setup). The exact code for saving depends on your Java integration and the YamlModel APIs exposed in your environment.
+
+If you want, I can:
+- produce the corresponding Java snippet that creates a YamlModel (file-backed), runs an EolModule containing this script and saves the model (if you provide whether you run this inside an Eclipse plugin or a standalone Java app), or
+- adjust the root to be a mapping (no leading dash) if you confirm your environment exposes the mapping-root API (e.g. setRootAsMapping or similar).
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             2
+  Prompt tokens:     6,412
+  Completion tokens: 7,552
+  Total tokens:      13,964
+  Estimated cost:    $0.01671
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         2
+  Total prompt tokens:     6,412
+  Total completion tokens: 7,552
+  Total tokens:            13,964
+  Total estimated cost:    $0.01671
+============================================================

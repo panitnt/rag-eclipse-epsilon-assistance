@@ -1,0 +1,1205 @@
+Session started: 2026-07-30 12:53:28
+Model: openai/gpt-5-mini | temperature=0
+RETRIEVAL_MODE=sparse (BM25 Qdrant/bm25, no dense)
+SIBLING_EXPANSION=off
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[12:53:28]
+
+── QUESTION ──────────────────────────────────────────────
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+warehouse:
+  id: WH-UK-004
+  name: Midlands Distribution Centre
+  location:
+    address: "Unit 7, Logistics Park, Birmingham, B26 3QT"
+    coordinates: {lat: 52.4539, lon: -1.7480}
+  operatingHours:
+    Mon-Fri: "06:00-22:00"
+    Sat: "08:00-16:00"
+    Sun: closed
+  manager:
+    name: Priya Chandrasekaran
+    employeeId: EMP-0092
+    shift: day
+
+  zones:
+    - zoneId: Z-A
+      name: Fast-Moving Goods
+      temperatureControlled: false
+      racks:
+        - rackId: A-01
+          aisle: 1
+          bins:
+            - binId: A-01-01
+              sku: SKU-3301
+              description: Cardboard Boxes (Small)
+              qty: 4200
+              reorderPoint: 1000
+              lastRestocked: "2024-06-01"
+            - binId: A-01-02
+              sku: SKU-3302
+              description: Bubble Wrap Rolls
+              qty: 850
+              reorderPoint: 500
+              lastRestocked: "2024-05-28"
+        - rackId: A-02
+          aisle: 1
+          bins:
+            - binId: A-02-01
+              sku: SKU-3310
+              description: Packing Tape (Clear)
+              qty: 1200
+              reorderPoint: 400
+              lastRestocked: "2024-06-05"
+
+    - zoneId: Z-B
+      name: Cold Storage
+      temperatureControlled: true
+      targetTempCelsius: 4
+      racks:
+        - rackId: B-01
+          aisle: 3
+          bins:
+            - binId: B-01-01
+              sku: SKU-8801
+              description: Chilled Ready Meals (Case of 12)
+              qty: 340
+              reorderPoint: 150
+              lastRestocked: "2024-06-12"
+              expiryTracking:
+                - batch: BATCH-2201
+                  expiryDate: "2024-06-20"
+                  qty: 120
+                - batch: BATCH-2202
+                  expiryDate: "2024-06-25"
+                  qty: 220
+
+    - zoneId: Z-C
+      name: Bulk Pallet Storage
+      temperatureControlled: false
+      racks:
+        - rackId: C-01
+          aisle: 6
+          bins:
+            - binId: C-01-01
+              sku: SKU-9901
+              description: Bottled Water (Pallet, 72 cases)
+              qty: 18
+              reorderPoint: 5
+              lastRestocked: "2024-05-20"
+
+  staff:
+    - employeeId: EMP-0110
+      name: Josh Reiner
+      role: forklift_operator
+      shift: day
+      certifications: [forklift_class2, manual_handling]
+    - employeeId: EMP-0122
+      name: Mei Lin Tan
+      role: picker
+      shift: night
+      certifications: [manual_handling]
+    - employeeId: EMP-0134
+      name: Sam Patterson
+      role: warehouse_supervisor
+      shift: day
+      certifications: [forklift_class2, forklift_class3, first_aid, manual_handling]
+
+  equipment:
+    - equipmentId: FL-01
+      type: forklift
+      model: Toyota 8FBE20
+      status: operational
+      lastServiced: "2024-05-01"
+      nextServiceDue: "2024-08-01"
+      assignedTo: EMP-0110
+    - equipmentId: FL-02
+      type: forklift
+      model: Toyota 8FBE20
+      status: under_maintenance
+      lastServiced: "2024-06-10"
+      nextServiceDue: "2024-09-10"
+      assignedTo: null
+      maintenanceLog:
+        - date: "2024-06-10"
+          issue: Hydraulic fluid leak
+          technician: External - ForkFix Ltd
+          resolved: false
+
+  inboundShipments:
+    - shipmentId: IN-5501
+      supplier: PackCo Supplies Ltd
+      expectedArrival: "2024-06-18"
+      status: in_transit
+      items:
+        - sku: SKU-3301
+          qtyExpected: 5000
+        - sku: SKU-3302
+          qtyExpected: 1000
+    - shipmentId: IN-5502
+      supplier: ColdChain Foods Ltd
+      expectedArrival: "2024-06-15"
+      status: delivered
+      items:
+        - sku: SKU-8801
+          qtyExpected: 400
+          qtyReceived: 396
+          discrepancyReason: 4 units damaged in transit
+
+  outboundOrders:
+    - orderId: OUT-7701
+      destination: Retail Store 22 Leeds
+      status: picking
+      priority: high
+      items:
+        - sku: SKU-3301
+          qty: 200
+        - sku: SKU-3310
+          qty: 150
+    - orderId: OUT-7702
+      destination: Retail Store 08 Bristol
+      status: dispatched
+      priority: standard
+      items:
+        - sku: SKU-9901
+          qty: 2
+      dispatch:
+        carrier: DX Freight
+        dispatchedAt: "2024-06-13T14:20:00Z"
+        estimatedDelivery: "2024-06-14"
+
+  safetyIncidents:
+    - incidentId: INC-014
+      date: "2024-04-22"
+      zone: Z-A
+      description: Minor slip near packing station, no injury reported.
+      severity: low
+      reportedBy: EMP-0134
+      correctiveAction: Wet floor signage added, spill cleaned immediately.
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+warehouse:
+  id: WH-UK-004
+  name: Midlands Distribution Centre
+  location:
+    address: "Unit 7, Logistics Park, Birmingham, B26 3QT"
+    coordinates: {lat: 52.4539, lon: -1.7480}
+  operatingHours:
+    Mon-Fri: "06:00-22:00"
+    Sat: "08:00-16:00"
+    Sun: closed
+  manager:
+    name: Priya Chandrasekaran
+    employeeId: EMP-0092
+    shift: day
+
+  zones:
+    - zoneId: Z-A
+      name: Fast-Moving Goods
+      temperatureControlled: false
+      racks:
+        - rackId: A-01
+          aisle: 1
+          bins:
+            - binId: A-01-01
+              sku: SKU-3301
+              description: Cardboard Boxes (Small)
+              qty: 4200
+              reorderPoint: 1000
+              lastRestocked: "2024-06-01"
+            - binId: A-01-02
+              sku: SKU-3302
+              description: Bubble Wrap Rolls
+              qty: 850
+              reorderPoint: 500
+              lastRestocked: "2024-05-28"
+        - rackId: A-02
+          aisle: 1
+          bins:
+            - binId: A-02-01
+              sku: SKU-3310
+              description: Packing Tape (Clear)
+              qty: 1200
+              reorderPoint: 400
+              lastRestocked: "2024-06-05"
+
+    - zoneId: Z-B
+      name: Cold Storage
+      temperatureControlled: true
+      targetTempCelsius: 4
+      racks:
+        - rackId: B-01
+          aisle: 3
+          bins:
+            - binId: B-01-01
+              sku: SKU-8801
+              description: Chilled Ready Meals (Case of 12)
+              qty: 340
+              reorderPoint: 150
+              lastRestocked: "2024-06-12"
+              expiryTracking:
+                - batch: BATCH-2201
+                  expiryDate: "2024-06-20"
+                  qty: 120
+                - batch: BATCH-2202
+                  expiryDate: "2024-06-25"
+                  qty: 220
+
+    - zoneId: Z-C
+      name: Bulk Pallet Storage
+      temperatureControlled: false
+      racks:
+        - rackId: C-01
+          aisle: 6
+          bins:
+            - binId: C-01-01
+              sku: SKU-9901
+              description: Bottled Water (Pallet, 72 cases)
+              qty: 18
+              reorderPoint: 5
+              lastRestocked: "2024-05-20"
+
+  staff:
+    - employeeId: EMP-0110
+      name: Josh Reiner
+      role: forklift_operator
+      shift: day
+      certifications: [forklift_class2, manual_handling]
+    - employeeId: EMP-0122
+      name: Mei Lin Tan
+      role: picker
+      shift: night
+      certifications: [manual_handling]
+    - employeeId: EMP-0134
+      name: Sam Patterson
+      role: warehouse_supervisor
+      shift: day
+      certifications: [forklift_class2, forklift_class3, first_aid, manual_handling]
+
+  equipment:
+    - equipmentId: FL-01
+      type: forklift
+      model: Toyota 8FBE20
+      status: operational
+      lastServiced: "2024-05-01"
+      nextServiceDue: "2024-08-01"
+      assignedTo: EMP-0110
+    - equipmentId: FL-02
+      type: forklift
+      model: Toyota 8FBE20
+      status: under_maintenance
+      lastServiced: "2024-06-10"
+      nextServiceDue: "2024-09-10"
+      assignedTo: null
+      maintenanceLog:
+        - date: "2024-06-10"
+          issue: Hydraulic fluid leak
+          technician: External - ForkFix Ltd
+          resolved: false
+
+  inboundShipments:
+    - shipmentId: IN-5501
+      supplier: PackCo Supplies Ltd
+      expectedArrival: "2024-06-18"
+      status: in_transit
+      items:
+        - sku: SKU-3301
+          qtyExpected: 5000
+        - sku: SKU-3302
+          qtyExpected: 1000
+    - shipmentId: IN-5502
+      supplier: ColdChain Foods Ltd
+      expectedArrival: "2024-06-15"
+      status: delivered
+      items:
+        - sku: SKU-8801
+          qtyExpected: 400
+          qtyReceived: 396
+          discrepancyReason: 4 units damaged in transit
+
+  outboundOrders:
+    - orderId: OUT-7701
+      destination: Retail Store 22 Leeds
+      status: picking
+      priority: high
+      items:
+        - sku: SKU-3301
+          qty: 200
+        - sku: SKU-3310
+          qty: 150
+    - orderId: OUT-7702
+      destination: Retail Store 08 Bristol
+      status: dispatched
+      priority: standard
+      items:
+        - sku: SKU-9901
+          qty: 2
+      dispatch:
+        carrier: DX Freight
+        dispatchedAt: "2024-06-13T14:20:00Z"
+        estimatedDelivery: "2024-06-14"
+
+  safetyIncidents:
+    - incidentId: INC-014
+      date: "2024-04-22"
+      zone: Z-A
+      description: Minor slip near packing station, no injury reported.
+      severity: low
+      reportedBy: EMP-0134
+      correctiveAction: Wet floor signage added, spill cleaned immediately.
+
+── SPARSE POOL (before rerank, before sibling expansion) ──
+  1. [26.358] epsilon_docs/flock.md (heading='Epsilon Flock for Model Migration', parent_heading='')
+  2. [25.529] epsilon_docs/eol.md (heading='Tuples', parent_heading='Types')
+  3. [25.507] epsilon_docs/eol.md (heading='Variable Declaration Statement', parent_heading='Expressions')
+  4. [25.332] epsilon_docs/pinset_index.md (heading='Model example', parent_heading='Dataset Extraction (Pinset)')
+  5. [24.323] epsilon_docs/etl.md (heading='Source Elements Resolution', parent_heading='Concrete Syntax')
+  6. [23.617] epsilon_docs/eunit.md (heading='Test Suites', parent_heading='Test Organization')
+  7. [23.606] epsilon_docs/workflow.md (heading='Structure', parent_heading='Motivation')
+  8. [22.984] epsilon_docs/eunit.md (heading='Test Suites', parent_heading='Test Organization')
+  9. [22.642] epsilon_docs/eol.md (heading='Feature Navigation', parent_heading='Expressions')
+  10. [22.552] epsilon_docs/articles_minimal-examples_index.md (heading='Exporting an Eclipse project from your workspace', parent_heading='Constructing a Helpful Minimal Example')
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.\nwarehouse:\n  id: WH-UK-004\n  name: Midlands Distribution Centre\n  location:\n    address: "Unit 7, Logistics Park, Birmingham, B26 3QT"\n    coordinates: {lat: 52.4539, lon: -1.7480}\n  operatingHours:\n    Mon-Fri: "06:00-22:00"\n    Sat: "08:00-16:00"\n    Sun: closed\n  manager:\n    name: Priya Chandrasekaran\n    employeeId: EMP-0092\n    shift: day\n\n  zones:\n    - zoneId: Z-A\n      name: Fast-Moving Goods\n      temperatureControlled: false\n      racks:\n        - rackId: A-01\n          aisle: 1\n          bins:\n            - binId: A-01-01\n              sku: SKU-3301\n              description: Cardboard Boxes (Small)\n              qty: 4200\n              reorderPoint: 1000\n              lastRestocked: "2024-06-01"\n            - binId: A-01-02\n              sku: SKU-3302\n              description: Bubble Wrap Rolls\n              qty: 850\n              reorderPoint: 500\n              lastRestocked: "2024-05-28"\n        - rackId: A-02\n          aisle: 1\n          bins:\n            - binId: A-02-01\n              sku: SKU-3310\n              description: Packing Tape (Clear)\n              qty: 1200\n              reorderPoint: 400\n              lastRestocked: "2024-06-05"\n\n    - zoneId: Z-B\n      name: Cold Storage\n      temperatureControlled: true\n      targetTempCelsius: 4\n      racks:\n        - rackId: B-01\n          aisle: 3\n          bins:\n            - binId: B-01-01\n              sku: SKU-8801\n              description: Chilled Ready Meals (Case of 12)\n              qty: 340\n              reorderPoint: 150\n              lastRestocked: "2024-06-12"\n              expiryTracking:\n                - batch: BATCH-2201\n                  expiryDate: "2024-06-20"\n                  qty: 120\n                - batch: BATCH-2202\n                  expiryDate: "2024-06-25"\n                  qty: 220\n\n    - zoneId: Z-C\n      name: Bulk Pallet Storage\n      temperatureControlled: false\n      racks:\n        - rackId: C-01\n          aisle: 6\n          bins:\n            - binId: C-01-01\n              sku: SKU-9901\n              description: Bottled Water (Pallet, 72 cases)\n              qty: 18\n              reorderPoint: 5\n              lastRestocked: "2024-05-20"\n\n  staff:\n    - employeeId: EMP-0110\n      name: Josh Reiner\n      role: forklift_operator\n      shift: day\n      certifications: [forklift_class2, manual_handling]\n    - employeeId: EMP-0122\n      name: Mei Lin Tan\n      role: picker\n      shift: night\n      certifications: [manual_handling]\n    - employeeId: EMP-0134\n      name: Sam Patterson\n      role: warehouse_supervisor\n      shift: day\n      certifications: [forklift_class2, forklift_class3, first_aid, manual_handling]\n\n  equipment:\n    - equipmentId: FL-01\n      type: forklift\n      model: Toyota 8FBE20\n      status: operational\n      lastServiced: "2024-05-01"\n      nextServiceDue: "2024-08-01"\n      assignedTo: EMP-0110\n    - equipmentId: FL-02\n      type: forklift\n      model: Toyota 8FBE20\n      status: under_maintenance\n      lastServiced: "2024-06-10"\n      nextServiceDue: "2024-09-10"\n      assignedTo: null\n      maintenanceLog:\n        - date: "2024-06-10"\n          issue: Hydraulic fluid leak\n          technician: External - ForkFix Ltd\n          resolved: false\n\n  inboundShipments:\n    - shipmentId: IN-5501\n      supplier: PackCo Supplies Ltd\n      expectedArrival: "2024-06-18"\n      status: in_transit\n      items:\n        - sku: SKU-3301\n          qtyExpected: 5000\n        - sku: SKU-3302\n          qtyExpected: 1000\n    - shipmentId: IN-5502\n      supplier: ColdChain Foods Ltd\n      expectedArrival: "2024-06-15"\n      status: delivered\n      items:\n        - sku: SKU-8801\n          qtyExpected: 400\n          qtyReceived: 396\n          discrepancyReason: 4 units damaged in transit\n\n  outboundOrders:\n    - orderId: OUT-7701\n      destination: Retail Store 22 Leeds\n      status: picking\n      priority: high\n      items:\n        - sku: SKU-3301\n          qty: 200\n        - sku: SKU-3310\n          qty: 150\n    - orderId: OUT-7702\n      destination: Retail Store 08 Bristol\n      status: dispatched\n      priority: standard\n      items:\n        - sku: SKU-9901\n          qty: 2\n      dispatch:\n        carrier: DX Freight\n        dispatchedAt: "2024-06-13T14:20:00Z"\n        estimatedDelivery: "2024-06-14"\n\n  safetyIncidents:\n    - incidentId: INC-014\n      date: "2024-04-22"\n      zone: Z-A\n      description: Minor slip near packing station, no injury reported.\n      severity: low\n      reportedBy: EMP-0134\n      correctiveAction: Wet floor signage added, spill cleaned immediately.'
+    1. sim=0.5709  epsilon_docs/flock.md | heading='Epsilon Flock for Model Migration'
+    2. sim=0.5445  epsilon_docs/workflow.md | heading='Structure'
+    3. sim=0.5257  epsilon_docs/pinset_index.md | heading='Model example'
+    4. sim=0.5173  epsilon_docs/etl.md | heading='Source Elements Resolution'
+    5. sim=0.5076  epsilon_docs/eunit.md | heading='Test Suites'
+    6. sim=0.4958  epsilon_docs/articles_minimal-examples_index.md | heading='Exporting an Eclipse project from your workspace'
+    7. sim=0.4931  epsilon_docs/eol.md | heading='Variable Declaration Statement'
+    8. sim=0.4817  epsilon_docs/eol.md | heading='Feature Navigation'
+    9. sim=0.3919  epsilon_docs/eol.md | heading='Tuples'
+
+── RETRIEVED (after dedup + rerank pass 1 only — sibling expansion OFF) ──
+
+Docs (5):
+  1. [0.013] epsilon_docs/eunit.md (heading='Test Suites', parent_heading='Test Organization')
+     ## Test Suites
+Example: extend EUnit by implementing a new Epsilon Model Connectivity driver to support additional modelling technologies.
+
+```
+
+## Extending EUnit
+
+EUnit is based on the Epsilon platf
+  2. [0.011] epsilon_docs/flock.md (heading='Epsilon Flock for Model Migration', parent_heading='')
+     ## Epsilon Flock for Model Migration
+Example: demonstrate the six-phase execution semantics of an Epsilon Flock module for model migration.
+Keywords: new instance
+
+```
+
+## Execution Semantics
+
+The exe
+  3. [0.011] epsilon_docs/eol.md (heading='Variable Declaration Statement', parent_heading='Expressions')
+     The listing below provides an example of declaring and using variables.
+
+- Line 1 defines a variable named `i` of type `Integer` and assigns it an initial value of `5`.
+- Line 2 defines a variable nam
+  4. [0.010] epsilon_docs/etl.md (heading='Source Elements Resolution', parent_heading='Concrete Syntax')
+     ## Source Elements Resolution
+Example: demonstrate resolving source elements using equivalent() to link transformed model elements in a model-to-model transformation.
+
+```
+
+In lines 1--3, the `Tree2No
+  5. [0.009] epsilon_docs/eol.md (heading='Feature Navigation', parent_heading='Expressions')
+     - Boolean literals use the `true` reserved keyword for the true Boolean value, and `false` reserved keyword for the false Boolean value.
+
+- Sequence and most other collections (except `Map`s) also hav
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon.
+
+Use the provided context as the PRIMARY and AUTHORITATIVE source of truth.
+Only use syntax, class names, methods, and patterns that appear explicitly in the context.
+You may adapt documented patterns to the user's structure, provided that no new APIs or unsupported methods are invented.
+If the user's message contains sample data, treat it only as the desired target structure — not as evidence for API syntax.
+If the context provides partial evidence only, generate code for the parts that are supported and explicitly flag any parts that are uncertain or unsupported.
+
+When a code example is appropriate, provide a complete and runnable example that covers the full structure given by the user.
+When generating code, follow only the patterns shown in the context exactly — do not skip initialisation steps, introduce intermediate objects, or shortcut method chains that are not explicitly demonstrated.
+
+--- DOCUMENTATION ---
+[Source: epsilon_docs/eunit.md]
+## Test Suites
+Example: extend EUnit by implementing a new Epsilon Model Connectivity driver to support additional modelling technologies.
+
+```
+
+## Extending EUnit
+
+EUnit is based on the Epsilon platform, but it is designed to accommodate other technologies. In this section we will explain several strategies to add support for these technologies to EUnit.
+
+EUnit uses the Epsilon Model Connectivity abstraction layer to handle different modelling technologies. Adding support for a different modelling technology only requires implementing another driver for EMC. Depending on the modelling technology, the driver can provide optional services such as model comparison, caching or reflection.
+
+EUnit uses Ant as a workflow language: all model management tasks must be exposed through Ant tasks. It is highly encouraged, however, that the Ant task is aware of the EMC model repository linked to the Ant project. Otherwise, users will have to shuffle the models out from and back into the repository between model management tasks. As an example, a helper target for an ATL transformation with the existing Ant tasks needs to:
+
+1. Save the input model in the EMC model repository to a file, by invoking the `<epsilon.storeModel>` task.
+2. Load the metamodels and the input model with `<atl.loadModel>`.
+3. Run the ATL transformation with `<atl.launch>`.
+4. Save the result of the ATL transformation with `<atl.saveModel>`.
+5. Load it into the EMC model repository with `<epsilon.emf.loadModel>`.
+
+The listing below shows the Ant buildfile which would be required for running these steps, showing that while EUnit can use the existing ATL tasks as-is, the required helper task is quite longer than the one shown above. Ideally, Ant tasks should be adapted or wrapped to use models directly from the EMC model repository.
+
+```
+
+[Source: epsilon_docs/flock.md]
+## Epsilon Flock for Model Migration
+Example: demonstrate the six-phase execution semantics of an Epsilon Flock module for model migration.
+Keywords: new instance
+
+```
+
+## Execution Semantics
+
+The execution semantics of a Flock module are now described. Note that the Epsilon Model Connectivity (EMC) layer, which Flock uses to access and manipulate models supports a range of modelling technologies, and identifies types by name. Consequently, the term *type* is used to mean "the name of an element of a metamodel" in the following discussion. For example, `Component`, `Connector` and `InputPort` are three of the types defined in the evolved metamodel.
+
+Execution of a Flock module occurs in six phases:
+
+1.  Any pre blocks are executed.
+
+2.  Type mapping constructs (retypings and deletions) are processed to identify the way in which original and evolved metamodel types are to be related.
+
+3.  Migrate rules are inspected to build sets of ignored properties.
+
+4.  The information determined in steps 2 and 3 is used as input a copying algorithm, which creates an (equivalent) element in the migrated model for each element of the original model, and copies values from original to equivalent model elements.
+
+5.  Migrate rules are executed on each pair of original and (equivalent) migrated model elements.
+
+6.  Any post blocks are executed.
+
+In phases 2-5, language constructs are executed only when they are *applicable*. The *applicability* of the Flock language constructs (retyping, deletion or migrate rule) is determined from their type and guard. For a language construct `c` to be applicable to an original model element `o`, `o` must instantiate either the original type of `c` or one of the subtypes of the original type of `c`; and `o` must satisfy the guard of `c`. For language constructs that have been annotated as strict, type-checking is more restrictive: `o` must instantiate the original type of `c` (and not one its subtypes). In other words, the applicability of strict constructs is determined with EOL's `isTypeOf` operation and the applicability of non-strict constructs is determined with EOL's `isKindOf` operation. For language constructs that have been annotated with cascade, type-checking is less restrictive: `o` must be contained in another model element (either directly or indirectly) to which the construct is applicable. Similarly, for language constructs that operate on packages (i.e. package retyping and package deletions), type-checking is less restrictive: `o` must be contained in a package with the same name as the original package of `c`.
+
+
+Phases 2-4 of execution implement a copying algorithm which has been termed conservative copy and is discussed thoroughly [elsewhere](https://link.springer.com/chapter/10.1007/978-3-642-16145-2_5). Essentially, conservative copy will do the following for each element of the original model, `o`:
+
+1.  **Do nothing** when `o` instantiates a type that cannot be instantiated in the evolved metamodel (e.g., because the type of `o` is now abstract or no longer exists). Example: instances of `Port` in the original metamodel are not copied because `Port` has become abstract.
+
+2.  **Fully copy** `o` to produce `m` in the migrated model when `o` instantiate a type that has not been at all affected by metamodel evolution. Example: instances of `Component` in the original metamodel are fully copied because neither `Component` nor any of its features have been changed.
+
+3.  **Partially copy** `o` to produce `m` in the migrated model when `o` instantiates a type with one or more features that have been affected by metamodel evolution. Example: instances of `Connector` in the original metamodel are partially copied because the `from` and `to` features have been renamed. Note that in a partial copy only the features that have not been affected by metamodel evolution are copied (e.g., the `name`s of `Connector`s).
+
+In phase 5, migrate rules are applied. These rules specify the problem-specific migration logic and might, for example, create migrated model elements for original model elements that were skipped or partially copied by the copying algorithm described above. The Flock engine makes available two variables (`original` and `migrated`) for use in the body of any migration rule. These variables are used to refer to the particular elements of the original and migrated models to which the rule is currently being applied. In addition, Flock defines an `equivalent()` operation that can be called on any original model element and returns the equivalent migrated model element (or `null`). The `equivalent()` operation is used to access elements of the migrated model that cannot be accessed via the `migrated` variable due to metamodel evolution. Flock rules often contain statements of the form: `original.x.equivalent()` where `x` is a feature that has been removed from the evolved metamodel.
+
+Finally, we should consider the order in which Flock schedules language constructs: a construct that appears earlier (higher) in the source file has priority. This is important because only one type mapping (retypings and deletions) is applied per original model element, and because this implies that migrate rules are applied from top-to-bottom. This ordering is consistent with the other languages of the Epsilon platform.
+
+Example
+-------
+
+Flock is now demonstrated using the example of model migration
+introduced above. Recall that the metamodel evolution
+ involves splitting the `Port` type to form the
+`InputPort` and `OutputPort` types.
+Below is a high-level design for
+migrating models from the original to the evolved metamodel.
+
+-   For every instance, p, of `Port` in the original model: 
+    - If there exists in the original model a `Connector`, c, that specifies p as
+    the value for its `from` feature:
+        - Create a new instance, `i`, of `InputPort` in the migrated model. 
+        - Set c as the `connector` of `i`. 
+        - Add c to the `ports` reference of the `Component` that contains c.
+
+    - If there exists in the original model a `Connector`, c, that specifies p as the value for its `to` feature: 
+        - Create a new instance of `OutputPort` in the migrated model. 
+        - Set c as the `connector` of i. 
+        - Add c to the `ports` reference of the `Component` that contains c.
+
+-   And nothing else changes.
+
+The Flock migration strategy that implements this design is shown below. Three type mappings constructs (on lines 1-4) are used to control the way in which instances of `Port` are migrated. For example, line 3 specifies that instances of `Port` that are referenced via the `from` feature of a `Connector` are retyped, becoming `InputPort`s. Instances of `Connector` are migrated using the rule on lines 6-9, which specifies the way in which the `from` and `to` features have evolved to form the `in` and `out` features.
+
+```
+
+[Source: epsilon_docs/eol.md]
+The listing below provides an example of declaring and using variables.
+
+- Line 1 defines a variable named `i` of type `Integer` and assigns it an initial value of `5`.
+- Line 2 defines a variable named `c` of type `Class` (from model Uml) and creates a new instance of the type in the model (by using the `new` keyword).
+- The commented out assignment statement of line 3 would raise a runtime error since it would attempt to assign a `String` value to an `Integer` variable.
+- The condition of line 4 returns true since the `c` variable has been initialized before.
+- Line 5 defines a new variable also named `i` that is of type `String` and which overrides the `Integer` variable declared in line 1.
+- Therefore the assignment statement of line 6 is legitimate as it assigns a string value to a variable of type String.
+- As the program has exited the scope of the `if` statement, the assignment statement of line 7 is also legitimate as it refers to the `i` variable defined in line 1.
+- In line 8, we declare `s1` as a `Sequence` of any type of value.
+- Line 9 declares `s2` as a `Sequence` containing values of type `Integer`. Note that type parameters can be written as `CollectionType<ValueType>` or as `CollectionType(ValueType)`.
+- Line 10 declares `m1` as a `Map` where the keys and values can be of any type.
+- Line 11 declares `m2` as a `Map` where the keys are `String`s, and the values are `Integer`s.
+
+[Source: epsilon_docs/etl.md]
+## Source Elements Resolution
+Example: demonstrate resolving source elements using equivalent() to link transformed model elements in a model-to-model transformation.
+
+```
+
+In lines 1--3, the `Tree2Node` rule specifies that it can transform elements of the `Tree` type in the `Tree` model into elements of the `Node` type in the `Graph` model. In line 5 it specifies that the label of the created Node should be the same as the label of the source Tree. If the parent of the source `Tree` is defined (line 7), the rule creates a new `Edge` (line 8) and sets its `source` property to the created `Node` (line 9) and its `target` property to the `equivalent` `Node` of the source `Tree`'s `parent` (line 10).
+
+The Epsilon Playground includes a [more comprehensive version of this example](../../playground/?tree2graph-equivalent), providing comparisons between the various ways to use the `equivalent()` and `equivalents()` operations.
+
+#### Persisting the transformation trace
+
+ETL does not provide built-in support for persisting the transformation trace, however, you can access it through `System.context.transformationTrace` and persist (parts of) it in a format of your choice (e.g. in a `post` block of your transformation).
+
+### Overriding the semantics of the EOL Special Assignment Operator
+
+As discussed above, resolving the equivalent(s) or source model elements in the target model is a recurring task in model transformation. Furthermore, in most cases resolving the equivalent of a model element is immediately followed by assigning/adding the obtained target model elements to the value(s) of a property of another target model element. For example, in line 10 of the listing above, the `equivalent` obtained is immediately assigned to the `target` property of the generated `Edge`. To make transformation specifications more readable, ETL overrides the semantics of the `SpecialAssignmentStatement` (`::=` in terms of concrete syntax), to set its left-hand side, not to the element its right-hand side evaluates to, but to its `equivalent` as calculated using the `equivalent()` operation discussed above. Using this feature, line 10 of the `Tree2Node` rule can be rewritten as shown below.
+
+```
+
+[Source: epsilon_docs/eol.md]
+- Boolean literals use the `true` reserved keyword for the true Boolean value, and `false` reserved keyword for the false Boolean value.
+
+- Sequence and most other collections (except `Map`s) also have literals. Their format is `T {e}`, where `T` is the name of the type and `e` are zero or more elements, separated by commas. For instance, `Sequence{}` is the empty sequence, and `Set {1, 2, 3}` is the set of numbers between 1 and 3.
+
+- Map literals are similar to the sequential collection literals, but their elements are of the form `key = value`. For instance, `Map{"a" = 1, "b" = 2}` is a map which has two keys, "a" and "b", which map to the integer values 1 and 2, respectively.
+
+    Please note that, when defining an element such as `1 = 2 = 3`, the
+    key would be `1` and the value would be the result of evaluating `2
+    = 3` (false). If you would like to use the result of the expression
+    `1 = 2` as key, you will need to enclose it in parenthesis, such as
+    in `(1 = 2) = 3`.
+
+### Feature Navigation
+
+Since EOL needs to manage models defined using object oriented modelling technologies, it provides expressions to navigate properties and invoke simple and declarative operations on objects.
+
+--- USER MESSAGE ---
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+warehouse:
+  id: WH-UK-004
+  name: Midlands Distribution Centre
+  location:
+    address: "Unit 7, Logistics Park, Birmingham, B26 3QT"
+    coordinates: {lat: 52.4539, lon: -1.7480}
+  operatingHours:
+    Mon-Fri: "06:00-22:00"
+    Sat: "08:00-16:00"
+    Sun: closed
+  manager:
+    name: Priya Chandrasekaran
+    employeeId: EMP-0092
+    shift: day
+
+  zones:
+    - zoneId: Z-A
+      name: Fast-Moving Goods
+      temperatureControlled: false
+      racks:
+        - rackId: A-01
+          aisle: 1
+          bins:
+            - binId: A-01-01
+              sku: SKU-3301
+              description: Cardboard Boxes (Small)
+              qty: 4200
+              reorderPoint: 1000
+              lastRestocked: "2024-06-01"
+            - binId: A-01-02
+              sku: SKU-3302
+              description: Bubble Wrap Rolls
+              qty: 850
+              reorderPoint: 500
+              lastRestocked: "2024-05-28"
+        - rackId: A-02
+          aisle: 1
+          bins:
+            - binId: A-02-01
+              sku: SKU-3310
+              description: Packing Tape (Clear)
+              qty: 1200
+              reorderPoint: 400
+              lastRestocked: "2024-06-05"
+
+    - zoneId: Z-B
+      name: Cold Storage
+      temperatureControlled: true
+      targetTempCelsius: 4
+      racks:
+        - rackId: B-01
+          aisle: 3
+          bins:
+            - binId: B-01-01
+              sku: SKU-8801
+              description: Chilled Ready Meals (Case of 12)
+              qty: 340
+              reorderPoint: 150
+              lastRestocked: "2024-06-12"
+              expiryTracking:
+                - batch: BATCH-2201
+                  expiryDate: "2024-06-20"
+                  qty: 120
+                - batch: BATCH-2202
+                  expiryDate: "2024-06-25"
+                  qty: 220
+
+    - zoneId: Z-C
+      name: Bulk Pallet Storage
+      temperatureControlled: false
+      racks:
+        - rackId: C-01
+          aisle: 6
+          bins:
+            - binId: C-01-01
+              sku: SKU-9901
+              description: Bottled Water (Pallet, 72 cases)
+              qty: 18
+              reorderPoint: 5
+              lastRestocked: "2024-05-20"
+
+  staff:
+    - employeeId: EMP-0110
+      name: Josh Reiner
+      role: forklift_operator
+      shift: day
+      certifications: [forklift_class2, manual_handling]
+    - employeeId: EMP-0122
+      name: Mei Lin Tan
+      role: picker
+      shift: night
+      certifications: [manual_handling]
+    - employeeId: EMP-0134
+      name: Sam Patterson
+      role: warehouse_supervisor
+      shift: day
+      certifications: [forklift_class2, forklift_class3, first_aid, manual_handling]
+
+  equipment:
+    - equipmentId: FL-01
+      type: forklift
+      model: Toyota 8FBE20
+      status: operational
+      lastServiced: "2024-05-01"
+      nextServiceDue: "2024-08-01"
+      assignedTo: EMP-0110
+    - equipmentId: FL-02
+      type: forklift
+      model: Toyota 8FBE20
+      status: under_maintenance
+      lastServiced: "2024-06-10"
+      nextServiceDue: "2024-09-10"
+      assignedTo: null
+      maintenanceLog:
+        - date: "2024-06-10"
+          issue: Hydraulic fluid leak
+          technician: External - ForkFix Ltd
+          resolved: false
+
+  inboundShipments:
+    - shipmentId: IN-5501
+      supplier: PackCo Supplies Ltd
+      expectedArrival: "2024-06-18"
+      status: in_transit
+      items:
+        - sku: SKU-3301
+          qtyExpected: 5000
+        - sku: SKU-3302
+          qtyExpected: 1000
+    - shipmentId: IN-5502
+      supplier: ColdChain Foods Ltd
+      expectedArrival: "2024-06-15"
+      status: delivered
+      items:
+        - sku: SKU-8801
+          qtyExpected: 400
+          qtyReceived: 396
+          discrepancyReason: 4 units damaged in transit
+
+  outboundOrders:
+    - orderId: OUT-7701
+      destination: Retail Store 22 Leeds
+      status: picking
+      priority: high
+      items:
+        - sku: SKU-3301
+          qty: 200
+        - sku: SKU-3310
+          qty: 150
+    - orderId: OUT-7702
+      destination: Retail Store 08 Bristol
+      status: dispatched
+      priority: standard
+      items:
+        - sku: SKU-9901
+          qty: 2
+      dispatch:
+        carrier: DX Freight
+        dispatchedAt: "2024-06-13T14:20:00Z"
+        estimatedDelivery: "2024-06-14"
+
+  safetyIncidents:
+    - incidentId: INC-014
+      date: "2024-04-22"
+      zone: Z-A
+      description: Minor slip near packing station, no injury reported.
+      severity: low
+      reportedBy: EMP-0134
+      correctiveAction: Wet floor signage added, spill cleaned immediately.
+
+Question:
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+warehouse:
+  id: WH-UK-004
+  name: Midlands Distribution Centre
+  location:
+    address: "Unit 7, Logistics Park, Birmingham, B26 3QT"
+    coordinates: {lat: 52.4539, lon: -1.7480}
+  operatingHours:
+    Mon-Fri: "06:00-22:00"
+    Sat: "08:00-16:00"
+    Sun: closed
+  manager:
+    name: Priya Chandrasekaran
+    employeeId: EMP-0092
+    shift: day
+
+  zones:
+    - zoneId: Z-A
+      name: Fast-Moving Goods
+      temperatureControlled: false
+      racks:
+        - rackId: A-01
+          aisle: 1
+          bins:
+            - binId: A-01-01
+              sku: SKU-3301
+              description: Cardboard Boxes (Small)
+              qty: 4200
+              reorderPoint: 1000
+              lastRestocked: "2024-06-01"
+            - binId: A-01-02
+              sku: SKU-3302
+              description: Bubble Wrap Rolls
+              qty: 850
+              reorderPoint: 500
+              lastRestocked: "2024-05-28"
+        - rackId: A-02
+          aisle: 1
+          bins:
+            - binId: A-02-01
+              sku: SKU-3310
+              description: Packing Tape (Clear)
+              qty: 1200
+              reorderPoint: 400
+              lastRestocked: "2024-06-05"
+
+    - zoneId: Z-B
+      name: Cold Storage
+      temperatureControlled: true
+      targetTempCelsius: 4
+      racks:
+        - rackId: B-01
+          aisle: 3
+          bins:
+            - binId: B-01-01
+              sku: SKU-8801
+              description: Chilled Ready Meals (Case of 12)
+              qty: 340
+              reorderPoint: 150
+              lastRestocked: "2024-06-12"
+              expiryTracking:
+                - batch: BATCH-2201
+                  expiryDate: "2024-06-20"
+                  qty: 120
+                - batch: BATCH-2202
+                  expiryDate: "2024-06-25"
+                  qty: 220
+
+    - zoneId: Z-C
+      name: Bulk Pallet Storage
+      temperatureControlled: false
+      racks:
+        - rackId: C-01
+          aisle: 6
+          bins:
+            - binId: C-01-01
+              sku: SKU-9901
+              description: Bottled Water (Pallet, 72 cases)
+              qty: 18
+              reorderPoint: 5
+              lastRestocked: "2024-05-20"
+
+  staff:
+    - employeeId: EMP-0110
+      name: Josh Reiner
+      role: forklift_operator
+      shift: day
+      certifications: [forklift_class2, manual_handling]
+    - employeeId: EMP-0122
+      name: Mei Lin Tan
+      role: picker
+      shift: night
+      certifications: [manual_handling]
+    - employeeId: EMP-0134
+      name: Sam Patterson
+      role: warehouse_supervisor
+      shift: day
+      certifications: [forklift_class2, forklift_class3, first_aid, manual_handling]
+
+  equipment:
+    - equipmentId: FL-01
+      type: forklift
+      model: Toyota 8FBE20
+      status: operational
+      lastServiced: "2024-05-01"
+      nextServiceDue: "2024-08-01"
+      assignedTo: EMP-0110
+    - equipmentId: FL-02
+      type: forklift
+      model: Toyota 8FBE20
+      status: under_maintenance
+      lastServiced: "2024-06-10"
+      nextServiceDue: "2024-09-10"
+      assignedTo: null
+      maintenanceLog:
+        - date: "2024-06-10"
+          issue: Hydraulic fluid leak
+          technician: External - ForkFix Ltd
+          resolved: false
+
+  inboundShipments:
+    - shipmentId: IN-5501
+      supplier: PackCo Supplies Ltd
+      expectedArrival: "2024-06-18"
+      status: in_transit
+      items:
+        - sku: SKU-3301
+          qtyExpected: 5000
+        - sku: SKU-3302
+          qtyExpected: 1000
+    - shipmentId: IN-5502
+      supplier: ColdChain Foods Ltd
+      expectedArrival: "2024-06-15"
+      status: delivered
+      items:
+        - sku: SKU-8801
+          qtyExpected: 400
+          qtyReceived: 396
+          discrepancyReason: 4 units damaged in transit
+
+  outboundOrders:
+    - orderId: OUT-7701
+      destination: Retail Store 22 Leeds
+      status: picking
+      priority: high
+      items:
+        - sku: SKU-3301
+          qty: 200
+        - sku: SKU-3310
+          qty: 150
+    - orderId: OUT-7702
+      destination: Retail Store 08 Bristol
+      status: dispatched
+      priority: standard
+      items:
+        - sku: SKU-9901
+          qty: 2
+      dispatch:
+        carrier: DX Freight
+        dispatchedAt: "2024-06-13T14:20:00Z"
+        estimatedDelivery: "2024-06-14"
+
+  safetyIncidents:
+    - incidentId: INC-014
+      date: "2024-04-22"
+      zone: Z-A
+      description: Minor slip near packing station, no injury reported.
+      severity: low
+      reportedBy: EMP-0134
+      correctiveAction: Wet floor signage added, spill cleaned immediately.
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+Short answer first: the YAML you posted is a mapping whose single top-level key is "warehouse" — so the root node is a mapping (not a sequence). Build the document as a nested Map / Sequence structure, then hand that structure to the EMC YAML driver to persist. The exact driver API (how to create a YAML model instance and save it) is not shown in the provided documentation, so below I give a complete EOL program that constructs the full document in-memory (using only EOL collection/map/sequence literals shown in the docs) and then explain where to plug it into the EMC YAML driver / Ant tasks (these persistence calls are driver-specific and therefore flagged as unsupported / placeholders).
+
+1) Root node
+- The top-level document is a mapping with a single key "warehouse". So create Map{ "warehouse" = ... } as the root.
+- If your root were a YAML sequence you'd create Sequence{ ... } instead.
+
+2) Complete EOL program that constructs the entire document as EOL Map/Sequence literals
+
+(The following uses only constructs described in the EOL documentation: Map{...} and Sequence{...} literals and scalar values. This can be executed inside an EOL/ETL/Flock context to produce the data structure in memory.)
+
+var doc = Map{
+  "warehouse" = Map{
+    "id" = "WH-UK-004",
+    "name" = "Midlands Distribution Centre",
+    "location" = Map{
+      "address" = "Unit 7, Logistics Park, Birmingham, B26 3QT",
+      "coordinates" = Map{ "lat" = 52.4539, "lon" = -1.7480 }
+    },
+    "operatingHours" = Map{
+      "Mon-Fri" = "06:00-22:00",
+      "Sat" = "08:00-16:00",
+      "Sun" = "closed"
+    },
+    "manager" = Map{
+      "name" = "Priya Chandrasekaran",
+      "employeeId" = "EMP-0092",
+      "shift" = "day"
+    },
+    "zones" = Sequence{
+      Map{
+        "zoneId" = "Z-A",
+        "name" = "Fast-Moving Goods",
+        "temperatureControlled" = false,
+        "racks" = Sequence{
+          Map{
+            "rackId" = "A-01",
+            "aisle" = 1,
+            "bins" = Sequence{
+              Map{
+                "binId" = "A-01-01",
+                "sku" = "SKU-3301",
+                "description" = "Cardboard Boxes (Small)",
+                "qty" = 4200,
+                "reorderPoint" = 1000,
+                "lastRestocked" = "2024-06-01"
+              },
+              Map{
+                "binId" = "A-01-02",
+                "sku" = "SKU-3302",
+                "description" = "Bubble Wrap Rolls",
+                "qty" = 850,
+                "reorderPoint" = 500,
+                "lastRestocked" = "2024-05-28"
+              }
+            }
+          },
+          Map{
+            "rackId" = "A-02",
+            "aisle" = 1,
+            "bins" = Sequence{
+              Map{
+                "binId" = "A-02-01",
+                "sku" = "SKU-3310",
+                "description" = "Packing Tape (Clear)",
+                "qty" = 1200,
+                "reorderPoint" = 400,
+                "lastRestocked" = "2024-06-05"
+              }
+            }
+          }
+        }
+      },
+      Map{
+        "zoneId" = "Z-B",
+        "name" = "Cold Storage",
+        "temperatureControlled" = true,
+        "targetTempCelsius" = 4,
+        "racks" = Sequence{
+          Map{
+            "rackId" = "B-01",
+            "aisle" = 3,
+            "bins" = Sequence{
+              Map{
+                "binId" = "B-01-01",
+                "sku" = "SKU-8801",
+                "description" = "Chilled Ready Meals (Case of 12)",
+                "qty" = 340,
+                "reorderPoint" = 150,
+                "lastRestocked" = "2024-06-12",
+                "expiryTracking" = Sequence{
+                  Map{ "batch" = "BATCH-2201", "expiryDate" = "2024-06-20", "qty" = 120 },
+                  Map{ "batch" = "BATCH-2202", "expiryDate" = "2024-06-25", "qty" = 220 }
+                }
+              }
+            }
+          }
+        }
+      },
+      Map{
+        "zoneId" = "Z-C",
+        "name" = "Bulk Pallet Storage",
+        "temperatureControlled" = false,
+        "racks" = Sequence{
+          Map{
+            "rackId" = "C-01",
+            "aisle" = 6,
+            "bins" = Sequence{
+              Map{
+                "binId" = "C-01-01",
+                "sku" = "SKU-9901",
+                "description" = "Bottled Water (Pallet, 72 cases)",
+                "qty" = 18,
+                "reorderPoint" = 5,
+                "lastRestocked" = "2024-05-20"
+              }
+            }
+          }
+        }
+      }
+    },
+    "staff" = Sequence{
+      Map{
+        "employeeId" = "EMP-0110",
+        "name" = "Josh Reiner",
+        "role" = "forklift_operator",
+        "shift" = "day",
+        "certifications" = Sequence{ "forklift_class2", "manual_handling" }
+      },
+      Map{
+        "employeeId" = "EMP-0122",
+        "name" = "Mei Lin Tan",
+        "role" = "picker",
+        "shift" = "night",
+        "certifications" = Sequence{ "manual_handling" }
+      },
+      Map{
+        "employeeId" = "EMP-0134",
+        "name" = "Sam Patterson",
+        "role" = "warehouse_supervisor",
+        "shift" = "day",
+        "certifications" = Sequence{ "forklift_class2", "forklift_class3", "first_aid", "manual_handling" }
+      }
+    },
+    "equipment" = Sequence{
+      Map{
+        "equipmentId" = "FL-01",
+        "type" = "forklift",
+        "model" = "Toyota 8FBE20",
+        "status" = "operational",
+        "lastServiced" = "2024-05-01",
+        "nextServiceDue" = "2024-08-01",
+        "assignedTo" = "EMP-0110"
+      },
+      Map{
+        "equipmentId" = "FL-02",
+        "type" = "forklift",
+        "model" = "Toyota 8FBE20",
+        "status" = "under_maintenance",
+        "lastServiced" = "2024-06-10",
+        "nextServiceDue" = "2024-09-10",
+        "assignedTo" = null,
+        "maintenanceLog" = Sequence{
+          Map{
+            "date" = "2024-06-10",
+            "issue" = "Hydraulic fluid leak",
+            "technician" = "External - ForkFix Ltd",
+            "resolved" = false
+          }
+        }
+      }
+    },
+    "inboundShipments" = Sequence{
+      Map{
+        "shipmentId" = "IN-5501",
+        "supplier" = "PackCo Supplies Ltd",
+        "expectedArrival" = "2024-06-18",
+        "status" = "in_transit",
+        "items" = Sequence{
+          Map{ "sku" = "SKU-3301", "qtyExpected" = 5000 },
+          Map{ "sku" = "SKU-3302", "qtyExpected" = 1000 }
+        }
+      },
+      Map{
+        "shipmentId" = "IN-5502",
+        "supplier" = "ColdChain Foods Ltd",
+        "expectedArrival" = "2024-06-15",
+        "status" = "delivered",
+        "items" = Sequence{
+          Map{ "sku" = "SKU-8801", "qtyExpected" = 400, "qtyReceived" = 396, "discrepancyReason" = "4 units damaged in transit" }
+        }
+      }
+    },
+    "outboundOrders" = Sequence{
+      Map{
+        "orderId" = "OUT-7701",
+        "destination" = "Retail Store 22 Leeds",
+        "status" = "picking",
+        "priority" = "high",
+        "items" = Sequence{
+          Map{ "sku" = "SKU-3301", "qty" = 200 },
+          Map{ "sku" = "SKU-3310", "qty" = 150 }
+        }
+      },
+      Map{
+        "orderId" = "OUT-7702",
+        "destination" = "Retail Store 08 Bristol",
+        "status" = "dispatched",
+        "priority" = "standard",
+        "items" = Sequence{ Map{ "sku" = "SKU-9901", "qty" = 2 } },
+        "dispatch" = Map{
+          "carrier" = "DX Freight",
+          "dispatchedAt" = "2024-06-13T14:20:00Z",
+          "estimatedDelivery" = "2024-06-14"
+        }
+      }
+    },
+    "safetyIncidents" = Sequence{
+      Map{
+        "incidentId" = "INC-014",
+        "date" = "2024-04-22",
+        "zone" = "Z-A",
+        "description" = "Minor slip near packing station, no injury reported.",
+        "severity" = "low",
+        "reportedBy" = "EMP-0134",
+        "correctiveAction" = "Wet floor signage added, spill cleaned immediately."
+      }
+    }
+  }
+};
+
+-- At this point 'doc' is a nested Map/Sequence representing the whole YAML document.
+
+3) Persisting with the EMC YAML Driver — driver-specific step (PLACEHOLDER)
+- The Epsilon documentation you gave explains EMC / model repository concepts and that Ant tasks should be aware of the EMC repository (and mentions tasks such as <epsilon.storeModel> and loading tasks), but the provided docs do not show the exact API / class names / method signatures for the YAML driver. Therefore the exact code to:
+  - create a YAML model instance,
+  - set its root node to the EOL value 'doc', and
+  - save that model to a .yml file using the EMC YAML Driver
+is not present in the documented excerpts I have.
+
+Typical places to integrate (you will need to adapt to the actual YAML EMC driver API you have):
+- If you are running inside an Epsilon script (EOL/ETL): construct the Map as above and then pass it to whatever driver method creates the YAML root node (driver API dependent). The driver will usually expect either model element(s) per its metamodel or accepts a generic structure — check that driver's docs.
+- If you use Ant tasks / EMC repository: put the Map into the EMC repository, then use the appropriate storeModel or YAML-driver-specific save task to write to disk. The EUnit docs mention the <epsilon.storeModel> Ant task pattern for saving a model from the EMC repository.
+
+Example pseudocode (NOT in provided docs — replace names with your YAML driver API):
+// PSEUDOCODE — these calls are driver-specific and not documented in the provided excerpts
+yamlModel = emc.createModel("YAML");            // create YAML model via EMC (hypothetical)
+yamlModel.setRoot(doc);                        // set root (hypothetical)
+yamlModel.save("warehouse.yml");               // persist it (hypothetical)
+
+4) If your YAML driver instead represents YAML nodes as typed model elements
+- Some drivers expose node classes like YamlDocument, YamlMapping, YamlSequence, YamlScalar. If your driver does that, you would:
+  - create a YamlMapping instance for the root,
+  - create mappings and sequences for the nested structures,
+  - attach them as properties (e.g., mapping.put("warehouse", warehouseMapping)),
+  - and finally save the YamlDocument through the driver.
+- I cannot provide exact code because those class names and APIs are not in the provided documentation.
+
+Summary
+- Root node: mapping (Map{ "warehouse" = ... }).
+- I provided a complete EOL program that constructs the entire nested Map/Sequence structure for your YAML document.
+- The final persist/save step into an actual .yml file via the EMC YAML Driver requires driver-specific API calls which are not present in the provided docs; replace the pseudocode placeholders above with the driver’s createModel/setRoot/save or with Ant <epsilon.storeModel> usage configured for that YAML driver.
+
+If you can paste the EMC YAML Driver's API (class names/methods) or the Ant task attributes your project uses to save YAML, I will translate the final persist step into exact runnable code (and show how to plug the constructed 'doc' into that API).
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             1
+  Prompt tokens:     5,953
+  Completion tokens: 4,917
+  Total tokens:      10,870
+  Estimated cost:    $0.01132
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         1
+  Total prompt tokens:     5,953
+  Total completion tokens: 4,917
+  Total tokens:            10,870
+  Total estimated cost:    $0.01132
+============================================================

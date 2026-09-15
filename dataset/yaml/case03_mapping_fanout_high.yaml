@@ -1,0 +1,11 @@
+device:
+  id: DEV-2210
+  type: thermostat
+  brand: Nest
+  model: Learning Thermostat v3
+  mac: "AA:BB:CC:11:22:33"
+  online: true
+  firmwareVersion: "6.4.2"
+  installedAt: "2023-11-02"
+  room: Living Room
+  warrantyExpiry: "2025-11-02"

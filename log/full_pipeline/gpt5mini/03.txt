@@ -1,0 +1,258 @@
+Session started: 2026-07-27 21:10:46
+Model: openai/gpt-5-mini | temperature=0
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[21:10:56]
+
+── QUESTION ──────────────────────────────────────────────
+What does an EOL module consist of (body, operations, imports), and how does an operation's context get defined?
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - What does an EOL module consist of (body, operations, imports), and how does an operation's context get defined?
+  - EOL module structure body operations imports
+  - EOL operation declaration syntax defining context type self
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: "What does an EOL module consist of (body, operations, imports), and how does an operation's context get defined?"
+    1. sim=0.6855  epsilon_docs/eol.md | heading='User-Defined Operations'
+    2. sim=0.6726  epsilon_docs/flock.md | heading='Epsilon Flock for Model Migration'
+    3. sim=0.6600  epsilon_docs/articles_up-imports.md | heading='Basic usage'
+    4. sim=0.6594  epsilon_docs/egl.md | heading='Concrete Syntax'
+    5. sim=0.6568  epsilon_docs/articles_up-imports.md | heading='Running example'
+    6. sim=0.6560  epsilon_docs/eol.md | heading='Feature Navigation'
+    7. sim=0.6417  epsilon_docs/etl.md | heading='Source Elements Resolution'
+    8. sim=0.6309  epsilon_docs/eol.md | heading='Syntax'
+    9. sim=0.6255  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Implementing Derived features with EOL'
+    10. sim=0.6174  epsilon_docs/articles_type-relationships-in-epsilon.md | heading='User-Defined Operation Call Dispatch'
+    11. sim=0.6128  epsilon_docs/articles_type-relationships-in-epsilon.md | heading='Type-Related Operations'
+    12. sim=0.6061  epsilon_docs/articles_running-epsilon-ant-tasks-from-command-line_index.md | heading='Flexmi and Emfatic'
+    13. sim=0.5970  epsilon_docs/eol.md | heading='Pre/post conditions in user-defined operations'
+    14. sim=0.5670  epsilon_docs/ewl.md | heading='Capabilities of Wizards'
+    15. sim=0.5159  epsilon_docs/evl.md | heading='Abstract Syntax'
+    16. sim=0.4977  epsilon_docs/workflow.md | heading='Structure'
+
+  Query: 'EOL module structure body operations imports'
+    1. sim=0.7206  epsilon_docs/articles_up-imports.md | heading='Running example'
+    2. sim=0.7127  epsilon_docs/eol.md | heading='User-Defined Operations'
+    3. sim=0.6998  epsilon_docs/articles_running-epsilon-ant-tasks-from-command-line_index.md | heading='Flexmi and Emfatic'
+    4. sim=0.6945  epsilon_docs/articles_up-imports.md | heading='Basic usage'
+    5. sim=0.6838  epsilon_docs/flock.md | heading='Epsilon Flock for Model Migration'
+    6. sim=0.6534  epsilon_docs/articles_type-relationships-in-epsilon.md | heading='Type-Related Operations'
+    7. sim=0.5957  epsilon_docs/eol.md | heading='Feature Navigation'
+    8. sim=0.5918  epsilon_docs/egl.md | heading='Concrete Syntax'
+    9. sim=0.5878  epsilon_docs/etl.md | heading='Source Elements Resolution'
+    10. sim=0.5866  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Implementing Derived features with EOL'
+    11. sim=0.5751  epsilon_docs/eol.md | heading='Syntax'
+    12. sim=0.5625  epsilon_docs/articles_type-relationships-in-epsilon.md | heading='User-Defined Operation Call Dispatch'
+    13. sim=0.5143  epsilon_docs/evl.md | heading='Abstract Syntax'
+    14. sim=0.5101  epsilon_docs/eol.md | heading='Pre/post conditions in user-defined operations'
+    15. sim=0.4968  epsilon_docs/workflow.md | heading='Structure'
+    16. sim=0.4691  epsilon_docs/ewl.md | heading='Capabilities of Wizards'
+
+  Query: 'EOL operation declaration syntax defining context type self'
+    1. sim=0.7131  epsilon_docs/articles_type-relationships-in-epsilon.md | heading='Type-Related Operations'
+    2. sim=0.7046  epsilon_docs/articles_running-epsilon-ant-tasks-from-command-line_index.md | heading='Flexmi and Emfatic'
+    3. sim=0.6709  epsilon_docs/eol.md | heading='User-Defined Operations'
+    4. sim=0.6561  epsilon_docs/articles_up-imports.md | heading='Running example'
+    5. sim=0.6517  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Implementing Derived features with EOL'
+    6. sim=0.6435  epsilon_docs/eol.md | heading='Pre/post conditions in user-defined operations'
+    7. sim=0.6390  epsilon_docs/eol.md | heading='Syntax'
+    8. sim=0.6389  epsilon_docs/articles_type-relationships-in-epsilon.md | heading='User-Defined Operation Call Dispatch'
+    9. sim=0.6355  epsilon_docs/egl.md | heading='Concrete Syntax'
+    10. sim=0.6332  epsilon_docs/eol.md | heading='Feature Navigation'
+    11. sim=0.6162  epsilon_docs/articles_up-imports.md | heading='Basic usage'
+    12. sim=0.5839  epsilon_docs/flock.md | heading='Epsilon Flock for Model Migration'
+    13. sim=0.5735  epsilon_docs/evl.md | heading='Abstract Syntax'
+    14. sim=0.5400  epsilon_docs/ewl.md | heading='Capabilities of Wizards'
+    15. sim=0.5149  epsilon_docs/etl.md | heading='Source Elements Resolution'
+    16. sim=0.4837  epsilon_docs/workflow.md | heading='Structure'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (8):
+  1. [0.823] epsilon_docs/eol.md (heading='User-Defined Operations', parent_heading='The Epsilon Object Language (EOL)')
+     ## User-Defined Operations
+Example: demonstrate importing and invoking a user-defined operation from an external EOL module.
+
+```eol
+    import "utilities.eol";
+
+    useful();
+    ```
+  2. [0.620] epsilon_docs/articles_up-imports.md (heading='Running example', parent_heading='Up Imports in EOL')
+     ## Running example
+Example: demonstrate importing an external EOL script to reuse utility functions in the current model transformation.
+
+```eol
+import "../../framework/utils.eol";
+```
+  3. [0.562] epsilon_docs/articles_up-imports.md (heading='Basic usage', parent_heading='Up Imports in EOL')
+     ## Basic usage
+Example: import an external Epsilon module or script using a relative path with the import statement.
+
+```eol
+import "up://BASE_DIR/PATH";
+```
+  4. [0.343] epsilon_docs/eol.md (heading='Syntax', parent_heading='The Epsilon Object Language (EOL)')
+     ## Syntax
+Example: illustrate the class structure and relationships within the Epsilon Object Language (EOL) syntax.
+
+```mermaid
+classDiagram
+class EolModule {
+  +main:StatementBlock
+}
+class ImportSta
+  5. [0.191] epsilon_docs/articles_epsilon-in-ecore_index.md (heading='Implementing Derived features with EOL', parent_heading='EOL Invocation Delegation')
+     The EOL expression is evaluated to provide the EStructuralFeature value with the containing EClassifier instance (EObject) assigned to the special variable `self`. The EOL expression must be a valid E
+  6. [0.154] epsilon_docs/eol.md (heading='Operation Result Caching', parent_heading='User-Defined Operations')
+     In line 4 the `add` operation defines a pre-condition stating that the parameter `i` must be a positive number. In line 5, the operation defines that result of the operation (`_result`) must be greate
+  7. [0.150] epsilon_docs/eol.md (heading='Feature Navigation', parent_heading='Expressions')
+     Since EOL needs to manage models defined using object oriented modelling technologies, it provides expressions to navigate properties and invoke simple and declarative operations on objects.
+
+In terms
+  8. [0.101] epsilon_docs/eol.md (heading='Pre/post conditions in user-defined operations', parent_heading='User-Defined Operations')
+     In stand-alone EOL, annotations are supported only in the context of operations, however as discussed in the sequel, task-specific languages also make use of annotations in their constructs, each with
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon. Use only the documentation below — do not use outside knowledge, and say so if it doesn't cover something.
+
+Documentation:
+--- DOCUMENTATION ---
+[Source: epsilon_docs/eol.md]
+## User-Defined Operations
+Example: demonstrate importing and invoking a user-defined operation from an external EOL module.
+
+```eol
+    import "utilities.eol";
+
+    useful();
+    ```
+
+[Source: epsilon_docs/articles_up-imports.md]
+## Running example
+Example: demonstrate importing an external EOL script to reuse utility functions in the current model transformation.
+
+```eol
+import "../../framework/utils.eol";
+```
+
+[Source: epsilon_docs/articles_up-imports.md]
+## Basic usage
+Example: import an external Epsilon module or script using a relative path with the import statement.
+
+```eol
+import "up://BASE_DIR/PATH";
+```
+
+[Source: epsilon_docs/eol.md]
+## Syntax
+Example: illustrate the class structure and relationships within the Epsilon Object Language (EOL) syntax.
+
+```mermaid
+classDiagram
+class EolModule {
+  +main:StatementBlock
+}
+class ImportStatement {
+  +imported:EolModule
+}
+class Operation {
+  +name: String
+  +context: EolType
+  +parameters: Parameter[*]
+  +returnType: EolType
+}
+class ExecutableAnnotation {
+	+expression: Expression
+}
+class SimpleAnnotation {
+	+values: String[*]
+}
+EolModule -- ImportStatement: importStatements *
+EolModule -- Operation: operations *
+Operation -- Annotation: annotations *
+Operation -- StatementBlock: body
+EolModule -- StatementBlock: main
+StatementBlock -- Statement: statements *
+Annotation <|-- ExecutableAnnotation
+Annotation <|-- SimpleAnnotation
+```
+
+[Source: epsilon_docs/articles_epsilon-in-ecore_index.md]
+The EOL expression is evaluated to provide the EStructuralFeature value with the containing EClassifier instance (EObject) assigned to the special variable `self`. The EOL expression must be a valid EOL expression (i.e., no syntax errors) and the runtime result type of the EOL expression must conform to the type of the EStructuralFeature.
+
+## EOL Invocation Delegation
+
+The invocation delegate is provided by an EAnnotation on the EOperation:
+
+[Source: epsilon_docs/eol.md]
+In line 4 the `add` operation defines a pre-condition stating that the parameter `i` must be a positive number. In line 5, the operation defines that result of the operation (`_result`) must be greater than the number on which it was invoked (`self`). Thus, when executed in the context of the statement in line 1 the operation succeeds, while when executed in the context of the statement in line 2, the pre-condition is not satisfied and an error is raised.
+
+### Operation Result Caching
+
+EOL supports caching the results of parameter-less operations using the `@cached` simple annotation. In the following example, the Fibonacci number of a given Integer is calculated using the `fibonacci` recursive operation displayed in the listing below. Since the `fibonacci` operation is declared as `cached`, it is only executed once for each distinct Integer and subsequent calls on the same target return the cached result. Therefore, when invoked in line 1, the body of the operation is called 16 times. By contrast, if no `@cached` annotation was specified, the body of the operation would be called recursively 1973 times. This feature is particularly useful for performing queries on large models and caching their results without needing to introduce explicit variables that store the cached results.
+
+[Source: epsilon_docs/eol.md]
+Since EOL needs to manage models defined using object oriented modelling technologies, it provides expressions to navigate properties and invoke simple and declarative operations on objects.
+
+In terms of concrete syntax, `.` is used as a uniform operator to access a property of an object and to invoke an operation on it. The `->` operator, which is used in OCL to invoke first-order logic operations on sets, has been also preserved for syntax compatibility reasons. In EOL, every operation can be invoked both using the `.` or the `->` operators, with a slightly different semantics to enable overriding the built-in operations. If the `.` operator is used, precedence is given to the user-defined operations, otherwise precedence is given to the built-in operations. For instance, the Any type defines a println() method that prints the string representation of an object to the standard output stream. In the listing below, the user has defined another parameterless println() operation in the context of Any. Therefore the call to `println()` in line 1 will be dispatched to the user-defined `println()` operation defined in line 3. In its body the operation uses the `->` operator to invoke the built-in `println()` operation (line 4).
+
+[Source: epsilon_docs/eol.md]
+In stand-alone EOL, annotations are supported only in the context of operations, however as discussed in the sequel, task-specific languages also make use of annotations in their constructs, each with task-specific semantics. EOL operations support three particular annotations: the `pre` and `post` executable annotations for specifying pre and post-conditions, and the `cached` simple annotation, which are discussed below.
+
+### Pre/post conditions in user-defined operations
+
+A number of `pre` and `post` executable annotations can be attached to EOL operations to specify the pre- and post-conditions of the operation. When an operation is invoked, before its body is evaluated, the expressions of the `pre` annotations are evaluated. If all of them return `true`, the body of the operation is executed, otherwise, an error is raised. Similarly, once the body of the operation has been executed, the expressions of the `post` annotations of the operation are executed to ensure that the operation has had the desired effects. `Pre` and `post` annotations can access all the variables in the parent scope, as well as the parameters of the operation and the object on which the operation is invoked (through the `self` variable). Moreover, in `post` annotations, the returned value of the operation is accessible through the built-in `_result` variable. An example of using pre and post conditions in EOL appears below.
+
+--- USER MESSAGE ---
+What does an EOL module consist of (body, operations, imports), and how does an operation's context get defined?
+
+Before writing your answer, silently check each part of the question against the documentation — including whether any combination of separately-documented pieces is actually shown together, not just individually present somewhere. Don't show this checking process or split your answer into labeled parts.
+
+Write a smooth, natural answer. Place any honest note about something not being directly confirmed right next to the part it concerns, not bundled at the end — and let your opening reflect the same level of confidence, rather than stating something flatly and qualifying it afterward.
+
+Be concise, and let the length of your answer reflect how much the documentation actually supports — don't stretch a thin piece of evidence into a long, confident-sounding answer.
+
+Question:
+What does an EOL module consist of (body, operations, imports), and how does an operation's context get defined?
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+The documentation shows an EOL module is made of three main parts:
+
+- a main statement block (the module body) — the class diagram calls this EolModule.main:StatementBlock;  
+- zero or more import statements (EolModule.importStatements) — e.g. import "utilities.eol", import "../../framework/utils.eol" or import "up://BASE_DIR/PATH" to reuse external EOL scripts; and  
+- zero or more operations (EolModule.operations) — operations have a name, parameters and return type (see the class diagram).
+
+How an operation’s context is defined (and how it behaves)
+
+- The class diagram shows Operation has a context: EolType. That is, an operation is declared in the context of a type (the type is the operation’s context), and inside the operation the special variable self refers to the object on which the operation is invoked (the docs show this for operations and for EOL expressions used as feature values).  
+- Invocation semantics: using the dot operator (.) gives precedence to user-defined operations (so calls dispatch to operations defined in a context), while the arrow operator (->) gives precedence to built-in operations — this is how user-defined/contextual operations interact with built-ins.  
+- Operations can also carry annotations (e.g. @cached, executable pre/post) and those annotations can refer to self, parameters and (for post) the returned value (_result).
+
+If you want, I can show a small example of an operation declared in a context and how to import and call it.
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             2
+  Prompt tokens:     1,700
+  Completion tokens: 1,977
+  Total tokens:      3,677
+  Estimated cost:    $0.00438
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         2
+  Total prompt tokens:     1,700
+  Total completion tokens: 1,977
+  Total tokens:            3,677
+  Total estimated cost:    $0.00438
+============================================================

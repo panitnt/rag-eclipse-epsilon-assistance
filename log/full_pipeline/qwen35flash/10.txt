@@ -1,0 +1,221 @@
+Session started: 2026-07-28 00:26:32
+Model: openrouter/qwen/qwen3.5-flash-02-23 | temperature=0
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[00:26:44]
+
+── QUESTION ──────────────────────────────────────────────
+What is EVL, and what is it used for?
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - What is EVL, and what is it used for?
+  - Epsilon Validation Language EVL validation rules
+  - EVL constraint syntax Epsilon
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'What is EVL, and what is it used for?'
+    1. sim=0.7080  epsilon_docs/articles_epsilon-and-sirius_index.md | heading='Epsilon and Sirius'
+    2. sim=0.6977  epsilon_docs/evl.md | heading='Abstract Syntax'
+    3. sim=0.6922  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Validation Delegate'
+    4. sim=0.6710  epsilon_docs/articles_index.md | heading='Recipes'
+    5. sim=0.6659  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Implementing Constraints with EVL'
+    6. sim=0.6641  epsilon_docs/articles_evl-emf-integration.md | heading='Via the Extension Point'
+    7. sim=0.6387  epsilon_docs/articles_evl-emf-integration.md | heading='Programmatically'
+    8. sim=0.6244  epsilon_docs/articles_evl-gmf-integration_index.md | heading='Step 3: Write the constraints'
+    9. sim=0.5816  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Specifying Constraints'
+    10. sim=0.5652  epsilon_docs/index.md | heading='Workflow'
+    11. sim=0.5417  epsilon_docs/articles_profiled-uml-models_index.md | heading='Resources'
+    12. sim=0.5326  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    13. sim=0.5199  epsilon_docs/articles_epsilon-and-capella_index.md | heading='Epsilon and Capella'
+
+  Query: 'Epsilon Validation Language EVL validation rules'
+    1. sim=0.8263  epsilon_docs/articles_epsilon-and-sirius_index.md | heading='Epsilon and Sirius'
+    2. sim=0.7638  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Validation Delegate'
+    3. sim=0.7558  epsilon_docs/articles_index.md | heading='Recipes'
+    4. sim=0.7549  epsilon_docs/evl.md | heading='Abstract Syntax'
+    5. sim=0.7202  epsilon_docs/articles_evl-emf-integration.md | heading='Via the Extension Point'
+    6. sim=0.6952  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Implementing Constraints with EVL'
+    7. sim=0.6541  epsilon_docs/articles_evl-gmf-integration_index.md | heading='Step 3: Write the constraints'
+    8. sim=0.6502  epsilon_docs/articles_evl-emf-integration.md | heading='Programmatically'
+    9. sim=0.6438  epsilon_docs/articles_profiled-uml-models_index.md | heading='Resources'
+    10. sim=0.6052  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Specifying Constraints'
+    11. sim=0.5973  epsilon_docs/index.md | heading='Workflow'
+    12. sim=0.5704  epsilon_docs/articles_epsilon-and-capella_index.md | heading='Epsilon and Capella'
+    13. sim=0.5474  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+
+  Query: 'EVL constraint syntax Epsilon'
+    1. sim=0.8190  epsilon_docs/articles_epsilon-and-sirius_index.md | heading='Epsilon and Sirius'
+    2. sim=0.7309  epsilon_docs/articles_index.md | heading='Recipes'
+    3. sim=0.7188  epsilon_docs/evl.md | heading='Abstract Syntax'
+    4. sim=0.7139  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Implementing Constraints with EVL'
+    5. sim=0.7123  epsilon_docs/articles_evl-emf-integration.md | heading='Via the Extension Point'
+    6. sim=0.6938  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Validation Delegate'
+    7. sim=0.6203  epsilon_docs/articles_evl-gmf-integration_index.md | heading='Step 3: Write the constraints'
+    8. sim=0.5984  epsilon_docs/articles_evl-emf-integration.md | heading='Programmatically'
+    9. sim=0.5951  epsilon_docs/index.md | heading='Workflow'
+    10. sim=0.5896  epsilon_docs/articles_profiled-uml-models_index.md | heading='Resources'
+    11. sim=0.5827  epsilon_docs/articles_epsilon-and-capella_index.md | heading='Epsilon and Capella'
+    12. sim=0.5687  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Specifying Constraints'
+    13. sim=0.5103  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (7):
+  1. [0.988] epsilon_docs/evl.md (heading='Abstract Syntax', parent_heading='The Epsilon Validation Language (EVL)')
+     # The Epsilon Validation Language (EVL)
+
+EVL contributes model validation capabilities to Epsilon. More specifically, EVL can be used to specify and evaluate constraints and critiques on models of arb
+  2. [0.975] epsilon_docs/articles_epsilon-in-ecore_index.md (heading='Implementing Constraints with EVL', parent_heading='EVL Validation Delegation')
+     ## Implementing Constraints with EVL
+Example: define a constraint in EVL by assigning an EOL expression to a constraint name key.
+
+```
+source = "http://eclipse.dev/epsilon/ecore/EVL"
+key = "constraint
+  3. [0.945] epsilon_docs/articles_profiled-uml-models_index.md (heading='Resources', parent_heading='Managing Profiled UML Models in Epsilon')
+     ## Profiled UML Models in Rule-Based Epsilon Languages
+
+In rule-based languages such as ETL and EVL, any required profiles must be applied in a `pre` block, before any of the rules (e.g. transformatio
+  4. [0.896] epsilon_docs/articles_evl-emf-integration.md (heading='Via the Extension Point', parent_heading='Registering EVL Constraints')
+     ### Via the Extension Point
+
+Epsilon provides the `org.eclipse.epsilon.evl.emf.validation` extension point for registering EVL constraints against `EPackages` in Eclipse. The extension point will hand
+  5. [0.441] epsilon_docs/articles_index.md (heading='Recipes', parent_heading='Epsilon Developers')
+     ## Epsilon Validation Language
+
+- [EVL-GMF Integration](evl-gmf-integration/index.md): This article demonstrates evaluating EVL constraints from within a GMF-based editor.
+- [EVL-EMF Validation Integr
+  6. [0.408] epsilon_docs/articles_epsilon-and-sirius_index.md (heading='Epsilon and Sirius', parent_heading='')
+     === "Validation Constraints (EVL)"
+  7. [0.359] epsilon_docs/articles_evl-emf-integration.md (heading='Programmatically', parent_heading='Registering EVL Constraints')
+     ## Programmatically
+Example: programmatically create and register an EVL validator for a metamodel using EvlValidator and CompositeEValidator.
+Keywords: new EvlValidator, new CompositeEValidator
+
+```j
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon. Use only the documentation below — do not use outside knowledge, and say so if it doesn't cover something.
+
+Documentation:
+--- DOCUMENTATION ---
+[Source: epsilon_docs/evl.md]
+# The Epsilon Validation Language (EVL)
+
+EVL contributes model validation capabilities to Epsilon. More specifically, EVL can be used to specify and evaluate constraints and critiques on models of arbitrary metamodels and modelling technologies, and to produce human-readable error messages and executable quick fixes.
+
+!!! tip "Try EVL online"
+    You can run and fiddle with EVL constraints that validate a project scheduling model in the [online Epsilon Playground](../../playground/?evl).
+
+## Abstract Syntax
+
+In EVL, validation specifications are organized in modules (*EvlModule*). As illustrated in the figure below, *EvlModule* (indirectly) extends *EolModule* which means that it can contain user-defined operations and import other EOL library modules and EVL modules. Apart from operations, an EVL module also contains a set of constraints grouped by the context they apply to, and, by extending *ErlModule*, a number of *pre* and *post* blocks.
+
+!!! info
+    As with most languages in Epsilon, EVL uses [EOL](../eol) as its expression language. This page only documents the additional syntax and semantics that EVL provides on top of EOL.
+
+[Source: epsilon_docs/articles_epsilon-in-ecore_index.md]
+## Implementing Constraints with EVL
+Example: define a constraint in EVL by assigning an EOL expression to a constraint name key.
+
+```
+source = "http://eclipse.dev/epsilon/ecore/EVL"
+key = "constraintName_1"
+value = EOL expression
+```
+
+[Source: epsilon_docs/articles_profiled-uml-models_index.md]
+## Profiled UML Models in Rule-Based Epsilon Languages
+
+In rule-based languages such as ETL and EVL, any required profiles must be applied in a `pre` block, before any of the rules (e.g. transformation rules, validation constraints) that refer to types in the profile are executed.
+
+## Resources
+
+The complete source code for this example is available in [Epsilon's Git repository](https://github.com/eclipse-epsilon/epsilon/tree/main/examples/org.eclipse.epsilon.examples.eol.uml.profiled).
+
+[Source: epsilon_docs/articles_evl-emf-integration.md]
+### Via the Extension Point
+
+Epsilon provides the `org.eclipse.epsilon.evl.emf.validation` extension point for registering EVL constraints against `EPackages` in Eclipse. The extension point will handle the `EvlValidator` instantiation and registration for you.
+
+[Source: epsilon_docs/articles_index.md]
+## Epsilon Validation Language
+
+- [EVL-GMF Integration](evl-gmf-integration/index.md): This article demonstrates evaluating EVL constraints from within a GMF-based editor.
+- [EVL-EMF Validation Integration](evl-emf-integration.md): This article demonstrates contributing EVL constraints to EMF's validation framework.
+- [Parallel Execution](parallel-execution/index.md): This article explains how to use the parallel module implementations for EOL and rule-based languages like EVL.
+
+## Epsilon Generation Language
+
+[Source: epsilon_docs/articles_epsilon-and-sirius_index.md]
+=== "Validation Constraints (EVL)"
+
+[Source: epsilon_docs/articles_evl-emf-integration.md]
+## Programmatically
+Example: programmatically create and register an EVL validator for a metamodel using EvlValidator and CompositeEValidator.
+Keywords: new EvlValidator, new CompositeEValidator
+
+```java
+// Assuming you have generated the metamodel code
+EPackage ePackage = YourPackage.eINSTANCE;
+
+// Pass a model name if your script uses it
+// Pass a valid bundle ID as it used for reporting (if not in a plugin use your project name or similar)
+EvlValidator evlValidator = new EvlValidator(
+    evlScriptURI, modelName, ePackage.nsUri(), bundleId);
+
+EValidator existingValidator = EValidator.Registry.INSTANCE.getEValidator(ePackage);
+if (existingValidator instanceof CompositeEValidator) {
+    ((CompositeEValidator) existingValidator).getDelegates().add(evlValidator);
+} else {
+    if (existingValidator == null) {
+        existingValidator = EObjectValidator.INSTANCE;
+    }
+    CompositeEValidator newValidator = new CompositeEValidator();
+    newValidator.getDelegates().add(existingValidator);
+    newValidator.getDelegates().add(evlValidator);
+    EValidator.Registry.INSTANCE.put(ePackage, newValidator);
+}
+```
+
+--- USER MESSAGE ---
+What is EVL, and what is it used for?
+
+Before writing your answer, silently check each part of the question against the documentation — including whether any combination of separately-documented pieces is actually shown together, not just individually present somewhere. Don't show this checking process or split your answer into labeled parts. Write a smooth, natural answer, and weave in a brief, honest note wherever something isn't directly confirmed, rather than presenting it as verified.
+
+Be concise, and let the length of your answer reflect how much the documentation actually supports — don't stretch a thin piece of evidence into a long, confident-sounding answer.
+
+Question:
+What is EVL, and what is it used for?
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+EVL is the Epsilon Validation Language, which contributes model validation capabilities to Epsilon. It is used to specify and evaluate constraints and critiques on models of arbitrary metamodels and modelling technologies, producing human-readable error messages and executable quick fixes.
+
+As a rule-based language, EVL specifications are organized in modules (*EvlModule*) that extend EOL modules, utilizing EOL as its expression language. These modules contain constraints grouped by context, user-defined operations, and *pre* and *post* blocks.
+
+The documentation confirms EVL can be integrated into EMF's validation framework via an extension point or programmatically using `EvlValidator`. While it lists articles on GMF and Sirius integration, the provided text does not detail the Sirius implementation beyond listing it as a topic.
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             2
+  Prompt tokens:     1,367
+  Completion tokens: 6,016
+  Total tokens:      7,383
+  Estimated cost:    $0.00165
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openrouter/qwen/qwen3.5-flash-02-23
+  Total LLM calls:         2
+  Total prompt tokens:     1,367
+  Total completion tokens: 6,016
+  Total tokens:            7,383
+  Total estimated cost:    $0.00165
+============================================================

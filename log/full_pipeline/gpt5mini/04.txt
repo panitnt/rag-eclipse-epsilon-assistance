@@ -1,0 +1,258 @@
+Session started: 2026-07-27 21:11:50
+Model: openai/gpt-5-mini | temperature=0
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[21:11:57]
+
+── QUESTION ──────────────────────────────────────────────
+What is EGL used for in Epsilon?
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - What is EGL used for in Epsilon?
+  - EGL model-to-text generation examples Epsilon tutorial
+  - EGL template syntax examples in Epsilon
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'What is EGL used for in Epsilon?'
+    1. sim=0.7213  epsilon_docs/egl.md | heading='Abstract Syntax'
+    2. sim=0.7073  epsilon_docs/articles_epsilon-pojos.md | heading='Running an EGL Template against the POJO'
+    3. sim=0.7069  epsilon_docs/articles_json-emc_index.md | heading='Example EGL template'
+    4. sim=0.7008  epsilon_docs/articles_index.md | heading='Recipes'
+    5. sim=0.6928  epsilon_docs/articles_code-generation-tutorial-egl_index.md | heading='Code Generation Tutorial with EGL'
+    6. sim=0.6621  epsilon_docs/articles_egl-patch.md | heading='Example Templates'
+    7. sim=0.6521  epsilon_docs/epl.md | heading='The Epsilon Pattern Language (EPL)'
+    8. sim=0.6471  epsilon_docs/articles_jdt_index.md | heading='Applications'
+    9. sim=0.6229  epsilon_docs/articles_egl-server-side_index.md | heading='Setup'
+    10. sim=0.6162  epsilon_docs/egx.md | heading='Epsilon Generation Language'
+    11. sim=0.6114  epsilon_docs/workflow.md | heading='Structure'
+    12. sim=0.5606  epsilon_docs/articles_code-generation-tutorial-egl_index.md | heading='Running the Code Generator from Java'
+    13. sim=0.4539  epsilon_docs/egl.md | heading='Implementing a Custom Formatter'
+
+  Query: 'EGL model-to-text generation examples Epsilon tutorial'
+    1. sim=0.7907  epsilon_docs/articles_index.md | heading='Recipes'
+    2. sim=0.7820  epsilon_docs/articles_egl-patch.md | heading='Example Templates'
+    3. sim=0.7777  epsilon_docs/articles_epsilon-pojos.md | heading='Running an EGL Template against the POJO'
+    4. sim=0.7621  epsilon_docs/articles_code-generation-tutorial-egl_index.md | heading='Code Generation Tutorial with EGL'
+    5. sim=0.7348  epsilon_docs/articles_json-emc_index.md | heading='Example EGL template'
+    6. sim=0.7313  epsilon_docs/egl.md | heading='Abstract Syntax'
+    7. sim=0.7072  epsilon_docs/epl.md | heading='The Epsilon Pattern Language (EPL)'
+    8. sim=0.6976  epsilon_docs/articles_jdt_index.md | heading='Applications'
+    9. sim=0.6739  epsilon_docs/workflow.md | heading='Structure'
+    10. sim=0.6359  epsilon_docs/articles_code-generation-tutorial-egl_index.md | heading='Running the Code Generator from Java'
+    11. sim=0.6229  epsilon_docs/egx.md | heading='Epsilon Generation Language'
+    12. sim=0.6182  epsilon_docs/articles_egl-server-side_index.md | heading='Setup'
+    13. sim=0.5065  epsilon_docs/egl.md | heading='Implementing a Custom Formatter'
+
+  Query: 'EGL template syntax examples in Epsilon'
+    1. sim=0.7935  epsilon_docs/articles_epsilon-pojos.md | heading='Running an EGL Template against the POJO'
+    2. sim=0.7798  epsilon_docs/articles_json-emc_index.md | heading='Example EGL template'
+    3. sim=0.7785  epsilon_docs/articles_egl-patch.md | heading='Example Templates'
+    4. sim=0.7612  epsilon_docs/articles_index.md | heading='Recipes'
+    5. sim=0.7305  epsilon_docs/epl.md | heading='The Epsilon Pattern Language (EPL)'
+    6. sim=0.7129  epsilon_docs/articles_code-generation-tutorial-egl_index.md | heading='Code Generation Tutorial with EGL'
+    7. sim=0.7024  epsilon_docs/articles_jdt_index.md | heading='Applications'
+    8. sim=0.6697  epsilon_docs/egl.md | heading='Abstract Syntax'
+    9. sim=0.6614  epsilon_docs/workflow.md | heading='Structure'
+    10. sim=0.6204  epsilon_docs/egx.md | heading='Epsilon Generation Language'
+    11. sim=0.6163  epsilon_docs/articles_code-generation-tutorial-egl_index.md | heading='Running the Code Generator from Java'
+    12. sim=0.5914  epsilon_docs/articles_egl-server-side_index.md | heading='Setup'
+    13. sim=0.5216  epsilon_docs/egl.md | heading='Implementing a Custom Formatter'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (7):
+  1. [0.997] epsilon_docs/articles_json-emc_index.md (heading='Example EGL template', parent_heading='Querying a JSON document')
+     ## Example EGL template
+Example: generate a formatted GitHub repository summary using Eclipse Epsilon Generation Language (EGL) template syntax.
+Keywords: .name
+
+```egl
+# Eclipse Epsilon
+
+([%=M.root.s
+  2. [0.993] epsilon_docs/egl.md (heading='Abstract Syntax', parent_heading='The Epsilon Generation Language (EGL)')
+     # The Epsilon Generation Language (EGL)
+
+EGL is a model-to-text transformation (M2T) language that can be used to transform models into various types of textual artefact, including code (e.g. Java), r
+  3. [0.992] epsilon_docs/articles_code-generation-tutorial-egl_index.md (heading='Code Generation Tutorial with EGL', parent_heading='')
+     # Code Generation Tutorial with EGL
+EGL is a template-based language that can be used to generate code (or any other kind of text) from different types of models supported by Epsilon (e.g. EMF, UML, X
+  4. [0.987] epsilon_docs/articles_egl-patch.md (heading='Example Templates', parent_heading='EGL Patch Templates')
+     ## Example Templates
+Example: generate Java getter methods with conditional logic using Epsilon Generation Language templates.
+Keywords: .name
+
+```egl
+	[%for (a in c.eAllAttributes.excludingAll(c.eAtt
+  5. [0.984] epsilon_docs/egl.md (heading='Concrete Syntax', parent_heading='The Epsilon Generation Language (EGL)')
+     ## Concrete Syntax
+Example: iterate over all Class instances and print their names using Epsilon Generation Language (EGL) concrete syntax.
+Keywords: .name
+
+```egl
+[% for (c in Class.all) { %]
+[%=c.na
+  6. [0.957] epsilon_docs/egx.md (heading='Epsilon Generation Language', parent_heading='The EGL Co-Ordination Language (EGX)')
+     [EGL](../egl/) is Epsilon's model-to-text transformation language. EGL in principle is similar in purpose to server-side scripting languages like PHP (and can indeed be used for such purposes, as demo
+  7. [0.862] epsilon_docs/articles_index.md (heading='Recipes', parent_heading='Epsilon Developers')
+     ## Epsilon Generation Language
+
+- [Code Generation Tutorial with EGL](code-generation-tutorial-egl/index.md): This article demonstrates using EGL templates to generate HTML files from an XML document.
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon. Use only the documentation below — do not use outside knowledge, and say so if it doesn't cover something.
+
+Documentation:
+--- DOCUMENTATION ---
+[Source: epsilon_docs/articles_json-emc_index.md]
+## Example EGL template
+Example: generate a formatted GitHub repository summary using Eclipse Epsilon Generation Language (EGL) template syntax.
+Keywords: .name
+
+```egl
+# Eclipse Epsilon
+
+([%=M.root.stargazers_count%] stars, [%=M.root.watchers_count%] watchers, [%=M.root.forks_count%] forks)
+
+[%=M.root.description%]
+
+* Clone via HTTPS: [%=M.root.clone_url%]
+* Clone via SSH: [%=M.root.ssh_url%]
+
+## License
+
+Epsilon is licensed under the [[%=M.root.license.name%]]([%=M.root.license.url%]).
+
+## Topics
+
+[% for (topic in M.root.topics) {%]
+* [%=topic.ftuc()%]
+[% } %]
+```
+
+[Source: epsilon_docs/egl.md]
+# The Epsilon Generation Language (EGL)
+
+EGL is a model-to-text transformation (M2T) language that can be used to transform models into various types of textual artefact, including code (e.g. Java), reports (e.g. in HTML/LaTeX), images (e.g. using [Graphviz](https://graphviz.org)), formal specifications, or even entire applications comprising code in multiple languages (e.g. HTML, Javascript and CSS).
+
+EGL is a *template-based* language (i.e. EGL programs resemble the text that they generate), and provides several features that simplify and support the generation of text from models, including: 
+
+- a sophisticated and language-independent merging engine (for preserving hand-written sections of generated text), 
+- an extensible template system (for generating text to a variety of sources, such as a file on disk, a database server, or even as a response issued by a web server), 
+- formatting algorithms (for producing generated text that is well-formatted and hence readable), and traceability mechanisms (for linking generated text with source models).
+
+!!! tip "Try EGL online"
+    You can run and fiddle with EGL templates in the [online Epsilon Playground](../../playground/?egx).
+
+## Abstract Syntax
+
+The figure below shows the abstract syntax of EGL's core functionality.
+
+!!! info
+    As with most languages in Epsilon, EGL uses [EOL](eol.md) as its expression language. This page only documents the additional syntax and semantics that EGL provides on top of EOL.
+
+[Source: epsilon_docs/articles_code-generation-tutorial-egl_index.md]
+# Code Generation Tutorial with EGL
+EGL is a template-based language that can be used to generate code (or any other kind of text) from different types of models supported by Epsilon (e.g. EMF, UML, XML). This example demonstrates using EGL to generate HTML code from the XML document below.
+
+[Source: epsilon_docs/articles_egl-patch.md]
+## Example Templates
+Example: generate Java getter methods with conditional logic using Epsilon Generation Language templates.
+Keywords: .name
+
+```egl
+	[%for (a in c.eAllAttributes.excludingAll(c.eAttributes)) {%]
+	+
+	+	/**
+	+	 * @generated
+	+	 */
+	+	@Override
+	+	public [%=a.eType.instanceTypeName%] get[%=a.name.ftuc()%]() {
+	+		if ([%=a.name%] == null) {
+	+			return prototype.get[%=a.name.ftuc()%]();
+	+		}
+	+		else return [%=a.name%];
+	+	}
+	[%}%]
+	-} //[%=c.name%]Impl
+	+} //[%=c.name%]Impl (Patched)
+	```
+
+[Source: epsilon_docs/egl.md]
+## Concrete Syntax
+Example: iterate over all Class instances and print their names using Epsilon Generation Language (EGL) concrete syntax.
+Keywords: .name
+
+```egl
+[% for (c in Class.all) { %]
+[%=c.name%]
+[% } %]
+```
+
+[Source: epsilon_docs/egx.md]
+[EGL](../egl/) is Epsilon's model-to-text transformation language. EGL in principle is similar in purpose to server-side scripting languages like PHP (and can indeed be used for such purposes, as demonstrated [in this article](../articles/egl-server-side/)). To recap, a template is a text file which has both static and dynamic regions. As the name implies, a static region is where text appears as-is in the output, whereas a dynamic region uses code to generate the output, often relying on data which is only available at runtime (hence, "dynamic"). Dynamic regions are expressed using [EOL](../eol). One can think of an EGL template as a regular text file with some EOL embedded in it, or as an EOL program with the added convenience of verbatim text generation. Indeed, it is possible to use EGL without any static regions, relying on the output buffer variable to write the output text. In EGL, the output variable is called "out" and the markers for the start and end of dynamic regions are `[%` and `%]` respectively. For convenience, `[%=` outputs the string value of the expression which follows. EGL has many advanced features, such as recording traceability information, post-process formatting (to ensure consistent style in the final output) and protected regions, which allow certain parts of the text to be preserved if modified by hand, rather than being overwritten on each invocation of the template. EGL can handle merges, and also supports outputting text to any output stream.
+
+[Source: epsilon_docs/articles_index.md]
+## Epsilon Generation Language
+
+- [Code Generation Tutorial with EGL](code-generation-tutorial-egl/index.md): This article demonstrates using EGL templates to generate HTML files from an XML document.
+- [Running Epsilon Programs on POJOs](epsilon-pojos.md): This article demonstrates how to run EOL programs and EGL templates on plain-old Java objects (POJOs).
+- [Using template operations in EGL](egl-template-operations/index.md): This article demonstrates template operations for writing re-usable code in EGL (the model-to-text language of Epsilon).
+- [EGL as a server-side language](egl-server-side/index.md): This article demonstrates using EGL (the model-to-text language of Epsilon) in Tomcat to produce HTML pages from EMF models on the fly.
+- [Co-ordinating EGL templates with EGX](egx-parameters/index.md): This article demonstrates how to parameterize EGL templates and execute them multiple times to produce multiple files.
+- [Re-using EGL templates](egl-invoke-egl/index.md): This article demonstrates how to invoke other EGL templates and direct their output to calling EGL template.
+- [EGL Patch Templates](egl-patch.md): This article demonstrates how to patch existing files with EGL.
+
+## Epsilon Transformation Language
+
+- [XML to EMF Transformation](xml-to-emf.md): This article shows how to transform an XML document into an EMF model using the Epsilon Transformation Language and Epsilon's XML driver
+
+## Epsilon and EMF models
+
+--- USER MESSAGE ---
+What is EGL used for in Epsilon?
+
+Before writing your answer, silently check each part of the question against the documentation — including whether any combination of separately-documented pieces is actually shown together, not just individually present somewhere. Don't show this checking process or split your answer into labeled parts.
+
+Write a smooth, natural answer. Place any honest note about something not being directly confirmed right next to the part it concerns, not bundled at the end — and let your opening reflect the same level of confidence, rather than stating something flatly and qualifying it afterward.
+
+Be concise, and let the length of your answer reflect how much the documentation actually supports — don't stretch a thin piece of evidence into a long, confident-sounding answer.
+
+Question:
+What is EGL used for in Epsilon?
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+EGL (the Epsilon Generation Language) is Epsilon’s model‑to‑text (M2T) language used to generate textual artefacts from models. It’s a template‑based language that mixes static text with EOL expressions (dynamic regions delimited by [% and %], with [%= ... %] for expression output) to produce outputs such as:
+
+- source code (e.g. Java),
+- reports (HTML/LaTeX),
+- images (e.g. via Graphviz),
+- formal specifications,
+- even multi‑file applications combining different languages.
+
+The documentation also highlights features that support practical code generation: a language‑independent merging engine (to preserve hand‑written sections), protected regions, post‑process formatting, traceability from generated text back to models, and the ability to write output to various streams. EGL can be used in different contexts (e.g. on POJOs or server‑side in Tomcat) as shown in the Epsilon articles.
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             2
+  Prompt tokens:     1,869
+  Completion tokens: 1,142
+  Total tokens:      3,011
+  Estimated cost:    $0.00275
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         2
+  Total prompt tokens:     1,869
+  Total completion tokens: 1,142
+  Total tokens:            3,011
+  Total estimated cost:    $0.00275
+============================================================

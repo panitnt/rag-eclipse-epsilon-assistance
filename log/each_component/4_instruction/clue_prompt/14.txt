@@ -1,0 +1,868 @@
+Session started: 2026-08-12 17:22:34
+Model: openai/gpt-5-mini | temperature=0
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[17:22:47]
+
+── QUESTION ──────────────────────────────────────────────
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver?
+- patientId: PT-00291837
+  admitted: "2024-05-20"
+  ward: cardiology
+  bed: 4B
+  status: inpatient
+
+  demographics:
+    fullname: Robert Osei
+    dob: "1961-03-14"
+    age: 63
+    sex: M
+    bloodType: O+
+    nationality: GH
+    language: en
+    nok:
+      name: Abena Osei
+      relation: spouse
+      phone: "+233-55-012-3456"
+
+  diagnoses:
+    primary:
+      icd10: I21.9
+      description: Acute myocardial infarction, unspecified
+      confirmedAt: "2024-05-20T14:32:00Z"
+      confirmedBy: Dr. Kwame Asante
+    secondary:
+      - icd10: E11.9
+        description: Type 2 diabetes mellitus without complications
+      - icd10: I10
+        description: Essential (primary) hypertension
+
+  medications:
+    - drug: Aspirin
+      dose: 100mg
+      route: oral
+      frequency: once_daily
+      startDate: "2024-05-20"
+      endDate: null
+      prescribedBy: Dr. Kwame Asante
+    - drug: Atorvastatin
+      dose: 40mg
+      route: oral
+      frequency: once_daily_evening
+      startDate: "2024-05-20"
+      endDate: null
+      prescribedBy: Dr. Kwame Asante
+    - drug: Metformin
+      dose: 500mg
+      route: oral
+      frequency: twice_daily
+      startDate: "2023-01-10"
+      endDate: null
+      prescribedBy: Dr. Fatima Mensah
+    - drug: Lisinopril
+      dose: 10mg
+      route: oral
+      frequency: once_daily
+      startDate: "2022-07-01"
+      endDate: "2024-05-20"
+      note: Switched to Ramipril due to cough side-effect
+
+  labs:
+    troponin_I:
+      unit: ng/mL
+      reference_range: [0, 0.04]
+      readings:
+        - timestamp: "2024-05-20T15:00:00Z"
+          value: 2.81
+          flag: high
+        - timestamp: "2024-05-20T21:00:00Z"
+          value: 4.55
+          flag: high
+        - timestamp: "2024-05-21T09:00:00Z"
+          value: 3.10
+          flag: high
+    hba1c:
+      unit: "%"
+      reference_range: [4.0, 5.6]
+      readings:
+        - timestamp: "2024-05-21T08:00:00Z"
+          value: 7.8
+          flag: high
+    creatinine:
+      unit: mg/dL
+      reference_range: [0.7, 1.2]
+      readings:
+        - timestamp: "2024-05-21T08:00:00Z"
+          value: 1.05
+          flag: normal
+
+  procedures:
+    - name: Coronary Angiography
+      date: "2024-05-21"
+      performedBy: Dr. Kwame Asante
+      findings: 70% stenosis in LAD; RCA and LCx patent
+      outcome: PCI planned
+    - name: Percutaneous Coronary Intervention (PCI)
+      date: "2024-05-22"
+      performedBy: Dr. Kwame Asante
+      findings: Drug-eluting stent placed in LAD
+      outcome: successful
+
+  notes:
+    - timestamp: "2024-05-23T08:00:00Z"
+      author: Dr. Kwame Asante
+      text: Patient stable post-PCI. Tolerating medications well. Plan for discharge in 48h with cardiac rehab referral.
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver?
+  - EMC YAML Driver creating and saving YAML models programmatically
+  - Epsilon Object Language (EOL) create new model element and set properties and save model
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver?'
+    1. sim=0.8430  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    2. sim=0.7496  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    3. sim=0.7409  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    4. sim=0.7086  epsilon_docs/articles_rdf-emc.md | heading='Multi-valued features'
+    5. sim=0.6931  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    6. sim=0.6837  epsilon_docs/articles_yaml-emc_index.md | heading='How can I delete nodes?'
+    7. sim=0.6800  epsilon_docs/articles_index.md | heading='Recipes'
+    8. sim=0.6680  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    9. sim=0.6539  epsilon_docs/articles_in-memory-emf-model_index.md | heading='Working with custom EMF resources'
+    10. sim=0.6309  epsilon_docs/articles_profiled-uml-models_index.md | heading='Querying a Profiled UML Model'
+    11. sim=0.6286  epsilon_docs/articles_rdf-emc.md | heading='EMF-RDF mapping'
+    12. sim=0.6264  epsilon_docs/emc.md | heading='Other Drivers'
+    13. sim=0.6102  epsilon_docs/articles_xsd-xml_index.md | heading='How do I create an element and add it to an existing element?'
+    14. sim=0.5998  epsilon_docs/articles_excel_index.md | heading='Creating Rows'
+    15. sim=0.5855  epsilon_docs/articles_xsd-xml_index.md | heading='How can I get/set the attributes of an element?'
+    16. sim=0.5835  epsilon_docs/eol.md | heading='Creating and Deleting Model Elements'
+    17. sim=0.5520  epsilon_docs/eunit.md | heading='Test Suites'
+    18. sim=0.5458  epsilon_docs/articles_call-java-from-epsilon_index.md | heading='Create the tool'
+
+  Query: 'EMC YAML Driver creating and saving YAML models programmatically'
+    1. sim=0.7416  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    2. sim=0.7005  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    3. sim=0.6897  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    4. sim=0.6769  epsilon_docs/articles_in-memory-emf-model_index.md | heading='Working with custom EMF resources'
+    5. sim=0.6742  epsilon_docs/articles_rdf-emc.md | heading='Multi-valued features'
+    6. sim=0.6666  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    7. sim=0.6593  epsilon_docs/articles_rdf-emc.md | heading='EMF-RDF mapping'
+    8. sim=0.6098  epsilon_docs/articles_profiled-uml-models_index.md | heading='Querying a Profiled UML Model'
+    9. sim=0.6008  epsilon_docs/emc.md | heading='Other Drivers'
+    10. sim=0.5911  epsilon_docs/articles_index.md | heading='Recipes'
+    11. sim=0.5756  epsilon_docs/eol.md | heading='Creating and Deleting Model Elements'
+    12. sim=0.5724  epsilon_docs/articles_yaml-emc_index.md | heading='How can I delete nodes?'
+    13. sim=0.5696  epsilon_docs/articles_excel_index.md | heading='Creating Rows'
+    14. sim=0.5585  epsilon_docs/articles_call-java-from-epsilon_index.md | heading='Create the tool'
+    15. sim=0.5582  epsilon_docs/eunit.md | heading='Test Suites'
+    16. sim=0.5423  epsilon_docs/articles_xsd-xml_index.md | heading='How do I create an element and add it to an existing element?'
+    17. sim=0.5404  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    18. sim=0.5224  epsilon_docs/articles_xsd-xml_index.md | heading='How can I get/set the attributes of an element?'
+
+  Query: 'Epsilon Object Language (EOL) create new model element and set properties and save model'
+    1. sim=0.8391  epsilon_docs/eol.md | heading='Creating and Deleting Model Elements'
+    2. sim=0.8013  epsilon_docs/articles_excel_index.md | heading='Creating Rows'
+    3. sim=0.7904  epsilon_docs/articles_xsd-xml_index.md | heading='How can I get/set the attributes of an element?'
+    4. sim=0.7866  epsilon_docs/articles_xsd-xml_index.md | heading='How do I create an element and add it to an existing element?'
+    5. sim=0.7639  epsilon_docs/articles_profiled-uml-models_index.md | heading='Querying a Profiled UML Model'
+    6. sim=0.7338  epsilon_docs/articles_in-memory-emf-model_index.md | heading='Working with custom EMF resources'
+    7. sim=0.6682  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    8. sim=0.6576  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    9. sim=0.6327  epsilon_docs/articles_call-java-from-epsilon_index.md | heading='Create the tool'
+    10. sim=0.6314  epsilon_docs/articles_rdf-emc.md | heading='Multi-valued features'
+    11. sim=0.6304  epsilon_docs/eunit.md | heading='Test Suites'
+    12. sim=0.6260  epsilon_docs/articles_rdf-emc.md | heading='EMF-RDF mapping'
+    13. sim=0.6175  epsilon_docs/emc.md | heading='Other Drivers'
+    14. sim=0.6168  epsilon_docs/articles_index.md | heading='Recipes'
+    15. sim=0.6161  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    16. sim=0.6076  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    17. sim=0.6049  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    18. sim=0.5963  epsilon_docs/articles_yaml-emc_index.md | heading='How can I delete nodes?'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (8):
+  1. [0.951] epsilon_docs/articles_yaml-emc_index.md (heading='How can I create a YAML document from scratch?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## How can I create a YAML document from scratch?
+Example: create a YAML document from scratch by building and appending MappingNode, ScalarNode, and ListNode elements.
+Keywords: setRootAsList, getRoo
+  2. [0.936] epsilon_docs/eol.md (heading='Creating and Deleting Model Elements', parent_heading='Types')
+     ## Creating and Deleting Model Elements
+Example: create a new Person model element and set its firstName and lastName properties.
+Keywords: new Person
+
+```eol
+var p : new Person;
+p.firstName = 'John';
+  3. [0.841] epsilon_docs/articles_excel_index.md (heading='Creating Rows', parent_heading='Querying and Modifying Spreadsheets')
+     ## Creating Rows
+Example: create a new instance of the Student model element using the Epsilon Object Language (EOL).
+Keywords: new Student
+
+```eol
+var student : new Student;
+```
+  4. [0.828] epsilon_docs/articles_in-memory-emf-model_index.md (heading='Working with custom EMF resources', parent_heading='')
+     ## Working with custom EMF resources
+Example: create and execute an EOL module using a custom in-memory EMF model resource, then save the resource.
+Keywords: new InMemoryEmfModel, new EolModule
+
+```ja
+  5. [0.719] epsilon_docs/articles_excel_index.md (heading='Modifying Cell Values', parent_heading='Creating Spreadsheets')
+     ## Modifying Cell Values
+Example: demonstrate creating and modifying objects with attributes and relationships in Epsilon Object Language (EOL).
+Keywords: new Module, new Staff, new Student, new Mark
+
+  6. [0.653] epsilon_docs/articles_yaml-emc_index.md (heading='Querying a YAML document', parent_heading='Scripting YAML documents using Epsilon')
+     # Scripting YAML documents using Epsilon
+ 
+In this article we demonstrate how you can create, query and modify YAML documents in Epsilon programs using the YAML driver. All the examples in this articl
+  7. [0.385] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YA
+  8. [0.329] epsilon_docs/articles_developing-a-new-emc-driver_index.md (heading='Filesystem Driver', parent_heading='Developing a new EMC Driver')
+     # Developing a new EMC Driver
+
+This article demonstrates the implementation of "drivers" for Epsilon's [Model Connectivity layer](../../emc).
+
+## YAML Driver
+
+The following training session recording 
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an expert assistant specialised in Eclipse Epsilon.
+
+Use the provided context as the PRIMARY and AUTHORITATIVE source of truth.
+Only use syntax, class names, methods, and patterns that appear explicitly in the context.
+You may adapt documented patterns to the user's structure, provided that no new APIs or unsupported methods are invented.
+If the user's message contains sample data, treat it only as the desired target structure — not as evidence for API syntax.
+If the context provides partial evidence only, generate code for the parts that are supported and explicitly flag any parts that are uncertain or unsupported.
+
+First, you should figure out what is the root node, either a list node and mapping node by setting .setRootAsList() or .setRootAsMap(), and change the code correspondingly. Make sure to use the correct method to append nodes, use .value.appendNode() for mapping nodes and .appendNode() for list node slots.
+
+When a code example is appropriate, provide a complete and runnable example that covers the full structure given by the user.
+When generating code, follow only the patterns shown in the context exactly — do not skip initialisation steps, introduce intermediate objects, or shortcut method chains that are not explicitly demonstrated.
+
+
+--- DOCUMENTATION ---
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## How can I create a YAML document from scratch?
+Example: create a YAML document from scratch by building and appending MappingNode, ScalarNode, and ListNode elements.
+Keywords: setRootAsList, getRoot, .value, addRows, new MappingNode, new ScalarNode, residentNode, postcodeNode, appendNode, industryNode, new ListNode, projectsNode, skillsNode
+
+```eol
+YAMLDoc.setRootAsList();
+var root = YAMLDoc.getRoot();
+root.value.addRows(2);
+var rootFirstRow = root.value.at(0);
+var rootSecondRow = root.value.at(1);
+
+var addressNode1 = new MappingNode("address");
+var countryNode1 = new ScalarNode("country", "England");
+var residentNode = new ScalarNode("resident", true);
+var postcodeNode = new ScalarNode("postcode", "M1 1AG");
+addressNode1.value.appendNode(countryNode1);
+addressNode1.value.appendNode(residentNode);
+addressNode1.value.appendNode(postcodeNode);
+
+var employeeIdNode1 = new ScalarNode("employeeId", "14623");
+var fullnameNode1 = new ScalarNode("fullname", "Michael Davidson");
+var roleNode1 = new ScalarNode("role", "Consultant");
+
+var industryNode = new ListNode("industry", 3);
+industryNode.value =  Sequence{"IoT", "smart factories", "signal analytics"};
+
+var projectsNode = new ListNode("projects", 2);
+var nameNode1 = new ScalarNode("name", "SmartAutomation");
+var nameNode2 = new ScalarNode("name", "FactoryAnalytics");
+var budgetNode1 = new ScalarNode("budget", 25000);
+var budgetNode2 = new ScalarNode("budget", 20000);
+projectsNode.value.at(0).appendNode(nameNode1);
+projectsNode.value.at(0).appendNode(budgetNode1);
+projectsNode.value.at(1).appendNode(nameNode2);
+projectsNode.value.at(1).appendNode(budgetNode2);
+
+var addressNode2 = new MappingNode("address");
+var countryNode2 = new ScalarNode("country", "Germany");
+addressNode2.value.appendNode(countryNode2);
+
+var employeeIdNode2 = new ScalarNode("employeeId", "16431");
+var fullnameNode2 = new ScalarNode("fullname", "Arnold Wagner");
+var roleNode2 = new ScalarNode("role", "HR");
+
+var skillsNode = new ListNode("skills", 2);
+skillsNode.value =  Sequence{"communication", "coaching"};
+
+rootFirstRow.appendNode(employeeIdNode1);
+rootFirstRow.appendNode(addressNode1);
+rootFirstRow.appendNode(fullnameNode1);
+rootFirstRow.appendNode(roleNode1);
+rootFirstRow.appendNode(industryNode);
+rootFirstRow.appendNode(projectsNode);
+
+rootSecondRow.appendNode(employeeIdNode2);
+rootSecondRow.appendNode(addressNode2);
+rootSecondRow.appendNode(fullnameNode2);
+rootSecondRow.appendNode(roleNode2);
+rootSecondRow.appendNode(skillsNode);
+```
+
+[Source: epsilon_docs/eol.md]
+## Creating and Deleting Model Elements
+Example: create a new Person model element and set its firstName and lastName properties.
+Keywords: new Person
+
+```eol
+var p : new Person;
+p.firstName = 'John';
+p.lastName = 'Doe';
+```
+
+[Source: epsilon_docs/articles_excel_index.md]
+## Creating Rows
+Example: create a new instance of the Student model element using the Epsilon Object Language (EOL).
+Keywords: new Student
+
+```eol
+var student : new Student;
+```
+
+[Source: epsilon_docs/articles_in-memory-emf-model_index.md]
+## Working with custom EMF resources
+Example: create and execute an EOL module using a custom in-memory EMF model resource, then save the resource.
+Keywords: new InMemoryEmfModel, new EolModule
+
+```java
+Resource resource = ...;
+InMemoryEmfModel model = new InMemoryEmfModel(resource);
+model.setName("M");
+EolModule module = new EolModule();
+module.parse(...);
+module.getContext().getModelRepository().addModel(model);
+module.execute();
+resource.save(...);
+```
+
+[Source: epsilon_docs/articles_excel_index.md]
+## Modifying Cell Values
+Example: demonstrate creating and modifying objects with attributes and relationships in Epsilon Object Language (EOL).
+Keywords: new Module, new Staff, new Student, new Mark
+
+```eol
+    // Create the modules
+    var MSD = new Module(id="MSD", 
+      title="Modelling and System Design", term="Autumn");
+
+    var HCI = new Module(id="HCI", 
+      title="Human Computer Interaction", term="Spring");
+    
+    var RQE = new Module(id="RQE", 
+      title="Requirements Engineering", term="Spring");
+       
+    // Create the staff  
+    var matthew = new Staff(id="mt506", firstname="Matthew",
+      lastname="Thomas", teaches=Sequence{MSD, RQE});
+    
+    var matthew = new Staff(id="dj503", firstname="Daniel",
+      lastname="Jackson", teaches=Sequence{HCI});
+    
+    // Create the students
+    var joe = new Student(id="jt501", firstname="Joe", 
+      lastname="Thompson", age="23", supervisor=matthew, modules=Sequence{MSD, RQE});
+    
+    var jane = new Student(id="js502", firstname="Jane", 
+      lastname="Smith", age="22", supervisor=matthew, modules=Sequence{MSD, HCI});
+    
+    // Create the marks
+    new Mark(student=joe, module=MSD, mark=62);
+    new Mark(student=jane, module=HCI, mark=74);
+    ```
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+# Scripting YAML documents using Epsilon
+ 
+In this article we demonstrate how you can create, query and modify YAML documents in Epsilon programs using the YAML driver. All the examples in this article demonstrate using EOL to script YAML documents. However, it's worth stressing that YAML documents are supported throughout Epsilon. Therefore, you can use Epsilon to (cross-)validate, transform (to other models – XML, CSV or EMF-based, or to text), compare and merge your YAML documents.
+
+<iframe width="90%" height="494" src="https://www.youtube.com/embed/TF0fgghP938" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Querying a YAML document
+ 
+We use the following `employees.yaml` as a base for demonstrating the EOL syntax for querying YAML documents.
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YAML node must be specified when accessing YAML nodes via the YAML driver. There are 3 types of nodes in YAML:
+
+- `Scalar Node`. Scalar nodes are used to represent a single scalar value (e.g., string, boolean, integer). In the YAML driver, a scalar node consists of a key-value pair, in which the key represents the name of the scalar node, and the value represents the scalar value.
+- `Mapping Node`. Mapping nodes are used to represent unordered collections of key-value pairs. In the YAML driver, a mapping node consists of a key-value pair, in which the key represents the name of the mapping node, and the value holds an unordered collection of key-value pairs, which in turn represent other nodes.
+- `List (Sequence) Node`. List nodes are used to represent an ordered list of nodes or scalar values. In the YAML driver, a list node consists of a key-value pair, in which the key represents the name of the list node, and the value represents a list of nodes or scalar values.
+
+This section outlines the supported conventions in the form of questions and answers followed by relevant examples.
+
+[Source: epsilon_docs/articles_developing-a-new-emc-driver_index.md]
+# Developing a new EMC Driver
+
+This article demonstrates the implementation of "drivers" for Epsilon's [Model Connectivity layer](../../emc).
+
+## YAML Driver
+
+The following training session recording and deck of slides demonstrate the implementation of [Epsilon's YAML driver](../yaml-emc). The complete source-code is located in [Epsilon's Git repository](https://github.com/eclipse-epsilon/epsilon/tree/main/plugins/org.eclipse.epsilon.emc.yaml).
+
+<iframe src="https://www.youtube.com/embed/M0nvnhSF6Y0" width="100%" height="485" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen></iframe> <div style="margin-bottom:15px"></div>
+
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/yc9uUXElc1Zbac" width="100%" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:15px"></div>
+
+## CSV Pro Driver
+
+The slides below demonstrate the implementation of an alternative driver for CSV files, located under the [`examples` folder of Epsilon's repository](https://github.com/eclipse-epsilon/epsilon/tree/main/examples/org.eclipse.epsilon.emc.csvpro).
+
+--- USER MESSAGE ---
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver?
+- patientId: PT-00291837
+  admitted: "2024-05-20"
+  ward: cardiology
+  bed: 4B
+  status: inpatient
+
+  demographics:
+    fullname: Robert Osei
+    dob: "1961-03-14"
+    age: 63
+    sex: M
+    bloodType: O+
+    nationality: GH
+    language: en
+    nok:
+      name: Abena Osei
+      relation: spouse
+      phone: "+233-55-012-3456"
+
+  diagnoses:
+    primary:
+      icd10: I21.9
+      description: Acute myocardial infarction, unspecified
+      confirmedAt: "2024-05-20T14:32:00Z"
+      confirmedBy: Dr. Kwame Asante
+    secondary:
+      - icd10: E11.9
+        description: Type 2 diabetes mellitus without complications
+      - icd10: I10
+        description: Essential (primary) hypertension
+
+  medications:
+    - drug: Aspirin
+      dose: 100mg
+      route: oral
+      frequency: once_daily
+      startDate: "2024-05-20"
+      endDate: null
+      prescribedBy: Dr. Kwame Asante
+    - drug: Atorvastatin
+      dose: 40mg
+      route: oral
+      frequency: once_daily_evening
+      startDate: "2024-05-20"
+      endDate: null
+      prescribedBy: Dr. Kwame Asante
+    - drug: Metformin
+      dose: 500mg
+      route: oral
+      frequency: twice_daily
+      startDate: "2023-01-10"
+      endDate: null
+      prescribedBy: Dr. Fatima Mensah
+    - drug: Lisinopril
+      dose: 10mg
+      route: oral
+      frequency: once_daily
+      startDate: "2022-07-01"
+      endDate: "2024-05-20"
+      note: Switched to Ramipril due to cough side-effect
+
+  labs:
+    troponin_I:
+      unit: ng/mL
+      reference_range: [0, 0.04]
+      readings:
+        - timestamp: "2024-05-20T15:00:00Z"
+          value: 2.81
+          flag: high
+        - timestamp: "2024-05-20T21:00:00Z"
+          value: 4.55
+          flag: high
+        - timestamp: "2024-05-21T09:00:00Z"
+          value: 3.10
+          flag: high
+    hba1c:
+      unit: "%"
+      reference_range: [4.0, 5.6]
+      readings:
+        - timestamp: "2024-05-21T08:00:00Z"
+          value: 7.8
+          flag: high
+    creatinine:
+      unit: mg/dL
+      reference_range: [0.7, 1.2]
+      readings:
+        - timestamp: "2024-05-21T08:00:00Z"
+          value: 1.05
+          flag: normal
+
+  procedures:
+    - name: Coronary Angiography
+      date: "2024-05-21"
+      performedBy: Dr. Kwame Asante
+      findings: 70% stenosis in LAD; RCA and LCx patent
+      outcome: PCI planned
+    - name: Percutaneous Coronary Intervention (PCI)
+      date: "2024-05-22"
+      performedBy: Dr. Kwame Asante
+      findings: Drug-eluting stent placed in LAD
+      outcome: successful
+
+  notes:
+    - timestamp: "2024-05-23T08:00:00Z"
+      author: Dr. Kwame Asante
+      text: Patient stable post-PCI. Tolerating medications well. Plan for discharge in 48h with cardiac rehab referral.
+
+Question:
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver?
+- patientId: PT-00291837
+  admitted: "2024-05-20"
+  ward: cardiology
+  bed: 4B
+  status: inpatient
+
+  demographics:
+    fullname: Robert Osei
+    dob: "1961-03-14"
+    age: 63
+    sex: M
+    bloodType: O+
+    nationality: GH
+    language: en
+    nok:
+      name: Abena Osei
+      relation: spouse
+      phone: "+233-55-012-3456"
+
+  diagnoses:
+    primary:
+      icd10: I21.9
+      description: Acute myocardial infarction, unspecified
+      confirmedAt: "2024-05-20T14:32:00Z"
+      confirmedBy: Dr. Kwame Asante
+    secondary:
+      - icd10: E11.9
+        description: Type 2 diabetes mellitus without complications
+      - icd10: I10
+        description: Essential (primary) hypertension
+
+  medications:
+    - drug: Aspirin
+      dose: 100mg
+      route: oral
+      frequency: once_daily
+      startDate: "2024-05-20"
+      endDate: null
+      prescribedBy: Dr. Kwame Asante
+    - drug: Atorvastatin
+      dose: 40mg
+      route: oral
+      frequency: once_daily_evening
+      startDate: "2024-05-20"
+      endDate: null
+      prescribedBy: Dr. Kwame Asante
+    - drug: Metformin
+      dose: 500mg
+      route: oral
+      frequency: twice_daily
+      startDate: "2023-01-10"
+      endDate: null
+      prescribedBy: Dr. Fatima Mensah
+    - drug: Lisinopril
+      dose: 10mg
+      route: oral
+      frequency: once_daily
+      startDate: "2022-07-01"
+      endDate: "2024-05-20"
+      note: Switched to Ramipril due to cough side-effect
+
+  labs:
+    troponin_I:
+      unit: ng/mL
+      reference_range: [0, 0.04]
+      readings:
+        - timestamp: "2024-05-20T15:00:00Z"
+          value: 2.81
+          flag: high
+        - timestamp: "2024-05-20T21:00:00Z"
+          value: 4.55
+          flag: high
+        - timestamp: "2024-05-21T09:00:00Z"
+          value: 3.10
+          flag: high
+    hba1c:
+      unit: "%"
+      reference_range: [4.0, 5.6]
+      readings:
+        - timestamp: "2024-05-21T08:00:00Z"
+          value: 7.8
+          flag: high
+    creatinine:
+      unit: mg/dL
+      reference_range: [0.7, 1.2]
+      readings:
+        - timestamp: "2024-05-21T08:00:00Z"
+          value: 1.05
+          flag: normal
+
+  procedures:
+    - name: Coronary Angiography
+      date: "2024-05-21"
+      performedBy: Dr. Kwame Asante
+      findings: 70% stenosis in LAD; RCA and LCx patent
+      outcome: PCI planned
+    - name: Percutaneous Coronary Intervention (PCI)
+      date: "2024-05-22"
+      performedBy: Dr. Kwame Asante
+      findings: Drug-eluting stent placed in LAD
+      outcome: successful
+
+  notes:
+    - timestamp: "2024-05-23T08:00:00Z"
+      author: Dr. Kwame Asante
+      text: Patient stable post-PCI. Tolerating medications well. Plan for discharge in 48h with cardiac rehab referral.
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+Below is a complete EOL example that builds the YAML you provided from scratch, using only the YAML EMC driver node classes and patterns shown in the documentation (new ScalarNode, new MappingNode, new ListNode, Sequence, getRoot(), setRootAsMap(), .value.appendNode() for mapping nodes, and .value.at(i).appendNode() for list slots).
+
+Notes:
+- The document root is a mapping (top-level key: patientId, demographics, diagnoses, …) so we call YAMLDoc.setRootAsMap().
+- For lists of scalar values (e.g., reference_range) we assign Sequence{...} to the list node’s .value as shown in the docs.
+- For list-of-mappings (e.g., medications, readings, procedures) we create a ListNode with the number of entries and then populate each slot with .value.at(i).appendNode(...).
+- If you need to persist the YAML to a file or obtain the serialized YAML string, the API for saving/serializing is not shown in the provided docs — the code below only constructs the in-memory YAML document.
+
+EOL script:
+
+```eol
+// Set the document root to a mapping
+YAMLDoc.setRootAsMap();
+var root = YAMLDoc.getRoot();
+
+// Top-level scalar fields
+var patientIdNode = new ScalarNode("patientId", "PT-00291837");
+var admittedNode  = new ScalarNode("admitted", "2024-05-20");
+var wardNode      = new ScalarNode("ward", "cardiology");
+var bedNode       = new ScalarNode("bed", "4B");
+var statusNode    = new ScalarNode("status", "inpatient");
+
+root.value.appendNode(patientIdNode);
+root.value.appendNode(admittedNode);
+root.value.appendNode(wardNode);
+root.value.appendNode(bedNode);
+root.value.appendNode(statusNode);
+
+// demographics mapping
+var demographicsNode = new MappingNode("demographics");
+demographicsNode.value.appendNode(new ScalarNode("fullname", "Robert Osei"));
+demographicsNode.value.appendNode(new ScalarNode("dob", "1961-03-14"));
+demographicsNode.value.appendNode(new ScalarNode("age", 63));
+demographicsNode.value.appendNode(new ScalarNode("sex", "M"));
+demographicsNode.value.appendNode(new ScalarNode("bloodType", "O+"));
+demographicsNode.value.appendNode(new ScalarNode("nationality", "GH"));
+demographicsNode.value.appendNode(new ScalarNode("language", "en"));
+
+// next-of-kin nested mapping
+var nokNode = new MappingNode("nok");
+nokNode.value.appendNode(new ScalarNode("name", "Abena Osei"));
+nokNode.value.appendNode(new ScalarNode("relation", "spouse"));
+nokNode.value.appendNode(new ScalarNode("phone", "+233-55-012-3456"));
+
+demographicsNode.value.appendNode(nokNode);
+root.value.appendNode(demographicsNode);
+
+// diagnoses mapping
+var diagnosesNode = new MappingNode("diagnoses");
+
+// primary mapping
+var primaryNode = new MappingNode("primary");
+primaryNode.value.appendNode(new ScalarNode("icd10", "I21.9"));
+primaryNode.value.appendNode(new ScalarNode("description", "Acute myocardial infarction, unspecified"));
+primaryNode.value.appendNode(new ScalarNode("confirmedAt", "2024-05-20T14:32:00Z"));
+primaryNode.value.appendNode(new ScalarNode("confirmedBy", "Dr. Kwame Asante"));
+diagnosesNode.value.appendNode(primaryNode);
+
+// secondary: list of mappings (2 entries)
+var secondaryNode = new ListNode("secondary", 2);
+secondaryNode.value.at(0).appendNode(new ScalarNode("icd10", "E11.9"));
+secondaryNode.value.at(0).appendNode(new ScalarNode("description", "Type 2 diabetes mellitus without complications"));
+
+secondaryNode.value.at(1).appendNode(new ScalarNode("icd10", "I10"));
+secondaryNode.value.at(1).appendNode(new ScalarNode("description", "Essential (primary) hypertension"));
+
+diagnosesNode.value.appendNode(secondaryNode);
+root.value.appendNode(diagnosesNode);
+
+// medications: list of 4 mappings
+var medicationsNode = new ListNode("medications", 4);
+
+// 1
+medicationsNode.value.at(0).appendNode(new ScalarNode("drug", "Aspirin"));
+medicationsNode.value.at(0).appendNode(new ScalarNode("dose", "100mg"));
+medicationsNode.value.at(0).appendNode(new ScalarNode("route", "oral"));
+medicationsNode.value.at(0).appendNode(new ScalarNode("frequency", "once_daily"));
+medicationsNode.value.at(0).appendNode(new ScalarNode("startDate", "2024-05-20"));
+medicationsNode.value.at(0).appendNode(new ScalarNode("endDate", null));
+medicationsNode.value.at(0).appendNode(new ScalarNode("prescribedBy", "Dr. Kwame Asante"));
+
+// 2
+medicationsNode.value.at(1).appendNode(new ScalarNode("drug", "Atorvastatin"));
+medicationsNode.value.at(1).appendNode(new ScalarNode("dose", "40mg"));
+medicationsNode.value.at(1).appendNode(new ScalarNode("route", "oral"));
+medicationsNode.value.at(1).appendNode(new ScalarNode("frequency", "once_daily_evening"));
+medicationsNode.value.at(1).appendNode(new ScalarNode("startDate", "2024-05-20"));
+medicationsNode.value.at(1).appendNode(new ScalarNode("endDate", null));
+medicationsNode.value.at(1).appendNode(new ScalarNode("prescribedBy", "Dr. Kwame Asante"));
+
+// 3
+medicationsNode.value.at(2).appendNode(new ScalarNode("drug", "Metformin"));
+medicationsNode.value.at(2).appendNode(new ScalarNode("dose", "500mg"));
+medicationsNode.value.at(2).appendNode(new ScalarNode("route", "oral"));
+medicationsNode.value.at(2).appendNode(new ScalarNode("frequency", "twice_daily"));
+medicationsNode.value.at(2).appendNode(new ScalarNode("startDate", "2023-01-10"));
+medicationsNode.value.at(2).appendNode(new ScalarNode("endDate", null));
+medicationsNode.value.at(2).appendNode(new ScalarNode("prescribedBy", "Dr. Fatima Mensah"));
+
+// 4
+medicationsNode.value.at(3).appendNode(new ScalarNode("drug", "Lisinopril"));
+medicationsNode.value.at(3).appendNode(new ScalarNode("dose", "10mg"));
+medicationsNode.value.at(3).appendNode(new ScalarNode("route", "oral"));
+medicationsNode.value.at(3).appendNode(new ScalarNode("frequency", "once_daily"));
+medicationsNode.value.at(3).appendNode(new ScalarNode("startDate", "2022-07-01"));
+medicationsNode.value.at(3).appendNode(new ScalarNode("endDate", "2024-05-20"));
+medicationsNode.value.at(3).appendNode(new ScalarNode("note", "Switched to Ramipril due to cough side-effect"));
+
+root.value.appendNode(medicationsNode);
+
+// labs mapping
+var labsNode = new MappingNode("labs");
+
+// troponin_I mapping
+var troponinNode = new MappingNode("troponin_I");
+troponinNode.value.appendNode(new ScalarNode("unit", "ng/mL"));
+
+// reference_range as scalar sequence
+var troponinRef = new ListNode("reference_range", 2);
+troponinRef.value = Sequence{0, 0.04};
+troponinNode.value.appendNode(troponinRef);
+
+// readings: list of 3 mappings
+var troponinReadings = new ListNode("readings", 3);
+troponinReadings.value.at(0).appendNode(new ScalarNode("timestamp", "2024-05-20T15:00:00Z"));
+troponinReadings.value.at(0).appendNode(new ScalarNode("value", 2.81));
+troponinReadings.value.at(0).appendNode(new ScalarNode("flag", "high"));
+
+troponinReadings.value.at(1).appendNode(new ScalarNode("timestamp", "2024-05-20T21:00:00Z"));
+troponinReadings.value.at(1).appendNode(new ScalarNode("value", 4.55));
+troponinReadings.value.at(1).appendNode(new ScalarNode("flag", "high"));
+
+troponinReadings.value.at(2).appendNode(new ScalarNode("timestamp", "2024-05-21T09:00:00Z"));
+troponinReadings.value.at(2).appendNode(new ScalarNode("value", 3.10));
+troponinReadings.value.at(2).appendNode(new ScalarNode("flag", "high"));
+
+troponinNode.value.appendNode(troponinReadings);
+labsNode.value.appendNode(troponinNode);
+
+// hba1c mapping
+var hba1cNode = new MappingNode("hba1c");
+hba1cNode.value.appendNode(new ScalarNode("unit", "%"));
+
+var hba1cRef = new ListNode("reference_range", 2);
+hba1cRef.value = Sequence{4.0, 5.6};
+hba1cNode.value.appendNode(hba1cRef);
+
+var hba1cReadings = new ListNode("readings", 1);
+hba1cReadings.value.at(0).appendNode(new ScalarNode("timestamp", "2024-05-21T08:00:00Z"));
+hba1cReadings.value.at(0).appendNode(new ScalarNode("value", 7.8));
+hba1cReadings.value.at(0).appendNode(new ScalarNode("flag", "high"));
+
+hba1cNode.value.appendNode(hba1cReadings);
+labsNode.value.appendNode(hba1cNode);
+
+// creatinine mapping
+var creatNode = new MappingNode("creatinine");
+creatNode.value.appendNode(new ScalarNode("unit", "mg/dL"));
+
+var creatRef = new ListNode("reference_range", 2);
+creatRef.value = Sequence{0.7, 1.2};
+creatNode.value.appendNode(creatRef);
+
+var creatReadings = new ListNode("readings", 1);
+creatReadings.value.at(0).appendNode(new ScalarNode("timestamp", "2024-05-21T08:00:00Z"));
+creatReadings.value.at(0).appendNode(new ScalarNode("value", 1.05));
+creatReadings.value.at(0).appendNode(new ScalarNode("flag", "normal"));
+
+creatNode.value.appendNode(creatReadings);
+labsNode.value.appendNode(creatNode);
+
+root.value.appendNode(labsNode);
+
+// procedures: list of 2 mappings
+var proceduresNode = new ListNode("procedures", 2);
+proceduresNode.value.at(0).appendNode(new ScalarNode("name", "Coronary Angiography"));
+proceduresNode.value.at(0).appendNode(new ScalarNode("date", "2024-05-21"));
+proceduresNode.value.at(0).appendNode(new ScalarNode("performedBy", "Dr. Kwame Asante"));
+proceduresNode.value.at(0).appendNode(new ScalarNode("findings", "70% stenosis in LAD; RCA and LCx patent"));
+proceduresNode.value.at(0).appendNode(new ScalarNode("outcome", "PCI planned"));
+
+proceduresNode.value.at(1).appendNode(new ScalarNode("name", "Percutaneous Coronary Intervention (PCI)"));
+proceduresNode.value.at(1).appendNode(new ScalarNode("date", "2024-05-22"));
+proceduresNode.value.at(1).appendNode(new ScalarNode("performedBy", "Dr. Kwame Asante"));
+proceduresNode.value.at(1).appendNode(new ScalarNode("findings", "Drug-eluting stent placed in LAD"));
+proceduresNode.value.at(1).appendNode(new ScalarNode("outcome", "successful"));
+
+root.value.appendNode(proceduresNode);
+
+// notes: list with 1 mapping
+var notesNode = new ListNode("notes", 1);
+notesNode.value.at(0).appendNode(new ScalarNode("timestamp", "2024-05-23T08:00:00Z"));
+notesNode.value.at(0).appendNode(new ScalarNode("author", "Dr. Kwame Asante"));
+notesNode.value.at(0).appendNode(new ScalarNode("text", "Patient stable post-PCI. Tolerating medications well. Plan for discharge in 48h with cardiac rehab referral."));
+
+root.value.appendNode(notesNode);
+
+// Document built in-memory. To persist/serialize to YAML you will need the YAML driver's save/serialize API
+// (not shown in the provided docs).
+```
+
+If you want, I can:
+- produce a variant that uses more helper variables to reduce repetition,
+- or show how to serialize/save the YAML to a file if you can provide the method your environment exposes for writing the YAMLDoc to disk (that API was not shown in the provided docs).
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             2
+  Prompt tokens:     5,146
+  Completion tokens: 6,001
+  Total tokens:      11,147
+  Estimated cost:    $0.01329
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         2
+  Total prompt tokens:     5,146
+  Total completion tokens: 6,001
+  Total tokens:            11,147
+  Total estimated cost:    $0.01329
+============================================================

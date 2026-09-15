@@ -1,0 +1,167 @@
+- orderId: ORD-20240613-88421
+  placedAt: "2024-06-13T09:15:00Z"
+  status: partially_shipped
+
+  customer:
+    id: CUST-4421
+    name: Sophie Marchand
+    email: sophie.marchand@email.com
+    tier: gold
+    loyaltyPoints:
+      balance: 3420
+      earned_this_order: 85
+
+  shipping:
+    address:
+      line1: 14 Rue de Rivoli
+      line2: Apt 3B
+      city: Paris
+      postcode: "75001"
+      country: FR
+    method: express_48h
+    estimatedDelivery: "2024-06-15"
+    tracking:
+      - parcelId: PKG-001
+        carrier: DHL
+        status: in_transit
+        items:
+          - SKU-992
+          - SKU-993
+      - parcelId: PKG-002
+        carrier: Colissimo
+        status: preparing
+        items:
+          - SKU-1041
+
+  billing:
+    sameAsShipping: false
+    address:
+      line1: 7 Boulevard Haussmann
+      city: Paris
+      postcode: "75009"
+      country: FR
+
+  items:
+    - sku: SKU-992
+      name: Wireless Noise-Cancelling Headphones
+      qty: 1
+      unitPrice: 189.99
+      discount:
+        type: percentage
+        value: 10
+      finalPrice: 170.99
+    - sku: SKU-993
+      name: USB-C Charging Cable (2m)
+      qty: 3
+      unitPrice: 12.50
+      discount: null
+      finalPrice: 37.50
+    - sku: SKU-1041
+      name: Laptop Stand (Aluminium)
+      qty: 1
+      unitPrice: 54.00
+      discount:
+        type: fixed
+        value: 5.00
+      finalPrice: 49.00
+
+  payment:
+    method: card
+    card:
+      last4: "7823"
+      brand: Visa
+      expiresAt: "2026-09"
+    breakdown:
+      subtotal: 257.49
+      shipping: 4.99
+      tax: 25.75
+      loyaltyDiscount: -17.10
+      total: 271.13
+    status: captured
+
+- orderId: ORD-20250722-55381
+  placedAt: "2025-07-22T14:45:00Z"
+  status: delivered
+
+  customer:
+    id: CUST-9875
+    name: Michael Turner
+    email: michael.turner@example.com
+    tier: platinum
+    loyaltyPoints:
+      balance: 7850
+      earned_this_order: 220
+
+  shipping:
+    address:
+      line1: 88 King Street
+      line2: Suite 12
+      city: Manchester
+      postcode: "M2 4WQ"
+      country: UK
+    method: next_day_delivery
+    estimatedDelivery: "2025-07-23"
+    tracking:
+      - parcelId: PAR-78101
+        carrier: DPD
+        status: delivered
+        items:
+          - SKU-BALL-001
+          - SKU-GLOVE-002
+
+      - parcelId: PAR-78102
+        carrier: Royal Mail
+        status: delivered
+        items:
+          - SKU-BAG-005
+
+  billing:
+    sameAsShipping: true
+    address:
+      line1: 88 King Street
+      city: Manchester
+      postcode: "M2 4WQ"
+      country: UK
+
+  items:
+    - sku: SKU-BALL-001
+      name: Professional Football
+      qty: 2
+      unitPrice: 34.99
+      discount:
+        type: percentage
+        value: 15
+      finalPrice: 59.48
+
+    - sku: SKU-GLOVE-002
+      name: Goalkeeper Gloves Pro
+      qty: 1
+      unitPrice: 49.99
+      discount:
+        type: fixed
+        value: 5.00
+      finalPrice: 44.99
+
+    - sku: SKU-BAG-005
+      name: Sports Equipment Bag
+      qty: 1
+      unitPrice: 39.99
+      discount: null
+      finalPrice: 39.99
+
+  payment:
+    method: paypal
+
+    card:
+      last4: "0000"
+      brand: PayPal
+      expiresAt: null
+
+    breakdown:
+      subtotal: 144.96
+      shipping: 6.99
+      tax: 30.39
+      loyaltyDiscount: -20.00
+      total: 162.34
+
+    status: completed

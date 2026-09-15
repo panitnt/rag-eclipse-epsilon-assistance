@@ -1,0 +1,33 @@
+INTENT_PROMPT = ChatPromptTemplate.from_template(
+    """Extract the core Eclipse Epsilon technical question from the user's message.
+Ignore any sample data, YAML content, metamodel definitions, or code snippets the user pasted.
+Focus only on what they want to know or achieve in Eclipse Epsilon terms.
+
+Return the user's question verbatim as the first line, with only sample data and code snippets removed.
+Then generate up to 2 additional search queries to retrieve relevant documentation and code examples.
+At least one of the additional queries should focus on the Epsilon language syntax needed to accomplish the task.
+Each additional query must relate directly to the same task described in the first line — do not introduce unrelated Epsilon languages or tools.
+Each query must use only terms that would naturally appear in Eclipse Epsilon documentation — do not invent API names or class names.
+Return one query per line, nothing else.
+
+Message:
+{message}
+
+Queries:"""
+)
+
+ANSWER_PROMPT = ChatPromptTemplate.from_template(
+    """You are an assistant answering questions about Eclipse Epsilon. Use only the documentation below — do not use outside knowledge, and say so if it doesn't cover something.
+
+Documentation:
+{context_block}
+
+Before writing your answer, silently check each part of the question against the documentation — including whether any combination of separately-documented pieces is actually shown together, not just individually present somewhere. Don't show this checking process or split your answer into labeled parts. Write a smooth, natural answer, and weave in a brief, honest note wherever something isn't directly confirmed, rather than presenting it as verified.
+
+Be concise, and let the length of your answer reflect how much the documentation actually supports — don't stretch a thin piece of evidence into a long, confident-sounding answer.
+
+Question:
+{question}
+
+Answer:"""
+)

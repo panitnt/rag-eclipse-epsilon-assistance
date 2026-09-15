@@ -1,0 +1,296 @@
+Session started: 2026-07-28 00:23:12
+Model: openrouter/qwen/qwen3.5-flash-02-23 | temperature=0
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[00:23:30]
+
+── QUESTION ──────────────────────────────────────────────
+How does an EGX rule decide which EGL template to run for a given model element type (guards, target location)?
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - How does an EGX rule decide which EGL template to run for a given model element type (guards, target location)?
+  - EGX rule guard syntax EGL template invocation
+  - EGX rule target EGL template invocation
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'How does an EGX rule decide which EGL template to run for a given model element type (guards, target location)?'
+    1. sim=0.6904  epsilon_docs/egl.md | heading='The Template type'
+    2. sim=0.6742  epsilon_docs/index.md | heading='Workflow'
+    3. sim=0.6662  epsilon_docs/articles_picto-tables_index.md | heading='Generating table views with a Pinset transformation'
+    4. sim=0.6575  epsilon_docs/articles_code-generation-tutorial-egl_index.md | heading='Code Generation Tutorial with EGL'
+    5. sim=0.6563  epsilon_docs/articles_epsilon-and-sirius_index.md | heading='Epsilon and Sirius'
+    6. sim=0.6533  epsilon_docs/egl.md | heading='Summary'
+    7. sim=0.6426  epsilon_docs/articles_egl-patch.md | heading='Using patch EGL templates'
+    8. sim=0.6423  epsilon_docs/picto_index.md | heading='Scalability'
+    9. sim=0.6420  epsilon_docs/articles_egx-parameters_index.md | heading='Co-ordinating EGL template execution with EGX'
+    10. sim=0.6392  epsilon_docs/articles_egl-template-operations_index.md | heading='Using template operations in EGL'
+    11. sim=0.6307  epsilon_docs/articles_epsilon-pojos.md | heading='Running an EGL Template against the POJO'
+    12. sim=0.5890  epsilon_docs/articles_picto-sequence-diagrams_index.md | heading='Visualisation Transformation'
+    13. sim=0.5683  epsilon_docs/egx.md | heading='Epsilon Generation Language'
+    14. sim=0.4476  epsilon_docs/articles_eugenia-patching_index.md | heading='Generating patches with Eugenia'
+
+  Query: 'EGX rule guard syntax EGL template invocation'
+    1. sim=0.7299  epsilon_docs/articles_epsilon-pojos.md | heading='Running an EGL Template against the POJO'
+    2. sim=0.7046  epsilon_docs/articles_egl-patch.md | heading='Using patch EGL templates'
+    3. sim=0.6955  epsilon_docs/articles_egl-template-operations_index.md | heading='Using template operations in EGL'
+    4. sim=0.6778  epsilon_docs/index.md | heading='Workflow'
+    5. sim=0.6734  epsilon_docs/articles_picto-tables_index.md | heading='Generating table views with a Pinset transformation'
+    6. sim=0.6694  epsilon_docs/picto_index.md | heading='Scalability'
+    7. sim=0.6634  epsilon_docs/articles_epsilon-and-sirius_index.md | heading='Epsilon and Sirius'
+    8. sim=0.6533  epsilon_docs/egl.md | heading='The Template type'
+    9. sim=0.6324  epsilon_docs/articles_code-generation-tutorial-egl_index.md | heading='Code Generation Tutorial with EGL'
+    10. sim=0.6250  epsilon_docs/articles_picto-sequence-diagrams_index.md | heading='Visualisation Transformation'
+    11. sim=0.6082  epsilon_docs/egx.md | heading='Epsilon Generation Language'
+    12. sim=0.5956  epsilon_docs/articles_egx-parameters_index.md | heading='Co-ordinating EGL template execution with EGX'
+    13. sim=0.5862  epsilon_docs/egl.md | heading='Summary'
+    14. sim=0.5101  epsilon_docs/articles_eugenia-patching_index.md | heading='Generating patches with Eugenia'
+
+  Query: 'EGX rule target EGL template invocation'
+    1. sim=0.7083  epsilon_docs/articles_epsilon-pojos.md | heading='Running an EGL Template against the POJO'
+    2. sim=0.6993  epsilon_docs/articles_epsilon-and-sirius_index.md | heading='Epsilon and Sirius'
+    3. sim=0.6930  epsilon_docs/articles_egl-patch.md | heading='Using patch EGL templates'
+    4. sim=0.6878  epsilon_docs/articles_picto-tables_index.md | heading='Generating table views with a Pinset transformation'
+    5. sim=0.6750  epsilon_docs/articles_egl-template-operations_index.md | heading='Using template operations in EGL'
+    6. sim=0.6644  epsilon_docs/articles_code-generation-tutorial-egl_index.md | heading='Code Generation Tutorial with EGL'
+    7. sim=0.6599  epsilon_docs/picto_index.md | heading='Scalability'
+    8. sim=0.6508  epsilon_docs/egl.md | heading='The Template type'
+    9. sim=0.6500  epsilon_docs/index.md | heading='Workflow'
+    10. sim=0.6303  epsilon_docs/articles_picto-sequence-diagrams_index.md | heading='Visualisation Transformation'
+    11. sim=0.6263  epsilon_docs/articles_egx-parameters_index.md | heading='Co-ordinating EGL template execution with EGX'
+    12. sim=0.5921  epsilon_docs/egx.md | heading='Epsilon Generation Language'
+    13. sim=0.5681  epsilon_docs/egl.md | heading='Summary'
+    14. sim=0.4806  epsilon_docs/articles_eugenia-patching_index.md | heading='Generating patches with Eugenia'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (7):
+  1. [0.973] epsilon_docs/index.md (heading='Workflow', parent_heading='Tools')
+     -   [Epsilon Generation Language (EGL)](egl.md): A template-based model-to-text language for generating code, documentation and other textual artefacts from models. EGL supports content-destination de
+  2. [0.897] epsilon_docs/articles_code-generation-tutorial-egl_index.md (heading='Code Generation Tutorial with EGL', parent_heading='')
+     ## Code Generation Tutorial with EGL
+Example: demonstrate conditional code generation with parameters and template invocation using EGL transformation rules.
+Keywords: new Map
+
+```egx
+rule Book2Page 
+
+  3. [0.810] epsilon_docs/articles_egl-patch.md (heading='Using patch EGL templates', parent_heading='EGL Patch Templates')
+     - The `public String toString() {` line would be used to match the toString method.
+- The `---` indicates that all the lines in the method, until the closing bracket (which is the next matched line) s
+  4. [0.789] epsilon_docs/egx.md (heading='Epsilon Generation Language', parent_heading='The EGL Co-Ordination Language (EGX)')
+     # The EGL Co-Ordination Language (EGX)
+
+EGX is a rule-based co-ordination language designed for automating the parametrised execution of model-to-text template transformations. Although built on top o
+  5. [0.500] epsilon_docs/articles_epsilon-and-sirius_index.md (heading='Epsilon and Sirius', parent_heading='')
+     ## Epsilon and Sirius
+Example: demonstrate model-to-Java code transformation using EGX rules with templates and custom operations.
+Keywords: .name
+
+```egx
+    rule Model2App 
+        transform m : Mod
+  6. [0.471] epsilon_docs/picto_index.md (heading='Scalability', parent_heading='Visualising Models with Picto')
+     ## Scalability
+Example: demonstrate scalability by limiting rule execution to models with fewer than 30 EClass elements.
+
+```egx
+rule ClassDiagram {
+
+	guard : EClass.all.size() < 30
+
+	parameters : Map
+  7. [0.237] epsilon_docs/egx.md (heading='Additional Resources', parent_heading='The EGL Co-Ordination Language (EGX)')
+     egx
+pre {
+  var files = Sequence{"file1", "file2", "file3"};
+  var data = Map {
+  	"file1" = "Content of the first file",
+  	"file2" = "Content of the second file",
+  	"file3" = "Content of the third 
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon. Use only the documentation below — do not use outside knowledge, and say so if it doesn't cover something.
+
+Documentation:
+--- DOCUMENTATION ---
+[Source: epsilon_docs/index.md]
+-   [Epsilon Generation Language (EGL)](egl.md): A template-based model-to-text language for generating code, documentation and other textual artefacts from models. EGL supports content-destination decoupling, protected regions for mixing generated with hand-written code. EGL also provides a rule-based coordination language ([EGX](egx)), that allows specific EGL templates to be executed for a specific model element type, with the ability to guard rule execution and specify generation target location by type/element.
+-   [Epsilon Transformation Language (ETL)](etl.md): A rule-based model-to-model transformation language that supports transforming many input to many output models, rule inheritance, lazy and greedy rules, and the ability to query and modify both input and output models.
+-   [Epsilon Validation Language (EVL)](evl.md): A model validation language that supports both intra and inter-model consistency checking, constraint dependency management and specifying fixes that users can invoke to repair identified inconsistencies. EVL is integrated with EMF/GMF and as such, EVL constraints can be evaluated from within EMF/GMF editors and generate error markers for failed constraints.
+-   [Epsilon Wizard Language (EWL)](ewl.md): A language tailored to interactive in-place model transformations on model elements selected by the user. EWL is integrated with EMF/GMF and as such, wizards can be executed from within EMF and GMF editors.
+
+[Source: epsilon_docs/articles_code-generation-tutorial-egl_index.md]
+## Code Generation Tutorial with EGL
+Example: demonstrate conditional code generation with parameters and template invocation using EGL transformation rules.
+Keywords: new Map
+
+```egx
+rule Book2Page 
+  transform book : t_book {
+  
+  // We only want to generate pages
+  // for books that have their public
+  // attribute set to true
+  guard : book.b_public
+  
+  parameters {
+    // These parameters will be made available
+    // to the invoked template as variables
+    var params : new Map;
+    params.put("index", t_book.all.indexOf(book) + 1);
+    return params;
+  }
+  
+  // The EGL template to be invoked
+  template : "book2page.egl"
+  
+  // Output file
+  target : "gen/" + book.e_id.text + ".html"
+  
+}
+
+rule Library2Page 
+  transform library : t_library {
+  
+  template : "library2page.egl"
+  
+  target : "gen/index.html"
+}
+```
+
+[Source: epsilon_docs/articles_egl-patch.md]
+- The `public String toString() {` line would be used to match the toString method.
+- The `---` indicates that all the lines in the method, until the closing bracket (which is the next matched line) should be removed.
+- The new method implementation is added, which will return the class name.
+
+## Using patch EGL templates
+
+To use EGL templates with diff lines they must be invoked from an EGX rule annotated with `@patch`. The example EGL templates above would be invoked like this:
+
+[Source: epsilon_docs/egx.md]
+# The EGL Co-Ordination Language (EGX)
+
+EGX is a rule-based co-ordination language designed for automating the parametrised execution of model-to-text template transformations. Although built on top of the Epsilon Generation Language (EGL), EGX can in principle work with any template-based model-to-text transformation language. The rationale for this co-ordination language comes from the need to invoke text generation templates multiple times with various parameters, usually derived from input models. To better understand EGX, it is helpful to be familiar with template-based text generation. 
+
+
+## Epsilon Generation Language
+
+[Source: epsilon_docs/articles_epsilon-and-sirius_index.md]
+## Epsilon and Sirius
+Example: demonstrate model-to-Java code transformation using EGX rules with templates and custom operations.
+Keywords: .name
+
+```egx
+    rule Model2App 
+        transform m : Model {
+
+        template : "model2java.egl"
+
+        parameters : Map{}
+
+        target : m.name.toLowerCase() + "/" + m.name.ftuc() + ".java"
+    }
+
+    rule Decision2Java 
+        transform d : Decision {
+
+        template : "decision2java.egl"
+
+        parameters : Map{
+            "m" = d.eContainer()
+        }
+
+        target : d.getJavaFileName()
+    }
+
+    // ...
+
+    operation Step getJavaFileName() {
+        return self.eContainer.name.toLowerCase() + "/" + self.name.ftuc() + ".java";
+    }
+    ```
+
+[Source: epsilon_docs/picto_index.md]
+## Scalability
+Example: demonstrate scalability by limiting rule execution to models with fewer than 30 EClass elements.
+
+```egx
+rule ClassDiagram {
+
+	guard : EClass.all.size() < 30
+
+	parameters : Map {
+		"classes" = EClass.all,
+		"format" = "graphviz-dot",
+		"path" = List{"Model", "(All Classes)"},
+		"icon" = "diagram-ff0000"
+	}
+
+	template: "ecore2dot.egl"
+
+}
+```
+
+[Source: epsilon_docs/egx.md]
+egx
+pre {
+  var files = Sequence{"file1", "file2", "file3"};
+  var data = Map {
+  	"file1" = "Content of the first file",
+  	"file2" = "Content of the second file",
+  	"file3" = "Content of the third file"
+  };
+}
+
+rule ItemToFile transform file: String in: files {
+	parameters : Map {"content" = data.get(file)}
+	target : file + ".txt"
+	template: "file.egl"
+}
+```
+
+## Additional Resources
+
+Additional resources about EGL/EGX are available [here](../articles/#epsilon-generation-language).
+
+--- USER MESSAGE ---
+How does an EGX rule decide which EGL template to run for a given model element type (guards, target location)?
+
+Before writing your answer, silently check each part of the question against the documentation — including whether any combination of separately-documented pieces is actually shown together, not just individually present somewhere. Don't show this checking process or split your answer into labeled parts. Write a smooth, natural answer, and weave in a brief, honest note wherever something isn't directly confirmed, rather than presenting it as verified.
+
+Be concise, and let the length of your answer reflect how much the documentation actually supports — don't stretch a thin piece of evidence into a long, confident-sounding answer.
+
+Question:
+How does an EGX rule decide which EGL template to run for a given model element type (guards, target location)?
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+Based on the provided documentation, an EGX rule determines which EGL template to run through its declarative structure, specifically by binding the rule to a model element type and defining execution conditions. The `index.md` states that EGX allows specific EGL templates to be executed for a specific model element type, with the ability to guard rule execution and specify generation target location by type or element.
+
+In practice, examples show this is configured using the `transform` clause to define the input element type (e.g., `transform book : t_book`). A `guard` clause can then conditionally prevent execution if a condition isn't met, such as `guard : book.b_public` or `guard : EClass.all.size() < 30`. The `template` clause explicitly names the EGL file to invoke, while the `target` clause defines the output path, often constructed dynamically from the model element's properties (e.g., `target : "gen/" + book.e_id.text + ".html"`).
+
+While the documentation confirms these syntax elements and shows how they are combined in rules to specify execution logic, it does not explicitly describe the internal matching algorithm the engine uses to iterate over the model and apply these rules beyond the `transform` declaration.
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             2
+  Prompt tokens:     1,736
+  Completion tokens: 7,116
+  Total tokens:      8,852
+  Estimated cost:    $0.00196
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openrouter/qwen/qwen3.5-flash-02-23
+  Total LLM calls:         2
+  Total prompt tokens:     1,736
+  Total completion tokens: 7,116
+  Total tokens:            8,852
+  Total estimated cost:    $0.00196
+============================================================

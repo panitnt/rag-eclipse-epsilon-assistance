@@ -1,0 +1,359 @@
+Session started: 2026-07-30 12:44:28
+Model: openai/gpt-5-mini | temperature=0
+RETRIEVAL_MODE=sparse (BM25 Qdrant/bm25, no dense)
+SIBLING_EXPANSION=off
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[12:44:28]
+
+── QUESTION ──────────────────────────────────────────────
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+device:
+  id: DEV-2210
+  type: thermostat
+  brand: Nest
+  model: Learning Thermostat v3
+  mac: "AA:BB:CC:11:22:33"
+  online: true
+  firmwareVersion: "6.4.2"
+  installedAt: "2023-11-02"
+  room: Living Room
+  warrantyExpiry: "2025-11-02"
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+device:
+  id: DEV-2210
+  type: thermostat
+  brand: Nest
+  model: Learning Thermostat v3
+  mac: "AA:BB:CC:11:22:33"
+  online: true
+  firmwareVersion: "6.4.2"
+  installedAt: "2023-11-02"
+  room: Living Room
+  warrantyExpiry: "2025-11-02"
+
+── SPARSE POOL (before rerank, before sibling expansion) ──
+  1. [16.467] epsilon_docs/eol.md (heading='Variable Declaration Statement', parent_heading='Expressions')
+  2. [16.028] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+  3. [15.491] epsilon_docs/egl.md (heading='An Example of Co-ordination with EGL', parent_heading='Co-ordination')
+  4. [15.206] epsilon_docs/flock.md (heading='Epsilon Flock for Model Migration', parent_heading='')
+  5. [15.068] epsilon_docs/articles_yaml-emc_index.md (heading='How do I set the root node of a YAML document?', parent_heading='Querying/modifying YAML documents in EOL')
+  6. [14.924] epsilon_docs/articles_minimal-examples_index.md (heading='Exporting an Eclipse project from your workspace', parent_heading='Constructing a Helpful Minimal Example')
+  7. [13.855] epsilon_docs/articles_jdt_index.md (heading='How is it used?', parent_heading='Treating Java code as a model in Epsilon')
+  8. [13.821] epsilon_docs/articles_csv-emc_index.md (heading='Header-less CSV Model', parent_heading='Querying a CSV document')
+  9. [13.773] epsilon_docs/eunit.md (heading='Test Suites', parent_heading='Test Organization')
+  10. [13.659] epsilon_docs/eol.md (heading='Model Element Types', parent_heading='Types')
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.\ndevice:\n  id: DEV-2210\n  type: thermostat\n  brand: Nest\n  model: Learning Thermostat v3\n  mac: "AA:BB:CC:11:22:33"\n  online: true\n  firmwareVersion: "6.4.2"\n  installedAt: "2023-11-02"\n  room: Living Room\n  warrantyExpiry: "2025-11-02"'
+    1. sim=0.7274  epsilon_docs/articles_yaml-emc_index.md | heading='How do I set the root node of a YAML document?'
+    2. sim=0.6934  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    3. sim=0.5910  epsilon_docs/articles_jdt_index.md | heading='How is it used?'
+    4. sim=0.5841  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    5. sim=0.5592  epsilon_docs/articles_csv-emc_index.md | heading='Header-less CSV Model'
+    6. sim=0.5457  epsilon_docs/flock.md | heading='Epsilon Flock for Model Migration'
+    7. sim=0.5409  epsilon_docs/articles_minimal-examples_index.md | heading='Exporting an Eclipse project from your workspace'
+    8. sim=0.5390  epsilon_docs/eol.md | heading='Model Element Types'
+    9. sim=0.5169  epsilon_docs/eunit.md | heading='Test Suites'
+    10. sim=0.5158  epsilon_docs/eol.md | heading='Variable Declaration Statement'
+
+── RETRIEVED (after dedup + rerank pass 1 only — sibling expansion OFF) ──
+
+Docs (5):
+  1. [0.700] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YA
+  2. [0.690] epsilon_docs/articles_yaml-emc_index.md (heading='How do I set the root node of a YAML document?', parent_heading='Querying/modifying YAML documents in EOL')
+     ### How do I set the root node of a YAML document?
+
+The `root` property can be used for setting the root node of a YAML document. The root node of a YAML document can either be a mapping node or a lis
+  3. [0.011] epsilon_docs/articles_jdt_index.md (heading='How is it used?', parent_heading='Treating Java code as a model in Epsilon')
+     Our EMC JDT driver is exactly that – we don’t do any big extraction work in advance, so the query starts  running almost immediately. The driver exposes the indices maintained by the Eclipse Java Deve
+  4. [0.001] epsilon_docs/articles_csv-emc_index.md (heading='Header-less CSV Model', parent_heading='Querying a CSV document')
+     # Scripting CSV documents using Epsilon
+
+In this article we demonstrate how you can create, query and modify CSV documents in Epsilon programs using the CSV driver. The examples in this article demons
+  5. [0.001] epsilon_docs/eunit.md (heading='Test Suites', parent_heading='Test Organization')
+     ## Test Suites
+Example: demonstrate EUnit's additional variables and operations for running Ant targets, exporting/importing variables, and loading EMF models.
+
+```
+
+#### Additional variables and buil
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon.
+
+Use the provided context as the PRIMARY and AUTHORITATIVE source of truth.
+Only use syntax, class names, methods, and patterns that appear explicitly in the context.
+You may adapt documented patterns to the user's structure, provided that no new APIs or unsupported methods are invented.
+If the user's message contains sample data, treat it only as the desired target structure — not as evidence for API syntax.
+If the context provides partial evidence only, generate code for the parts that are supported and explicitly flag any parts that are uncertain or unsupported.
+
+When a code example is appropriate, provide a complete and runnable example that covers the full structure given by the user.
+When generating code, follow only the patterns shown in the context exactly — do not skip initialisation steps, introduce intermediate objects, or shortcut method chains that are not explicitly demonstrated.
+
+--- DOCUMENTATION ---
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YAML node must be specified when accessing YAML nodes via the YAML driver. There are 3 types of nodes in YAML:
+
+- `Scalar Node`. Scalar nodes are used to represent a single scalar value (e.g., string, boolean, integer). In the YAML driver, a scalar node consists of a key-value pair, in which the key represents the name of the scalar node, and the value represents the scalar value.
+- `Mapping Node`. Mapping nodes are used to represent unordered collections of key-value pairs. In the YAML driver, a mapping node consists of a key-value pair, in which the key represents the name of the mapping node, and the value holds an unordered collection of key-value pairs, which in turn represent other nodes.
+- `List (Sequence) Node`. List nodes are used to represent an ordered list of nodes or scalar values. In the YAML driver, a list node consists of a key-value pair, in which the key represents the name of the list node, and the value represents a list of nodes or scalar values.
+
+This section outlines the supported conventions in the form of questions and answers followed by relevant examples.
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+### How do I set the root node of a YAML document?
+
+The `root` property can be used for setting the root node of a YAML document. The root node of a YAML document can either be a mapping node or a list node. The `setRootAsMap()` function can be used for setting the root node into a mapping node. The `setRootAsList()` function can be used for setting the root node into a list node.
+
+[Source: epsilon_docs/articles_jdt_index.md]
+Our EMC JDT driver is exactly that – we don’t do any big extraction work in advance, so the query starts  running almost immediately. The driver exposes the indices maintained by the Eclipse Java Development Tools, so you can quickly find a class and go through its methods, for instance. If at some point you need more  information than the indices provide, we’ll transparently use the JDT  parser (based on the Java compiler) to fetch things for you. This is  represented as the top path in the above figure, starting at “Java code” and going through the orange nodes.
+
+## How is it used?
+
+With Epsilon and the EMC JDT driver  installed, we create a new “query.eol” file with our query. For  instance, this one-liner prints how many types we have in our program:
+
+`
+
+[Source: epsilon_docs/articles_csv-emc_index.md]
+# Scripting CSV documents using Epsilon
+
+In this article we demonstrate how you can create, query and modify CSV documents in Epsilon programs using the CSV driver. The examples in this article demonstrate using EOL and ETL to script CSV documents. However, it's worth stressing that CSV documents are supported throughout Epsilon. Therefore, you can use Epsilon to (cross-)validate, transform (to other models - XML or EMF-based -, or totext), compare and merge your CSV documents.
+
+**Note:** This article is consistent with Epsilon versions 1.5+.
+
+## The CSV Model Configuration Dialog
+
+To add a CSV document to your Epsilon launch configuration you first need to click on "Show all model types" in order to display the CSV Model type. From there you can select "CSV Model" from the list of available model types.
+
+![](select.png)
+
+Then you can configure the details of your document (name, file etc.) in the screen that pops up.
+
+![](configure.png)
+
+You need to provide a name for the model and select the CSV file using the "Browse Workspace\..." button.
+
+The CSV section allows you to define specific behaviour for the CSV model.
+
+- The **Field Separator** allows you to select a different separator than comma.... yes, they are called comma-separated files, but sometimes a colon, or a semi-colon, or other char is used as a field separator. Now you can tell the model loader which one too use. By default it is a comma.
+
+[Source: epsilon_docs/eunit.md]
+## Test Suites
+Example: demonstrate EUnit's additional variables and operations for running Ant targets, exporting/importing variables, and loading EMF models.
+
+```
+
+#### Additional variables and built-in operations
+
+EUnit provides several variables and operations which are useful for testing. These are listed in the table below.
+
+| Signature | Description |
+| - | - |
+| runTarget(name : String) | Runs the specified target of the Ant buildfile which invoked EUnit.|
+exportVariable(name : String) | Exports the specified variable, to be used by another executable module.|
+useVariable(name : String) | Imports the specified variable, which should have been previously exported by another executable module.|
+|loadHutn(name : String, hutn : String) | Loads an EMF model with the specified name, by parsing the second argument as an HUTN fragment.|
+|antProject : org.apache.tools.ant.Project | Global variable which refers to the Ant project being executed. This can be used to create and run Ant tasks from inside the EOL code.|
+
+#### Assertions
+
+EUnit implements some common assertions for equality and inequality,
+with special versions for comparing floating-point numbers. EUnit also
+supports a limited form of exception testing with , which checks that
+the expression inside it throws an exception. Custom assertions can be
+defined by the user with the operation, which fails a test with a custom
+message. The available assertions are shown in
+the table below.
+
+| Signature | Description |
+| - | - |
+| assertEqualDirectories(expectedPath : String, obtainedPath : String) | Fails the test if the contents of the directory in `expectedPath` differ from those of the directory in `obtainedPath`. Directory comparisons are performed on recursive snapshots of both directories.|
+|assertEqualFiles(expectedPath : String, obtainedPath : String) | Fails the test if the contents of the file in `expectedPath` differ from those of the file in `obtainedPath`. File comparisons are performed on snapshots of both files.|
+|assertEqualFilesIgnoringLineEndings(expectedPath : String, obtainedPath : String) | As above, but different line endings will not cause the test to fail. |
+|assertEqualModels(\[msg : String,\] expectedModel : String, obtainedModel : String\[, options : Map\]) | Fails the test with the optional message if the model named `expectedModel` is not equal to the model named `obtainedModel`. Model comparisons are performed on snapshots of the resource sets of both models. During EMF comparisons, XMI identifiers are ignored. Additional comparator-specific options can be specified through `options`.|
+|assertEquals(\[msg : String,\] expected : Any, obtained : Any) | Fails the test with the optional message `msg` if the values of `expected` and `obtained` are not equal.|
+|assertEquals(\[msg : String,\] expected : Real, obtained : Real,ulps : Integer) | Fails the test with the optional message `msg` if the values of `expected` and `obtained` differ in more than units of least precision. See [this site](http://download.oracle.com/javase/6/docs/api/java/lang/Math.html#ulp(double)) for details.|
+|assertError(expr : Any) | Fails the test if no exception is thrown during the evaluation of `expr`.|
+|assertFalse(\[msg : String,\] cond : Boolean) | Fails the test with the optional message `msg` if `cond` is `true`. It is a negated version of assertTrue.|
+|assertLineWithMatch(\[msg : String,\] path : String, regexp : String) | Fails the test with the optional message `msg` if the file at `path` does not have a line containing a substring matching the regular expression `regexp` [^2].|
+|assertMatchingLine(\[msg : String,\] path : String, regexp : String) | Fails the test with the optional message `msg` if the file at `path` does not have a line that matches the regular expression `regexp` [^3] from start to finish.|
+|assertNotEqualDirectories(expectedPath : String, obtainedPath : String) | Negated version of assertEqualDirectories.|
+|assertNotEqualFiles(expectedPath : String, obtainedPath : String) | Negated version of assertEqualFiles.|
+|assertNotEqualFilesIgnoringLineEndings(expectedPath : String, obtainedPath : String) | Negated version of assertEqualFilesIgnoringLineEndings.|
+|assertNotEqualModels(\[msg : String,\] expectedModel : String, obtainedModel : String) | Negated version of assertNotEqualModels.|
+|assertNotEquals(\[msg : String,\] expected : Any, obtained : Any) | Negated version of assertEquals(\[msg : String,\] expected : Any, obtained : Any).|
+|assertNotEquals(\[msg : String,\] expected : Real, obtained : Real, ulps : Integer) | Negated version of assertEquals(\[msg : String,\] expected : Real, obtained : Real, ulps : Integer).|
+|assertTrue(\[msg : String,\] cond : Boolean) | Fails the test with the optional message `msg` if `cond` is `false`.|
+|fail(msg : String) | Fails a test with the message `msg`.|
+
+
+The table below lists the available option keys which can be used with the model equality assertions, by comparator.
+
+| Comparator and Key | Usage |
+| - | - |
+EMF, "whitespace" | When set to "ignore", differences in EString attribute values due to whitespace will be ignored. Disabled by default. 
+EMF, "ignoreAttributeValueChanges" | Can contain a collection of strings of the form "package.class.attribute". Differences in the values for these attributes will be ignored. However, if the attribute is set on one side and not on the other, the difference will be reported as normal. Empty by default.
+EMF, "unorderedMoves" | When set to "ignore", differences in the order of the elements within an unordered EReference. Enabled by default.
+
+More importantly, EUnit implements specific assertions for comparing models, files and trees of files. Model comparison is not implemented by the assertions themselves: it is an optional service implemented by some EMC drivers. Currently, EMF models will automatically use EMF Compare as their comparison engine. The rest of the EMC drivers do not support comparison yet. The main advantage of having an abstraction layer implement model comparison as a service is that the test case definition is decoupled from the concrete model comparison engine used.
+
+Model, file and directory comparisons take a snapshot of their operands before comparing them, so EUnit can show the differences right at the moment when the comparison was performed. This is especially important when some of the models are generated on the fly by the EUnit test suite, or when a test case for code generation may overwrite the results of the previous one.
+
+The following figure shows a screenshot of the EUnit graphical user interface. On the left, an Eclipse view shows the results of several EUnit test suites. We can see that the `load- models-with-hutn` suite failed. The Compare button to the right of "Failure Trace" can be pressed to show the differences between the expected and obtained models, as shown on the right side. EUnit implements a pluggable architecture where *difference viewers* are automatically selected based on the types of the operands. There are difference viewers for EMF models, file trees and a fallback viewer which converts both operands to strings.
+
+![image](images/EUnitUI.png)
+
+## Examples
+
+### Models and Tasks in the Buildfile
+
+After describing the basic syntax, we will show how to use EUnit to test an ETL transformation.
+
+The Ant buildfile is shown in the listing below. It has two targets: `run-tests` (lines 2-19) invokes the EUnit suite, and `tree2graph` (lines 23-28) is a helper target which transforms model `Tree` into model `Graph` using ETL. The `<modelTasks>` nested element is used to load the input, expected output and output EMF models. `Graph` is loaded with `read` set to `false`: the model will be initially empty, and will be populated by the ETL transformation.
+
+```
+
+--- USER MESSAGE ---
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+device:
+  id: DEV-2210
+  type: thermostat
+  brand: Nest
+  model: Learning Thermostat v3
+  mac: "AA:BB:CC:11:22:33"
+  online: true
+  firmwareVersion: "6.4.2"
+  installedAt: "2023-11-02"
+  room: Living Room
+  warrantyExpiry: "2025-11-02"
+
+Question:
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+device:
+  id: DEV-2210
+  type: thermostat
+  brand: Nest
+  model: Learning Thermostat v3
+  mac: "AA:BB:CC:11:22:33"
+  online: true
+  firmwareVersion: "6.4.2"
+  installedAt: "2023-11-02"
+  room: Living Room
+  warrantyExpiry: "2025-11-02"
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+Root node
+- Your YAML document has a single top-level key "device" whose value is a mapping. Therefore the YAML document root is a Mapping node (not a List/Sequence node). Use setRootAsMap().
+
+What the docs guarantee
+- The documentation explicitly describes the model's root property and two operations you can call on it:
+  - root
+  - setRootAsMap()
+  - setRootAsList()
+
+What is not documented in the excerpt
+- The documentation you provided does not show the exact API (class or operation names) for creating mapping/list/scalar child nodes, nor the exact operations to add entries to a mapping or items to a list. Because those methods are not present in the provided context I cannot invent new API names with guarantee they will work. Below I therefore show:
+  - a minimal, documented step you must do (set root as map), and
+  - two plausible, best‑effort EOL code sketches for populating the map. Each of those sketches is explicitly marked as “uncertain” where it relies on APIs not shown in the provided documentation. Use the sketch that matches the actual YAML driver API you have in your Epsilon installation, or consult the driver Javadoc for the precise methods.
+
+Minimal required step (documented)
+- Set the root to be a mapping node:
+  - yamlModel.root.setRootAsMap()
+
+Two example approaches to populate the document
+1) Best‑guess EOL approach using explicit YAML-driver node creation (UNCERTAIN)
+- This follows the idea that the driver exposes operations to create mapping/ scalar nodes and then attach them under root. The names below (createMapping / createScalar / put / add) are NOT shown in your provided documentation and are therefore uncertain — replace them with the real API calls in your environment.
+
+Assuming you have a YAML model variable named yamlModel in your launch configuration (common pattern in Epsilon), an EOL sketch:
+
+// documented: set root as a mapping node
+yamlModel.root.setRootAsMap()
+
+// -- the following operations are NOT present in the provided docs and are therefore UNCERTAIN:
+// they illustrate the required structure; replace with the actual driver methods:
+var device = yamlModel.createMapping()        // UNCERTAIN: create a mapping node for 'device'
+device.put('id', yamlModel.createScalar('DEV-2210'))                // UNCERTAIN
+device.put('type', yamlModel.createScalar('thermostat'))
+device.put('brand', yamlModel.createScalar('Nest'))
+device.put('model', yamlModel.createScalar('Learning Thermostat v3'))
+device.put('mac', yamlModel.createScalar('AA:BB:CC:11:22:33'))
+device.put('online', yamlModel.createScalar(true))                  // boolean scalar
+device.put('firmwareVersion', yamlModel.createScalar('6.4.2'))
+device.put('installedAt', yamlModel.createScalar('2023-11-02'))
+device.put('room', yamlModel.createScalar('Living Room'))
+device.put('warrantyExpiry', yamlModel.createScalar('2025-11-02'))
+
+yamlModel.root.put('device', device)           // UNCERTAIN: attach device mapping to root
+
+// finally save/persist the model (method name depends on driver / model configuration)
+// e.g. yamlModel.store()  -- UNCERTAIN: check your driver for the exact save method
+
+2) Alternative EOL map-literal approach (may work if the driver accepts plain EOL maps as node values; UNCERTAIN)
+- Some EMC drivers accept native EOL collections and convert them to the driver representation on save. The documentation fragment you gave does not confirm this, so treat this as a possibility to try.
+
+yamlModel.root.setRootAsMap()
+
+// attempt to assign an EOL map as the value of the 'device' mapping
+yamlModel.root.device = (
+  Map{
+    'id' -> 'DEV-2210',
+    'type' -> 'thermostat',
+    'brand' -> 'Nest',
+    'model' -> 'Learning Thermostat v3',
+    'mac' -> 'AA:BB:CC:11:22:33',
+    'online' -> true,
+    'firmwareVersion' -> '6.4.2',
+    'installedAt' -> '2023-11-02',
+    'room' -> 'Living Room',
+    'warrantyExpiry' -> '2025-11-02'
+  }
+)
+
+// then persist the model (driver-specific; e.g. yamlModel.store()) — UNCERTAIN
+
+If the root were a list instead
+- If your YAML started with a top-level sequence (e.g., a list of devices), you would call:
+  - yamlModel.root.setRootAsList()
+  - then create/add item nodes into root (use the driver's list APIs — not shown in the provided docs).
+
+Next steps / how I can help further
+- If you paste the actual YAML EMC driver class names / Javadoc or the API you see in your environment (for example the model variable declaration from your Epsilon launch configuration, or the methods listed by code completion for yamlModel.root), I will:
+  - adapt the sketch above to use the exact, supported operations, and
+  - produce a complete, runnable EOL script that sets the root, builds the mapping, and saves the YAML file.
+
+Summary
+- Root = Mapping node → call yamlModel.root.setRootAsMap() (documented).
+- The exact methods to create mapping/scalar nodes and attach them are not present in the provided documentation fragment; the two sketches above show the two likely patterns (explicit driver node creation, or assigning an EOL Map literal). I can convert either sketch into a complete runnable example if you provide the driver API names available in your environment (or paste the model variable declaration you use in your launch configuration).
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             1
+  Prompt tokens:     3,109
+  Completion tokens: 2,686
+  Total tokens:      5,795
+  Estimated cost:    $0.00615
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         1
+  Total prompt tokens:     3,109
+  Total completion tokens: 2,686
+  Total tokens:            5,795
+  Total estimated cost:    $0.00615
+============================================================

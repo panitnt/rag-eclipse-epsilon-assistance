@@ -1,0 +1,281 @@
+Session started: 2026-07-27 21:22:55
+Model: openai/gpt-5-mini | temperature=0
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[21:23:09]
+
+── QUESTION ──────────────────────────────────────────────
+How does ETL support rule inheritance?
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - How does ETL support rule inheritance?
+  - ETL rule inheritance 'extends' syntax
+  - ETL overriding rules and calling super in ETL
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'How does ETL support rule inheritance?'
+    1. sim=0.6479  epsilon_docs/ecl.md | heading='Abstract Syntax'
+    2. sim=0.6348  epsilon_docs/etl.md | heading='Abstract Syntax'
+    3. sim=0.6285  epsilon_docs/articles_extended-properties_index.md | heading='Extended Properties'
+    4. sim=0.6122  epsilon_docs/eml.md | heading='Abstract Syntax'
+    5. sim=0.6115  epsilon_docs/eol.md | heading='Special Assignment Statement'
+    6. sim=0.5871  epsilon_docs/etl.md | heading='Source Elements Resolution'
+    7. sim=0.5790  epsilon_docs/articles_run-epsilon-from-java.md | heading='Analysing Epsilon Programs'
+    8. sim=0.5743  epsilon_docs/index.md | heading='Workflow'
+    9. sim=0.5567  epsilon_docs/articles_xml-to-emf.md | heading='XML to EMF Transformation with ETL'
+    10. sim=0.5114  epsilon_docs/egl.md | heading='Customising the Co-ordination Engine'
+    11. sim=0.5056  epsilon_docs/etl.md | heading='Concrete Syntax'
+    12. sim=0.4690  epsilon_docs/eol.md | heading='If Statement'
+    13. sim=0.3996  epsilon_docs/flock.md | heading='Scope'
+
+  Query: "ETL rule inheritance 'extends' syntax"
+    1. sim=0.6971  epsilon_docs/articles_extended-properties_index.md | heading='Extended Properties'
+    2. sim=0.6196  epsilon_docs/ecl.md | heading='Abstract Syntax'
+    3. sim=0.6190  epsilon_docs/eol.md | heading='Special Assignment Statement'
+    4. sim=0.6044  epsilon_docs/etl.md | heading='Abstract Syntax'
+    5. sim=0.6023  epsilon_docs/articles_xml-to-emf.md | heading='XML to EMF Transformation with ETL'
+    6. sim=0.6006  epsilon_docs/eml.md | heading='Abstract Syntax'
+    7. sim=0.5802  epsilon_docs/etl.md | heading='Concrete Syntax'
+    8. sim=0.5668  epsilon_docs/articles_run-epsilon-from-java.md | heading='Analysing Epsilon Programs'
+    9. sim=0.5551  epsilon_docs/etl.md | heading='Source Elements Resolution'
+    10. sim=0.5473  epsilon_docs/egl.md | heading='Customising the Co-ordination Engine'
+    11. sim=0.5319  epsilon_docs/index.md | heading='Workflow'
+    12. sim=0.4754  epsilon_docs/eol.md | heading='If Statement'
+    13. sim=0.4436  epsilon_docs/flock.md | heading='Scope'
+
+  Query: 'ETL overriding rules and calling super in ETL'
+    1. sim=0.6865  epsilon_docs/eol.md | heading='Special Assignment Statement'
+    2. sim=0.6747  epsilon_docs/eml.md | heading='Abstract Syntax'
+    3. sim=0.6670  epsilon_docs/ecl.md | heading='Abstract Syntax'
+    4. sim=0.6548  epsilon_docs/etl.md | heading='Abstract Syntax'
+    5. sim=0.6511  epsilon_docs/articles_run-epsilon-from-java.md | heading='Analysing Epsilon Programs'
+    6. sim=0.6329  epsilon_docs/articles_extended-properties_index.md | heading='Extended Properties'
+    7. sim=0.6312  epsilon_docs/etl.md | heading='Source Elements Resolution'
+    8. sim=0.6093  epsilon_docs/articles_xml-to-emf.md | heading='XML to EMF Transformation with ETL'
+    9. sim=0.6020  epsilon_docs/egl.md | heading='Customising the Co-ordination Engine'
+    10. sim=0.5660  epsilon_docs/index.md | heading='Workflow'
+    11. sim=0.5429  epsilon_docs/etl.md | heading='Concrete Syntax'
+    12. sim=0.5030  epsilon_docs/flock.md | heading='Scope'
+    13. sim=0.4737  epsilon_docs/eol.md | heading='If Statement'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (7):
+  1. [0.746] epsilon_docs/etl.md (heading='Source Elements Resolution', parent_heading='Concrete Syntax')
+     ##Execution Semantics
+
+
+### Rule and Block Overriding
+
+Similarly to EOL, an ETL module can import a number of other ETL modules. In this case, the importing ETL module inherits all the rules and pre/p
+  2. [0.385] epsilon_docs/eml.md (heading='Abstract Syntax', parent_heading='The Epsilon Merging Language (EML)')
+     ## Abstract Syntax
+Example: define EML merge rules with properties, inheritance, and pre/post execution blocks by extending EtlModule.
+
+```
+
+By extending *EtlModule*, an EML module can contain a numbe
+  3. [0.246] epsilon_docs/etl.md (heading='Concrete Syntax', parent_heading='The Epsilon Transformation Language (ETL)')
+     ## Concrete Syntax
+Example: define a concrete syntax rule with optional annotations, parameters, inheritance, guards, and statements.
+
+```
+(@abstract)?
+(@lazy)?
+(@primary)?
+rule <name>
+    transform <
+  4. [0.162] epsilon_docs/etl.md (heading='Abstract Syntax', parent_heading='The Epsilon Transformation Language (ETL)')
+     # The Epsilon Transformation Language (ETL)
+
+The aim of ETL is to contribute model-to-model transformation capabilities to Epsilon. More specifically, ETL can be used to transform an arbitrary number 
+  5. [0.057] epsilon_docs/articles_run-epsilon-from-java.md (heading='Analysing Epsilon Programs', parent_heading='Running Epsilon from Java')
+     ## Analysing Epsilon Programs
+Example: parse an ETL transformation, retrieve its first rule, and analyze the rule's name and statement count.
+Keywords: new EtlModule, .name
+
+```java
+// Parse an ETL tr
+  6. [0.055] epsilon_docs/eol.md (heading='Special Assignment Statement', parent_heading='Expressions')
+     ## Special Assignment Statement
+Example: demonstrate using the special assignment statement (::=) to assign values in ETL transformation rules.
+Keywords: .name
+
+```etl
+rule Class2Table
+  transform c :
+  7. [0.053] epsilon_docs/articles_extended-properties_index.md (heading='Extended Properties', parent_heading='')
+     # Extended Properties
+
+This article demonstrates the extended properties mechanism in EOL (and by inheritance, in all languages in Epsilon). We present the rationale and semantics of extended properti
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon. Use only the documentation below — do not use outside knowledge, and say so if it doesn't cover something.
+
+Documentation:
+--- DOCUMENTATION ---
+[Source: epsilon_docs/etl.md]
+##Execution Semantics
+
+
+### Rule and Block Overriding
+
+Similarly to EOL, an ETL module can import a number of other ETL modules. In this case, the importing ETL module inherits all the rules and pre/post blocks specified in the modules it imports (recursively). If the module specifies a rule or a pre/post block with the same name, the local rule/block overrides the imported one respectively.
+
+### Rule Execution Scheduling
+
+When an ETL module is executed, the `pre` blocks of the module are executed first in the order in which they have been specified.
+
+Following that, each non-abstract and non-lazy rule is executed for all the elements on which it is applicable. To be applicable on a particular element, the element must have a type-of relationship with the type defined in the rule's `sourceParameter` (or a kind-of relationship if the rule is annotated as `@greedy`) and must also satisfy the `guard` of the rule (and all the rules it extends).
+
+When a rule is executed on an applicable element, the target elements are initially created by either using their initializer expressions, or by instantiating the `targetParameters` of the rules in their absence, and then their contents are populated using the EOL statements of the `body` of the rule.
+
+Finally, when all rules have been executed, the `post` blocks of the module are executed in the order in which they have been declared.
+
+### Source Elements Resolution
+
+[Source: epsilon_docs/eml.md]
+## Abstract Syntax
+Example: define EML merge rules with properties, inheritance, and pre/post execution blocks by extending EtlModule.
+
+```
+
+By extending *EtlModule*, an EML module can contain a number of transformation rules and user-defined operations. An EML module can also contain one or more merge rules as well as a set of *pre* and *post* named EOL statement blocks. As usual, *pre* and *post* blocks will be run before and after all rules, respectively.
+
+Each merge rule defines a name, a left, a right, and one or more target parameters. It can also extend one or more other merge rules and be defined as having one or more of the following properties: abstract, greedy, lazy and primary.
+
+## Concrete Syntax
+
+The listing below demonstrates the concrete syntax of EML merge-rules.
+
+```
+
+[Source: epsilon_docs/etl.md]
+## Concrete Syntax
+Example: define a concrete syntax rule with optional annotations, parameters, inheritance, guards, and statements.
+
+```
+(@abstract)?
+(@lazy)?
+(@primary)?
+rule <name>
+    transform <sourceParameterName>:<sourceParameterType>
+    to <targetParameterName>:<targetParameterType>
+        (= <initializerExpression> )?
+        (,<targetParameterName>:<targetParameterType>
+          (= <initializerExpression> )? )*
+    (extends <ruleName> (, <ruleName>*)? {
+    
+    (guard (:expression)|({statementBlock}))?
+    
+    statement+
+}
+```
+
+[Source: epsilon_docs/etl.md]
+# The Epsilon Transformation Language (ETL)
+
+The aim of ETL is to contribute model-to-model transformation capabilities to Epsilon. More specifically, ETL can be used to transform an arbitrary number of input models into an arbitrary number of output models of different modelling languages and technologies in a rule-based and modular manner.
+
+!!! tip "Try ETL online"
+    You can run and fiddle with an ETL transformation that transforms a tree model to a graph model in the [online Epsilon Playground](../playground/index.html?etl).
+
+## Abstract Syntax
+
+As illustrated in the figure below, ETL transformations are organized in modules (`EtlModule`). A module can contain a number of transformation rules (`TransformRule`). Each rule has a unique name (in the context of the module) and also specifies one `source` and many `target` parameters. Since 2.9, target parameters can optionally have a `targetInitializer` expression: if not specified, they will be initialized to a new instance of their type.
+
+[Source: epsilon_docs/articles_run-epsilon-from-java.md]
+## Analysing Epsilon Programs
+Example: parse an ETL transformation, retrieve its first rule, and analyze the rule's name and statement count.
+Keywords: new EtlModule, .name
+
+```java
+// Parse an ETL transformation
+EtlModule m = new EtlModule();
+m.parse("rule A2B transform a : In!A to b : Out!B { b.name = a.name; }");
+
+// Get the first rule of the transformation
+TransformationRule a2b = m.getTransformationRules().get(0);
+// Print its name
+System.out.println(a2b.getName());
+
+// Get the body of the A2B rule
+StatementBlock body = (StatementBlock) a2b.getBody().getBody();
+// Print the number of statements it contains
+System.out.println(body.getStatements().size());
+```
+
+[Source: epsilon_docs/eol.md]
+## Special Assignment Statement
+Example: demonstrate using the special assignment statement (::=) to assign values in ETL transformation rules.
+Keywords: .name
+
+```etl
+rule Class2Table
+  transform c : OO!Class
+  to t : DB!Table {
+
+    t.name = c.name;
+}
+
+rule Attribute2Column
+  transform a : OO!Attribute
+  to c : DB!Column {
+    
+    c.name = a.name;
+    //c.owningTable = a.owningClass;
+    c.owningTable ::= a.owningClass;
+}
+```
+
+[Source: epsilon_docs/articles_extended-properties_index.md]
+# Extended Properties
+
+This article demonstrates the extended properties mechanism in EOL (and by inheritance, in all languages in Epsilon). We present the rationale and semantics of extended properties using the following simple metamodel (in Emfatic):
+
+--- USER MESSAGE ---
+How does ETL support rule inheritance?
+
+Before writing your answer, silently check each part of the question against the documentation — including whether any combination of separately-documented pieces is actually shown together, not just individually present somewhere. Don't show this checking process or split your answer into labeled parts.
+
+Write a smooth, natural answer. Place any honest note about something not being directly confirmed right next to the part it concerns, not bundled at the end — and let your opening reflect the same level of confidence, rather than stating something flatly and qualifying it afterward.
+
+Be concise, and let the length of your answer reflect how much the documentation actually supports — don't stretch a thin piece of evidence into a long, confident-sounding answer.
+
+Question:
+How does ETL support rule inheritance?
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+ETL lets one rule extend others and inherits rules across modules.
+
+- Syntax: a rule may include an extends clause (extends <ruleName>(, <ruleName>*)?) so a rule can extend one or more other rules. (Concrete syntax)
+- Applicability/semantics: when a rule is applied the element must satisfy the guard of the rule and the guards of all rules it extends — i.e. guards in the inheritance chain are combined. (Execution semantics)
+- Abstract/lazy/primary: rules may be annotated (e.g. @abstract, @lazy, @primary) and only non-abstract, non-lazy rules are executed. This lets you define abstract super‑rules that supply common behaviour/conditions. (Concrete syntax + execution scheduling)
+- Module-level inheritance/overriding: an importing ETL module inherits the rules (and pre/post blocks) of the modules it imports; a locally defined rule or pre/post block with the same name overrides the imported one. (Rule and Block Overriding)
+
+The docs do not explicitly state how other elements of a rule (for example target parameters, initialiser expressions, or the body/statements) are combined or overridden when a rule extends another, nor how multiple inheritance merges targets/bodies — that detail is not shown in the provided documentation.
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             2
+  Prompt tokens:     1,606
+  Completion tokens: 1,847
+  Total tokens:      3,453
+  Estimated cost:    $0.00410
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         2
+  Total prompt tokens:     1,606
+  Total completion tokens: 1,847
+  Total tokens:            3,453
+  Total estimated cost:    $0.00410
+============================================================

@@ -1,0 +1,9 @@
+dashboard:
+  activeUsers: 1204
+  newSignups: 38
+  churnRate: 0.021
+  avgSessionMinutes: 14.6
+  supportTicketsOpen: 9
+  revenueTodayGBP: 18420.50
+  serverUptimePct: 99.98
+  errorRateLast1h: 0.003

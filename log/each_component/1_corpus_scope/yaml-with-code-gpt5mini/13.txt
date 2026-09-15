@@ -1,0 +1,1333 @@
+Session started: 2026-07-26 21:30:51
+Model: openai/gpt-5-mini
+============================================================
+
+============================================================
+[21:31:02]
+
+── QUESTION ──────────────────────────────────────────────
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- orderId: ORD-20240613-88421
+  placedAt: "2024-06-13T09:15:00Z"
+  status: partially_shipped
+
+  customer:
+    id: CUST-4421
+    name: Sophie Marchand
+    email: sophie.marchand@email.com
+    tier: gold
+    loyaltyPoints:
+      balance: 3420
+      earned_this_order: 85
+
+  shipping:
+    address:
+      line1: 14 Rue de Rivoli
+      line2: Apt 3B
+      city: Paris
+      postcode: "75001"
+      country: FR
+    method: express_48h
+    estimatedDelivery: "2024-06-15"
+    tracking:
+      - parcelId: PKG-001
+        carrier: DHL
+        status: in_transit
+        items:
+          - SKU-992
+          - SKU-993
+      - parcelId: PKG-002
+        carrier: Colissimo
+        status: preparing
+        items:
+          - SKU-1041
+
+  billing:
+    sameAsShipping: false
+    address:
+      line1: 7 Boulevard Haussmann
+      city: Paris
+      postcode: "75009"
+      country: FR
+
+  items:
+    - sku: SKU-992
+      name: Wireless Noise-Cancelling Headphones
+      qty: 1
+      unitPrice: 189.99
+      discount:
+        type: percentage
+        value: 10
+      finalPrice: 170.99
+    - sku: SKU-993
+      name: USB-C Charging Cable (2m)
+      qty: 3
+      unitPrice: 12.50
+      discount: null
+      finalPrice: 37.50
+    - sku: SKU-1041
+      name: Laptop Stand (Aluminium)
+      qty: 1
+      unitPrice: 54.00
+      discount:
+        type: fixed
+        value: 5.00
+      finalPrice: 49.00
+
+  payment:
+    method: card
+    card:
+      last4: "7823"
+      brand: Visa
+      expiresAt: "2026-09"
+    breakdown:
+      subtotal: 257.49
+      shipping: 4.99
+      tax: 25.75
+      loyaltyDiscount: -17.10
+      total: 271.13
+    status: captured
+
+- orderId: ORD-20250722-55381
+  placedAt: "2025-07-22T14:45:00Z"
+  status: delivered
+
+  customer:
+    id: CUST-9875
+    name: Michael Turner
+    email: michael.turner@example.com
+    tier: platinum
+    loyaltyPoints:
+      balance: 7850
+      earned_this_order: 220
+
+  shipping:
+    address:
+      line1: 88 King Street
+      line2: Suite 12
+      city: Manchester
+      postcode: "M2 4WQ"
+      country: UK
+    method: next_day_delivery
+    estimatedDelivery: "2025-07-23"
+    tracking:
+      - parcelId: PAR-78101
+        carrier: DPD
+        status: delivered
+        items:
+          - SKU-BALL-001
+          - SKU-GLOVE-002
+
+      - parcelId: PAR-78102
+        carrier: Royal Mail
+        status: delivered
+        items:
+          - SKU-BAG-005
+
+  billing:
+    sameAsShipping: true
+    address:
+      line1: 88 King Street
+      city: Manchester
+      postcode: "M2 4WQ"
+      country: UK
+
+  items:
+    - sku: SKU-BALL-001
+      name: Professional Football
+      qty: 2
+      unitPrice: 34.99
+      discount:
+        type: percentage
+        value: 15
+      finalPrice: 59.48
+
+    - sku: SKU-GLOVE-002
+      name: Goalkeeper Gloves Pro
+      qty: 1
+      unitPrice: 49.99
+      discount:
+        type: fixed
+        value: 5.00
+      finalPrice: 44.99
+
+    - sku: SKU-BAG-005
+      name: Sports Equipment Bag
+      qty: 1
+      unitPrice: 39.99
+      discount: null
+      finalPrice: 39.99
+
+  payment:
+    method: paypal
+
+    card:
+      last4: "0000"
+      brand: PayPal
+      expiresAt: null
+
+    breakdown:
+      subtotal: 144.96
+      shipping: 6.99
+      tax: 30.39
+      loyaltyDiscount: -20.00
+      total: 162.34
+
+    status: completed
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+  - EMC YAML Driver create YAML programmatically write model from scratch root list vs mapping node
+  - EOL syntax to create and populate mapping and list nodes when constructing models for a driver
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.'
+    1. sim=0.8581  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    2. sim=0.7882  epsilon_docs/articles_yaml-emc_index.md | heading='How do I set the root node of a YAML document?'
+    3. sim=0.7384  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    4. sim=0.7121  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    5. sim=0.6900  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    6. sim=0.6701  epsilon_docs/articles_rdf-emc.md | heading='Multi-valued features'
+    7. sim=0.6594  epsilon_docs/articles_index.md | heading='Recipes'
+    8. sim=0.6482  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a node?'
+    9. sim=0.6346  epsilon_docs/articles_jdt_index.md | heading='But, wait a second, why should I want to do this?'
+    10. sim=0.6230  epsilon_docs/articles_jdt_index.md | heading='How is it used?'
+    11. sim=0.6073  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    12. sim=0.5994  epsilon_docs/etl.md | heading='Source Elements Resolution'
+    13. sim=0.5971  epsilon_docs/emg.md | heading='EMG predefined operations'
+    14. sim=0.5622  epsilon_docs/flock.md | heading='Epsilon Flock for Model Migration'
+    15. sim=0.5404  epsilon_docs/egl.md | heading='Concrete Syntax'
+    16. sim=0.5329  epsilon_docs/articles_json-emc_index.md | heading='Example EGL template'
+    17. sim=0.5276  epsilon_docs/eol.md | heading='Feature Navigation'
+    18. sim=0.5273  epsilon_docs/eol.md | heading='User-Defined Operations'
+
+  Query: 'EMC YAML Driver create YAML programmatically write model from scratch root list vs mapping node'
+    1. sim=0.7731  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    2. sim=0.6785  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    3. sim=0.6628  epsilon_docs/articles_rdf-emc.md | heading='Multi-valued features'
+    4. sim=0.6388  epsilon_docs/articles_yaml-emc_index.md | heading='How do I set the root node of a YAML document?'
+    5. sim=0.6280  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    6. sim=0.6205  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    7. sim=0.5953  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a node?'
+    8. sim=0.5913  epsilon_docs/articles_jdt_index.md | heading='How is it used?'
+    9. sim=0.5857  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    10. sim=0.5834  epsilon_docs/articles_index.md | heading='Recipes'
+    11. sim=0.5810  epsilon_docs/articles_jdt_index.md | heading='But, wait a second, why should I want to do this?'
+    12. sim=0.5762  epsilon_docs/emg.md | heading='EMG predefined operations'
+    13. sim=0.5562  epsilon_docs/flock.md | heading='Epsilon Flock for Model Migration'
+    14. sim=0.5493  epsilon_docs/egl.md | heading='Concrete Syntax'
+    15. sim=0.5476  epsilon_docs/etl.md | heading='Source Elements Resolution'
+    16. sim=0.5218  epsilon_docs/eol.md | heading='Feature Navigation'
+    17. sim=0.5195  epsilon_docs/articles_json-emc_index.md | heading='Example EGL template'
+    18. sim=0.5154  epsilon_docs/eol.md | heading='User-Defined Operations'
+
+  Query: 'EOL syntax to create and populate mapping and list nodes when constructing models for a driver'
+    1. sim=0.7226  epsilon_docs/eol.md | heading='Feature Navigation'
+    2. sim=0.7205  epsilon_docs/articles_jdt_index.md | heading='But, wait a second, why should I want to do this?'
+    3. sim=0.7068  epsilon_docs/egl.md | heading='Concrete Syntax'
+    4. sim=0.6949  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    5. sim=0.6781  epsilon_docs/flock.md | heading='Epsilon Flock for Model Migration'
+    6. sim=0.6657  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    7. sim=0.6623  epsilon_docs/eol.md | heading='User-Defined Operations'
+    8. sim=0.6614  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    9. sim=0.6464  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    10. sim=0.6388  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    11. sim=0.6308  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a node?'
+    12. sim=0.6286  epsilon_docs/articles_rdf-emc.md | heading='Multi-valued features'
+    13. sim=0.6095  epsilon_docs/emg.md | heading='EMG predefined operations'
+    14. sim=0.6013  epsilon_docs/articles_json-emc_index.md | heading='Example EGL template'
+    15. sim=0.6010  epsilon_docs/articles_jdt_index.md | heading='How is it used?'
+    16. sim=0.5881  epsilon_docs/articles_index.md | heading='Recipes'
+    17. sim=0.5809  epsilon_docs/etl.md | heading='Source Elements Resolution'
+    18. sim=0.5306  epsilon_docs/articles_yaml-emc_index.md | heading='How do I set the root node of a YAML document?'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (7):
+  1. [0.989] epsilon_docs/articles_yaml-emc_index.md (heading='How can I create a YAML document from scratch?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## How can I create a YAML document from scratch?
+Example: create a YAML document from scratch by building and appending MappingNode, ScalarNode, and ListNode elements.
+Keywords: setRootAsList, getRoo
+  2. [0.946] epsilon_docs/articles_yaml-emc_index.md (heading='How do I set the root node of a YAML document?', parent_heading='Querying/modifying YAML documents in EOL')
+     ### How do I set the root node of a YAML document?
+
+The `root` property can be used for setting the root node of a YAML document. The root node of a YAML document can either be a mapping node or a lis
+  3. [0.643] epsilon_docs/articles_yaml-emc_index.md (heading='Querying a YAML document', parent_heading='Scripting YAML documents using Epsilon')
+     # Scripting YAML documents using Epsilon
+ 
+In this article we demonstrate how you can create, query and modify YAML documents in Epsilon programs using the YAML driver. All the examples in this articl
+  4. [0.584] epsilon_docs/articles_yaml-emc_index.md (heading='How can I create a node?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## How can I create a node?
+Example: create scalar, mapping, and list nodes with initial values or empty placeholders for later assignment.
+Keywords: new ScalarNode, new s_city, new MappingNode, new m
+  5. [0.560] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YA
+  6. [0.160] epsilon_docs/eol.md (heading='Feature Navigation', parent_heading='Expressions')
+     Since EOL needs to manage models defined using object oriented modelling technologies, it provides expressions to navigate properties and invoke simple and declarative operations on objects.
+
+In terms
+  7. [0.108] epsilon_docs/articles_json-emc_index.md (heading='Example EGL template', parent_heading='Querying a JSON document')
+     ### Basic types in JSON-based models
+
+The JSON driver implements two types for its models: `JSONObject`s and `JSONArray`s.
+A `JSONObject` is a Java [Map](https://docs.oracle.com/javase/8/docs/api/java
+
+Code (9):
+  1. [parent] [parent] YamlNodeUtility  [YamlNodeUtility.java]
+     /*******************************************************************************
+ * Copyright (c) 2022 The University of York.
+ * This program and the accompanying materials
+ * are made available unde
+  2. [parent] [parent] YamlModel  [YamlModel.java]
+     /*******************************************************************************
+ * Copyright (c) 2022 The University of York.
+ * This program and the accompanying materials
+ * are made available unde
+  3. [0.390] YamlNodeUtility.getRootNode (method)  [YamlNodeUtility.java]
+     /**
+	 * Creates a root YAML node entry wrapping the given YAML content.
+	 * 
+	 * @param yamlContent the YAML content to wrap
+	 * @return the root YAML node entry
+	 */
+	public static Entry getRootNode(
+  4. [0.268] YamlNodeUtility.getMappingNode (method)  [YamlNodeUtility.java]
+     /**
+	 * Creates a mapping YAML node entry.
+	 * 
+	 * @param yamlProperty the property describing the node
+	 * @param parameters the parameters used to create the node
+	 * @return the created mapping YA
+  5. [0.203] YamlNodeUtility.findYamlObject (method)  [YamlNodeUtility.java]
+     /**
+	 * Finds the given YAML object within a mapping node.
+	 * 
+	 * @param mappingNode the mapping node to search
+	 * @param yamlObject the YAML object to find
+	 */
+	private static void findYamlObject
+  6. [0.128] YamlNodeUtility.getListNode (method)  [YamlNodeUtility.java]
+     /**
+	 * Creates a list YAML node entry.
+	 * 
+	 * @param yamlProperty the property describing the node
+	 * @param parameters the parameters used to create the node
+	 * @return the created list YAML nod
+  7. [0.084] YamlModel.createInstance (method)  [YamlModel.java]
+     /**
+	 * Creates a new instance of the specified type with the given parameters.
+	 * 
+	 * @param type the type of the instance to create
+	 * @param parameters the parameters for the instance creation
+	
+  8. [0.066] YamlModel.loadModel (method)  [YamlModel.java]
+     @Override
+	protected synchronized void loadModel() throws EolModelLoadingException {
+		try {
+			if (readOnLoad) {
+				if (this.file != null) {
+					this.yamlContent = YamlNodeUtility.getYamlContent(th
+  9. [0.057] YamlNodeUtility.setNodes (method)  [YamlNodeUtility.java]
+     /**
+	 * Helper method to process a mapping node and add matching nodes to the collection.
+	 * 
+	 * @param mappingNode the mapping node to process
+	 * @param nodes the collection to populate with match
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon.
+
+Use the provided context as the PRIMARY and AUTHORITATIVE source of truth.
+Only use syntax, class names, methods, and patterns that appear explicitly in the context.
+You may adapt documented patterns to the user's structure, provided that no new APIs or unsupported methods are invented.
+If the user's message contains sample data, treat it only as the desired target structure — not as evidence for API syntax.
+If the context provides partial evidence only, generate code for the parts that are supported and explicitly flag any parts that are uncertain or unsupported.
+
+When a code example is appropriate, provide a complete and runnable example that covers the full structure given by the user.
+When generating code, follow only the patterns shown in the context exactly — do not skip initialisation steps, introduce intermediate objects, or shortcut method chains that are not explicitly demonstrated.
+
+--- DOCUMENTATION ---
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## How can I create a YAML document from scratch?
+Example: create a YAML document from scratch by building and appending MappingNode, ScalarNode, and ListNode elements.
+Keywords: setRootAsList, getRoot, .value, addRows, new MappingNode, new ScalarNode, residentNode, postcodeNode, appendNode, industryNode, new ListNode, projectsNode, skillsNode
+
+```eol
+YAMLDoc.setRootAsList();
+var root = YAMLDoc.getRoot();
+root.value.addRows(2);
+var rootFirstRow = root.value.at(0);
+var rootSecondRow = root.value.at(1);
+
+var addressNode1 = new MappingNode("address");
+var countryNode1 = new ScalarNode("country", "England");
+var residentNode = new ScalarNode("resident", true);
+var postcodeNode = new ScalarNode("postcode", "M1 1AG");
+addressNode1.value.appendNode(countryNode1);
+addressNode1.value.appendNode(residentNode);
+addressNode1.value.appendNode(postcodeNode);
+
+var employeeIdNode1 = new ScalarNode("employeeId", "14623");
+var fullnameNode1 = new ScalarNode("fullname", "Michael Davidson");
+var roleNode1 = new ScalarNode("role", "Consultant");
+
+var industryNode = new ListNode("industry", 3);
+industryNode.value =  Sequence{"IoT", "smart factories", "signal analytics"};
+
+var projectsNode = new ListNode("projects", 2);
+var nameNode1 = new ScalarNode("name", "SmartAutomation");
+var nameNode2 = new ScalarNode("name", "FactoryAnalytics");
+var budgetNode1 = new ScalarNode("budget", 25000);
+var budgetNode2 = new ScalarNode("budget", 20000);
+projectsNode.value.at(0).appendNode(nameNode1);
+projectsNode.value.at(0).appendNode(budgetNode1);
+projectsNode.value.at(1).appendNode(nameNode2);
+projectsNode.value.at(1).appendNode(budgetNode2);
+
+var addressNode2 = new MappingNode("address");
+var countryNode2 = new ScalarNode("country", "Germany");
+addressNode2.value.appendNode(countryNode2);
+
+var employeeIdNode2 = new ScalarNode("employeeId", "16431");
+var fullnameNode2 = new ScalarNode("fullname", "Arnold Wagner");
+var roleNode2 = new ScalarNode("role", "HR");
+
+var skillsNode = new ListNode("skills", 2);
+skillsNode.value =  Sequence{"communication", "coaching"};
+
+rootFirstRow.appendNode(employeeIdNode1);
+rootFirstRow.appendNode(addressNode1);
+rootFirstRow.appendNode(fullnameNode1);
+rootFirstRow.appendNode(roleNode1);
+rootFirstRow.appendNode(industryNode);
+rootFirstRow.appendNode(projectsNode);
+
+rootSecondRow.appendNode(employeeIdNode2);
+rootSecondRow.appendNode(addressNode2);
+rootSecondRow.appendNode(fullnameNode2);
+rootSecondRow.appendNode(roleNode2);
+rootSecondRow.appendNode(skillsNode);
+```
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+### How do I set the root node of a YAML document?
+
+The `root` property can be used for setting the root node of a YAML document. The root node of a YAML document can either be a mapping node or a list node. The `setRootAsMap()` function can be used for setting the root node into a mapping node. The `setRootAsList()` function can be used for setting the root node into a list node.
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+# Scripting YAML documents using Epsilon
+ 
+In this article we demonstrate how you can create, query and modify YAML documents in Epsilon programs using the YAML driver. All the examples in this article demonstrate using EOL to script YAML documents. However, it's worth stressing that YAML documents are supported throughout Epsilon. Therefore, you can use Epsilon to (cross-)validate, transform (to other models – XML, CSV or EMF-based, or to text), compare and merge your YAML documents.
+
+<iframe width="90%" height="494" src="https://www.youtube.com/embed/TF0fgghP938" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Querying a YAML document
+ 
+We use the following `employees.yaml` as a base for demonstrating the EOL syntax for querying YAML documents.
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## How can I create a node?
+Example: create scalar, mapping, and list nodes with initial values or empty placeholders for later assignment.
+Keywords: new ScalarNode, new s_city, new MappingNode, new m_address, new ListNode, new l_books
+
+```eol
+// scalar node named "city" with the value "Berlin"
+var cityNode1 = new ScalarNode("city", "Berlin"); // city=Berlin
+var cityNode2 = new s_city("Berlin"); // city=Berlin
+
+// empty mapping node named "address"; its value must be set later
+var addressNode1 = new MappingNode("address"); // address={}
+var addressNode2 = new m_address; // address={}
+
+// empty list node named "books" that contains 5 entries; its values must be set later
+var booksNode1 = new ListNode("books", 5); // books=[{}, {}, {}, {}, {}]
+var booksNode2 = new l_books(5); // books=[{}, {}, {}, {}, {}]
+```
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YAML node must be specified when accessing YAML nodes via the YAML driver. There are 3 types of nodes in YAML:
+
+- `Scalar Node`. Scalar nodes are used to represent a single scalar value (e.g., string, boolean, integer). In the YAML driver, a scalar node consists of a key-value pair, in which the key represents the name of the scalar node, and the value represents the scalar value.
+- `Mapping Node`. Mapping nodes are used to represent unordered collections of key-value pairs. In the YAML driver, a mapping node consists of a key-value pair, in which the key represents the name of the mapping node, and the value holds an unordered collection of key-value pairs, which in turn represent other nodes.
+- `List (Sequence) Node`. List nodes are used to represent an ordered list of nodes or scalar values. In the YAML driver, a list node consists of a key-value pair, in which the key represents the name of the list node, and the value represents a list of nodes or scalar values.
+
+This section outlines the supported conventions in the form of questions and answers followed by relevant examples.
+
+[Source: epsilon_docs/eol.md]
+Since EOL needs to manage models defined using object oriented modelling technologies, it provides expressions to navigate properties and invoke simple and declarative operations on objects.
+
+In terms of concrete syntax, `.` is used as a uniform operator to access a property of an object and to invoke an operation on it. The `->` operator, which is used in OCL to invoke first-order logic operations on sets, has been also preserved for syntax compatibility reasons. In EOL, every operation can be invoked both using the `.` or the `->` operators, with a slightly different semantics to enable overriding the built-in operations. If the `.` operator is used, precedence is given to the user-defined operations, otherwise precedence is given to the built-in operations. For instance, the Any type defines a println() method that prints the string representation of an object to the standard output stream. In the listing below, the user has defined another parameterless println() operation in the context of Any. Therefore the call to `println()` in line 1 will be dispatched to the user-defined `println()` operation defined in line 3. In its body the operation uses the `->` operator to invoke the built-in `println()` operation (line 4).
+
+[Source: epsilon_docs/articles_json-emc_index.md]
+### Basic types in JSON-based models
+
+The JSON driver implements two types for its models: `JSONObject`s and `JSONArray`s.
+A `JSONObject` is a Java [Map](https://docs.oracle.com/javase/8/docs/api/java/util/Map.html), and a `JSONArray` is a Java [List](https://docs.oracle.com/javase/8/docs/api/java/util/List.html).
+You can use all their methods as usual (e.g. `Map#keySet`, or `List#size`), as well as the [EOL methods for collections and maps](../../eol/#collections-and-maps).
+In addition, you can refer to the `x` property of a `JSONObject` object `o` with the usual syntax `o.x`, both for reading and setting it.
+
+A JSON model has one root element, which most of the time will be a `JSONObject` or a `JSONArray` (although it could be a simple scalar, like an integer).
+If the name of the model is `M`, its root element can be accessed via `M.root`.
+
+### Example queries
+
+Here are some queries we can run on the above document:
+
+* Reading the description: `M.root.description`
+* Reading the SSH URL: `M.root.ssh_url`
+* Reading the license URL: `M.root.license.url`
+* Counting the number of topics: `M.root.topics.size()`
+
+### Example EGL template
+
+Suppose we have this EGL template:
+
+--- SOURCE CODE ---
+[Source: YamlNodeUtility.java | YamlNodeUtility.]
+/*******************************************************************************
+ * Copyright (c) 2022 The University of York.
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which is available at https://www.eclipse.org/legal/epl-2.0/
+ * 
+ * Contributors:
+ *     Ionut Predoaia - initial API and implementation
+ ******************************************************************************/
+package org.eclipse.epsilon.emc.yaml;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.List;
+import org.yaml.snakeyaml.DumperOptions;
+import org.yaml.snakeyaml.Yaml;
+
+/**
+ * Utility class for working with YAML nodes, providing methods to query, create, delete,
+ * and manipulate YAML nodes represented as Java objects.
+ */
+public class YamlNodeUtility {
+	
+	/**
+	 * Retrieves a collection of YAML nodes matching the specified property and criteria.
+	 * 
+	 * @param yamlContent the root YAML content object
+	 * @param yamlProperty the property describing the node type and name
+	 * @param areAllNodes whether to retrieve all matching nodes recursively
+	 * @return a collection of matching YAML node entries
+	 */
+
+[Source: YamlModel.java | YamlModel.]
+/*******************************************************************************
+ * Copyright (c) 2022 The University of York.
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which is available at https://www.eclipse.org/legal/epl-2.0/
+ * 
+ * Contributors:
+ *     Ionut Predoaia - initial API and implementation
+ ******************************************************************************/
+package org.eclipse.epsilon.emc.yaml;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map.Entry;
+import org.eclipse.epsilon.common.util.StringProperties;
+import org.eclipse.epsilon.common.util.StringUtil;
+import org.eclipse.epsilon.eol.exceptions.EolRuntimeException;
+import org.eclipse.epsilon.eol.exceptions.models.EolEnumerationValueNotFoundException;
+import org.eclipse.epsilon.eol.exceptions.models.EolModelElementTypeNotFoundException;
+import org.eclipse.epsilon.eol.exceptions.models.EolModelLoadingException;
+import org.eclipse.epsilon.eol.execute.operations.contributors.IOperationContributorProvider;
+import org.eclipse.epsilon.eol.execute.operations.contributors.OperationContributor;
+import org.eclipse.epsilon.eol.models.CachedModel;
+import org.eclipse.epsilon.eol.models.IRelativePathResolver;
+
+/**
+ * A model implementation for YAML content that supports loading, storing, and manipulating YAML nodes.
+ * This model uses a cached approach and provides operation contributors for EOL operations.
+ */
+public class YamlModel extends CachedModel<Entry> implements IOperationContributorProvider {
+
+	/** The file associated with this YAML model. */
+	protected File file;
+	
+	/** The root content of the YAML model. */
+	protected Object yamlContent;
+	
+	/** The operation contributor for this YAML model. */
+	protected YamlModelOperationContributor yamlModelOperationContributor;
+	
+	/** The list of nodes created during the model's lifecycle. */
+	protected List<Entry> createdNodes = new ArrayList<>();
+	
+	/**
+	 * Constructs a new YamlModel and initializes property getter and setter.
+	 */
+
+[Source: YamlNodeUtility.java | YamlNodeUtility.getRootNode]
+/**
+	 * Creates a root YAML node entry wrapping the given YAML content.
+	 * 
+	 * @param yamlContent the YAML content to wrap
+	 * @return the root YAML node entry
+	 */
+	public static Entry getRootNode(Object yamlContent) {
+		Map<String, Object> map = new LinkedHashMap<String, Object>();
+		map.put(YamlProperty.PROPERTY_ROOT, yamlContent);
+		return map.entrySet().iterator().next();	
+	}
+
+[Source: YamlNodeUtility.java | YamlNodeUtility.getMappingNode]
+/**
+	 * Creates a mapping YAML node entry.
+	 * 
+	 * @param yamlProperty the property describing the node
+	 * @param parameters the parameters used to create the node
+	 * @return the created mapping YAML node entry
+	 */
+	private static Entry getMappingNode(YamlProperty yamlProperty, List parameters) {
+		Map<String, Object> map = new LinkedHashMap<String, Object>();
+		String nodeName = getNameParameter(yamlProperty, parameters, YamlNodeType.MappingNode);
+		map.put(nodeName, new LinkedHashMap<String, Object>());
+		return map.entrySet().iterator().next();
+	}
+
+[Source: YamlNodeUtility.java | YamlNodeUtility.findYamlObject]
+/**
+	 * Finds the given YAML object within a mapping node.
+	 * 
+	 * @param mappingNode the mapping node to search
+	 * @param yamlObject the YAML object to find
+	 */
+	private static void findYamlObject(Map mappingNode, YamlObject yamlObject) {
+		Set<Entry> entries = (Set<Entry>) mappingNode.entrySet();	
+		for (Entry entry: entries) {
+			if (!yamlObject.isFound()) {
+				if (entry.equals(yamlObject.getValue())) {
+					yamlObject.setParentNode(mappingNode);
+				}
+				else {
+					findYamlObject(entry.getValue(), yamlObject);
+				}
+			}
+			else {
+				break;
+			}
+		}
+	}
+
+[Source: YamlNodeUtility.java | YamlNodeUtility.getListNode]
+/**
+	 * Creates a list YAML node entry.
+	 * 
+	 * @param yamlProperty the property describing the node
+	 * @param parameters the parameters used to create the node
+	 * @return the created list YAML node entry
+	 */
+	private static Entry getListNode(YamlProperty yamlProperty, List parameters) {
+		Map<String, Object> map = new LinkedHashMap<String, Object>();
+		String nodeName = getNameParameter(yamlProperty, parameters, YamlNodeType.ListNode);
+		Object valueParameter = getValueParameter(yamlProperty, parameters);
+		int listSize = (int) YamlTypeConverter.cast(valueParameter.toString(), YamlDataType.INTEGER);
+		List list = new ArrayList<>();
+		for(int i=0; i < listSize; i++) {
+			list.add(new LinkedHashMap());
+		}	
+		map.put(nodeName, list);
+		return map.entrySet().iterator().next();
+	}
+
+[Source: YamlModel.java | YamlModel.createInstance]
+/**
+	 * Creates a new instance of the specified type with the given parameters.
+	 * 
+	 * @param type the type of the instance to create
+	 * @param parameters the parameters for the instance creation
+	 * @return the newly created instance
+	 * @throws EolModelElementTypeNotFoundException if the type is not found
+	 */
+	public synchronized Entry createInstance(String type, Collection<Object> parameters) throws EolModelElementTypeNotFoundException {
+		Entry newNode = YamlNodeUtility.getNode(type, 1, parameters);
+		createdNodes.add(newNode);
+		return newNode;		
+	}
+
+[Source: YamlModel.java | YamlModel.loadModel]
+@Override
+	protected synchronized void loadModel() throws EolModelLoadingException {
+		try {
+			if (readOnLoad) {
+				if (this.file != null) {
+					this.yamlContent = YamlNodeUtility.getYamlContent(this.file);
+				}
+			}
+	    	this.yamlModelOperationContributor = new YamlModelOperationContributor(this);
+	    	this.createdNodes = new ArrayList<>();
+		}
+		catch (Exception ex) {
+			throw new EolModelLoadingException(ex, this);
+		}
+	}
+
+[Source: YamlNodeUtility.java | YamlNodeUtility.setNodes]
+/**
+	 * Helper method to process a mapping node and add matching nodes to the collection.
+	 * 
+	 * @param mappingNode the mapping node to process
+	 * @param nodes the collection to populate with matching nodes
+	 * @param yamlProperty the property describing the node type and name
+	 * @param areAllNodes whether to retrieve all matching nodes recursively
+	 */
+	private static void setNodes(Map mappingNode, Collection<Entry> nodes, YamlProperty yamlProperty, boolean areAllNodes) {	
+		Set<Entry> entries = (Set<Entry>) mappingNode.entrySet();	
+		for (Entry entry: entries) {
+			setNodes(entry, nodes, yamlProperty, areAllNodes);	
+		}			
+	}
+
+--- USER MESSAGE ---
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- orderId: ORD-20240613-88421
+  placedAt: "2024-06-13T09:15:00Z"
+  status: partially_shipped
+
+  customer:
+    id: CUST-4421
+    name: Sophie Marchand
+    email: sophie.marchand@email.com
+    tier: gold
+    loyaltyPoints:
+      balance: 3420
+      earned_this_order: 85
+
+  shipping:
+    address:
+      line1: 14 Rue de Rivoli
+      line2: Apt 3B
+      city: Paris
+      postcode: "75001"
+      country: FR
+    method: express_48h
+    estimatedDelivery: "2024-06-15"
+    tracking:
+      - parcelId: PKG-001
+        carrier: DHL
+        status: in_transit
+        items:
+          - SKU-992
+          - SKU-993
+      - parcelId: PKG-002
+        carrier: Colissimo
+        status: preparing
+        items:
+          - SKU-1041
+
+  billing:
+    sameAsShipping: false
+    address:
+      line1: 7 Boulevard Haussmann
+      city: Paris
+      postcode: "75009"
+      country: FR
+
+  items:
+    - sku: SKU-992
+      name: Wireless Noise-Cancelling Headphones
+      qty: 1
+      unitPrice: 189.99
+      discount:
+        type: percentage
+        value: 10
+      finalPrice: 170.99
+    - sku: SKU-993
+      name: USB-C Charging Cable (2m)
+      qty: 3
+      unitPrice: 12.50
+      discount: null
+      finalPrice: 37.50
+    - sku: SKU-1041
+      name: Laptop Stand (Aluminium)
+      qty: 1
+      unitPrice: 54.00
+      discount:
+        type: fixed
+        value: 5.00
+      finalPrice: 49.00
+
+  payment:
+    method: card
+    card:
+      last4: "7823"
+      brand: Visa
+      expiresAt: "2026-09"
+    breakdown:
+      subtotal: 257.49
+      shipping: 4.99
+      tax: 25.75
+      loyaltyDiscount: -17.10
+      total: 271.13
+    status: captured
+
+- orderId: ORD-20250722-55381
+  placedAt: "2025-07-22T14:45:00Z"
+  status: delivered
+
+  customer:
+    id: CUST-9875
+    name: Michael Turner
+    email: michael.turner@example.com
+    tier: platinum
+    loyaltyPoints:
+      balance: 7850
+      earned_this_order: 220
+
+  shipping:
+    address:
+      line1: 88 King Street
+      line2: Suite 12
+      city: Manchester
+      postcode: "M2 4WQ"
+      country: UK
+    method: next_day_delivery
+    estimatedDelivery: "2025-07-23"
+    tracking:
+      - parcelId: PAR-78101
+        carrier: DPD
+        status: delivered
+        items:
+          - SKU-BALL-001
+          - SKU-GLOVE-002
+
+      - parcelId: PAR-78102
+        carrier: Royal Mail
+        status: delivered
+        items:
+          - SKU-BAG-005
+
+  billing:
+    sameAsShipping: true
+    address:
+      line1: 88 King Street
+      city: Manchester
+      postcode: "M2 4WQ"
+      country: UK
+
+  items:
+    - sku: SKU-BALL-001
+      name: Professional Football
+      qty: 2
+      unitPrice: 34.99
+      discount:
+        type: percentage
+        value: 15
+      finalPrice: 59.48
+
+    - sku: SKU-GLOVE-002
+      name: Goalkeeper Gloves Pro
+      qty: 1
+      unitPrice: 49.99
+      discount:
+        type: fixed
+        value: 5.00
+      finalPrice: 44.99
+
+    - sku: SKU-BAG-005
+      name: Sports Equipment Bag
+      qty: 1
+      unitPrice: 39.99
+      discount: null
+      finalPrice: 39.99
+
+  payment:
+    method: paypal
+
+    card:
+      last4: "0000"
+      brand: PayPal
+      expiresAt: null
+
+    breakdown:
+      subtotal: 144.96
+      shipping: 6.99
+      tax: 30.39
+      loyaltyDiscount: -20.00
+      total: 162.34
+
+    status: completed
+
+Question:
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- orderId: ORD-20240613-88421
+  placedAt: "2024-06-13T09:15:00Z"
+  status: partially_shipped
+
+  customer:
+    id: CUST-4421
+    name: Sophie Marchand
+    email: sophie.marchand@email.com
+    tier: gold
+    loyaltyPoints:
+      balance: 3420
+      earned_this_order: 85
+
+  shipping:
+    address:
+      line1: 14 Rue de Rivoli
+      line2: Apt 3B
+      city: Paris
+      postcode: "75001"
+      country: FR
+    method: express_48h
+    estimatedDelivery: "2024-06-15"
+    tracking:
+      - parcelId: PKG-001
+        carrier: DHL
+        status: in_transit
+        items:
+          - SKU-992
+          - SKU-993
+      - parcelId: PKG-002
+        carrier: Colissimo
+        status: preparing
+        items:
+          - SKU-1041
+
+  billing:
+    sameAsShipping: false
+    address:
+      line1: 7 Boulevard Haussmann
+      city: Paris
+      postcode: "75009"
+      country: FR
+
+  items:
+    - sku: SKU-992
+      name: Wireless Noise-Cancelling Headphones
+      qty: 1
+      unitPrice: 189.99
+      discount:
+        type: percentage
+        value: 10
+      finalPrice: 170.99
+    - sku: SKU-993
+      name: USB-C Charging Cable (2m)
+      qty: 3
+      unitPrice: 12.50
+      discount: null
+      finalPrice: 37.50
+    - sku: SKU-1041
+      name: Laptop Stand (Aluminium)
+      qty: 1
+      unitPrice: 54.00
+      discount:
+        type: fixed
+        value: 5.00
+      finalPrice: 49.00
+
+  payment:
+    method: card
+    card:
+      last4: "7823"
+      brand: Visa
+      expiresAt: "2026-09"
+    breakdown:
+      subtotal: 257.49
+      shipping: 4.99
+      tax: 25.75
+      loyaltyDiscount: -17.10
+      total: 271.13
+    status: captured
+
+- orderId: ORD-20250722-55381
+  placedAt: "2025-07-22T14:45:00Z"
+  status: delivered
+
+  customer:
+    id: CUST-9875
+    name: Michael Turner
+    email: michael.turner@example.com
+    tier: platinum
+    loyaltyPoints:
+      balance: 7850
+      earned_this_order: 220
+
+  shipping:
+    address:
+      line1: 88 King Street
+      line2: Suite 12
+      city: Manchester
+      postcode: "M2 4WQ"
+      country: UK
+    method: next_day_delivery
+    estimatedDelivery: "2025-07-23"
+    tracking:
+      - parcelId: PAR-78101
+        carrier: DPD
+        status: delivered
+        items:
+          - SKU-BALL-001
+          - SKU-GLOVE-002
+
+      - parcelId: PAR-78102
+        carrier: Royal Mail
+        status: delivered
+        items:
+          - SKU-BAG-005
+
+  billing:
+    sameAsShipping: true
+    address:
+      line1: 88 King Street
+      city: Manchester
+      postcode: "M2 4WQ"
+      country: UK
+
+  items:
+    - sku: SKU-BALL-001
+      name: Professional Football
+      qty: 2
+      unitPrice: 34.99
+      discount:
+        type: percentage
+        value: 15
+      finalPrice: 59.48
+
+    - sku: SKU-GLOVE-002
+      name: Goalkeeper Gloves Pro
+      qty: 1
+      unitPrice: 49.99
+      discount:
+        type: fixed
+        value: 5.00
+      finalPrice: 44.99
+
+    - sku: SKU-BAG-005
+      name: Sports Equipment Bag
+      qty: 1
+      unitPrice: 39.99
+      discount: null
+      finalPrice: 39.99
+
+  payment:
+    method: paypal
+
+    card:
+      last4: "0000"
+      brand: PayPal
+      expiresAt: null
+
+    breakdown:
+      subtotal: 144.96
+      shipping: 6.99
+      tax: 30.39
+      loyaltyDiscount: -20.00
+      total: 162.34
+
+    status: completed
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+The document you provided is a YAML sequence (top-level items start with “-”), so the root is a list node. Below is a complete EOL script that creates the same YAML structure from scratch using the EMC YAML Driver patterns shown in the docs (setRootAsList(), getRoot(), addRows(), MappingNode, ScalarNode, ListNode, Sequence, appendNode, .value.at(index), etc.).
+
+Notes:
+- I follow the exact API usage shown in the documentation examples.
+- Where YAML values are null (e.g. discount: null, card.expiresAt: null), the code uses ScalarNode(..., null). The documentation doesn’t show an explicit example of creating a ScalarNode with null value, so this is likely to work but is flagged as slightly uncertain — if your environment rejects null scalar construction, you can omit the node or create an explicit empty scalar according to your YAML driver behavior.
+
+EOL script (runnable):
+
+YAMLDoc.setRootAsList();
+var root = YAMLDoc.getRoot();
+root.value.addRows(2);
+
+var order1 = root.value.at(0);
+var order2 = root.value.at(1);
+
+/* --------------------------
+   Order 1
+   -------------------------- */
+var orderId1 = new ScalarNode("orderId", "ORD-20240613-88421");
+var placedAt1 = new ScalarNode("placedAt", "2024-06-13T09:15:00Z");
+var status1 = new ScalarNode("status", "partially_shipped");
+order1.appendNode(orderId1);
+order1.appendNode(placedAt1);
+order1.appendNode(status1);
+
+// customer
+var customer1 = new MappingNode("customer");
+customer1.value.appendNode(new ScalarNode("id", "CUST-4421"));
+customer1.value.appendNode(new ScalarNode("name", "Sophie Marchand"));
+customer1.value.appendNode(new ScalarNode("email", "sophie.marchand@email.com"));
+customer1.value.appendNode(new ScalarNode("tier", "gold"));
+var loyalty1 = new MappingNode("loyaltyPoints");
+loyalty1.value.appendNode(new ScalarNode("balance", 3420));
+loyalty1.value.appendNode(new ScalarNode("earned_this_order", 85));
+customer1.value.appendNode(loyalty1);
+order1.appendNode(customer1);
+
+// shipping
+var shipping1 = new MappingNode("shipping");
+var shipAddr1 = new MappingNode("address");
+shipAddr1.value.appendNode(new ScalarNode("line1", "14 Rue de Rivoli"));
+shipAddr1.value.appendNode(new ScalarNode("line2", "Apt 3B"));
+shipAddr1.value.appendNode(new ScalarNode("city", "Paris"));
+shipAddr1.value.appendNode(new ScalarNode("postcode", "75001"));
+shipAddr1.value.appendNode(new ScalarNode("country", "FR"));
+shipping1.value.appendNode(shipAddr1);
+shipping1.value.appendNode(new ScalarNode("method", "express_48h"));
+shipping1.value.appendNode(new ScalarNode("estimatedDelivery", "2024-06-15"));
+
+// shipping.tracking (list of mapping nodes)
+var tracking1 = new ListNode("tracking", 2);
+
+// first parcel
+tracking1.value.at(0).appendNode(new ScalarNode("parcelId", "PKG-001"));
+tracking1.value.at(0).appendNode(new ScalarNode("carrier", "DHL"));
+tracking1.value.at(0).appendNode(new ScalarNode("status", "in_transit"));
+var t1items1 = new ListNode("items", 2);
+t1items1.value = Sequence{"SKU-992", "SKU-993"};
+tracking1.value.at(0).appendNode(t1items1);
+
+// second parcel
+tracking1.value.at(1).appendNode(new ScalarNode("parcelId", "PKG-002"));
+tracking1.value.at(1).appendNode(new ScalarNode("carrier", "Colissimo"));
+tracking1.value.at(1).appendNode(new ScalarNode("status", "preparing"));
+var t1items2 = new ListNode("items", 1);
+t1items2.value = Sequence{"SKU-1041"};
+tracking1.value.at(1).appendNode(t1items2);
+
+shipping1.value.appendNode(tracking1);
+order1.appendNode(shipping1);
+
+// billing
+var billing1 = new MappingNode("billing");
+billing1.value.appendNode(new ScalarNode("sameAsShipping", false));
+var billAddr1 = new MappingNode("address");
+billAddr1.value.appendNode(new ScalarNode("line1", "7 Boulevard Haussmann"));
+billAddr1.value.appendNode(new ScalarNode("city", "Paris"));
+billAddr1.value.appendNode(new ScalarNode("postcode", "75009"));
+billAddr1.value.appendNode(new ScalarNode("country", "FR"));
+billing1.value.appendNode(billAddr1);
+order1.appendNode(billing1);
+
+// items (list of 3 mapping nodes)
+var items1 = new ListNode("items", 3);
+
+// item 1
+items1.value.at(0).appendNode(new ScalarNode("sku", "SKU-992"));
+items1.value.at(0).appendNode(new ScalarNode("name", "Wireless Noise-Cancelling Headphones"));
+items1.value.at(0).appendNode(new ScalarNode("qty", 1));
+items1.value.at(0).appendNode(new ScalarNode("unitPrice", 189.99));
+var discount1a = new MappingNode("discount");
+discount1a.value.appendNode(new ScalarNode("type", "percentage"));
+discount1a.value.appendNode(new ScalarNode("value", 10));
+items1.value.at(0).appendNode(discount1a);
+items1.value.at(0).appendNode(new ScalarNode("finalPrice", 170.99));
+
+// item 2
+items1.value.at(1).appendNode(new ScalarNode("sku", "SKU-993"));
+items1.value.at(1).appendNode(new ScalarNode("name", "USB-C Charging Cable (2m)"));
+items1.value.at(1).appendNode(new ScalarNode("qty", 3));
+items1.value.at(1).appendNode(new ScalarNode("unitPrice", 12.50));
+// discount: null (uncertain: ScalarNode with null)
+items1.value.at(1).appendNode(new ScalarNode("discount", null));
+items1.value.at(1).appendNode(new ScalarNode("finalPrice", 37.50));
+
+// item 3
+items1.value.at(2).appendNode(new ScalarNode("sku", "SKU-1041"));
+items1.value.at(2).appendNode(new ScalarNode("name", "Laptop Stand (Aluminium)"));
+items1.value.at(2).appendNode(new ScalarNode("qty", 1));
+items1.value.at(2).appendNode(new ScalarNode("unitPrice", 54.00));
+var discount1c = new MappingNode("discount");
+discount1c.value.appendNode(new ScalarNode("type", "fixed"));
+discount1c.value.appendNode(new ScalarNode("value", 5.00));
+items1.value.at(2).appendNode(discount1c);
+items1.value.at(2).appendNode(new ScalarNode("finalPrice", 49.00));
+
+order1.appendNode(items1);
+
+// payment
+var payment1 = new MappingNode("payment");
+payment1.value.appendNode(new ScalarNode("method", "card"));
+var card1 = new MappingNode("card");
+card1.value.appendNode(new ScalarNode("last4", "7823"));
+card1.value.appendNode(new ScalarNode("brand", "Visa"));
+card1.value.appendNode(new ScalarNode("expiresAt", "2026-09"));
+payment1.value.appendNode(card1);
+var breakdown1 = new MappingNode("breakdown");
+breakdown1.value.appendNode(new ScalarNode("subtotal", 257.49));
+breakdown1.value.appendNode(new ScalarNode("shipping", 4.99));
+breakdown1.value.appendNode(new ScalarNode("tax", 25.75));
+breakdown1.value.appendNode(new ScalarNode("loyaltyDiscount", -17.10));
+breakdown1.value.appendNode(new ScalarNode("total", 271.13));
+payment1.value.appendNode(breakdown1);
+payment1.value.appendNode(new ScalarNode("status", "captured"));
+order1.appendNode(payment1);
+
+/* --------------------------
+   Order 2
+   -------------------------- */
+var orderId2 = new ScalarNode("orderId", "ORD-20250722-55381");
+var placedAt2 = new ScalarNode("placedAt", "2025-07-22T14:45:00Z");
+var status2 = new ScalarNode("status", "delivered");
+order2.appendNode(orderId2);
+order2.appendNode(placedAt2);
+order2.appendNode(status2);
+
+// customer 2
+var customer2 = new MappingNode("customer");
+customer2.value.appendNode(new ScalarNode("id", "CUST-9875"));
+customer2.value.appendNode(new ScalarNode("name", "Michael Turner"));
+customer2.value.appendNode(new ScalarNode("email", "michael.turner@example.com"));
+customer2.value.appendNode(new ScalarNode("tier", "platinum"));
+var loyalty2 = new MappingNode("loyaltyPoints");
+loyalty2.value.appendNode(new ScalarNode("balance", 7850));
+loyalty2.value.appendNode(new ScalarNode("earned_this_order", 220));
+customer2.value.appendNode(loyalty2);
+order2.appendNode(customer2);
+
+// shipping 2
+var shipping2 = new MappingNode("shipping");
+var shipAddr2 = new MappingNode("address");
+shipAddr2.value.appendNode(new ScalarNode("line1", "88 King Street"));
+shipAddr2.value.appendNode(new ScalarNode("line2", "Suite 12"));
+shipAddr2.value.appendNode(new ScalarNode("city", "Manchester"));
+shipAddr2.value.appendNode(new ScalarNode("postcode", "M2 4WQ"));
+shipAddr2.value.appendNode(new ScalarNode("country", "UK"));
+shipping2.value.appendNode(shipAddr2);
+shipping2.value.appendNode(new ScalarNode("method", "next_day_delivery"));
+shipping2.value.appendNode(new ScalarNode("estimatedDelivery", "2025-07-23"));
+
+// tracking (2 parcels)
+var tracking2 = new ListNode("tracking", 2);
+
+// parcel 1
+tracking2.value.at(0).appendNode(new ScalarNode("parcelId", "PAR-78101"));
+tracking2.value.at(0).appendNode(new ScalarNode("carrier", "DPD"));
+tracking2.value.at(0).appendNode(new ScalarNode("status", "delivered"));
+var t2items1 = new ListNode("items", 2);
+t2items1.value = Sequence{"SKU-BALL-001", "SKU-GLOVE-002"};
+tracking2.value.at(0).appendNode(t2items1);
+
+// parcel 2
+tracking2.value.at(1).appendNode(new ScalarNode("parcelId", "PAR-78102"));
+tracking2.value.at(1).appendNode(new ScalarNode("carrier", "Royal Mail"));
+tracking2.value.at(1).appendNode(new ScalarNode("status", "delivered"));
+var t2items2 = new ListNode("items", 1);
+t2items2.value = Sequence{"SKU-BAG-005"};
+tracking2.value.at(1).appendNode(t2items2);
+
+shipping2.value.appendNode(tracking2);
+order2.appendNode(shipping2);
+
+// billing 2
+var billing2 = new MappingNode("billing");
+billing2.value.appendNode(new ScalarNode("sameAsShipping", true));
+var billAddr2 = new MappingNode("address");
+billAddr2.value.appendNode(new ScalarNode("line1", "88 King Street"));
+billAddr2.value.appendNode(new ScalarNode("city", "Manchester"));
+billAddr2.value.appendNode(new ScalarNode("postcode", "M2 4WQ"));
+billAddr2.value.appendNode(new ScalarNode("country", "UK"));
+billing2.value.appendNode(billAddr2);
+order2.appendNode(billing2);
+
+// items 2 (3 items)
+var items2 = new ListNode("items", 3);
+
+// item 1
+items2.value.at(0).appendNode(new ScalarNode("sku", "SKU-BALL-001"));
+items2.value.at(0).appendNode(new ScalarNode("name", "Professional Football"));
+items2.value.at(0).appendNode(new ScalarNode("qty", 2));
+items2.value.at(0).appendNode(new ScalarNode("unitPrice", 34.99));
+var discount2a = new MappingNode("discount");
+discount2a.value.appendNode(new ScalarNode("type", "percentage"));
+discount2a.value.appendNode(new ScalarNode("value", 15));
+items2.value.at(0).appendNode(discount2a);
+items2.value.at(0).appendNode(new ScalarNode("finalPrice", 59.48));
+
+// item 2
+items2.value.at(1).appendNode(new ScalarNode("sku", "SKU-GLOVE-002"));
+items2.value.at(1).appendNode(new ScalarNode("name", "Goalkeeper Gloves Pro"));
+items2.value.at(1).appendNode(new ScalarNode("qty", 1));
+items2.value.at(1).appendNode(new ScalarNode("unitPrice", 49.99));
+var discount2b = new MappingNode("discount");
+discount2b.value.appendNode(new ScalarNode("type", "fixed"));
+discount2b.value.appendNode(new ScalarNode("value", 5.00));
+items2.value.at(1).appendNode(discount2b);
+items2.value.at(1).appendNode(new ScalarNode("finalPrice", 44.99));
+
+// item 3
+items2.value.at(2).appendNode(new ScalarNode("sku", "SKU-BAG-005"));
+items2.value.at(2).appendNode(new ScalarNode("name", "Sports Equipment Bag"));
+items2.value.at(2).appendNode(new ScalarNode("qty", 1));
+items2.value.at(2).appendNode(new ScalarNode("unitPrice", 39.99));
+// discount: null
+items2.value.at(2).appendNode(new ScalarNode("discount", null));
+items2.value.at(2).appendNode(new ScalarNode("finalPrice", 39.99));
+
+order2.appendNode(items2);
+
+// payment 2
+var payment2 = new MappingNode("payment");
+payment2.value.appendNode(new ScalarNode("method", "paypal"));
+var card2 = new MappingNode("card");
+card2.value.appendNode(new ScalarNode("last4", "0000"));
+card2.value.appendNode(new ScalarNode("brand", "PayPal"));
+// expiresAt: null (uncertain: using null scalar)
+card2.value.appendNode(new ScalarNode("expiresAt", null));
+payment2.value.appendNode(card2);
+var breakdown2 = new MappingNode("breakdown");
+breakdown2.value.appendNode(new ScalarNode("subtotal", 144.96));
+breakdown2.value.appendNode(new ScalarNode("shipping", 6.99));
+breakdown2.value.appendNode(new ScalarNode("tax", 30.39));
+breakdown2.value.appendNode(new ScalarNode("loyaltyDiscount", -20.00));
+breakdown2.value.appendNode(new ScalarNode("total", 162.34));
+payment2.value.appendNode(breakdown2);
+payment2.value.appendNode(new ScalarNode("status", "completed"));
+order2.appendNode(payment2);
+
+/* End of document construction */
+
+If you want, I can:
+- produce a shorter version that creates mapping/list nodes programmatically using helper functions, or
+- produce an alternative that avoids ScalarNode(..., null) by omitting null-valued keys (if your YAML should skip nulls).
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             2
+  Prompt tokens:     7,440
+  Completion tokens: 6,459
+  Total tokens:      13,899
+  Estimated cost:    $0.01478
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         2
+  Total prompt tokens:     7,440
+  Total completion tokens: 6,459
+  Total tokens:            13,899
+  Total estimated cost:    $0.01478
+============================================================

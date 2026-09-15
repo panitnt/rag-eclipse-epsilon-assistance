@@ -1,0 +1,5 @@
+departments:
+  - name: IT
+    teams:
+      - name: Backend
+      - name: Frontend

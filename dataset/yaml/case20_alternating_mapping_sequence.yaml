@@ -1,0 +1,17 @@
+departments:
+  - name: Prepress
+    teams:
+      - name: Artwork
+        members:
+          - Alice
+          - Bob
+      - name: Plate Making
+        members:
+          - Charlie
+          - Diana
+  - name: Production
+    teams:
+      - name: Printing
+        members:
+          - Ethan
+          - Fiona

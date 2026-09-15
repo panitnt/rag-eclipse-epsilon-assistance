@@ -1,0 +1,410 @@
+Session started: 2026-07-30 12:21:54
+Model: openai/gpt-5-mini | temperature=0
+RETRIEVAL_MODE=sparse (BM25 Qdrant/bm25, no dense)
+SIBLING_EXPANSION=on
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[12:21:54]
+
+── QUESTION ──────────────────────────────────────────────
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- student:
+    name: Oliver Bennett
+    class: 5B
+    subjects:
+      - subject: English
+        score: 88
+        grade: A
+      - subject: Mathematics
+        score: 74
+        grade: B
+    extracurricular:
+      - Chess Club
+      - School Orchestra
+
+- student:
+    name: Amelia Carter
+    class: 5B
+    subjects:
+      - subject: English
+        score: 81
+        grade: A-
+      - subject: Mathematics
+        score: 86
+        grade: A
+      - subject: Science
+        score: 78
+        grade: B+
+    extracurricular: []
+
+- student:
+    name: Noah Reyes
+    class: 5B
+    subjects:
+      - subject: English
+        score: null
+        grade: null
+        note: Absent for assessment
+      - subject: Mathematics
+        score: 92
+        grade: A+
+    extracurricular:
+      - Reading Buddy
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- student:
+    name: Oliver Bennett
+    class: 5B
+    subjects:
+      - subject: English
+        score: 88
+        grade: A
+      - subject: Mathematics
+        score: 74
+        grade: B
+    extracurricular:
+      - Chess Club
+      - School Orchestra
+
+- student:
+    name: Amelia Carter
+    class: 5B
+    subjects:
+      - subject: English
+        score: 81
+        grade: A-
+      - subject: Mathematics
+        score: 86
+        grade: A
+      - subject: Science
+        score: 78
+        grade: B+
+    extracurricular: []
+
+- student:
+    name: Noah Reyes
+    class: 5B
+    subjects:
+      - subject: English
+        score: null
+        grade: null
+        note: Absent for assessment
+      - subject: Mathematics
+        score: 92
+        grade: A+
+    extracurricular:
+      - Reading Buddy
+
+── SPARSE POOL (before rerank, before sibling expansion) ──
+  1. [16.289] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+  2. [15.068] epsilon_docs/articles_yaml-emc_index.md (heading='How do I set the root node of a YAML document?', parent_heading='Querying/modifying YAML documents in EOL')
+  3. [13.855] epsilon_docs/articles_jdt_index.md (heading='How is it used?', parent_heading='Treating Java code as a model in Epsilon')
+  4. [13.550] epsilon_docs/eol.md (heading='Extended Properties', parent_heading='Expressions')
+  5. [12.956] epsilon_docs/pinset_index.md (heading='Model example', parent_heading='Dataset Extraction (Pinset)')
+  6. [12.857] epsilon_docs/articles_csv-emc_index.md (heading='Header-less CSV Model', parent_heading='Querying a CSV document')
+  7. [12.831] epsilon_docs/articles_yaml-emc_index.md (heading='How do I set the root node of a YAML document?', parent_heading='Querying/modifying YAML documents in EOL')
+  8. [12.606] epsilon_docs/articles_rdf-emc.md (heading='EMF-RDF resource file (`.rdfres`)', parent_heading='Epsilon EMC driver for RDF-backed EMF models')
+  9. [12.603] epsilon_docs/articles_json-emc_index.md (heading='Example EGL template', parent_heading='Querying a JSON document')
+  10. [12.374] epsilon_docs/egl.md (heading='An Example of Co-ordination with EGL', parent_heading='Co-ordination')
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.\n- student:\n    name: Oliver Bennett\n    class: 5B\n    subjects:\n      - subject: English\n        score: 88\n        grade: A\n      - subject: Mathematics\n        score: 74\n        grade: B\n    extracurricular:\n      - Chess Club\n      - School Orchestra\n\n- student:\n    name: Amelia Carter\n    class: 5B\n    subjects:\n      - subject: English\n        score: 81\n        grade: A-\n      - subject: Mathematics\n        score: 86\n        grade: A\n      - subject: Science\n        score: 78\n        grade: B+\n    extracurricular: []\n\n- student:\n    name: Noah Reyes\n    class: 5B\n    subjects:\n      - subject: English\n        score: null\n        grade: null\n        note: Absent for assessment\n      - subject: Mathematics\n        score: 92\n        grade: A+\n    extracurricular:\n      - Reading Buddy'
+    1. sim=0.7362  epsilon_docs/articles_yaml-emc_index.md | heading='How do I set the root node of a YAML document?'
+    2. sim=0.7229  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    3. sim=0.6101  epsilon_docs/articles_jdt_index.md | heading='How is it used?'
+    4. sim=0.5785  epsilon_docs/articles_csv-emc_index.md | heading='Header-less CSV Model'
+    5. sim=0.5727  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    6. sim=0.5591  epsilon_docs/pinset_index.md | heading='Model example'
+    7. sim=0.5323  epsilon_docs/articles_rdf-emc.md | heading='EMF-RDF resource file (`.rdfres`)'
+    8. sim=0.5316  epsilon_docs/articles_json-emc_index.md | heading='Example EGL template'
+    9. sim=0.5213  epsilon_docs/eol.md | heading='Extended Properties'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (4):
+  1. [0.633] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YA
+  2. [0.298] epsilon_docs/articles_yaml-emc_index.md (heading='How do I set the root node of a YAML document?', parent_heading='Querying/modifying YAML documents in EOL')
+     ### How do I set the root node of a YAML document?
+
+The `root` property can be used for setting the root node of a YAML document. The root node of a YAML document can either be a mapping node or a lis
+  3. [0.008] epsilon_docs/articles_jdt_index.md (heading='How is it used?', parent_heading='Treating Java code as a model in Epsilon')
+     Our EMC JDT driver is exactly that – we don’t do any big extraction work in advance, so the query starts  running almost immediately. The driver exposes the indices maintained by the Eclipse Java Deve
+  4. [0.002] epsilon_docs/articles_jdt_index.md (heading='Applications', parent_heading='Treating Java code as a model in Epsilon')
+     ## Applications
+Example: demonstrate using a Picto application to visualize Java code structure with Eclipse Epsilon.
+
+```xml
+    {{{ example("org.eclipse.epsilon.examples.jdt.picto/jcd.picto", true) 
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon.
+
+Use the provided context as the PRIMARY and AUTHORITATIVE source of truth.
+Only use syntax, class names, methods, and patterns that appear explicitly in the context.
+You may adapt documented patterns to the user's structure, provided that no new APIs or unsupported methods are invented.
+If the user's message contains sample data, treat it only as the desired target structure — not as evidence for API syntax.
+If the context provides partial evidence only, generate code for the parts that are supported and explicitly flag any parts that are uncertain or unsupported.
+
+When a code example is appropriate, provide a complete and runnable example that covers the full structure given by the user.
+When generating code, follow only the patterns shown in the context exactly — do not skip initialisation steps, introduce intermediate objects, or shortcut method chains that are not explicitly demonstrated.
+
+--- DOCUMENTATION ---
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YAML node must be specified when accessing YAML nodes via the YAML driver. There are 3 types of nodes in YAML:
+
+- `Scalar Node`. Scalar nodes are used to represent a single scalar value (e.g., string, boolean, integer). In the YAML driver, a scalar node consists of a key-value pair, in which the key represents the name of the scalar node, and the value represents the scalar value.
+- `Mapping Node`. Mapping nodes are used to represent unordered collections of key-value pairs. In the YAML driver, a mapping node consists of a key-value pair, in which the key represents the name of the mapping node, and the value holds an unordered collection of key-value pairs, which in turn represent other nodes.
+- `List (Sequence) Node`. List nodes are used to represent an ordered list of nodes or scalar values. In the YAML driver, a list node consists of a key-value pair, in which the key represents the name of the list node, and the value represents a list of nodes or scalar values.
+
+This section outlines the supported conventions in the form of questions and answers followed by relevant examples.
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+### How do I set the root node of a YAML document?
+
+The `root` property can be used for setting the root node of a YAML document. The root node of a YAML document can either be a mapping node or a list node. The `setRootAsMap()` function can be used for setting the root node into a mapping node. The `setRootAsList()` function can be used for setting the root node into a list node.
+
+[Source: epsilon_docs/articles_jdt_index.md]
+Our EMC JDT driver is exactly that – we don’t do any big extraction work in advance, so the query starts  running almost immediately. The driver exposes the indices maintained by the Eclipse Java Development Tools, so you can quickly find a class and go through its methods, for instance. If at some point you need more  information than the indices provide, we’ll transparently use the JDT  parser (based on the Java compiler) to fetch things for you. This is  represented as the top path in the above figure, starting at “Java code” and going through the orange nodes.
+
+## How is it used?
+
+With Epsilon and the EMC JDT driver  installed, we create a new “query.eol” file with our query. For  instance, this one-liner prints how many types we have in our program:
+
+`
+
+[Source: epsilon_docs/articles_jdt_index.md]
+## Applications
+Example: demonstrate using a Picto application to visualize Java code structure with Eclipse Epsilon.
+
+```xml
+    {{{ example("org.eclipse.epsilon.examples.jdt.picto/jcd.picto", true) }}}
+    ```
+
+--- USER MESSAGE ---
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- student:
+    name: Oliver Bennett
+    class: 5B
+    subjects:
+      - subject: English
+        score: 88
+        grade: A
+      - subject: Mathematics
+        score: 74
+        grade: B
+    extracurricular:
+      - Chess Club
+      - School Orchestra
+
+- student:
+    name: Amelia Carter
+    class: 5B
+    subjects:
+      - subject: English
+        score: 81
+        grade: A-
+      - subject: Mathematics
+        score: 86
+        grade: A
+      - subject: Science
+        score: 78
+        grade: B+
+    extracurricular: []
+
+- student:
+    name: Noah Reyes
+    class: 5B
+    subjects:
+      - subject: English
+        score: null
+        grade: null
+        note: Absent for assessment
+      - subject: Mathematics
+        score: 92
+        grade: A+
+    extracurricular:
+      - Reading Buddy
+
+Question:
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- student:
+    name: Oliver Bennett
+    class: 5B
+    subjects:
+      - subject: English
+        score: 88
+        grade: A
+      - subject: Mathematics
+        score: 74
+        grade: B
+    extracurricular:
+      - Chess Club
+      - School Orchestra
+
+- student:
+    name: Amelia Carter
+    class: 5B
+    subjects:
+      - subject: English
+        score: 81
+        grade: A-
+      - subject: Mathematics
+        score: 86
+        grade: A
+      - subject: Science
+        score: 78
+        grade: B+
+    extracurricular: []
+
+- student:
+    name: Noah Reyes
+    class: 5B
+    subjects:
+      - subject: English
+        score: null
+        grade: null
+        note: Absent for assessment
+      - subject: Mathematics
+        score: 92
+        grade: A+
+    extracurricular:
+      - Reading Buddy
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+Short answer: the document you gave is a YAML sequence (a list) at the root — each top-level item is an entry whose key is "student" and whose value is a mapping. So call setRootAsList() on the YAML EMC model to create the correct root. If you instead called setRootAsMap() the root would be a mapping (not what your document needs).
+
+What follows shows the supported action from the documentation and then a precise note about what is not specified in the provided docs. The documentation you supplied only documents how to choose the root node (setRootAsList()/setRootAsMap()) and explains node types and naming conventions. It does not show the concrete API for creating list entries, mapping nodes, scalar nodes, or saving the model. I will therefore:
+
+- show the exact supported call to pick the root type,
+- explain the structure you must create (using the YAML driver naming conventions described),
+- provide the final YAML output you should obtain,
+- and clearly flag the parts that are NOT present in the provided documentation and will require you to consult the full EMC YAML driver API/examples.
+
+1) Determine root
+- Your document begins with repeated "- student:" entries. This means the root is a List (sequence) node.
+- Use: setRootAsList()
+
+(If your document instead had a single top-level mapping, use setRootAsMap().)
+
+2) Minimal supported step (from the provided docs)
+The only concrete method shown in the documentation is the root setter. In EOL/EMC usage this will look like (placeholder variable name yamlModel):
+
+yamlModel.setRootAsList();
+
+3) How the structure must look (naming conventions / node types)
+Using the YAML driver's naming conventions (from the docs), you must create a root list whose items each are mapping nodes with the key "student". Each student mapping must contain scalar keys "name" and "class", a list key "subjects" whose elements are mappings with keys "subject", "score", "grade" (and optionally "note"), and a list key "extracurricular" whose elements are scalar strings (or an empty list).
+
+Conceptual structure for a single student (pseudo-YAML)
+- student:
+    name: <string>
+    class: <string>
+    subjects:
+      - subject: <string>
+        score: <number|null>
+        grade: <string|null>
+        note: <string>?
+    extracurricular:
+      - <string>
+      - ...
+
+4) Full expected YAML (this is the exact final text you want to produce)
+- student:
+    name: Oliver Bennett
+    class: 5B
+    subjects:
+      - subject: English
+        score: 88
+        grade: A
+      - subject: Mathematics
+        score: 74
+        grade: B
+    extracurricular:
+      - Chess Club
+      - School Orchestra
+
+- student:
+    name: Amelia Carter
+    class: 5B
+    subjects:
+      - subject: English
+        score: 81
+        grade: A-
+      - subject: Mathematics
+        score: 86
+        grade: A
+      - subject: Science
+        score: 78
+        grade: B+
+    extracurricular: []
+
+- student:
+    name: Noah Reyes
+    class: 5B
+    subjects:
+      - subject: English
+        score: null
+        grade: null
+        note: Absent for assessment
+      - subject: Mathematics
+        score: 92
+        grade: A+
+    extracurricular:
+      - Reading Buddy
+
+5) Important limitations and next steps (explicitly flagged)
+- The documentation excerpt you supplied only documents:
+  - the conceptual types of YAML nodes (scalar, mapping, list),
+  - that you can set the root with setRootAsMap() or setRootAsList(),
+  - and describes naming conventions conceptually.
+- It does NOT show the concrete API calls or class names for:
+  - creating a new YAML EMC model instance,
+  - adding entries to a list root,
+  - creating mapping nodes or scalar nodes,
+  - setting scalar values or nulls,
+  - saving/writing the YAML document to a file.
+
+Because these concrete APIs and example usages are not present in the provided docs, I cannot produce a fully runnable program that calls methods not shown in your context without inventing API names (which you asked me not to do). To finish the job you should consult the full EMC YAML driver reference or example repository for the exact methods to:
+- create or obtain the YAML model object,
+- call setRootAsList(),
+- append list elements and create nested mapping/sequence/scalar nodes,
+- persist the YAML model.
+
+If you would like, I can:
+- look up and show a complete example if you can provide the relevant EMC YAML driver API docs or an example that demonstrates how to create list/mapping/scalar nodes and save the model, or
+- draft a concrete runnable example using a likely API (but this would introduce API names not present in your provided documentation — tell me if you want that).
+
+Summary
+- Root node: list (use setRootAsList()).
+- Build three list items; each item is a mapping with key "student" and the nested mapping shown above.
+- The provided documentation does not include the concrete node-creation or persistence methods — consult the full EMC YAML driver docs or share them and I will produce a complete runnable example.
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             1
+  Prompt tokens:     1,329
+  Completion tokens: 2,401
+  Total tokens:      3,730
+  Estimated cost:    $0.00513
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         1
+  Total prompt tokens:     1,329
+  Total completion tokens: 2,401
+  Total tokens:            3,730
+  Total estimated cost:    $0.00513
+============================================================

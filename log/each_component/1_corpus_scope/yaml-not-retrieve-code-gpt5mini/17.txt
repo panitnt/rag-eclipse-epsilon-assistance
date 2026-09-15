@@ -1,0 +1,307 @@
+Session started: 2026-07-26 22:31:12
+Model: openai/gpt-5-mini | temperature=0
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[22:31:29]
+
+── QUESTION ──────────────────────────────────────────────
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+employee:
+  skills:
+    - Illustrator
+    - Photoshop
+    - ArtiosCAD
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+  - EMC YAML Driver create YAML document programmatically Eclipse Epsilon example
+  - Epsilon model creation syntax using EMC YAML Driver to create root mapping or sequence node
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.'
+    1. sim=0.8581  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    2. sim=0.7882  epsilon_docs/articles_yaml-emc_index.md | heading='How do I set the root node of a YAML document?'
+    3. sim=0.7384  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    4. sim=0.7121  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    5. sim=0.6973  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    6. sim=0.6900  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    7. sim=0.6701  epsilon_docs/articles_rdf-emc.md | heading='Multi-valued features'
+    8. sim=0.6594  epsilon_docs/articles_index.md | heading='Recipes'
+    9. sim=0.6230  epsilon_docs/articles_jdt_index.md | heading='How is it used?'
+    10. sim=0.6177  epsilon_docs/articles_cdo-emc.md | heading='How to use from Java'
+    11. sim=0.6123  epsilon_docs/articles_json-emc_index.md | heading='Querying a JSON document'
+    12. sim=0.6073  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    13. sim=0.5979  epsilon_docs/emc.md | heading='Other Drivers'
+    14. sim=0.5904  epsilon_docs/index.md | heading='Languages'
+    15. sim=0.5843  epsilon_docs/articles_running-epsilon-ant-tasks-from-command-line_index.md | heading='UML'
+    16. sim=0.5782  epsilon_docs/epl.md | heading='The Epsilon Pattern Language (EPL)'
+
+  Query: 'EMC YAML Driver create YAML document programmatically Eclipse Epsilon example'
+    1. sim=0.8115  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    2. sim=0.7840  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    3. sim=0.7523  epsilon_docs/articles_running-epsilon-ant-tasks-from-command-line_index.md | heading='UML'
+    4. sim=0.7163  epsilon_docs/emc.md | heading='Other Drivers'
+    5. sim=0.7126  epsilon_docs/articles_index.md | heading='Recipes'
+    6. sim=0.7108  epsilon_docs/epl.md | heading='The Epsilon Pattern Language (EPL)'
+    7. sim=0.7107  epsilon_docs/index.md | heading='Languages'
+    8. sim=0.6904  epsilon_docs/articles_rdf-emc.md | heading='Multi-valued features'
+    9. sim=0.6793  epsilon_docs/articles_jdt_index.md | heading='How is it used?'
+    10. sim=0.6721  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    11. sim=0.6631  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    12. sim=0.6615  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    13. sim=0.6611  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    14. sim=0.6600  epsilon_docs/articles_cdo-emc.md | heading='How to use from Java'
+    15. sim=0.6487  epsilon_docs/articles_json-emc_index.md | heading='Querying a JSON document'
+    16. sim=0.5314  epsilon_docs/articles_yaml-emc_index.md | heading='How do I set the root node of a YAML document?'
+
+  Query: 'Epsilon model creation syntax using EMC YAML Driver to create root mapping or sequence node'
+    1. sim=0.7918  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    2. sim=0.7486  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    3. sim=0.7190  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    4. sim=0.7150  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    5. sim=0.7018  epsilon_docs/articles_rdf-emc.md | heading='Multi-valued features'
+    6. sim=0.6941  epsilon_docs/articles_running-epsilon-ant-tasks-from-command-line_index.md | heading='UML'
+    7. sim=0.6882  epsilon_docs/articles_index.md | heading='Recipes'
+    8. sim=0.6802  epsilon_docs/epl.md | heading='The Epsilon Pattern Language (EPL)'
+    9. sim=0.6757  epsilon_docs/index.md | heading='Languages'
+    10. sim=0.6747  epsilon_docs/emc.md | heading='Other Drivers'
+    11. sim=0.6471  epsilon_docs/articles_yaml-emc_index.md | heading='How do I set the root node of a YAML document?'
+    12. sim=0.6463  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    13. sim=0.6303  epsilon_docs/articles_json-emc_index.md | heading='Querying a JSON document'
+    14. sim=0.6256  epsilon_docs/articles_cdo-emc.md | heading='How to use from Java'
+    15. sim=0.6133  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    16. sim=0.6066  epsilon_docs/articles_jdt_index.md | heading='How is it used?'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (6):
+  1. [0.989] epsilon_docs/articles_yaml-emc_index.md (heading='How can I create a YAML document from scratch?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## How can I create a YAML document from scratch?
+Example: create a YAML document from scratch by building and appending MappingNode, ScalarNode, and ListNode elements.
+Keywords: setRootAsList, getRoo
+  2. [0.946] epsilon_docs/articles_yaml-emc_index.md (heading='How do I set the root node of a YAML document?', parent_heading='Querying/modifying YAML documents in EOL')
+     ### How do I set the root node of a YAML document?
+
+The `root` property can be used for setting the root node of a YAML document. The root node of a YAML document can either be a mapping node or a lis
+  3. [0.684] epsilon_docs/articles_index.md (heading='Recipes', parent_heading='Epsilon Developers')
+     - [Scripting XML documents using Epsilon](plain-xml/index.md): In this article we demonstrate how you can create, query and modify plain standalone XML documents (i.e. no XSD/DTD needed) in Epsilon pr
+  4. [0.643] epsilon_docs/articles_yaml-emc_index.md (heading='Querying a YAML document', parent_heading='Scripting YAML documents using Epsilon')
+     # Scripting YAML documents using Epsilon
+ 
+In this article we demonstrate how you can create, query and modify YAML documents in Epsilon programs using the YAML driver. All the examples in this articl
+  5. [0.532] epsilon_docs/emc.md (heading='Other Drivers', parent_heading='EMC Drivers')
+     ### CSV / Excel / JSON / XML / YAML
+
+For quick and dirty metamodel-less modelling, Epsilon also supports [CSV files](../articles/csv-emc), [Excel spreadsheets](../articles/excel), [JSON documents](../
+  6. [0.275] epsilon_docs/articles_developing-a-new-emc-driver_index.md (heading='Filesystem Driver', parent_heading='Developing a new EMC Driver')
+     # Developing a new EMC Driver
+
+This article demonstrates the implementation of "drivers" for Epsilon's [Model Connectivity layer](../../emc).
+
+## YAML Driver
+
+The following training session recording 
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon.
+
+Use the provided context as the PRIMARY and AUTHORITATIVE source of truth.
+Only use syntax, class names, methods, and patterns that appear explicitly in the context.
+You may adapt documented patterns to the user's structure, provided that no new APIs or unsupported methods are invented.
+If the user's message contains sample data, treat it only as the desired target structure — not as evidence for API syntax.
+If the context provides partial evidence only, generate code for the parts that are supported and explicitly flag any parts that are uncertain or unsupported.
+
+When a code example is appropriate, provide a complete and runnable example that covers the full structure given by the user.
+When generating code, follow only the patterns shown in the context exactly — do not skip initialisation steps, introduce intermediate objects, or shortcut method chains that are not explicitly demonstrated.
+
+--- DOCUMENTATION ---
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## How can I create a YAML document from scratch?
+Example: create a YAML document from scratch by building and appending MappingNode, ScalarNode, and ListNode elements.
+Keywords: setRootAsList, getRoot, .value, addRows, new MappingNode, new ScalarNode, residentNode, postcodeNode, appendNode, industryNode, new ListNode, projectsNode, skillsNode
+
+```eol
+YAMLDoc.setRootAsList();
+var root = YAMLDoc.getRoot();
+root.value.addRows(2);
+var rootFirstRow = root.value.at(0);
+var rootSecondRow = root.value.at(1);
+
+var addressNode1 = new MappingNode("address");
+var countryNode1 = new ScalarNode("country", "England");
+var residentNode = new ScalarNode("resident", true);
+var postcodeNode = new ScalarNode("postcode", "M1 1AG");
+addressNode1.value.appendNode(countryNode1);
+addressNode1.value.appendNode(residentNode);
+addressNode1.value.appendNode(postcodeNode);
+
+var employeeIdNode1 = new ScalarNode("employeeId", "14623");
+var fullnameNode1 = new ScalarNode("fullname", "Michael Davidson");
+var roleNode1 = new ScalarNode("role", "Consultant");
+
+var industryNode = new ListNode("industry", 3);
+industryNode.value =  Sequence{"IoT", "smart factories", "signal analytics"};
+
+var projectsNode = new ListNode("projects", 2);
+var nameNode1 = new ScalarNode("name", "SmartAutomation");
+var nameNode2 = new ScalarNode("name", "FactoryAnalytics");
+var budgetNode1 = new ScalarNode("budget", 25000);
+var budgetNode2 = new ScalarNode("budget", 20000);
+projectsNode.value.at(0).appendNode(nameNode1);
+projectsNode.value.at(0).appendNode(budgetNode1);
+projectsNode.value.at(1).appendNode(nameNode2);
+projectsNode.value.at(1).appendNode(budgetNode2);
+
+var addressNode2 = new MappingNode("address");
+var countryNode2 = new ScalarNode("country", "Germany");
+addressNode2.value.appendNode(countryNode2);
+
+var employeeIdNode2 = new ScalarNode("employeeId", "16431");
+var fullnameNode2 = new ScalarNode("fullname", "Arnold Wagner");
+var roleNode2 = new ScalarNode("role", "HR");
+
+var skillsNode = new ListNode("skills", 2);
+skillsNode.value =  Sequence{"communication", "coaching"};
+
+rootFirstRow.appendNode(employeeIdNode1);
+rootFirstRow.appendNode(addressNode1);
+rootFirstRow.appendNode(fullnameNode1);
+rootFirstRow.appendNode(roleNode1);
+rootFirstRow.appendNode(industryNode);
+rootFirstRow.appendNode(projectsNode);
+
+rootSecondRow.appendNode(employeeIdNode2);
+rootSecondRow.appendNode(addressNode2);
+rootSecondRow.appendNode(fullnameNode2);
+rootSecondRow.appendNode(roleNode2);
+rootSecondRow.appendNode(skillsNode);
+```
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+### How do I set the root node of a YAML document?
+
+The `root` property can be used for setting the root node of a YAML document. The root node of a YAML document can either be a mapping node or a list node. The `setRootAsMap()` function can be used for setting the root node into a mapping node. The `setRootAsList()` function can be used for setting the root node into a list node.
+
+[Source: epsilon_docs/articles_index.md]
+- [Scripting XML documents using Epsilon](plain-xml/index.md): In this article we demonstrate how you can create, query and modify plain standalone XML documents (i.e. no XSD/DTD needed) in Epsilon programs using the PlainXML driver.
+- [Scripting XML documents that conform to an XSD schema using Epsilon](xsd-xml): In this article we demonstrate how you can create, query and modify XML documents backed by an XSD schema in Epsilon.
+- [Scripting YAML documents using Epsilon](yaml-emc/index.md): This article demonstrates how you can query and modify YAML documents with Epsilon programs using the YAML driver.
+- [Scripting JSON documents using Epsilon](json-emc/index.md): This article shows how you can create, query and modify JSON documents with Epsilon programs using the JSON driver.
+- [Scripting CSV files using Epsilon](csv-emc/index.md): This article demonstrates how you can query CSV files with Epsilon programs using the CSV driver.
+- [Scripting Excel spreadsheets using Epsilon](excel/index.md): In this article we demonstrate how you can create, query and modify Excel spreadsheets in Epsilon programs.
+- [Scripting HTML documents using Epsilon](html/index.md): In this article we demonstrate how you can create, query and modify HTML documents in Epsilon programs using the HTML driver.
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+# Scripting YAML documents using Epsilon
+ 
+In this article we demonstrate how you can create, query and modify YAML documents in Epsilon programs using the YAML driver. All the examples in this article demonstrate using EOL to script YAML documents. However, it's worth stressing that YAML documents are supported throughout Epsilon. Therefore, you can use Epsilon to (cross-)validate, transform (to other models – XML, CSV or EMF-based, or to text), compare and merge your YAML documents.
+
+<iframe width="90%" height="494" src="https://www.youtube.com/embed/TF0fgghP938" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Querying a YAML document
+ 
+We use the following `employees.yaml` as a base for demonstrating the EOL syntax for querying YAML documents.
+
+[Source: epsilon_docs/emc.md]
+### CSV / Excel / JSON / XML / YAML
+
+For quick and dirty metamodel-less modelling, Epsilon also supports [CSV files](../articles/csv-emc), [Excel spreadsheets](../articles/excel), [JSON documents](../articles/json-emc), [plain XML documents](../articles/plain-xml), and [YAML files](../articles/yaml-emc).
+
+### Eclipse Hawk
+
+[Hawk](https://www.eclipse.org/hawk) is an Eclipse project that provides tools for monitoring, indexing and querying *repositories* (i.e. local folders, Eclipse workspaces, Git/SVN repositories) containing models. Hawk provides an EMC driver through which model indices can be queried with Epsilon languages.
+
+### Other Drivers
+
+There are also less mature/well-documented drivers for Epsilon for tools and formats such as:
+
+- [ArgoUML](https://github.com/epsilonlabs/emc-argouml)
+- [Connected Data Objects (CDO)](https://github.com/epsilonlabs/emc-cdo)
+- [Eclipse C/C++ Development Tools](https://github.com/epsilonlabs/emc-cdt)
+- [Eclipse Java Development Tools](https://github.com/epsilonlabs/emc-jdt)
+- [MagicDraw / Cameo Systems Modeler](https://github.com/epsilonlabs/emc-cameo)
+- [MetaEdit+](https://github.com/epsilonlabs/emc-metaedit)
+- [NeoEMF](https://github.com/gdaniel/emc-neoemf)
+- [PTC Integrity Modeller](https://github.com/epsilonlabs/emc-ptcim)
+- [Relational Databases (JDBC)](https://github.com/epsilonlabs/emc-jdbc/)
+
+These drivers have not had much external use historically, but if you're interested in them, please [give us a shout](../../forum).
+
+[Source: epsilon_docs/articles_developing-a-new-emc-driver_index.md]
+# Developing a new EMC Driver
+
+This article demonstrates the implementation of "drivers" for Epsilon's [Model Connectivity layer](../../emc).
+
+## YAML Driver
+
+The following training session recording and deck of slides demonstrate the implementation of [Epsilon's YAML driver](../yaml-emc). The complete source-code is located in [Epsilon's Git repository](https://github.com/eclipse-epsilon/epsilon/tree/main/plugins/org.eclipse.epsilon.emc.yaml).
+
+<iframe src="https://www.youtube.com/embed/M0nvnhSF6Y0" width="100%" height="485" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen></iframe> <div style="margin-bottom:15px"></div>
+
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/yc9uUXElc1Zbac" width="100%" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:15px"></div>
+
+## CSV Pro Driver
+
+The slides below demonstrate the implementation of an alternative driver for CSV files, located under the [`examples` folder of Epsilon's repository](https://github.com/eclipse-epsilon/epsilon/tree/main/examples/org.eclipse.epsilon.emc.csvpro).
+
+--- USER MESSAGE ---
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+employee:
+  skills:
+    - Illustrator
+    - Photoshop
+    - ArtiosCAD
+
+Question:
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+employee:
+  skills:
+    - Illustrator
+    - Photoshop
+    - ArtiosCAD
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+The top-level node in your YAML is a mapping (a single mapping entry "employee"), so you should set the document root as a map (setRootAsMap()). Below is a complete EOL example — following the patterns from the documentation — that builds the YAML structure in memory:
+
+EOL script (create the document in memory)
+
+YAMLDoc.setRootAsMap();
+var root = YAMLDoc.getRoot();
+
+var employeeNode = new MappingNode("employee");
+
+var skillsNode = new ListNode("skills", 3);
+skillsNode.value = Sequence{"Illustrator", "Photoshop", "ArtiosCAD"};
+
+employeeNode.value.appendNode(skillsNode);
+
+root.appendNode(employeeNode);
+
+Notes:
+- This follows the documented patterns: setRootAsMap(), getRoot(), new MappingNode(...), new ListNode(...), assigning a Sequence to the ListNode.value, and appendNode(...).
+- The documentation examples show creating the in-memory YAML structure but do not show a specific API for writing/saving the YAML document to disk. If you need help with saving/exporting the YAMLDoc instance to a file, tell me how you obtain the YAMLDoc instance (or which driver API you are using to persist it) and I will indicate the supported approach if present in the API.
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             2
+  Prompt tokens:     2,557
+  Completion tokens: 2,211
+  Total tokens:      4,768
+  Estimated cost:    $0.00506
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         2
+  Total prompt tokens:     2,557
+  Total completion tokens: 2,211
+  Total tokens:            4,768
+  Total estimated cost:    $0.00506
+============================================================

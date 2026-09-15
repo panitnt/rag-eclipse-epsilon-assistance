@@ -1,0 +1,1170 @@
+Session started: 2026-08-02 22:23:15
+Model: openai/gpt-5-mini | temperature=0
+RETRIEVAL_MODE=hybrid (BAAI/bge-m3 dense + BM25 sparse, Qdrant fusion), USE_QUERY_EXPANSION=True
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[22:23:22]
+
+── QUESTION ──────────────────────────────────────────────
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- restaurant:
+    id: REST-00221
+    name: Ember & Spice
+    cuisine: Modern Southeast Asian Fusion
+    priceRange: "££££"
+    currency: GBP
+    address: "12 Charlotte Street, London, W1T 2NE"
+    openingHours:
+      Mon: closed
+      Tue-Thu: "12:00-15:00, 18:00-22:30"
+      Fri-Sat: "12:00-15:30, 18:00-23:00"
+      Sun: "13:00-21:00"
+    serviceCharge: 0.125
+
+  allergens:
+    - gluten
+    - crustaceans
+    - eggs
+    - fish
+    - peanuts
+    - soya
+    - milk
+    - nuts
+    - celery
+    - mustard
+    - sesame
+    - sulphites
+    - lupin
+    - molluscs
+
+  dietaryIcons:
+    VG: Vegan
+    V: Vegetarian
+    GF: Gluten-Free
+    DF: Dairy-Free
+    H: Halal
+    N: Contains Nuts
+
+  menu:
+    sections:
+      - id: S01
+        name: Small Plates
+        nameLocal:
+          th: "อาหารจานเล็ก"
+          zh: "小食"
+        items:
+          - id: IT-101
+            name: Betel Leaf Bites
+            description: Wild betel leaf, tiger prawn, toasted coconut, lime, bird's eye chilli
+            price: 12.50
+            dietary:
+              - GF
+              - DF
+            allergens:
+              - crustaceans
+              - fish
+            popular: true
+            portionSize: 4 pieces
+
+          - id: IT-102
+            name: Smoked Duck Salad
+            description: Confit duck, green mango, shallot, mint, tamarind dressing, crushed peanuts
+            price: 14.00
+            dietary:
+              - GF
+              - DF
+            allergens:
+              - peanuts
+              - sesame
+              - fish
+            popular: false
+            portionSize: null
+
+          - id: IT-103
+            name: Crispy Tofu Skewers
+            description: Silken tofu, satay glaze, cucumber relish, sesame
+            price: 9.50
+            dietary:
+              - VG
+              - GF
+            allergens:
+              - soya
+              - peanuts
+              - sesame
+            popular: false
+
+      - id: S02
+        name: Mains
+        nameLocal:
+          th: "อาหารจานหลัก"
+          zh: "主菜"
+        items:
+          - id: IT-201
+            name: Massaman Lamb Shank
+            description: 12-hour braised lamb, massaman curry, roti, pickled shallots
+            price: 32.00
+            dietary:
+              - H
+            allergens:
+              - gluten
+              - peanuts
+              - milk
+            modifierGroups:
+              - name: Spice Level
+                required: true
+                options:
+                  - label: Mild
+                    priceDelta: 0
+                  - label: Medium
+                    priceDelta: 0
+                  - label: Hot
+                    priceDelta: 0
+                  - label: Extra Hot
+                    priceDelta: 0
+
+              - name: Side
+                required: false
+                options:
+                  - label: Steamed Jasmine Rice
+                    priceDelta: 0
+                  - label: Coconut Rice
+                    priceDelta: 1.50
+                  - label: Roti (2 pcs)
+                    priceDelta: 2.00
+
+          - id: IT-202
+            name: Sea Bass Laksa
+            description: Seabass fillet, laksa broth, rice vermicelli, prawns, egg, bean sprouts, chilli oil
+            price: 28.00
+            dietary:
+              - GF
+              - DF
+            allergens:
+              - fish
+              - crustaceans
+              - eggs
+              - sesame
+            modifierGroups:
+              - name: Protein
+                required: false
+                options:
+                  - label: As described (Sea Bass + Prawns)
+                    priceDelta: 0
+                  - label: Vegan (Tofu + King Oyster Mushroom)
+                    priceDelta: -2.00
+                    dietary:
+                      - VG
+
+          - id: IT-203
+            name: Wagyu Beef Rendang
+            description: Wagyu cheek, rendang paste, kaffir lime, coconut, crispy shallots, steamed rice
+            price: 38.00
+            dietary:
+              - GF
+              - DF
+              - H
+            allergens:
+              - peanuts
+              - fish
+              - sesame
+            popular: true
+
+      - id: S03
+        name: Desserts
+        nameLocal:
+          th: "ของหวาน"
+          zh: "甜品"
+        items:
+          - id: IT-301
+            name: Pandan Crème Brûlée
+            description: Silky pandan-infused custard, caramelised sugar, sesame tuile
+            price: 10.00
+            dietary:
+              - GF
+              - V
+            allergens:
+              - eggs
+              - milk
+              - sesame
+
+          - id: IT-302
+            name: Mango Sticky Rice
+            description: Glutinous rice, fresh Alphonso mango, coconut cream, crispy mung beans
+            price: 9.00
+            dietary:
+              - VG
+              - GF
+              - DF
+            allergens: []
+            popular: true
+
+  drinks:
+    nonAlcoholic:
+      - name: Thai Iced Tea
+        price: 5.50
+        dietary:
+          - V
+
+      - name: Pandan Lemonade
+        price: 5.00
+        dietary:
+          - VG
+          - GF
+
+    wine:
+      byGlass:
+        - name: "Picpoul de Pinet, Domaine de Thau 2022"
+          style: white_dry
+          region: Languedoc, France
+          glass: 9.50
+          bottle: 38.00
+
+      byBottle:
+        - name: "Cloudy Bay Sauvignon Blanc 2023"
+          style: white_dry
+          region: Marlborough, New Zealand
+          bottle: 62.00
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - How can I programmatically create this YAML document from scratch using the EMC YAML Driver in Eclipse Epsilon?
+  - Eclipse Epsilon EMC YAML Driver create YAML document programmatically root mapping vs sequence
+  - Epsilon YAML driver example build nested mappings and sequences programmatically
+
+── HYBRID POOL (before rerank, before sibling expansion) ──
+  1. [0.700] epsilon_docs/articles_yaml-emc_index.md (heading='Querying a YAML document', parent_heading='Scripting YAML documents using Epsilon')
+  2. [0.625] epsilon_docs/articles_index.md (heading='Recipes', parent_heading='Epsilon Developers')
+  3. [0.500] epsilon_docs/emc.md (heading='Other Drivers', parent_heading='EMC Drivers')
+  4. [0.444] epsilon_docs/articles_yaml-emc_index.md (heading='How can I create a YAML document from scratch?', parent_heading='Querying/modifying YAML documents in EOL')
+  5. [0.250] epsilon_docs/articles_json-emc_index.md (heading='Querying a JSON document', parent_heading='Scripting JSON documents using Epsilon')
+  6. [0.250] epsilon_docs/articles_developing-a-new-emc-driver_index.md (heading='Filesystem Driver', parent_heading='Developing a new EMC Driver')
+  7. [0.202] epsilon_docs/articles_rdf-emc.md (heading='Multi-valued features', parent_heading='Creating a model from scratch')
+  8. [0.200] epsilon_docs/articles_yaml-emc_index.md (heading='How can I delete nodes?', parent_heading='Loading a YAML document through Java code')
+  9. [0.167] epsilon_docs/articles_rdf-emc.md (heading='Multi-valued features', parent_heading='Creating a model from scratch')
+  10. [0.143] epsilon_docs/articles_index.md (heading='Recipes', parent_heading='Epsilon Developers')
+  11. [0.234] epsilon_docs/emc.md (heading='Other Drivers', parent_heading='EMC Drivers')
+  12. [0.200] epsilon_docs/index.md (heading='Languages', parent_heading='Documentation')
+  13. [0.200] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+  14. [0.167] epsilon_docs/articles_json-emc_index.md (heading='Querying a JSON document', parent_heading='Scripting JSON documents using Epsilon')
+  15. [0.143] epsilon_docs/articles_rdf-emc.md (heading='EMF-RDF resource file (`.rdfres`)', parent_heading='Epsilon EMC driver for RDF-backed EMF models')
+  16. [0.250] epsilon_docs/articles_simulink_index.md (heading='Using the Simulink Driver from Java', parent_heading='Scripting Simulink models using Epsilon')
+  17. [0.250] epsilon_docs/articles_simulink_index.md (heading='Using the Simulink Driver from Java', parent_heading='Scripting Simulink models using Epsilon')
+  18. [0.200] epsilon_docs/articles_type-relationships-in-epsilon.md (heading='Type-Related Operations', parent_heading='Type Relationships in Epsilon')
+  19. [0.167] epsilon_docs/articles_index.md (heading='Recipes', parent_heading='Epsilon Developers')
+  20. [0.143] epsilon_docs/articles_running-epsilon-ant-tasks-from-command-line_index.md (heading='Excel', parent_heading="Running Epsilon's Ant Tasks from Command Line")
+  21. [0.143] epsilon_docs/articles_yaml-emc_index.md (heading='Querying a YAML document', parent_heading='Scripting YAML documents using Epsilon')
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'How can I programmatically create this YAML document from scratch using the EMC YAML Driver in Eclipse Epsilon?'
+    1. sim=0.7930  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    2. sim=0.7794  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    3. sim=0.7630  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    4. sim=0.7158  epsilon_docs/articles_yaml-emc_index.md | heading='How can I delete nodes?'
+    5. sim=0.7049  epsilon_docs/articles_rdf-emc.md | heading='Multi-valued features'
+    6. sim=0.7014  epsilon_docs/articles_index.md | heading='Recipes'
+    7. sim=0.6913  epsilon_docs/emc.md | heading='Other Drivers'
+    8. sim=0.6779  epsilon_docs/articles_running-epsilon-ant-tasks-from-command-line_index.md | heading='Excel'
+    9. sim=0.6730  epsilon_docs/index.md | heading='Languages'
+    10. sim=0.6721  epsilon_docs/articles_simulink_index.md | heading='Using the Simulink Driver from Java'
+    11. sim=0.6524  epsilon_docs/articles_type-relationships-in-epsilon.md | heading='Type-Related Operations'
+    12. sim=0.6517  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    13. sim=0.6277  epsilon_docs/articles_json-emc_index.md | heading='Querying a JSON document'
+    14. sim=0.4609  epsilon_docs/articles_rdf-emc.md | heading='EMF-RDF resource file (`.rdfres`)'
+
+  Query: 'Eclipse Epsilon EMC YAML Driver create YAML document programmatically root mapping vs sequence'
+    1. sim=0.7662  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    2. sim=0.7360  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    3. sim=0.7037  epsilon_docs/index.md | heading='Languages'
+    4. sim=0.6953  epsilon_docs/emc.md | heading='Other Drivers'
+    5. sim=0.6792  epsilon_docs/articles_running-epsilon-ant-tasks-from-command-line_index.md | heading='Excel'
+    6. sim=0.6754  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    7. sim=0.6703  epsilon_docs/articles_index.md | heading='Recipes'
+    8. sim=0.6688  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    9. sim=0.6686  epsilon_docs/articles_type-relationships-in-epsilon.md | heading='Type-Related Operations'
+    10. sim=0.6557  epsilon_docs/articles_yaml-emc_index.md | heading='How can I delete nodes?'
+    11. sim=0.6534  epsilon_docs/articles_rdf-emc.md | heading='Multi-valued features'
+    12. sim=0.6445  epsilon_docs/articles_simulink_index.md | heading='Using the Simulink Driver from Java'
+    13. sim=0.6121  epsilon_docs/articles_json-emc_index.md | heading='Querying a JSON document'
+    14. sim=0.5259  epsilon_docs/articles_rdf-emc.md | heading='EMF-RDF resource file (`.rdfres`)'
+
+  Query: 'Epsilon YAML driver example build nested mappings and sequences programmatically'
+    1. sim=0.7684  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    2. sim=0.7372  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    3. sim=0.6993  epsilon_docs/articles_running-epsilon-ant-tasks-from-command-line_index.md | heading='Excel'
+    4. sim=0.6902  epsilon_docs/articles_simulink_index.md | heading='Using the Simulink Driver from Java'
+    5. sim=0.6889  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    6. sim=0.6812  epsilon_docs/articles_type-relationships-in-epsilon.md | heading='Type-Related Operations'
+    7. sim=0.6795  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    8. sim=0.6696  epsilon_docs/index.md | heading='Languages'
+    9. sim=0.6598  epsilon_docs/articles_rdf-emc.md | heading='Multi-valued features'
+    10. sim=0.6583  epsilon_docs/articles_index.md | heading='Recipes'
+    11. sim=0.6399  epsilon_docs/emc.md | heading='Other Drivers'
+    12. sim=0.6227  epsilon_docs/articles_json-emc_index.md | heading='Querying a JSON document'
+    13. sim=0.6025  epsilon_docs/articles_yaml-emc_index.md | heading='How can I delete nodes?'
+    14. sim=0.4848  epsilon_docs/articles_rdf-emc.md | heading='EMF-RDF resource file (`.rdfres`)'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (7):
+  1. [0.908] epsilon_docs/articles_yaml-emc_index.md (heading='Querying a YAML document', parent_heading='Scripting YAML documents using Epsilon')
+     # Scripting YAML documents using Epsilon
+ 
+In this article we demonstrate how you can create, query and modify YAML documents in Epsilon programs using the YAML driver. All the examples in this articl
+  2. [0.798] epsilon_docs/articles_yaml-emc_index.md (heading='How can I create a YAML document from scratch?', parent_heading='Querying/modifying YAML documents in EOL')
+     ### How can I create a YAML document from scratch?
+
+The following code can be used for creating the `employees.yaml` file programmatically.
+  3. [0.666] epsilon_docs/articles_yaml-emc_index.md (heading='How can I delete nodes?', parent_heading='Loading a YAML document through Java code')
+     ## Adding a YAML document to your launch configuration
+ 
+To add a YAML document to your Epsilon launch configuration, you need to select "YAML Document" from the list of available model types.
+
+![](se
+  4. [0.627] epsilon_docs/articles_index.md (heading='Recipes', parent_heading='Epsilon Developers')
+     - [Scripting XML documents using Epsilon](plain-xml/index.md): In this article we demonstrate how you can create, query and modify plain standalone XML documents (i.e. no XSD/DTD needed) in Epsilon pr
+  5. [0.347] epsilon_docs/articles_developing-a-new-emc-driver_index.md (heading='Filesystem Driver', parent_heading='Developing a new EMC Driver')
+     # Developing a new EMC Driver
+
+This article demonstrates the implementation of "drivers" for Epsilon's [Model Connectivity layer](../../emc).
+
+## YAML Driver
+
+The following training session recording 
+  6. [0.296] epsilon_docs/articles_yaml-emc_index.md (heading='How do I set the root node of a YAML document?', parent_heading='Querying/modifying YAML documents in EOL')
+     ### How do I set the root node of a YAML document?
+
+The `root` property can be used for setting the root node of a YAML document. The root node of a YAML document can either be a mapping node or a lis
+  7. [0.141] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YA
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon.
+
+Use the provided context as the PRIMARY and AUTHORITATIVE source of truth.
+Only use syntax, class names, methods, and patterns that appear explicitly in the context.
+You may adapt documented patterns to the user's structure, provided that no new APIs or unsupported methods are invented.
+If the user's message contains sample data, treat it only as the desired target structure — not as evidence for API syntax.
+If the context provides partial evidence only, generate code for the parts that are supported and explicitly flag any parts that are uncertain or unsupported.
+
+When a code example is appropriate, provide a complete and runnable example that covers the full structure given by the user.
+When generating code, follow only the patterns shown in the context exactly — do not skip initialisation steps, introduce intermediate objects, or shortcut method chains that are not explicitly demonstrated.
+
+--- DOCUMENTATION ---
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+# Scripting YAML documents using Epsilon
+ 
+In this article we demonstrate how you can create, query and modify YAML documents in Epsilon programs using the YAML driver. All the examples in this article demonstrate using EOL to script YAML documents. However, it's worth stressing that YAML documents are supported throughout Epsilon. Therefore, you can use Epsilon to (cross-)validate, transform (to other models – XML, CSV or EMF-based, or to text), compare and merge your YAML documents.
+
+<iframe width="90%" height="494" src="https://www.youtube.com/embed/TF0fgghP938" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Querying a YAML document
+ 
+We use the following `employees.yaml` as a base for demonstrating the EOL syntax for querying YAML documents.
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+### How can I create a YAML document from scratch?
+
+The following code can be used for creating the `employees.yaml` file programmatically.
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## Adding a YAML document to your launch configuration
+ 
+To add a YAML document to your Epsilon launch configuration, you need to select "YAML Document" from the list of available model types.
+
+![](select.png)
+
+Then you can configure the details of your document (name, file etc.) in the screen that pops up. To load a YAML document that is not in the Eclipse workspace, untick the "Workspace file" check box and provide a full URI for your document (e.g. `http://api.twitter.com/followers/epsilonews.yaml` or `file:/c:/employees.yaml`).
+
+![](configure.png)
+ 
+## Loading a YAML document through Java code
+ 
+The following excerpt demonstrates using YAML models using Epsilon's Java API.
+
+[Source: epsilon_docs/articles_index.md]
+- [Scripting XML documents using Epsilon](plain-xml/index.md): In this article we demonstrate how you can create, query and modify plain standalone XML documents (i.e. no XSD/DTD needed) in Epsilon programs using the PlainXML driver.
+- [Scripting XML documents that conform to an XSD schema using Epsilon](xsd-xml): In this article we demonstrate how you can create, query and modify XML documents backed by an XSD schema in Epsilon.
+- [Scripting YAML documents using Epsilon](yaml-emc/index.md): This article demonstrates how you can query and modify YAML documents with Epsilon programs using the YAML driver.
+- [Scripting JSON documents using Epsilon](json-emc/index.md): This article shows how you can create, query and modify JSON documents with Epsilon programs using the JSON driver.
+- [Scripting CSV files using Epsilon](csv-emc/index.md): This article demonstrates how you can query CSV files with Epsilon programs using the CSV driver.
+- [Scripting Excel spreadsheets using Epsilon](excel/index.md): In this article we demonstrate how you can create, query and modify Excel spreadsheets in Epsilon programs.
+- [Scripting HTML documents using Epsilon](html/index.md): In this article we demonstrate how you can create, query and modify HTML documents in Epsilon programs using the HTML driver.
+
+[Source: epsilon_docs/articles_developing-a-new-emc-driver_index.md]
+# Developing a new EMC Driver
+
+This article demonstrates the implementation of "drivers" for Epsilon's [Model Connectivity layer](../../emc).
+
+## YAML Driver
+
+The following training session recording and deck of slides demonstrate the implementation of [Epsilon's YAML driver](../yaml-emc). The complete source-code is located in [Epsilon's Git repository](https://github.com/eclipse-epsilon/epsilon/tree/main/plugins/org.eclipse.epsilon.emc.yaml).
+
+<iframe src="https://www.youtube.com/embed/M0nvnhSF6Y0" width="100%" height="485" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen></iframe> <div style="margin-bottom:15px"></div>
+
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/yc9uUXElc1Zbac" width="100%" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:15px"></div>
+
+## CSV Pro Driver
+
+The slides below demonstrate the implementation of an alternative driver for CSV files, located under the [`examples` folder of Epsilon's repository](https://github.com/eclipse-epsilon/epsilon/tree/main/examples/org.eclipse.epsilon.emc.csvpro).
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+### How do I set the root node of a YAML document?
+
+The `root` property can be used for setting the root node of a YAML document. The root node of a YAML document can either be a mapping node or a list node. The `setRootAsMap()` function can be used for setting the root node into a mapping node. The `setRootAsList()` function can be used for setting the root node into a list node.
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YAML node must be specified when accessing YAML nodes via the YAML driver. There are 3 types of nodes in YAML:
+
+- `Scalar Node`. Scalar nodes are used to represent a single scalar value (e.g., string, boolean, integer). In the YAML driver, a scalar node consists of a key-value pair, in which the key represents the name of the scalar node, and the value represents the scalar value.
+- `Mapping Node`. Mapping nodes are used to represent unordered collections of key-value pairs. In the YAML driver, a mapping node consists of a key-value pair, in which the key represents the name of the mapping node, and the value holds an unordered collection of key-value pairs, which in turn represent other nodes.
+- `List (Sequence) Node`. List nodes are used to represent an ordered list of nodes or scalar values. In the YAML driver, a list node consists of a key-value pair, in which the key represents the name of the list node, and the value represents a list of nodes or scalar values.
+
+This section outlines the supported conventions in the form of questions and answers followed by relevant examples.
+
+--- USER MESSAGE ---
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- restaurant:
+    id: REST-00221
+    name: Ember & Spice
+    cuisine: Modern Southeast Asian Fusion
+    priceRange: "££££"
+    currency: GBP
+    address: "12 Charlotte Street, London, W1T 2NE"
+    openingHours:
+      Mon: closed
+      Tue-Thu: "12:00-15:00, 18:00-22:30"
+      Fri-Sat: "12:00-15:30, 18:00-23:00"
+      Sun: "13:00-21:00"
+    serviceCharge: 0.125
+
+  allergens:
+    - gluten
+    - crustaceans
+    - eggs
+    - fish
+    - peanuts
+    - soya
+    - milk
+    - nuts
+    - celery
+    - mustard
+    - sesame
+    - sulphites
+    - lupin
+    - molluscs
+
+  dietaryIcons:
+    VG: Vegan
+    V: Vegetarian
+    GF: Gluten-Free
+    DF: Dairy-Free
+    H: Halal
+    N: Contains Nuts
+
+  menu:
+    sections:
+      - id: S01
+        name: Small Plates
+        nameLocal:
+          th: "อาหารจานเล็ก"
+          zh: "小食"
+        items:
+          - id: IT-101
+            name: Betel Leaf Bites
+            description: Wild betel leaf, tiger prawn, toasted coconut, lime, bird's eye chilli
+            price: 12.50
+            dietary:
+              - GF
+              - DF
+            allergens:
+              - crustaceans
+              - fish
+            popular: true
+            portionSize: 4 pieces
+
+          - id: IT-102
+            name: Smoked Duck Salad
+            description: Confit duck, green mango, shallot, mint, tamarind dressing, crushed peanuts
+            price: 14.00
+            dietary:
+              - GF
+              - DF
+            allergens:
+              - peanuts
+              - sesame
+              - fish
+            popular: false
+            portionSize: null
+
+          - id: IT-103
+            name: Crispy Tofu Skewers
+            description: Silken tofu, satay glaze, cucumber relish, sesame
+            price: 9.50
+            dietary:
+              - VG
+              - GF
+            allergens:
+              - soya
+              - peanuts
+              - sesame
+            popular: false
+
+      - id: S02
+        name: Mains
+        nameLocal:
+          th: "อาหารจานหลัก"
+          zh: "主菜"
+        items:
+          - id: IT-201
+            name: Massaman Lamb Shank
+            description: 12-hour braised lamb, massaman curry, roti, pickled shallots
+            price: 32.00
+            dietary:
+              - H
+            allergens:
+              - gluten
+              - peanuts
+              - milk
+            modifierGroups:
+              - name: Spice Level
+                required: true
+                options:
+                  - label: Mild
+                    priceDelta: 0
+                  - label: Medium
+                    priceDelta: 0
+                  - label: Hot
+                    priceDelta: 0
+                  - label: Extra Hot
+                    priceDelta: 0
+
+              - name: Side
+                required: false
+                options:
+                  - label: Steamed Jasmine Rice
+                    priceDelta: 0
+                  - label: Coconut Rice
+                    priceDelta: 1.50
+                  - label: Roti (2 pcs)
+                    priceDelta: 2.00
+
+          - id: IT-202
+            name: Sea Bass Laksa
+            description: Seabass fillet, laksa broth, rice vermicelli, prawns, egg, bean sprouts, chilli oil
+            price: 28.00
+            dietary:
+              - GF
+              - DF
+            allergens:
+              - fish
+              - crustaceans
+              - eggs
+              - sesame
+            modifierGroups:
+              - name: Protein
+                required: false
+                options:
+                  - label: As described (Sea Bass + Prawns)
+                    priceDelta: 0
+                  - label: Vegan (Tofu + King Oyster Mushroom)
+                    priceDelta: -2.00
+                    dietary:
+                      - VG
+
+          - id: IT-203
+            name: Wagyu Beef Rendang
+            description: Wagyu cheek, rendang paste, kaffir lime, coconut, crispy shallots, steamed rice
+            price: 38.00
+            dietary:
+              - GF
+              - DF
+              - H
+            allergens:
+              - peanuts
+              - fish
+              - sesame
+            popular: true
+
+      - id: S03
+        name: Desserts
+        nameLocal:
+          th: "ของหวาน"
+          zh: "甜品"
+        items:
+          - id: IT-301
+            name: Pandan Crème Brûlée
+            description: Silky pandan-infused custard, caramelised sugar, sesame tuile
+            price: 10.00
+            dietary:
+              - GF
+              - V
+            allergens:
+              - eggs
+              - milk
+              - sesame
+
+          - id: IT-302
+            name: Mango Sticky Rice
+            description: Glutinous rice, fresh Alphonso mango, coconut cream, crispy mung beans
+            price: 9.00
+            dietary:
+              - VG
+              - GF
+              - DF
+            allergens: []
+            popular: true
+
+  drinks:
+    nonAlcoholic:
+      - name: Thai Iced Tea
+        price: 5.50
+        dietary:
+          - V
+
+      - name: Pandan Lemonade
+        price: 5.00
+        dietary:
+          - VG
+          - GF
+
+    wine:
+      byGlass:
+        - name: "Picpoul de Pinet, Domaine de Thau 2022"
+          style: white_dry
+          region: Languedoc, France
+          glass: 9.50
+          bottle: 38.00
+
+      byBottle:
+        - name: "Cloudy Bay Sauvignon Blanc 2023"
+          style: white_dry
+          region: Marlborough, New Zealand
+          bottle: 62.00
+
+Question:
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- restaurant:
+    id: REST-00221
+    name: Ember & Spice
+    cuisine: Modern Southeast Asian Fusion
+    priceRange: "££££"
+    currency: GBP
+    address: "12 Charlotte Street, London, W1T 2NE"
+    openingHours:
+      Mon: closed
+      Tue-Thu: "12:00-15:00, 18:00-22:30"
+      Fri-Sat: "12:00-15:30, 18:00-23:00"
+      Sun: "13:00-21:00"
+    serviceCharge: 0.125
+
+  allergens:
+    - gluten
+    - crustaceans
+    - eggs
+    - fish
+    - peanuts
+    - soya
+    - milk
+    - nuts
+    - celery
+    - mustard
+    - sesame
+    - sulphites
+    - lupin
+    - molluscs
+
+  dietaryIcons:
+    VG: Vegan
+    V: Vegetarian
+    GF: Gluten-Free
+    DF: Dairy-Free
+    H: Halal
+    N: Contains Nuts
+
+  menu:
+    sections:
+      - id: S01
+        name: Small Plates
+        nameLocal:
+          th: "อาหารจานเล็ก"
+          zh: "小食"
+        items:
+          - id: IT-101
+            name: Betel Leaf Bites
+            description: Wild betel leaf, tiger prawn, toasted coconut, lime, bird's eye chilli
+            price: 12.50
+            dietary:
+              - GF
+              - DF
+            allergens:
+              - crustaceans
+              - fish
+            popular: true
+            portionSize: 4 pieces
+
+          - id: IT-102
+            name: Smoked Duck Salad
+            description: Confit duck, green mango, shallot, mint, tamarind dressing, crushed peanuts
+            price: 14.00
+            dietary:
+              - GF
+              - DF
+            allergens:
+              - peanuts
+              - sesame
+              - fish
+            popular: false
+            portionSize: null
+
+          - id: IT-103
+            name: Crispy Tofu Skewers
+            description: Silken tofu, satay glaze, cucumber relish, sesame
+            price: 9.50
+            dietary:
+              - VG
+              - GF
+            allergens:
+              - soya
+              - peanuts
+              - sesame
+            popular: false
+
+      - id: S02
+        name: Mains
+        nameLocal:
+          th: "อาหารจานหลัก"
+          zh: "主菜"
+        items:
+          - id: IT-201
+            name: Massaman Lamb Shank
+            description: 12-hour braised lamb, massaman curry, roti, pickled shallots
+            price: 32.00
+            dietary:
+              - H
+            allergens:
+              - gluten
+              - peanuts
+              - milk
+            modifierGroups:
+              - name: Spice Level
+                required: true
+                options:
+                  - label: Mild
+                    priceDelta: 0
+                  - label: Medium
+                    priceDelta: 0
+                  - label: Hot
+                    priceDelta: 0
+                  - label: Extra Hot
+                    priceDelta: 0
+
+              - name: Side
+                required: false
+                options:
+                  - label: Steamed Jasmine Rice
+                    priceDelta: 0
+                  - label: Coconut Rice
+                    priceDelta: 1.50
+                  - label: Roti (2 pcs)
+                    priceDelta: 2.00
+
+          - id: IT-202
+            name: Sea Bass Laksa
+            description: Seabass fillet, laksa broth, rice vermicelli, prawns, egg, bean sprouts, chilli oil
+            price: 28.00
+            dietary:
+              - GF
+              - DF
+            allergens:
+              - fish
+              - crustaceans
+              - eggs
+              - sesame
+            modifierGroups:
+              - name: Protein
+                required: false
+                options:
+                  - label: As described (Sea Bass + Prawns)
+                    priceDelta: 0
+                  - label: Vegan (Tofu + King Oyster Mushroom)
+                    priceDelta: -2.00
+                    dietary:
+                      - VG
+
+          - id: IT-203
+            name: Wagyu Beef Rendang
+            description: Wagyu cheek, rendang paste, kaffir lime, coconut, crispy shallots, steamed rice
+            price: 38.00
+            dietary:
+              - GF
+              - DF
+              - H
+            allergens:
+              - peanuts
+              - fish
+              - sesame
+            popular: true
+
+      - id: S03
+        name: Desserts
+        nameLocal:
+          th: "ของหวาน"
+          zh: "甜品"
+        items:
+          - id: IT-301
+            name: Pandan Crème Brûlée
+            description: Silky pandan-infused custard, caramelised sugar, sesame tuile
+            price: 10.00
+            dietary:
+              - GF
+              - V
+            allergens:
+              - eggs
+              - milk
+              - sesame
+
+          - id: IT-302
+            name: Mango Sticky Rice
+            description: Glutinous rice, fresh Alphonso mango, coconut cream, crispy mung beans
+            price: 9.00
+            dietary:
+              - VG
+              - GF
+              - DF
+            allergens: []
+            popular: true
+
+  drinks:
+    nonAlcoholic:
+      - name: Thai Iced Tea
+        price: 5.50
+        dietary:
+          - V
+
+      - name: Pandan Lemonade
+        price: 5.00
+        dietary:
+          - VG
+          - GF
+
+    wine:
+      byGlass:
+        - name: "Picpoul de Pinet, Domaine de Thau 2022"
+          style: white_dry
+          region: Languedoc, France
+          glass: 9.50
+          bottle: 38.00
+
+      byBottle:
+        - name: "Cloudy Bay Sauvignon Blanc 2023"
+          style: white_dry
+          region: Marlborough, New Zealand
+          bottle: 62.00
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+Short answer: the top-level of your YAML is a mapping node (it has named keys: restaurant, allergens, dietaryIcons, menu, drinks). Use setRootAsMap() to make the document root a mapping node, then create mapping and sequence children for the keys shown.
+
+Below I explain the steps and give a complete, worked EOL-style recipe you can use in an Epsilon launch configuration. The only methods shown in the official docs you provided are setRootAsMap() / setRootAsList() and the root property; the YAML driver's concrete node-construction methods are not included in the snippets you gave, so the node-construction/put APIs below are presented as the typical approach and marked where the exact method names may differ in your installed driver. If you need exact Java/EOL method names you should consult the YAML driver's source (repo: https://github.com/eclipse-epsilon/epsilon/tree/main/plugins/org.eclipse.epsilon.emc.yaml) or paste the API you have and I will adapt the code precisely.
+
+1) Root node
+- Your document is a mapping node (top-level keys). So call setRootAsMap().
+
+2) High-level approach
+- setRootAsMap()
+- Obtain the root mapping object (the docs refer to a root property)
+- Create mapping children for keys like "restaurant", "dietaryIcons", "menu"
+- Create sequence nodes for lists (e.g., allergens, sections, items, drinks.nonAlcoholic, wine.byGlass)
+- Populate scalars (strings, numbers, booleans, nulls) where needed
+
+3) Example EOL script (complete recipe). This is EOL-style pseudo-code that follows the documented patterns (setRootAsMap, root). Where I must assume API names for creating mappings/lists/setting values I mark them and you should replace them with the exact names from your YAML driver if they differ.
+
+Assumptions:
+- You added a YAML Document model to your launch configuration and named it yaml (model name used in the script is yaml).
+- The YAML driver exposes:
+  - yaml.setRootAsMap()
+  - yaml.root (the root mapping)
+  - mapping/list/sequence creation and put/append operations. (These creation/put method names are typical but not shown in the provided docs; see notes below.)
+
+EOL-style script (annotated — replace unknown method names if needed):
+
+/* 1. Make the document root a mapping */
+yaml.setRootAsMap();
+
+/* 2. Access root mapping */
+root = yaml.root;             // documented in article: "root property"
+
+/*
+  3. Create and attach the top-level entries.
+  The methods createMapping(), createSequence(), put(), add() below represent
+  the typical operations you must perform. The provided docs do NOT show their
+  exact names; replace them with the YAML driver's actual API (see repo if needed).
+*/
+
+/* Create the 'restaurant' mapping */
+restaurant = yaml.createMapping();           // <--- exact constructor name may differ
+restaurant.put('id', 'REST-00221');
+restaurant.put('name', "Ember & Spice");
+restaurant.put('cuisine', "Modern Southeast Asian Fusion");
+restaurant.put('priceRange', "££££");
+restaurant.put('currency', "GBP");
+restaurant.put('address', "12 Charlotte Street, London, W1T 2NE");
+
+/* openingHours is a mapping */
+opening = yaml.createMapping();
+opening.put('Mon', 'closed');
+opening.put('Tue-Thu', "12:00-15:00, 18:00-22:30");
+opening.put('Fri-Sat', "12:00-15:30, 18:00-23:00");
+opening.put('Sun', "13:00-21:00");
+restaurant.put('openingHours', opening);
+
+/* numeric scalar */
+restaurant.put('serviceCharge', 0.125);
+
+/* attach restaurant to root */
+root.put('restaurant', restaurant);
+
+/* allergens is a sequence */
+allergens = yaml.createSequence();
+['gluten','crustaceans','eggs','fish','peanuts','soya','milk','nuts','celery','mustard','sesame','sulphites','lupin','molluscs'].forEach(a | allergens.add(a));
+root.put('allergens', allergens);
+
+/* dietaryIcons is a mapping */
+dietaryIcons = yaml.createMapping();
+dietaryIcons.put('VG','Vegan');
+dietaryIcons.put('V','Vegetarian');
+dietaryIcons.put('GF','Gluten-Free');
+dietaryIcons.put('DF','Dairy-Free');
+dietaryIcons.put('H','Halal');
+dietaryIcons.put('N','Contains Nuts');
+root.put('dietaryIcons', dietaryIcons);
+
+/* menu -> sections -> each section is a mapping with items sequence */
+menu = yaml.createMapping();
+sectionsSeq = yaml.createSequence();
+
+/* Section S01 */
+s1 = yaml.createMapping();
+s1.put('id','S01'); s1.put('name','Small Plates');
+nameLocal1 = yaml.createMapping();
+nameLocal1.put('th', "อาหารจานเล็ก"); nameLocal1.put('zh',"小食");
+s1.put('nameLocal', nameLocal1);
+/* items sequence for S01 */
+items1 = yaml.createSequence();
+
+/* item IT-101 */
+it101 = yaml.createMapping();
+it101.put('id','IT-101'); it101.put('name','Betel Leaf Bites');
+it101.put('description',"Wild betel leaf, tiger prawn, toasted coconut, lime, bird's eye chilli");
+it101.put('price', 12.50);
+it101.put('dietary', yaml.createSequence().add('GF').add('DF'));    // may need to add stepwise
+it101.put('allergens', yaml.createSequence().add('crustaceans').add('fish'));
+it101.put('popular', true);
+it101.put('portionSize','4 pieces');
+items1.add(it101);
+
+/* item IT-102 (with null portionSize) */
+it102 = yaml.createMapping();
+it102.put('id','IT-102'); it102.put('name','Smoked Duck Salad');
+it102.put('description',"Confit duck, green mango, shallot, mint, tamarind dressing, crushed peanuts");
+it102.put('price', 14.00);
+it102.put('dietary', yaml.createSequence().add('GF').add('DF'));
+it102.put('allergens', yaml.createSequence().add('peanuts').add('sesame').add('fish'));
+it102.put('popular', false);
+it102.put('portionSize', null);    // explicit null
+items1.add(it102);
+
+/* item IT-103 */
+it103 = yaml.createMapping();
+it103.put('id','IT-103'); it103.put('name','Crispy Tofu Skewers');
+it103.put('description','Silken tofu, satay glaze, cucumber relish, sesame');
+it103.put('price', 9.50);
+it103.put('dietary', yaml.createSequence().add('VG').add('GF'));
+it103.put('allergens', yaml.createSequence().add('soya').add('peanuts').add('sesame'));
+it103.put('popular', false);
+items1.add(it103);
+
+/* finish S01 */
+s1.put('items', items1);
+sectionsSeq.add(s1);
+
+/* Section S02: id/name/nameLocal */
+s2 = yaml.createMapping();
+s2.put('id','S02'); s2.put('name','Mains');
+nameLocal2 = yaml.createMapping(); nameLocal2.put('th',"อาหารจานหลัก"); nameLocal2.put('zh',"主菜");
+s2.put('nameLocal', nameLocal2);
+items2 = yaml.createSequence();
+
+/* IT-201 with modifierGroups */
+it201 = yaml.createMapping();
+it201.put('id','IT-201'); it201.put('name','Massaman Lamb Shank');
+it201.put('description','12-hour braised lamb, massaman curry, roti, pickled shallots');
+it201.put('price', 32.00);
+it201.put('dietary', yaml.createSequence().add('H'));
+it201.put('allergens', yaml.createSequence().add('gluten').add('peanuts').add('milk'));
+
+/* modifierGroups sequence */
+mgSeq = yaml.createSequence();
+/* Spice Level modifierGroup */
+mg1 = yaml.createMapping();
+mg1.put('name','Spice Level'); mg1.put('required', true);
+opts1 = yaml.createSequence();
+opts1.add(yaml.createMapping().put('label','Mild').put('priceDelta',0));
+opts1.add(yaml.createMapping().put('label','Medium').put('priceDelta',0));
+opts1.add(yaml.createMapping().put('label','Hot').put('priceDelta',0));
+opts1.add(yaml.createMapping().put('label','Extra Hot').put('priceDelta',0));
+mg1.put('options', opts1);
+mgSeq.add(mg1);
+
+/* Side modifierGroup */
+mg2 = yaml.createMapping();
+mg2.put('name','Side'); mg2.put('required', false);
+opts2 = yaml.createSequence();
+opts2.add(yaml.createMapping().put('label','Steamed Jasmine Rice').put('priceDelta',0));
+opts2.add(yaml.createMapping().put('label','Coconut Rice').put('priceDelta',1.50));
+opts2.add(yaml.createMapping().put('label','Roti (2 pcs)').put('priceDelta',2.00));
+mg2.put('options', opts2);
+mgSeq.add(mg2);
+
+it201.put('modifierGroups', mgSeq);
+items2.add(it201);
+
+/* IT-202 */
+it202 = yaml.createMapping();
+it202.put('id','IT-202'); it202.put('name','Sea Bass Laksa');
+it202.put('description','Seabass fillet, laksa broth, rice vermicelli, prawns, egg, bean sprouts, chilli oil');
+it202.put('price', 28.00);
+it202.put('dietary', yaml.createSequence().add('GF').add('DF'));
+it202.put('allergens', yaml.createSequence().add('fish').add('crustaceans').add('eggs').add('sesame'));
+
+/* modifierGroups for IT-202 */
+mgSeq202 = yaml.createSequence();
+mgProtein = yaml.createMapping();
+mgProtein.put('name','Protein'); mgProtein.put('required', false);
+optsP = yaml.createSequence();
+optsP.add(yaml.createMapping().put('label','As described (Sea Bass + Prawns)').put('priceDelta',0));
+optV = yaml.createMapping().put('label','Vegan (Tofu + King Oyster Mushroom)').put('priceDelta',-2.00);
+optV.put('dietary', yaml.createSequence().add('VG'));
+optsP.add(optV);
+mgProtein.put('options', optsP);
+mgSeq202.add(mgProtein);
+it202.put('modifierGroups', mgSeq202);
+items2.add(it202);
+
+/* IT-203 */
+it203 = yaml.createMapping();
+it203.put('id','IT-203'); it203.put('name','Wagyu Beef Rendang');
+it203.put('description','Wagyu cheek, rendang paste, kaffir lime, coconut, crispy shallots, steamed rice');
+it203.put('price', 38.00);
+it203.put('dietary', yaml.createSequence().add('GF').add('DF').add('H'));
+it203.put('allergens', yaml.createSequence().add('peanuts').add('fish').add('sesame'));
+it203.put('popular', true);
+items2.add(it203);
+
+s2.put('items', items2);
+sectionsSeq.add(s2);
+
+/* Section S03 (Desserts) */
+s3 = yaml.createMapping();
+s3.put('id','S03'); s3.put('name','Desserts');
+nameLocal3 = yaml.createMapping(); nameLocal3.put('th','ของหวาน'); nameLocal3.put('zh','甜品');
+s3.put('nameLocal', nameLocal3);
+items3 = yaml.createSequence();
+
+/* IT-301 */
+it301 = yaml.createMapping();
+it301.put('id','IT-301'); it301.put('name','Pandan Crème Brûlée');
+it301.put('description','Silky pandan-infused custard, caramelised sugar, sesame tuile');
+it301.put('price', 10.00);
+it301.put('dietary', yaml.createSequence().add('GF').add('V'));
+it301.put('allergens', yaml.createSequence().add('eggs').add('milk').add('sesame'));
+items3.add(it301);
+
+/* IT-302 */
+it302 = yaml.createMapping();
+it302.put('id','IT-302'); it302.put('name','Mango Sticky Rice');
+it302.put('description','Glutinous rice, fresh Alphonso mango, coconut cream, crispy mung beans');
+it302.put('price', 9.00);
+it302.put('dietary', yaml.createSequence().add('VG').add('GF').add('DF'));
+it302.put('allergens', yaml.createSequence());  // empty list
+it302.put('popular', true);
+items3.add(it302);
+
+s3.put('items', items3);
+sectionsSeq.add(s3);
+
+/* finish menu */
+menu.put('sections', sectionsSeq);
+root.put('menu', menu);
+
+/* drinks: nonAlcoholic and wine */
+drinks = yaml.createMapping();
+na = yaml.createSequence();
+na.add(yaml.createMapping().put('name','Thai Iced Tea').put('price', 5.50).put('dietary', yaml.createSequence().add('V')));
+na.add(yaml.createMapping().put('name','Pandan Lemonade').put('price',5.00).put('dietary', yaml.createSequence().add('VG').add('GF')));
+drinks.put('nonAlcoholic', na);
+
+/* wine -> byGlass and byBottle */
+wine = yaml.createMapping();
+byGlass = yaml.createSequence();
+byGlass.add(yaml.createMapping().put('name',"Picpoul de Pinet, Domaine de Thau 2022")
+                       .put('style','white_dry')
+                       .put('region','Languedoc, France')
+                       .put('glass',9.50)
+                       .put('bottle',38.00));
+wine.put('byGlass', byGlass);
+
+byBottle = yaml.createSequence();
+byBottle.add(yaml.createMapping().put('name',"Cloudy Bay Sauvignon Blanc 2023")
+                         .put('style','white_dry')
+                         .put('region','Marlborough, New Zealand')
+                         .put('bottle',62.00));
+wine.put('byBottle', byBottle);
+
+drinks.put('wine', wine);
+root.put('drinks', drinks);
+
+/* 4. Save the document (save method name may vary) */
+yaml.save();   // exact save() method name may differ
+
+Notes / Caveats
+- The docs you supplied explicitly document only:
+  - that you must choose root type (mapping vs list),
+  - that setRootAsMap() and setRootAsList() exist,
+  - and that the model exposes a root property.
+- The precise names of the node-construction and insertion methods (createMapping, createSequence, put, add, save) are NOT shown in the provided excerpts. The example above uses typical names to show the structure and the correct nesting needed to represent your YAML exactly.
+- To make this fully runnable for your environment:
+  - Configure the YAML Document model in your Epsilon launch configuration and give it the model name used in the script (yaml).
+  - Replace the placeholder method names (createMapping(), createSequence(), put(), add(), save()) with the actual methods provided by your installed YAML driver (see the YAML EMC source in the repo).
+  - Alternatively paste the driver API class names/method signatures you have and I will rewrite the full runnable EOL or Java code using the exact API names.
+
+If you want, I can:
+- produce a Java example that uses the YAML driver classes (if you paste the available API/class names from your installation), or
+- inspect the YAML driver's source in the repo and produce an exact runnable EOL or Java script using the real method names. Which would you prefer?
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             1
+  Prompt tokens:     4,395
+  Completion tokens: 5,026
+  Total tokens:      9,421
+  Estimated cost:    $0.01115
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         1
+  Total prompt tokens:     4,395
+  Total completion tokens: 5,026
+  Total tokens:            9,421
+  Total estimated cost:    $0.01115
+============================================================

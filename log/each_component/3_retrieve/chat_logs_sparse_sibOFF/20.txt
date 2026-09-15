@@ -1,0 +1,285 @@
+Session started: 2026-07-30 13:07:58
+Model: openai/gpt-5-mini | temperature=0
+RETRIEVAL_MODE=sparse (BM25 Qdrant/bm25, no dense)
+SIBLING_EXPANSION=off
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[13:07:58]
+
+── QUESTION ──────────────────────────────────────────────
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+departments:
+  - name: Prepress
+    teams:
+      - name: Artwork
+        members:
+          - Alice
+          - Bob
+      - name: Plate Making
+        members:
+          - Charlie
+          - Diana
+  - name: Production
+    teams:
+      - name: Printing
+        members:
+          - Ethan
+          - Fiona
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+departments:
+  - name: Prepress
+    teams:
+      - name: Artwork
+        members:
+          - Alice
+          - Bob
+      - name: Plate Making
+        members:
+          - Charlie
+          - Diana
+  - name: Production
+    teams:
+      - name: Printing
+        members:
+          - Ethan
+          - Fiona
+
+── SPARSE POOL (before rerank, before sibling expansion) ──
+  1. [16.289] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+  2. [15.068] epsilon_docs/articles_yaml-emc_index.md (heading='How do I set the root node of a YAML document?', parent_heading='Querying/modifying YAML documents in EOL')
+  3. [13.855] epsilon_docs/articles_jdt_index.md (heading='How is it used?', parent_heading='Treating Java code as a model in Epsilon')
+  4. [13.133] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access nodes by name?', parent_heading='Querying/modifying YAML documents in EOL')
+  5. [12.831] epsilon_docs/articles_yaml-emc_index.md (heading='How do I set the root node of a YAML document?', parent_heading='Querying/modifying YAML documents in EOL')
+  6. [12.374] epsilon_docs/egl.md (heading='An Example of Co-ordination with EGL', parent_heading='Co-ordination')
+  7. [12.127] epsilon_docs/eol.md (heading='Extended Properties', parent_heading='Expressions')
+  8. [12.016] epsilon_docs/eol.md (heading='Tuples', parent_heading='Types')
+  9. [11.953] epsilon_docs/articles_yaml-emc_index.md (heading='How can I create a YAML document from scratch?', parent_heading='Querying/modifying YAML documents in EOL')
+  10. [11.660] epsilon_docs/articles_type-relationships-in-epsilon.md (heading='Type-Related Operations', parent_heading='Type Relationships in Epsilon')
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.\ndepartments:\n  - name: Prepress\n    teams:\n      - name: Artwork\n        members:\n          - Alice\n          - Bob\n      - name: Plate Making\n        members:\n          - Charlie\n          - Diana\n  - name: Production\n    teams:\n      - name: Printing\n        members:\n          - Ethan\n          - Fiona'
+    1. sim=0.7764  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    2. sim=0.6991  epsilon_docs/articles_yaml-emc_index.md | heading='How do I set the root node of a YAML document?'
+    3. sim=0.6896  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    4. sim=0.6352  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access nodes by name?'
+    5. sim=0.6195  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    6. sim=0.5833  epsilon_docs/articles_jdt_index.md | heading='How is it used?'
+    7. sim=0.5308  epsilon_docs/articles_type-relationships-in-epsilon.md | heading='Type-Related Operations'
+    8. sim=0.5269  epsilon_docs/eol.md | heading='Tuples'
+    9. sim=0.5016  epsilon_docs/eol.md | heading='Extended Properties'
+
+── RETRIEVED (after dedup + rerank pass 1 only — sibling expansion OFF) ──
+
+Docs (4):
+  1. [0.885] epsilon_docs/articles_yaml-emc_index.md (heading='How can I create a YAML document from scratch?', parent_heading='Querying/modifying YAML documents in EOL')
+     ### How can I create a YAML document from scratch?
+
+The following code can be used for creating the `employees.yaml` file programmatically.
+  2. [0.789] epsilon_docs/articles_yaml-emc_index.md (heading='How do I set the root node of a YAML document?', parent_heading='Querying/modifying YAML documents in EOL')
+     ### How do I set the root node of a YAML document?
+
+The `root` property can be used for setting the root node of a YAML document. The root node of a YAML document can either be a mapping node or a lis
+  3. [0.672] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YA
+  4. [0.008] epsilon_docs/articles_jdt_index.md (heading='How is it used?', parent_heading='Treating Java code as a model in Epsilon')
+     Our EMC JDT driver is exactly that – we don’t do any big extraction work in advance, so the query starts  running almost immediately. The driver exposes the indices maintained by the Eclipse Java Deve
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon.
+
+Use the provided context as the PRIMARY and AUTHORITATIVE source of truth.
+Only use syntax, class names, methods, and patterns that appear explicitly in the context.
+You may adapt documented patterns to the user's structure, provided that no new APIs or unsupported methods are invented.
+If the user's message contains sample data, treat it only as the desired target structure — not as evidence for API syntax.
+If the context provides partial evidence only, generate code for the parts that are supported and explicitly flag any parts that are uncertain or unsupported.
+
+When a code example is appropriate, provide a complete and runnable example that covers the full structure given by the user.
+When generating code, follow only the patterns shown in the context exactly — do not skip initialisation steps, introduce intermediate objects, or shortcut method chains that are not explicitly demonstrated.
+
+--- DOCUMENTATION ---
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+### How can I create a YAML document from scratch?
+
+The following code can be used for creating the `employees.yaml` file programmatically.
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+### How do I set the root node of a YAML document?
+
+The `root` property can be used for setting the root node of a YAML document. The root node of a YAML document can either be a mapping node or a list node. The `setRootAsMap()` function can be used for setting the root node into a mapping node. The `setRootAsList()` function can be used for setting the root node into a list node.
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YAML node must be specified when accessing YAML nodes via the YAML driver. There are 3 types of nodes in YAML:
+
+- `Scalar Node`. Scalar nodes are used to represent a single scalar value (e.g., string, boolean, integer). In the YAML driver, a scalar node consists of a key-value pair, in which the key represents the name of the scalar node, and the value represents the scalar value.
+- `Mapping Node`. Mapping nodes are used to represent unordered collections of key-value pairs. In the YAML driver, a mapping node consists of a key-value pair, in which the key represents the name of the mapping node, and the value holds an unordered collection of key-value pairs, which in turn represent other nodes.
+- `List (Sequence) Node`. List nodes are used to represent an ordered list of nodes or scalar values. In the YAML driver, a list node consists of a key-value pair, in which the key represents the name of the list node, and the value represents a list of nodes or scalar values.
+
+This section outlines the supported conventions in the form of questions and answers followed by relevant examples.
+
+[Source: epsilon_docs/articles_jdt_index.md]
+Our EMC JDT driver is exactly that – we don’t do any big extraction work in advance, so the query starts  running almost immediately. The driver exposes the indices maintained by the Eclipse Java Development Tools, so you can quickly find a class and go through its methods, for instance. If at some point you need more  information than the indices provide, we’ll transparently use the JDT  parser (based on the Java compiler) to fetch things for you. This is  represented as the top path in the above figure, starting at “Java code” and going through the orange nodes.
+
+## How is it used?
+
+With Epsilon and the EMC JDT driver  installed, we create a new “query.eol” file with our query. For  instance, this one-liner prints how many types we have in our program:
+
+`
+
+--- USER MESSAGE ---
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+departments:
+  - name: Prepress
+    teams:
+      - name: Artwork
+        members:
+          - Alice
+          - Bob
+      - name: Plate Making
+        members:
+          - Charlie
+          - Diana
+  - name: Production
+    teams:
+      - name: Printing
+        members:
+          - Ethan
+          - Fiona
+
+Question:
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+departments:
+  - name: Prepress
+    teams:
+      - name: Artwork
+        members:
+          - Alice
+          - Bob
+      - name: Plate Making
+        members:
+          - Charlie
+          - Diana
+  - name: Production
+    teams:
+      - name: Printing
+        members:
+          - Ethan
+          - Fiona
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+Short answer: the document’s root is a mapping node (top-level key "departments" → a list). Call setRootAsMap() and then create a mapping with a "departments" list whose elements are mappings for each department, each with a "teams" list, and each team having a "members" list of scalars.
+
+Below I give a complete EOL-style example that follows the documented patterns (uses the root property and setRootAsMap()). The provided documentation did not include the exact class name for creating the YAML model or the exact persistence method, so I use clear placeholders for those two steps and flag them below. Replace those placeholders with the EMC YAML model construction / loading / saving calls used in your environment.
+
+EOL example (replace the two placeholders noted below):
+
+// --- BEGIN: Create or obtain the YAML model (placeholder) ---
+// The docs show setRootAsMap() and the root property but do not show
+// how to construct or save the model. Replace the line below with
+// your EMC YAML model instantiation (e.g. new YamlModel(...) or similar).
+var yaml = /* CREATE_YAML_MODEL_PLACEHOLDER */;
+// --- END placeholder ---
+
+// Make the document root a mapping node (top-level mapping)
+yaml.setRootAsMap();
+
+// Create the departments list under the root mapping
+// The root behaves as a mapping, so assign a list to the "departments" key
+yaml.root.departments = [];
+
+// Build the "Prepress" department
+var prepress = {};
+prepress.name = "Prepress";
+prepress.teams = [];
+
+// Team: Artwork
+var artwork = {};
+artwork.name = "Artwork";
+artwork.members = ["Alice", "Bob"];
+prepress.teams.add(artwork);
+
+// Team: Plate Making
+var plateMaking = {};
+plateMaking.name = "Plate Making";
+plateMaking.members = ["Charlie", "Diana"];
+prepress.teams.add(plateMaking);
+
+// Add Prepress to departments
+yaml.root.departments.add(prepress);
+
+// Build the "Production" department
+var production = {};
+production.name = "Production";
+production.teams = [];
+
+var printing = {};
+printing.name = "Printing";
+printing.members = ["Ethan", "Fiona"];
+production.teams.add(printing);
+
+yaml.root.departments.add(production);
+
+// --- BEGIN: Persist the YAML document to a file (placeholder) ---
+// The docs do not show the exact save/write method. Replace the line
+// below with the method your EMC YAML model exposes to persist to disk.
+// e.g. yaml.save("departments.yaml") or model.store() depending on API.
+yaml. /* SAVE_OR_PERSIST_METHOD_PLACEHOLDER */ ("departments.yaml");
+// --- END placeholder ---
+
+Notes and caveats
+- Root choice: because the file starts with the mapping key "departments:", the root must be a mapping node. Use setRootAsMap().
+- The EOL example uses the documented root property and setRootAsMap(). The documentation excerpt you provided does not show:
+  - the exact class or factory function used to create the YAML model instance (I used CREATE_YAML_MODEL_PLACEHOLDER), nor
+  - the exact API to write the model to a file (I used SAVE_OR_PERSIST_METHOD_PLACEHOLDER).
+  Replace those placeholders with the concrete model constructor and save/persist call from your EMC YAML driver setup (these are present in the full EMC docs / examples in your environment).
+- If you prefer to start with a root list instead (not applicable for this document), use setRootAsList() as the docs describe.
+- The structure built above maps directly to your YAML:
+  departments:                         // yaml.root (mapping) → key "departments" = list
+    - name: Prepress                   // elements of departments are mappings
+      teams:
+        - name: Artwork
+          members:
+            - Alice
+            - Bob
+        - name: Plate Making
+          members:
+            - Charlie
+            - Diana
+    - name: Production
+      teams:
+        - name: Printing
+          members:
+            - Ethan
+            - Fiona
+
+If you tell me which EMC YAML model class / API you have available (the exact constructor and save method from your environment), I will replace the placeholders with a fully concrete runnable snippet.
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             1
+  Prompt tokens:     1,041
+  Completion tokens: 2,422
+  Total tokens:      3,463
+  Estimated cost:    $0.00510
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         1
+  Total prompt tokens:     1,041
+  Total completion tokens: 2,422
+  Total tokens:            3,463
+  Total estimated cost:    $0.00510
+============================================================

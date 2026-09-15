@@ -1,0 +1,6 @@
+title: Sensor Reading Snapshot
+sensorId: "SNR-2291"
+temperatureC: 21.4
+active: true
+batteryLevel: 87
+lastError: null

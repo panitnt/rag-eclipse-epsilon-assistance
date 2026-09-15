@@ -1,0 +1,194 @@
+Session started: 2026-07-28 00:30:01
+Model: openrouter/google/gemini-3.6-flash | temperature=0
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[00:30:06]
+
+── QUESTION ──────────────────────────────────────────────
+Does EVL support dependencies between constraints (e.g. having one constraint run before another)? How?
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - Does EVL support dependencies between constraints (e.g. having one constraint run before another)? How?
+  - EVL constraint dependencies depends clause
+  - EVL constraint depends syntax example
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'Does EVL support dependencies between constraints (e.g. having one constraint run before another)? How?'
+    1. sim=0.7184  epsilon_docs/articles_epsilon-and-sirius_index.md | heading='Epsilon and Sirius'
+    2. sim=0.7123  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Implementing Constraints with EVL'
+    3. sim=0.6937  epsilon_docs/articles_evl-emf-integration.md | heading='Via the Extension Point'
+    4. sim=0.6850  epsilon_docs/articles_parallel-execution_index.md | heading='From Ant tasks'
+    5. sim=0.6592  epsilon_docs/articles_parallel-execution_index.md | heading='From Java programs'
+    6. sim=0.6329  epsilon_docs/articles_evl-gmf-integration_index.md | heading='Recipes'
+    7. sim=0.6187  epsilon_docs/evl.md | heading='Abstract Syntax'
+    8. sim=0.5647  epsilon_docs/articles_evl-gmf-integration_index.md | heading='Step 3: Write the constraints'
+    9. sim=0.5642  epsilon_docs/articles_running-from-source_index.md | heading='Running the Epsilon tests'
+    10. sim=0.5595  epsilon_docs/index.md | heading='Workflow'
+    11. sim=0.5320  epsilon_docs/articles_playground_graphical-syntax-annotations.md | heading='@text'
+    12. sim=0.5195  epsilon_docs/articles_playground_index.md | heading='Model Graphical Syntax Annotations'
+
+  Query: 'EVL constraint dependencies depends clause'
+    1. sim=0.8005  epsilon_docs/articles_epsilon-and-sirius_index.md | heading='Epsilon and Sirius'
+    2. sim=0.7315  epsilon_docs/articles_evl-emf-integration.md | heading='Via the Extension Point'
+    3. sim=0.7168  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Implementing Constraints with EVL'
+    4. sim=0.6587  epsilon_docs/articles_parallel-execution_index.md | heading='From Ant tasks'
+    5. sim=0.6501  epsilon_docs/articles_evl-gmf-integration_index.md | heading='Recipes'
+    6. sim=0.5660  epsilon_docs/articles_running-from-source_index.md | heading='Running the Epsilon tests'
+    7. sim=0.5514  epsilon_docs/articles_evl-gmf-integration_index.md | heading='Step 3: Write the constraints'
+    8. sim=0.5501  epsilon_docs/evl.md | heading='Abstract Syntax'
+    9. sim=0.5340  epsilon_docs/articles_playground_graphical-syntax-annotations.md | heading='@text'
+    10. sim=0.5207  epsilon_docs/index.md | heading='Workflow'
+    11. sim=0.5132  epsilon_docs/articles_parallel-execution_index.md | heading='From Java programs'
+    12. sim=0.4896  epsilon_docs/articles_playground_index.md | heading='Model Graphical Syntax Annotations'
+
+  Query: 'EVL constraint depends syntax example'
+    1. sim=0.8139  epsilon_docs/articles_epsilon-and-sirius_index.md | heading='Epsilon and Sirius'
+    2. sim=0.7270  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Implementing Constraints with EVL'
+    3. sim=0.7264  epsilon_docs/articles_evl-emf-integration.md | heading='Via the Extension Point'
+    4. sim=0.6756  epsilon_docs/articles_parallel-execution_index.md | heading='From Ant tasks'
+    5. sim=0.6520  epsilon_docs/articles_evl-gmf-integration_index.md | heading='Recipes'
+    6. sim=0.5925  epsilon_docs/evl.md | heading='Abstract Syntax'
+    7. sim=0.5651  epsilon_docs/articles_evl-gmf-integration_index.md | heading='Step 3: Write the constraints'
+    8. sim=0.5602  epsilon_docs/articles_playground_graphical-syntax-annotations.md | heading='@text'
+    9. sim=0.5415  epsilon_docs/articles_running-from-source_index.md | heading='Running the Epsilon tests'
+    10. sim=0.5329  epsilon_docs/articles_parallel-execution_index.md | heading='From Java programs'
+    11. sim=0.5326  epsilon_docs/index.md | heading='Workflow'
+    12. sim=0.4980  epsilon_docs/articles_playground_index.md | heading='Model Graphical Syntax Annotations'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (4):
+  1. [0.304] epsilon_docs/articles_epsilon-in-ecore_index.md (heading='Implementing Constraints with EVL', parent_heading='Example')
+     ## Implementing Constraints with EVL
+Example: define an Ecore model with EVL validation, EOL invocation, and setting delegates for constraint implementation.
+
+```emf
+@Ecore(
+    validationDelegates="h
+  2. [0.177] epsilon_docs/articles_evl-emf-integration.md (heading='Via the Extension Point', parent_heading='Registering EVL Constraints')
+     ## Via the Extension Point
+Example: configure an EVL constraints binding via the Eclipse extension point in a plugin.xml file.
+
+```xml
+<plugin>
+   ...
+   <extension
+         point="org.eclipse.epsilon
+  3. [0.124] epsilon_docs/articles_epsilon-and-sirius_index.md (heading='Epsilon and Sirius', parent_heading='')
+     === "Validation Constraints (EVL)"
+  4. [0.105] epsilon_docs/articles_parallel-execution_index.md (heading='From Ant tasks', parent_heading='Annotation-based parallelism')
+     ## From Ant tasks
+Example: define a pre-block and constraint in EVL to enforce parallel execution based on children count threshold.
+
+```evl
+pre {
+  var parallelThreshold = 9001;
+}
+context ModelElemen
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon. Use only the documentation below — do not use outside knowledge, and say so if it doesn't cover something.
+
+Documentation:
+--- DOCUMENTATION ---
+[Source: epsilon_docs/articles_epsilon-in-ecore_index.md]
+## Implementing Constraints with EVL
+Example: define an Ecore model with EVL validation, EOL invocation, and setting delegates for constraint implementation.
+
+```emf
+@Ecore(
+    validationDelegates="http://eclipse.dev/epsilon/ecore/EVL",
+    invocationDelegates="http://eclipse.dev/epsilon/ecore/EOL",
+    settingDelegates="http://eclipse.dev/epsilon/ecore/EOL")
+@namespace(
+    uri="http://www.eclipse.org/OCL/examples/codegen/employee",
+    prefix="emp")
+package employee;
+
+class Company {
+	attr String name;
+	val Employee[*]#company employees;
+	val Department[*]#company departments;
+}
+...
+```
+
+[Source: epsilon_docs/articles_evl-emf-integration.md]
+## Via the Extension Point
+Example: configure an EVL constraints binding via the Eclipse extension point in a plugin.xml file.
+
+```xml
+<plugin>
+   ...
+   <extension
+         point="org.eclipse.epsilon.evl.emf.validation">
+      <constraintsBinding
+            compose="true"
+            constraints="src/test.evl"
+            namespaceURI="http://your.package.uri"
+            validator="my.project.evl.EvlExtendedValidator">
+            <additionalNamespaceURI
+               namespaceURI="http://some.other.pacakge.uri">
+         </additionalNamespaceURI>
+      </constraintsBinding>
+   </extension>
+</plugin>
+```
+
+[Source: epsilon_docs/articles_epsilon-and-sirius_index.md]
+=== "Validation Constraints (EVL)"
+
+[Source: epsilon_docs/articles_parallel-execution_index.md]
+## From Ant tasks
+Example: define a pre-block and constraint in EVL to enforce parallel execution based on children count threshold.
+
+```evl
+pre {
+  var parallelThreshold = 9001;
+}
+context ModelElementType {
+  $parallel self.children.size() > parallelThreshold;
+  constraint Invariant {
+    check {
+      // ...
+    }
+  }
+```
+
+--- USER MESSAGE ---
+Does EVL support dependencies between constraints (e.g. having one constraint run before another)? How?
+
+Before writing your answer, silently check each part of the question against the documentation — including whether any combination of separately-documented pieces is actually shown together, not just individually present somewhere. Don't show this checking process or split your answer into labeled parts. Write a smooth, natural answer, and weave in a brief, honest note wherever something isn't directly confirmed, rather than presenting it as verified.
+
+Be concise, and let the length of your answer reflect how much the documentation actually supports — don't stretch a thin piece of evidence into a long, confident-sounding answer.
+
+Question:
+Does EVL support dependencies between constraints (e.g. having one constraint run before another)? How?
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+Based on the provided documentation, there is no information about whether EVL supports dependencies between constraints or how to enforce a specific execution order between them.
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             2
+  Prompt tokens:     923
+  Completion tokens: 1,031
+  Total tokens:      1,954
+  Estimated cost:    $0.00912
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openrouter/google/gemini-3.6-flash
+  Total LLM calls:         2
+  Total prompt tokens:     923
+  Total completion tokens: 1,031
+  Total tokens:            1,954
+  Total estimated cost:    $0.00912
+============================================================

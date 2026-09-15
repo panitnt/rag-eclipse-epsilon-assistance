@@ -1,0 +1,169 @@
+warehouse:
+  id: WH-UK-004
+  name: Midlands Distribution Centre
+  location:
+    address: "Unit 7, Logistics Park, Birmingham, B26 3QT"
+    coordinates: {lat: 52.4539, lon: -1.7480}
+  operatingHours:
+    Mon-Fri: "06:00-22:00"
+    Sat: "08:00-16:00"
+    Sun: closed
+  manager:
+    name: Priya Chandrasekaran
+    employeeId: EMP-0092
+    shift: day
+
+  zones:
+    - zoneId: Z-A
+      name: Fast-Moving Goods
+      temperatureControlled: false
+      racks:
+        - rackId: A-01
+          aisle: 1
+          bins:
+            - binId: A-01-01
+              sku: SKU-3301
+              description: Cardboard Boxes (Small)
+              qty: 4200
+              reorderPoint: 1000
+              lastRestocked: "2024-06-01"
+            - binId: A-01-02
+              sku: SKU-3302
+              description: Bubble Wrap Rolls
+              qty: 850
+              reorderPoint: 500
+              lastRestocked: "2024-05-28"
+        - rackId: A-02
+          aisle: 1
+          bins:
+            - binId: A-02-01
+              sku: SKU-3310
+              description: Packing Tape (Clear)
+              qty: 1200
+              reorderPoint: 400
+              lastRestocked: "2024-06-05"
+
+    - zoneId: Z-B
+      name: Cold Storage
+      temperatureControlled: true
+      targetTempCelsius: 4
+      racks:
+        - rackId: B-01
+          aisle: 3
+          bins:
+            - binId: B-01-01
+              sku: SKU-8801
+              description: Chilled Ready Meals (Case of 12)
+              qty: 340
+              reorderPoint: 150
+              lastRestocked: "2024-06-12"
+              expiryTracking:
+                - batch: BATCH-2201
+                  expiryDate: "2024-06-20"
+                  qty: 120
+                - batch: BATCH-2202
+                  expiryDate: "2024-06-25"
+                  qty: 220
+
+    - zoneId: Z-C
+      name: Bulk Pallet Storage
+      temperatureControlled: false
+      racks:
+        - rackId: C-01
+          aisle: 6
+          bins:
+            - binId: C-01-01
+              sku: SKU-9901
+              description: Bottled Water (Pallet, 72 cases)
+              qty: 18
+              reorderPoint: 5
+              lastRestocked: "2024-05-20"
+
+  staff:
+    - employeeId: EMP-0110
+      name: Josh Reiner
+      role: forklift_operator
+      shift: day
+      certifications: [forklift_class2, manual_handling]
+    - employeeId: EMP-0122
+      name: Mei Lin Tan
+      role: picker
+      shift: night
+      certifications: [manual_handling]
+    - employeeId: EMP-0134
+      name: Sam Patterson
+      role: warehouse_supervisor
+      shift: day
+      certifications: [forklift_class2, forklift_class3, first_aid, manual_handling]
+
+  equipment:
+    - equipmentId: FL-01
+      type: forklift
+      model: Toyota 8FBE20
+      status: operational
+      lastServiced: "2024-05-01"
+      nextServiceDue: "2024-08-01"
+      assignedTo: EMP-0110
+    - equipmentId: FL-02
+      type: forklift
+      model: Toyota 8FBE20
+      status: under_maintenance
+      lastServiced: "2024-06-10"
+      nextServiceDue: "2024-09-10"
+      assignedTo: null
+      maintenanceLog:
+        - date: "2024-06-10"
+          issue: Hydraulic fluid leak
+          technician: External - ForkFix Ltd
+          resolved: false
+
+  inboundShipments:
+    - shipmentId: IN-5501
+      supplier: PackCo Supplies Ltd
+      expectedArrival: "2024-06-18"
+      status: in_transit
+      items:
+        - sku: SKU-3301
+          qtyExpected: 5000
+        - sku: SKU-3302
+          qtyExpected: 1000
+    - shipmentId: IN-5502
+      supplier: ColdChain Foods Ltd
+      expectedArrival: "2024-06-15"
+      status: delivered
+      items:
+        - sku: SKU-8801
+          qtyExpected: 400
+          qtyReceived: 396
+          discrepancyReason: 4 units damaged in transit
+
+  outboundOrders:
+    - orderId: OUT-7701
+      destination: Retail Store 22 Leeds
+      status: picking
+      priority: high
+      items:
+        - sku: SKU-3301
+          qty: 200
+        - sku: SKU-3310
+          qty: 150
+    - orderId: OUT-7702
+      destination: Retail Store 08 Bristol
+      status: dispatched
+      priority: standard
+      items:
+        - sku: SKU-9901
+          qty: 2
+      dispatch:
+        carrier: DX Freight
+        dispatchedAt: "2024-06-13T14:20:00Z"
+        estimatedDelivery: "2024-06-14"
+
+  safetyIncidents:
+    - incidentId: INC-014
+      date: "2024-04-22"
+      zone: Z-A
+      description: Minor slip near packing station, no injury reported.
+      severity: low
+      reportedBy: EMP-0134
+      correctiveAction: Wet floor signage added, spill cleaned immediately.

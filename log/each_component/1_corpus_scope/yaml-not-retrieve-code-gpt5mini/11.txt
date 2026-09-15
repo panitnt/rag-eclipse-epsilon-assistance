@@ -1,0 +1,562 @@
+Session started: 2026-07-26 22:19:59
+Model: openai/gpt-5-mini | temperature=0
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[22:20:13]
+
+── QUESTION ──────────────────────────────────────────────
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- student:
+    name: Oliver Bennett
+    class: 5B
+    subjects:
+      - subject: English
+        score: 88
+        grade: A
+      - subject: Mathematics
+        score: 74
+        grade: B
+    extracurricular:
+      - Chess Club
+      - School Orchestra
+
+- student:
+    name: Amelia Carter
+    class: 5B
+    subjects:
+      - subject: English
+        score: 81
+        grade: A-
+      - subject: Mathematics
+        score: 86
+        grade: A
+      - subject: Science
+        score: 78
+        grade: B+
+    extracurricular: []
+
+- student:
+    name: Noah Reyes
+    class: 5B
+    subjects:
+      - subject: English
+        score: null
+        grade: null
+        note: Absent for assessment
+      - subject: Mathematics
+        score: 92
+        grade: A+
+    extracurricular:
+      - Reading Buddy
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+  - EMC YAML Driver programmatically create YAML document root list mapping example
+  - EOL create new model element and add to collection property syntax
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.'
+    1. sim=0.8581  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    2. sim=0.7882  epsilon_docs/articles_yaml-emc_index.md | heading='How do I set the root node of a YAML document?'
+    3. sim=0.7384  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    4. sim=0.7121  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    5. sim=0.6973  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    6. sim=0.6900  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    7. sim=0.6594  epsilon_docs/articles_index.md | heading='Recipes'
+    8. sim=0.6322  epsilon_docs/articles_xsd-xml_index.md | heading='How do I create an element and add it to an existing element?'
+    9. sim=0.6244  epsilon_docs/articles_profiled-uml-models_index.md | heading='Creating a Profiled UML Model'
+    10. sim=0.6230  epsilon_docs/articles_jdt_index.md | heading='How is it used?'
+    11. sim=0.6073  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    12. sim=0.5994  epsilon_docs/etl.md | heading='Source Elements Resolution'
+    13. sim=0.5921  epsilon_docs/eol.md | heading='Creating and Deleting Model Elements'
+    14. sim=0.5819  epsilon_docs/articles_excel_index.md | heading='Creating Rows'
+    15. sim=0.5569  epsilon_docs/articles_json-emc_index.md | heading='Initial example: author JSON document'
+    16. sim=0.5474  epsilon_docs/articles_extended-properties_index.md | heading='Extended Properties'
+    17. sim=0.5331  epsilon_docs/eol.md | heading='Model Element Types'
+    18. sim=0.5329  epsilon_docs/articles_json-emc_index.md | heading='Example EGL template'
+
+  Query: 'EMC YAML Driver programmatically create YAML document root list mapping example'
+    1. sim=0.7405  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    2. sim=0.7180  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    3. sim=0.6992  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    4. sim=0.6817  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    5. sim=0.6623  epsilon_docs/articles_yaml-emc_index.md | heading='How do I set the root node of a YAML document?'
+    6. sim=0.6572  epsilon_docs/articles_jdt_index.md | heading='How is it used?'
+    7. sim=0.6497  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    8. sim=0.6356  epsilon_docs/articles_index.md | heading='Recipes'
+    9. sim=0.6174  epsilon_docs/articles_extended-properties_index.md | heading='Extended Properties'
+    10. sim=0.6171  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    11. sim=0.6153  epsilon_docs/articles_profiled-uml-models_index.md | heading='Creating a Profiled UML Model'
+    12. sim=0.5841  epsilon_docs/articles_excel_index.md | heading='Creating Rows'
+    13. sim=0.5717  epsilon_docs/eol.md | heading='Creating and Deleting Model Elements'
+    14. sim=0.5611  epsilon_docs/articles_xsd-xml_index.md | heading='How do I create an element and add it to an existing element?'
+    15. sim=0.5465  epsilon_docs/etl.md | heading='Source Elements Resolution'
+    16. sim=0.5203  epsilon_docs/articles_json-emc_index.md | heading='Initial example: author JSON document'
+    17. sim=0.5141  epsilon_docs/articles_json-emc_index.md | heading='Example EGL template'
+    18. sim=0.5093  epsilon_docs/eol.md | heading='Model Element Types'
+
+  Query: 'EOL create new model element and add to collection property syntax'
+    1. sim=0.7616  epsilon_docs/eol.md | heading='Creating and Deleting Model Elements'
+    2. sim=0.7504  epsilon_docs/articles_excel_index.md | heading='Creating Rows'
+    3. sim=0.7310  epsilon_docs/articles_xsd-xml_index.md | heading='How do I create an element and add it to an existing element?'
+    4. sim=0.7222  epsilon_docs/articles_extended-properties_index.md | heading='Extended Properties'
+    5. sim=0.7183  epsilon_docs/articles_profiled-uml-models_index.md | heading='Creating a Profiled UML Model'
+    6. sim=0.6433  epsilon_docs/egl.md | heading='An Example of Co-ordination with EGL'
+    7. sim=0.6141  epsilon_docs/articles_yaml-emc_index.md | heading='How can I create a YAML document from scratch?'
+    8. sim=0.6100  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    9. sim=0.6029  epsilon_docs/articles_developing-a-new-emc-driver_index.md | heading='Filesystem Driver'
+    10. sim=0.5994  epsilon_docs/etl.md | heading='Source Elements Resolution'
+    11. sim=0.5946  epsilon_docs/articles_yaml-emc_index.md | heading='How can I access all node elements?'
+    12. sim=0.5820  epsilon_docs/articles_yaml-emc_index.md | heading='Querying a YAML document'
+    13. sim=0.5793  epsilon_docs/eol.md | heading='Model Element Types'
+    14. sim=0.5290  epsilon_docs/articles_index.md | heading='Recipes'
+    15. sim=0.5238  epsilon_docs/articles_json-emc_index.md | heading='Initial example: author JSON document'
+    16. sim=0.5122  epsilon_docs/articles_json-emc_index.md | heading='Example EGL template'
+    17. sim=0.5075  epsilon_docs/articles_jdt_index.md | heading='How is it used?'
+    18. sim=0.4895  epsilon_docs/articles_yaml-emc_index.md | heading='How do I set the root node of a YAML document?'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (7):
+  1. [0.989] epsilon_docs/articles_yaml-emc_index.md (heading='How can I create a YAML document from scratch?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## How can I create a YAML document from scratch?
+Example: create a YAML document from scratch by building and appending MappingNode, ScalarNode, and ListNode elements.
+Keywords: setRootAsList, getRoo
+  2. [0.946] epsilon_docs/articles_yaml-emc_index.md (heading='How do I set the root node of a YAML document?', parent_heading='Querying/modifying YAML documents in EOL')
+     ### How do I set the root node of a YAML document?
+
+The `root` property can be used for setting the root node of a YAML document. The root node of a YAML document can either be a mapping node or a lis
+  3. [0.786] epsilon_docs/eol.md (heading='Creating and Deleting Model Elements', parent_heading='Types')
+     ## Creating and Deleting Model Elements
+Example: create a new Person model element and set its firstName and lastName properties.
+Keywords: new Person
+
+```eol
+var p : new Person;
+p.firstName = 'John';
+  4. [0.643] epsilon_docs/articles_yaml-emc_index.md (heading='Querying a YAML document', parent_heading='Scripting YAML documents using Epsilon')
+     # Scripting YAML documents using Epsilon
+ 
+In this article we demonstrate how you can create, query and modify YAML documents in Epsilon programs using the YAML driver. All the examples in this articl
+  5. [0.621] epsilon_docs/articles_excel_index.md (heading='Creating Rows', parent_heading='Querying and Modifying Spreadsheets')
+     ## Creating Rows
+Example: create a new instance of the Student model element using the Epsilon Object Language (EOL).
+Keywords: new Student
+
+```eol
+var student : new Student;
+```
+  6. [0.560] epsilon_docs/articles_yaml-emc_index.md (heading='How can I access all node elements?', parent_heading='Querying/modifying YAML documents in EOL')
+     ## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YA
+  7. [0.079] epsilon_docs/eol.md (heading='Tuples', parent_heading='Types')
+     ## Tuples
+Example: create and access tuple properties, demonstrating defined and undefined property behavior in Epsilon.
+Keywords: new Tuple, .name
+
+```eol
+var p = new Tuple(name = "Alice", age = 32);
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon.
+
+Use the provided context as the PRIMARY and AUTHORITATIVE source of truth.
+Only use syntax, class names, methods, and patterns that appear explicitly in the context.
+You may adapt documented patterns to the user's structure, provided that no new APIs or unsupported methods are invented.
+If the user's message contains sample data, treat it only as the desired target structure — not as evidence for API syntax.
+If the context provides partial evidence only, generate code for the parts that are supported and explicitly flag any parts that are uncertain or unsupported.
+
+When a code example is appropriate, provide a complete and runnable example that covers the full structure given by the user.
+When generating code, follow only the patterns shown in the context exactly — do not skip initialisation steps, introduce intermediate objects, or shortcut method chains that are not explicitly demonstrated.
+
+--- DOCUMENTATION ---
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## How can I create a YAML document from scratch?
+Example: create a YAML document from scratch by building and appending MappingNode, ScalarNode, and ListNode elements.
+Keywords: setRootAsList, getRoot, .value, addRows, new MappingNode, new ScalarNode, residentNode, postcodeNode, appendNode, industryNode, new ListNode, projectsNode, skillsNode
+
+```eol
+YAMLDoc.setRootAsList();
+var root = YAMLDoc.getRoot();
+root.value.addRows(2);
+var rootFirstRow = root.value.at(0);
+var rootSecondRow = root.value.at(1);
+
+var addressNode1 = new MappingNode("address");
+var countryNode1 = new ScalarNode("country", "England");
+var residentNode = new ScalarNode("resident", true);
+var postcodeNode = new ScalarNode("postcode", "M1 1AG");
+addressNode1.value.appendNode(countryNode1);
+addressNode1.value.appendNode(residentNode);
+addressNode1.value.appendNode(postcodeNode);
+
+var employeeIdNode1 = new ScalarNode("employeeId", "14623");
+var fullnameNode1 = new ScalarNode("fullname", "Michael Davidson");
+var roleNode1 = new ScalarNode("role", "Consultant");
+
+var industryNode = new ListNode("industry", 3);
+industryNode.value =  Sequence{"IoT", "smart factories", "signal analytics"};
+
+var projectsNode = new ListNode("projects", 2);
+var nameNode1 = new ScalarNode("name", "SmartAutomation");
+var nameNode2 = new ScalarNode("name", "FactoryAnalytics");
+var budgetNode1 = new ScalarNode("budget", 25000);
+var budgetNode2 = new ScalarNode("budget", 20000);
+projectsNode.value.at(0).appendNode(nameNode1);
+projectsNode.value.at(0).appendNode(budgetNode1);
+projectsNode.value.at(1).appendNode(nameNode2);
+projectsNode.value.at(1).appendNode(budgetNode2);
+
+var addressNode2 = new MappingNode("address");
+var countryNode2 = new ScalarNode("country", "Germany");
+addressNode2.value.appendNode(countryNode2);
+
+var employeeIdNode2 = new ScalarNode("employeeId", "16431");
+var fullnameNode2 = new ScalarNode("fullname", "Arnold Wagner");
+var roleNode2 = new ScalarNode("role", "HR");
+
+var skillsNode = new ListNode("skills", 2);
+skillsNode.value =  Sequence{"communication", "coaching"};
+
+rootFirstRow.appendNode(employeeIdNode1);
+rootFirstRow.appendNode(addressNode1);
+rootFirstRow.appendNode(fullnameNode1);
+rootFirstRow.appendNode(roleNode1);
+rootFirstRow.appendNode(industryNode);
+rootFirstRow.appendNode(projectsNode);
+
+rootSecondRow.appendNode(employeeIdNode2);
+rootSecondRow.appendNode(addressNode2);
+rootSecondRow.appendNode(fullnameNode2);
+rootSecondRow.appendNode(roleNode2);
+rootSecondRow.appendNode(skillsNode);
+```
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+### How do I set the root node of a YAML document?
+
+The `root` property can be used for setting the root node of a YAML document. The root node of a YAML document can either be a mapping node or a list node. The `setRootAsMap()` function can be used for setting the root node into a mapping node. The `setRootAsList()` function can be used for setting the root node into a list node.
+
+[Source: epsilon_docs/eol.md]
+## Creating and Deleting Model Elements
+Example: create a new Person model element and set its firstName and lastName properties.
+Keywords: new Person
+
+```eol
+var p : new Person;
+p.firstName = 'John';
+p.lastName = 'Doe';
+```
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+# Scripting YAML documents using Epsilon
+ 
+In this article we demonstrate how you can create, query and modify YAML documents in Epsilon programs using the YAML driver. All the examples in this article demonstrate using EOL to script YAML documents. However, it's worth stressing that YAML documents are supported throughout Epsilon. Therefore, you can use Epsilon to (cross-)validate, transform (to other models – XML, CSV or EMF-based, or to text), compare and merge your YAML documents.
+
+<iframe width="90%" height="494" src="https://www.youtube.com/embed/TF0fgghP938" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Querying a YAML document
+ 
+We use the following `employees.yaml` as a base for demonstrating the EOL syntax for querying YAML documents.
+
+[Source: epsilon_docs/articles_excel_index.md]
+## Creating Rows
+Example: create a new instance of the Student model element using the Epsilon Object Language (EOL).
+Keywords: new Student
+
+```eol
+var student : new Student;
+```
+
+[Source: epsilon_docs/articles_yaml-emc_index.md]
+## Querying/modifying YAML documents in EOL
+ 
+The YAML driver uses predefined naming conventions to allow developers to programmatically access and modify YAML documents in a concise way. A type of YAML node must be specified when accessing YAML nodes via the YAML driver. There are 3 types of nodes in YAML:
+
+- `Scalar Node`. Scalar nodes are used to represent a single scalar value (e.g., string, boolean, integer). In the YAML driver, a scalar node consists of a key-value pair, in which the key represents the name of the scalar node, and the value represents the scalar value.
+- `Mapping Node`. Mapping nodes are used to represent unordered collections of key-value pairs. In the YAML driver, a mapping node consists of a key-value pair, in which the key represents the name of the mapping node, and the value holds an unordered collection of key-value pairs, which in turn represent other nodes.
+- `List (Sequence) Node`. List nodes are used to represent an ordered list of nodes or scalar values. In the YAML driver, a list node consists of a key-value pair, in which the key represents the name of the list node, and the value represents a list of nodes or scalar values.
+
+This section outlines the supported conventions in the form of questions and answers followed by relevant examples.
+
+[Source: epsilon_docs/eol.md]
+## Tuples
+Example: create and access tuple properties, demonstrating defined and undefined property behavior in Epsilon.
+Keywords: new Tuple, .name
+
+```eol
+var p = new Tuple(name = "Alice", age = 32);
+
+p.name.substring(0, 3); // "Ali"
+p.age; // 32
+p.occupation.isDefined(); // false
+p.occupation.toUpperCase(); // Property 'occupation' not found
+```
+
+--- USER MESSAGE ---
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- student:
+    name: Oliver Bennett
+    class: 5B
+    subjects:
+      - subject: English
+        score: 88
+        grade: A
+      - subject: Mathematics
+        score: 74
+        grade: B
+    extracurricular:
+      - Chess Club
+      - School Orchestra
+
+- student:
+    name: Amelia Carter
+    class: 5B
+    subjects:
+      - subject: English
+        score: 81
+        grade: A-
+      - subject: Mathematics
+        score: 86
+        grade: A
+      - subject: Science
+        score: 78
+        grade: B+
+    extracurricular: []
+
+- student:
+    name: Noah Reyes
+    class: 5B
+    subjects:
+      - subject: English
+        score: null
+        grade: null
+        note: Absent for assessment
+      - subject: Mathematics
+        score: 92
+        grade: A+
+    extracurricular:
+      - Reading Buddy
+
+Question:
+How can I create programmatically the YAML document I provided as input, from scratch using the EMC YAML Driver? First, you should figure out what is the root node, either a list node and mapping node, and change the code correspondingly.
+- student:
+    name: Oliver Bennett
+    class: 5B
+    subjects:
+      - subject: English
+        score: 88
+        grade: A
+      - subject: Mathematics
+        score: 74
+        grade: B
+    extracurricular:
+      - Chess Club
+      - School Orchestra
+
+- student:
+    name: Amelia Carter
+    class: 5B
+    subjects:
+      - subject: English
+        score: 81
+        grade: A-
+      - subject: Mathematics
+        score: 86
+        grade: A
+      - subject: Science
+        score: 78
+        grade: B+
+    extracurricular: []
+
+- student:
+    name: Noah Reyes
+    class: 5B
+    subjects:
+      - subject: English
+        score: null
+        grade: null
+        note: Absent for assessment
+      - subject: Mathematics
+        score: 92
+        grade: A+
+    extracurricular:
+      - Reading Buddy
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+First, the top-level YAML you gave starts with dashes (a sequence of entries), so the document root should be a list node (not a mapping node).
+
+Below is a complete EOL example that builds the YAML document from scratch using the same EMC YAML-driver patterns shown in the docs (setRootAsList, addRows, MappingNode, ScalarNode, ListNode, Sequence, appendNode, value.at(i) etc.). It creates three list rows, each row contains a single MappingNode named "student" whose value holds the student's properties (name, class, subjects and extracurricular).
+
+Note about null and empty lists:
+- The docs do not show an explicit example of ScalarNode with null value or an empty Sequence literal. In the code below I use new ScalarNode("score", null) to represent null scores/grades and new ListNode(..., 0) for an empty extracurricular list. If your runtime does not accept nulls or an empty Sequence literal, replace null with an appropriate sentinel (e.g. an empty string) or omit the scalar node, or set the list to a Sequence{} if supported.
+
+EOL code:
+
+```eol
+// Set root as a list (top-level sequence)
+YAMLDoc.setRootAsList();
+var root = YAMLDoc.getRoot();
+
+// create 3 rows (3 top-level list entries)
+root.value.addRows(3);
+var row0 = root.value.at(0);
+var row1 = root.value.at(1);
+var row2 = root.value.at(2);
+
+// -------------------- Student 1: Oliver Bennett --------------------
+var studentNode1 = new MappingNode("student");
+
+var name1 = new ScalarNode("name", "Oliver Bennett");
+var class1 = new ScalarNode("class", "5B");
+
+// subjects: two mapping elements
+var subjects1 = new ListNode("subjects", 2);
+
+// subject 0
+var s1_0_subject = new ScalarNode("subject", "English");
+var s1_0_score   = new ScalarNode("score", 88);
+var s1_0_grade   = new ScalarNode("grade", "A");
+subjects1.value.at(0).appendNode(s1_0_subject);
+subjects1.value.at(0).appendNode(s1_0_score);
+subjects1.value.at(0).appendNode(s1_0_grade);
+
+// subject 1
+var s1_1_subject = new ScalarNode("subject", "Mathematics");
+var s1_1_score   = new ScalarNode("score", 74);
+var s1_1_grade   = new ScalarNode("grade", "B");
+subjects1.value.at(1).appendNode(s1_1_subject);
+subjects1.value.at(1).appendNode(s1_1_score);
+subjects1.value.at(1).appendNode(s1_1_grade);
+
+// extracurricular: list of scalars
+var extracurricular1 = new ListNode("extracurricular", 2);
+extracurricular1.value = Sequence{"Chess Club", "School Orchestra"};
+
+// assemble student 1 node
+studentNode1.value.appendNode(name1);
+studentNode1.value.appendNode(class1);
+studentNode1.value.appendNode(subjects1);
+studentNode1.value.appendNode(extracurricular1);
+
+// append to first row
+row0.appendNode(studentNode1);
+
+// -------------------- Student 2: Amelia Carter --------------------
+var studentNode2 = new MappingNode("student");
+
+var name2 = new ScalarNode("name", "Amelia Carter");
+var class2 = new ScalarNode("class", "5B");
+
+// subjects: three mapping elements
+var subjects2 = new ListNode("subjects", 3);
+
+// subject 0
+var s2_0_subject = new ScalarNode("subject", "English");
+var s2_0_score   = new ScalarNode("score", 81);
+var s2_0_grade   = new ScalarNode("grade", "A-");
+subjects2.value.at(0).appendNode(s2_0_subject);
+subjects2.value.at(0).appendNode(s2_0_score);
+subjects2.value.at(0).appendNode(s2_0_grade);
+
+// subject 1
+var s2_1_subject = new ScalarNode("subject", "Mathematics");
+var s2_1_score   = new ScalarNode("score", 86);
+var s2_1_grade   = new ScalarNode("grade", "A");
+subjects2.value.at(1).appendNode(s2_1_subject);
+subjects2.value.at(1).appendNode(s2_1_score);
+subjects2.value.at(1).appendNode(s2_1_grade);
+
+// subject 2
+var s2_2_subject = new ScalarNode("subject", "Science");
+var s2_2_score   = new ScalarNode("score", 78);
+var s2_2_grade   = new ScalarNode("grade", "B+");
+subjects2.value.at(2).appendNode(s2_2_subject);
+subjects2.value.at(2).appendNode(s2_2_score);
+subjects2.value.at(2).appendNode(s2_2_grade);
+
+// extracurricular: empty list
+var extracurricular2 = new ListNode("extracurricular", 0);
+// (Optionally: extracurricular2.value = Sequence{}; if your runtime supports an empty Sequence literal)
+
+studentNode2.value.appendNode(name2);
+studentNode2.value.appendNode(class2);
+studentNode2.value.appendNode(subjects2);
+studentNode2.value.appendNode(extracurricular2);
+
+row1.appendNode(studentNode2);
+
+// -------------------- Student 3: Noah Reyes --------------------
+var studentNode3 = new MappingNode("student");
+
+var name3 = new ScalarNode("name", "Noah Reyes");
+var class3 = new ScalarNode("class", "5B");
+
+// subjects: two mapping elements
+var subjects3 = new ListNode("subjects", 2);
+
+// subject 0: score and grade are null, plus a note
+var s3_0_subject = new ScalarNode("subject", "English");
+// Represent nulls (see note above)
+var s3_0_score   = new ScalarNode("score", null);
+var s3_0_grade   = new ScalarNode("grade", null);
+var s3_0_note    = new ScalarNode("note", "Absent for assessment");
+subjects3.value.at(0).appendNode(s3_0_subject);
+subjects3.value.at(0).appendNode(s3_0_score);
+subjects3.value.at(0).appendNode(s3_0_grade);
+subjects3.value.at(0).appendNode(s3_0_note);
+
+// subject 1
+var s3_1_subject = new ScalarNode("subject", "Mathematics");
+var s3_1_score   = new ScalarNode("score", 92);
+var s3_1_grade   = new ScalarNode("grade", "A+");
+subjects3.value.at(1).appendNode(s3_1_subject);
+subjects3.value.at(1).appendNode(s3_1_score);
+subjects3.value.at(1).appendNode(s3_1_grade);
+
+// extracurricular: one scalar item
+var extracurricular3 = new ListNode("extracurricular", 1);
+extracurricular3.value = Sequence{"Reading Buddy"};
+
+studentNode3.value.appendNode(name3);
+studentNode3.value.appendNode(class3);
+studentNode3.value.appendNode(subjects3);
+studentNode3.value.appendNode(extracurricular3);
+
+row2.appendNode(studentNode3);
+
+// At this point YAMLDoc should contain the desired structure.
+// You can then serialize the document using the usual YAML driver mechanisms in your environment.
+```
+
+If you run into issues with null values or empty lists in your environment:
+- For nulls: replace new ScalarNode("score", null) with either omitting the scalar node or using an explicit marker (e.g. new ScalarNode("score", "")) depending on how the YAML driver represents nulls.
+- For empty lists: if new ListNode(..., 0) is not accepted, try new ListNode(..., 0) followed by extracurricularX.value = Sequence{} if supported, or omit the node and interpret missing property as an empty list on read.
+
+If you want, I can adapt the snippet to use a representation that avoids nulls (e.g. omit score/grade nodes when absent) or demonstrate serialisation code if you show how you normally write the YAMLDoc to a file in your environment.
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             2
+  Prompt tokens:     2,579
+  Completion tokens: 4,766
+  Total tokens:      7,345
+  Estimated cost:    $0.01018
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         2
+  Total prompt tokens:     2,579
+  Total completion tokens: 4,766
+  Total tokens:            7,345
+  Total estimated cost:    $0.01018
+============================================================

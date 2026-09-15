@@ -1,0 +1,303 @@
+Session started: 2026-07-28 00:29:06
+Model: openrouter/google/gemini-3.6-flash | temperature=0
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[00:29:12]
+
+── QUESTION ──────────────────────────────────────────────
+What's the structure of a constraint in EVL (guard, check, message)?
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - What's the structure of a constraint in EVL (guard, check, message)?
+  - EVL constraint guard check message syntax
+  - Epsilon Validation Language invariant constraint structure
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: "What's the structure of a constraint in EVL (guard, check, message)?"
+    1. sim=0.7317  epsilon_docs/articles_evl-gmf-integration_index.md | heading='Step 3: Write the constraints'
+    2. sim=0.6751  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Implementing Constraints with EVL'
+    3. sim=0.6508  epsilon_docs/articles_epsilon-and-sirius_index.md | heading='Epsilon and Sirius'
+    4. sim=0.6051  epsilon_docs/evl.md | heading='Abstract Syntax'
+    5. sim=0.6042  epsilon_docs/articles_index.md | heading='Recipes'
+    6. sim=0.5546  epsilon_docs/epl.md | heading='Role Cardinality'
+    7. sim=0.5479  epsilon_docs/epl.md | heading='The Epsilon Pattern Language (EPL)'
+    8. sim=0.5346  epsilon_docs/index.md | heading='Workflow'
+    9. sim=0.5158  epsilon_docs/egl.md | heading='Implementing a Custom Formatter'
+    10. sim=0.5109  epsilon_docs/egx.md | heading='Epsilon Generation Language'
+    11. sim=0.5025  epsilon_docs/emg.md | heading='EMG predefined operations'
+
+  Query: 'EVL constraint guard check message syntax'
+    1. sim=0.7269  epsilon_docs/articles_evl-gmf-integration_index.md | heading='Step 3: Write the constraints'
+    2. sim=0.6927  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Implementing Constraints with EVL'
+    3. sim=0.6612  epsilon_docs/articles_index.md | heading='Recipes'
+    4. sim=0.6277  epsilon_docs/egl.md | heading='Implementing a Custom Formatter'
+    5. sim=0.6226  epsilon_docs/articles_epsilon-and-sirius_index.md | heading='Epsilon and Sirius'
+    6. sim=0.6156  epsilon_docs/epl.md | heading='Role Cardinality'
+    7. sim=0.6031  epsilon_docs/evl.md | heading='Abstract Syntax'
+    8. sim=0.5811  epsilon_docs/egx.md | heading='Epsilon Generation Language'
+    9. sim=0.5605  epsilon_docs/index.md | heading='Workflow'
+    10. sim=0.5573  epsilon_docs/epl.md | heading='The Epsilon Pattern Language (EPL)'
+    11. sim=0.5219  epsilon_docs/emg.md | heading='EMG predefined operations'
+
+  Query: 'Epsilon Validation Language invariant constraint structure'
+    1. sim=0.7437  epsilon_docs/egx.md | heading='Epsilon Generation Language'
+    2. sim=0.7409  epsilon_docs/egl.md | heading='Implementing a Custom Formatter'
+    3. sim=0.7232  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Implementing Constraints with EVL'
+    4. sim=0.7187  epsilon_docs/articles_index.md | heading='Recipes'
+    5. sim=0.7015  epsilon_docs/epl.md | heading='The Epsilon Pattern Language (EPL)'
+    6. sim=0.6940  epsilon_docs/articles_evl-gmf-integration_index.md | heading='Step 3: Write the constraints'
+    7. sim=0.6801  epsilon_docs/articles_epsilon-and-sirius_index.md | heading='Epsilon and Sirius'
+    8. sim=0.6201  epsilon_docs/emg.md | heading='EMG predefined operations'
+    9. sim=0.5717  epsilon_docs/index.md | heading='Workflow'
+    10. sim=0.5454  epsilon_docs/epl.md | heading='Role Cardinality'
+    11. sim=0.5223  epsilon_docs/evl.md | heading='Abstract Syntax'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (5):
+  1. [0.888] epsilon_docs/articles_evl-gmf-integration_index.md (heading='Step 3: Write the constraints', parent_heading='Live validation and quick-fixes in GMF-based editors with EVL')
+     ## Step 3: Write the constraints
+Example: define constraints and critiques with checks, messages, guards, and automatic fixes in Epsilon Validation Language (EVL).
+Keywords: .name
+
+```evl
+context File
+  2. [0.711] epsilon_docs/evl.md (heading='Abstract Syntax', parent_heading='The Epsilon Validation Language (EVL)')
+     !!! info
+    As with most languages in Epsilon, EVL uses [EOL](../eol) as its expression language. This page only documents the additional syntax and semantics that EVL provides on top of EOL.
+
+```mer
+  3. [0.673] epsilon_docs/articles_epsilon-and-sirius_index.md (heading='Epsilon and Sirius', parent_heading='')
+     ## Epsilon and Sirius
+Example: define EVL constraints to validate model elements like Decision and Model for specific structural rules.
+
+```evl
+    context Decision {
+
+        constraint AtLeastTwoOut
+  4. [0.589] epsilon_docs/articles_epsilon-in-ecore_index.md (heading='Implementing Constraints with EVL', parent_heading='EVL Validation Delegation')
+     ## Implementing Constraints with EVL
+Example: define a constraint in EVL by assigning an EOL expression to a constraint name key.
+
+```
+source = "http://eclipse.dev/epsilon/ecore/EVL"
+key = "constraint
+  5. [0.589] epsilon_docs/epl.md (heading='Role Cardinality', parent_heading='Syntax')
+     evl
+context Patterns!PublicField {
+    guard: self.field.type.isDefined()
+    constraint GetterAndFieldSameType { 
+        check : self.getter.returnType.type = self.field.type.type
+        message : 
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon. Use only the documentation below — do not use outside knowledge, and say so if it doesn't cover something.
+
+Documentation:
+--- DOCUMENTATION ---
+[Source: epsilon_docs/articles_evl-gmf-integration_index.md]
+## Step 3: Write the constraints
+Example: define constraints and critiques with checks, messages, guards, and automatic fixes in Epsilon Validation Language (EVL).
+Keywords: .name
+
+```evl
+context File {
+
+	constraint HasName {
+
+		check : self.name.isDefined()
+
+		message : 'Unnamed ' + self.eClass().name + ' not allowed'
+
+	}
+
+}
+
+context Folder {
+
+	critique NameStartsWithCapital {
+
+		guard : self.satisfies('HasName')
+
+		check : self.name.firstToUpperCase() = self.name
+
+		message : 'Folder ' + self.name +
+			' should start with an upper-case letter'
+
+		fix {
+
+			title : 'Rename to ' + self.name.firstToUpperCase()
+
+			do {
+				self.name := self.name.firstToUpperCase();
+			}
+		}
+
+	}
+
+}
+
+context Sync {
+
+	constraint MustLinkSame {
+
+		check : self.source.eClass() = self.target.eClass()
+
+		message : 'Cannot synchronize a ' + self.source.eClass().name
+			+ ' with a ' + self.target.eClass().name
+
+		fix {
+
+			title : 'Synchronize with another ' +
+				self.source.eClass().name
+
+			do {
+
+				var target := UserInput.choose('Select target',
+					_Model.getAllOfType(self.source.eClass().name));
+
+				if (target.isDefined()) self.target := target;
+
+			}
+
+		}
+
+	}
+
+}
+```
+
+[Source: epsilon_docs/evl.md]
+!!! info
+    As with most languages in Epsilon, EVL uses [EOL](../eol) as its expression language. This page only documents the additional syntax and semantics that EVL provides on top of EOL.
+
+```mermaid-80
+classDiagram
+class Constraint {
+    -name: String
+    -guard: ExecutableBlock<Boolean>
+    -check: ExecutableBlock<Boolean>
+    -message: ExecutableBlock<String>
+    -isCritique: boolean
+}
+class ConstraintContext {
+    -type: EolModelElementType
+    -guard: ExecutableBlock<Boolean>
+}
+class NamedStatementBlockRule {
+    -name: String
+    -body: StatementBlock
+}
+class Fix {
+    -guard: ExecutableBlock<Boolean>
+    -title: ExecutableBlock<String>
+    -body: ExecutableBlock<Void>
+}
+EolModule <|-- ErlModule
+EvlModule --|> ErlModule
+Pre --|> NamedStatementBlockRule
+Post --|> NamedStatementBlockRule
+ErlModule -- Pre: pre *
+ErlModule -- Post: post *
+EvlModule -- ConstraintContext: contexts *
+ConstraintContext -- Constraint: constraints *
+Constraint -- Fix: fixes *
+
+[Source: epsilon_docs/articles_epsilon-and-sirius_index.md]
+## Epsilon and Sirius
+Example: define EVL constraints to validate model elements like Decision and Model for specific structural rules.
+
+```evl
+    context Decision {
+
+        constraint AtLeastTwoOutgoing {
+
+            check: self.outgoing.size() >= 2
+
+            message: "Decision " + self.text + 
+                " must have at least 2 outgoing" +
+                " transitions"
+        }
+        
+    }
+
+    context Model {
+        
+        constraint OneEntryPoint {
+        
+            check : self.steps.select(s|s.incoming.isEmpty()).size() = 1
+            
+            message : "The model has mutliple entry points: " +
+                self.steps.select(s|s.incoming.isEmpty()).text.concat(", ")
+            
+        }
+    }
+    ```
+
+[Source: epsilon_docs/articles_epsilon-in-ecore_index.md]
+## Implementing Constraints with EVL
+Example: define a constraint in EVL by assigning an EOL expression to a constraint name key.
+
+```
+source = "http://eclipse.dev/epsilon/ecore/EVL"
+key = "constraintName_1"
+value = EOL expression
+```
+
+[Source: epsilon_docs/epl.md]
+evl
+context Patterns!PublicField {
+    guard: self.field.type.isDefined()
+    constraint GetterAndFieldSameType { 
+        check : self.getter.returnType.type = self.field.type.type
+        message : "The getter of " + self.class.name + "."
+            + self.field.fragments.at(0).name +
+            " does not have the same type as the field itself"
+    }
+}
+
+--- USER MESSAGE ---
+What's the structure of a constraint in EVL (guard, check, message)?
+
+Before writing your answer, silently check each part of the question against the documentation — including whether any combination of separately-documented pieces is actually shown together, not just individually present somewhere. Don't show this checking process or split your answer into labeled parts. Write a smooth, natural answer, and weave in a brief, honest note wherever something isn't directly confirmed, rather than presenting it as verified.
+
+Be concise, and let the length of your answer reflect how much the documentation actually supports — don't stretch a thin piece of evidence into a long, confident-sounding answer.
+
+Question:
+What's the structure of a constraint in EVL (guard, check, message)?
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+Based on the provided documentation, constraints in EVL are defined within a `context` block corresponding to a model element type. According to the EVL class diagram and code examples, a constraint comprises the following main structural components:
+
+* **Name**: An identifier defining the constraint (e.g., `constraint AtLeastTwoOutgoing` or `critique NameStartsWithCapital`).
+* **Guard** (`guard:`): An optional boolean expression (`ExecutableBlock<Boolean>`) that determines whether the constraint applies and should be evaluated. Guards can also be placed at the `context` level or inside `fix` blocks.
+* **Check** (`check:`): A boolean expression (`ExecutableBlock<Boolean>`) that evaluates whether the model element complies with the rule.
+* **Message** (`message:`): A string expression (`ExecutableBlock<String>`) that generates the error or warning message if the `check` fails.
+* **Fixes** (`fix` blocks): Optional resolution blocks that contain a `title` and an executable `do` body (`ExecutableBlock<Void>`) to automatically fix validation failures.
+
+While the provided class diagram and syntax examples show how these components fit together, the documentation does not include detailed textual descriptions of their exact runtime execution order or full underlying semantics.
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             2
+  Prompt tokens:     1,477
+  Completion tokens: 2,133
+  Total tokens:      3,610
+  Estimated cost:    $0.01821
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openrouter/google/gemini-3.6-flash
+  Total LLM calls:         2
+  Total prompt tokens:     1,477
+  Total completion tokens: 2,133
+  Total tokens:            3,610
+  Total estimated cost:    $0.01821
+============================================================

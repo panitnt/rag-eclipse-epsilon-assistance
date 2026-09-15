@@ -1,0 +1,270 @@
+Session started: 2026-07-27 21:08:36
+Model: openai/gpt-5-mini | temperature=0
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[21:08:46]
+
+── QUESTION ──────────────────────────────────────────────
+What is EOL, and why is it described as the "core expression language" that all other Epsilon languages are built on?
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - What is EOL, and why is it described as the "core expression language" that all other Epsilon languages are built on?
+  - EOL overview core expression language Eclipse Epsilon documentation
+  - EOL syntax examples expressions operators control structures collections tutorial
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'What is EOL, and why is it described as the "core expression language" that all other Epsilon languages are built on?'
+    1. sim=0.7713  epsilon_docs/eol.md | heading='Syntax'
+    2. sim=0.7123  epsilon_docs/index.md | heading='Languages'
+    3. sim=0.7041  epsilon_docs/epl.md | heading='Syntax'
+    4. sim=0.6875  epsilon_docs/index.md | heading='Workflow'
+    5. sim=0.6550  epsilon_docs/egl.md | heading='Abstract Syntax'
+    6. sim=0.6452  epsilon_docs/articles_type-relationships-in-epsilon.md | heading='Type-Related Operations'
+    7. sim=0.6435  epsilon_docs/evl.md | heading='Abstract Syntax'
+    8. sim=0.6293  epsilon_docs/articles_running-epsilon-ant-tasks-from-command-line_index.md | heading='UML'
+    9. sim=0.6142  epsilon_docs/epl.md | heading='The Epsilon Pattern Language (EPL)'
+    10. sim=0.6122  epsilon_docs/egl.md | heading='Concrete Syntax'
+    11. sim=0.6071  epsilon_docs/articles_index.md | heading='Recipes'
+    12. sim=0.6006  epsilon_docs/articles_eol-interpreter-view_index.md | heading='Importing External Operations'
+    13. sim=0.5775  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Implementing Constraints with EVL'
+    14. sim=0.5754  epsilon_docs/egl.md | heading='Implementing a Custom Formatter'
+    15. sim=0.5301  epsilon_docs/articles_run-epsilon-from-java.md | heading='Dependencies'
+    16. sim=0.4949  epsilon_docs/eol.md | heading='Ternary Operator'
+    17. sim=0.4809  epsilon_docs/articles_eol-syntax-updates_index.md | heading='0.8.8'
+
+  Query: 'EOL overview core expression language Eclipse Epsilon documentation'
+    1. sim=0.7565  epsilon_docs/articles_running-epsilon-ant-tasks-from-command-line_index.md | heading='UML'
+    2. sim=0.7515  epsilon_docs/egl.md | heading='Implementing a Custom Formatter'
+    3. sim=0.7338  epsilon_docs/articles_eol-interpreter-view_index.md | heading='Importing External Operations'
+    4. sim=0.7297  epsilon_docs/epl.md | heading='The Epsilon Pattern Language (EPL)'
+    5. sim=0.7225  epsilon_docs/eol.md | heading='Syntax'
+    6. sim=0.7145  epsilon_docs/index.md | heading='Languages'
+    7. sim=0.7140  epsilon_docs/articles_type-relationships-in-epsilon.md | heading='Type-Related Operations'
+    8. sim=0.7106  epsilon_docs/epl.md | heading='Syntax'
+    9. sim=0.7078  epsilon_docs/index.md | heading='Workflow'
+    10. sim=0.7011  epsilon_docs/articles_index.md | heading='Recipes'
+    11. sim=0.6845  epsilon_docs/evl.md | heading='Abstract Syntax'
+    12. sim=0.6509  epsilon_docs/egl.md | heading='Concrete Syntax'
+    13. sim=0.6239  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Implementing Constraints with EVL'
+    14. sim=0.6219  epsilon_docs/egl.md | heading='Abstract Syntax'
+    15. sim=0.5903  epsilon_docs/articles_run-epsilon-from-java.md | heading='Dependencies'
+    16. sim=0.5558  epsilon_docs/articles_eol-syntax-updates_index.md | heading='0.8.8'
+    17. sim=0.5422  epsilon_docs/eol.md | heading='Ternary Operator'
+
+  Query: 'EOL syntax examples expressions operators control structures collections tutorial'
+    1. sim=0.7698  epsilon_docs/articles_type-relationships-in-epsilon.md | heading='Type-Related Operations'
+    2. sim=0.7569  epsilon_docs/articles_running-epsilon-ant-tasks-from-command-line_index.md | heading='UML'
+    3. sim=0.7095  epsilon_docs/egl.md | heading='Concrete Syntax'
+    4. sim=0.7035  epsilon_docs/articles_index.md | heading='Recipes'
+    5. sim=0.7024  epsilon_docs/egl.md | heading='Implementing a Custom Formatter'
+    6. sim=0.6857  epsilon_docs/epl.md | heading='Syntax'
+    7. sim=0.6789  epsilon_docs/eol.md | heading='Syntax'
+    8. sim=0.6698  epsilon_docs/index.md | heading='Workflow'
+    9. sim=0.6639  epsilon_docs/epl.md | heading='The Epsilon Pattern Language (EPL)'
+    10. sim=0.6578  epsilon_docs/index.md | heading='Languages'
+    11. sim=0.6456  epsilon_docs/articles_eol-interpreter-view_index.md | heading='Importing External Operations'
+    12. sim=0.6446  epsilon_docs/evl.md | heading='Abstract Syntax'
+    13. sim=0.6238  epsilon_docs/eol.md | heading='Ternary Operator'
+    14. sim=0.5989  epsilon_docs/articles_eol-syntax-updates_index.md | heading='0.8.8'
+    15. sim=0.5927  epsilon_docs/egl.md | heading='Abstract Syntax'
+    16. sim=0.5898  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Implementing Constraints with EVL'
+    17. sim=0.4657  epsilon_docs/articles_run-epsilon-from-java.md | heading='Dependencies'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (7):
+  1. [0.980] epsilon_docs/eol.md (heading='Syntax', parent_heading='The Epsilon Object Language (EOL)')
+     # The Epsilon Object Language (EOL)
+
+EOL is the core expression language of Epsilon, and the foundation for task-specific languages for tasks such as [model-validation](evl.md), [model-to-text transfo
+  2. [0.896] epsilon_docs/index.md (heading='Languages', parent_heading='Documentation')
+     # Documentation
+
+Epsilon is a family of languages and tools implemented in Java, for automating common model-based software engineering tasks.
+
+## Languages
+
+At the core of Epsilon is the [Epsilon Obj
+  3. [0.895] epsilon_docs/epl.md (heading='Syntax', parent_heading='The Epsilon Pattern Language (EPL)')
+     ## Syntax
+
+The syntax of EPL is an extension of the syntax of the [EOL language](../eol), which is the core language of Epsilon. As such, any references to *expression* and *statement block* in this c
+  4. [0.859] epsilon_docs/index.md (heading='Workflow', parent_heading='Tools')
+     ### Task-Specific Languages
+
+Epsilon provides the following task-specific languages, which use EOL as their core expression language. Each task-specific language provides constructs and syntax that ar
+  5. [0.630] epsilon_docs/evl.md (heading='Abstract Syntax', parent_heading='The Epsilon Validation Language (EVL)')
+     !!! info
+    As with most languages in Epsilon, EVL uses [EOL](../eol) as its expression language. This page only documents the additional syntax and semantics that EVL provides on top of EOL.
+
+```mer
+  6. [0.506] epsilon_docs/eol.md (heading='User-Defined Operations', parent_heading='The Epsilon Object Language (EOL)')
+     ## User-Defined Operations
+Example: define and use a user-defined operation within Epsilon Object Language (EOL).
+
+```eol
+    "This statement will be ignored".println();
+
+    operation useful() { /* c
+  7. [0.487] epsilon_docs/eol.md (heading='Ternary Operator', parent_heading='Expressions')
+     The truth table for the `implies` logical operator is below.
+
+Left|Right|Result
+----|-----|------
+true|true|true
+true|false|false
+false|true|true
+false|false|true
+
+### Ternary Operator
+
+As of version 
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon. Use only the documentation below — do not use outside knowledge, and say so if it doesn't cover something.
+
+Documentation:
+--- DOCUMENTATION ---
+[Source: epsilon_docs/eol.md]
+# The Epsilon Object Language (EOL)
+
+EOL is the core expression language of Epsilon, and the foundation for task-specific languages for tasks such as [model-validation](evl.md), [model-to-text transformation](egl.md), [model-to-model transformation](etl.md) and [model migration](flock.md). EOL can also be used as a general-purpose standalone model management language for automating tasks that do not fall into the patterns targeted by task-specific languages.
+
+!!! tip "Try EOL online"
+    You can run and fiddle with an EOL program that queries a project scheduling model in the [online Epsilon Playground](../playground/index.html?eol).
+
+## Syntax
+
+EOL programs are organized in `modules`. Each module defines a `body` and a number of `operations`. The body is a block of statements that are evaluated when the module is executed. Each operation defines the kind of objects on which it is applicable (`context`), a `name`, a set of `parameters` and optionally a `return type`.
+
+Modules can also import other modules using `import` statements and access their operations, as shown in the listing below.
+Import statements can take relative paths, absolute URIs, and (since 2.9) [`up://` URIs](articles/up-imports.md).
+
+[Source: epsilon_docs/index.md]
+# Documentation
+
+Epsilon is a family of languages and tools implemented in Java, for automating common model-based software engineering tasks.
+
+## Languages
+
+At the core of Epsilon is the [Epsilon Object Language (EOL)](eol.md), a scripting language that combines the imperative style of languages like Java/JavaScript with the powerful functional model querying capabilities of [OCL](). On top of EOL, Epsilon provides a number of interoperable task-specific languages for tasks such as code generation, model-to-model transformation and model validation.
+
+Epsilon languages are underpinned by a [model connectivity layer](emc.md) that shields them from the specifics of individual modelling technologies and allows them to query and modify models that conform to different technologies in a uniform way (e.g. transform an EMF model into Simulink, cross-validate an XML document and a UML model).
+
+[Source: epsilon_docs/epl.md]
+## Syntax
+
+The syntax of EPL is an extension of the syntax of the [EOL language](../eol), which is the core language of Epsilon. As such, any references to *expression* and *statement block* in this chapter, refer to EOL expressions and blocks of EOL statements respectively. It is also worth noting that EOL expressions and statements can produce side-effects on models, and therefore, it is the responsibility of the developer to decide which expressions used in the context of EPL patterns should be side-effect free and which not.
+
+As illustrated in the figure below, EPL patterns are organised in *modules*. Each module contains a number of named *patterns* and optionally, *pre* and *post* statement blocks that are executed before and after the pattern matching process, and helper EOL operations. EPL modules can import other EPL and EOL modules to facilitate reuse and modularity.
+
+[Source: epsilon_docs/index.md]
+### Task-Specific Languages
+
+Epsilon provides the following task-specific languages, which use EOL as their core expression language. Each task-specific language provides constructs and syntax that are tailored to the specific task it targets:
+
+[Source: epsilon_docs/evl.md]
+!!! info
+    As with most languages in Epsilon, EVL uses [EOL](../eol) as its expression language. This page only documents the additional syntax and semantics that EVL provides on top of EOL.
+
+```mermaid-80
+classDiagram
+class Constraint {
+    -name: String
+    -guard: ExecutableBlock<Boolean>
+    -check: ExecutableBlock<Boolean>
+    -message: ExecutableBlock<String>
+    -isCritique: boolean
+}
+class ConstraintContext {
+    -type: EolModelElementType
+    -guard: ExecutableBlock<Boolean>
+}
+class NamedStatementBlockRule {
+    -name: String
+    -body: StatementBlock
+}
+class Fix {
+    -guard: ExecutableBlock<Boolean>
+    -title: ExecutableBlock<String>
+    -body: ExecutableBlock<Void>
+}
+EolModule <|-- ErlModule
+EvlModule --|> ErlModule
+Pre --|> NamedStatementBlockRule
+Post --|> NamedStatementBlockRule
+ErlModule -- Pre: pre *
+ErlModule -- Post: post *
+EvlModule -- ConstraintContext: contexts *
+ConstraintContext -- Constraint: constraints *
+Constraint -- Fix: fixes *
+
+[Source: epsilon_docs/eol.md]
+## User-Defined Operations
+Example: define and use a user-defined operation within Epsilon Object Language (EOL).
+
+```eol
+    "This statement will be ignored".println();
+
+    operation useful() { /* code */ }
+    ```
+
+[Source: epsilon_docs/eol.md]
+The truth table for the `implies` logical operator is below.
+
+Left|Right|Result
+----|-----|------
+true|true|true
+true|false|false
+false|true|true
+false|false|true
+
+### Ternary Operator
+
+As of version 2.0, EOL has a ternary operator which is a concise way of using if/else as an expression. The semantics and syntax are similar to Java, but can be used anywhere as an expression, not only in variable assignments or return statements. The listing below shows some examples of this[^4]. Note that is also possible to use the `else` keyword in place of the colon for separating the true and false expressions for greater clarity. As one would expect, the branches are evaluated lazily: only one of the branches is executed and returned as the result of the expression depending on the value of the Boolean expression before the question mark.
+
+--- USER MESSAGE ---
+What is EOL, and why is it described as the "core expression language" that all other Epsilon languages are built on?
+
+Before writing your answer, silently check each part of the question against the documentation — including whether any combination of separately-documented pieces is actually shown together, not just individually present somewhere. Don't show this checking process or split your answer into labeled parts.
+
+Write a smooth, natural answer. Place any honest note about something not being directly confirmed right next to the part it concerns, not bundled at the end — and let your opening reflect the same level of confidence, rather than stating something flatly and qualifying it afterward.
+
+Be concise, and let the length of your answer reflect how much the documentation actually supports — don't stretch a thin piece of evidence into a long, confident-sounding answer.
+
+Question:
+What is EOL, and why is it described as the "core expression language" that all other Epsilon languages are built on?
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+EOL (the Epsilon Object Language) is the core expression/scripting language of the Epsilon family. It is described that way in the documentation because:
+
+- EOL is the basic scripting language used across Epsilon: it provides modules, operations, imports and statement blocks that form the executable bodies of Epsilon programs.
+- It combines an imperative style (likened to Java/JavaScript) with functional, model‑querying capabilities similar to OCL, making it suitable both for general scripting and for expressing model queries and side‑effects.
+- Task‑specific Epsilon languages use or extend EOL for their expressions and syntax: for example, EVL uses EOL as its expression language, and EPL’s syntax is an extension of EOL. The documentation therefore presents other Epsilon languages (model validation, model‑to‑text, model‑to‑model, migration, etc.) as being built on top of EOL.
+
+Note: the docs explicitly show that many task‑specific Epsilon languages use or extend EOL; they describe EOL as the “core” and “foundation” for those languages, but do not literally enumerate or assert that every single Epsilon language without exception uses EOL.
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             2
+  Prompt tokens:     1,673
+  Completion tokens: 1,911
+  Total tokens:      3,584
+  Estimated cost:    $0.00424
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         2
+  Total prompt tokens:     1,673
+  Total completion tokens: 1,911
+  Total tokens:            3,584
+  Total estimated cost:    $0.00424
+============================================================

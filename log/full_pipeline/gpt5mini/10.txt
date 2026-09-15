@@ -1,0 +1,374 @@
+Session started: 2026-07-27 21:18:22
+Model: openai/gpt-5-mini | temperature=0
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[21:18:32]
+
+── QUESTION ──────────────────────────────────────────────
+What is EVL, and what is it used for?
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - What is EVL, and what is it used for?
+  - Epsilon EVL overview and use cases
+  - EVL syntax examples constraint check and fix rules
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'What is EVL, and what is it used for?'
+    1. sim=0.7080  epsilon_docs/articles_epsilon-and-sirius_index.md | heading='Epsilon and Sirius'
+    2. sim=0.6977  epsilon_docs/evl.md | heading='Abstract Syntax'
+    3. sim=0.6922  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Validation Delegate'
+    4. sim=0.6710  epsilon_docs/articles_index.md | heading='Recipes'
+    5. sim=0.6659  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Implementing Constraints with EVL'
+    6. sim=0.6387  epsilon_docs/articles_evl-emf-integration.md | heading='Programmatically'
+    7. sim=0.6244  epsilon_docs/articles_evl-gmf-integration_index.md | heading='Step 3: Write the constraints'
+    8. sim=0.6183  epsilon_docs/index.md | heading='Languages'
+    9. sim=0.6172  epsilon_docs/articles_epsilon-pojos.md | heading='Running an EGL Template against the POJO'
+    10. sim=0.5723  epsilon_docs/egx.md | heading='Epsilon Generation Language'
+    11. sim=0.5663  epsilon_docs/epl.md | heading='The Epsilon Pattern Language (EPL)'
+    12. sim=0.5326  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    13. sim=0.5199  epsilon_docs/articles_epsilon-and-capella_index.md | heading='Epsilon and Capella'
+    14. sim=0.5054  epsilon_docs/articles_call-java-from-epsilon_index.md | heading='Create the tool'
+    15. sim=0.4675  epsilon_docs/articles_debugger.md | heading='Wrapping your module with the EpsilonDebugServer'
+
+  Query: 'Epsilon EVL overview and use cases'
+    1. sim=0.7419  epsilon_docs/articles_epsilon-and-sirius_index.md | heading='Epsilon and Sirius'
+    2. sim=0.7115  epsilon_docs/articles_index.md | heading='Recipes'
+    3. sim=0.7110  epsilon_docs/articles_epsilon-pojos.md | heading='Running an EGL Template against the POJO'
+    4. sim=0.7082  epsilon_docs/egx.md | heading='Epsilon Generation Language'
+    5. sim=0.7036  epsilon_docs/evl.md | heading='Abstract Syntax'
+    6. sim=0.6979  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Validation Delegate'
+    7. sim=0.6935  epsilon_docs/index.md | heading='Languages'
+    8. sim=0.6884  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Implementing Constraints with EVL'
+    9. sim=0.6852  epsilon_docs/epl.md | heading='The Epsilon Pattern Language (EPL)'
+    10. sim=0.6240  epsilon_docs/articles_evl-gmf-integration_index.md | heading='Step 3: Write the constraints'
+    11. sim=0.6107  epsilon_docs/articles_epsilon-and-capella_index.md | heading='Epsilon and Capella'
+    12. sim=0.6054  epsilon_docs/articles_evl-emf-integration.md | heading='Programmatically'
+    13. sim=0.5972  epsilon_docs/articles_call-java-from-epsilon_index.md | heading='Create the tool'
+    14. sim=0.5914  epsilon_docs/articles_debugger.md | heading='Wrapping your module with the EpsilonDebugServer'
+    15. sim=0.5352  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+
+  Query: 'EVL syntax examples constraint check and fix rules'
+    1. sim=0.8202  epsilon_docs/articles_epsilon-and-sirius_index.md | heading='Epsilon and Sirius'
+    2. sim=0.7305  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Implementing Constraints with EVL'
+    3. sim=0.6971  epsilon_docs/evl.md | heading='Abstract Syntax'
+    4. sim=0.6908  epsilon_docs/articles_index.md | heading='Recipes'
+    5. sim=0.6811  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Validation Delegate'
+    6. sim=0.6540  epsilon_docs/articles_epsilon-pojos.md | heading='Running an EGL Template against the POJO'
+    7. sim=0.6460  epsilon_docs/index.md | heading='Languages'
+    8. sim=0.6414  epsilon_docs/articles_evl-gmf-integration_index.md | heading='Step 3: Write the constraints'
+    9. sim=0.6296  epsilon_docs/articles_evl-emf-integration.md | heading='Programmatically'
+    10. sim=0.6227  epsilon_docs/egx.md | heading='Epsilon Generation Language'
+    11. sim=0.6135  epsilon_docs/epl.md | heading='The Epsilon Pattern Language (EPL)'
+    12. sim=0.5604  epsilon_docs/articles_excel_index.md | heading='Modifying Cell Values'
+    13. sim=0.5407  epsilon_docs/articles_call-java-from-epsilon_index.md | heading='Create the tool'
+    14. sim=0.5402  epsilon_docs/articles_epsilon-and-capella_index.md | heading='Epsilon and Capella'
+    15. sim=0.5237  epsilon_docs/articles_debugger.md | heading='Wrapping your module with the EpsilonDebugServer'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (7):
+  1. [0.988] epsilon_docs/evl.md (heading='Abstract Syntax', parent_heading='The Epsilon Validation Language (EVL)')
+     # The Epsilon Validation Language (EVL)
+
+EVL contributes model validation capabilities to Epsilon. More specifically, EVL can be used to specify and evaluate constraints and critiques on models of arb
+  2. [0.955] epsilon_docs/articles_epsilon-and-sirius_index.md (heading='Epsilon and Sirius', parent_heading='')
+     ## Epsilon and Sirius
+Example: define EVL constraints to validate model elements like Decision and Model for specific structural rules.
+
+```evl
+    context Decision {
+
+        constraint AtLeastTwoOut
+  3. [0.930] epsilon_docs/articles_epsilon-in-ecore_index.md (heading='Implementing Constraints with EVL', parent_heading='EVL Validation Delegation')
+     ## Implementing Constraints with EVL
+Example: define an EVL constraint by specifying its source, key, and body expression for validation.
+
+```
+source = "http://eclipse.dev/epsilon/ecore/EVL"
+key = "bo
+  4. [0.654] epsilon_docs/index.md (heading='Languages', parent_heading='Documentation')
+     ## Languages
+Example: visualize relationships and extensions among Eclipse Epsilon languages and their model connectivity components.
+
+```mermaid
+graph TD
+	ECL["Model<br/>comparison<br/>(ECL)"]
+	Flock
+  5. [0.592] epsilon_docs/articles_evl-gmf-integration_index.md (heading='Step 3: Write the constraints', parent_heading='Live validation and quick-fixes in GMF-based editors with EVL')
+     ## Step 3: Write the constraints
+Example: define constraints and critiques with checks, messages, guards, and automatic fixes in Epsilon Validation Language (EVL).
+Keywords: .name
+
+```evl
+context File
+  6. [0.441] epsilon_docs/articles_index.md (heading='Recipes', parent_heading='Epsilon Developers')
+     ## Epsilon Validation Language
+
+- [EVL-GMF Integration](evl-gmf-integration/index.md): This article demonstrates evaluating EVL constraints from within a GMF-based editor.
+- [EVL-EMF Validation Integr
+  7. [0.233] epsilon_docs/articles_epsilon-and-capella_index.md (heading='Epsilon and Capella', parent_heading='')
+     ## Epsilon and Capella
+Example: define a validation rule in EVL to ensure names start with an uppercase letter and provide an automatic fix.
+Keywords: .name
+
+```evl
+context AbstractFunction {
+	
+	criti
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon. Use only the documentation below — do not use outside knowledge, and say so if it doesn't cover something.
+
+Documentation:
+--- DOCUMENTATION ---
+[Source: epsilon_docs/evl.md]
+# The Epsilon Validation Language (EVL)
+
+EVL contributes model validation capabilities to Epsilon. More specifically, EVL can be used to specify and evaluate constraints and critiques on models of arbitrary metamodels and modelling technologies, and to produce human-readable error messages and executable quick fixes.
+
+!!! tip "Try EVL online"
+    You can run and fiddle with EVL constraints that validate a project scheduling model in the [online Epsilon Playground](../../playground/?evl).
+
+## Abstract Syntax
+
+In EVL, validation specifications are organized in modules (*EvlModule*). As illustrated in the figure below, *EvlModule* (indirectly) extends *EolModule* which means that it can contain user-defined operations and import other EOL library modules and EVL modules. Apart from operations, an EVL module also contains a set of constraints grouped by the context they apply to, and, by extending *ErlModule*, a number of *pre* and *post* blocks.
+
+!!! info
+    As with most languages in Epsilon, EVL uses [EOL](../eol) as its expression language. This page only documents the additional syntax and semantics that EVL provides on top of EOL.
+
+[Source: epsilon_docs/articles_epsilon-and-sirius_index.md]
+## Epsilon and Sirius
+Example: define EVL constraints to validate model elements like Decision and Model for specific structural rules.
+
+```evl
+    context Decision {
+
+        constraint AtLeastTwoOutgoing {
+
+            check: self.outgoing.size() >= 2
+
+            message: "Decision " + self.text + 
+                " must have at least 2 outgoing" +
+                " transitions"
+        }
+        
+    }
+
+    context Model {
+        
+        constraint OneEntryPoint {
+        
+            check : self.steps.select(s|s.incoming.isEmpty()).size() = 1
+            
+            message : "The model has mutliple entry points: " +
+                self.steps.select(s|s.incoming.isEmpty()).text.concat(", ")
+            
+        }
+    }
+    ```
+
+[Source: epsilon_docs/articles_epsilon-in-ecore_index.md]
+## Implementing Constraints with EVL
+Example: define an EVL constraint by specifying its source, key, and body expression for validation.
+
+```
+source = "http://eclipse.dev/epsilon/ecore/EVL"
+key = "body"
+value = body EOL expression
+```
+
+[Source: epsilon_docs/index.md]
+## Languages
+Example: visualize relationships and extensions among Eclipse Epsilon languages and their model connectivity components.
+
+```mermaid
+graph TD
+	ECL["Model<br/>comparison<br/>(ECL)"]
+	Flock["Model<br/>migration<br/>(Flock)"]
+	EGL["Code<br/>generation<br/>(EGL)"]
+	EVL["Model<br/>validation<br/>(EVL)"]
+	EPL["Pattern<br/>Matching<br/>(EPL)"]
+	EML["Model<br/>Merging<br/>(EML)"]
+	ETL["M2M<br/>Transformation<br/>(ETL)"]
+	EOL["Epsilon Object Language (EOL)"]
+	ETL --> |extends|EOL
+	EML --> |uses for matching|ECL
+	EML --> |extends|ETL
+	EPL --> |extends|EOL
+	ECL --> |extends|EOL
+	EGL --> |preprocessed into|EOL
+	EVL --> |extends|EOL
+	Flock --> |extends|EOL
+	Pinset --> |extends|EOL
+
+	EMC["Epsilon Model Connectivity (EMC)"]
+	EMF["Eclipse Modeling<br/> Framework (EMF)"]
+	Simulink["MATLAB<br/>Simulink"]
+	Excel["Excel<br/>Speadsheets"]
+	PTC["PTC Integrity<br/>Modeller"]
+	Dots["..."]
+
+	EOL -->|accesses models through| EMC
+	EMC --- EMF
+	EMC --- Simulink
+	EMC --- XML
+	EMC --- Excel
+	EMC --- PTC
+	EMC --- CSV
+	EMC --- Dots
+```
+
+[Source: epsilon_docs/articles_evl-gmf-integration_index.md]
+## Step 3: Write the constraints
+Example: define constraints and critiques with checks, messages, guards, and automatic fixes in Epsilon Validation Language (EVL).
+Keywords: .name
+
+```evl
+context File {
+
+	constraint HasName {
+
+		check : self.name.isDefined()
+
+		message : 'Unnamed ' + self.eClass().name + ' not allowed'
+
+	}
+
+}
+
+context Folder {
+
+	critique NameStartsWithCapital {
+
+		guard : self.satisfies('HasName')
+
+		check : self.name.firstToUpperCase() = self.name
+
+		message : 'Folder ' + self.name +
+			' should start with an upper-case letter'
+
+		fix {
+
+			title : 'Rename to ' + self.name.firstToUpperCase()
+
+			do {
+				self.name := self.name.firstToUpperCase();
+			}
+		}
+
+	}
+
+}
+
+context Sync {
+
+	constraint MustLinkSame {
+
+		check : self.source.eClass() = self.target.eClass()
+
+		message : 'Cannot synchronize a ' + self.source.eClass().name
+			+ ' with a ' + self.target.eClass().name
+
+		fix {
+
+			title : 'Synchronize with another ' +
+				self.source.eClass().name
+
+			do {
+
+				var target := UserInput.choose('Select target',
+					_Model.getAllOfType(self.source.eClass().name));
+
+				if (target.isDefined()) self.target := target;
+
+			}
+
+		}
+
+	}
+
+}
+```
+
+[Source: epsilon_docs/articles_index.md]
+## Epsilon Validation Language
+
+- [EVL-GMF Integration](evl-gmf-integration/index.md): This article demonstrates evaluating EVL constraints from within a GMF-based editor.
+- [EVL-EMF Validation Integration](evl-emf-integration.md): This article demonstrates contributing EVL constraints to EMF's validation framework.
+- [Parallel Execution](parallel-execution/index.md): This article explains how to use the parallel module implementations for EOL and rule-based languages like EVL.
+
+## Epsilon Generation Language
+
+[Source: epsilon_docs/articles_epsilon-and-capella_index.md]
+## Epsilon and Capella
+Example: define a validation rule in EVL to ensure names start with an uppercase letter and provide an automatic fix.
+Keywords: .name
+
+```evl
+context AbstractFunction {
+	
+	critique StartsWithUpperCase {
+	
+		check : self.name.ftuc() == self.name
+		
+		message : self.eClass().name + " " + self.name + 
+			" should start with an upper-case letter"
+		
+		fix {
+			title: "Rename to " + self.name.ftuc()
+			do {
+				self.name = self.name.ftuc();
+			}
+		}
+	}
+}
+```
+
+--- USER MESSAGE ---
+What is EVL, and what is it used for?
+
+Before writing your answer, silently check each part of the question against the documentation — including whether any combination of separately-documented pieces is actually shown together, not just individually present somewhere. Don't show this checking process or split your answer into labeled parts.
+
+Write a smooth, natural answer. Place any honest note about something not being directly confirmed right next to the part it concerns, not bundled at the end — and let your opening reflect the same level of confidence, rather than stating something flatly and qualifying it afterward.
+
+Be concise, and let the length of your answer reflect how much the documentation actually supports — don't stretch a thin piece of evidence into a long, confident-sounding answer.
+
+Question:
+What is EVL, and what is it used for?
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+EVL (Epsilon Validation Language) is the Epsilon language for model validation. It is used to specify and evaluate constraints and critiques over models (including models of arbitrary metamodels and modelling technologies), to produce human‑readable error messages, and to offer executable quick fixes.
+
+Key points from the documentation:
+- EVL modules extend EOL and use EOL as their expression language; they can contain operations, imports, and pre/post blocks.
+- Constraints are written in context blocks and typically include guard (optional), check, and message parts. Critiques are similar and may include a fix block with a title and a do section that performs an automatic repair.
+- Examples show common patterns (e.g., checking properties, producing messages, renaming via fixes).
+- The docs mention an online Epsilon Playground where you can run EVL constraints.
+- The documentation also lists articles demonstrating EVL integration with GMF and EMF; those articles are referenced but their full content is not included here.
+
+All statements above are based only on the provided documentation.
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             2
+  Prompt tokens:     1,858
+  Completion tokens: 1,668
+  Total tokens:      3,526
+  Estimated cost:    $0.00380
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openai/gpt-5-mini
+  Total LLM calls:         2
+  Total prompt tokens:     1,858
+  Total completion tokens: 1,668
+  Total tokens:            3,526
+  Total estimated cost:    $0.00380
+============================================================

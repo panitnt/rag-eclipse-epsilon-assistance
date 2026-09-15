@@ -1,0 +1,163 @@
+Session started: 2026-07-28 00:29:14
+Model: openrouter/qwen/qwen3.5-flash-02-23 | temperature=0
+DOCS_K=10 DOCS_FINAL_TOP_N=8 DOCS_TOP_N_PER_QUERY=5
+============================================================
+
+============================================================
+[00:29:32]
+
+── QUESTION ──────────────────────────────────────────────
+Does EVL support dependencies between constraints (e.g. having one constraint run before another)? How?
+
+── QUERIES (used for retrieval) ──────────────────────────
+  - Does EVL support dependencies between constraints (e.g. having one constraint run before another)? How?
+  - EVL constraint execution order configuration
+  - EVL constraint priority annotation syntax
+
+── SIMILARITY DIAGNOSTIC (dense cosine, pre-rerank, full ranking) ──
+
+  Query: 'Does EVL support dependencies between constraints (e.g. having one constraint run before another)? How?'
+    1. sim=0.7184  epsilon_docs/articles_epsilon-and-sirius_index.md | heading='Epsilon and Sirius'
+    2. sim=0.7123  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Implementing Constraints with EVL'
+    3. sim=0.6850  epsilon_docs/articles_parallel-execution_index.md | heading='From Ant tasks'
+    4. sim=0.6674  epsilon_docs/articles_index.md | heading='Recipes'
+    5. sim=0.6592  epsilon_docs/articles_parallel-execution_index.md | heading='From Java programs'
+    6. sim=0.6464  epsilon_docs/articles_evl-gmf-integration_index.md | heading='Step 3: Write the constraints'
+    7. sim=0.6187  epsilon_docs/evl.md | heading='Abstract Syntax'
+    8. sim=0.5642  epsilon_docs/articles_running-from-source_index.md | heading='Running the Epsilon tests'
+    9. sim=0.5630  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Specifying Constraints'
+    10. sim=0.5425  epsilon_docs/emg.md | heading='EMG predefined operations'
+    11. sim=0.5320  epsilon_docs/articles_playground_graphical-syntax-annotations.md | heading='@text'
+    12. sim=0.5195  epsilon_docs/articles_playground_index.md | heading='Model Graphical Syntax Annotations'
+
+  Query: 'EVL constraint execution order configuration'
+    1. sim=0.8003  epsilon_docs/articles_epsilon-and-sirius_index.md | heading='Epsilon and Sirius'
+    2. sim=0.7302  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Implementing Constraints with EVL'
+    3. sim=0.6742  epsilon_docs/articles_parallel-execution_index.md | heading='From Ant tasks'
+    4. sim=0.6673  epsilon_docs/articles_evl-gmf-integration_index.md | heading='Step 3: Write the constraints'
+    5. sim=0.6552  epsilon_docs/articles_index.md | heading='Recipes'
+    6. sim=0.6420  epsilon_docs/evl.md | heading='Abstract Syntax'
+    7. sim=0.5886  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Specifying Constraints'
+    8. sim=0.5876  epsilon_docs/articles_parallel-execution_index.md | heading='From Java programs'
+    9. sim=0.5445  epsilon_docs/articles_running-from-source_index.md | heading='Running the Epsilon tests'
+    10. sim=0.5005  epsilon_docs/articles_playground_graphical-syntax-annotations.md | heading='@text'
+    11. sim=0.4962  epsilon_docs/emg.md | heading='EMG predefined operations'
+    12. sim=0.4943  epsilon_docs/articles_playground_index.md | heading='Model Graphical Syntax Annotations'
+
+  Query: 'EVL constraint priority annotation syntax'
+    1. sim=0.8001  epsilon_docs/articles_epsilon-and-sirius_index.md | heading='Epsilon and Sirius'
+    2. sim=0.7018  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Implementing Constraints with EVL'
+    3. sim=0.6911  epsilon_docs/articles_evl-gmf-integration_index.md | heading='Step 3: Write the constraints'
+    4. sim=0.6615  epsilon_docs/articles_index.md | heading='Recipes'
+    5. sim=0.6600  epsilon_docs/articles_parallel-execution_index.md | heading='From Ant tasks'
+    6. sim=0.5957  epsilon_docs/evl.md | heading='Abstract Syntax'
+    7. sim=0.5642  epsilon_docs/articles_parallel-execution_index.md | heading='From Java programs'
+    8. sim=0.5609  epsilon_docs/articles_playground_graphical-syntax-annotations.md | heading='@text'
+    9. sim=0.5575  epsilon_docs/articles_epsilon-in-ecore_index.md | heading='Specifying Constraints'
+    10. sim=0.5106  epsilon_docs/articles_running-from-source_index.md | heading='Running the Epsilon tests'
+    11. sim=0.5092  epsilon_docs/articles_playground_index.md | heading='Model Graphical Syntax Annotations'
+    12. sim=0.5046  epsilon_docs/emg.md | heading='EMG predefined operations'
+
+── RETRIEVED (after dedup + sibling expansion + rerank) ──
+
+Docs (3):
+  1. [0.751] epsilon_docs/articles_parallel-execution_index.md (heading='From Ant tasks', parent_heading='Annotation-based parallelism')
+     ## From Ant tasks
+Example: define a pre-block and constraint in EVL to enforce parallel execution based on children count threshold.
+
+```evl
+pre {
+  var parallelThreshold = 9001;
+}
+context ModelElemen
+  2. [0.372] epsilon_docs/evl.md (heading='Abstract Syntax', parent_heading='The Epsilon Validation Language (EVL)')
+     # The Epsilon Validation Language (EVL)
+
+EVL contributes model validation capabilities to Epsilon. More specifically, EVL can be used to specify and evaluate constraints and critiques on models of arb
+  3. [0.271] epsilon_docs/articles_epsilon-in-ecore_index.md (heading='Implementing Constraints with EVL', parent_heading='EVL Validation Delegation')
+     ### Implementing Constraints with EVL
+
+The validation delegate for each Ecore constraint is provided by either a further EAnnotation on the EClassifier or an EOperation in the EClassifier.
+
+#### Via E
+
+── FULL PROMPT SENT TO LLM ───────────────────────────────
+[HUMAN]
+You are an assistant answering questions about Eclipse Epsilon. Use only the documentation below — do not use outside knowledge, and say so if it doesn't cover something.
+
+Documentation:
+--- DOCUMENTATION ---
+[Source: epsilon_docs/articles_parallel-execution_index.md]
+## From Ant tasks
+Example: define a pre-block and constraint in EVL to enforce parallel execution based on children count threshold.
+
+```evl
+pre {
+  var parallelThreshold = 9001;
+}
+context ModelElementType {
+  $parallel self.children.size() > parallelThreshold;
+  constraint Invariant {
+    check {
+      // ...
+    }
+  }
+```
+
+[Source: epsilon_docs/evl.md]
+# The Epsilon Validation Language (EVL)
+
+EVL contributes model validation capabilities to Epsilon. More specifically, EVL can be used to specify and evaluate constraints and critiques on models of arbitrary metamodels and modelling technologies, and to produce human-readable error messages and executable quick fixes.
+
+!!! tip "Try EVL online"
+    You can run and fiddle with EVL constraints that validate a project scheduling model in the [online Epsilon Playground](../../playground/?evl).
+
+## Abstract Syntax
+
+In EVL, validation specifications are organized in modules (*EvlModule*). As illustrated in the figure below, *EvlModule* (indirectly) extends *EolModule* which means that it can contain user-defined operations and import other EOL library modules and EVL modules. Apart from operations, an EVL module also contains a set of constraints grouped by the context they apply to, and, by extending *ErlModule*, a number of *pre* and *post* blocks.
+
+!!! info
+    As with most languages in Epsilon, EVL uses [EOL](../eol) as its expression language. This page only documents the additional syntax and semantics that EVL provides on top of EOL.
+
+[Source: epsilon_docs/articles_epsilon-in-ecore_index.md]
+### Implementing Constraints with EVL
+
+The validation delegate for each Ecore constraint is provided by either a further EAnnotation on the EClassifier or an EOperation in the EClassifier.
+
+#### Via EAnnotation
+
+The EVL constraint body (*check*) is specified by an EAnnotation on the EClassifier
+
+--- USER MESSAGE ---
+Does EVL support dependencies between constraints (e.g. having one constraint run before another)? How?
+
+Before writing your answer, silently check each part of the question against the documentation — including whether any combination of separately-documented pieces is actually shown together, not just individually present somewhere. Don't show this checking process or split your answer into labeled parts. Write a smooth, natural answer, and weave in a brief, honest note wherever something isn't directly confirmed, rather than presenting it as verified.
+
+Be concise, and let the length of your answer reflect how much the documentation actually supports — don't stretch a thin piece of evidence into a long, confident-sounding answer.
+
+Question:
+Does EVL support dependencies between constraints (e.g. having one constraint run before another)? How?
+
+Answer:
+
+── ANSWER ────────────────────────────────────────────────
+Based on the provided documentation, there is no explicit confirmation that EVL supports dependencies between constraints, such as having one constraint run before another. The text mentions that EVL modules contain `pre` and `post` blocks alongside constraints, and shows an example of a `pre` block defining a variable for parallel execution logic. However, it does not describe a mechanism for ordering constraint execution or linking constraints to one another. Therefore, the documentation does not cover how to implement such dependencies.
+
+── TOKENS / COST (this turn) ─────────────────────────────
+  Calls:             2
+  Prompt tokens:     879
+  Completion tokens: 5,332
+  Total tokens:      6,211
+  Estimated cost:    $0.00144
+------------------------------------------------------------
+
+[Session ended]
+
+============================================================
+SESSION SUMMARY — openrouter/qwen/qwen3.5-flash-02-23
+  Total LLM calls:         2
+  Total prompt tokens:     879
+  Total completion tokens: 5,332
+  Total tokens:            6,211
+  Total estimated cost:    $0.00144
+============================================================
